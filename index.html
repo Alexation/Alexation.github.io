@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,18 +14,20 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Alexation">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="Alexation">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/">
@@ -37,11 +39,11 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Alexation</title>
   
 
 
@@ -72,16 +74,17 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
-
+	<a target="_blank" rel="noopener" href="https://github.com/Alexation/Alexation.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 15	7.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -92,13 +95,14 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">Alexation</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -110,19 +114,51 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -144,22 +180,28 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/19/test-my-site/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/19/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="image" content="/images/logoo.jpg">
+      <meta itemprop="name" content="Alexation">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Alexation">
     </span>
       <header class="post-header">
+
+	
+	<i class="fa fa-thumb-tack"></i>
+	<font color=7D26CD>置顶</font>
+	
+
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/19/test-my-site/" class="post-title-link" itemprop="url">test_my_site</a>
+            <a href="/2021/08/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -167,10 +209,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2021-08-19 14:41:45 / Modified: 14:50:50" itemprop="dateCreated datePublished" datetime="2021-08-19T14:41:45+08:00">2021-08-19</time>
+              <time title="创建时间：2021-08-19 14:40:16 / 修改时间：16:42:00" itemprop="dateCreated datePublished" datetime="2021-08-19T14:40:16+08:00">2021-08-19</time>
             </span>
 
           
@@ -184,83 +226,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="爬虫学习笔记"><a href="#爬虫学习笔记" class="headerlink" title="爬虫学习笔记"></a>爬虫学习笔记</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20520370">常见的反爬虫和应对方法 - 知乎 (zhihu.com)</a></p>
-<p>刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。<br>刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。<br>再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。<br>之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网络识别出验证码，兴奋得守在爬虫旁边看他爬完全站。<br>再后来知道了threading，知道了celery。</p>
-<p>不断的学习，不断的接触和知道更多的东西</p>
-<p>2021/8/14</p>
-<p>通过requests模块，xpath解析网页，对简单网页进行图片抓取</p>
-<p> <em>————request、xpath爬取简单网页流程————</em></p>
-<p><strong>1.指定URL</strong></p>
-<p><strong>2.UA伪装</strong></p>
-<p><strong>3.发起请求（模拟浏览器）</strong></p>
-<p>requests(url=url,headers=headers)</p>
-<p><strong>4.获取相应数据</strong></p>
-<p>返回response对象</p>
-<p>content-type查看text/html还是Json格式</p>
-<p><strong>5.解析数据</strong></p>
-<p>Beautifulsoup、正则表达式、xpath</p>
-<p><strong>6.持久化储存</strong></p>
-<p>通过os库创建新文件夹用来储存下载到的图片</p>
-<p>（可能会被360报病毒）</p>
-<p>2021/8/15</p>
-<p>请求：请求方法、请求头、请求网址、请求体</p>
-<p>常见有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>USER-AGENT、Cookies</p>
-<p>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</p>
-<p>HTML超文本标记语言（标签表示元素）</p>
-<p>CSS层叠样式表</p>
-<p>JavaScript脚本语言（交互动作）</p>
-<p>HTML标签嵌套head和body标签</p>
-<p>head定义网页的配置和引用</p>
-<p>body定义网页的正文</p>
-<p>HTML DOM树</p>
-<p>解析器：CSS选择器、xpath</p>
-<p>静态网页和动态网页</p>
-<p>HTTP无状态：服务器不知道客户端是什么状态</p>
-<p>sesstion在服务端，用来保存用户的session信息</p>
-<p>cookies在客户端，判断是否登录状态</p>
-<p>Cookies的Max Age或Expires字段决定了过期的时间</p>
-<p>服务器不会主动删除session</p>
-<p>并发：同一时刻只能有一条指令执行（快</p>
-<p>并行：同一时刻有多条指令在多个处理器上同时执行</p>
-<p>bs.a</p>
-<p>bs.a.string</p>
-<p>bs.a.attrs</p>
-<p>文档的遍历</p>
-<p>print(bs.head.contents)</p>
-<p>print(bs.head.contents[1])</p>
-<p>文档的搜索</p>
-<p>find_all、正则表达式、方法</p>
-<p>find_all(text = re.compile(“\d”)) #应用正则表达式来查找包含特定文本的内容（标签里的字符串）</p>
-<p>css选择器</p>
-<p>bs,select(‘title’) # 通过标签来查找</p>
-<p>bs.select(“.mnav”) #通过类名来查找</p>
-<p>bs.select(“#u1”) # 通过id来查找</p>
-<p>bs.select(“a[class=’bri’]”) # 通过属性来查找</p>
-<p>bs.select(“head &gt; title”)  # 通过子标签来查找</p>
-<p>bs.select(“.mnav ~ .bri”) # 通过兄弟标签来查找</p>
-<p>正则表达式：</p>
-<p><img src="C:\Users\Kirito\Desktop\正则.png" alt="正则"></p>
-<p><img src="C:\Users\Kirito\Desktop\正则_1.png" alt="正则_1"></p>
-<p>import re # 创建模式对象</p>
-<p>pat = re.compile(“AA”) # AA为正则表达式</p>
-<p>m = pat.search(“CBA”) # search字符串被检验的内容</p>
-<p>print（m）返回None</p>
-<p>简写：m = re.search(“asd”, “Aasd”) # 前是模板，后是对象</p>
-<p>re.findall(“a”, “ASDaFJIa”) # 同上，正则+对象</p>
-<p>re.sub(“a”, “A”, “abcddial”) # 找到a用A替换</p>
-<p>建议在正则表达式中，在被比较的字符串前面加r，不用担心转义字符的问题（a = r”\aabd-&quot;)</p>
-<p>2021/08/16</p>
-<p>?limit=10&amp;offset=0 #固定量偏移量</p>
-<p>动态网页（num&gt;static and ing)观察网址有无变换：</p>
-<p>JavaScript渲染</p>
-<p>异步加载</p>
-<p>scrapy</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">browser = selenium.webdriver.Chrome()</span><br><span class="line">browser.get(self, url)</span><br><span class="line">browser.close()</span><br><span class="line"></span><br><span class="line"># 寻找单节点</span><br><span class="line">node = browser.find_element_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 寻找多节点 (列表).text 输出文本</span><br><span class="line">nodes = browser.find_elements_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 爬取静态网页</span><br><span class="line">text = browser.page_source # 再通过正则表达式</span><br><span class="line"></span><br><span class="line"># 输入信息</span><br><span class="line">input = broswer.find_element_by_xpath(&quot;//input&quot;)</span><br><span class="line">input.sent_keys(&quot;xxxxxxxxx&quot;)</span><br><span class="line"></span><br><span class="line"># 点击按钮</span><br><span class="line">button = browser.find_element_by_xpath(&#x27;xxxxxx&#x27;)</span><br><span class="line">button.click() # 不推荐（实际会报错哈哈哈哈）</span><br><span class="line">browser.execute_script(&quot;arguments[0].click();&quot;,button)</span><br><span class="line"></span><br><span class="line"># selenium 实战操作流程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+          <h2 id="To-Start"><a href="#To-Start" class="headerlink" title="To Start"></a>To Start</h2><p>我的第一篇博客</p>
 
       
     </div>
@@ -268,6 +234,10 @@
     
     
     
+
+<div>
+      
+</div>
       <footer class="post-footer">
         <div class="post-eof"></div>
       </footer>
@@ -279,22 +249,25 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/19/hello-world/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/19/test-my-site/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="image" content="/images/logoo.jpg">
+      <meta itemprop="name" content="Alexation">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Alexation">
     </span>
       <header class="post-header">
+
+	
+
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2021/08/19/test-my-site/" class="post-title-link" itemprop="url">test_my_site</a>
         </h2>
 
         <div class="post-meta">
@@ -302,9 +275,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="Created: 2021-08-19 14:40:16" itemprop="dateCreated datePublished" datetime="2021-08-19T14:40:16+08:00">2021-08-19</time>
+              <time title="创建时间：2021-08-19 14:41:45 / 修改时间：16:42:40" itemprop="dateCreated datePublished" datetime="2021-08-19T14:41:45+08:00">2021-08-19</time>
             </span>
 
           
@@ -318,26 +292,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <p>利用python爬取静态网址</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/19/test-my-site/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
     
     
     
+
+<div>
+      
+</div>
       <footer class="post-footer">
         <div class="post-eof"></div>
       </footer>
@@ -390,10 +363,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -404,7 +377,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+    <img class="site-author-image" itemprop="image" alt="Alexation"
+      src="/images/logoo.jpg">
+  <p class="site-author-name" itemprop="name">Alexation</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -413,13 +388,37 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/" title="GitHub → https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.com/" title="Google → https:&#x2F;&#x2F;google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Get me！！！
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -444,10 +443,34 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
+<!-- -->
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
+-->
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站访问量:<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv">
+    本站总访客量：<span id="busuanzi_value_site_uv"></span>人
+  </span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共1k字</span>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
         
 
@@ -472,7 +495,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -483,6 +506,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
@@ -502,3 +529,6 @@
 
 </body>
 </html>
+<!-- 动态背景 -->
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,24 +14,26 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爬虫学习笔记常见的反爬虫和应对方法 - 知乎 (zhihu.com) 刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网">
+  <meta name="description" content="利用python爬取静态网址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test_my_site">
 <meta property="og:url" content="http://example.com/2021/08/19/test-my-site/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="爬虫学习笔记常见的反爬虫和应对方法 - 知乎 (zhihu.com) 刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网">
-<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alexation">
+<meta property="og:description" content="利用python爬取静态网址">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="c:/Users/Kirito/Desktop/正则.png">
 <meta property="og:image" content="c:/Users/Kirito/Desktop/正则_1.png">
 <meta property="article:published_time" content="2021-08-19T06:41:45.000Z">
-<meta property="article:modified_time" content="2021-08-19T06:50:50.757Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2021-08-19T08:42:40.433Z">
+<meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/Kirito/Desktop/正则.png">
 
@@ -44,11 +46,11 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
-  <title>test_my_site | Hexo</title>
+  <title>test_my_site | Alexation</title>
   
 
 
@@ -79,16 +81,17 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
-
+	<a target="_blank" rel="noopener" href="https://github.com/Alexation/Alexation.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 15	7.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -99,13 +102,14 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">Alexation</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -117,19 +121,51 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -152,19 +188,22 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/19/test-my-site/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="image" content="/images/logoo.jpg">
+      <meta itemprop="name" content="Alexation">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Alexation">
     </span>
       <header class="post-header">
+
+	
+
         <h1 class="post-title" itemprop="name headline">
           test_my_site
         </h1>
@@ -174,13 +213,14 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2021-08-19 14:41:45 / Modified: 14:50:50" itemprop="dateCreated datePublished" datetime="2021-08-19T14:41:45+08:00">2021-08-19</time>
+              <time title="创建时间：2021-08-19 14:41:45 / 修改时间：16:42:40" itemprop="dateCreated datePublished" datetime="2021-08-19T14:41:45+08:00">2021-08-19</time>
             </span>
 
           
+            <div class="post-description">利用python爬取静态网址</div>
 
         </div>
       </header>
@@ -191,12 +231,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="爬虫学习笔记"><a href="#爬虫学习笔记" class="headerlink" title="爬虫学习笔记"></a>爬虫学习笔记</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20520370">常见的反爬虫和应对方法 - 知乎 (zhihu.com)</a></p>
-<p>刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。<br>刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。<br>再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。<br>之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网络识别出验证码，兴奋得守在爬虫旁边看他爬完全站。<br>再后来知道了threading，知道了celery。</p>
+        <h1 id="爬虫学习笔记"><a href="#爬虫学习笔记" class="headerlink" title="爬虫学习笔记"></a>爬虫学习笔记</h1><p>刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。<br>刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。<br>再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。<br>之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网络识别出验证码，兴奋得守在爬虫旁边看他爬完全站。<br>再后来知道了threading，知道了celery。</p>
 <p>不断的学习，不断的接触和知道更多的东西</p>
 <p>2021/8/14</p>
 <p>通过requests模块，xpath解析网页，对简单网页进行图片抓取</p>
 <p> <em>————request、xpath爬取简单网页流程————</em></p>
+<p> &lt; !–more–&gt; </p>
+<p>&lt;!-more-&gt;</p>
 <p><strong>1.指定URL</strong></p>
 <p><strong>2.UA伪装</strong></p>
 <p><strong>3.发起请求（模拟浏览器）</strong></p>
@@ -275,6 +316,43 @@
     
     
 
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2021/08/19/test-my-site/">test_my_site</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2021年08月19日 - 14:08</p>
+  <p><span>最后更新:</span>2021年08月19日 - 16:08</p>
+  <p><span>原始链接:</span><a href="/2021/08/19/test-my-site/" title="test_my_site">http://example.com/2021/08/19/test-my-site/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://example.com/2021/08/19/test-my-site/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+
+      
+</div>
+
       <footer class="post-footer">
 
         
@@ -336,10 +414,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -351,7 +429,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+    <img class="site-author-image" itemprop="image" alt="Alexation"
+      src="/images/logoo.jpg">
+  <p class="site-author-name" itemprop="name">Alexation</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -360,13 +440,37 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/" title="GitHub → https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.com/" title="Google → https:&#x2F;&#x2F;google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Get me！！！
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -391,10 +495,34 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
+<!-- -->
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
+-->
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站访问量:<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv">
+    本站总访客量：<span id="busuanzi_value_site_uv"></span>人
+  </span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共1k字</span>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
         
 
@@ -419,7 +547,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -430,6 +558,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
@@ -449,3 +581,6 @@
 
 </body>
 </html>
+<!-- 动态背景 -->
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
