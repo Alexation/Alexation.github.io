@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-19T10:58:13.873Z</updated>
+  <updated>2021-08-19T12:53:04.168Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,40 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python抓图</title>
-    <link href="http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2021-08-19T06:41:45.000Z</published>
-    <updated>2021-08-19T10:58:13.873Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="爬虫学习笔记"><a href="#爬虫学习笔记" class="headerlink" title="爬虫学习笔记"></a>爬虫学习笔记</h1><p>刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。<br>刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。<br>再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。<br>之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网络识别出验证码，兴奋得守在爬虫旁边看他爬完全站。<br>再后来知道了threading，知道了celery。</p><p>不断的学习，不断的接触和知道更多的东西</p><p>2021/8/14</p><p>通过requests模块，xpath解析网页，对简单网页进行图片抓取</p><p> <em>————request、xpath爬取简单网页流程————</em></p><p> &lt; !–more–&gt; </p><p>&lt;!-more-&gt;</p><p><strong>1.指定URL</strong></p><p><strong>2.UA伪装</strong></p><p><strong>3.发起请求（模拟浏览器）</strong></p><p>requests(url=url,headers=headers)</p><p><strong>4.获取相应数据</strong></p><p>返回response对象</p><p>content-type查看text/html还是Json格式</p><p><strong>5.解析数据</strong></p><p>Beautifulsoup、正则表达式、xpath</p><p><strong>6.持久化储存</strong></p><p>通过os库创建新文件夹用来储存下载到的图片</p><p>（可能会被360报病毒）</p><p>2021/8/15</p><p>请求：请求方法、请求头、请求网址、请求体</p><p>常见有：GET、POST</p><p>GET：直接输入网址</p><p>POST：大多提交表单时，例如登录</p><p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p><p>USER-AGENT、Cookies</p><p>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</p><p>HTML超文本标记语言（标签表示元素）</p><p>CSS层叠样式表</p><p>JavaScript脚本语言（交互动作）</p><p>HTML标签嵌套head和body标签</p><p>head定义网页的配置和引用</p><p>body定义网页的正文</p><p>HTML DOM树</p><p>解析器：CSS选择器、xpath</p><p>静态网页和动态网页</p><p>HTTP无状态：服务器不知道客户端是什么状态</p><p>sesstion在服务端，用来保存用户的session信息</p><p>cookies在客户端，判断是否登录状态</p><p>Cookies的Max Age或Expires字段决定了过期的时间</p><p>服务器不会主动删除session</p><p>并发：同一时刻只能有一条指令执行（快</p><p>并行：同一时刻有多条指令在多个处理器上同时执行</p><p>bs.a</p><p>bs.a.string</p><p>bs.a.attrs</p><p>文档的遍历</p><p>print(bs.head.contents)</p><p>print(bs.head.contents[1])</p><p>文档的搜索</p><p>find_all、正则表达式、方法</p><p>find_all(text = re.compile(“\d”)) #应用正则表达式来查找包含特定文本的内容（标签里的字符串）</p><p>css选择器</p><p>bs,select(‘title’) # 通过标签来查找</p><p>bs.select(“.mnav”) #通过类名来查找</p><p>bs.select(“#u1”) # 通过id来查找</p><p>bs.select(“a[class=’bri’]”) # 通过属性来查找</p><p>bs.select(“head &gt; title”)  # 通过子标签来查找</p><p>bs.select(“.mnav ~ .bri”) # 通过兄弟标签来查找</p><p>正则表达式：</p><p><img src="C:\Users\Kirito\Desktop\正则.png" alt="正则"></p><p><img src="C:\Users\Kirito\Desktop\正则_1.png" alt="正则_1"></p><p>import re # 创建模式对象</p><p>pat = re.compile(“AA”) # AA为正则表达式</p><p>m = pat.search(“CBA”) # search字符串被检验的内容</p><p>print（m）返回None</p><p>简写：m = re.search(“asd”, “Aasd”) # 前是模板，后是对象</p><p>re.findall(“a”, “ASDaFJIa”) # 同上，正则+对象</p><p>re.sub(“a”, “A”, “abcddial”) # 找到a用A替换</p><p>建议在正则表达式中，在被比较的字符串前面加r，不用担心转义字符的问题（a = r”\aabd-&quot;)</p><p>2021/08/16</p><p>?limit=10&amp;offset=0 #固定量偏移量</p><p>动态网页（num&gt;static and ing)观察网址有无变换：</p><p>JavaScript渲染</p><p>异步加载</p><p>scrapy</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">browser = selenium.webdriver.Chrome()</span><br><span class="line">browser.get(self, url)</span><br><span class="line">browser.close()</span><br><span class="line"></span><br><span class="line"># 寻找单节点</span><br><span class="line">node = browser.find_element_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 寻找多节点 (列表).text 输出文本</span><br><span class="line">nodes = browser.find_elements_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 爬取静态网页</span><br><span class="line">text = browser.page_source # 再通过正则表达式</span><br><span class="line"></span><br><span class="line"># 输入信息</span><br><span class="line">input = broswer.find_element_by_xpath(&quot;//input&quot;)</span><br><span class="line">input.sent_keys(&quot;xxxxxxxxx&quot;)</span><br><span class="line"></span><br><span class="line"># 点击按钮</span><br><span class="line">button = browser.find_element_by_xpath(&#x27;xxxxxx&#x27;)</span><br><span class="line">button.click() # 不推荐（实际会报错哈哈哈哈）</span><br><span class="line">browser.execute_script(&quot;arguments[0].click();&quot;,button)</span><br><span class="line"></span><br><span class="line"># selenium 实战操作流程</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">利用python自动下载静态网址壁纸</summary>
-    
-    
-    
-    <category term="python抓抓抓！" scheme="http://example.com/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
-    
-    
-    <category term="python抓抓抓！" scheme="http://example.com/tags/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hello World！</title>
-    <link href="http://example.com/2021/08/19/hello-world/"/>
-    <id>http://example.com/2021/08/19/hello-world/</id>
+    <link href="http://example.com/2021/08/19/HelloWorld/"/>
+    <id>http://example.com/2021/08/19/HelloWorld/</id>
     <published>2021-08-19T06:40:16.940Z</published>
-    <updated>2021-08-19T10:57:08.369Z</updated>
+    <updated>2021-08-19T12:53:04.168Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="To-Start"><a href="#To-Start" class="headerlink" title="To Start"></a>To Start</h2><p>我的第一篇博客</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p><strong>第一篇博客、献给未来的自己：</strong></p><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p><p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p><p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p><p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p><p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p><p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p><blockquote><p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p></blockquote><p>献给未来的自己：</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;To-Start&quot;&gt;&lt;a href=&quot;#To-Start&quot; class=&quot;headerlink&quot; title=&quot;To Start&quot;&gt;&lt;/a&gt;To Start&lt;/h2&gt;&lt;p&gt;我的第一篇博客&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;h2 id=&quot;Link-Start&quot;&gt;&lt;a href=&quot;#Link-Start&quot; class=&quot;headerlink&quot; title=&quot;Link Start&quot;&gt;&lt;/a&gt;Link Start&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;第一篇博客、献给未来的自己：&lt;/strong&gt;&lt;/p&gt;
+&lt;p</summary>
       
     
     
