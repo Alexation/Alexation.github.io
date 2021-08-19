@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/08/19/hello-world/</url>
+    <content><![CDATA[<h2 id="To-Start"><a href="#To-Start" class="headerlink" title="To Start"></a>To Start</h2><p>我的第一篇博客</p>
+]]></content>
+  </entry>
+  <entry>
     <title>test_my_site</title>
     <url>/2021/08/19/test-my-site/</url>
     <content><![CDATA[<h1 id="爬虫学习笔记"><a href="#爬虫学习笔记" class="headerlink" title="爬虫学习笔记"></a>爬虫学习笔记</h1><p>刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。<br>刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。<br>再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。<br>之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网络识别出验证码，兴奋得守在爬虫旁边看他爬完全站。<br>再后来知道了threading，知道了celery。</p>
@@ -81,12 +87,6 @@
 <p>scrapy</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">browser = selenium.webdriver.Chrome()</span><br><span class="line">browser.get(self, url)</span><br><span class="line">browser.close()</span><br><span class="line"></span><br><span class="line"># 寻找单节点</span><br><span class="line">node = browser.find_element_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 寻找多节点 (列表).text 输出文本</span><br><span class="line">nodes = browser.find_elements_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 爬取静态网页</span><br><span class="line">text = browser.page_source # 再通过正则表达式</span><br><span class="line"></span><br><span class="line"># 输入信息</span><br><span class="line">input = broswer.find_element_by_xpath(&quot;//input&quot;)</span><br><span class="line">input.sent_keys(&quot;xxxxxxxxx&quot;)</span><br><span class="line"></span><br><span class="line"># 点击按钮</span><br><span class="line">button = browser.find_element_by_xpath(&#x27;xxxxxx&#x27;)</span><br><span class="line">button.click() # 不推荐（实际会报错哈哈哈哈）</span><br><span class="line">browser.execute_script(&quot;arguments[0].click();&quot;,button)</span><br><span class="line"></span><br><span class="line"># selenium 实战操作流程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/08/19/hello-world/</url>
-    <content><![CDATA[<h2 id="To-Start"><a href="#To-Start" class="headerlink" title="To Start"></a>To Start</h2><p>我的第一篇博客</p>
 ]]></content>
   </entry>
 </search>
