@@ -22,15 +22,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Alexation">
-<meta property="og:url" content="http://example.com/archives/2021/08/index.html">
+  <meta name="description" content="利用python自动下载静态网址壁纸">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python抓图">
+<meta property="og:url" content="http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Alexation">
+<meta property="og:description" content="利用python自动下载静态网址壁纸">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/Kirito/Desktop/正则.png">
+<meta property="og:image" content="c:/Users/Kirito/Desktop/正则_1.png">
+<meta property="article:published_time" content="2021-08-19T06:41:45.000Z">
+<meta property="article:modified_time" content="2021-08-19T10:58:13.873Z">
 <meta property="article:author" content="Alexation">
+<meta property="article:tag" content="python抓抓抓！">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Kirito/Desktop/正则.png">
 
-<link rel="canonical" href="http://example.com/archives/2021/08/">
+<link rel="canonical" href="http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -38,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Alexation</title>
+  <title>python抓图 | Alexation</title>
   
 
 
@@ -178,70 +186,207 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logoo.jpg">
+      <meta itemprop="name" content="Alexation">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alexation">
+    </span>
+      <header class="post-header">
+
+	
+
+        <h1 class="post-title" itemprop="name headline">
+          python抓图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-19 14:41:45 / 修改时间：18:58:13" itemprop="dateCreated datePublished" datetime="2021-08-19T14:41:45+08:00">2021-08-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/" itemprop="url" rel="index"><span itemprop="name">python抓抓抓！</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">利用python自动下载静态网址壁纸</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <h1 id="爬虫学习笔记"><a href="#爬虫学习笔记" class="headerlink" title="爬虫学习笔记"></a>爬虫学习笔记</h1><p>刚开始写爬虫用的是urllib2，后来知道了requests，惊为天人。<br>刚开始解析网页用的是re，后来知道了BeautifulSoup，解析页面不能再轻松。<br>再后来看别人的爬虫，知道了scrapy，被这个框架惊艳到了。<br>之后遇到了一些有验证码的网站，于是知道了PIL。但后来知道了opencv，pybrain。当在爬虫中用上人工神经网络识别出验证码，兴奋得守在爬虫旁边看他爬完全站。<br>再后来知道了threading，知道了celery。</p>
+<p>不断的学习，不断的接触和知道更多的东西</p>
+<p>2021/8/14</p>
+<p>通过requests模块，xpath解析网页，对简单网页进行图片抓取</p>
+<p> <em>————request、xpath爬取简单网页流程————</em></p>
+<p> &lt; !–more–&gt; </p>
+<p>&lt;!-more-&gt;</p>
+<p><strong>1.指定URL</strong></p>
+<p><strong>2.UA伪装</strong></p>
+<p><strong>3.发起请求（模拟浏览器）</strong></p>
+<p>requests(url=url,headers=headers)</p>
+<p><strong>4.获取相应数据</strong></p>
+<p>返回response对象</p>
+<p>content-type查看text/html还是Json格式</p>
+<p><strong>5.解析数据</strong></p>
+<p>Beautifulsoup、正则表达式、xpath</p>
+<p><strong>6.持久化储存</strong></p>
+<p>通过os库创建新文件夹用来储存下载到的图片</p>
+<p>（可能会被360报病毒）</p>
+<p>2021/8/15</p>
+<p>请求：请求方法、请求头、请求网址、请求体</p>
+<p>常见有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>USER-AGENT、Cookies</p>
+<p>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</p>
+<p>HTML超文本标记语言（标签表示元素）</p>
+<p>CSS层叠样式表</p>
+<p>JavaScript脚本语言（交互动作）</p>
+<p>HTML标签嵌套head和body标签</p>
+<p>head定义网页的配置和引用</p>
+<p>body定义网页的正文</p>
+<p>HTML DOM树</p>
+<p>解析器：CSS选择器、xpath</p>
+<p>静态网页和动态网页</p>
+<p>HTTP无状态：服务器不知道客户端是什么状态</p>
+<p>sesstion在服务端，用来保存用户的session信息</p>
+<p>cookies在客户端，判断是否登录状态</p>
+<p>Cookies的Max Age或Expires字段决定了过期的时间</p>
+<p>服务器不会主动删除session</p>
+<p>并发：同一时刻只能有一条指令执行（快</p>
+<p>并行：同一时刻有多条指令在多个处理器上同时执行</p>
+<p>bs.a</p>
+<p>bs.a.string</p>
+<p>bs.a.attrs</p>
+<p>文档的遍历</p>
+<p>print(bs.head.contents)</p>
+<p>print(bs.head.contents[1])</p>
+<p>文档的搜索</p>
+<p>find_all、正则表达式、方法</p>
+<p>find_all(text = re.compile(“\d”)) #应用正则表达式来查找包含特定文本的内容（标签里的字符串）</p>
+<p>css选择器</p>
+<p>bs,select(‘title’) # 通过标签来查找</p>
+<p>bs.select(“.mnav”) #通过类名来查找</p>
+<p>bs.select(“#u1”) # 通过id来查找</p>
+<p>bs.select(“a[class=’bri’]”) # 通过属性来查找</p>
+<p>bs.select(“head &gt; title”)  # 通过子标签来查找</p>
+<p>bs.select(“.mnav ~ .bri”) # 通过兄弟标签来查找</p>
+<p>正则表达式：</p>
+<p><img src="C:\Users\Kirito\Desktop\正则.png" alt="正则"></p>
+<p><img src="C:\Users\Kirito\Desktop\正则_1.png" alt="正则_1"></p>
+<p>import re # 创建模式对象</p>
+<p>pat = re.compile(“AA”) # AA为正则表达式</p>
+<p>m = pat.search(“CBA”) # search字符串被检验的内容</p>
+<p>print（m）返回None</p>
+<p>简写：m = re.search(“asd”, “Aasd”) # 前是模板，后是对象</p>
+<p>re.findall(“a”, “ASDaFJIa”) # 同上，正则+对象</p>
+<p>re.sub(“a”, “A”, “abcddial”) # 找到a用A替换</p>
+<p>建议在正则表达式中，在被比较的字符串前面加r，不用担心转义字符的问题（a = r”\aabd-&quot;)</p>
+<p>2021/08/16</p>
+<p>?limit=10&amp;offset=0 #固定量偏移量</p>
+<p>动态网页（num&gt;static and ing)观察网址有无变换：</p>
+<p>JavaScript渲染</p>
+<p>异步加载</p>
+<p>scrapy</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">browser = selenium.webdriver.Chrome()</span><br><span class="line">browser.get(self, url)</span><br><span class="line">browser.close()</span><br><span class="line"></span><br><span class="line"># 寻找单节点</span><br><span class="line">node = browser.find_element_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 寻找多节点 (列表).text 输出文本</span><br><span class="line">nodes = browser.find_elements_by_xpath(&#x27;//div[@class=&quot;&quot;]&#x27;)</span><br><span class="line"></span><br><span class="line"># 爬取静态网页</span><br><span class="line">text = browser.page_source # 再通过正则表达式</span><br><span class="line"></span><br><span class="line"># 输入信息</span><br><span class="line">input = broswer.find_element_by_xpath(&quot;//input&quot;)</span><br><span class="line">input.sent_keys(&quot;xxxxxxxxx&quot;)</span><br><span class="line"></span><br><span class="line"># 点击按钮</span><br><span class="line">button = browser.find_element_by_xpath(&#x27;xxxxxx&#x27;)</span><br><span class="line">button.click() # 不推荐（实际会报错哈哈哈哈）</span><br><span class="line">browser.execute_script(&quot;arguments[0].click();&quot;,button)</span><br><span class="line"></span><br><span class="line"># selenium 实战操作流程</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-19T14:41:45+08:00"
-              content="2021-08-19">
-          08-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">python抓图</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-19T14:40:16+08:00"
-              content="2021-08-19">
-          08-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/19/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World！</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">python抓图</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2021年08月19日 - 14:08</p>
+  <p><span>最后更新:</span>2021年08月19日 - 18:08</p>
+  <p><span>原始链接:</span><a href="/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="python抓图">http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://example.com/2021/08/19/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
 
 
+
+      
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/" rel="tag">****</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/19/hello-world/" rel="prev" title="Hello World！">
+      <i class="fa fa-chevron-left"></i> Hello World！
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -294,6 +439,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">爬虫学习笔记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
