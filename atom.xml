@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-19T12:55:28.529Z</updated>
+  <updated>2021-08-20T04:34:35.752Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用python抓取静态网页（一、HTTP、WEB基础）</title>
+    <link href="http://example.com/2021/08/20/pythonwebcatch1/"/>
+    <id>http://example.com/2021/08/20/pythonwebcatch1/</id>
+    <published>2021-08-20T02:47:08.000Z</published>
+    <updated>2021-08-20T04:34:35.752Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul><li>URI（Uniform Resource Identifier）即统一资源标识符</li><li>URL（Universal Resource Locator）即统一资源定位符</li></ul><p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p><p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p><h5 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h5><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p><h5 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h5><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p><h5 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h5><p>常见请求有：GET、POST</p><p>GET：直接输入网址</p><p>POST：大多提交表单时，例如登录</p><p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p><p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p><p>常见服务器请求状态码：</p><ul><li>200-请求成功</li><li>301-资源（网页等）被永久转移到其他URL</li><li>404-请求的资源（网页等）不存在</li><li>500-服务器内部错误</li></ul><h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h5 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h5><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p><p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p><p>JavaScript脚本语言（交互动作）</p><h5 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h5><ul><li>head 标签内定义一些页面的配置和引用</li><li>title 标签则定义网页的标题，会显示在网页</li><li>body 标签内是在网页正文中显示的内容</li><li>div 标签定义网页中的区块</li><li>h2 标签表示一个二级标题</li><li>p 标签代表一个段落</li></ul><p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>]]></content>
+    
+    
+    <summary type="html">HTTP以及WEB基础知识补充（前端）</summary>
+    
+    
+    
+    <category term="python抓抓抓！" scheme="http://example.com/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World！</title>
@@ -29,6 +48,25 @@
     <summary type="html">第一篇博客，献给未来的自己</summary>
     
     
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用python抓取静态网页（前言）</title>
+    <link href="http://example.com/2021/08/19/pythonwebcatch/"/>
+    <id>http://example.com/2021/08/19/pythonwebcatch/</id>
+    <published>2021-08-19T02:09:20.000Z</published>
+    <updated>2021-08-20T04:34:23.394Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路……</p><p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p><blockquote><p>我不怕不怕，风吹雨打</p></blockquote><p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p><p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广….接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p><p>不过，这才是计算机的魅力！</p><p>开始吧，我的爬虫之路！</p>]]></content>
+    
+    
+    <summary type="html">随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾刮起“全民学python”风。</summary>
+    
+    
+    
+    <category term="python抓抓抓！" scheme="http://example.com/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
     
     
   </entry>
