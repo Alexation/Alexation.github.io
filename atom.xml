@@ -3,11 +3,11 @@
   <title>Alexation</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://www.alexation.cn/"/>
   <updated>2021-08-20T08:40:08.325Z</updated>
-  <id>http://example.com/</id>
+  <id>https://www.alexation.cn/</id>
   
   <author>
     <name>Alexation</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>利用python抓取静态网页（一、HTTP、WEB基础）</title>
-    <link href="http://example.com/2021/08/20/pythonwebcatch1/"/>
-    <id>http://example.com/2021/08/20/pythonwebcatch1/</id>
+    <link href="https://www.alexation.cn/2021/08/20/pythonwebcatch1/"/>
+    <id>https://www.alexation.cn/2021/08/20/pythonwebcatch1/</id>
     <published>2021-08-20T02:47:08.000Z</published>
     <updated>2021-08-20T08:40:08.325Z</updated>
     
@@ -30,15 +30,15 @@
     
     
     
-    <category term="python抓抓抓！" scheme="http://example.com/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
+    <category term="python抓抓抓！" scheme="https://www.alexation.cn/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
     
     
   </entry>
   
   <entry>
     <title>Hello World！</title>
-    <link href="http://example.com/2021/08/19/HelloWorld/"/>
-    <id>http://example.com/2021/08/19/HelloWorld/</id>
+    <link href="https://www.alexation.cn/2021/08/19/HelloWorld/"/>
+    <id>https://www.alexation.cn/2021/08/19/HelloWorld/</id>
     <published>2021-08-19T06:40:16.940Z</published>
     <updated>2021-08-19T12:55:28.529Z</updated>
     
@@ -54,8 +54,8 @@
   
   <entry>
     <title>利用python抓取静态网页（前言）</title>
-    <link href="http://example.com/2021/08/19/pythonwebcatch/"/>
-    <id>http://example.com/2021/08/19/pythonwebcatch/</id>
+    <link href="https://www.alexation.cn/2021/08/19/pythonwebcatch/"/>
+    <id>https://www.alexation.cn/2021/08/19/pythonwebcatch/</id>
     <published>2021-08-19T02:09:20.000Z</published>
     <updated>2021-08-20T04:34:23.394Z</updated>
     
@@ -66,7 +66,7 @@
     
     
     
-    <category term="python抓抓抓！" scheme="http://example.com/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
+    <category term="python抓抓抓！" scheme="https://www.alexation.cn/categories/python%E6%8A%93%E6%8A%93%E6%8A%93%EF%BC%81/"/>
     
     
   </entry>
