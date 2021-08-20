@@ -1,76 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hello World！</title>
-    <url>/2021/08/19/HelloWorld/</url>
-    <content><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p>
-<p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p>
-<p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p>
-<p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p>
-<p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p>
-<p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p>
-<blockquote>
-<p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p>
-</blockquote>
-<p>献给未来的自己：</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（一、HTTP、WEB基础）</title>
-    <url>/2021/08/20/pythonwebcatch1/</url>
-    <content><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
-</ul>
-<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
-<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
-<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
-<p>JavaScript脚本语言（交互动作）</p>
-<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
-<li>head 标签内定义一些页面的配置和引用</li>
-<li>title 标签则定义网页的标题，会显示在网页</li>
-<li>body 标签内是在网页正文中显示的内容</li>
-<li>div 标签定义网页中的区块</li>
-<li>h2 标签表示一个二级标题</li>
-<li>p 标签代表一个段落</li>
-</ul>
-<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
-<p>摘自：《Python3 网络爬虫开发指南》</p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>利用python抓取静态网页（二、First Blood!）</title>
+      <link href="/2021/08/20/pythonwebcatch2/"/>
+      <url>/2021/08/20/pythonwebcatch2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="request、xpath、parsel爬取简单网页流程"><a href="#request、xpath、parsel爬取简单网页流程" class="headerlink" title="request、xpath、parsel爬取简单网页流程"></a><em>request、xpath、parsel爬取简单网页流程</em></h1><ol><li><em>指定URL</em></li><li><em>UA伪装</em></li><li><em>发起请求（模拟浏览器）</em></li><li><em>获取相应数据</em></li><li><em>解析数据</em></li><li><em>进行持久化储存</em></li></ol><h2 id="First-Blood！"><a href="#First-Blood！" class="headerlink" title="First Blood！"></a>First Blood！</h2><h3 id="指定URL"><a href="#指定URL" class="headerlink" title="指定URL"></a>指定URL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure><p>打开网址，看到有二十一张图片，点开来发现其实是二十一个相册，因此我们要在基地址抓取到相册地址，再对图片进行抓取。</p><h3 id="UA伪装"><a href="#UA伪装" class="headerlink" title="UA伪装"></a>UA伪装</h3><p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p><p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png"></p><p>看！蓝色的，即使UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure><h3 id="发起请求（模拟浏览器）"><a href="#发起请求（模拟浏览器）" class="headerlink" title="发起请求（模拟浏览器）"></a>发起请求（模拟浏览器）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure><p>这里注意，后面保存图片就要用content</p><ul><li>response.text 返回的是一个 unicode 型的文本数据</li><li>response.content 返回的是 bytes 型的二进制数据</li></ul><h3 id="获取相应数据"><a href="#获取相应数据" class="headerlink" title="获取相应数据"></a>获取相应数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure><p>这里涉及xpath语法:</p><p>//表示跨行定位</p><p>[@class=”xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p><p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p><h3 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line"># 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure><ul><li>extract()：这个方法返回一个数组，里面是str类型！。</li><li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li></ul><h3 id="进行持久化储存"><a href="#进行持久化储存" class="headerlink" title="进行持久化储存"></a>进行持久化储存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   # 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure><p>Nice！！！拿到一血</p><p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒….emm)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure><p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p><h2 id="对程序进行完善"><a href="#对程序进行完善" class="headerlink" title="对程序进行完善"></a>对程序进行完善</h2><p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p><ul><li>我们只抓取到第一页的二十一个相册的第一张图片，我们还想做到多页抓取。</li><li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li><li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li><li>还有许多需要补充的地方，只要能想到，就要不断地完善……</li></ul>]]></content>
+      
+      
       <categories>
-        <category>python抓抓抓！</category>
+          
+          <category> python抓抓抓！ </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（前言）</title>
-    <url>/2021/08/19/pythonwebcatch/</url>
-    <content><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路……</p>
-<p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p>
-<blockquote>
-<p>我不怕不怕，风吹雨打</p>
-</blockquote>
-<p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p>
-<p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广….接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p>
-<p>不过，这才是计算机的魅力！</p>
-<p>开始吧，我的爬虫之路！</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用python抓取静态网页（一、HTTP、WEB基础）</title>
+      <link href="/2021/08/20/pythonwebcatch1/"/>
+      <url>/2021/08/20/pythonwebcatch1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul><li>URI（Uniform Resource Identifier）即统一资源标识符</li><li>URL（Universal Resource Locator）即统一资源定位符</li></ul><p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p><p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p><h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p><h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p><h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p><p>GET：直接输入网址</p><p>POST：大多提交表单时，例如登录</p><p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p><p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p><p>常见服务器请求状态码：</p><ul><li>200-请求成功</li><li>301-资源（网页等）被永久转移到其他URL</li><li>404-请求的资源（网页等）不存在</li><li>500-服务器内部错误</li></ul><h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p><p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p><p>JavaScript脚本语言（交互动作）</p><h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul><li>head 标签内定义一些页面的配置和引用</li><li>title 标签则定义网页的标题，会显示在网页</li><li>body 标签内是在网页正文中显示的内容</li><li>div 标签定义网页中的区块</li><li>h2 标签表示一个二级标题</li><li>p 标签代表一个段落</li></ul><p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p><p>摘自：《Python3 网络爬虫开发指南》</p>]]></content>
+      
+      
       <categories>
-        <category>python抓抓抓！</category>
+          
+          <category> python抓抓抓！ </category>
+          
       </categories>
-  </entry>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World！</title>
+      <link href="/2021/08/19/HelloWorld/"/>
+      <url>/2021/08/19/HelloWorld/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p><p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p><p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p><p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p><p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p><p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p><blockquote><p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p></blockquote><p>献给未来的自己：</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用python抓取静态网页（前言）</title>
+      <link href="/2021/08/19/pythonwebcatch/"/>
+      <url>/2021/08/19/pythonwebcatch/</url>
+      
+        <content type="html"><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路……</p><p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p><blockquote><p>我不怕不怕，风吹雨打</p></blockquote><p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p><p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广….接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p><p>不过，这才是计算机的魅力！</p><p>开始吧，我的爬虫之路！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python抓抓抓！ </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
