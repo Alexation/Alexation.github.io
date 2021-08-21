@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png">
 <meta property="article:published_time" content="2021-08-20T12:44:42.000Z">
-<meta property="article:modified_time" content="2021-08-20T14:44:34.031Z">
+<meta property="article:modified_time" content="2021-08-21T04:27:58.482Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png">
@@ -216,10 +216,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-20 20:44:42 / 修改时间：22:44:34" itemprop="dateCreated datePublished" datetime="2021-08-20T20:44:42+08:00">2021-08-20</time>
+              <time title="创建时间：2021-08-20 20:44:42" itemprop="dateCreated datePublished" datetime="2021-08-20T20:44:42+08:00">2021-08-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-21 12:27:58" itemprop="dateModified" datetime="2021-08-21T12:27:58+08:00">2021-08-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -242,7 +248,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="request、xpath、parsel爬取简单网页流程"><a href="#request、xpath、parsel爬取简单网页流程" class="headerlink" title="request、xpath、parsel爬取简单网页流程"></a><em>request、xpath、parsel爬取简单网页流程</em></h1><ol>
+        <h1 id="request、xpath、parsel爬取静态网页流程"><a href="#request、xpath、parsel爬取静态网页流程" class="headerlink" title="request、xpath、parsel爬取静态网页流程"></a><em>request、xpath、parsel爬取静态网页流程</em></h1><ol>
 <li><em>指定URL</em></li>
 <li><em>UA伪装</em></li>
 <li><em>发起请求（模拟浏览器）</em></li>
@@ -252,10 +258,10 @@
 </ol>
 <h2 id="First-Blood！"><a href="#First-Blood！" class="headerlink" title="First Blood！"></a>First Blood！</h2><h3 id="指定URL"><a href="#指定URL" class="headerlink" title="指定URL"></a>指定URL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
 
-<p>打开网址，看到有二十一张图片，点开来发现其实是二十一个相册，因此我们要在基地址抓取到相册地址，再对图片进行抓取。</p>
+<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
 <h3 id="UA伪装"><a href="#UA伪装" class="headerlink" title="UA伪装"></a>UA伪装</h3><p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
 <p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png"></p>
-<p>看！蓝色的，即使UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
+<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="发起请求（模拟浏览器）"><a href="#发起请求（模拟浏览器）" class="headerlink" title="发起请求（模拟浏览器）"></a>发起请求（模拟浏览器）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
@@ -286,7 +292,7 @@
 <p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
 <h2 id="对程序进行完善"><a href="#对程序进行完善" class="headerlink" title="对程序进行完善"></a>对程序进行完善</h2><p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
 <ul>
-<li>我们只抓取到第一页的二十一个相册的第一张图片，我们还想做到多页抓取。</li>
+<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
 <li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
 <li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
 <li>还有许多需要补充的地方，只要能想到，就要不断地完善……</li>
@@ -310,7 +316,7 @@
   <p><span>本文标题:</span><a href="/2021/08/20/pythonwebcatch2/">利用python抓取静态网页（二、First Blood!）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
   <p><span>发布时间:</span>2021年08月20日 - 20:08</p>
-  <p><span>最后更新:</span>2021年08月20日 - 22:08</p>
+  <p><span>最后更新:</span>2021年08月21日 - 12:08</p>
   <p><span>原始链接:</span><a href="/2021/08/20/pythonwebcatch2/" title="利用python抓取静态网页（二、First Blood!）">https://www.alexation.cn/2021/08/20/pythonwebcatch2/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/2021/08/20/pythonwebcatch2/"  aria-label="复制成功！"></i></span>
   </p>
@@ -346,7 +352,10 @@
     <a href="/2021/08/20/pythonwebcatch1/" rel="prev" title="利用python抓取静态网页（一、HTTP、WEB基础）">
       <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（一、HTTP、WEB基础）
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/21/pythonwebcatch3/" rel="next" title="利用python抓取静态网页（三、循环扩大范围、异常处理）">
+      利用python抓取静态网页（三、循环扩大范围、异常处理） <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -405,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#request%E3%80%81xpath%E3%80%81parsel%E7%88%AC%E5%8F%96%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">request、xpath、parsel爬取简单网页流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Blood%EF%BC%81"><span class="nav-number">1.1.</span> <span class="nav-text">First Blood！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9AURL"><span class="nav-number">1.1.1.</span> <span class="nav-text">指定URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UA%E4%BC%AA%E8%A3%85"><span class="nav-number">1.1.2.</span> <span class="nav-text">UA伪装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%EF%BC%88%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">发起请求（模拟浏览器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%9B%B8%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.4.</span> <span class="nav-text">获取相应数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.5.</span> <span class="nav-text">解析数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%8C%81%E4%B9%85%E5%8C%96%E5%82%A8%E5%AD%98"><span class="nav-number">1.1.6.</span> <span class="nav-text">进行持久化储存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E5%AE%8C%E5%96%84"><span class="nav-number">1.2.</span> <span class="nav-text">对程序进行完善</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#request%E3%80%81xpath%E3%80%81parsel%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">request、xpath、parsel爬取静态网页流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Blood%EF%BC%81"><span class="nav-number">1.1.</span> <span class="nav-text">First Blood！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9AURL"><span class="nav-number">1.1.1.</span> <span class="nav-text">指定URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UA%E4%BC%AA%E8%A3%85"><span class="nav-number">1.1.2.</span> <span class="nav-text">UA伪装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%EF%BC%88%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">发起请求（模拟浏览器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%9B%B8%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.4.</span> <span class="nav-text">获取相应数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.5.</span> <span class="nav-text">解析数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%8C%81%E4%B9%85%E5%8C%96%E5%82%A8%E5%AD%98"><span class="nav-number">1.1.6.</span> <span class="nav-text">进行持久化储存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E5%AE%8C%E5%96%84"><span class="nav-number">1.2.</span> <span class="nav-text">对程序进行完善</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -421,7 +430,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -505,7 +514,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.4k字</span>
+  <span class="post-count">博客全站共5.9k字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -604,6 +613,31 @@ window.addEventListener('pjax:success', () => {
 
 
   
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
 
 
 
