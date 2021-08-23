@@ -1,19 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World！</title>
-    <url>/HelloWorld/</url>
-    <content><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p>
-<p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p>
-<p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p>
-<p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p>
-<p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p>
-<p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p>
-<blockquote>
-<p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p>
-</blockquote>
-<p>献给未来的自己：</p>
+    <title>Python附加知识点</title>
+    <url>/basicend/</url>
+    <content><![CDATA[<h4 id="Linux初级："><a href="#Linux初级：" class="headerlink" title="Linux初级："></a>Linux初级：</h4><p>说实话，以前我只是安装过Linux的虚拟机，只知道学服务器肯定脱离不了它，也仅仅是看别人使用过罢了，并没有去深入研究，但就目前的情况，打算进行初步了解、至于以后嘛….（谁知道呢✧(≖ ◡ ≖✿)</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pwd</td>
+<td>显示当前目录</td>
+<td>ls</td>
+<td>查看目录下的内容</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>改变所在目录</td>
+<td>cat</td>
+<td>显示文件的内容</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>在文件中查找某字符</td>
+<td>cp</td>
+<td>复制文件</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>创建文件</td>
+<td>mv</td>
+<td>移动文件</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>删除文件</td>
+<td>rmdir</td>
+<td>删除目录</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>编辑文件</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="并发与并行的区别："><a href="#并发与并行的区别：" class="headerlink" title="并发与并行的区别："></a>并发与并行的区别：</h4><ul>
+<li><strong>并发</strong>当有多个线程在操作时,如果系统只有一个CPU,则它根本不可能真正同时进行一个以上的线程，它只能把CPU运行时间划分成若干个时间段,再将时间 段分配给各个线程执行，在一个时间段的线程代码运行时，其它线程处于挂起状。.这种方式我们称之为并发(Concurrent)。</li>
+<li><strong>并行：</strong>当系统有一个以上CPU时,则线程的操作有可能非并发。当一个CPU执行一个线程时，另一个CPU可以执行另一个线程，两个线程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行(Parallel)。</li>
+</ul>
+<h4 id="正则表达式："><a href="#正则表达式：" class="headerlink" title="正则表达式："></a>正则表达式：</h4><p><strong>正则表达式</strong>是对字符串（包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为“元字符”））操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。正则表达式是一种文本模式，该模式描述在搜索文本时要匹配的一个或多个字符串。</p>
+<p>我自己的理解是，通过对一系列相同格式的字符串或数据格式进行限制对比提取，达到选择的目的，对于python爬虫，字符串匹配，数据筛选等都有重要作用。就像我们在注册账户时，明明还没有输入完整，他马上会提示格式有误，这便是正则表达式的功劳。</p>
+<p>正则表达式在不同的语言中会有相应的区别，下图是关于python的语法表（摘自网络）：</p>
+<p><img src="https://i.loli.net/2021/08/23/fh2NILZKJctQiOo.png"></p>
 ]]></content>
+      <categories>
+        <category>python进阶语法</category>
+      </categories>
   </entry>
   <entry>
     <title>利用python抓取静态网页（前言）</title>
@@ -29,7 +77,103 @@
 <p>开始吧，我的爬虫之路！</p>
 ]]></content>
       <categories>
-        <category>python抓抓抓！</category>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（一、HTTP、WEB基础）</title>
+    <url>/pythonwebcatch1/</url>
+    <content><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
+<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
+<li>URL（Universal Resource Locator）即统一资源定位符</li>
+</ul>
+<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
+<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
+<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
+<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
+<p>常见服务器请求状态码：</p>
+<ul>
+<li>200-请求成功</li>
+<li>301-资源（网页等）被永久转移到其他URL</li>
+<li>404-请求的资源（网页等）不存在</li>
+<li>500-服务器内部错误</li>
+</ul>
+<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
+<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
+<p>JavaScript脚本语言（交互动作）</p>
+<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
+<li>head 标签内定义一些页面的配置和引用</li>
+<li>title 标签则定义网页的标题，会显示在网页</li>
+<li>body 标签内是在网页正文中显示的内容</li>
+<li>div 标签定义网页中的区块</li>
+<li>h2 标签表示一个二级标题</li>
+<li>p 标签代表一个段落</li>
+</ul>
+<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
+<p>摘自：《Python3 网络爬虫开发指南》</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World！</title>
+    <url>/HelloWorld/</url>
+    <content><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p>
+<p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p>
+<p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p>
+<p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p>
+<p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p>
+<p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p>
+<blockquote>
+<p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p>
+</blockquote>
+<p>献给未来的自己：</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（五、继续完善并打包程序）</title>
+    <url>/pythonwebcatch5/</url>
+    <content><![CDATA[<h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
+<p>引入库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
+
+<p>for循环下载img最后一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
+
+<p>当然，子进程try：第一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
+
+<p>保证在每次下载间隔1~2s</p>
+<h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p>
+<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
+
+<h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
+
+<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
+<h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
+
+<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
+<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
+
+<p>安装完毕后，在根目录命令行输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
+
+<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p>
+<h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
+<p>这时运行可执行文件即可看到我们的程序。</p>
+<h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -86,136 +230,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>python抓抓抓！</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（四、第一次接触Pyside2）</title>
-    <url>/pythonwebcatch4/</url>
-    <content><![CDATA[<h1 id="独乐乐不如众乐乐！"><a href="#独乐乐不如众乐乐！" class="headerlink" title="独乐乐不如众乐乐！"></a>独乐乐不如众乐乐！</h1><h2 id="Pyside2"><a href="#Pyside2" class="headerlink" title="Pyside2"></a>Pyside2</h2><h3 id="Python图形界面开发"><a href="#Python图形界面开发" class="headerlink" title="Python图形界面开发"></a>Python图形界面开发</h3><p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
-<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
-<p>目前python语言GUI有以下选择</p>
-<ul>
-<li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
-<li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
-<li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
-
-<h3 id="利用QtDesigner进行布局规划"><a href="#利用QtDesigner进行布局规划" class="headerlink" title="利用QtDesigner进行布局规划"></a>利用QtDesigner进行布局规划</h3><p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
-<p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png"></p>
-<p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
-<p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
-<h3 id="对源程序进行重构"><a href="#对源程序进行重构" class="headerlink" title="对源程序进行重构"></a>对源程序进行重构</h3><p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
-<h4 id="pyside2自定义类例程"><a href="#pyside2自定义类例程" class="headerlink" title="pyside2自定义类例程"></a>pyside2自定义类例程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
-
-<h4 id="重构爬虫函数进行类封装"><a href="#重构爬虫函数进行类封装" class="headerlink" title="重构爬虫函数进行类封装"></a>重构爬虫函数进行类封装</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line">	# sort即使选择类型</span><br><span class="line">    sort = 0</span><br><span class="line">    signal_1 = 2</span><br><span class="line">    signal_2 = 0</span><br><span class="line">    sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
-
-<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
-<p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
-
-<p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
-<p>因此我们创建Catch_Signal类，继承自QObject类：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
-
-<p>在Wallpaper类中定义实例属性：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
-
-<p>再在Wallpaper类中定义GUI绘制函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
-
-<p>将爬虫程序放入子线程：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
-
-<p>补充import：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
-
-<p>这样一来，主程序就不会卡顿了</p>
-]]></content>
-      <categories>
-        <category>python抓抓抓！</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（五、继续完善并打包程序）</title>
-    <url>/pythonwebcatch5/</url>
-    <content><![CDATA[<h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
-<p>引入库：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
-
-<p>for循环下载img最后一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
-
-<p>当然，子进程try：第一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
-
-<p>保证在每次下载间隔1~2s</p>
-<h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p>
-<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
-
-<h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
-
-<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
-<h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
-
-<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
-<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
-
-<p>安装完毕后，在根目录命令行输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
-
-<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p>
-<h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
-<p>这时运行可执行文件即可看到我们的程序。</p>
-<h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
-]]></content>
-      <categories>
-        <category>python抓抓抓！</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（一、HTTP、WEB基础）</title>
-    <url>/pythonwebcatch1/</url>
-    <content><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
-</ul>
-<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
-<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
-<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
-<p>JavaScript脚本语言（交互动作）</p>
-<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
-<li>head 标签内定义一些页面的配置和引用</li>
-<li>title 标签则定义网页的标题，会显示在网页</li>
-<li>body 标签内是在网页正文中显示的内容</li>
-<li>div 标签定义网页中的区块</li>
-<li>h2 标签表示一个二级标题</li>
-<li>p 标签代表一个段落</li>
-</ul>
-<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
-<p>摘自：《Python3 网络爬虫开发指南》</p>
-]]></content>
-      <categories>
-        <category>python抓抓抓！</category>
+        <category>python网络爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -285,11 +300,11 @@
 </tbody></table>
 ]]></content>
       <categories>
-        <category>python抓抓抓！</category>
+        <category>python网络爬虫</category>
       </categories>
   </entry>
   <entry>
-    <title>Scrapy框架（一、初探）</title>
+    <title>Scrapy框架（初探）</title>
     <url>/scrapy/</url>
     <content><![CDATA[<h1 id="Scrapy简介："><a href="#Scrapy简介：" class="headerlink" title="Scrapy简介："></a>Scrapy简介：</h1><p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
 <p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
@@ -330,7 +345,55 @@ logging.basicConfig(...)
 </ul>
 ]]></content>
       <categories>
-        <category>python抓抓抓！</category>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（四、第一次接触Pyside2）</title>
+    <url>/pythonwebcatch4/</url>
+    <content><![CDATA[<h1 id="独乐乐不如众乐乐！"><a href="#独乐乐不如众乐乐！" class="headerlink" title="独乐乐不如众乐乐！"></a>独乐乐不如众乐乐！</h1><h2 id="Pyside2"><a href="#Pyside2" class="headerlink" title="Pyside2"></a>Pyside2</h2><h3 id="Python图形界面开发"><a href="#Python图形界面开发" class="headerlink" title="Python图形界面开发"></a>Python图形界面开发</h3><p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
+<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
+<p>目前python语言GUI有以下选择</p>
+<ul>
+<li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
+<li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
+<li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用QtDesigner进行布局规划"><a href="#利用QtDesigner进行布局规划" class="headerlink" title="利用QtDesigner进行布局规划"></a>利用QtDesigner进行布局规划</h3><p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
+<p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png"></p>
+<p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
+<p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
+<h3 id="对源程序进行重构"><a href="#对源程序进行重构" class="headerlink" title="对源程序进行重构"></a>对源程序进行重构</h3><p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
+<h4 id="pyside2自定义类例程"><a href="#pyside2自定义类例程" class="headerlink" title="pyside2自定义类例程"></a>pyside2自定义类例程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
+
+<h4 id="重构爬虫函数进行类封装"><a href="#重构爬虫函数进行类封装" class="headerlink" title="重构爬虫函数进行类封装"></a>重构爬虫函数进行类封装</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    	# sort即是选择类型</span><br><span class="line">    	self.sort = 0</span><br><span class="line">    	self.signal_1 = 2</span><br><span class="line">    	self.signal_2 = 0</span><br><span class="line">    	self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
+<p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
+
+<p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
+<p>因此我们创建Catch_Signal类，继承自QObject类：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
+
+<p>在Wallpaper类中定义实例属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
+
+<p>再在Wallpaper类中定义GUI绘制函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
+
+<p>将爬虫程序放入子线程：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
+
+<p>补充import：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
+
+<p>这样一来，主程序就不会卡顿了</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
       </categories>
   </entry>
 </search>
