@@ -22,19 +22,17 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="利用Pyside2提升颜值！">
+  <meta name="description" content="利用cxfreeze打包，发给小伙伴！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用python抓取静态网页（四、第一次接触Pyside2）">
+<meta property="og:title" content="利用python抓取静态网页（四、继续完善并打包程序）">
 <meta property="og:url" content="https://www.alexation.cn/pythonwebcatch4/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="利用Pyside2提升颜值！">
+<meta property="og:description" content="利用cxfreeze打包，发给小伙伴！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png">
-<meta property="article:published_time" content="2021-08-21T01:52:36.000Z">
-<meta property="article:modified_time" content="2021-08-23T04:47:12.611Z">
+<meta property="article:published_time" content="2021-08-21T04:00:50.000Z">
+<meta property="article:modified_time" content="2021-08-25T06:51:56.579Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png">
 
 <link rel="canonical" href="https://www.alexation.cn/pythonwebcatch4/">
 
@@ -49,7 +47,7 @@
   };
 </script>
 
-  <title>利用python抓取静态网页（四、第一次接触Pyside2） | Alexation</title>
+  <title>利用python抓取静态网页（四、继续完善并打包程序） | Alexation</title>
   
 
 
@@ -207,7 +205,7 @@
 	
 
         <h1 class="post-title" itemprop="name headline">
-          利用python抓取静态网页（四、第一次接触Pyside2）
+          利用python抓取静态网页（四、继续完善并打包程序）
         </h1>
 
         <div class="post-meta">
@@ -217,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-21 09:52:36" itemprop="dateCreated datePublished" datetime="2021-08-21T09:52:36+08:00">2021-08-21</time>
+              <time title="创建时间：2021-08-21 12:00:50" itemprop="dateCreated datePublished" datetime="2021-08-21T12:00:50+08:00">2021-08-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-23 12:47:12" itemprop="dateModified" datetime="2021-08-23T12:47:12+08:00">2021-08-23</time>
+                <time title="修改时间：2021-08-25 14:51:56" itemprop="dateModified" datetime="2021-08-25T14:51:56+08:00">2021-08-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,7 +235,7 @@
             </span>
 
           
-            <div class="post-description">利用Pyside2提升颜值！</div>
+            <div class="post-description">利用cxfreeze打包，发给小伙伴！</div>
 
         </div>
       </header>
@@ -248,46 +246,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="独乐乐不如众乐乐！"><a href="#独乐乐不如众乐乐！" class="headerlink" title="独乐乐不如众乐乐！"></a>独乐乐不如众乐乐！</h1><h2 id="Pyside2"><a href="#Pyside2" class="headerlink" title="Pyside2"></a>Pyside2</h2><h3 id="Python图形界面开发"><a href="#Python图形界面开发" class="headerlink" title="Python图形界面开发"></a>Python图形界面开发</h3><p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
-<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
-<p>目前python语言GUI有以下选择</p>
-<ul>
-<li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
-<li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
-<li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
+        <h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
+<p>引入库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
 
-<h3 id="利用QtDesigner进行布局规划"><a href="#利用QtDesigner进行布局规划" class="headerlink" title="利用QtDesigner进行布局规划"></a>利用QtDesigner进行布局规划</h3><p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
-<p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png"></p>
-<p>具体使用方法这里参考官方文档：<a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
-<p>中文版简化教程：<a target="_blank" rel="noopener" href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
-<h3 id="对源程序进行重构"><a href="#对源程序进行重构" class="headerlink" title="对源程序进行重构"></a>对源程序进行重构</h3><p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
-<h4 id="pyside2自定义类例程"><a href="#pyside2自定义类例程" class="headerlink" title="pyside2自定义类例程"></a>pyside2自定义类例程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
+<p>for循环下载img最后一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
 
-<h4 id="重构爬虫函数进行类封装"><a href="#重构爬虫函数进行类封装" class="headerlink" title="重构爬虫函数进行类封装"></a>重构爬虫函数进行类封装</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    	# sort即是选择类型</span><br><span class="line">    	self.sort = 0</span><br><span class="line">    	self.signal_1 = 2</span><br><span class="line">    	self.signal_2 = 0</span><br><span class="line">    	self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p>当然，子进程try：第一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
 
-<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
-<p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
+<p>保证在每次下载间隔1~2s</p>
+<h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p>
+<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
 
-<p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
-<p>因此我们创建Catch_Signal类，继承自QObject类：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
+<h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
 
-<p>在Wallpaper类中定义实例属性：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
+<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
+<h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
 
-<p>再在Wallpaper类中定义GUI绘制函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
+<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
+<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
 
-<p>将爬虫程序放入子线程：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
+<p>安装完毕后，在根目录命令行输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
 
-<p>补充import：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
-
-<p>这样一来，主程序就不会卡顿了</p>
+<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p>
+<h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
+<p>这时运行可执行文件即可看到我们的程序。</p>
+<h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
 
     </div>
 
@@ -304,11 +294,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/pythonwebcatch4/">利用python抓取静态网页（四、第一次接触Pyside2）</a></p>
+  <p><span>本文标题:</span><a href="/pythonwebcatch4/">利用python抓取静态网页（四、继续完善并打包程序）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-  <p><span>发布时间:</span>2021年08月21日 - 09:08</p>
-  <p><span>最后更新:</span>2021年08月23日 - 12:08</p>
-  <p><span>原始链接:</span><a href="/pythonwebcatch4/" title="利用python抓取静态网页（四、第一次接触Pyside2）">https://www.alexation.cn/pythonwebcatch4/</a>
+  <p><span>发布时间:</span>2021年08月21日 - 12:08</p>
+  <p><span>最后更新:</span>2021年08月25日 - 14:08</p>
+  <p><span>原始链接:</span><a href="/pythonwebcatch4/" title="利用python抓取静态网页（四、继续完善并打包程序）">https://www.alexation.cn/pythonwebcatch4/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/pythonwebcatch4/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
@@ -340,12 +330,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pythonwebcatch3/" rel="prev" title="利用python抓取静态网页（三、循环扩大范围、异常处理）">
-      <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（三、循环扩大范围、异常处理）
+    <a href="/pythonwebcatch3/" rel="prev" title="利用python抓取静态网页（三、第一次接触Pyside2）">
+      <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（三、第一次接触Pyside2）
     </a></div>
       <div class="post-nav-item">
-    <a href="/pythonwebcatch5/" rel="next" title="利用python抓取静态网页（五、继续完善并打包程序）">
-      利用python抓取静态网页（五、继续完善并打包程序） <i class="fa fa-chevron-right"></i>
+    <a href="/pythonwebcatch-scrapy/" rel="next" title="Scrapy框架（初探）">
+      Scrapy框架（初探） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -405,7 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8B%AC%E4%B9%90%E4%B9%90%E4%B8%8D%E5%A6%82%E4%BC%97%E4%B9%90%E4%B9%90%EF%BC%81"><span class="nav-number">1.</span> <span class="nav-text">独乐乐不如众乐乐！</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pyside2"><span class="nav-number">1.1.</span> <span class="nav-text">Pyside2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91"><span class="nav-number">1.1.1.</span> <span class="nav-text">Python图形界面开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8QtDesigner%E8%BF%9B%E8%A1%8C%E5%B8%83%E5%B1%80%E8%A7%84%E5%88%92"><span class="nav-number">1.1.2.</span> <span class="nav-text">利用QtDesigner进行布局规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%BA%90%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E9%87%8D%E6%9E%84"><span class="nav-number">1.1.3.</span> <span class="nav-text">对源程序进行重构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pyside2%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E4%BE%8B%E7%A8%8B"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">pyside2自定义类例程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%E7%88%AC%E8%99%AB%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E7%B1%BB%E5%B0%81%E8%A3%85"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">重构爬虫函数进行类封装</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%BA%90%E7%A8%8B%E5%BA%8F%E7%BB%A7%E7%BB%AD%E5%AE%8C%E5%96%84"><span class="nav-number">1.</span> <span class="nav-text">对源程序继续完善</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sleep%E5%BB%B6%E8%BF%9F"><span class="nav-number">1.1.</span> <span class="nav-text">Sleep延迟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sys-exit-app-exec"><span class="nav-number">1.2.</span> <span class="nav-text">sys.exit(app.exec_())</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9logo"><span class="nav-number">1.3.</span> <span class="nav-text">更改logo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cxfreeze%E6%89%93%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">cxfreeze打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cxfreeze%E4%B8%8Epyinstaller"><span class="nav-number">2.1.</span> <span class="nav-text">cxfreeze与pyinstaller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%84%E5%B1%9E%E6%96%87%E4%BB%B6%E6%8F%92%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">附属文件插入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">开发总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -421,7 +411,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -505,7 +495,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.9k字</span>
+  <span class="post-count">博客全站共9.1k字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

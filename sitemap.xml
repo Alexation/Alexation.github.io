@@ -2,14 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.alexation.cn/japaneselearning1/</loc>
+    <loc>https://www.alexation.cn/web/</loc>
     
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/basicend/</loc>
+    <loc>https://www.alexation.cn/web1/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/pythonwebcatch4/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/pythonwebcatch3/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/pythonwebcatch2/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/pythonwebcatch1/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/japaneselearning2/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/japaneselearning1/</loc>
     
     <lastmod>2021-08-24</lastmod>
     
@@ -23,42 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/scrapy/</loc>
-    
-    <lastmod>2021-08-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/pythonwebcatch5/</loc>
-    
-    <lastmod>2021-08-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/pythonwebcatch4/</loc>
-    
-    <lastmod>2021-08-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/pythonwebcatch3/</loc>
-    
-    <lastmod>2021-08-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/pythonwebcatch2/</loc>
-    
-    <lastmod>2021-08-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/pythonwebcatch1/</loc>
+    <loc>https://www.alexation.cn/pythonwebcatch-scrapy/</loc>
     
     <lastmod>2021-08-23</lastmod>
     
@@ -88,7 +95,7 @@
 
   <url>
     <loc>https://www.alexation.cn/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -97,22 +104,22 @@
 
   
   <url>
-    <loc>https://www.alexation.cn/categories/Web%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2021-08-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.alexation.cn/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.alexation.cn/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/categories/Web%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

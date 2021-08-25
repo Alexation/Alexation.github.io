@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="利用cxfreeze打包，发给小伙伴！">
+  <meta name="description" content="HTTP以及WEB基础知识补充（前端）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用python抓取静态网页（五、继续完善并打包程序）">
-<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch5/index.html">
+<meta property="og:title" content="（一、HTTP、WEB基础）">
+<meta property="og:url" content="https://www.alexation.cn/web1/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="利用cxfreeze打包，发给小伙伴！">
+<meta property="og:description" content="HTTP以及WEB基础知识补充（前端）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-21T04:00:50.000Z">
-<meta property="article:modified_time" content="2021-08-23T04:47:19.325Z">
+<meta property="article:published_time" content="2021-08-22T02:47:08.000Z">
+<meta property="article:modified_time" content="2021-08-25T07:04:44.442Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch5/">
+<link rel="canonical" href="https://www.alexation.cn/web1/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>利用python抓取静态网页（五、继续完善并打包程序） | Alexation</title>
+  <title>（一、HTTP、WEB基础） | Alexation</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch5/">
+    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/web1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -205,7 +205,7 @@
 	
 
         <h1 class="post-title" itemprop="name headline">
-          利用python抓取静态网页（五、继续完善并打包程序）
+          （一、HTTP、WEB基础）
         </h1>
 
         <div class="post-meta">
@@ -215,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-21 12:00:50" itemprop="dateCreated datePublished" datetime="2021-08-21T12:00:50+08:00">2021-08-21</time>
+              <time title="创建时间：2021-08-22 10:47:08" itemprop="dateCreated datePublished" datetime="2021-08-22T10:47:08+08:00">2021-08-22</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-23 12:47:19" itemprop="dateModified" datetime="2021-08-23T12:47:19+08:00">2021-08-23</time>
+                <time title="修改时间：2021-08-25 15:04:44" itemprop="dateModified" datetime="2021-08-25T15:04:44+08:00">2021-08-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,12 +230,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">python网络爬虫</span></a>
+                  <a href="/categories/Web%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">Web入门</span></a>
                 </span>
             </span>
 
           
-            <div class="post-description">利用cxfreeze打包，发给小伙伴！</div>
+            <div class="post-description">HTTP以及WEB基础知识补充（前端）</div>
 
         </div>
       </header>
@@ -246,38 +246,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
-<p>引入库：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
-
-<p>for循环下载img最后一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
-
-<p>当然，子进程try：第一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
-
-<p>保证在每次下载间隔1~2s</p>
-<h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p>
-<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
-
-<h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
-
-<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
-<h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
-
-<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
-<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
-
-<p>安装完毕后，在根目录命令行输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
-
-<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p>
-<h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
-<p>这时运行可执行文件即可看到我们的程序。</p>
-<h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
+        <h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
+<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
+<li>URL（Universal Resource Locator）即统一资源定位符</li>
+</ul>
+<p>例如：<a target="_blank" rel="noopener" href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
+<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
+<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
+<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
+<p>常见服务器请求状态码：</p>
+<ul>
+<li>200-请求成功</li>
+<li>301-资源（网页等）被永久转移到其他URL</li>
+<li>404-请求的资源（网页等）不存在</li>
+<li>500-服务器内部错误</li>
+</ul>
+<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
+<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
+<p>JavaScript脚本语言（交互动作）</p>
+<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
+<li>head 标签内定义一些页面的配置和引用</li>
+<li>title 标签则定义网页的标题，会显示在网页</li>
+<li>body 标签内是在网页正文中显示的内容</li>
+<li>div 标签定义网页中的区块</li>
+<li>h2 标签表示一个二级标题</li>
+<li>p 标签代表一个段落</li>
+</ul>
+<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
+<p>摘自：《Python3 网络爬虫开发指南》</p>
 
     </div>
 
@@ -288,35 +289,6 @@
 <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/pythonwebcatch5/">利用python抓取静态网页（五、继续完善并打包程序）</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-  <p><span>发布时间:</span>2021年08月21日 - 12:08</p>
-  <p><span>最后更新:</span>2021年08月23日 - 12:08</p>
-  <p><span>原始链接:</span><a href="/pythonwebcatch5/" title="利用python抓取静态网页（五、继续完善并打包程序）">https://www.alexation.cn/pythonwebcatch5/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/pythonwebcatch5/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-    $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({   
-          title: "",   
-          text: '复制成功',
-          icon: "success", 
-          showConfirmButton: true
-          });
-    });
-    });  
-</script>
-
 
 
       
@@ -330,12 +302,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pythonwebcatch4/" rel="prev" title="利用python抓取静态网页（四、第一次接触Pyside2）">
-      <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（四、第一次接触Pyside2）
+    <a href="/pythonwebcatch-scrapy/" rel="prev" title="Scrapy框架（初探）">
+      <i class="fa fa-chevron-left"></i> Scrapy框架（初探）
     </a></div>
       <div class="post-nav-item">
-    <a href="/scrapy/" rel="next" title="Scrapy框架（初探）">
-      Scrapy框架（初探） <i class="fa fa-chevron-right"></i>
+    <a href="/japaneselearning/" rel="next" title="日语？日语！">
+      日语？日语！ <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -395,7 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%BA%90%E7%A8%8B%E5%BA%8F%E7%BB%A7%E7%BB%AD%E5%AE%8C%E5%96%84"><span class="nav-number">1.</span> <span class="nav-text">对源程序继续完善</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sleep%E5%BB%B6%E8%BF%9F"><span class="nav-number">1.1.</span> <span class="nav-text">Sleep延迟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sys-exit-app-exec"><span class="nav-number">1.2.</span> <span class="nav-text">sys.exit(app.exec_())</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9logo"><span class="nav-number">1.3.</span> <span class="nav-text">更改logo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cxfreeze%E6%89%93%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">cxfreeze打包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cxfreeze%E4%B8%8Epyinstaller"><span class="nav-number">2.1.</span> <span class="nav-text">cxfreeze与pyinstaller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%84%E5%B1%9E%E6%96%87%E4%BB%B6%E6%8F%92%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">附属文件插入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">开发总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP%E3%80%81WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">HTTP、WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%EF%BC%88Hypertext%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">超文本（Hypertext）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTP和HTTPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%AF%E5%88%86%E4%B8%BA%E5%9B%9B%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%EF%BC%9A%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E3%80%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E3%80%81%E8%AF%B7%E6%B1%82%E7%BD%91%E5%9D%80%E3%80%81%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">请求可分为四部分内容：请求方法、请求头、请求网址、请求体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.</span> <span class="nav-text">WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AHTML%EF%BC%88%E9%AA%A8%E6%9E%B6%EF%BC%89%E3%80%81CSS%EF%BC%88%E8%82%8C%E8%82%89%EF%BC%89%E3%80%81JavaScript%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">网页的结构：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -411,7 +383,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -495,7 +467,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.9k字</span>
+  <span class="post-count">博客全站共9.1k字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
