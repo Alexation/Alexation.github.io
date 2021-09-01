@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾刮起“全民学python”风。">
+  <meta name="description" content="HTTP以及WEB基础知识补充（前端）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用python抓取静态网页（前言）">
-<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch/index.html">
+<meta property="og:title" content="利用python抓取静态网页（HTTP、WEB基础）">
+<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾刮起“全民学python”风。">
+<meta property="og:description" content="HTTP以及WEB基础知识补充（前端）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-19T02:09:20.000Z">
-<meta property="article:modified_time" content="2021-08-23T04:46:45.880Z">
+<meta property="article:published_time" content="2021-08-20T02:47:08.000Z">
+<meta property="article:modified_time" content="2021-08-30T08:34:26.467Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch/">
+<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>利用python抓取静态网页（前言） | Alexation</title>
+  <title>利用python抓取静态网页（HTTP、WEB基础） | Alexation</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch/">
+    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -205,7 +205,7 @@
 	
 
         <h1 class="post-title" itemprop="name headline">
-          利用python抓取静态网页（前言）
+          利用python抓取静态网页（HTTP、WEB基础）
         </h1>
 
         <div class="post-meta">
@@ -215,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-19 10:09:20" itemprop="dateCreated datePublished" datetime="2021-08-19T10:09:20+08:00">2021-08-19</time>
+              <time title="创建时间：2021-08-20 10:47:08" itemprop="dateCreated datePublished" datetime="2021-08-20T10:47:08+08:00">2021-08-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-23 12:46:45" itemprop="dateModified" datetime="2021-08-23T12:46:45+08:00">2021-08-23</time>
+                <time title="修改时间：2021-08-30 16:34:26" itemprop="dateModified" datetime="2021-08-30T16:34:26+08:00">2021-08-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +235,7 @@
             </span>
 
           
-            <div class="post-description">随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾刮起“全民学python”风。</div>
+            <div class="post-description">HTTP以及WEB基础知识补充（前端）</div>
 
         </div>
       </header>
@@ -246,15 +246,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路……</p>
-<p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p>
-<blockquote>
-<p>我不怕不怕，风吹雨打</p>
-</blockquote>
-<p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p>
-<p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广….接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p>
-<p>不过，这才是计算机的魅力！</p>
-<p>开始吧，我的爬虫之路！</p>
+        <h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
+<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
+<li>URL（Universal Resource Locator）即统一资源定位符</li>
+</ul>
+<p>例如：<a target="_blank" rel="noopener" href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
+<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
+<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
+<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
+<p>常见服务器请求状态码：</p>
+<ul>
+<li>200-请求成功</li>
+<li>301-资源（网页等）被永久转移到其他URL</li>
+<li>404-请求的资源（网页等）不存在</li>
+<li>500-服务器内部错误</li>
+</ul>
+<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
+<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
+<p>JavaScript脚本语言（交互动作）</p>
+<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
+<li>head 标签内定义一些页面的配置和引用</li>
+<li>title 标签则定义网页的标题，会显示在网页</li>
+<li>body 标签内是在网页正文中显示的内容</li>
+<li>div 标签定义网页中的区块</li>
+<li>h2 标签表示一个二级标题</li>
+<li>p 标签代表一个段落</li>
+</ul>
+<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
+<p>摘自：《Python3 网络爬虫开发指南》</p>
 
     </div>
 
@@ -277,10 +301,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/HelloWorld/" rel="next" title="Hello World！">
-      Hello World！ <i class="fa fa-chevron-right"></i>
+    <a href="/HelloWorld/" rel="prev" title="Hello World！">
+      <i class="fa fa-chevron-left"></i> Hello World！
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/pythonwebcatch/pythonwebcatch1/" rel="next" title="利用python抓取静态网页（一、First Blood!）">
+      利用python抓取静态网页（一、First Blood!） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -340,6 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP%E3%80%81WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">HTTP、WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%EF%BC%88Hypertext%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">超文本（Hypertext）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTP和HTTPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%AF%E5%88%86%E4%B8%BA%E5%9B%9B%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%EF%BC%9A%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E3%80%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E3%80%81%E8%AF%B7%E6%B1%82%E7%BD%91%E5%9D%80%E3%80%81%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">请求可分为四部分内容：请求方法、请求头、请求网址、请求体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.</span> <span class="nav-text">WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AHTML%EF%BC%88%E9%AA%A8%E6%9E%B6%EF%BC%89%E3%80%81CSS%EF%BC%88%E8%82%8C%E8%82%89%EF%BC%89%E3%80%81JavaScript%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">网页的结构：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -355,14 +383,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -372,13 +400,13 @@
         <a href="https://github.com/" title="GitHub → https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="QQ → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="Q-Q → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>Q-Q</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://google.com/" title="Google → https:&#x2F;&#x2F;google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
       </span>
   </div>
 
@@ -442,7 +470,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.6k字</span>
+  <span class="post-count">博客全站共14.3k字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

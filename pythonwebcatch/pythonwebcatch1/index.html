@@ -22,19 +22,21 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本篇对《标准日本语·初级》进行细节总结以及部分重要知识点的拓展。（更新ing">
+  <meta name="description" content="利用requests和xpath进行第一次图片抓取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《标日·初》中的细节拓展！">
-<meta property="og:url" content="https://www.alexation.cn/japaneselearning4/index.html">
+<meta property="og:title" content="利用python抓取静态网页（一、First Blood!）">
+<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch/pythonwebcatch1/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="本篇对《标准日本语·初级》进行细节总结以及部分重要知识点的拓展。（更新ing">
+<meta property="og:description" content="利用requests和xpath进行第一次图片抓取">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-26T11:54:23.000Z">
-<meta property="article:modified_time" content="2021-08-27T10:53:04.956Z">
+<meta property="og:image" content="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png">
+<meta property="article:published_time" content="2021-08-20T12:44:42.000Z">
+<meta property="article:modified_time" content="2021-08-30T08:34:27.916Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png">
 
-<link rel="canonical" href="https://www.alexation.cn/japaneselearning4/">
+<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch1/">
 
 
 <script id="page-configurations">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title>《标日·初》中的细节拓展！ | Alexation</title>
+  <title>利用python抓取静态网页（一、First Blood!） | Alexation</title>
   
 
 
@@ -189,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/japaneselearning4/">
+    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -205,7 +207,7 @@
 	
 
         <h1 class="post-title" itemprop="name headline">
-          《标日·初》中的细节拓展！
+          利用python抓取静态网页（一、First Blood!）
         </h1>
 
         <div class="post-meta">
@@ -215,14 +217,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-26 19:54:23" itemprop="dateCreated datePublished" datetime="2021-08-26T19:54:23+08:00">2021-08-26</time>
+              <time title="创建时间：2021-08-20 20:44:42" itemprop="dateCreated datePublished" datetime="2021-08-20T20:44:42+08:00">2021-08-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-27 18:53:04" itemprop="dateModified" datetime="2021-08-27T18:53:04+08:00">2021-08-27</time>
+                <time title="修改时间：2021-08-30 16:34:27" itemprop="dateModified" datetime="2021-08-30T16:34:27+08:00">2021-08-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,12 +232,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/" itemprop="url" rel="index"><span itemprop="name">日语！</span></a>
+                  <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">python网络爬虫</span></a>
                 </span>
             </span>
 
           
-            <div class="post-description">本篇对《标准日本语·初级》进行细节总结以及部分重要知识点的拓展。（更新ing</div>
+            <div class="post-description">利用requests和xpath进行第一次图片抓取</div>
 
         </div>
       </header>
@@ -246,23 +248,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="1-は表示对比"><a href="#1-は表示对比" class="headerlink" title="1.は表示对比"></a>1.は表示对比</h4><p>对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、から、まで、と的后面构成复合形式。例如：私の　部屋には　電話が　ありません。</p>
-<h4 id="2-いえ、うち"><a href="#2-いえ、うち" class="headerlink" title="2.いえ、うち"></a>2.いえ、うち</h4><p>两者的意思都是（我）家，意指建筑物时一般用前者，着重指家人时一般会用后者。另外，うち本身就表示“我家”的含义，但是用いえ时必须要说わたしのいえ。</p>
-<h4 id="3-”を”－＞”は”"><a href="#3-”を”－＞”は”" class="headerlink" title="3.”を”－＞”は”"></a>3.”を”－＞”は”</h4><p>”を”前面的名词做话题，或者进行对比时，使用助词は，这时候原来的を必须去掉，不能变成をは的形式。</p>
-<h4 id="4-多い和少ない"><a href="#4-多い和少ない" class="headerlink" title="4.多い和少ない"></a>4.多い和少ない</h4><p>他们不同于其他一类形容词，不能单独修饰名词。</p>
-<h4 id="5-おゆ和みず"><a href="#5-おゆ和みず" class="headerlink" title="5.おゆ和みず"></a>5.おゆ和みず</h4><p>日语中，前者是”热水“或“开水”，而后者仅指”凉水“。</p>
-<h4 id="6-”こうよう”-”もみじ”"><a href="#6-”こうよう”-”もみじ”" class="headerlink" title="6.”こうよう”　”もみじ”"></a>6.”こうよう”　”もみじ”</h4><p>”こうよう”表示秋天阔叶林的落叶变红或树叶全部变成红色。“もみじ”多表示枫树的红叶。</p>
-<h4 id="7-いかがですか"><a href="#7-いかがですか" class="headerlink" title="7.いかがですか"></a>7.いかがですか</h4><p>是どうですか的委婉表示法，此外拒绝对方的建议或推荐时，直接使用いいえ会显得不是很礼貌。可采用其他方式。如：今は　結構です</p>
-<h4 id="8-”に”"><a href="#8-”に”" class="headerlink" title="8.”に”"></a>8.”に”</h4><ul>
-<li>表示存在的场所。如：公園に</li>
-<li>表示时间。如：5時に</li>
-<li>表示动作的对象。如：友達に</li>
-<li>表示移动行为的目的。如：本を買いに</li>
-<li>表示附着点。如：車に</li>
+        <h1 id="request、xpath、parsel爬取静态网页流程"><a href="#request、xpath、parsel爬取静态网页流程" class="headerlink" title="request、xpath、parsel爬取静态网页流程"></a><em>request、xpath、parsel爬取静态网页流程</em></h1><ol>
+<li><em>指定URL</em></li>
+<li><em>UA伪装</em></li>
+<li><em>发起请求（模拟浏览器）</em></li>
+<li><em>获取相应数据</em></li>
+<li><em>解析数据</em></li>
+<li><em>进行持久化储存</em></li>
+</ol>
+<h2 id="First-Blood！"><a href="#First-Blood！" class="headerlink" title="First Blood！"></a>First Blood！</h2><h3 id="指定URL"><a href="#指定URL" class="headerlink" title="指定URL"></a>指定URL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
+<h3 id="UA伪装"><a href="#UA伪装" class="headerlink" title="UA伪装"></a>UA伪装</h3><p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
+<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png"></p>
+<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="发起请求（模拟浏览器）"><a href="#发起请求（模拟浏览器）" class="headerlink" title="发起请求（模拟浏览器）"></a>发起请求（模拟浏览器）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
+
+<p>这里注意，后面保存图片就要用content</p>
+<ul>
+<li>response.text 返回的是一个 unicode 型的文本数据</li>
+<li>response.content 返回的是 bytes 型的二进制数据</li>
 </ul>
-<p><em>这些用法不能用へ来替换，只有表示“来います”等典型的移动动词的目的地时，才可以通用。</em></p>
-<h4 id="9-こえ-おと"><a href="#9-こえ-おと" class="headerlink" title="9.こえ    おと"></a>9.こえ    おと</h4><p>前者为人和动物发出的声音，后者是物体发出的声音。</p>
-<h4 id="10-なさい是なさる的命令形"><a href="#10-なさい是なさる的命令形" class="headerlink" title="10.なさい是なさる的命令形"></a>10.なさい是なさる的命令形</h4><p>なさい是なさる的命令形，因为なさる是很特殊的五段动词，它的连用形和命令形都是なさい，其他还有いらっしゃる、ござる、おっしゃる和くださる。在古代的话，它们的命令形也有なされ这种形式，只是现在不太用了。有些语言学者把这类动词称作ラ変动词。なさる事实上是する的敬语，既然是表尊敬，就要用礼貌体，可以这样说:おやめなさいますか。请您住手，行吗？やめなさい则有轻微命令语气。</p>
+<h3 id="获取相应数据"><a href="#获取相应数据" class="headerlink" title="获取相应数据"></a>获取相应数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure>
+
+<p>这里涉及xpath语法:</p>
+<p>//表示跨行定位</p>
+<p>[@class=”xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
+<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
+<h3 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line">	# 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
+<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
+</ul>
+<h3 id="进行持久化储存"><a href="#进行持久化储存" class="headerlink" title="进行持久化储存"></a>进行持久化储存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   	# 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure>
+
+<p>Nice！！！拿到一血</p>
+<p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒….emm)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
+<h2 id="对程序进行完善"><a href="#对程序进行完善" class="headerlink" title="对程序进行完善"></a>对程序进行完善</h2><p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
+<ul>
+<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
+<li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
+<li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
+<li>还有许多需要补充的地方，只要能想到，就要不断地完善……</li>
+</ul>
 
     </div>
 
@@ -273,6 +307,35 @@
 <div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/pythonwebcatch/pythonwebcatch1/">利用python抓取静态网页（一、First Blood!）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2021年08月20日 - 20:08</p>
+  <p><span>最后更新:</span>2021年08月30日 - 16:08</p>
+  <p><span>原始链接:</span><a href="/pythonwebcatch/pythonwebcatch1/" title="利用python抓取静态网页（一、First Blood!）">https://www.alexation.cn/pythonwebcatch/pythonwebcatch1/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/pythonwebcatch/pythonwebcatch1/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
 
 
       
@@ -286,12 +349,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/japaneselearning3/" rel="prev" title="「料理のさしすせそ」">
-      <i class="fa fa-chevron-left"></i> 「料理のさしすせそ」
+    <a href="/pythonwebcatch/pythonwebcatch0/" rel="prev" title="利用python抓取静态网页（HTTP、WEB基础）">
+      <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（HTTP、WEB基础）
     </a></div>
       <div class="post-nav-item">
-    <a href="/japaneselearning5/" rel="next" title="日本十大主要城市">
-      日本十大主要城市 <i class="fa fa-chevron-right"></i>
+    <a href="/pythonwebcatch/pythonwebcatch2/" rel="next" title="利用python抓取静态网页（二、循环扩大范围、异常处理）">
+      利用python抓取静态网页（二、循环扩大范围、异常处理） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -351,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E3%81%AF%E8%A1%A8%E7%A4%BA%E5%AF%B9%E6%AF%94"><span class="nav-number">1.</span> <span class="nav-text">1.は表示对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E3%81%84%E3%81%88%E3%80%81%E3%81%86%E3%81%A1"><span class="nav-number">2.</span> <span class="nav-text">2.いえ、うち</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E2%80%9D%E3%82%92%E2%80%9D%EF%BC%8D%EF%BC%9E%E2%80%9D%E3%81%AF%E2%80%9D"><span class="nav-number">3.</span> <span class="nav-text">3.”を”－＞”は”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%A4%9A%E3%81%84%E5%92%8C%E5%B0%91%E3%81%AA%E3%81%84"><span class="nav-number">4.</span> <span class="nav-text">4.多い和少ない</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E3%81%8A%E3%82%86%E5%92%8C%E3%81%BF%E3%81%9A"><span class="nav-number">5.</span> <span class="nav-text">5.おゆ和みず</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E2%80%9D%E3%81%93%E3%81%86%E3%82%88%E3%81%86%E2%80%9D-%E2%80%9D%E3%82%82%E3%81%BF%E3%81%98%E2%80%9D"><span class="nav-number">6.</span> <span class="nav-text">6.”こうよう”　”もみじ”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E3%81%84%E3%81%8B%E3%81%8C%E3%81%A7%E3%81%99%E3%81%8B"><span class="nav-number">7.</span> <span class="nav-text">7.いかがですか</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-%E2%80%9D%E3%81%AB%E2%80%9D"><span class="nav-number">8.</span> <span class="nav-text">8.”に”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-%E3%81%93%E3%81%88-%E3%81%8A%E3%81%A8"><span class="nav-number">9.</span> <span class="nav-text">9.こえ    おと</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-%E3%81%AA%E3%81%95%E3%81%84%E6%98%AF%E3%81%AA%E3%81%95%E3%82%8B%E7%9A%84%E5%91%BD%E4%BB%A4%E5%BD%A2"><span class="nav-number">10.</span> <span class="nav-text">10.なさい是なさる的命令形</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#request%E3%80%81xpath%E3%80%81parsel%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">request、xpath、parsel爬取静态网页流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Blood%EF%BC%81"><span class="nav-number">1.1.</span> <span class="nav-text">First Blood！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9AURL"><span class="nav-number">1.1.1.</span> <span class="nav-text">指定URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UA%E4%BC%AA%E8%A3%85"><span class="nav-number">1.1.2.</span> <span class="nav-text">UA伪装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%EF%BC%88%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">发起请求（模拟浏览器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%9B%B8%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.4.</span> <span class="nav-text">获取相应数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.5.</span> <span class="nav-text">解析数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%8C%81%E4%B9%85%E5%8C%96%E5%82%A8%E5%AD%98"><span class="nav-number">1.1.6.</span> <span class="nav-text">进行持久化储存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E5%AE%8C%E5%96%84"><span class="nav-number">1.2.</span> <span class="nav-text">对程序进行完善</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -367,14 +430,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -384,13 +447,13 @@
         <a href="https://github.com/" title="GitHub → https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="QQ → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="Q-Q → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>Q-Q</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://google.com/" title="Google → https:&#x2F;&#x2F;google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
       </span>
   </div>
 
@@ -454,7 +517,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.6k字</span>
+  <span class="post-count">博客全站共14.3k字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

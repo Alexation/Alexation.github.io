@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="利用requests和xpath进行第一次图片抓取">
+  <meta name="description" content="初识Scrapy框架、实现抓取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用python抓取静态网页（一、First Blood!）">
-<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch1/index.html">
+<meta property="og:title" content="Scrapy框架（初探）">
+<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-scrapy/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="利用requests和xpath进行第一次图片抓取">
+<meta property="og:description" content="初识Scrapy框架、实现抓取">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png">
-<meta property="article:published_time" content="2021-08-20T12:44:42.000Z">
-<meta property="article:modified_time" content="2021-08-25T06:51:41.110Z">
+<meta property="og:image" content="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png">
+<meta property="article:published_time" content="2021-08-21T05:52:20.000Z">
+<meta property="article:modified_time" content="2021-08-23T04:47:27.273Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png">
 
-<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch1/">
+<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-scrapy/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>利用python抓取静态网页（一、First Blood!） | Alexation</title>
+  <title>Scrapy框架（初探） | Alexation</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch1/">
+    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-scrapy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -207,7 +207,7 @@
 	
 
         <h1 class="post-title" itemprop="name headline">
-          利用python抓取静态网页（一、First Blood!）
+          Scrapy框架（初探）
         </h1>
 
         <div class="post-meta">
@@ -217,14 +217,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-20 20:44:42" itemprop="dateCreated datePublished" datetime="2021-08-20T20:44:42+08:00">2021-08-20</time>
+              <time title="创建时间：2021-08-21 13:52:20" itemprop="dateCreated datePublished" datetime="2021-08-21T13:52:20+08:00">2021-08-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-25 14:51:41" itemprop="dateModified" datetime="2021-08-25T14:51:41+08:00">2021-08-25</time>
+                <time title="修改时间：2021-08-23 12:47:27" itemprop="dateModified" datetime="2021-08-23T12:47:27+08:00">2021-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,7 +237,7 @@
             </span>
 
           
-            <div class="post-description">利用requests和xpath进行第一次图片抓取</div>
+            <div class="post-description">初识Scrapy框架、实现抓取</div>
 
         </div>
       </header>
@@ -248,54 +248,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="request、xpath、parsel爬取静态网页流程"><a href="#request、xpath、parsel爬取静态网页流程" class="headerlink" title="request、xpath、parsel爬取静态网页流程"></a><em>request、xpath、parsel爬取静态网页流程</em></h1><ol>
-<li><em>指定URL</em></li>
-<li><em>UA伪装</em></li>
-<li><em>发起请求（模拟浏览器）</em></li>
-<li><em>获取相应数据</em></li>
-<li><em>解析数据</em></li>
-<li><em>进行持久化储存</em></li>
+        <h1 id="Scrapy简介："><a href="#Scrapy简介：" class="headerlink" title="Scrapy简介："></a>Scrapy简介：</h1><p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
+<p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
+<p>非阻塞：关注的是程序在等待结果时的状态，不能立刻得到结果之前，该调用不会阻塞当前线程</p>
+<h2 id="scrapy框架："><a href="#scrapy框架：" class="headerlink" title="scrapy框架："></a>scrapy框架：</h2><p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png"></p>
+<ul>
+<li>scrapy Engine(引擎)：总指挥:负责数据和信号的在不同模块间的传递，scrapy已经实现</li>
+<li>scheduler(调度器)：一个队列，存放引擎发过来的request请求，scrapy已经实现</li>
+<li>Downloader (下载器)：下载把引擎发过来的requests请求，并返回给引擎，scrapy已经实现</li>
+<li>Spider (爬虫)：处理引擎发来来的response，提取数据，提取url，并交给引擎，需要手写</li>
+<li>Item Pipeline(管道)：处理引擎传过来的数据，比如存储，需要手写</li>
+<li>Downloader Middlewares(下载中间件)：可以自定义的下载扩展，比如设置代理，一般不用手写</li>
+<li>Spider MiddlewaresSpider(中间件)：可以自定义requests请求和进行response过滤，一般不用手写</li>
+</ul>
+<h2 id="创建Spider："><a href="#创建Spider：" class="headerlink" title="创建Spider："></a>创建Spider：</h2><ol>
+<li>创建一个scrapy项目——scrapy startproject myspider</li>
+<li>生成一个爬虫——scrapy genspider xxxx “xxxx.cn”</li>
+<li>提取数据——完善spider，使用xpath等方法</li>
+<li>保存数据——pipeline中保存数据</li>
 </ol>
-<h2 id="First-Blood！"><a href="#First-Blood！" class="headerlink" title="First Blood！"></a>First Blood！</h2><h3 id="指定URL"><a href="#指定URL" class="headerlink" title="指定URL"></a>指定URL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
+<p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）可以通过spider.name == “itcast”进行判断操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># logging：不同等级的日志，保存到本地，</span><br><span class="line">import logging</span><br><span class="line"># 获取当前日志输出位置</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"># setting可以设置LOG_FILE = &#x27;./log.log&#x27;保存到本地</span><br><span class="line">logger.warning(item)</span><br></pre></td></tr></table></figure>
 
-<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
-<h3 id="UA伪装"><a href="#UA伪装" class="headerlink" title="UA伪装"></a>UA伪装</h3><p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
-<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png"></p>
-<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="发起请求（模拟浏览器）"><a href="#发起请求（模拟浏览器）" class="headerlink" title="发起请求（模拟浏览器）"></a>发起请求（模拟浏览器）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
-
-<p>这里注意，后面保存图片就要用content</p>
+<p>scrapy</p>
 <ul>
-<li>response.text 返回的是一个 unicode 型的文本数据</li>
-<li>response.content 返回的是 bytes 型的二进制数据</li>
+<li>settings中设置LOG_LEVEL=”WARNING”</li>
+<li>settings中设置LOG_FILE=”./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li>
+<li>import logging,实例化logger的方式在任何文件中使用logger输出内容。</li>
 </ul>
-<h3 id="获取相应数据"><a href="#获取相应数据" class="headerlink" title="获取相应数据"></a>获取相应数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure>
-
-<p>这里涉及xpath语法:</p>
-<p>//表示跨行定位</p>
-<p>[@class=”xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
-<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
-<h3 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line">	# 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure>
-
+<p>普通项目中</p>
 <ul>
-<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
-<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
-</ul>
-<h3 id="进行持久化储存"><a href="#进行持久化储存" class="headerlink" title="进行持久化储存"></a>进行持久化储存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   	# 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure>
-
-<p>Nice！！！拿到一血</p>
-<p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒….emm)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
-<h2 id="对程序进行完善"><a href="#对程序进行完善" class="headerlink" title="对程序进行完善"></a>对程序进行完善</h2><p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
-<ul>
-<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
-<li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
-<li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
-<li>还有许多需要补充的地方，只要能想到，就要不断地完善……</li>
+<li><pre><code>import logging
+#设置日志输出的样式，格式。
+logging.basicConfig(...)
+# 实例化logger=logging.getLogger(__name__) 在任何py文件中调用logger即可
+</code></pre>
+</li>
 </ul>
 
     </div>
@@ -313,12 +301,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/pythonwebcatch1/">利用python抓取静态网页（一、First Blood!）</a></p>
+  <p><span>本文标题:</span><a href="/pythonwebcatch/pythonwebcatch-scrapy/">Scrapy框架（初探）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-  <p><span>发布时间:</span>2021年08月20日 - 20:08</p>
-  <p><span>最后更新:</span>2021年08月25日 - 14:08</p>
-  <p><span>原始链接:</span><a href="/pythonwebcatch1/" title="利用python抓取静态网页（一、First Blood!）">https://www.alexation.cn/pythonwebcatch1/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/pythonwebcatch1/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2021年08月21日 - 13:08</p>
+  <p><span>最后更新:</span>2021年08月23日 - 12:08</p>
+  <p><span>原始链接:</span><a href="/pythonwebcatch/pythonwebcatch-scrapy/" title="Scrapy框架（初探）">https://www.alexation.cn/pythonwebcatch/pythonwebcatch-scrapy/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-scrapy/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
 </div>
@@ -349,12 +337,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/web/" rel="prev" title="Web我来了！">
-      <i class="fa fa-chevron-left"></i> Web我来了！
+    <a href="/pythonwebcatch/pythonwebcatch4/" rel="prev" title="利用python抓取静态网页（四、继续完善并打包程序）">
+      <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（四、继续完善并打包程序）
     </a></div>
       <div class="post-nav-item">
-    <a href="/pythonwebcatch2/" rel="next" title="利用python抓取静态网页（二、循环扩大范围、异常处理）">
-      利用python抓取静态网页（二、循环扩大范围、异常处理） <i class="fa fa-chevron-right"></i>
+    <a href="/japaneselearning/japaneselearning/" rel="next" title="日语？日语！">
+      日语？日语！ <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -414,7 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#request%E3%80%81xpath%E3%80%81parsel%E7%88%AC%E5%8F%96%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">request、xpath、parsel爬取静态网页流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Blood%EF%BC%81"><span class="nav-number">1.1.</span> <span class="nav-text">First Blood！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9AURL"><span class="nav-number">1.1.1.</span> <span class="nav-text">指定URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UA%E4%BC%AA%E8%A3%85"><span class="nav-number">1.1.2.</span> <span class="nav-text">UA伪装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%EF%BC%88%E6%A8%A1%E6%8B%9F%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">发起请求（模拟浏览器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%9B%B8%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.4.</span> <span class="nav-text">获取相应数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.5.</span> <span class="nav-text">解析数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%8C%81%E4%B9%85%E5%8C%96%E5%82%A8%E5%AD%98"><span class="nav-number">1.1.6.</span> <span class="nav-text">进行持久化储存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E5%AE%8C%E5%96%84"><span class="nav-number">1.2.</span> <span class="nav-text">对程序进行完善</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrapy%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">Scrapy简介：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy%E6%A1%86%E6%9E%B6%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">scrapy框架：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BASpider%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">创建Spider：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -430,14 +418,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -447,13 +435,13 @@
         <a href="https://github.com/" title="GitHub → https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="QQ → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="Q-Q → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>Q-Q</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://google.com/" title="Google → https:&#x2F;&#x2F;google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
       </span>
   </div>
 
@@ -517,7 +505,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.6k字</span>
+  <span class="post-count">博客全站共14.3k字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
