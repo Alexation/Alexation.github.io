@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.alexation.cn/web/web3/</loc>
+    
+    <lastmod>2021-09-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.alexation.cn/web/web2/</loc>
     
     <lastmod>2021-09-05</lastmod>
@@ -139,13 +146,6 @@
 
   
   <url>
-    <loc>https://www.alexation.cn/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2021-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.alexation.cn/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/</loc>
     <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
@@ -161,6 +161,13 @@
   
   <url>
     <loc>https://www.alexation.cn/categories/Web%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2021-09-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
