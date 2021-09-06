@@ -1,343 +1,1283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>CSS（二）</title>
-      <link href="/web/web3/"/>
-      <url>/web/web3/</url>
-      
-        <content type="html"><![CDATA[<h3 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h3><p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p><h4 id="快速生成HTML结构语法"><a href="#快速生成HTML结构语法" class="headerlink" title="快速生成HTML结构语法"></a>快速生成HTML结构语法</h4><ol><li>生成标签直接输入标签名按tab键即可</li><li>如果想要生成多个相同标签加上*就可以了</li><li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li><li>如果有兄弟关系的标签，用＋就可以了比如div+p</li><li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li><li>如果生成的div类名是有顺序的，可以用自增符号$</li><li>如果想要在生成的$签内部写内容可以用{}表示</li></ol><h4 id="快速生成CSS样式语法"><a href="#快速生成CSS样式语法" class="headerlink" title="快速生成CSS样式语法"></a>快速生成CSS样式语法</h4><p>CSS基本采取简写形式即可</p><ul><li>比如 w200 按tab就可以生成 width: 200px;</li><li>比如 lh26 按tab可以生成 line-height: 26px;</li></ul><h4 id="快速格式化代码"><a href="#快速格式化代码" class="headerlink" title="快速格式化代码"></a>快速格式化代码</h4><p>设置搜索format勾选format on save</p><h3 id="CSS复合选择器"><a href="#CSS复合选择器" class="headerlink" title="CSS复合选择器"></a>CSS复合选择器</h3><p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p><ul><li>复合选择器可以更准确、更高效的选择目标元素（标签）</li><li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li><li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li></ul><h4 id="后代选择器（重要）"><a href="#后代选择器（重要）" class="headerlink" title="后代选择器（重要）"></a>后代选择器（重要）</h4><p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure><p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p><h4 id="子选择器（重要）"><a href="#子选择器（重要）" class="headerlink" title="子选择器（重要）"></a>子选择器（重要）</h4><p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1 &gt; 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure><p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>Hello World！</title>
+    <url>/HelloWorld/</url>
+    <content><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p>
+<p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p>
+<p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p>
+<p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p>
+<p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p>
+<p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p>
+<blockquote>
+<p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p>
+</blockquote>
+<p>献给未来的自己：</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>web4</title>
+    <url>/web/web4/</url>
+    <content><![CDATA[<h3 id="CSS的元素显示模式"><a href="#CSS的元素显示模式" class="headerlink" title="CSS的元素显示模式"></a>CSS的元素显示模式</h3><p>元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局我们的网页。比如&lt;div自己占一行，一行可以放多个&lt;span。HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS（二）</title>
+    <url>/web/web3/</url>
+    <content><![CDATA[<h3 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h3><p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
+<h4 id="快速生成HTML结构语法"><a href="#快速生成HTML结构语法" class="headerlink" title="快速生成HTML结构语法"></a>快速生成HTML结构语法</h4><ol>
+<li>生成标签直接输入标签名按tab键即可</li>
+<li>如果想要生成多个相同标签加上*就可以了</li>
+<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
+<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
+<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
+<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
+<li>如果想要在生成的$签内部写内容可以用{}表示</li>
+</ol>
+<h4 id="快速生成CSS样式语法"><a href="#快速生成CSS样式语法" class="headerlink" title="快速生成CSS样式语法"></a>快速生成CSS样式语法</h4><p>CSS基本采取简写形式即可</p>
+<ul>
+<li>比如 w200 按tab就可以生成 width: 200px;</li>
+<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
+</ul>
+<h4 id="快速格式化代码"><a href="#快速格式化代码" class="headerlink" title="快速格式化代码"></a>快速格式化代码</h4><p>设置搜索format勾选format on save</p>
+<h3 id="CSS复合选择器"><a href="#CSS复合选择器" class="headerlink" title="CSS复合选择器"></a>CSS复合选择器</h3><p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
+<ul>
+<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
+<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
+<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
+</ul>
+<h4 id="后代选择器（重要）"><a href="#后代选择器（重要）" class="headerlink" title="后代选择器（重要）"></a>后代选择器（重要）</h4><p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
+<h4 id="子选择器（重要）"><a href="#子选择器（重要）" class="headerlink" title="子选择器（重要）"></a>子选择器（重要）</h4><p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1 &gt; 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
+<h4 id="并集选择器（重要）"><a href="#并集选择器（重要）" class="headerlink" title="并集选择器（重要）"></a>并集选择器（重要）</h4><p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
+<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1, 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述语法表示选择元素1和元素2</p>
+<ul>
+<li>元素1和元素2中间用逗号隔开</li>
+<li>逗号可以理解为<strong>和</strong>的意思</li>
+<li>并集选择器通常用于集体声明</li>
+</ul>
+<h4 id="链接伪类选择器"><a href="#链接伪类选择器" class="headerlink" title="链接伪类选择器"></a>链接伪类选择器</h4><p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a:link		# 选择所有未被访问的链接</span><br><span class="line">a:visited	# 选择所有已被访问的链接</span><br><span class="line">a:hover		# 选择鼠标指针位于其上的链接</span><br><span class="line">a:active	# 选择活动链接（鼠标按下未弹起）</span><br></pre></td></tr></table></figure>
+
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
+<li>记忆法：love hate 或者 lv 宝宝 hao</li>
+<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
+</ul>
+<h5 id="开发写法"><a href="#开发写法" class="headerlink" title="开发写法"></a>开发写法</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="focus伪类选择器"><a href="#focus伪类选择器" class="headerlink" title="focus伪类选择器"></a>focus伪类选择器</h4><p>focus伪类选择器用于选取获得焦点的表单元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">焦点就是光标，一般情况&lt;input&gt;类表单元素才能获取，因此这个选择器也主要针对表单元素来说</span><br><span class="line">input:focus &#123;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复合选择器总结"><a href="#复合选择器总结" class="headerlink" title="复合选择器总结"></a>复合选择器总结</h4><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>作用</th>
+<th>特征</th>
+<th>使用情况</th>
+<th>隔开符号及用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>后代选择器</td>
+<td>选择后代元素</td>
+<td>子孙后代</td>
+<td>较多</td>
+<td>符号是空格 .nav a</td>
+</tr>
+<tr>
+<td>子代选择器</td>
+<td>选择最近一级元素</td>
+<td>亲儿子</td>
+<td>较少</td>
+<td>符号是大于 .nav&gt;p</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>选择相同样式的元素</td>
+<td>集体声明</td>
+<td>较多</td>
+<td>符号是逗号 .nav,.header</td>
+</tr>
+<tr>
+<td>链接伪类选择器</td>
+<td>选择不同状态的链接</td>
+<td>和链接相关</td>
+<td>较多</td>
+<td>重点记住a{}和a:hover</td>
+</tr>
+<tr>
+<td>focus选择器</td>
+<td>选择获得光标的表单</td>
+<td>和表单相关</td>
+<td>较少</td>
+<td>记住input:focus</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
-          
-          <category> Web前端 </category>
-          
+        <category>Web前端</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CSS（一）</title>
-      <link href="/web/web2/"/>
-      <url>/web/web2/</url>
-      
-        <content type="html"><![CDATA[<h2 id="CSS的主要使用场景就是美化网页、布局页面的"><a href="#CSS的主要使用场景就是美化网页、布局页面的" class="headerlink" title="CSS的主要使用场景就是美化网页、布局页面的"></a>CSS的主要使用场景就是美化网页、布局页面的</h2><ul><li>HTML的局限性：只关注内容的语义</li><li>CSS-网页美容师：层叠样式表的简称</li><li>CSS基础选择器</li><li>CSS语法规范：有选择器以及一条或多条声明</li><li>标签选择器：用HTML标签名称作为选择器</li></ul><h3 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h3><h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.类名 &#123;</span><br><span class="line">属性1: 属性值1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;类名&quot; </span><br></pre></td></tr></table></figure><p>⚠ <strong>注意</strong></p><ol><li>类选择器使用”.”进行标识，后面紧跟类名（自定义，我们自己命名的）</li><li>可以理解为给这个标签起了一个名字，来表示</li><li>长名称或词组可以使用中横线来为选择器命名</li><li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li><li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li><li>命名规范：见附件（Web前端开发规范手册.doc）</li></ol><h4 id="多类名"><a href="#多类名" class="headerlink" title="多类名"></a>多类名</h4><ul><li>在标签class中填写多类名</li><li>每个类名用空格分开</li></ul><h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#id名 &#123;</span><br><span class="line">属性1: 属性值1；</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p><p>id选择器和类选择器的区别</p><ol><li>类选择器好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用</li><li>id选择器好比人的身份证号码，全中国是唯一的，不得重复</li><li>id选择器和类选择器最大的不同在于使用次数上</li><li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li></ol><h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>在CSS中，通配符选择器用”*”定义，他表示选取页面中所有元素</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">属性1: 属性值1；</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"># 特殊情况才使用（清除所有元素标签的内外边距）</span><br><span class="line">* &#123;</span><br><span class="line">margin: 0;</span><br><span class="line">padding: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="基础选择器总结"><a href="#基础选择器总结" class="headerlink" title="基础选择器总结"></a>基础选择器总结</h4><table><thead><tr><th>基础选择器</th><th>作用</th><th>特点</th><th>使用情况</th><th>用法</th></tr></thead><tbody><tr><td>标签选择器</td><td>可以选出所有相同的标签，比如p</td><td>不能差异化选择</td><td>较多</td><td>p {color: red;}</td></tr><tr><td>类选择器</td><td>可以选出1个或多个标签</td><td>可以根据需求选择</td><td>非常多</td><td>.nav {color: red;}</td></tr><tr><td>id选择器</td><td>一次只能选择1个标签</td><td>id属性只能在每个HTML文档中出现一次</td><td>一般和JS搭配</td><td>#nav {color: red;}</td></tr><tr><td>通配符选择器</td><td>选择所有的标签</td><td>选择的太多，有部分不需要</td><td>特殊情况使用</td><td>* {color: red;}</td></tr></tbody></table><h3 id="CSS-字体属性"><a href="#CSS-字体属性" class="headerlink" title="CSS 字体属性"></a>CSS 字体属性</h3><h4 id="字体系列"><a href="#字体系列" class="headerlink" title="字体系列"></a>字体系列</h4><p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &#123;font-family:&quot;微软雅黑&quot;;&#125;</span><br><span class="line">body &#123;font-family:&quot;Microsoft YaHei&quot;;&#125;</span><br></pre></td></tr></table></figure><ul><li>各种字体之间必须使用英文状态下的逗号隔开</li><li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li><li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li></ul><h4 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h4><p>CSS使用<strong>font-size</strong>属性定义字体大小</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">font-size: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>px大小是我们网页的最常用的单位</li><li>谷歌浏览器默认的文字大小为16px</li><li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li><li>可以给body指定整个页面的文字大小</li><li>标题标签比较特殊，需要单独指定文字大小</li></ul><h4 id="粗细"><a href="#粗细" class="headerlink" title="粗细"></a>粗细</h4><p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><table><thead><tr><th>属性值</th><th>描述</th></tr></thead><tbody><tr><td>normal</td><td>默认值（不加粗）</td></tr><tr><td>bold</td><td>定义粗体（加粗）</td></tr><tr><td>100~900·</td><td>400等同于normal，而700等同于bold（数字后面不加单位）</td></tr></tbody></table><ul><li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li><li>实际开发时，我们更喜欢用数字表示粗细</li></ul><h4 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h4><p>CSS使用<strong>font-style</strong>属性设置文本的风格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P &#123;</span><br><span class="line">font-style: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><table><thead><tr><th>属性值</th><th>作用</th></tr></thead><tbody><tr><td>normal</td><td>默认值，浏览器会显示标准的字体样式font-style：normal；</td></tr><tr><td>italic</td><td>浏览器会显示斜体的字体样式</td></tr></tbody></table><h4 id="字体符合属性"><a href="#字体符合属性" class="headerlink" title="字体符合属性"></a>字体符合属性</h4><p>字体属性可以把以上文字样式综合来写，节约代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 复合属性有要求</span><br><span class="line">font: font-style font-weight font-size/line-height font-family</span><br><span class="line">font: italic 700 16px Microsoft yahei</span><br></pre></td></tr></table></figure><ul><li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li><li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li></ul><h4 id="CSS字体属性总结"><a href="#CSS字体属性总结" class="headerlink" title="CSS字体属性总结"></a>CSS字体属性总结</h4><table><thead><tr><th>属性</th><th>表示</th><th>注意点</th></tr></thead><tbody><tr><td>font-size</td><td>字号</td><td>我们通常用的单位时px像素，一定要跟上单位</td></tr><tr><td>font-family</td><td>字体</td><td>实际工作中按照团队约定来写字体</td></tr><tr><td>font-weight</td><td>字体粗细</td><td>记住加粗时700或者bold不加粗是normal或者400（不加单位</td></tr><tr><td>font-style</td><td>字体样式</td><td>记住倾斜是italic    不倾斜是normal工作中我们最常用normal</td></tr><tr><td>font</td><td>字体连写</td><td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td></tr></tbody></table><h3 id="CSS-文本属性"><a href="#CSS-文本属性" class="headerlink" title="CSS 文本属性"></a>CSS 文本属性</h3><p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p><h4 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h4><p><strong>color</strong>属性用于定义文本颜色</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><table><thead><tr><th>表示</th><th>属性值</th></tr></thead><tbody><tr><td>预定义的颜色值</td><td>red，green，blue，还有pink！</td></tr><tr><td>十六进制</td><td>#FF0000，#FF6600</td></tr><tr><td>RGB代码</td><td>rgb(255,0,0)或rgb(100%,0%,0%)</td></tr></tbody></table><p><em><strong>开发中最常用的是十六进制</strong></em></p><h4 id="对齐文本"><a href="#对齐文本" class="headerlink" title="对齐文本"></a>对齐文本</h4><p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><table><thead><tr><th>属性值</th><th>解释</th></tr></thead><tbody><tr><td>left</td><td>左对齐（默认值）</td></tr><tr><td>right</td><td>右对齐</td></tr><tr><td>center</td><td>居中对齐</td></tr></tbody></table><h4 id="装饰文本"><a href="#装饰文本" class="headerlink" title="装饰文本"></a>装饰文本</h4><p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><table><thead><tr><th>属性值</th><th>描述</th></tr></thead><tbody><tr><td>none</td><td>默认。没有装饰线</td></tr><tr><td>underline</td><td>下划线。链接a自带下划线（常用）</td></tr><tr><td>overline</td><td>上划线。（几乎不用）</td></tr><tr><td>line-through</td><td>删除线。（不常用）</td></tr></tbody></table><h4 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h4><p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">text-indent: 20px;</span><br><span class="line">text-indent: 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p><h4 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h4><p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">line-height: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这一行最下边到下一行最下边的距离就是行高</p><h4 id="CSS文本属性总结"><a href="#CSS文本属性总结" class="headerlink" title="CSS文本属性总结"></a>CSS文本属性总结</h4><table><thead><tr><th>属性</th><th>表示</th><th>注意点</th></tr></thead><tbody><tr><td>color</td><td>文本颜色</td><td>通常用十六进制，简体形式#fff</td></tr><tr><td>text-align</td><td>文本对齐</td><td>可以设置文字水平的对齐方式</td></tr><tr><td>text-indent</td><td>文本缩进</td><td>通常我们用于段落首行缩进两个字的距离</td></tr><tr><td>text-decoration</td><td>文本修饰</td><td>记住添加下划线underline、取消下划线none</td></tr><tr><td>line-height</td><td>行高</td><td>控制行与行之间的距离</td></tr></tbody></table><h3 id="CSS-引入方式"><a href="#CSS-引入方式" class="headerlink" title="CSS 引入方式"></a>CSS 引入方式</h3><p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p><h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style&gt;标签中</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div &#123;</span><br><span class="line">color: red;</span><br><span class="line">font-size: 12px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><h4 id="行内样式表"><a href="#行内样式表" class="headerlink" title="行内样式表"></a>行内样式表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式</span><br><span class="line">＜div style=&quot;color:red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱</span><br></pre></td></tr></table></figure><ul><li>style其实就是标签的属性</li><li>在双引号中间，写法要符合CSS规范</li><li>可以控制当前的标签设置样式</li><li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li><li>使用行内样式表设定CSS，通常也被称为行内式引入</li></ul><h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p><p>引入外部样式表分为两步：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中</span><br><span class="line">2. 在HTML页面中，使用&lt;link&gt;标签引入这个文件</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css文件路径&quot;&gt;</span><br></pre></td></tr></table></figure><table><thead><tr><th>属性</th><th>作用</th></tr></thead><tbody><tr><td>rel</td><td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td></tr><tr><td>href</td><td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td></tr></tbody></table><h4 id="CSS引入方式总结"><a href="#CSS引入方式总结" class="headerlink" title="CSS引入方式总结"></a>CSS引入方式总结</h4><table><thead><tr><th>样式表</th><th>优点</th><th>缺点</th><th>使用情况</th><th>控制范围</th></tr></thead><tbody><tr><td>行内样式表</td><td>书写方便，权重高</td><td>结构样式混写</td><td>较少</td><td>控制一个标签</td></tr><tr><td>内部样式表</td><td>部分结构和样式相分离</td><td>没有彻底分离</td><td>较多</td><td>控制一个页面</td></tr><tr><td>外部样式表</td><td>完全实现结构和样式相分离</td><td>需要引入</td><td>最多，推荐</td><td>控制多个页面</td></tr></tbody></table>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>CSS（一）</title>
+    <url>/web/web2/</url>
+    <content><![CDATA[<h2 id="CSS的主要使用场景就是美化网页、布局页面的"><a href="#CSS的主要使用场景就是美化网页、布局页面的" class="headerlink" title="CSS的主要使用场景就是美化网页、布局页面的"></a>CSS的主要使用场景就是美化网页、布局页面的</h2><ul>
+<li>HTML的局限性：只关注内容的语义</li>
+<li>CSS-网页美容师：层叠样式表的简称</li>
+<li>CSS基础选择器</li>
+<li>CSS语法规范：有选择器以及一条或多条声明</li>
+<li>标签选择器：用HTML标签名称作为选择器</li>
+</ul>
+<h3 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h3><h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.类名 &#123;</span><br><span class="line">	属性1: 属性值1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;类名&quot; </span><br></pre></td></tr></table></figure>
+
+<p>⚠ <strong>注意</strong></p>
+<ol>
+<li>类选择器使用”.”进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
+<li>可以理解为给这个标签起了一个名字，来表示</li>
+<li>长名称或词组可以使用中横线来为选择器命名</li>
+<li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li>
+<li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li>
+<li>命名规范：见附件（Web前端开发规范手册.doc）</li>
+</ol>
+<h4 id="多类名"><a href="#多类名" class="headerlink" title="多类名"></a>多类名</h4><ul>
+<li>在标签class中填写多类名</li>
+<li>每个类名用空格分开</li>
+</ul>
+<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#id名 &#123;</span><br><span class="line">	属性1: 属性值1；</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p>
+<p>id选择器和类选择器的区别</p>
+<ol>
+<li>类选择器好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用</li>
+<li>id选择器好比人的身份证号码，全中国是唯一的，不得重复</li>
+<li>id选择器和类选择器最大的不同在于使用次数上</li>
+<li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li>
+</ol>
+<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>在CSS中，通配符选择器用”*”定义，他表示选取页面中所有元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">	属性1: 属性值1；</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"># 特殊情况才使用（清除所有元素标签的内外边距）</span><br><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="基础选择器总结"><a href="#基础选择器总结" class="headerlink" title="基础选择器总结"></a>基础选择器总结</h4><table>
+<thead>
+<tr>
+<th>基础选择器</th>
+<th>作用</th>
+<th>特点</th>
+<th>使用情况</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标签选择器</td>
+<td>可以选出所有相同的标签，比如p</td>
+<td>不能差异化选择</td>
+<td>较多</td>
+<td>p {color: red;}</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>可以选出1个或多个标签</td>
+<td>可以根据需求选择</td>
+<td>非常多</td>
+<td>.nav {color: red;}</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>一次只能选择1个标签</td>
+<td>id属性只能在每个HTML文档中出现一次</td>
+<td>一般和JS搭配</td>
+<td>#nav {color: red;}</td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>选择所有的标签</td>
+<td>选择的太多，有部分不需要</td>
+<td>特殊情况使用</td>
+<td>* {color: red;}</td>
+</tr>
+</tbody></table>
+<h3 id="CSS-字体属性"><a href="#CSS-字体属性" class="headerlink" title="CSS 字体属性"></a>CSS 字体属性</h3><h4 id="字体系列"><a href="#字体系列" class="headerlink" title="字体系列"></a>字体系列</h4><p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">p &#123;font-family:&quot;微软雅黑&quot;;&#125;</span><br><span class="line">body &#123;font-family:&quot;Microsoft YaHei&quot;;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>各种字体之间必须使用英文状态下的逗号隔开</li>
+<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
+<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li>
+</ul>
+<h4 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h4><p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>px大小是我们网页的最常用的单位</li>
+<li>谷歌浏览器默认的文字大小为16px</li>
+<li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li>
+<li>可以给body指定整个页面的文字大小</li>
+<li>标题标签比较特殊，需要单独指定文字大小</li>
+</ul>
+<h4 id="粗细"><a href="#粗细" class="headerlink" title="粗细"></a>粗细</h4><p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>默认值（不加粗）</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>定义粗体（加粗）</td>
+</tr>
+<tr>
+<td>100~900·</td>
+<td>400等同于normal，而700等同于bold（数字后面不加单位）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li>
+<li>实际开发时，我们更喜欢用数字表示粗细</li>
+</ul>
+<h4 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h4><p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">P &#123;</span><br><span class="line">	font-style: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>默认值，浏览器会显示标准的字体样式font-style：normal；</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>浏览器会显示斜体的字体样式</td>
+</tr>
+</tbody></table>
+<h4 id="字体符合属性"><a href="#字体符合属性" class="headerlink" title="字体符合属性"></a>字体符合属性</h4><p>字体属性可以把以上文字样式综合来写，节约代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 复合属性有要求</span><br><span class="line">font: font-style font-weight font-size/line-height font-family</span><br><span class="line">font: italic 700 16px Microsoft yahei</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li>
+<li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li>
+</ul>
+<h4 id="CSS字体属性总结"><a href="#CSS字体属性总结" class="headerlink" title="CSS字体属性总结"></a>CSS字体属性总结</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>font-size</td>
+<td>字号</td>
+<td>我们通常用的单位时px像素，一定要跟上单位</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>字体</td>
+<td>实际工作中按照团队约定来写字体</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>字体粗细</td>
+<td>记住加粗时700或者bold不加粗是normal或者400（不加单位</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>字体样式</td>
+<td>记住倾斜是italic    不倾斜是normal工作中我们最常用normal</td>
+</tr>
+<tr>
+<td>font</td>
+<td>字体连写</td>
+<td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td>
+</tr>
+</tbody></table>
+<h3 id="CSS-文本属性"><a href="#CSS-文本属性" class="headerlink" title="CSS 文本属性"></a>CSS 文本属性</h3><p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
+<h4 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h4><p><strong>color</strong>属性用于定义文本颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>预定义的颜色值</td>
+<td>red，green，blue，还有pink！</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>#FF0000，#FF6600</td>
+</tr>
+<tr>
+<td>RGB代码</td>
+<td>rgb(255,0,0)或rgb(100%,0%,0%)</td>
+</tr>
+</tbody></table>
+<p><em><strong>开发中最常用的是十六进制</strong></em></p>
+<h4 id="对齐文本"><a href="#对齐文本" class="headerlink" title="对齐文本"></a>对齐文本</h4><p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>left</td>
+<td>左对齐（默认值）</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+</tbody></table>
+<h4 id="装饰文本"><a href="#装饰文本" class="headerlink" title="装饰文本"></a>装饰文本</h4><p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>默认。没有装饰线</td>
+</tr>
+<tr>
+<td>underline</td>
+<td>下划线。链接a自带下划线（常用）</td>
+</tr>
+<tr>
+<td>overline</td>
+<td>上划线。（几乎不用）</td>
+</tr>
+<tr>
+<td>line-through</td>
+<td>删除线。（不常用）</td>
+</tr>
+</tbody></table>
+<h4 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h4><p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	text-indent: 20px;</span><br><span class="line">	text-indent: 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p>
+<h4 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h4><p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	line-height: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这一行最下边到下一行最下边的距离就是行高</p>
+<h4 id="CSS文本属性总结"><a href="#CSS文本属性总结" class="headerlink" title="CSS文本属性总结"></a>CSS文本属性总结</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>文本颜色</td>
+<td>通常用十六进制，简体形式#fff</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>文本对齐</td>
+<td>可以设置文字水平的对齐方式</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>文本缩进</td>
+<td>通常我们用于段落首行缩进两个字的距离</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+<td>文本修饰</td>
+<td>记住添加下划线underline、取消下划线none</td>
+</tr>
+<tr>
+<td>line-height</td>
+<td>行高</td>
+<td>控制行与行之间的距离</td>
+</tr>
+</tbody></table>
+<h3 id="CSS-引入方式"><a href="#CSS-引入方式" class="headerlink" title="CSS 引入方式"></a>CSS 引入方式</h3><p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
+<h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style&gt;标签中</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	div &#123;</span><br><span class="line">		color: red;</span><br><span class="line">		font-size: 12px;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="行内样式表"><a href="#行内样式表" class="headerlink" title="行内样式表"></a>行内样式表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式</span><br><span class="line">＜div style=&quot;color:red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>style其实就是标签的属性</li>
+<li>在双引号中间，写法要符合CSS规范</li>
+<li>可以控制当前的标签设置样式</li>
+<li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
+<li>使用行内样式表设定CSS，通常也被称为行内式引入</li>
+</ul>
+<h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
+<p>引入外部样式表分为两步：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中</span><br><span class="line">2. 在HTML页面中，使用&lt;link&gt;标签引入这个文件</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css文件路径&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rel</td>
+<td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
+</tr>
+<tr>
+<td>href</td>
+<td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td>
+</tr>
+</tbody></table>
+<h4 id="CSS引入方式总结"><a href="#CSS引入方式总结" class="headerlink" title="CSS引入方式总结"></a>CSS引入方式总结</h4><table>
+<thead>
+<tr>
+<th>样式表</th>
+<th>优点</th>
+<th>缺点</th>
+<th>使用情况</th>
+<th>控制范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行内样式表</td>
+<td>书写方便，权重高</td>
+<td>结构样式混写</td>
+<td>较少</td>
+<td>控制一个标签</td>
+</tr>
+<tr>
+<td>内部样式表</td>
+<td>部分结构和样式相分离</td>
+<td>没有彻底分离</td>
+<td>较多</td>
+<td>控制一个页面</td>
+</tr>
+<tr>
+<td>外部样式表</td>
+<td>完全实现结构和样式相分离</td>
+<td>需要引入</td>
+<td>最多，推荐</td>
+<td>控制多个页面</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
-          
-          <category> Web前端 </category>
-          
+        <category>Web前端</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>羽毛球🏸</title>
-      <link href="/badminton/badminton/"/>
-      <url>/badminton/badminton/</url>
-      
-        <content type="html"><![CDATA[<h3 id="动作、结构、空间感"><a href="#动作、结构、空间感" class="headerlink" title="动作、结构、空间感"></a><em>动作、结构、空间感</em></h3><h4 id="握拍的目的：发力"><a href="#握拍的目的：发力" class="headerlink" title="握拍的目的：发力"></a>握拍的目的：发力</h4><p>V字握法，像握手一样（苍蝇拍握法，排面稍微内旋）。食指推，拇指稍微去挡</p><h4 id="架拍"><a href="#架拍" class="headerlink" title="架拍"></a>架拍</h4><p>做动作一定要抬头，不然一旦一抬头，动作全会变，而且用不上腰，没有办法加速</p><ol><li>拍面向前还是向外？自然情况下，会向外。很多教练不要向外的原因是怕无法发力，不能很好地完成内旋动作，动作本身没有错，但是手腕压太多容易切到球。</li><li>架拍架多大？不要太大，弯下腰后基本九十度就好。</li><li>侧身要侧多少？拉开保证可以打到球</li><li>是不是引拍越大越好发力？不是。不要太大，不然来不及击球</li><li>为什么一定要先外旋再内旋？因为身体的结构。为了击球瞬间发力，且不切球</li><li>为什么出拍时拍一直歪？为了借力会不自然斜着挥，或者刻意向左收拍，或者球在正上方练习</li><li>到底如何发力？手指控制放松抓紧的力度，会有一点点压到手腕，大臂和小臂都会用到</li></ol><p>何时抓紧，高远，或者球很慢，碰完后抓紧，如果球很快，碰球之前就要抓紧，如果之后再抓紧，球拍被压住，就会切球。一定要提前抓紧。</p><h4 id="转身"><a href="#转身" class="headerlink" title="转身"></a>转身</h4><ul><li><p>转身的目的：帮助发力，帮助回位</p></li><li><p>不是右腿上前，而是左腿向后</p></li><li><p>不要同步发力</p></li></ul><h3 id="七分脚三分手"><a href="#七分脚三分手" class="headerlink" title="七分脚三分手"></a>七分脚三分手</h3><p>没有脚上动作，很难做好。</p><h4 id="确认步"><a href="#确认步" class="headerlink" title="确认步"></a>确认步</h4><ul><li><p>右腿去找球，如果球很高，可以跑到位。如果球很低，没办法了，要打了，可以并大一些。</p></li><li><p>重心一定要换到右腿去。重心在右，动左手和左腿；重心在左，动右手和右腿。</p></li><li><p>一定是左腿先落地</p></li><li><p>空中转换重心，就甩拍</p></li><li><p>不要提前压腰，打完后会自然下去</p></li></ul><h4 id="并步、交叉步"><a href="#并步、交叉步" class="headerlink" title="并步、交叉步"></a>并步、交叉步</h4><ul><li><p>球远交叉步、球近并步</p></li><li><p>交叉步：吊球，对面挡网，交叉步跟上</p></li></ul><h4 id="回位"><a href="#回位" class="headerlink" title="回位"></a>回位</h4><p>并步回位（快节奏、小步）：快速的球，吊球，点杀，过渡，放网球。（如果杀的很快，脚刚落地对方就接了，可以原地启动直接跑）</p><p>慢慢回位，等对方一打我们就启动，一定不要跳太高。不要为了回位而回位，接球不是看跑得多快，而是看是否能在对的时间启动。</p><h4 id="马来步"><a href="#马来步" class="headerlink" title="马来步"></a>马来步</h4><p>启动后，重心先切换到右腿，向后小跳一下。如果放网后被挑头顶，要用交叉步，不然会看不到球。</p><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>练的时候一定要带着思考去练习。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>羽毛球🏸</title>
+    <url>/badminton/badminton/</url>
+    <content><![CDATA[<h3 id="动作、结构、空间感"><a href="#动作、结构、空间感" class="headerlink" title="动作、结构、空间感"></a><em>动作、结构、空间感</em></h3><h4 id="握拍的目的：发力"><a href="#握拍的目的：发力" class="headerlink" title="握拍的目的：发力"></a>握拍的目的：发力</h4><p>V字握法，像握手一样（苍蝇拍握法，排面稍微内旋）。食指推，拇指稍微去挡</p>
+<h4 id="架拍"><a href="#架拍" class="headerlink" title="架拍"></a>架拍</h4><p>做动作一定要抬头，不然一旦一抬头，动作全会变，而且用不上腰，没有办法加速</p>
+<ol>
+<li>拍面向前还是向外？自然情况下，会向外。很多教练不要向外的原因是怕无法发力，不能很好地完成内旋动作，动作本身没有错，但是手腕压太多容易切到球。</li>
+<li>架拍架多大？不要太大，弯下腰后基本九十度就好。</li>
+<li>侧身要侧多少？拉开保证可以打到球</li>
+<li>是不是引拍越大越好发力？不是。不要太大，不然来不及击球</li>
+<li>为什么一定要先外旋再内旋？因为身体的结构。为了击球瞬间发力，且不切球</li>
+<li>为什么出拍时拍一直歪？为了借力会不自然斜着挥，或者刻意向左收拍，或者球在正上方练习</li>
+<li>到底如何发力？手指控制放松抓紧的力度，会有一点点压到手腕，大臂和小臂都会用到</li>
+</ol>
+<p>何时抓紧，高远，或者球很慢，碰完后抓紧，如果球很快，碰球之前就要抓紧，如果之后再抓紧，球拍被压住，就会切球。一定要提前抓紧。</p>
+<h4 id="转身"><a href="#转身" class="headerlink" title="转身"></a>转身</h4><ul>
+<li><p>转身的目的：帮助发力，帮助回位</p>
+</li>
+<li><p>不是右腿上前，而是左腿向后</p>
+</li>
+<li><p>不要同步发力</p>
+</li>
+</ul>
+<h3 id="七分脚三分手"><a href="#七分脚三分手" class="headerlink" title="七分脚三分手"></a>七分脚三分手</h3><p>没有脚上动作，很难做好。</p>
+<h4 id="确认步"><a href="#确认步" class="headerlink" title="确认步"></a>确认步</h4><ul>
+<li><p>右腿去找球，如果球很高，可以跑到位。如果球很低，没办法了，要打了，可以并大一些。</p>
+</li>
+<li><p>重心一定要换到右腿去。重心在右，动左手和左腿；重心在左，动右手和右腿。</p>
+</li>
+<li><p>一定是左腿先落地</p>
+</li>
+<li><p>空中转换重心，就甩拍</p>
+</li>
+<li><p>不要提前压腰，打完后会自然下去</p>
+</li>
+</ul>
+<h4 id="并步、交叉步"><a href="#并步、交叉步" class="headerlink" title="并步、交叉步"></a>并步、交叉步</h4><ul>
+<li><p>球远交叉步、球近并步</p>
+</li>
+<li><p>交叉步：吊球，对面挡网，交叉步跟上</p>
+</li>
+</ul>
+<h4 id="回位"><a href="#回位" class="headerlink" title="回位"></a>回位</h4><p>并步回位（快节奏、小步）：快速的球，吊球，点杀，过渡，放网球。（如果杀的很快，脚刚落地对方就接了，可以原地启动直接跑）</p>
+<p>慢慢回位，等对方一打我们就启动，一定不要跳太高。不要为了回位而回位，接球不是看跑得多快，而是看是否能在对的时间启动。</p>
+<h4 id="马来步"><a href="#马来步" class="headerlink" title="马来步"></a>马来步</h4><p>启动后，重心先切换到右腿，向后小跳一下。如果放网后被挑头顶，要用交叉步，不然会看不到球。</p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>练的时候一定要带着思考去练习。</p>
+]]></content>
       <categories>
-          
-          <category> 运动！ </category>
-          
+        <category>运动！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>HTML-VSCode</title>
-      <link href="/web/web1/"/>
-      <url>/web/web1/</url>
-      
-        <content type="html"><![CDATA[<p>虽然我不是计算机专业，但我有计算机梦！前端后端嵌入式软件开发、全栈工程师说起来有些夸张，但我一直在向那个方向努力着。我也相信，（只要够卷o(￣▽￣)ｄ）这是个不看出身的专业。想来想去，决定了：我的大学，不能没有计算机</p><h4 id="HTML-Web-浏览器简介"><a href="#HTML-Web-浏览器简介" class="headerlink" title="HTML-Web-浏览器简介"></a>HTML-Web-浏览器简介</h4><ul><li>HTML不是编程语言，而是一种标记语言</li><li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li><li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li><li>浏览器内核人（渲染引擎）：读取网页内容，计算网页的显示方式并显示页面</li></ul><p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p><p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p><h4 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h4><h5 id="HTML语法规范"><a href="#HTML语法规范" class="headerlink" title="HTML语法规范"></a>HTML语法规范</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">标签成对：&lt;html&gt;  &lt;/html&gt;</span><br><span class="line"></span><br><span class="line">单标签：&lt;br /&gt;</span><br><span class="line"></span><br><span class="line">双标签关系：包含关系，并列关系</span><br></pre></td></tr></table></figure><h5 id="HTML基本机构标签"><a href="#HTML基本机构标签" class="headerlink" title="HTML基本机构标签"></a>HTML基本机构标签</h5><table><thead><tr><th>标签名</th><th>定义</th><th>说明</th></tr></thead><tbody><tr><td>html</td><td>HTML标签</td><td>页面中最大的标签，我们称为根标签</td></tr><tr><td>head</td><td>文档的头部</td><td>注意在head标签中我们要设置的标题是title</td></tr><tr><td>title</td><td>文档的标题</td><td>让页面拥有一个属于自己的网页标题</td></tr><tr><td>body</td><td>文档的主体</td><td>元素包含文档的所有内容</td></tr></tbody></table><p>VS-Code之！主体结构</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">&lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">Hello World!</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><h5 id="！DOCTYPE"><a href="#！DOCTYPE" class="headerlink" title="！DOCTYPE"></a>！DOCTYPE</h5><p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p><h5 id="lang语言"><a href="#lang语言" class="headerlink" title="lang语言"></a>lang语言</h5><p>language的缩写：en英语、zh-CH中文</p><h5 id="charset字符集"><a href="#charset字符集" class="headerlink" title="charset字符集"></a>charset字符集</h5><p>编码方式：GBK、UTF-8（万国码）一定要写</p><h5 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h5><ul><li>语义标签，区分标题，段落等</li><li>标题标签h，一行显示</li><li>段落和换行标签p，强制换行br</li></ul><p>文本格式化标签：</p><table><thead><tr><th>语义</th><th>标签</th><th>说明</th></tr></thead><tbody><tr><td>加粗</td><td>strong或者b</td><td>推荐strong，语气更强烈</td></tr><tr><td>倾斜</td><td>em或者i</td><td>推荐em，语气更强烈</td></tr><tr><td>删除线</td><td>del或者s</td><td>推荐del，语气更强烈</td></tr><tr><td>下划线</td><td>ins或者u</td><td>推荐ins，语气更强烈</td></tr></tbody></table><p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p><h5 id="img图片"><a href="#img图片" class="headerlink" title="img图片"></a>img图片</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在HTML标签中，&lt;img src=&quot;url&quot; /&gt;</span><br></pre></td></tr></table></figure><table><thead><tr><th>属性</th><th>属性值</th><th>说明</th></tr></thead><tbody><tr><td>src</td><td>图片路径</td><td>必须属性</td></tr><tr><td>alt</td><td>文本</td><td>替换文本。图像不能显示的文字</td></tr><tr><td>title</td><td>文本</td><td>提示文本。鼠标放到图像上显示的文字</td></tr><tr><td>width</td><td>像素</td><td>设置图像的宽度</td></tr><tr><td>height</td><td>像素</td><td>设置图像的高度</td></tr><tr><td>border</td><td>像素</td><td>设置图像的边框粗细</td></tr></tbody></table><p>border在HTML5已不支持（bordeR）</p><p>属性均采取键值对的形式：key= “value”</p><h5 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签<a></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;</span><br></pre></td></tr></table></figure><ul><li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li><li>跳转目标：#表示空链接</li><li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li></ul><h5 id="注释标签：-–我是一个注释–"><a href="#注释标签：-–我是一个注释–" class="headerlink" title="注释标签：!–我是一个注释–"></a>注释标签：!–我是一个注释–</h5><p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png"></p><h5 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h5><p>用于展示数据（不是来布局页面的）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;文字&lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"># &lt;table&gt;定义表格</span><br><span class="line"># &lt;tr&gt;用于定义单元格中的行，必须嵌套在&lt;table&gt;中</span><br><span class="line"># &lt;td&gt;用于定义表格中的单元格，必须嵌套在&lt;tr&gt;中</span><br></pre></td></tr></table></figure><p>表格属性，实际开发不常用，后面通过CSS来设置</p><table><thead><tr><th>属性名</th><th>属性值</th><th>描述</th></tr></thead><tbody><tr><td>align</td><td>left、center、right</td><td>规定表格相对周围元素的对齐方式</td></tr><tr><td>border</td><td>1或 “”</td><td>规定表格单元是否拥有边框，默认为””,表示没有边框</td></tr><tr><td>cellpadding</td><td>像素值</td><td>规定单元边沿与其内容之间的空白，默认1像素</td></tr><tr><td>cellspacing</td><td>像素值</td><td>规定单元格之间的空白，默认2像素</td></tr><tr><td>width</td><td>像素值或百分比</td><td>规定表格的宽度</td></tr></tbody></table><p>表格结构标签</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;thead&gt;表格的头部区域&lt;tbody&gt;表格的整体区域</span><br></pre></td></tr></table></figure><p>合并单元格</p><ul><li>跨行合并：rowspan=”合并单元格的个数”</li><li>跨列合并：colspan=”合并单元格的个数”</li></ul><h5 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h5><p>列表可以分为三大类：无序列表、有序列表、自定义列表</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 主标签只能嵌套&lt;li&gt;，其中可以容纳所有元素</span><br><span class="line"># 无序列表（重点）、排序整齐，没有顺序</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;/li&gt;</span><br><span class="line">....</span><br><span class="line">&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"># 有序列表（不常用，了解即可）</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;/li&gt;</span><br><span class="line">....</span><br><span class="line">&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"># 自定义列表、一个小标题，其他围绕他们说明</span><br><span class="line">&lt;dl&gt;</span><br><span class="line">&lt;dt&gt;&lt;/dt&gt;</span><br><span class="line">&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">....</span><br><span class="line">&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure><h5 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h5><p>目的：收集用户信息</p><p>一个完整的表单由<strong>表单域、表单控件（表单元素）</strong>和<strong>提示信息</strong>三部分组成</p><p>表单域：包含表单元素的区域</p><p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;url地址&quot; method=&quot;提交方式&quot; name=&quot;表单域名称&quot;&gt;</span><br><span class="line"># 各种表单元素控件</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p>表单元素</p><ul><li>input输入表单元素</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 用于收集用户信息。&lt;input type=&quot;属性值&quot; /&gt;。</span><br><span class="line">text：文本框、里面可以输入任何文字</span><br><span class="line">password：密码框、用户看不见输入的密码</span><br><span class="line">radio：单选按钮、实现多选一</span><br><span class="line">name：表单元素名字、必须有相同的名字</span><br><span class="line">checkbox：复选框、实现多选</span><br><span class="line">value：显示默认值</span><br><span class="line">checked：默认选择</span><br><span class="line">submit：提交到服务器</span><br><span class="line">reset：清楚表单中的所有数据</span><br><span class="line">button：定义可点击按钮，通常后期结合js一起使用</span><br><span class="line">file：文件域、上传文件使用</span><br><span class="line"></span><br><span class="line">&lt;label for=&quot;名字&quot;&gt;内容&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;名字&quot; id=&quot;名字&quot; /&gt;</span><br></pre></td></tr></table></figure><ul><li>select下拉表单元素</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 定义下拉列表</span><br><span class="line">&lt;select&gt;</span><br><span class="line">&lt;option&gt;选项1&lt;/option&gt;</span><br><span class="line">&lt;option&gt;选项2&lt;/option&gt;</span><br><span class="line">&lt;option&gt;选项3&lt;/option&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure><ul><li>textarea文本域元素</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 大量输入文本，经常用于留言板、评论</span><br></pre></td></tr></table></figure><h4 id="查找文档"><a href="#查找文档" class="headerlink" title="查找文档"></a>查找文档</h4><ul><li>百度：<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li><li>W3C：<a href="https://www.w3school.com.cn/">w3school 在线教程</a></li><li>MDN：<a href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li></ul>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>HTML-VSCode</title>
+    <url>/web/web1/</url>
+    <content><![CDATA[<p>虽然我不是计算机专业，但我有计算机梦！前端后端嵌入式软件开发、全栈工程师说起来有些夸张，但我一直在向那个方向努力着。我也相信，（只要够卷o(￣▽￣)ｄ）这是个不看出身的专业。想来想去，决定了：我的大学，不能没有计算机</p>
+<h4 id="HTML-Web-浏览器简介"><a href="#HTML-Web-浏览器简介" class="headerlink" title="HTML-Web-浏览器简介"></a>HTML-Web-浏览器简介</h4><ul>
+<li>HTML不是编程语言，而是一种标记语言</li>
+<li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li>
+<li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li>
+<li>浏览器内核人（渲染引擎）：读取网页内容，计算网页的显示方式并显示页面</li>
+</ul>
+<p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p>
+<p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
+<h4 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h4><h5 id="HTML语法规范"><a href="#HTML语法规范" class="headerlink" title="HTML语法规范"></a>HTML语法规范</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标签成对：&lt;html&gt;  &lt;/html&gt;</span><br><span class="line"></span><br><span class="line">单标签：&lt;br /&gt;</span><br><span class="line"></span><br><span class="line">双标签关系：包含关系，并列关系</span><br></pre></td></tr></table></figure>
+
+<h5 id="HTML基本机构标签"><a href="#HTML基本机构标签" class="headerlink" title="HTML基本机构标签"></a>HTML基本机构标签</h5><table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>定义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>html</td>
+<td>HTML标签</td>
+<td>页面中最大的标签，我们称为根标签</td>
+</tr>
+<tr>
+<td>head</td>
+<td>文档的头部</td>
+<td>注意在head标签中我们要设置的标题是title</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文档的标题</td>
+<td>让页面拥有一个属于自己的网页标题</td>
+</tr>
+<tr>
+<td>body</td>
+<td>文档的主体</td>
+<td>元素包含文档的所有内容</td>
+</tr>
+</tbody></table>
+<p>VS-Code之！主体结构</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">	&lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	Hello World!</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="！DOCTYPE"><a href="#！DOCTYPE" class="headerlink" title="！DOCTYPE"></a>！DOCTYPE</h5><p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
+<h5 id="lang语言"><a href="#lang语言" class="headerlink" title="lang语言"></a>lang语言</h5><p>language的缩写：en英语、zh-CH中文</p>
+<h5 id="charset字符集"><a href="#charset字符集" class="headerlink" title="charset字符集"></a>charset字符集</h5><p>编码方式：GBK、UTF-8（万国码）一定要写</p>
+<h5 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h5><ul>
+<li>语义标签，区分标题，段落等</li>
+<li>标题标签h，一行显示</li>
+<li>段落和换行标签p，强制换行br</li>
+</ul>
+<p>文本格式化标签：</p>
+<table>
+<thead>
+<tr>
+<th>语义</th>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加粗</td>
+<td>strong或者b</td>
+<td>推荐strong，语气更强烈</td>
+</tr>
+<tr>
+<td>倾斜</td>
+<td>em或者i</td>
+<td>推荐em，语气更强烈</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>del或者s</td>
+<td>推荐del，语气更强烈</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>ins或者u</td>
+<td>推荐ins，语气更强烈</td>
+</tr>
+</tbody></table>
+<p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
+<h5 id="img图片"><a href="#img图片" class="headerlink" title="img图片"></a>img图片</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在HTML标签中，&lt;img src=&quot;url&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>图片路径</td>
+<td>必须属性</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文本</td>
+<td>替换文本。图像不能显示的文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文本</td>
+<td>提示文本。鼠标放到图像上显示的文字</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素</td>
+<td>设置图像的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素</td>
+<td>设置图像的高度</td>
+</tr>
+<tr>
+<td>border</td>
+<td>像素</td>
+<td>设置图像的边框粗细</td>
+</tr>
+</tbody></table>
+<p>border在HTML5已不支持（bordeR）</p>
+<p>属性均采取键值对的形式：key= “value”</p>
+<h5 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签<a></h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
+<li>跳转目标：#表示空链接</li>
+<li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li>
+</ul>
+<h5 id="注释标签：-–我是一个注释–"><a href="#注释标签：-–我是一个注释–" class="headerlink" title="注释标签：!–我是一个注释–"></a>注释标签：!–我是一个注释–</h5><p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png"></p>
+<h5 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h5><p>用于展示数据（不是来布局页面的）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;文字&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"># &lt;table&gt;定义表格</span><br><span class="line"># &lt;tr&gt;用于定义单元格中的行，必须嵌套在&lt;table&gt;中</span><br><span class="line"># &lt;td&gt;用于定义表格中的单元格，必须嵌套在&lt;tr&gt;中</span><br></pre></td></tr></table></figure>
+
+<p>表格属性，实际开发不常用，后面通过CSS来设置</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>left、center、right</td>
+<td>规定表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td>border</td>
+<td>1或 “”</td>
+<td>规定表格单元是否拥有边框，默认为””,表示没有边框</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>像素值</td>
+<td>规定单元边沿与其内容之间的空白，默认1像素</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>像素值</td>
+<td>规定单元格之间的空白，默认2像素</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素值或百分比</td>
+<td>规定表格的宽度</td>
+</tr>
+</tbody></table>
+<p>表格结构标签</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;thead&gt;表格的头部区域&lt;tbody&gt;表格的整体区域</span><br></pre></td></tr></table></figure>
+
+<p>合并单元格</p>
+<ul>
+<li>跨行合并：rowspan=”合并单元格的个数”</li>
+<li>跨列合并：colspan=”合并单元格的个数”</li>
+</ul>
+<h5 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h5><p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 主标签只能嵌套&lt;li&gt;，其中可以容纳所有元素</span><br><span class="line"># 无序列表（重点）、排序整齐，没有顺序</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"># 有序列表（不常用，了解即可）</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"># 自定义列表、一个小标题，其他围绕他们说明</span><br><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h5><p>目的：收集用户信息</p>
+<p>一个完整的表单由<strong>表单域、表单控件（表单元素）</strong>和<strong>提示信息</strong>三部分组成</p>
+<p>表单域：包含表单元素的区域</p>
+<p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form action=&quot;url地址&quot; method=&quot;提交方式&quot; name=&quot;表单域名称&quot;&gt;</span><br><span class="line">	# 各种表单元素控件</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>表单元素</p>
+<ul>
+<li>input输入表单元素</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 用于收集用户信息。&lt;input type=&quot;属性值&quot; /&gt;。</span><br><span class="line">text：文本框、里面可以输入任何文字</span><br><span class="line">password：密码框、用户看不见输入的密码</span><br><span class="line">radio：单选按钮、实现多选一</span><br><span class="line">name：表单元素名字、必须有相同的名字</span><br><span class="line">checkbox：复选框、实现多选</span><br><span class="line">value：显示默认值</span><br><span class="line">checked：默认选择</span><br><span class="line">submit：提交到服务器</span><br><span class="line">reset：清楚表单中的所有数据</span><br><span class="line">button：定义可点击按钮，通常后期结合js一起使用</span><br><span class="line">file：文件域、上传文件使用</span><br><span class="line"></span><br><span class="line">&lt;label for=&quot;名字&quot;&gt;内容&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;名字&quot; id=&quot;名字&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>select下拉表单元素</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 定义下拉列表</span><br><span class="line">&lt;select&gt;</span><br><span class="line">	&lt;option&gt;选项1&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项2&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项3&lt;/option&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>textarea文本域元素</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 大量输入文本，经常用于留言板、评论	</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找文档"><a href="#查找文档" class="headerlink" title="查找文档"></a>查找文档</h4><ul>
+<li>百度：<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
+<li>W3C：<a href="https://www.w3school.com.cn/">w3school 在线教程</a></li>
+<li>MDN：<a href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> Web前端 </category>
-          
+        <category>Web前端</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日本十大主要城市</title>
-      <link href="/japaneselearning/japaneselearning5/"/>
-      <url>/japaneselearning/japaneselearning5/</url>
-      
-        <content type="html"><![CDATA[<p>本文摘自：<a href="https://livejapan.com/zh-cn/">景点名胜、体验指南 - LIVE JAPAN</a></p><h2 id="札幌"><a href="#札幌" class="headerlink" title="札幌"></a><strong>札幌</strong></h2><p><strong>都道府县：</strong> 北海道<br><strong>特点：</strong> 雪与冬季、酷寒气候，新鲜海产，丰富的农作物与高品质乳制品<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> <a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>雪季，<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>啤酒<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、白色恋人公园（饼干工厂）、<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>工厂（<a href="https://livejapan.com/zh-cn/go-shopping/">购物</a>．娱乐综合设施）、海产市场<br><strong>代表料理：</strong> 海鲜丼饭、汤<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-curry/">咖喱</a>、成吉思汗烤羊肉、味噌<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-ramen/">拉面</a>、冰淇淋</p><p>位于日本最北的都道府县．北海道<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>市，寒冷雪国印象深植人心，对于喜爱冬季活动的人来说，是个非常合适的地方。享誉国际的<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>雪季会场，每年2月在此举办的大型冰雕与雪像展示，更是吸引了超过200万以上的游客来访。探访展示着1972年冬季奥运纪念品的<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>奥林匹克<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>，或是前往滑雪胜地享受滑雪与雪板乐趣的人们蜂拥而至，冬季的<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>总是充满人气，热闹滚滚。北海道天然物产丰富，盛产海鲜，到<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>时别忘了品尝各种海底美味，保证让你回味无穷，毕生难忘。</p><h2 id="东京"><a href="#东京" class="headerlink" title="东京"></a><strong>东京</strong></h2><p><strong>都道府县：</strong><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/spot-list/area-al1301/">东京都</a><br><strong>特点：</strong> 来自大都会的刺激感受，最新技术或流行的热门景点<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong>东京铁塔、晴空塔、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-shibuya/">涩谷</a>站前十字路口(スクランブル交差点)、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-asakusa/">浅草</a>寺、明治神宫、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-ryogoku_skytree-tokyo/spot-list/area-as1301005/">两国</a>国技馆（相扑比赛）、<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-anime/">动画</a>卡通、<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-manga/">漫画</a>、<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-games/">游戏</a>相关景点、”卡哇伊”景点<br><strong>代表料理：</strong> <a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-okonomiyaki_monja_takoyaki/">文字烧</a>、人形烧、金太郎饴</p><p>日本最知名都市．东京。<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/spot-list/area-al1301/">东京都</a>由23区构成，估计人口超过3500万以上。号称世界第一忙碌的十字路口「<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-shibuya/">涩谷</a>站前十字路口」，一次绿灯最多有3000人由各方同时穿越，一天的使用人数竟高达50万人！而<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-shinjuku/">新宿</a>车站也毫不逊色，一天的搭车人数冲破340万人，可说是世界上最拥挤的车站了。此外，除了作为宅宅文化圣地的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-akihabara/">秋叶原</a>，各种<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-games/">游戏</a>．<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-anime/">动画</a>卡通．<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-manga/">漫画</a>专卖店林立，还有贩售各种大小型电器化用品，商品琳琅满目，亦是日本最大的电器街。东京不仅是流行尖端与「卡哇伊」发源地，更充满了浓厚的历史<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>气息，每年在<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>或<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-temples/">寺院</a>所举办的祭典为数众多，是一个古今文化相容共存的经典指标都市。</p><h2 id="横滨"><a href="#横滨" class="headerlink" title="横滨"></a><strong>横滨</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/spot-list/area-al1401/">神奈川县</a><br><strong>特点：</strong> 港湾都市<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>红砖仓库、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-landmarks/">地标</a>塔(Landmark Tower)、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>船舶大厦(Marine Tower)、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-minatomirai21_chinatown/spot-list/area-as1401002/">中华街</a>、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>港、帆船日本丸<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>港<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-art-museums/">美术馆</a>、Cosmoclock 21（摩天轮）、<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-ramen/">拉面</a><a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、未来港21<br><strong>代表料理：</strong> 牛锅、生马面 (<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-ramen/">拉面</a>)、Napolitan拿坡里<a href="https://livejapan.com/zh-cn/go-eating/go-italian-and-french/go-pasta/">意大利面</a>、<a href="https://livejapan.com/zh-cn/go-eating/go-chinese-food/">中华料理</a></p><p><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>市位于东京南方，东京湾西岸，面临太平洋，是风光明媚的港湾都市，隶属于仅次于<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/spot-list/area-al1301/">东京都</a>，日本人口第二多的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/spot-list/area-al1401/">神奈川县</a>。 1859年日本首次正式开港的港口，作为<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>重要代表建筑的红砖仓库，或是19世纪由中国移民聚集而形成的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-minatomirai21_chinatown/spot-list/area-as1401002/">中华街</a>等等，可说是深受来自国际社会影响，造就了今日的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>。到<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>可以搭乘水上巴士、大型摩天轮眺望港湾宽阔<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/">风景</a>，或是<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-art-museums/">美术馆</a>．<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>巡礼，此外还能享受血拼<a href="https://livejapan.com/zh-cn/go-shopping/">购物</a>乐趣。</p><h2 id="名古屋"><a href="#名古屋" class="headerlink" title="名古屋"></a><strong>名古屋</strong></h2><p><strong>都道府县：</strong> 爱知县<br><strong>特点：</strong> 交通．技术<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> 名古屋城、JR中央双塔JR Central Towers、丰田<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、丰田产业技术纪念馆、磁浮列车铁道馆、朝日啤酒工厂、名古屋市科学馆、大须观音、世界<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-cosplay-shops/">Cosplay</a>高峰会<br><strong>代表料理：</strong>味噌猪排、炸鸡翅、碁子面、炸虾饭团</p><p>名古屋为日本汽车・航空业中心，以及拥有发展机器人产业且成果卓越的技术都市。探访市内的科学馆，如磁浮列车铁道馆、丰田<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、丰田产业技术纪念馆，便能清楚窥探出名古屋的另外一面。近年来，名古屋也以举办世界<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-cosplay-shops/">Cosplay</a>高峰会而声名大噪，集合20个国家的玩家们盛装出席，互相竞争观摩，以大规模游行来迎接<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-cosplay-shops/">Cosplay</a>界一年一度的盛事。</p><h2 id="京都"><a href="#京都" class="headerlink" title="京都"></a><strong>京都</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/spot-list/area-al2601/">京都府</a><br><strong>特点：</strong> <a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a><br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-fushimi_uji/spot-list/area-as2601006/">伏见</a>稻荷大社、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-gion_kawaramachi_kiyomizu-dera-temple/">清水寺</a>、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-kinkakuji-temple_kitayama/spot-list/area-as2601005/">金阁寺</a>、龙安寺、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-gion_kawaramachi_kiyomizu-dera-temple/">祇园</a>、京都国立<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a><br><strong>代表料理：</strong> 怀石料理、<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-tofu/">豆腐皮</a>、精进料理、八桥</p><p>拥有千年以上历史，曾为日本首都的京都，是体验日本<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>的最佳场所。举凡<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-kinkakuji-temple_kitayama/spot-list/area-as2601005/">金阁寺</a>、以石庭闻名的龙安寺、矗立着5000座以上红色鸟居的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-fushimi_uji/spot-list/area-as2601006/">伏见</a>稻荷大社等等，市内保留了约2000座寺庙与<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>。而京都最引人注目的<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>景点之一，首推<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-gion_kawaramachi_kiyomizu-dera-temple/">祇园</a>的「艺者地区」，平常虽然很难见到艺妓与舞妓们，但在这里运气好一点的话，说不定可以巧遇走在路上的和服美人！喜爱美术或历史的人，绝不能错过收藏了230件以上国宝与重要文化文物的京都国立<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>。</p><h2 id="奈良"><a href="#奈良" class="headerlink" title="奈良"></a><strong>奈良</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/spot-list/area-al2901/">奈良县</a><br><strong>特点：</strong> <a href="https://livejapan.com/zh-cn/go-visiting/go-nature/">自然</a>与文化融合<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>古都遗迹、东大寺、大佛、春日大社、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>公园、吉野赏花景点、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>国立<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a><br><strong>代表料理：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>腌渍物、柿子料理、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>茶饭、艾草麻糬</p><p>身为日本建国后第一个首都的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>，不仅仅为<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>的宝库，同时也能够享受<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/">自然</a>美景的城市。被认定为UNESCO世界<a href="https://livejapan.com/zh-cn/go-visiting/go-world-heritage-sites/go-cultural-heritage-sites/">文化遗产</a>「古都<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>文化财」的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>，平安宫迹、春日山原始林等，存在着众多与历史相关的<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>景点，其中又以<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>公园里的几百头鹿群们，特别受到国内外<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>客的欢迎。自古相传鹿为神的使者，坚守神道的古老信仰，若是前往了<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>公园，喂喂「鹿仙贝」，一定可以为旅程添上美好的回忆，幸运的话，也许还能够见到小鹿点头，表达对人们感谢的敬礼喔。</p><h2 id="大阪"><a href="#大阪" class="headerlink" title="大阪"></a><strong>大阪</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/spot-list/area-al2701/">大阪府</a><br><strong>特点：</strong> 充满活力与魅力的城市<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> 道顿崛、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-osaka-castle_tenmabashi_kyobashi/spot-list/area-as2701003/">大阪城</a>、大阪海游馆、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-usj_nanko-port/">USJ</a>大阪环球影城、空中庭园展望台、住吉大社<br><strong>代表料理：</strong> 章鱼烧、大阪烧、烧肉、豆皮<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-udon_soba/">乌冬</a>面、太鼓馒头</p><p>关西地区最大的城市，也是日本第二大都市・大阪，元气满满的街道氛围与亲切有趣的人们。堪称世界最大等级的<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/go-zoos_aquariums/">水族馆</a>・大阪海游馆或<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-usj_nanko-port/">USJ</a>大阪环球影城，被闪烁霓虹灯点亮的街道、来份必吃的章鱼烧或大阪烧、逛逛大阪最热闹的道顿崛等等，大阪魅力无限！此外，在大阪也能接收到<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>洗礼，如<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-osaka-castle_tenmabashi_kyobashi/spot-list/area-as2701003/">大阪城</a>与住吉大社、人形净琉璃等，都是日本非常知名的历史文化资产。</p><h2 id="神户"><a href="#神户" class="headerlink" title="神户"></a><strong>神户</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/spot-list/area-al2801/">兵库县</a><br><strong>特点：</strong> 走累了到海边品尝<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-teppanyaki/">牛排</a><br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong><a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>港乐园、美利坚公园、滩酒藏、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">有马温泉</a>、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">六甲山</a>、阪神．淡路大震灾纪念馆<br><strong>代表料理：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>牛、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-himeji_akashi/spot-list/area-as2801005/">明石</a>烧、章鱼饭、酒</p><p><a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>位于大阪的西边，是一座港口城市。日本锁国时代结束后，与国外进行贸易而最早开发的地点之一，「Kobe」一词成为<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>生产的高品质牛肉代名词，不但扬名国际，听说前NBA明星柯比·比恩·布莱恩(Kobe Bean Bryant) 名字即来自<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>牛。<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>邻接著名登山名胜<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">六甲山</a>，与日本最古老<a href="https://livejapan.com/zh-cn/go-visiting/go-activities/go-hot-springs_bath-houses/">温泉</a><a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">有马温泉</a>，此外，市内的滩区为日本屈指可数的造酒地区。 1995年阪神．淡路大地震受灾区之一的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>，市区街道成功重建被视为重要指标，到<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>旅游时，别忘了前往阪神．淡路大震灾纪念馆，感受并回顾一下当时的情况吧。</p><h2 id="广岛"><a href="#广岛" class="headerlink" title="广岛"></a><strong>广岛</strong></h2><p><strong>都道府县：</strong> 广岛县<br><strong>特点：</strong> 历史、和平省思<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> 广岛平和纪念公园、广岛城、缩景园、世纪平和纪念公园、广岛护国<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>、广岛佛舍利塔<br><strong>代表料理：</strong> 牡蛎、广岛烧、广岛沾面、枫叶馒头</p><p>1945年被投下世界第一颗原子弹的地方．广岛。在那不久之后，又遭枕崎台风袭击，造成莫大的灾情。将被破坏的街道与<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/">建筑物</a>经过重建．新建，于1949在日本国会宣告为「平和记念都市」，跨越重重困难，才成就了现在的广岛。广岛平和纪念公园作为复兴都市的象征，另外在市内还设置许多响应和平与协调的设施。除此之外，走访严岛<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>看漂浮海上壮观的大鸟居、广岛城、缩景园等等，众多一生必去一次的景点。</p><h2 id="冲绳"><a href="#冲绳" class="headerlink" title="冲绳"></a><strong>冲绳</strong></h2><p><strong>都道府县：</strong> 冲绳县<br><strong>特点：</strong> 海边放空、水上活动<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong>冲绳美丽海<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/go-zoos_aquariums/">水族馆</a>、斋场御岳、国营冲绳纪念公园、首里城、冲绳和平祈念堂、玉取崎展望台、各地海岸<br><strong>代表料理：</strong> 苦瓜炒<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-tofu/">豆腐</a>、海葡萄、冲绳面、香檬</p><p>日本最南端，由160座岛所组成的冲绳，属亚热带气候，生长栖息了许多珍贵的动植物。白色沙滩、透明清澈的海水、色彩缤纷的鱼群，即使在日本也能够享受浮浅、潜水的乐趣。古名琉球，各岛所存在的独特文化至今仍完好留存，来一趟冲绳可见到完全不同风貌的日本与<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>。</p><h2 id="附上两张地图"><a href="#附上两张地图" class="headerlink" title="附上两张地图~~~"></a>附上两张地图~~~</h2><p><img src="https://i.loli.net/2021/08/26/TVxAhZBEnRrGoPc.jpg"></p><p><img src="https://i.loli.net/2021/08/26/lZTNH6o5EtXMPL2.png"></p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>日本十大主要城市</title>
+    <url>/japaneselearning/japaneselearning5/</url>
+    <content><![CDATA[<p>本文摘自：<a href="https://livejapan.com/zh-cn/">景点名胜、体验指南 - LIVE JAPAN</a></p>
+<h2 id="札幌"><a href="#札幌" class="headerlink" title="札幌"></a><strong>札幌</strong></h2><p><strong>都道府县：</strong> 北海道<br><strong>特点：</strong> 雪与冬季、酷寒气候，新鲜海产，丰富的农作物与高品质乳制品<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> <a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>雪季，<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>啤酒<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、白色恋人公园（饼干工厂）、<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>工厂（<a href="https://livejapan.com/zh-cn/go-shopping/">购物</a>．娱乐综合设施）、海产市场<br><strong>代表料理：</strong> 海鲜丼饭、汤<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-curry/">咖喱</a>、成吉思汗烤羊肉、味噌<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-ramen/">拉面</a>、冰淇淋</p>
+<p>位于日本最北的都道府县．北海道<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>市，寒冷雪国印象深植人心，对于喜爱冬季活动的人来说，是个非常合适的地方。享誉国际的<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>雪季会场，每年2月在此举办的大型冰雕与雪像展示，更是吸引了超过200万以上的游客来访。探访展示着1972年冬季奥运纪念品的<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>奥林匹克<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>，或是前往滑雪胜地享受滑雪与雪板乐趣的人们蜂拥而至，冬季的<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>总是充满人气，热闹滚滚。北海道天然物产丰富，盛产海鲜，到<a href="https://livejapan.com/zh-cn/in-hokkaido/in-pref-hokkaido/in-sapporo_chitose/">札幌</a>时别忘了品尝各种海底美味，保证让你回味无穷，毕生难忘。</p>
+<h2 id="东京"><a href="#东京" class="headerlink" title="东京"></a><strong>东京</strong></h2><p><strong>都道府县：</strong><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/spot-list/area-al1301/">东京都</a><br><strong>特点：</strong> 来自大都会的刺激感受，最新技术或流行的热门景点<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong>东京铁塔、晴空塔、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-shibuya/">涩谷</a>站前十字路口(スクランブル交差点)、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-asakusa/">浅草</a>寺、明治神宫、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-ryogoku_skytree-tokyo/spot-list/area-as1301005/">两国</a>国技馆（相扑比赛）、<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-anime/">动画</a>卡通、<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-manga/">漫画</a>、<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-games/">游戏</a>相关景点、”卡哇伊”景点<br><strong>代表料理：</strong> <a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-okonomiyaki_monja_takoyaki/">文字烧</a>、人形烧、金太郎饴</p>
+<p>日本最知名都市．东京。<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/spot-list/area-al1301/">东京都</a>由23区构成，估计人口超过3500万以上。号称世界第一忙碌的十字路口「<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-shibuya/">涩谷</a>站前十字路口」，一次绿灯最多有3000人由各方同时穿越，一天的使用人数竟高达50万人！而<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-shinjuku/">新宿</a>车站也毫不逊色，一天的搭车人数冲破340万人，可说是世界上最拥挤的车站了。此外，除了作为宅宅文化圣地的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/in-akihabara/">秋叶原</a>，各种<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-games/">游戏</a>．<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-anime/">动画</a>卡通．<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-manga/">漫画</a>专卖店林立，还有贩售各种大小型电器化用品，商品琳琅满目，亦是日本最大的电器街。东京不仅是流行尖端与「卡哇伊」发源地，更充满了浓厚的历史<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>气息，每年在<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>或<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-temples/">寺院</a>所举办的祭典为数众多，是一个古今文化相容共存的经典指标都市。</p>
+<h2 id="横滨"><a href="#横滨" class="headerlink" title="横滨"></a><strong>横滨</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/spot-list/area-al1401/">神奈川县</a><br><strong>特点：</strong> 港湾都市<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>红砖仓库、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-landmarks/">地标</a>塔(Landmark Tower)、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>船舶大厦(Marine Tower)、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-minatomirai21_chinatown/spot-list/area-as1401002/">中华街</a>、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>港、帆船日本丸<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>港<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-art-museums/">美术馆</a>、Cosmoclock 21（摩天轮）、<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-ramen/">拉面</a><a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、未来港21<br><strong>代表料理：</strong> 牛锅、生马面 (<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-ramen/">拉面</a>)、Napolitan拿坡里<a href="https://livejapan.com/zh-cn/go-eating/go-italian-and-french/go-pasta/">意大利面</a>、<a href="https://livejapan.com/zh-cn/go-eating/go-chinese-food/">中华料理</a></p>
+<p><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>市位于东京南方，东京湾西岸，面临太平洋，是风光明媚的港湾都市，隶属于仅次于<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-tokyo/spot-list/area-al1301/">东京都</a>，日本人口第二多的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/spot-list/area-al1401/">神奈川县</a>。 1859年日本首次正式开港的港口，作为<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>重要代表建筑的红砖仓库，或是19世纪由中国移民聚集而形成的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a><a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-minatomirai21_chinatown/spot-list/area-as1401002/">中华街</a>等等，可说是深受来自国际社会影响，造就了今日的<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>。到<a href="https://livejapan.com/zh-cn/in-tokyo/in-pref-kanagawa/in-yokohama/spot-list/area-as1401001/">横滨</a>可以搭乘水上巴士、大型摩天轮眺望港湾宽阔<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/">风景</a>，或是<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-art-museums/">美术馆</a>．<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>巡礼，此外还能享受血拼<a href="https://livejapan.com/zh-cn/go-shopping/">购物</a>乐趣。</p>
+<h2 id="名古屋"><a href="#名古屋" class="headerlink" title="名古屋"></a><strong>名古屋</strong></h2><p><strong>都道府县：</strong> 爱知县<br><strong>特点：</strong> 交通．技术<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> 名古屋城、JR中央双塔JR Central Towers、丰田<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、丰田产业技术纪念馆、磁浮列车铁道馆、朝日啤酒工厂、名古屋市科学馆、大须观音、世界<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-cosplay-shops/">Cosplay</a>高峰会<br><strong>代表料理：</strong>味噌猪排、炸鸡翅、碁子面、炸虾饭团</p>
+<p>名古屋为日本汽车・航空业中心，以及拥有发展机器人产业且成果卓越的技术都市。探访市内的科学馆，如磁浮列车铁道馆、丰田<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>、丰田产业技术纪念馆，便能清楚窥探出名古屋的另外一面。近年来，名古屋也以举办世界<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-cosplay-shops/">Cosplay</a>高峰会而声名大噪，集合20个国家的玩家们盛装出席，互相竞争观摩，以大规模游行来迎接<a href="https://livejapan.com/zh-cn/go-visiting/go-contemporary-culture/go-cosplay-shops/">Cosplay</a>界一年一度的盛事。</p>
+<h2 id="京都"><a href="#京都" class="headerlink" title="京都"></a><strong>京都</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/spot-list/area-al2601/">京都府</a><br><strong>特点：</strong> <a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a><br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-fushimi_uji/spot-list/area-as2601006/">伏见</a>稻荷大社、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-gion_kawaramachi_kiyomizu-dera-temple/">清水寺</a>、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-kinkakuji-temple_kitayama/spot-list/area-as2601005/">金阁寺</a>、龙安寺、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-gion_kawaramachi_kiyomizu-dera-temple/">祇园</a>、京都国立<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a><br><strong>代表料理：</strong> 怀石料理、<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-tofu/">豆腐皮</a>、精进料理、八桥</p>
+<p>拥有千年以上历史，曾为日本首都的京都，是体验日本<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>的最佳场所。举凡<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-kinkakuji-temple_kitayama/spot-list/area-as2601005/">金阁寺</a>、以石庭闻名的龙安寺、矗立着5000座以上红色鸟居的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-fushimi_uji/spot-list/area-as2601006/">伏见</a>稻荷大社等等，市内保留了约2000座寺庙与<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>。而京都最引人注目的<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>景点之一，首推<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-kyoto/in-gion_kawaramachi_kiyomizu-dera-temple/">祇园</a>的「艺者地区」，平常虽然很难见到艺妓与舞妓们，但在这里运气好一点的话，说不定可以巧遇走在路上的和服美人！喜爱美术或历史的人，绝不能错过收藏了230件以上国宝与重要文化文物的京都国立<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a>。</p>
+<h2 id="奈良"><a href="#奈良" class="headerlink" title="奈良"></a><strong>奈良</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/spot-list/area-al2901/">奈良县</a><br><strong>特点：</strong> <a href="https://livejapan.com/zh-cn/go-visiting/go-nature/">自然</a>与文化融合<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>古都遗迹、东大寺、大佛、春日大社、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>公园、吉野赏花景点、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>国立<a href="https://livejapan.com/zh-cn/go-visiting/go-museums/go-other-museums/">博物馆</a><br><strong>代表料理：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>腌渍物、柿子料理、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>茶饭、艾草麻糬</p>
+<p>身为日本建国后第一个首都的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>，不仅仅为<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>的宝库，同时也能够享受<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/">自然</a>美景的城市。被认定为UNESCO世界<a href="https://livejapan.com/zh-cn/go-visiting/go-world-heritage-sites/go-cultural-heritage-sites/">文化遗产</a>「古都<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>文化财」的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>，平安宫迹、春日山原始林等，存在着众多与历史相关的<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>景点，其中又以<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>公园里的几百头鹿群们，特别受到国内外<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>客的欢迎。自古相传鹿为神的使者，坚守神道的古老信仰，若是前往了<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-nara/in-nara_ikoma_tenri/">奈良</a>公园，喂喂「鹿仙贝」，一定可以为旅程添上美好的回忆，幸运的话，也许还能够见到小鹿点头，表达对人们感谢的敬礼喔。</p>
+<h2 id="大阪"><a href="#大阪" class="headerlink" title="大阪"></a><strong>大阪</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/spot-list/area-al2701/">大阪府</a><br><strong>特点：</strong> 充满活力与魅力的城市<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> 道顿崛、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-osaka-castle_tenmabashi_kyobashi/spot-list/area-as2701003/">大阪城</a>、大阪海游馆、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-usj_nanko-port/">USJ</a>大阪环球影城、空中庭园展望台、住吉大社<br><strong>代表料理：</strong> 章鱼烧、大阪烧、烧肉、豆皮<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-udon_soba/">乌冬</a>面、太鼓馒头</p>
+<p>关西地区最大的城市，也是日本第二大都市・大阪，元气满满的街道氛围与亲切有趣的人们。堪称世界最大等级的<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/go-zoos_aquariums/">水族馆</a>・大阪海游馆或<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-usj_nanko-port/">USJ</a>大阪环球影城，被闪烁霓虹灯点亮的街道、来份必吃的章鱼烧或大阪烧、逛逛大阪最热闹的道顿崛等等，大阪魅力无限！此外，在大阪也能接收到<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>洗礼，如<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-osaka/in-osaka-castle_tenmabashi_kyobashi/spot-list/area-as2701003/">大阪城</a>与住吉大社、人形净琉璃等，都是日本非常知名的历史文化资产。</p>
+<h2 id="神户"><a href="#神户" class="headerlink" title="神户"></a><strong>神户</strong></h2><p><strong>都道府县：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/spot-list/area-al2801/">兵库县</a><br><strong>特点：</strong> 走累了到海边品尝<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-teppanyaki/">牛排</a><br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong><a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>港乐园、美利坚公园、滩酒藏、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">有马温泉</a>、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">六甲山</a>、阪神．淡路大震灾纪念馆<br><strong>代表料理：</strong> <a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>牛、<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-himeji_akashi/spot-list/area-as2801005/">明石</a>烧、章鱼饭、酒</p>
+<p><a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>位于大阪的西边，是一座港口城市。日本锁国时代结束后，与国外进行贸易而最早开发的地点之一，「Kobe」一词成为<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>生产的高品质牛肉代名词，不但扬名国际，听说前NBA明星柯比·比恩·布莱恩(Kobe Bean Bryant) 名字即来自<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>牛。<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>邻接著名登山名胜<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">六甲山</a>，与日本最古老<a href="https://livejapan.com/zh-cn/go-visiting/go-activities/go-hot-springs_bath-houses/">温泉</a><a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-arima-onsen_mt-rokko/spot-list/area-as2801002/">有马温泉</a>，此外，市内的滩区为日本屈指可数的造酒地区。 1995年阪神．淡路大地震受灾区之一的<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>，市区街道成功重建被视为重要指标，到<a href="https://livejapan.com/zh-cn/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/">神户</a>旅游时，别忘了前往阪神．淡路大震灾纪念馆，感受并回顾一下当时的情况吧。</p>
+<h2 id="广岛"><a href="#广岛" class="headerlink" title="广岛"></a><strong>广岛</strong></h2><p><strong>都道府县：</strong> 广岛县<br><strong>特点：</strong> 历史、和平省思<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong> 广岛平和纪念公园、广岛城、缩景园、世纪平和纪念公园、广岛护国<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>、广岛佛舍利塔<br><strong>代表料理：</strong> 牡蛎、广岛烧、广岛沾面、枫叶馒头</p>
+<p>1945年被投下世界第一颗原子弹的地方．广岛。在那不久之后，又遭枕崎台风袭击，造成莫大的灾情。将被破坏的街道与<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/">建筑物</a>经过重建．新建，于1949在日本国会宣告为「平和记念都市」，跨越重重困难，才成就了现在的广岛。广岛平和纪念公园作为复兴都市的象征，另外在市内还设置许多响应和平与协调的设施。除此之外，走访严岛<a href="https://livejapan.com/zh-cn/go-visiting/go-architecture/go-shrines/">神社</a>看漂浮海上壮观的大鸟居、广岛城、缩景园等等，众多一生必去一次的景点。</p>
+<h2 id="冲绳"><a href="#冲绳" class="headerlink" title="冲绳"></a><strong>冲绳</strong></h2><p><strong>都道府县：</strong> 冲绳县<br><strong>特点：</strong> 海边放空、水上活动<br><strong>精选<a href="https://livejapan.com/zh-cn/go-visiting/">观光</a>：</strong>冲绳美丽海<a href="https://livejapan.com/zh-cn/go-visiting/go-nature/go-zoos_aquariums/">水族馆</a>、斋场御岳、国营冲绳纪念公园、首里城、冲绳和平祈念堂、玉取崎展望台、各地海岸<br><strong>代表料理：</strong> 苦瓜炒<a href="https://livejapan.com/zh-cn/go-eating/go-japanese-food/go-tofu/">豆腐</a>、海葡萄、冲绳面、香檬</p>
+<p>日本最南端，由160座岛所组成的冲绳，属亚热带气候，生长栖息了许多珍贵的动植物。白色沙滩、透明清澈的海水、色彩缤纷的鱼群，即使在日本也能够享受浮浅、潜水的乐趣。古名琉球，各岛所存在的独特文化至今仍完好留存，来一趟冲绳可见到完全不同风貌的日本与<a href="https://livejapan.com/zh-cn/go-visiting/go-traditional-culture/">传统文化</a>。</p>
+<h2 id="附上两张地图"><a href="#附上两张地图" class="headerlink" title="附上两张地图~~~"></a>附上两张地图~~~</h2><p><img src="https://i.loli.net/2021/08/26/TVxAhZBEnRrGoPc.jpg"></p>
+<p><img src="https://i.loli.net/2021/08/26/lZTNH6o5EtXMPL2.png"></p>
+]]></content>
       <categories>
-          
-          <category> 日语！ </category>
-          
+        <category>日语！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>《标日·初》中的细节拓展！</title>
-      <link href="/japaneselearning/japaneselearning4/"/>
-      <url>/japaneselearning/japaneselearning4/</url>
-      
-        <content type="html"><![CDATA[<h4 id="1-は表示对比"><a href="#1-は表示对比" class="headerlink" title="1.は表示对比"></a>1.は表示对比</h4><p>对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、から、まで、と的后面构成复合形式。例如：私の　部屋には　電話が　ありません。</p><h4 id="2-いえ、うち"><a href="#2-いえ、うち" class="headerlink" title="2.いえ、うち"></a>2.いえ、うち</h4><p>两者的意思都是（我）家，意指建筑物时一般用前者，着重指家人时一般会用后者。另外，うち本身就表示“我家”的含义，但是用いえ时必须要说わたしのいえ。</p><h4 id="3-”を”－＞”は”"><a href="#3-”を”－＞”は”" class="headerlink" title="3.”を”－＞”は”"></a>3.”を”－＞”は”</h4><p>”を”前面的名词做话题，或者进行对比时，使用助词は，这时候原来的を必须去掉，不能变成をは的形式。</p><h4 id="4-多い和少ない"><a href="#4-多い和少ない" class="headerlink" title="4.多い和少ない"></a>4.多い和少ない</h4><p>他们不同于其他一类形容词，不能单独修饰名词。</p><h4 id="5-おゆ和みず"><a href="#5-おゆ和みず" class="headerlink" title="5.おゆ和みず"></a>5.おゆ和みず</h4><p>日语中，前者是”热水“或“开水”，而后者仅指”凉水“。</p><h4 id="6-”こうよう”-”もみじ”"><a href="#6-”こうよう”-”もみじ”" class="headerlink" title="6.”こうよう”　”もみじ”"></a>6.”こうよう”　”もみじ”</h4><p>”こうよう”表示秋天阔叶林的落叶变红或树叶全部变成红色。“もみじ”多表示枫树的红叶。</p><h4 id="7-いかがですか"><a href="#7-いかがですか" class="headerlink" title="7.いかがですか"></a>7.いかがですか</h4><p>是どうですか的委婉表示法，此外拒绝对方的建议或推荐时，直接使用いいえ会显得不是很礼貌。可采用其他方式。如：今は　結構です</p><h4 id="8-”に”"><a href="#8-”に”" class="headerlink" title="8.”に”"></a>8.”に”</h4><ul><li>表示存在的场所。如：公園に</li><li>表示时间。如：5時に</li><li>表示动作的对象。如：友達に</li><li>表示移动行为的目的。如：本を買いに</li><li>表示附着点。如：車に</li></ul><p><em>这些用法不能用へ来替换，只有表示“来います”等典型的移动动词的目的地时，才可以通用。</em></p><h4 id="9-こえ-おと"><a href="#9-こえ-おと" class="headerlink" title="9.こえ    おと"></a>9.こえ    おと</h4><p>前者为人和动物发出的声音，后者是物体发出的声音。</p><h4 id="10-なさい是なさる的命令形"><a href="#10-なさい是なさる的命令形" class="headerlink" title="10.なさい是なさる的命令形"></a>10.なさい是なさる的命令形</h4><p>なさい是なさる的命令形，因为なさる是很特殊的五段动词，它的连用形和命令形都是なさい，其他还有いらっしゃる、ござる、おっしゃる和くださる。在古代的话，它们的命令形也有なされ这种形式，只是现在不太用了。有些语言学者把这类动词称作ラ変动词。なさる事实上是する的敬语，既然是表尊敬，就要用礼貌体，可以这样说:おやめなさいますか。请您住手，行吗？やめなさい则有轻微命令语气。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>《标日·初》中的细节拓展！</title>
+    <url>/japaneselearning/japaneselearning4/</url>
+    <content><![CDATA[<h4 id="1-は表示对比"><a href="#1-は表示对比" class="headerlink" title="1.は表示对比"></a>1.は表示对比</h4><p>对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、から、まで、と的后面构成复合形式。例如：私の　部屋には　電話が　ありません。</p>
+<h4 id="2-いえ、うち"><a href="#2-いえ、うち" class="headerlink" title="2.いえ、うち"></a>2.いえ、うち</h4><p>两者的意思都是（我）家，意指建筑物时一般用前者，着重指家人时一般会用后者。另外，うち本身就表示“我家”的含义，但是用いえ时必须要说わたしのいえ。</p>
+<h4 id="3-”を”－＞”は”"><a href="#3-”を”－＞”は”" class="headerlink" title="3.”を”－＞”は”"></a>3.”を”－＞”は”</h4><p>”を”前面的名词做话题，或者进行对比时，使用助词は，这时候原来的を必须去掉，不能变成をは的形式。</p>
+<h4 id="4-多い和少ない"><a href="#4-多い和少ない" class="headerlink" title="4.多い和少ない"></a>4.多い和少ない</h4><p>他们不同于其他一类形容词，不能单独修饰名词。</p>
+<h4 id="5-おゆ和みず"><a href="#5-おゆ和みず" class="headerlink" title="5.おゆ和みず"></a>5.おゆ和みず</h4><p>日语中，前者是”热水“或“开水”，而后者仅指”凉水“。</p>
+<h4 id="6-”こうよう”-”もみじ”"><a href="#6-”こうよう”-”もみじ”" class="headerlink" title="6.”こうよう”　”もみじ”"></a>6.”こうよう”　”もみじ”</h4><p>”こうよう”表示秋天阔叶林的落叶变红或树叶全部变成红色。“もみじ”多表示枫树的红叶。</p>
+<h4 id="7-いかがですか"><a href="#7-いかがですか" class="headerlink" title="7.いかがですか"></a>7.いかがですか</h4><p>是どうですか的委婉表示法，此外拒绝对方的建议或推荐时，直接使用いいえ会显得不是很礼貌。可采用其他方式。如：今は　結構です</p>
+<h4 id="8-”に”"><a href="#8-”に”" class="headerlink" title="8.”に”"></a>8.”に”</h4><ul>
+<li>表示存在的场所。如：公園に</li>
+<li>表示时间。如：5時に</li>
+<li>表示动作的对象。如：友達に</li>
+<li>表示移动行为的目的。如：本を買いに</li>
+<li>表示附着点。如：車に</li>
+</ul>
+<p><em>这些用法不能用へ来替换，只有表示“来います”等典型的移动动词的目的地时，才可以通用。</em></p>
+<h4 id="9-こえ-おと"><a href="#9-こえ-おと" class="headerlink" title="9.こえ    おと"></a>9.こえ    おと</h4><p>前者为人和动物发出的声音，后者是物体发出的声音。</p>
+<h4 id="10-なさい是なさる的命令形"><a href="#10-なさい是なさる的命令形" class="headerlink" title="10.なさい是なさる的命令形"></a>10.なさい是なさる的命令形</h4><p>なさい是なさる的命令形，因为なさる是很特殊的五段动词，它的连用形和命令形都是なさい，其他还有いらっしゃる、ござる、おっしゃる和くださる。在古代的话，它们的命令形也有なされ这种形式，只是现在不太用了。有些语言学者把这类动词称作ラ変动词。なさる事实上是する的敬语，既然是表尊敬，就要用礼貌体，可以这样说:おやめなさいますか。请您住手，行吗？やめなさい则有轻微命令语气。</p>
+]]></content>
       <categories>
-          
-          <category> 日语！ </category>
-          
+        <category>日语！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>「料理のさしすせそ」</title>
-      <link href="/japaneselearning/japaneselearning3/"/>
-      <url>/japaneselearning/japaneselearning3/</url>
-      
-        <content type="html"><![CDATA[<h2 id="「料理のさしすせそ」でおいしくなる理由は？"><a href="#「料理のさしすせそ」でおいしくなる理由は？" class="headerlink" title="「料理のさしすせそ」でおいしくなる理由は？"></a>「料理のさしすせそ」でおいしくなる理由は？</h2><h3 id="「さ」砂糖"><a href="#「さ」砂糖" class="headerlink" title="「さ」砂糖"></a>「さ」砂糖</h3><p>砂糖は塩より分子が大きく浸透性が低いので、先に入れて味を馴染ませるのがおすすめです！<br>砂糖はサトウキビや砂糖大根から作られています。食材をやわらかくし、料理につやも出してくれますよ。加熱すると焼き色がついて香ばしい香りも広がります。水に溶けやすく食材の水分を吸着する働きがあるので、食材の乾燥を防ぐこともできる調味料です。</p><h3 id="「し」塩"><a href="#「し」塩" class="headerlink" title="「し」塩"></a>「し」塩</h3><p>塩は砂糖より分子が小さく浸透性が高くなるため、先に入れてしまうと砂糖が馴染みにくくなります。なので砂糖より後から塩を入れるのがおすすめです。<br>日本には海水を煮詰めてる来る自然塩と、高い濃度の自然塩を再生加工した精製塩があります。塩には食材の水分を吸い取り、保存性を高める作用があります。発酵食品を作るためや、果物や野菜の色を良くするためにも使われます。魚介類や肉類の身を引き締める効果もありますよ。</p><h3 id="「す」酢"><a href="#「す」酢" class="headerlink" title="「す」酢"></a>「す」酢</h3><p>酢は酸味が飛んでしまうので、後から入れましょう。「さしすせそ」では3番目にありますが、煮物の場合は酸味を活かすために最後に入れるといいとも言われています。<br>米や麦などの穀物や果物を原料にしたもろみ、またはこれにアルコールや砂糖を加えて酢酸発酵させたものが酢です。塩気と甘味を緩和してくれ、野菜の褐変を防ぎ、みょうがや紫キャベツなど赤色などの食材の色を鮮やかにする効果もあります。殺菌作用もありますよ。</p><h3 id="「せ」醤油（せうゆ）"><a href="#「せ」醤油（せうゆ）" class="headerlink" title="「せ」醤油（せうゆ）"></a>「せ」醤油（せうゆ）</h3><p>醤油は風味が飛んでしまうので、後から入れましょう。<br>大豆、小麦、食塩を発酵させてできたもろみをしぼって作られます。魚介や肉類の生臭さを消し、風味を良くしてくれますよ。殺菌や保存を助ける作用もあります。</p><h3 id="「そ」味噌"><a href="#「そ」味噌" class="headerlink" title="「そ」味噌"></a>「そ」味噌</h3><p>味噌は風味が飛んでしまうので、後から入れましょう。<br>茹でた大豆と塩に麹を混ぜ、発酵させると味噌ができます。使う麹により、米麹を使った米味噌、麦麹を使った麦味噌、豆の麹である種麹を使った豆味噌の3種類に分かれます。風味をつけ、保存性を高めてくれますよ。味噌にも魚介や肉類の生臭さを消し、風味を良くしてくれる作用があります。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>「料理のさしすせそ」</title>
+    <url>/japaneselearning/japaneselearning3/</url>
+    <content><![CDATA[<h2 id="「料理のさしすせそ」でおいしくなる理由は？"><a href="#「料理のさしすせそ」でおいしくなる理由は？" class="headerlink" title="「料理のさしすせそ」でおいしくなる理由は？"></a>「料理のさしすせそ」でおいしくなる理由は？</h2><h3 id="「さ」砂糖"><a href="#「さ」砂糖" class="headerlink" title="「さ」砂糖"></a>「さ」砂糖</h3><p>砂糖は塩より分子が大きく浸透性が低いので、先に入れて味を馴染ませるのがおすすめです！<br>砂糖はサトウキビや砂糖大根から作られています。食材をやわらかくし、料理につやも出してくれますよ。加熱すると焼き色がついて香ばしい香りも広がります。水に溶けやすく食材の水分を吸着する働きがあるので、食材の乾燥を防ぐこともできる調味料です。</p>
+<h3 id="「し」塩"><a href="#「し」塩" class="headerlink" title="「し」塩"></a>「し」塩</h3><p>塩は砂糖より分子が小さく浸透性が高くなるため、先に入れてしまうと砂糖が馴染みにくくなります。なので砂糖より後から塩を入れるのがおすすめです。<br>日本には海水を煮詰めてる来る自然塩と、高い濃度の自然塩を再生加工した精製塩があります。塩には食材の水分を吸い取り、保存性を高める作用があります。発酵食品を作るためや、果物や野菜の色を良くするためにも使われます。魚介類や肉類の身を引き締める効果もありますよ。</p>
+<h3 id="「す」酢"><a href="#「す」酢" class="headerlink" title="「す」酢"></a>「す」酢</h3><p>酢は酸味が飛んでしまうので、後から入れましょう。「さしすせそ」では3番目にありますが、煮物の場合は酸味を活かすために最後に入れるといいとも言われています。<br>米や麦などの穀物や果物を原料にしたもろみ、またはこれにアルコールや砂糖を加えて酢酸発酵させたものが酢です。塩気と甘味を緩和してくれ、野菜の褐変を防ぎ、みょうがや紫キャベツなど赤色などの食材の色を鮮やかにする効果もあります。殺菌作用もありますよ。</p>
+<h3 id="「せ」醤油（せうゆ）"><a href="#「せ」醤油（せうゆ）" class="headerlink" title="「せ」醤油（せうゆ）"></a>「せ」醤油（せうゆ）</h3><p>醤油は風味が飛んでしまうので、後から入れましょう。<br>大豆、小麦、食塩を発酵させてできたもろみをしぼって作られます。魚介や肉類の生臭さを消し、風味を良くしてくれますよ。殺菌や保存を助ける作用もあります。</p>
+<h3 id="「そ」味噌"><a href="#「そ」味噌" class="headerlink" title="「そ」味噌"></a>「そ」味噌</h3><p>味噌は風味が飛んでしまうので、後から入れましょう。<br>茹でた大豆と塩に麹を混ぜ、発酵させると味噌ができます。使う麹により、米麹を使った米味噌、麦麹を使った麦味噌、豆の麹である種麹を使った豆味噌の3種類に分かれます。風味をつけ、保存性を高めてくれますよ。味噌にも魚介や肉類の生臭さを消し、風味を良くしてくれる作用があります。</p>
+]]></content>
       <categories>
-          
-          <category> 日语！ </category>
-          
+        <category>日语！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>《标准日本语·初级》句型语法总结</title>
-      <link href="/japaneselearning/japaneselearning2/"/>
-      <url>/japaneselearning/japaneselearning2/</url>
-      
-        <content type="html"><![CDATA[<h3 id="重要句型总结以及单词语法扩展"><a href="#重要句型总结以及单词语法扩展" class="headerlink" title="重要句型总结以及单词语法扩展"></a>重要句型总结以及单词语法扩展</h3><h4 id="4-あります、います"><a href="#4-あります、います" class="headerlink" title="4.あります、います"></a>4.あります、います</h4><p>源自ある、いる，都有存在的意思，至于书上的理解是将事物分为有无意志，而我更认同另外一种理解——是否可以运动。如：電車がある、電車がいる，就可以根据这个要点来理解。这也解释了部分植物可以使用いる来形容。</p><h4 id="8-あげます、もらいます"><a href="#8-あげます、もらいます" class="headerlink" title="8.あげます、もらいます"></a>8.あげます、もらいます</h4><p>源自あげる、もらう，即给予与得到。在这一课作动词，前接を。是我送给别人礼物与我从别人那里收到礼物的区别。详细语法在28课会有详细区分。</p><h4 id="11-分かります、できます"><a href="#11-分かります、できます" class="headerlink" title="11.分かります、できます"></a>11.分かります、できます</h4><p>源自わかう、できる，即明白和能够。好恶类接が、上手下手苦手是一样的。</p><h4 id="15-いいです、いけません"><a href="#15-いいです、いけません" class="headerlink" title="15.いいです、いけません"></a>15.いいです、いけません</h4><p>emm…其实这个词和結構です都挺矛盾的。有的时候理解为否定，有的时候是肯定，对于除自己以外的其他人进行评价时：「結構です」大多持肯定意思，而对于自己会从中得到恩惠时：「結構です」持否定意思。虽然有语境限制，但仍然总被误会，所以最好加上もう、いいえ、はい比较好。いけません源自いく，可以看作先变命令形，在做ます否定形式的变换，即“禁止”。</p><h4 id="18-なります、します"><a href="#18-なります、します" class="headerlink" title="18.なります、します"></a>18.なります、します</h4><p>源自なる、する，前者表示自然变化，后者表示人为改变。</p><h4 id="19-なければなりません"><a href="#19-なければなりません" class="headerlink" title="19.なければなりません"></a>19.なければなりません</h4><p>源自ない、なる，其进行假定形变换，ないー＞なければ，なるー＞なりません。也就是说，助动词「ない」的假定形,后边否定形式，表示必须。</p><h4 id="20-ことができる、ことがある"><a href="#20-ことができる、ことがある" class="headerlink" title="20.ことができる、ことがある"></a>20.ことができる、ことがある</h4><p>查一查こと，好多知识点！こと就是“事情”的意思。动词+こと就是指关于“这个动作的事情。这样的用法成为动词名词化，こと就是形式名词。动词过去时+ことがある表示曾经有过这件事，现在时+ことがある表示有时候会有这样的事情。ことができる则表示：个人的能力或外在环境允许的行为。</p><h4 id="26-かもしれません"><a href="#26-かもしれません" class="headerlink" title="26.かもしれません"></a>26.かもしれません</h4><p>源自かもしれない（好像是一样的唉），查了查かも、野鸭？查了查かもしれる，可能失败？再查一查かもしる，也许、可能，这个应该比较接近。</p><h4 id="28-をくれます、てあげます、てもらいます、てくれます"><a href="#28-をくれます、てあげます、てもらいます、てくれます" class="headerlink" title="28.をくれます、てあげます、てもらいます、てくれます"></a>28.をくれます、てあげます、てもらいます、てくれます</h4><ul><li><strong>をくれます</strong>前接给的物品，源自くれる，表示他人给自己的东西。即别人<strong>给</strong>说话人或者说话人一方的人某物，故わたしは一般省略。</li><li><strong>てくれます</strong>前接动作，源自くれる，表示他人为自己做事情。即别人<strong>为</strong>说话人或者说话人一方的人做某事，故わたしに一般省略。关键词：が</li><li><strong>てあげます</strong>前接动作，源自あげる，表示给予、给。即说话人或者说话人一方的人<strong>为</strong>别人做某事的用法。他人用助词“に”来表示。但要注意避免使用这种用法，因为它给人的感觉更接近“接受我的恩惠吧！”。<em>（光孕众生，众生随影</em></li><li><strong>てもらいます</strong>前接动作，源自もらう，表示得到收到。即说话人或说话人一方的人<strong>请</strong>别人做某事的用法，一般省略主语。关键词：は、に</li></ul><h4 id="30-とおもいます"><a href="#30-とおもいます" class="headerlink" title="30.とおもいます"></a>30.とおもいます</h4><p>源自（と）おもう、前接动词意志形，这样使用比单纯地使用意志形更加礼貌，温和。</p><h4 id="32-ことにします、ことになりました、ことができる"><a href="#32-ことにします、ことになりました、ことができる" class="headerlink" title="32.ことにします、ことになりました、ことができる"></a>32.ことにします、ことになりました、ことができる</h4><p>前面有写「になる」是注重自然演变，「にする」是注重人为结果。再来看ことに、源自ことにする、ことになる。前者注重人为决定的结果，表示个人的决定或选择，后者表示自然演变的结果，通常个人意志无法改变。而ことができる表示个人的能力或外在环境允许的行为。（在20有提到过）</p><p>这里在网络上找到例句：</p><p>①私はピアノを弾きません。<br>（我不弹钢琴）→ 非能力，而是意愿。</p><p>②私はピアノを弾くことができません。<br>（我不会弹钢琴）→ 指能力 = 弾けない。</p><p>③ここではピアノを弾くことができません。<br>（这里不可以弹钢琴）→指外在环境不允许。</p><h4 id="34-ておきます"><a href="#34-ておきます" class="headerlink" title="34.ておきます"></a>34.ておきます</h4><p>源自おく，保持…（状态）</p><h4 id="38-ように、ようになります、ようにします（44-ようです）"><a href="#38-ように、ようになります、ようにします（44-ようです）" class="headerlink" title="38.ように、ようになります、ようにします（44.ようです）"></a>38.ように、ようになります、ようにします（44.ようです）</h4><p>よう字典上给的词性是助词，但在这里，可以理解为名词词性，即“样子”。前接动词要是简体形，接名词便要加の。后面加上にします、就是像这个名词这么做，而后面加上になります、就是变成这个名词的样子。</p><h3 id="初级入门总结："><a href="#初级入门总结：" class="headerlink" title="初级入门总结："></a>初级入门总结：</h3><p>到这里上下册的部分句型已经罗列出来，以后也会进行补充说明。从上一篇的动词变形，到这一篇的句型语法总结，初级为我提供了观察日语的一种方式，我也会去了解吸收更多的知识，我的日语路还长着哩~</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>《标准日本语·初级》句型语法总结</title>
+    <url>/japaneselearning/japaneselearning2/</url>
+    <content><![CDATA[<h3 id="重要句型总结以及单词语法扩展"><a href="#重要句型总结以及单词语法扩展" class="headerlink" title="重要句型总结以及单词语法扩展"></a>重要句型总结以及单词语法扩展</h3><h4 id="4-あります、います"><a href="#4-あります、います" class="headerlink" title="4.あります、います"></a>4.あります、います</h4><p>源自ある、いる，都有存在的意思，至于书上的理解是将事物分为有无意志，而我更认同另外一种理解——是否可以运动。如：電車がある、電車がいる，就可以根据这个要点来理解。这也解释了部分植物可以使用いる来形容。</p>
+<h4 id="8-あげます、もらいます"><a href="#8-あげます、もらいます" class="headerlink" title="8.あげます、もらいます"></a>8.あげます、もらいます</h4><p>源自あげる、もらう，即给予与得到。在这一课作动词，前接を。是我送给别人礼物与我从别人那里收到礼物的区别。详细语法在28课会有详细区分。</p>
+<h4 id="11-分かります、できます"><a href="#11-分かります、できます" class="headerlink" title="11.分かります、できます"></a>11.分かります、できます</h4><p>源自わかう、できる，即明白和能够。好恶类接が、上手下手苦手是一样的。</p>
+<h4 id="15-いいです、いけません"><a href="#15-いいです、いけません" class="headerlink" title="15.いいです、いけません"></a>15.いいです、いけません</h4><p>emm…其实这个词和結構です都挺矛盾的。有的时候理解为否定，有的时候是肯定，对于除自己以外的其他人进行评价时：「結構です」大多持肯定意思，而对于自己会从中得到恩惠时：「結構です」持否定意思。虽然有语境限制，但仍然总被误会，所以最好加上もう、いいえ、はい比较好。いけません源自いく，可以看作先变命令形，在做ます否定形式的变换，即“禁止”。</p>
+<h4 id="18-なります、します"><a href="#18-なります、します" class="headerlink" title="18.なります、します"></a>18.なります、します</h4><p>源自なる、する，前者表示自然变化，后者表示人为改变。</p>
+<h4 id="19-なければなりません"><a href="#19-なければなりません" class="headerlink" title="19.なければなりません"></a>19.なければなりません</h4><p>源自ない、なる，其进行假定形变换，ないー＞なければ，なるー＞なりません。也就是说，助动词「ない」的假定形,后边否定形式，表示必须。</p>
+<h4 id="20-ことができる、ことがある"><a href="#20-ことができる、ことがある" class="headerlink" title="20.ことができる、ことがある"></a>20.ことができる、ことがある</h4><p>查一查こと，好多知识点！こと就是“事情”的意思。动词+こと就是指关于“这个动作的事情。这样的用法成为动词名词化，こと就是形式名词。动词过去时+ことがある表示曾经有过这件事，现在时+ことがある表示有时候会有这样的事情。ことができる则表示：个人的能力或外在环境允许的行为。</p>
+<h4 id="26-かもしれません"><a href="#26-かもしれません" class="headerlink" title="26.かもしれません"></a>26.かもしれません</h4><p>源自かもしれない（好像是一样的唉），查了查かも、野鸭？查了查かもしれる，可能失败？再查一查かもしる，也许、可能，这个应该比较接近。</p>
+<h4 id="28-をくれます、てあげます、てもらいます、てくれます"><a href="#28-をくれます、てあげます、てもらいます、てくれます" class="headerlink" title="28.をくれます、てあげます、てもらいます、てくれます"></a>28.をくれます、てあげます、てもらいます、てくれます</h4><ul>
+<li><strong>をくれます</strong>前接给的物品，源自くれる，表示他人给自己的东西。即别人<strong>给</strong>说话人或者说话人一方的人某物，故わたしは一般省略。</li>
+<li><strong>てくれます</strong>前接动作，源自くれる，表示他人为自己做事情。即别人<strong>为</strong>说话人或者说话人一方的人做某事，故わたしに一般省略。关键词：が</li>
+<li><strong>てあげます</strong>前接动作，源自あげる，表示给予、给。即说话人或者说话人一方的人<strong>为</strong>别人做某事的用法。他人用助词“に”来表示。但要注意避免使用这种用法，因为它给人的感觉更接近“接受我的恩惠吧！”。<em>（光孕众生，众生随影</em></li>
+<li><strong>てもらいます</strong>前接动作，源自もらう，表示得到收到。即说话人或说话人一方的人<strong>请</strong>别人做某事的用法，一般省略主语。关键词：は、に</li>
+</ul>
+<h4 id="30-とおもいます"><a href="#30-とおもいます" class="headerlink" title="30.とおもいます"></a>30.とおもいます</h4><p>源自（と）おもう、前接动词意志形，这样使用比单纯地使用意志形更加礼貌，温和。</p>
+<h4 id="32-ことにします、ことになりました、ことができる"><a href="#32-ことにします、ことになりました、ことができる" class="headerlink" title="32.ことにします、ことになりました、ことができる"></a>32.ことにします、ことになりました、ことができる</h4><p>前面有写「になる」是注重自然演变，「にする」是注重人为结果。再来看ことに、源自ことにする、ことになる。前者注重人为决定的结果，表示个人的决定或选择，后者表示自然演变的结果，通常个人意志无法改变。而ことができる表示个人的能力或外在环境允许的行为。（在20有提到过）</p>
+<p>这里在网络上找到例句：</p>
+<p>①私はピアノを弾きません。<br>（我不弹钢琴）→ 非能力，而是意愿。</p>
+<p>②私はピアノを弾くことができません。<br>（我不会弹钢琴）→ 指能力 = 弾けない。</p>
+<p>③ここではピアノを弾くことができません。<br>（这里不可以弹钢琴）→指外在环境不允许。</p>
+<h4 id="34-ておきます"><a href="#34-ておきます" class="headerlink" title="34.ておきます"></a>34.ておきます</h4><p>源自おく，保持…（状态）</p>
+<h4 id="38-ように、ようになります、ようにします（44-ようです）"><a href="#38-ように、ようになります、ようにします（44-ようです）" class="headerlink" title="38.ように、ようになります、ようにします（44.ようです）"></a>38.ように、ようになります、ようにします（44.ようです）</h4><p>よう字典上给的词性是助词，但在这里，可以理解为名词词性，即“样子”。前接动词要是简体形，接名词便要加の。后面加上にします、就是像这个名词这么做，而后面加上になります、就是变成这个名词的样子。</p>
+<h3 id="初级入门总结："><a href="#初级入门总结：" class="headerlink" title="初级入门总结："></a>初级入门总结：</h3><p>到这里上下册的部分句型已经罗列出来，以后也会进行补充说明。从上一篇的动词变形，到这一篇的句型语法总结，初级为我提供了观察日语的一种方式，我也会去了解吸收更多的知识，我的日语路还长着哩~</p>
+]]></content>
       <categories>
-          
-          <category> 日语！ </category>
-          
+        <category>日语！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日语动词十二种变形总结</title>
-      <link href="/japaneselearning/japaneselearning1/"/>
-      <url>/japaneselearning/japaneselearning1/</url>
-      
-        <content type="html"><![CDATA[<h3 id="所有的动词都以う段结尾"><a href="#所有的动词都以う段结尾" class="headerlink" title="所有的动词都以う段结尾"></a>所有的动词都以う段结尾</h3><p><img src="https://i.loli.net/2021/08/24/U7HB8yK9FiYJuhc.png"></p><ul><li>一类动词（五段动词）：不以る结尾，或以る结尾而倒数第二个音不在い段或え段，或“特例”：要る（いる）、知る（しる）、帰る（かえる）、入る（はいる）、入る（いる）、切る（きる）、減る（へる）、滑る（すべる）。由来：う段动词可以对其他四段进行变化，便有了“五段”。</li><li>二类动词（一段动词）：以る结尾，倒数第二个音在い段或え段。由来：上一段或下一段，便有了“一段”。</li><li>三类动词（か变、さ变）：来る（くる）、する（する或汉字、片假名+する）</li></ul><h4 id="う—-gt-ます—-gt-て-た"><a href="#う—-gt-ます—-gt-て-た" class="headerlink" title="う—&gt;ます—&gt;て/た"></a>う—&gt;ます—&gt;て/た</h4><ul><li>あ：被、未、使（使被）</li><li>い：ます</li><li>う：原形、（て、た）</li><li>え：命、假、可</li><li>お：意</li></ul><h4 id="ます："><a href="#ます：" class="headerlink" title="ます："></a>ます：</h4><p>一类变い段，二类去る、三类先去る再变い段</p><h4 id="て（た）："><a href="#て（た）：" class="headerlink" title="て（た）："></a>て（た）：</h4><p>一类：</p><ul><li><p>姑哭姨爹贴（ぐくいでて）ぐー＞いで、くー＞いて</p></li><li><p>五次露出（うつるっ）ー＞ て</p></li><li><p>母不怒（むぶぬ）ー＞んで</p></li><li><p>是喜帖（すして）すー＞して</p></li><li><p>特例：行くー＞いって</p></li></ul><p>二类：去る　＋　て</p><p>三类：きて、して</p><h4 id="被动形：う段变あ段（うー＞わ）"><a href="#被动形：う段变あ段（うー＞わ）" class="headerlink" title="被动形：う段变あ段（うー＞わ）"></a>被动形：う段变あ段（うー＞わ）</h4><ul><li>一类：被动れる</li><li>二类：られる</li><li>来る：こられる</li><li>する：される</li></ul><h4 id="ない形：う段变あ段（うー＞わ）"><a href="#ない形：う段变あ段（うー＞わ）" class="headerlink" title="ない形：う段变あ段（うー＞わ）"></a>ない形：う段变あ段（うー＞わ）</h4><ul><li>一类：う→あ　＋　ない</li><li>二类：去る　＋　ない</li><li>三类：来るー＞こない、するー＞しない</li><li>特殊：あるー＞ない</li></ul><h4 id="使役形：う段变あ段（うー＞わ）"><a href="#使役形：う段变あ段（うー＞わ）" class="headerlink" title="使役形：う段变あ段（うー＞わ）"></a>使役形：う段变あ段（うー＞わ）</h4><ul><li>一类：使役せる</li><li>二类：させる</li><li>来る：こさせる</li><li>する：させる</li></ul><h4 id="使役被动形（先使役后被动）："><a href="#使役被动形（先使役后被动）：" class="headerlink" title="使役被动形（先使役后被动）："></a>使役被动形（先使役后被动）：</h4><p>せるー＞せられる（约音：如果前音无さ可把せら换成さ）</p><h4 id="命令形（一え二ろ、三こい，しろ才是命令形）："><a href="#命令形（一え二ろ、三こい，しろ才是命令形）：" class="headerlink" title="命令形（一え二ろ、三こい，しろ才是命令形）："></a>命令形（一え二ろ、三こい，しろ才是命令形）：</h4><ul><li>一类：うー＞え</li><li>二类：去る　＋　ろ</li><li>三类：来るー＞こい、するー＞しろ</li><li><em><strong>工口白色恋人</strong></em><em><strong>（不是</strong></em></li></ul><h4 id="可能形（可能える、られる…）："><a href="#可能形（可能える、られる…）：" class="headerlink" title="可能形（可能える、られる…）："></a>可能形（可能える、られる…）：</h4><ul><li>一类：うー＞え　＋　る</li><li>二类：去る　＋　られる（和被动相同）</li><li>三类：来るー＞こられる（和被动相同）、するー＞できる</li></ul><h4 id="假定形（假定えば、ければ）："><a href="#假定形（假定えば、ければ）：" class="headerlink" title="假定形（假定えば、ければ）："></a>假定形（假定えば、ければ）：</h4><ul><li><p>一类：うー＞え　＋　ば</p></li><li><p>二类：去るー＞れば</p></li><li><p>三类：くるー＞くれば、するー＞すれば</p></li><li><p>一类形容词：いー＞ければ</p></li><li><p>二类形容词或名词：であれば、ならば、なら</p></li></ul><h4 id="意志形（哟-）："><a href="#意志形（哟-）：" class="headerlink" title="意志形（哟~）："></a>意志形（哟~）：</h4><ul><li>一类：うー＞お　＋　う</li><li>二类：去る　＋　よう</li><li>三类：来るー＞こよう、するー＞しよう</li></ul><p>⚠帰るー＞帰ろう　！＝　食べろ（前面是动词意志形，后面是动词命令形，千万不要记混）</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>日语动词十二种变形总结</title>
+    <url>/japaneselearning/japaneselearning1/</url>
+    <content><![CDATA[<h3 id="所有的动词都以う段结尾"><a href="#所有的动词都以う段结尾" class="headerlink" title="所有的动词都以う段结尾"></a>所有的动词都以う段结尾</h3><p><img src="https://i.loli.net/2021/08/24/U7HB8yK9FiYJuhc.png"></p>
+<ul>
+<li>一类动词（五段动词）：不以る结尾，或以る结尾而倒数第二个音不在い段或え段，或“特例”：要る（いる）、知る（しる）、帰る（かえる）、入る（はいる）、入る（いる）、切る（きる）、減る（へる）、滑る（すべる）。由来：う段动词可以对其他四段进行变化，便有了“五段”。</li>
+<li>二类动词（一段动词）：以る结尾，倒数第二个音在い段或え段。由来：上一段或下一段，便有了“一段”。</li>
+<li>三类动词（か变、さ变）：来る（くる）、する（する或汉字、片假名+する）</li>
+</ul>
+<h4 id="う—-gt-ます—-gt-て-た"><a href="#う—-gt-ます—-gt-て-た" class="headerlink" title="う—&gt;ます—&gt;て/た"></a>う—&gt;ます—&gt;て/た</h4><ul>
+<li>あ：被、未、使（使被）</li>
+<li>い：ます</li>
+<li>う：原形、（て、た）</li>
+<li>え：命、假、可</li>
+<li>お：意</li>
+</ul>
+<h4 id="ます："><a href="#ます：" class="headerlink" title="ます："></a>ます：</h4><p>一类变い段，二类去る、三类先去る再变い段</p>
+<h4 id="て（た）："><a href="#て（た）：" class="headerlink" title="て（た）："></a>て（た）：</h4><p>一类：</p>
+<ul>
+<li><p>姑哭姨爹贴（ぐくいでて）ぐー＞いで、くー＞いて</p>
+</li>
+<li><p>五次露出（うつるっ）ー＞ て</p>
+</li>
+<li><p>母不怒（むぶぬ）ー＞んで</p>
+</li>
+<li><p>是喜帖（すして）すー＞して</p>
+</li>
+<li><p>特例：行くー＞いって</p>
+</li>
+</ul>
+<p>二类：去る　＋　て</p>
+<p>三类：きて、して</p>
+<h4 id="被动形：う段变あ段（うー＞わ）"><a href="#被动形：う段变あ段（うー＞わ）" class="headerlink" title="被动形：う段变あ段（うー＞わ）"></a>被动形：う段变あ段（うー＞わ）</h4><ul>
+<li>一类：被动れる</li>
+<li>二类：られる</li>
+<li>来る：こられる</li>
+<li>する：される</li>
+</ul>
+<h4 id="ない形：う段变あ段（うー＞わ）"><a href="#ない形：う段变あ段（うー＞わ）" class="headerlink" title="ない形：う段变あ段（うー＞わ）"></a>ない形：う段变あ段（うー＞わ）</h4><ul>
+<li>一类：う→あ　＋　ない</li>
+<li>二类：去る　＋　ない</li>
+<li>三类：来るー＞こない、するー＞しない</li>
+<li>特殊：あるー＞ない</li>
+</ul>
+<h4 id="使役形：う段变あ段（うー＞わ）"><a href="#使役形：う段变あ段（うー＞わ）" class="headerlink" title="使役形：う段变あ段（うー＞わ）"></a>使役形：う段变あ段（うー＞わ）</h4><ul>
+<li>一类：使役せる</li>
+<li>二类：させる</li>
+<li>来る：こさせる</li>
+<li>する：させる</li>
+</ul>
+<h4 id="使役被动形（先使役后被动）："><a href="#使役被动形（先使役后被动）：" class="headerlink" title="使役被动形（先使役后被动）："></a>使役被动形（先使役后被动）：</h4><p>せるー＞せられる（约音：如果前音无さ可把せら换成さ）</p>
+<h4 id="命令形（一え二ろ、三こい，しろ才是命令形）："><a href="#命令形（一え二ろ、三こい，しろ才是命令形）：" class="headerlink" title="命令形（一え二ろ、三こい，しろ才是命令形）："></a>命令形（一え二ろ、三こい，しろ才是命令形）：</h4><ul>
+<li>一类：うー＞え</li>
+<li>二类：去る　＋　ろ</li>
+<li>三类：来るー＞こい、するー＞しろ</li>
+<li><em><strong>工口白色恋人</strong></em><em><strong>（不是</strong></em></li>
+</ul>
+<h4 id="可能形（可能える、られる…）："><a href="#可能形（可能える、られる…）：" class="headerlink" title="可能形（可能える、られる…）："></a>可能形（可能える、られる…）：</h4><ul>
+<li>一类：うー＞え　＋　る</li>
+<li>二类：去る　＋　られる（和被动相同）</li>
+<li>三类：来るー＞こられる（和被动相同）、するー＞できる</li>
+</ul>
+<h4 id="假定形（假定えば、ければ）："><a href="#假定形（假定えば、ければ）：" class="headerlink" title="假定形（假定えば、ければ）："></a>假定形（假定えば、ければ）：</h4><ul>
+<li><p>一类：うー＞え　＋　ば</p>
+</li>
+<li><p>二类：去るー＞れば</p>
+</li>
+<li><p>三类：くるー＞くれば、するー＞すれば</p>
+</li>
+<li><p>一类形容词：いー＞ければ</p>
+</li>
+<li><p>二类形容词或名词：であれば、ならば、なら</p>
+</li>
+</ul>
+<h4 id="意志形（哟-）："><a href="#意志形（哟-）：" class="headerlink" title="意志形（哟~）："></a>意志形（哟~）：</h4><ul>
+<li>一类：うー＞お　＋　う</li>
+<li>二类：去る　＋　よう</li>
+<li>三类：来るー＞こよう、するー＞しよう</li>
+</ul>
+<p>⚠帰るー＞帰ろう　！＝　食べろ（前面是动词意志形，后面是动词命令形，千万不要记混）</p>
+]]></content>
       <categories>
-          
-          <category> 日语！ </category>
-          
+        <category>日语！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日语？日语！</title>
-      <link href="/japaneselearning/japaneselearning/"/>
-      <url>/japaneselearning/japaneselearning/</url>
-      
-        <content type="html"><![CDATA[<p>为什么要学日语？可能我自己也不知道。或许没有理由，又或许太多理由。可能只是一个瞬间的想法、也可能是一幅画面的情感共鸣。我喜欢塞着耳机，一直走在夜色里。看灯火阑珊，望漫天繁星，身边来来往往的人群……</p><p>“为什么我们总觉得书中的爱情轰轰烈烈，而现实却平平淡淡呢？”</p><p>“大抵是因为，我们可以轻而易举地看到书中人内心的波涛汹涌，却体会不到身边人的欲言又止吧。”</p><p>这个回答让我产生太多太多的共鸣，事实很重要，我的态度更重要。我始终谨记着这句话。整个宇宙已经够冷了，真正宝贵的是那些温暖而纯粹的东西，每次打开手机看到朋友发给我的碎碎念就很开心，包括那有趣的事情，也包括伤心的内容。超喜欢接受朋友们的日常，会感觉自己是被需要的！</p><p>再回到开头，可能答案已经出来了。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>日语？日语！</title>
+    <url>/japaneselearning/japaneselearning/</url>
+    <content><![CDATA[<p>为什么要学日语？可能我自己也不知道。或许没有理由，又或许太多理由。可能只是一个瞬间的想法、也可能是一幅画面的情感共鸣。我喜欢塞着耳机，一直走在夜色里。看灯火阑珊，望漫天繁星，身边来来往往的人群……</p>
+<p>“为什么我们总觉得书中的爱情轰轰烈烈，而现实却平平淡淡呢？”</p>
+<p>“大抵是因为，我们可以轻而易举地看到书中人内心的波涛汹涌，却体会不到身边人的欲言又止吧。”</p>
+<p>这个回答让我产生太多太多的共鸣，事实很重要，我的态度更重要。我始终谨记着这句话。整个宇宙已经够冷了，真正宝贵的是那些温暖而纯粹的东西，每次打开手机看到朋友发给我的碎碎念就很开心，包括那有趣的事情，也包括伤心的内容。超喜欢接受朋友们的日常，会感觉自己是被需要的！</p>
+<p>再回到开头，可能答案已经出来了。</p>
+]]></content>
       <categories>
-          
-          <category> 日语！ </category>
-          
+        <category>日语！</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Scrapy框架（初探）</title>
-      <link href="/pythonwebcatch/pythonwebcatch-scrapy/"/>
-      <url>/pythonwebcatch/pythonwebcatch-scrapy/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Scrapy简介："><a href="#Scrapy简介：" class="headerlink" title="Scrapy简介："></a>Scrapy简介：</h1><p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p><p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p><p>非阻塞：关注的是程序在等待结果时的状态，不能立刻得到结果之前，该调用不会阻塞当前线程</p><h2 id="scrapy框架："><a href="#scrapy框架：" class="headerlink" title="scrapy框架："></a>scrapy框架：</h2><p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png"></p><ul><li>scrapy Engine(引擎)：总指挥:负责数据和信号的在不同模块间的传递，scrapy已经实现</li><li>scheduler(调度器)：一个队列，存放引擎发过来的request请求，scrapy已经实现</li><li>Downloader (下载器)：下载把引擎发过来的requests请求，并返回给引擎，scrapy已经实现</li><li>Spider (爬虫)：处理引擎发来来的response，提取数据，提取url，并交给引擎，需要手写</li><li>Item Pipeline(管道)：处理引擎传过来的数据，比如存储，需要手写</li><li>Downloader Middlewares(下载中间件)：可以自定义的下载扩展，比如设置代理，一般不用手写</li><li>Spider MiddlewaresSpider(中间件)：可以自定义requests请求和进行response过滤，一般不用手写</li></ul><h2 id="创建Spider："><a href="#创建Spider：" class="headerlink" title="创建Spider："></a>创建Spider：</h2><ol><li>创建一个scrapy项目——scrapy startproject myspider</li><li>生成一个爬虫——scrapy genspider xxxx “xxxx.cn”</li><li>提取数据——完善spider，使用xpath等方法</li><li>保存数据——pipeline中保存数据</li></ol><p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）可以通过spider.name == “itcast”进行判断操作。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># logging：不同等级的日志，保存到本地，</span><br><span class="line">import logging</span><br><span class="line"># 获取当前日志输出位置</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"># setting可以设置LOG_FILE = &#x27;./log.log&#x27;保存到本地</span><br><span class="line">logger.warning(item)</span><br></pre></td></tr></table></figure><p>scrapy</p><ul><li>settings中设置LOG_LEVEL=”WARNING”</li><li>settings中设置LOG_FILE=”./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li><li>import logging,实例化logger的方式在任何文件中使用logger输出内容。</li></ul><p>普通项目中</p><ul><li><pre><code>import logging#设置日志输出的样式，格式。logging.basicConfig(...)# 实例化logger=logging.getLogger(__name__) 在任何py文件中调用logger即可</code></pre></li></ul>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>Scrapy框架（初探）</title>
+    <url>/pythonwebcatch/pythonwebcatch-scrapy/</url>
+    <content><![CDATA[<h1 id="Scrapy简介："><a href="#Scrapy简介：" class="headerlink" title="Scrapy简介："></a>Scrapy简介：</h1><p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
+<p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
+<p>非阻塞：关注的是程序在等待结果时的状态，不能立刻得到结果之前，该调用不会阻塞当前线程</p>
+<h2 id="scrapy框架："><a href="#scrapy框架：" class="headerlink" title="scrapy框架："></a>scrapy框架：</h2><p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png"></p>
+<ul>
+<li>scrapy Engine(引擎)：总指挥:负责数据和信号的在不同模块间的传递，scrapy已经实现</li>
+<li>scheduler(调度器)：一个队列，存放引擎发过来的request请求，scrapy已经实现</li>
+<li>Downloader (下载器)：下载把引擎发过来的requests请求，并返回给引擎，scrapy已经实现</li>
+<li>Spider (爬虫)：处理引擎发来来的response，提取数据，提取url，并交给引擎，需要手写</li>
+<li>Item Pipeline(管道)：处理引擎传过来的数据，比如存储，需要手写</li>
+<li>Downloader Middlewares(下载中间件)：可以自定义的下载扩展，比如设置代理，一般不用手写</li>
+<li>Spider MiddlewaresSpider(中间件)：可以自定义requests请求和进行response过滤，一般不用手写</li>
+</ul>
+<h2 id="创建Spider："><a href="#创建Spider：" class="headerlink" title="创建Spider："></a>创建Spider：</h2><ol>
+<li>创建一个scrapy项目——scrapy startproject myspider</li>
+<li>生成一个爬虫——scrapy genspider xxxx “xxxx.cn”</li>
+<li>提取数据——完善spider，使用xpath等方法</li>
+<li>保存数据——pipeline中保存数据</li>
+</ol>
+<p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）可以通过spider.name == “itcast”进行判断操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># logging：不同等级的日志，保存到本地，</span><br><span class="line">import logging</span><br><span class="line"># 获取当前日志输出位置</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"># setting可以设置LOG_FILE = &#x27;./log.log&#x27;保存到本地</span><br><span class="line">logger.warning(item)</span><br></pre></td></tr></table></figure>
+
+<p>scrapy</p>
+<ul>
+<li>settings中设置LOG_LEVEL=”WARNING”</li>
+<li>settings中设置LOG_FILE=”./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li>
+<li>import logging,实例化logger的方式在任何文件中使用logger输出内容。</li>
+</ul>
+<p>普通项目中</p>
+<ul>
+<li><pre><code>import logging
+#设置日志输出的样式，格式。
+logging.basicConfig(...)
+# 实例化logger=logging.getLogger(__name__) 在任何py文件中调用logger即可
+</code></pre>
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用python抓取静态网页（四、继续完善并打包程序）</title>
-      <link href="/pythonwebcatch/pythonwebcatch4/"/>
-      <url>/pythonwebcatch/pythonwebcatch4/</url>
-      
-        <content type="html"><![CDATA[<h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p><p>引入库：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure><p>for循环下载img最后一行加入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure><p>当然，子进程try：第一行加入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure><p>保证在每次下载间隔1~2s</p><h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p><p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure><h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure><p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p><h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure><p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p><p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure><p>安装完毕后，在根目录命令行输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure><p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p><h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p><p>这时运行可执行文件即可看到我们的程序。</p><h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（四、继续完善并打包程序）</title>
+    <url>/pythonwebcatch/pythonwebcatch4/</url>
+    <content><![CDATA[<h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
+<p>引入库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
+
+<p>for循环下载img最后一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
+
+<p>当然，子进程try：第一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
+
+<p>保证在每次下载间隔1~2s</p>
+<h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p>
+<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
+
+<h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
+
+<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
+<h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
+
+<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
+<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
+
+<p>安装完毕后，在根目录命令行输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
+
+<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p>
+<h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
+<p>这时运行可执行文件即可看到我们的程序。</p>
+<h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用python抓取静态网页（三、第一次接触Pyside2）</title>
-      <link href="/pythonwebcatch/pythonwebcatch3/"/>
-      <url>/pythonwebcatch/pythonwebcatch3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="独乐乐不如众乐乐！"><a href="#独乐乐不如众乐乐！" class="headerlink" title="独乐乐不如众乐乐！"></a>独乐乐不如众乐乐！</h1><h2 id="Pyside2"><a href="#Pyside2" class="headerlink" title="Pyside2"></a>Pyside2</h2><h3 id="Python图形界面开发"><a href="#Python图形界面开发" class="headerlink" title="Python图形界面开发"></a>Python图形界面开发</h3><p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p><p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p><p>目前python语言GUI有以下选择</p><ul><li>Tkinter：官方标准库，稳定，程序小，控件较少</li><li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li><li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure><h3 id="利用QtDesigner进行布局规划"><a href="#利用QtDesigner进行布局规划" class="headerlink" title="利用QtDesigner进行布局规划"></a>利用QtDesigner进行布局规划</h3><p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p><p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png"></p><p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p><p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p><h3 id="对源程序进行重构"><a href="#对源程序进行重构" class="headerlink" title="对源程序进行重构"></a>对源程序进行重构</h3><p>源程序目标网址类型较少，在这里更换为Wallhaven。</p><h4 id="pyside2自定义类例程"><a href="#pyside2自定义类例程" class="headerlink" title="pyside2自定义类例程"></a>pyside2自定义类例程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line"># button点击后运行函数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure><h4 id="重构爬虫函数进行类封装"><a href="#重构爬虫函数进行类封装" class="headerlink" title="重构爬虫函数进行类封装"></a>重构爬虫函数进行类封装</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    # sort即是选择类型</span><br><span class="line">    self.sort = 0</span><br><span class="line">    self.signal_1 = 2</span><br><span class="line">    self.signal_2 = 0</span><br><span class="line">    self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line"># 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line"># 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    # 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    # 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line"># 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line"># &lt;insert&gt;</span><br><span class="line"></span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        # 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    # 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure><p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p><p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure><p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p><p>因此我们创建Catch_Signal类，继承自QObject类：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure><p>在Wallpaper类中定义实例属性：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure><p>再在Wallpaper类中定义GUI绘制函数：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure><p>将爬虫程序放入子线程：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure><p>补充import：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure><p>这样一来，主程序就不会卡顿了</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（三、第一次接触Pyside2）</title>
+    <url>/pythonwebcatch/pythonwebcatch3/</url>
+    <content><![CDATA[<h1 id="独乐乐不如众乐乐！"><a href="#独乐乐不如众乐乐！" class="headerlink" title="独乐乐不如众乐乐！"></a>独乐乐不如众乐乐！</h1><h2 id="Pyside2"><a href="#Pyside2" class="headerlink" title="Pyside2"></a>Pyside2</h2><h3 id="Python图形界面开发"><a href="#Python图形界面开发" class="headerlink" title="Python图形界面开发"></a>Python图形界面开发</h3><p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
+<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
+<p>目前python语言GUI有以下选择</p>
+<ul>
+<li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
+<li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
+<li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用QtDesigner进行布局规划"><a href="#利用QtDesigner进行布局规划" class="headerlink" title="利用QtDesigner进行布局规划"></a>利用QtDesigner进行布局规划</h3><p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
+<p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png"></p>
+<p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
+<p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
+<h3 id="对源程序进行重构"><a href="#对源程序进行重构" class="headerlink" title="对源程序进行重构"></a>对源程序进行重构</h3><p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
+<h4 id="pyside2自定义类例程"><a href="#pyside2自定义类例程" class="headerlink" title="pyside2自定义类例程"></a>pyside2自定义类例程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
+
+<h4 id="重构爬虫函数进行类封装"><a href="#重构爬虫函数进行类封装" class="headerlink" title="重构爬虫函数进行类封装"></a>重构爬虫函数进行类封装</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    	# sort即是选择类型</span><br><span class="line">    	self.sort = 0</span><br><span class="line">    	self.signal_1 = 2</span><br><span class="line">    	self.signal_2 = 0</span><br><span class="line">    	self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
+<p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
+
+<p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
+<p>因此我们创建Catch_Signal类，继承自QObject类：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
+
+<p>在Wallpaper类中定义实例属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
+
+<p>再在Wallpaper类中定义GUI绘制函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
+
+<p>将爬虫程序放入子线程：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
+
+<p>补充import：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
+
+<p>这样一来，主程序就不会卡顿了</p>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用python抓取静态网页（二、循环扩大范围、异常处理）</title>
-      <link href="/pythonwebcatch/pythonwebcatch2/"/>
-      <url>/pythonwebcatch/pythonwebcatch2/</url>
-      
-        <content type="html"><![CDATA[<h1 id="利用循环扩大抓取范围"><a href="#利用循环扩大抓取范围" class="headerlink" title="利用循环扩大抓取范围"></a>利用循环扩大抓取范围</h1><p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p><p>那么，现在就来<em><strong>扩大抓取范围！</strong></em></p><p>记得基地址是：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/</span><br></pre></td></tr></table></figure><p>我们来点开第二页，你会发现地址变成了：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_2.html</span><br></pre></td></tr></table></figure><p>点开第三页：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_3.html</span><br></pre></td></tr></table></figure><p>好的，规律显而易见，我们只需要index_{page}进行for循环即可多页抓取。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for page in range(1, 36):</span><br><span class="line">    if page == 1:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br><span class="line">    else:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com&#x27; \</span><br><span class="line">            &#x27;/desk/meinv/index_&#123;&#125;.html&#x27;.format(str(page))</span><br></pre></td></tr></table></figure><p>将整个程序放在for函数里进行抓取即可实现多页抓取。</p><p>现在，我们来让程序打印抓取进度</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 程序开头部分做分割线</span><br><span class="line">print(&quot;----------------------------------------------&quot;)</span><br></pre></td></tr></table></figure><p>在for循环里，对每一页进行提醒</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;--------&#123;&#125; page downloading---------&#x27;.format(page))</span><br></pre></td></tr></table></figure><h1 id="对部分异常进行控制"><a href="#对部分异常进行控制" class="headerlink" title="对部分异常进行控制"></a>对部分异常进行控制</h1><p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p><p>好在requests已经对部分异常给予返回值进行提醒，我们可以根据这些返回值，进行判断处理。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line"># 主程序</span><br><span class="line">except requests.Timeout as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.URLRequired as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.ConnectionError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.HTTPError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br></pre></td></tr></table></figure><p>这里有requests库的异常总结：</p><table><thead><tr><th>异常</th><th>说明</th></tr></thead><tbody><tr><td>requests.ConnectionError</td><td>网络连接错误异常，如DNS查询失败，拒绝连接等</td></tr><tr><td>requests.HTTPError</td><td>HTTP错误异常</td></tr><tr><td>requests.TooManyRedirects</td><td>超过最大重定向次数，产生重定向异常</td></tr><tr><td>requests.ConnectTimeout</td><td>连接远程服务器超时异常</td></tr><tr><td>requests.Timeout</td><td>请求URL超时，产生超时异常</td></tr><tr><td>r.raise_for_status</td><td>如果不是200，产生异常requestsHTTPError</td></tr><tr><td>requests.URLRequired</td><td>URL缺失异常</td></tr></tbody></table>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（二、循环扩大范围、异常处理）</title>
+    <url>/pythonwebcatch/pythonwebcatch2/</url>
+    <content><![CDATA[<h1 id="利用循环扩大抓取范围"><a href="#利用循环扩大抓取范围" class="headerlink" title="利用循环扩大抓取范围"></a>利用循环扩大抓取范围</h1><p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p>
+<p>那么，现在就来<em><strong>扩大抓取范围！</strong></em></p>
+<p>记得基地址是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/</span><br></pre></td></tr></table></figure>
+
+<p>我们来点开第二页，你会发现地址变成了：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_2.html</span><br></pre></td></tr></table></figure>
+
+<p>点开第三页：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_3.html</span><br></pre></td></tr></table></figure>
+
+<p>好的，规律显而易见，我们只需要index_{page}进行for循环即可多页抓取。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for page in range(1, 36):</span><br><span class="line">    if page == 1:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br><span class="line">    else:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com&#x27; \</span><br><span class="line">            &#x27;/desk/meinv/index_&#123;&#125;.html&#x27;.format(str(page))</span><br></pre></td></tr></table></figure>
+
+<p>将整个程序放在for函数里进行抓取即可实现多页抓取。</p>
+<p>现在，我们来让程序打印抓取进度</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 程序开头部分做分割线</span><br><span class="line">print(&quot;----------------------------------------------&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>在for循环里，对每一页进行提醒</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(&#x27;--------&#123;&#125; page downloading---------&#x27;.format(page))</span><br></pre></td></tr></table></figure>
+
+<h1 id="对部分异常进行控制"><a href="#对部分异常进行控制" class="headerlink" title="对部分异常进行控制"></a>对部分异常进行控制</h1><p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p>
+<p>好在requests已经对部分异常给予返回值进行提醒，我们可以根据这些返回值，进行判断处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">try:</span><br><span class="line">	# 主程序</span><br><span class="line">except requests.Timeout as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.URLRequired as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.ConnectionError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.HTTPError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里有requests库的异常总结：</p>
+<table>
+<thead>
+<tr>
+<th>异常</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>requests.ConnectionError</td>
+<td>网络连接错误异常，如DNS查询失败，拒绝连接等</td>
+</tr>
+<tr>
+<td>requests.HTTPError</td>
+<td>HTTP错误异常</td>
+</tr>
+<tr>
+<td>requests.TooManyRedirects</td>
+<td>超过最大重定向次数，产生重定向异常</td>
+</tr>
+<tr>
+<td>requests.ConnectTimeout</td>
+<td>连接远程服务器超时异常</td>
+</tr>
+<tr>
+<td>requests.Timeout</td>
+<td>请求URL超时，产生超时异常</td>
+</tr>
+<tr>
+<td>r.raise_for_status</td>
+<td>如果不是200，产生异常requestsHTTPError</td>
+</tr>
+<tr>
+<td>requests.URLRequired</td>
+<td>URL缺失异常</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用python抓取静态网页（一、First Blood!）</title>
-      <link href="/pythonwebcatch/pythonwebcatch1/"/>
-      <url>/pythonwebcatch/pythonwebcatch1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="request、xpath、parsel爬取静态网页流程"><a href="#request、xpath、parsel爬取静态网页流程" class="headerlink" title="request、xpath、parsel爬取静态网页流程"></a><em>request、xpath、parsel爬取静态网页流程</em></h1><ol><li><em>指定URL</em></li><li><em>UA伪装</em></li><li><em>发起请求（模拟浏览器）</em></li><li><em>获取相应数据</em></li><li><em>解析数据</em></li><li><em>进行持久化储存</em></li></ol><h2 id="First-Blood！"><a href="#First-Blood！" class="headerlink" title="First Blood！"></a>First Blood！</h2><h3 id="指定URL"><a href="#指定URL" class="headerlink" title="指定URL"></a>指定URL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure><p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p><h3 id="UA伪装"><a href="#UA伪装" class="headerlink" title="UA伪装"></a>UA伪装</h3><p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p><p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png"></p><p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure><h3 id="发起请求（模拟浏览器）"><a href="#发起请求（模拟浏览器）" class="headerlink" title="发起请求（模拟浏览器）"></a>发起请求（模拟浏览器）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure><p>这里注意，后面保存图片就要用content</p><ul><li>response.text 返回的是一个 unicode 型的文本数据</li><li>response.content 返回的是 bytes 型的二进制数据</li></ul><h3 id="获取相应数据"><a href="#获取相应数据" class="headerlink" title="获取相应数据"></a>获取相应数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure><p>这里涉及xpath语法:</p><p>//表示跨行定位</p><p>[@class=”xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p><p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p><h3 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line"># 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure><ul><li>extract()：这个方法返回一个数组，里面是str类型！。</li><li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li></ul><h3 id="进行持久化储存"><a href="#进行持久化储存" class="headerlink" title="进行持久化储存"></a>进行持久化储存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   # 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure><p>Nice！！！拿到一血</p><p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒….emm)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure><p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p><h2 id="对程序进行完善"><a href="#对程序进行完善" class="headerlink" title="对程序进行完善"></a>对程序进行完善</h2><p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p><ul><li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li><li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li><li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li><li>还有许多需要补充的地方，只要能想到，就要不断地完善……</li></ul>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（一、First Blood!）</title>
+    <url>/pythonwebcatch/pythonwebcatch1/</url>
+    <content><![CDATA[<h1 id="request、xpath、parsel爬取静态网页流程"><a href="#request、xpath、parsel爬取静态网页流程" class="headerlink" title="request、xpath、parsel爬取静态网页流程"></a><em>request、xpath、parsel爬取静态网页流程</em></h1><ol>
+<li><em>指定URL</em></li>
+<li><em>UA伪装</em></li>
+<li><em>发起请求（模拟浏览器）</em></li>
+<li><em>获取相应数据</em></li>
+<li><em>解析数据</em></li>
+<li><em>进行持久化储存</em></li>
+</ol>
+<h2 id="First-Blood！"><a href="#First-Blood！" class="headerlink" title="First Blood！"></a>First Blood！</h2><h3 id="指定URL"><a href="#指定URL" class="headerlink" title="指定URL"></a>指定URL</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
+<h3 id="UA伪装"><a href="#UA伪装" class="headerlink" title="UA伪装"></a>UA伪装</h3><p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
+<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png"></p>
+<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="发起请求（模拟浏览器）"><a href="#发起请求（模拟浏览器）" class="headerlink" title="发起请求（模拟浏览器）"></a>发起请求（模拟浏览器）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
+
+<p>这里注意，后面保存图片就要用content</p>
+<ul>
+<li>response.text 返回的是一个 unicode 型的文本数据</li>
+<li>response.content 返回的是 bytes 型的二进制数据</li>
+</ul>
+<h3 id="获取相应数据"><a href="#获取相应数据" class="headerlink" title="获取相应数据"></a>获取相应数据</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure>
+
+<p>这里涉及xpath语法:</p>
+<p>//表示跨行定位</p>
+<p>[@class=”xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
+<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
+<h3 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line">	# 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
+<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
+</ul>
+<h3 id="进行持久化储存"><a href="#进行持久化储存" class="headerlink" title="进行持久化储存"></a>进行持久化储存</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   	# 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure>
+
+<p>Nice！！！拿到一血</p>
+<p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒….emm)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
+<h2 id="对程序进行完善"><a href="#对程序进行完善" class="headerlink" title="对程序进行完善"></a>对程序进行完善</h2><p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
+<ul>
+<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
+<li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
+<li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
+<li>还有许多需要补充的地方，只要能想到，就要不断地完善……</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用python抓取静态网页（HTTP、WEB基础）</title>
-      <link href="/pythonwebcatch/pythonwebcatch0/"/>
-      <url>/pythonwebcatch/pythonwebcatch0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul><li>URI（Uniform Resource Identifier）即统一资源标识符</li><li>URL（Universal Resource Locator）即统一资源定位符</li></ul><p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p><p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p><h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p><h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p><h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p><p>GET：直接输入网址</p><p>POST：大多提交表单时，例如登录</p><p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p><p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p><p>常见服务器请求状态码：</p><ul><li>200-请求成功</li><li>301-资源（网页等）被永久转移到其他URL</li><li>404-请求的资源（网页等）不存在</li><li>500-服务器内部错误</li></ul><h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p><p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p><p>JavaScript脚本语言（交互动作）</p><h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul><li>head 标签内定义一些页面的配置和引用</li><li>title 标签则定义网页的标题，会显示在网页</li><li>body 标签内是在网页正文中显示的内容</li><li>div 标签定义网页中的区块</li><li>h2 标签表示一个二级标题</li><li>p 标签代表一个段落</li></ul><p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p><p>摘自：《Python3 网络爬虫开发指南》</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（HTTP、WEB基础）</title>
+    <url>/pythonwebcatch/pythonwebcatch0/</url>
+    <content><![CDATA[<h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
+<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
+<li>URL（Universal Resource Locator）即统一资源定位符</li>
+</ul>
+<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
+<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
+<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
+<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
+<p>常见服务器请求状态码：</p>
+<ul>
+<li>200-请求成功</li>
+<li>301-资源（网页等）被永久转移到其他URL</li>
+<li>404-请求的资源（网页等）不存在</li>
+<li>500-服务器内部错误</li>
+</ul>
+<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
+<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
+<p>JavaScript脚本语言（交互动作）</p>
+<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
+<li>head 标签内定义一些页面的配置和引用</li>
+<li>title 标签则定义网页的标题，会显示在网页</li>
+<li>body 标签内是在网页正文中显示的内容</li>
+<li>div 标签定义网页中的区块</li>
+<li>h2 标签表示一个二级标题</li>
+<li>p 标签代表一个段落</li>
+</ul>
+<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
+<p>摘自：《Python3 网络爬虫开发指南》</p>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World！</title>
-      <link href="/HelloWorld/"/>
-      <url>/HelloWorld/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Link-Start"><a href="#Link-Start" class="headerlink" title="Link Start"></a>Link Start</h2><p>我以前啊，特别想成为很厉害很厉害很厉害的人。幻想着自己就是动漫里面的男主，右手拿的是剑、左手拿的也是剑，打怪升级做任务，入团闯关学技能。然后在一个安静的下午邂逅女主，携手拯救世界。很激动吧！虽然当时我是高二，但同学们还是更愿意称呼我中二。也罢也罢，他人投来异样眼光，我独自心生荡漾。我独自一人，带领人类走向胜利的曙光。</p><p>果然，我的拯救计划到高三就泡汤了，我突然意识到人生往往不像剧本里那样顺风顺水，经历几场大起大落才符合现实。我没有电影里男主那么迷人，也没有富人家里孩子那么高贵，性格决定阅历，阅历决定气质，只有改变性格，开阔眼界，不断的超越自我，甚至还要经历一段至暗时刻，才配得上霸气的BGM。我开始努力学习，报名所谓的辅导班，习惯了晚十一早六的生活。别人都说我长大了，可那真的是成长吗？我不断刷题，担任课代表，冲进年级前百，但我却感觉失去了最重要的东西一般茫然。这时，我知道，我只是茫茫人海里的一名普通的学生罢了，我也知道，当初手持重剑、满腔热血的少年不见了。</p><p>高三这一年，我的成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。现实怎么可能承认我这个“救世主”，父母也总会有老去的那一天。我们都想成为超级英雄，却没有人帮妈妈洗碗，如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！亲情对我们大多数人来说很近，而爱情往往十分遥远。就像小说中、电影里令人向往的爱情那样：《秒五》中，隔着的是距离；《言叶之庭》中，隔着的是身份；《DARLING in the FRANXX》里，隔着的是种族；《你的名字》里，隔着的是时间、空间，甚至生死。如果说这是我无论如何努力也改变不了的现实，哪吒告诉过我：若命运不公，就和它斗到底！这也就是为什么，在我听到男主那句“你在好远的地方啊”的时候，如此感动。即使无钱无势、没有与生俱来的本领，我还有勇气热血、永不放弃的权利，明知道那高傲的规则，我也一定会努力争取。</p><p>那段激动人心、童心未泯的时期过去了，而我依旧那般幼稚、那般感动。和许多人都能相处愉快，但真真正正一起哭过、经历过所谓离别的伙伴却寥寥无几。即便如此，我不愿也不会否定这真实存在的一切，开心时能够有人分享；无聊时能够有人陪伴；落寞时能够有人鼓励；伤心时能够有人安慰。如此，安好。</p><p>都说大学像小社会，我反而觉得是大自然。我喜欢这种感觉，忙碌中有悠闲，空闲里有充实。我喜欢迎着晨曦在七点的图书馆偶遇；我喜欢穿梭在黑暗中那九点的体育场；我喜欢同学朋友稀奇古怪的生日聚会；我喜欢广场上热爱武术的爷爷奶奶们；我喜欢这个世界。</p><p>著名作家梁晓声说过：“我们每一个人都有一个现实家园，唯有书本可以构建一个精神家园。”而我想说，我们每一个人都有两个现实家园，精神家园便是将他们联系在一起的纽带，精神家园来源于现实而又反馈于现实。没错！拥有青春的时候就要感受它。活着！把宝贵的内在生命活出来，什么都别错过。我要找回我的热血，尝试未知感兴趣的一切，带着高二那拯救世界的勇气和生活所带来的激励，重新唤醒那个少年。带着这份热情，撒下感动的泪水，去和世界一切美好撞个满怀吧！</p><blockquote><p><em>沉舟侧畔，千帆竞发；病树前头，万木逢春。</em></p></blockquote><p>献给未来的自己：</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用python抓取静态网页（前言）</title>
-      <link href="/pythonwebcatch/pythonwebcatch/"/>
-      <url>/pythonwebcatch/pythonwebcatch/</url>
-      
-        <content type="html"><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路……</p><p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p><blockquote><p>我不怕不怕，风吹雨打</p></blockquote><p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p><p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广….接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p><p>不过，这才是计算机的魅力！</p><p>开始吧，我的爬虫之路！</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（前言）</title>
+    <url>/pythonwebcatch/pythonwebcatch/</url>
+    <content><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路……</p>
+<p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p>
+<blockquote>
+<p>我不怕不怕，风吹雨打</p>
+</blockquote>
+<p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p>
+<p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广….接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p>
+<p>不过，这才是计算机的魅力！</p>
+<p>开始吧，我的爬虫之路！</p>
+]]></content>
       <categories>
-          
-          <category> python网络爬虫 </category>
-          
+        <category>python网络爬虫</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-  
-  
+  </entry>
 </search>
