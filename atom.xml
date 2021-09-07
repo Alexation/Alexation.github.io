@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2021-09-06T01:26:49.949Z</updated>
+  <updated>2021-09-07T13:30:48.552Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -17,21 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>web4</title>
+    <title>CSS（三）</title>
     <link href="https://www.alexation.cn/web/web4/"/>
     <id>https://www.alexation.cn/web/web4/</id>
     <published>2021-09-06T01:10:44.000Z</published>
-    <updated>2021-09-06T01:26:49.949Z</updated>
+    <updated>2021-09-07T13:30:48.552Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="CSS的元素显示模式"><a href="#CSS的元素显示模式" class="headerlink" title="CSS的元素显示模式"></a>CSS的元素显示模式</h3><p>元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局我们的网页。比如&lt;div自己占一行，一行可以放多个&lt;span。HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;CSS的元素显示模式&quot;&gt;&lt;a href=&quot;#CSS的元素显示模式&quot; class=&quot;headerlink&quot; title=&quot;CSS的元素显示模式&quot;&gt;&lt;/a&gt;CSS的元素显示模式&lt;/h3&gt;&lt;p&gt;元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局</summary>
-      
+    <content type="html"><![CDATA[<h3 id="CSS的元素显示模式"><a href="#CSS的元素显示模式" class="headerlink" title="CSS的元素显示模式"></a>CSS的元素显示模式</h3><p>元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局我们的网页。比如&lt;div自己占一行，一行可以放多个&lt;span。HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p><h4 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h4><p>常见的块元素有&lt;h1-6、&lt;p、&lt;div、&lt;ul等，其中div最典型</p><p>块级元素的特点：</p><ol><li>比较霸道，自己独占一行</li><li>高度，宽度，外边距以及内边距都可以控制</li><li>宽度默认是容器（父级宽度）的100%</li><li>是一个容器及盒子，里面可以放行内或者块级元素</li></ol><p>⚠注意</p><ul><li>文字类的元素内不能使用块级元素</li><li>&lt;p标签主要用于存放文字，因此&lt;p里面不能放块级元素，特别是&lt;div</li><li>同理，&lt;h1-6等都是文字类块级标签，里面也不能放其他块级元素</li></ul><h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4><p>常见的行内元素有&lt;a、&lt;strong、&lt;b、&lt;em、&lt;i、&lt;del、&lt;span等</p>]]></content>
     
     
+    <summary type="html">元素显示模式</summary>
+    
+    
+    
+    <category term="Web前端" scheme="https://www.alexation.cn/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
   </entry>
