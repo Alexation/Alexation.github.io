@@ -134,6 +134,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -246,38 +251,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="对源程序继续完善"><a href="#对源程序继续完善" class="headerlink" title="对源程序继续完善"></a>对源程序继续完善</h3><h4 id="Sleep延迟"><a href="#Sleep延迟" class="headerlink" title="Sleep延迟"></a>Sleep延迟</h4><p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
+        <h3 id="对源程序继续完善">对源程序继续完善</h3>
+<h4 id="Sleep延迟">Sleep延迟</h4>
+<p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
 <p>引入库：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
-
 <p>for循环下载img最后一行加入：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
-
 <p>当然，子进程try：第一行加入：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
-
 <p>保证在每次下载间隔1~2s</p>
-<h4 id="sys-exit-app-exec"><a href="#sys-exit-app-exec" class="headerlink" title="sys.exit(app.exec_())"></a>sys.exit(app.exec_())</h4><p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果……</p>
+<h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
+<p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
 <p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
-
-<h4 id="更改logo"><a href="#更改logo" class="headerlink" title="更改logo"></a>更改logo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
-
+<h4 id="更改logo">更改logo</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
 <p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
-<h3 id="cxfreeze打包"><a href="#cxfreeze打包" class="headerlink" title="cxfreeze打包"></a>cxfreeze打包</h3><h4 id="cxfreeze与pyinstaller"><a href="#cxfreeze与pyinstaller" class="headerlink" title="cxfreeze与pyinstaller"></a>cxfreeze与pyinstaller</h4><p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
+<h3 id="cxfreeze打包">cxfreeze打包</h3>
+<h4 id="cxfreeze与pyinstaller">cxfreeze与pyinstaller</h4>
+<p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
-
 <p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
 <p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
-
 <p>安装完毕后，在根目录命令行输入：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
-
-<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=”win32gui”是去掉控制台显示。</p>
-<h4 id="附属文件插入"><a href="#附属文件插入" class="headerlink" title="附属文件插入"></a>附属文件插入</h4><p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
+<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=&quot;win32gui&quot;是去掉控制台显示。</p>
+<h4 id="附属文件插入">附属文件插入</h4>
+<p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
 <p>这时运行可执行文件即可看到我们的程序。</p>
-<h3 id="开发总结"><a href="#开发总结" class="headerlink" title="开发总结"></a>开发总结</h3><p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
+<h3 id="开发总结">开发总结</h3>
+<p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
 
     </div>
 
@@ -445,7 +450,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -478,13 +483,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -496,13 +495,14 @@
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -647,11 +647,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 

@@ -30,7 +30,7 @@
 <meta property="og:description" content="Emmet语法、复合选择器">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-05T07:35:07.000Z">
-<meta property="article:modified_time" content="2021-09-06T01:10:25.524Z">
+<meta property="article:modified_time" content="2021-09-17T07:05:26.508Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
@@ -134,6 +134,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -222,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-06 09:10:25" itemprop="dateModified" datetime="2021-09-06T09:10:25+08:00">2021-09-06</time>
+                <time title="修改时间：2021-09-17 15:05:26" itemprop="dateModified" datetime="2021-09-17T15:05:26+08:00">2021-09-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,8 +251,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h3><p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
-<h4 id="快速生成HTML结构语法"><a href="#快速生成HTML结构语法" class="headerlink" title="快速生成HTML结构语法"></a>快速生成HTML结构语法</h4><ol>
+        <h3 id="Emmet语法">Emmet语法</h3>
+<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
+<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
+<ol>
 <li>生成标签直接输入标签名按tab键即可</li>
 <li>如果想要生成多个相同标签加上*就可以了</li>
 <li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
@@ -256,50 +263,55 @@
 <li>如果生成的div类名是有顺序的，可以用自增符号$</li>
 <li>如果想要在生成的$签内部写内容可以用{}表示</li>
 </ol>
-<h4 id="快速生成CSS样式语法"><a href="#快速生成CSS样式语法" class="headerlink" title="快速生成CSS样式语法"></a>快速生成CSS样式语法</h4><p>CSS基本采取简写形式即可</p>
+<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
+<p>CSS基本采取简写形式即可</p>
 <ul>
 <li>比如 w200 按tab就可以生成 width: 200px;</li>
 <li>比如 lh26 按tab可以生成 line-height: 26px;</li>
 </ul>
-<h4 id="快速格式化代码"><a href="#快速格式化代码" class="headerlink" title="快速格式化代码"></a>快速格式化代码</h4><p>设置搜索format勾选format on save</p>
-<h3 id="CSS复合选择器"><a href="#CSS复合选择器" class="headerlink" title="CSS复合选择器"></a>CSS复合选择器</h3><p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
+<h4 id="快速格式化代码">快速格式化代码</h4>
+<p>设置搜索format勾选format on save</p>
+<h3 id="CSS复合选择器">CSS复合选择器</h3>
+<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
 <ul>
 <li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
 <li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
 <li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
 </ul>
-<h4 id="后代选择器（重要）"><a href="#后代选择器（重要）" class="headerlink" title="后代选择器（重要）"></a>后代选择器（重要）</h4><p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
+<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
+<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
-
 <p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
-<h4 id="子选择器（重要）"><a href="#子选择器（重要）" class="headerlink" title="子选择器（重要）"></a>子选择器（重要）</h4><p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
+<h4 id="子选择器（重要）">子选择器（重要）</h4>
+<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1 &gt; 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
-
 <p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
-<h4 id="并集选择器（重要）"><a href="#并集选择器（重要）" class="headerlink" title="并集选择器（重要）"></a>并集选择器（重要）</h4><p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
+<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
+<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
 <p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1, 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
-
 <p>上述语法表示选择元素1和元素2</p>
 <ul>
 <li>元素1和元素2中间用逗号隔开</li>
 <li>逗号可以理解为<strong>和</strong>的意思</li>
 <li>并集选择器通常用于集体声明</li>
 </ul>
-<h4 id="链接伪类选择器"><a href="#链接伪类选择器" class="headerlink" title="链接伪类选择器"></a>链接伪类选择器</h4><p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
+<h4 id="链接伪类选择器">链接伪类选择器</h4>
+<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a:link		# 选择所有未被访问的链接</span><br><span class="line">a:visited	# 选择所有已被访问的链接</span><br><span class="line">a:hover		# 选择鼠标指针位于其上的链接</span><br><span class="line">a:active	# 选择活动链接（鼠标按下未弹起）</span><br></pre></td></tr></table></figure>
-
-<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<h5 id="注意事项">注意事项</h5>
+<ul>
 <li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
 <li>记忆法：love hate 或者 lv 宝宝 hao</li>
 <li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
 </ul>
-<h5 id="开发写法"><a href="#开发写法" class="headerlink" title="开发写法"></a>开发写法</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="focus伪类选择器"><a href="#focus伪类选择器" class="headerlink" title="focus伪类选择器"></a>focus伪类选择器</h4><p>focus伪类选择器用于选取获得焦点的表单元素</p>
+<h5 id="开发写法">开发写法</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="focus伪类选择器">focus伪类选择器</h4>
+<p>focus伪类选择器用于选取获得焦点的表单元素</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">焦点就是光标，一般情况&lt;input&gt;类表单元素才能获取，因此这个选择器也主要针对表单元素来说</span><br><span class="line">input:focus &#123;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="复合选择器总结"><a href="#复合选择器总结" class="headerlink" title="复合选择器总结"></a>复合选择器总结</h4><table>
+<h4 id="复合选择器总结">复合选择器总结</h4>
+<table>
 <thead>
 <tr>
 <th>选择器</th>
@@ -309,7 +321,8 @@
 <th>隔开符号及用法</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>后代选择器</td>
 <td>选择后代元素</td>
 <td>子孙后代</td>
@@ -344,7 +357,8 @@
 <td>较少</td>
 <td>记住input:focus</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
     </div>
 
@@ -483,7 +497,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -516,13 +530,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -534,13 +542,14 @@
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -685,11 +694,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 

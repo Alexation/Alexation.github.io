@@ -136,6 +136,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -249,7 +254,8 @@
 
       
         <p>虽然我不是计算机专业，但我有计算机梦！前端后端嵌入式软件开发、全栈工程师说起来有些夸张，但我一直在向那个方向努力着。我也相信，（只要够卷o(￣▽￣)ｄ）这是个不看出身的专业。想来想去，决定了：我的大学，不能没有计算机</p>
-<h4 id="HTML-Web-浏览器简介"><a href="#HTML-Web-浏览器简介" class="headerlink" title="HTML-Web-浏览器简介"></a>HTML-Web-浏览器简介</h4><ul>
+<h4 id="HTML-Web-浏览器简介">HTML-Web-浏览器简介</h4>
+<ul>
 <li>HTML不是编程语言，而是一种标记语言</li>
 <li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li>
 <li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li>
@@ -257,9 +263,11 @@
 </ul>
 <p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p>
 <p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
-<h4 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h4><h5 id="HTML语法规范"><a href="#HTML语法规范" class="headerlink" title="HTML语法规范"></a>HTML语法规范</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">标签成对：&lt;html&gt;  &lt;/html&gt;</span><br><span class="line"></span><br><span class="line">单标签：&lt;br /&gt;</span><br><span class="line"></span><br><span class="line">双标签关系：包含关系，并列关系</span><br></pre></td></tr></table></figure>
-
-<h5 id="HTML基本机构标签"><a href="#HTML基本机构标签" class="headerlink" title="HTML基本机构标签"></a>HTML基本机构标签</h5><table>
+<h4 id="HTML标签">HTML标签</h4>
+<h5 id="HTML语法规范">HTML语法规范</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">标签成对：&lt;html&gt;  &lt;/html&gt;</span><br><span class="line"></span><br><span class="line">单标签：&lt;br /&gt;</span><br><span class="line"></span><br><span class="line">双标签关系：包含关系，并列关系</span><br></pre></td></tr></table></figure>
+<h5 id="HTML基本机构标签">HTML基本机构标签</h5>
+<table>
 <thead>
 <tr>
 <th>标签名</th>
@@ -267,7 +275,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>html</td>
 <td>HTML标签</td>
 <td>页面中最大的标签，我们称为根标签</td>
@@ -287,14 +296,18 @@
 <td>文档的主体</td>
 <td>元素包含文档的所有内容</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>VS-Code之！主体结构</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">	&lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	Hello World!</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="！DOCTYPE"><a href="#！DOCTYPE" class="headerlink" title="！DOCTYPE"></a>！DOCTYPE</h5><p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
-<h5 id="lang语言"><a href="#lang语言" class="headerlink" title="lang语言"></a>lang语言</h5><p>language的缩写：en英语、zh-CH中文</p>
-<h5 id="charset字符集"><a href="#charset字符集" class="headerlink" title="charset字符集"></a>charset字符集</h5><p>编码方式：GBK、UTF-8（万国码）一定要写</p>
-<h5 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h5><ul>
+<h5 id="！DOCTYPE">！DOCTYPE</h5>
+<p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
+<h5 id="lang语言">lang语言</h5>
+<p>language的缩写：en英语、zh-CH中文</p>
+<h5 id="charset字符集">charset字符集</h5>
+<p>编码方式：GBK、UTF-8（万国码）一定要写</p>
+<h5 id="HTML常用标签">HTML常用标签</h5>
+<ul>
 <li>语义标签，区分标题，段落等</li>
 <li>标题标签h，一行显示</li>
 <li>段落和换行标签p，强制换行br</li>
@@ -308,7 +321,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>加粗</td>
 <td>strong或者b</td>
 <td>推荐strong，语气更强烈</td>
@@ -328,10 +342,11 @@
 <td>ins或者u</td>
 <td>推荐ins，语气更强烈</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
-<h5 id="img图片"><a href="#img图片" class="headerlink" title="img图片"></a>img图片</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在HTML标签中，&lt;img src=&quot;url&quot; /&gt;</span><br></pre></td></tr></table></figure>
-
+<h5 id="img图片">img图片</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在HTML标签中，&lt;img src=&quot;url&quot; /&gt;</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -340,7 +355,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>src</td>
 <td>图片路径</td>
 <td>必须属性</td>
@@ -370,20 +386,22 @@
 <td>像素</td>
 <td>设置图像的边框粗细</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>border在HTML5已不支持（bordeR）</p>
 <p>属性均采取键值对的形式：key= “value”</p>
-<h5 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签<a></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
+<h5 id="超链接标签-a">超链接标签<a></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
 <li>跳转目标：#表示空链接</li>
 <li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li>
 </ul>
-<h5 id="注释标签：-–我是一个注释–"><a href="#注释标签：-–我是一个注释–" class="headerlink" title="注释标签：!–我是一个注释–"></a>注释标签：!–我是一个注释–</h5><p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png"></p>
-<h5 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h5><p>用于展示数据（不是来布局页面的）</p>
+<h5 id="注释标签：-–我是一个注释–">注释标签：!–我是一个注释–</h5>
+<p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png" alt=""></p>
+<h5 id="表格标签">表格标签</h5>
+<p>用于展示数据（不是来布局页面的）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;文字&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"># &lt;table&gt;定义表格</span><br><span class="line"># &lt;tr&gt;用于定义单元格中的行，必须嵌套在&lt;table&gt;中</span><br><span class="line"># &lt;td&gt;用于定义表格中的单元格，必须嵌套在&lt;tr&gt;中</span><br></pre></td></tr></table></figure>
-
 <p>表格属性，实际开发不常用，后面通过CSS来设置</p>
 <table>
 <thead>
@@ -393,7 +411,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>align</td>
 <td>left、center、right</td>
 <td>规定表格相对周围元素的对齐方式</td>
@@ -401,7 +420,7 @@
 <tr>
 <td>border</td>
 <td>1或 “”</td>
-<td>规定表格单元是否拥有边框，默认为””,表示没有边框</td>
+<td>规定表格单元是否拥有边框，默认为&quot;&quot;,表示没有边框</td>
 </tr>
 <tr>
 <td>cellpadding</td>
@@ -418,41 +437,39 @@
 <td>像素值或百分比</td>
 <td>规定表格的宽度</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>表格结构标签</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;thead&gt;表格的头部区域&lt;tbody&gt;表格的整体区域</span><br></pre></td></tr></table></figure>
-
 <p>合并单元格</p>
 <ul>
-<li>跨行合并：rowspan=”合并单元格的个数”</li>
-<li>跨列合并：colspan=”合并单元格的个数”</li>
+<li>跨行合并：rowspan=“合并单元格的个数”</li>
+<li>跨列合并：colspan=“合并单元格的个数”</li>
 </ul>
-<h5 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h5><p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
+<h5 id="列表标签">列表标签</h5>
+<p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 主标签只能嵌套&lt;li&gt;，其中可以容纳所有元素</span><br><span class="line"># 无序列表（重点）、排序整齐，没有顺序</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"># 有序列表（不常用，了解即可）</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"># 自定义列表、一个小标题，其他围绕他们说明</span><br><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h5><p>目的：收集用户信息</p>
-<p>一个完整的表单由<strong>表单域、表单控件（表单元素）</strong>和<strong>提示信息</strong>三部分组成</p>
+<h5 id="表单标签">表单标签</h5>
+<p>目的：收集用户信息</p>
+<p>一个完整的表单由<strong>表单域、表单控件（表单元素）<strong>和</strong>提示信息</strong>三部分组成</p>
 <p>表单域：包含表单元素的区域</p>
 <p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;url地址&quot; method=&quot;提交方式&quot; name=&quot;表单域名称&quot;&gt;</span><br><span class="line">	# 各种表单元素控件</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-
 <p>表单元素</p>
 <ul>
 <li>input输入表单元素</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 用于收集用户信息。&lt;input type=&quot;属性值&quot; /&gt;。</span><br><span class="line">text：文本框、里面可以输入任何文字</span><br><span class="line">password：密码框、用户看不见输入的密码</span><br><span class="line">radio：单选按钮、实现多选一</span><br><span class="line">name：表单元素名字、必须有相同的名字</span><br><span class="line">checkbox：复选框、实现多选</span><br><span class="line">value：显示默认值</span><br><span class="line">checked：默认选择</span><br><span class="line">submit：提交到服务器</span><br><span class="line">reset：清楚表单中的所有数据</span><br><span class="line">button：定义可点击按钮，通常后期结合js一起使用</span><br><span class="line">file：文件域、上传文件使用</span><br><span class="line"></span><br><span class="line">&lt;label for=&quot;名字&quot;&gt;内容&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;名字&quot; id=&quot;名字&quot; /&gt;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>select下拉表单元素</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 定义下拉列表</span><br><span class="line">&lt;select&gt;</span><br><span class="line">	&lt;option&gt;选项1&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项2&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项3&lt;/option&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>textarea文本域元素</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 大量输入文本，经常用于留言板、评论	</span><br></pre></td></tr></table></figure>
-
-<h4 id="查找文档"><a href="#查找文档" class="headerlink" title="查找文档"></a>查找文档</h4><ul>
+<h4 id="查找文档">查找文档</h4>
+<ul>
 <li>百度：<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
 <li>W3C：<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/">w3school 在线教程</a></li>
 <li>MDN：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li>
@@ -545,7 +562,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-Web-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">HTML-Web-浏览器简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML%E6%A0%87%E7%AD%BE"><span class="nav-number">2.</span> <span class="nav-text">HTML标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="nav-number">2.1.</span> <span class="nav-text">HTML语法规范</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E5%9F%BA%E6%9C%AC%E6%9C%BA%E6%9E%84%E6%A0%87%E7%AD%BE"><span class="nav-number">2.2.</span> <span class="nav-text">HTML基本机构标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%81DOCTYPE"><span class="nav-number">2.3.</span> <span class="nav-text">！DOCTYPE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lang%E8%AF%AD%E8%A8%80"><span class="nav-number">2.4.</span> <span class="nav-text">lang语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#charset%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">2.5.</span> <span class="nav-text">charset字符集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="nav-number">2.6.</span> <span class="nav-text">HTML常用标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#img%E5%9B%BE%E7%89%87"><span class="nav-number">2.7.</span> <span class="nav-text">img图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE"><span class="nav-number">2.8.</span> <span class="nav-text">超链接标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E6%A0%87%E7%AD%BE%EF%BC%9A-%E2%80%93%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B3%A8%E9%87%8A%E2%80%93"><span class="nav-number">2.9.</span> <span class="nav-text">注释标签：!–我是一个注释–</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="nav-number">2.10.</span> <span class="nav-text">表格标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="nav-number">2.11.</span> <span class="nav-text">列表标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="nav-number">2.12.</span> <span class="nav-text">表单标签</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%96%87%E6%A1%A3"><span class="nav-number">3.</span> <span class="nav-text">查找文档</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-Web-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">HTML-Web-浏览器简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML%E6%A0%87%E7%AD%BE"><span class="nav-number">2.</span> <span class="nav-text">HTML标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="nav-number">2.1.</span> <span class="nav-text">HTML语法规范</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E5%9F%BA%E6%9C%AC%E6%9C%BA%E6%9E%84%E6%A0%87%E7%AD%BE"><span class="nav-number">2.2.</span> <span class="nav-text">HTML基本机构标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%81DOCTYPE"><span class="nav-number">2.3.</span> <span class="nav-text">！DOCTYPE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lang%E8%AF%AD%E8%A8%80"><span class="nav-number">2.4.</span> <span class="nav-text">lang语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#charset%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">2.5.</span> <span class="nav-text">charset字符集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="nav-number">2.6.</span> <span class="nav-text">HTML常用标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#img%E5%9B%BE%E7%89%87"><span class="nav-number">2.7.</span> <span class="nav-text">img图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE-a"><span class="nav-number">2.8.</span> <span class="nav-text">超链接标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E6%A0%87%E7%AD%BE%EF%BC%9A-%E2%80%93%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B3%A8%E9%87%8A%E2%80%93"><span class="nav-number">2.9.</span> <span class="nav-text">注释标签：!–我是一个注释–</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="nav-number">2.10.</span> <span class="nav-text">表格标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="nav-number">2.11.</span> <span class="nav-text">列表标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="nav-number">2.12.</span> <span class="nav-text">表单标签</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%96%87%E6%A1%A3"><span class="nav-number">3.</span> <span class="nav-text">查找文档</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -595,7 +612,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -628,13 +645,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -646,13 +657,14 @@
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -797,11 +809,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 

@@ -134,6 +134,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -246,15 +251,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="HTTP、WEB基础"><a href="#HTTP、WEB基础" class="headerlink" title="HTTP、WEB基础"></a>HTTP、WEB基础</h1><h2 id="HTTP知识点："><a href="#HTTP知识点：" class="headerlink" title="HTTP知识点："></a>HTTP知识点：</h2><ul>
+        <h1>HTTP、WEB基础</h1>
+<h2 id="HTTP知识点：">HTTP知识点：</h2>
+<ul>
 <li>URI（Uniform Resource Identifier）即统一资源标识符</li>
 <li>URL（Universal Resource Locator）即统一资源定位符</li>
 </ul>
 <p>例如：<a target="_blank" rel="noopener" href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
 <p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h3 id="超文本（Hypertext）："><a href="#超文本（Hypertext）：" class="headerlink" title="超文本（Hypertext）："></a><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
-<h3 id="HTTP和HTTPS："><a href="#HTTP和HTTPS：" class="headerlink" title="HTTP和HTTPS："></a><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><a href="#请求可分为四部分内容：请求方法、请求头、请求网址、请求体" class="headerlink" title="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"></a><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p>
+<h3 id="超文本（Hypertext）："><strong>超文本（Hypertext）：</strong></h3>
+<p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
+<h3 id="HTTP和HTTPS："><strong>HTTP和HTTPS：</strong></h3>
+<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3>
+<p>常见请求有：GET、POST</p>
 <p>GET：直接输入网址</p>
 <p>POST：大多提交表单时，例如登录</p>
 <p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
@@ -266,10 +276,13 @@
 <li>404-请求的资源（网页等）不存在</li>
 <li>500-服务器内部错误</li>
 </ul>
-<h2 id="WEB基础"><a href="#WEB基础" class="headerlink" title="WEB基础"></a>WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><a href="#网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）" class="headerlink" title="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"></a><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
+<h2 id="WEB基础">WEB基础</h2>
+<h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3>
+<p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
 <p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
 <p>JavaScript脚本语言（交互动作）</p>
-<h3 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a><strong>网页的结构：</strong></h3><ul>
+<h3 id="网页的结构："><strong>网页的结构：</strong></h3>
+<ul>
 <li>head 标签内定义一些页面的配置和引用</li>
 <li>title 标签则定义网页的标题，会显示在网页</li>
 <li>body 标签内是在网页正文中显示的内容</li>
@@ -277,7 +290,7 @@
 <li>h2 标签表示一个二级标题</li>
 <li>p 标签代表一个段落</li>
 </ul>
-<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以”.”开头表示class。</p>
+<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以&quot;.&quot;开头表示class。</p>
 <p>摘自：《Python3 网络爬虫开发指南》</p>
 
     </div>
@@ -367,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP%E3%80%81WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">HTTP、WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%EF%BC%88Hypertext%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">超文本（Hypertext）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTP和HTTPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%AF%E5%88%86%E4%B8%BA%E5%9B%9B%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%EF%BC%9A%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E3%80%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E3%80%81%E8%AF%B7%E6%B1%82%E7%BD%91%E5%9D%80%E3%80%81%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">请求可分为四部分内容：请求方法、请求头、请求网址、请求体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.</span> <span class="nav-text">WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AHTML%EF%BC%88%E9%AA%A8%E6%9E%B6%EF%BC%89%E3%80%81CSS%EF%BC%88%E8%82%8C%E8%82%89%EF%BC%89%E3%80%81JavaScript%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">网页的结构：</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">HTTP、WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%EF%BC%88Hypertext%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">超文本（Hypertext）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTP和HTTPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%AF%E5%88%86%E4%B8%BA%E5%9B%9B%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%EF%BC%9A%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E3%80%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E3%80%81%E8%AF%B7%E6%B1%82%E7%BD%91%E5%9D%80%E3%80%81%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">请求可分为四部分内容：请求方法、请求头、请求网址、请求体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.</span> <span class="nav-text">WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AHTML%EF%BC%88%E9%AA%A8%E6%9E%B6%EF%BC%89%E3%80%81CSS%EF%BC%88%E8%82%8C%E8%82%89%EF%BC%89%E3%80%81JavaScript%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">网页的结构：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -417,7 +430,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -450,13 +463,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -468,13 +475,14 @@
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -619,11 +627,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 

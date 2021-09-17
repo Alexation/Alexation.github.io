@@ -134,6 +134,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -246,31 +251,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="利用循环扩大抓取范围"><a href="#利用循环扩大抓取范围" class="headerlink" title="利用循环扩大抓取范围"></a>利用循环扩大抓取范围</h1><p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p>
+        <h1>利用循环扩大抓取范围</h1>
+<p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p>
 <p>那么，现在就来<em><strong>扩大抓取范围！</strong></em></p>
 <p>记得基地址是：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/</span><br></pre></td></tr></table></figure>
-
 <p>我们来点开第二页，你会发现地址变成了：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_2.html</span><br></pre></td></tr></table></figure>
-
 <p>点开第三页：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_3.html</span><br></pre></td></tr></table></figure>
-
 <p>好的，规律显而易见，我们只需要index_{page}进行for循环即可多页抓取。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for page in range(1, 36):</span><br><span class="line">    if page == 1:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br><span class="line">    else:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com&#x27; \</span><br><span class="line">            &#x27;/desk/meinv/index_&#123;&#125;.html&#x27;.format(str(page))</span><br></pre></td></tr></table></figure>
-
 <p>将整个程序放在for函数里进行抓取即可实现多页抓取。</p>
 <p>现在，我们来让程序打印抓取进度</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 程序开头部分做分割线</span><br><span class="line">print(&quot;----------------------------------------------&quot;)</span><br></pre></td></tr></table></figure>
-
 <p>在for循环里，对每一页进行提醒</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;--------&#123;&#125; page downloading---------&#x27;.format(page))</span><br></pre></td></tr></table></figure>
-
-<h1 id="对部分异常进行控制"><a href="#对部分异常进行控制" class="headerlink" title="对部分异常进行控制"></a>对部分异常进行控制</h1><p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p>
+<h1>对部分异常进行控制</h1>
+<p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p>
 <p>好在requests已经对部分异常给予返回值进行提醒，我们可以根据这些返回值，进行判断处理。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	# 主程序</span><br><span class="line">except requests.Timeout as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.URLRequired as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.ConnectionError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.HTTPError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br></pre></td></tr></table></figure>
-
 <p>这里有requests库的异常总结：</p>
 <table>
 <thead>
@@ -279,7 +279,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>requests.ConnectionError</td>
 <td>网络连接错误异常，如DNS查询失败，拒绝连接等</td>
 </tr>
@@ -307,7 +308,8 @@
 <td>requests.URLRequired</td>
 <td>URL缺失异常</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
     </div>
 
@@ -425,7 +427,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E5%BE%AA%E7%8E%AF%E6%89%A9%E5%A4%A7%E6%8A%93%E5%8F%96%E8%8C%83%E5%9B%B4"><span class="nav-number">1.</span> <span class="nav-text">利用循环扩大抓取范围</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E9%83%A8%E5%88%86%E5%BC%82%E5%B8%B8%E8%BF%9B%E8%A1%8C%E6%8E%A7%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">对部分异常进行控制</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">利用循环扩大抓取范围</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">对部分异常进行控制</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -475,7 +477,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -508,13 +510,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -526,13 +522,14 @@
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -677,11 +674,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 

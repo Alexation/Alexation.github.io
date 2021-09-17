@@ -136,6 +136,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -248,10 +253,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Scrapy简介："><a href="#Scrapy简介：" class="headerlink" title="Scrapy简介："></a>Scrapy简介：</h1><p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
+        <h1>Scrapy简介：</h1>
+<p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
 <p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
 <p>非阻塞：关注的是程序在等待结果时的状态，不能立刻得到结果之前，该调用不会阻塞当前线程</p>
-<h2 id="scrapy框架："><a href="#scrapy框架：" class="headerlink" title="scrapy框架："></a>scrapy框架：</h2><p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png"></p>
+<h2 id="scrapy框架：">scrapy框架：</h2>
+<p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png" alt=""></p>
 <ul>
 <li>scrapy Engine(引擎)：总指挥:负责数据和信号的在不同模块间的传递，scrapy已经实现</li>
 <li>scheduler(调度器)：一个队列，存放引擎发过来的request请求，scrapy已经实现</li>
@@ -261,24 +268,25 @@
 <li>Downloader Middlewares(下载中间件)：可以自定义的下载扩展，比如设置代理，一般不用手写</li>
 <li>Spider MiddlewaresSpider(中间件)：可以自定义requests请求和进行response过滤，一般不用手写</li>
 </ul>
-<h2 id="创建Spider："><a href="#创建Spider：" class="headerlink" title="创建Spider："></a>创建Spider：</h2><ol>
+<h2 id="创建Spider：">创建Spider：</h2>
+<ol>
 <li>创建一个scrapy项目——scrapy startproject myspider</li>
-<li>生成一个爬虫——scrapy genspider xxxx “xxxx.cn”</li>
+<li>生成一个爬虫——scrapy genspider xxxx “<a target="_blank" rel="noopener" href="http://xxxx.cn">xxxx.cn</a>”</li>
 <li>提取数据——完善spider，使用xpath等方法</li>
 <li>保存数据——pipeline中保存数据</li>
 </ol>
-<p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）可以通过spider.name == “itcast”进行判断操作。</p>
+<p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）<a target="_blank" rel="noopener" href="http://xn--spider-2x8i375aqy9kyxa.name">可以通过spider.name</a> == &quot;itcast&quot;进行判断操作。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># logging：不同等级的日志，保存到本地，</span><br><span class="line">import logging</span><br><span class="line"># 获取当前日志输出位置</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"># setting可以设置LOG_FILE = &#x27;./log.log&#x27;保存到本地</span><br><span class="line">logger.warning(item)</span><br></pre></td></tr></table></figure>
-
 <p>scrapy</p>
 <ul>
-<li>settings中设置LOG_LEVEL=”WARNING”</li>
-<li>settings中设置LOG_FILE=”./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li>
+<li>settings中设置LOG_LEVEL=“WARNING”</li>
+<li>settings中设置LOG_FILE=“./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li>
 <li>import logging,实例化logger的方式在任何文件中使用logger输出内容。</li>
 </ul>
 <p>普通项目中</p>
 <ul>
-<li><pre><code>import logging
+<li>
+<pre><code>import logging
 #设置日志输出的样式，格式。
 logging.basicConfig(...)
 # 实例化logger=logging.getLogger(__name__) 在任何py文件中调用logger即可
@@ -402,7 +410,7 @@ logging.basicConfig(...)
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrapy%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">Scrapy简介：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy%E6%A1%86%E6%9E%B6%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">scrapy框架：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BASpider%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">创建Spider：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Scrapy简介：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy%E6%A1%86%E6%9E%B6%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">scrapy框架：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BASpider%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">创建Spider：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -452,7 +460,7 @@ logging.basicConfig(...)
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -485,13 +493,7 @@ logging.basicConfig(...)
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -503,13 +505,14 @@ logging.basicConfig(...)
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -654,11 +657,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 

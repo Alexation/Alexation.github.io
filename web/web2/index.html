@@ -134,6 +134,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-film fa-fw"></i>资源</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -246,30 +251,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="CSS的主要使用场景就是美化网页、布局页面的"><a href="#CSS的主要使用场景就是美化网页、布局页面的" class="headerlink" title="CSS的主要使用场景就是美化网页、布局页面的"></a>CSS的主要使用场景就是美化网页、布局页面的</h2><ul>
+        <h2 id="CSS的主要使用场景就是美化网页、布局页面的">CSS的主要使用场景就是美化网页、布局页面的</h2>
+<ul>
 <li>HTML的局限性：只关注内容的语义</li>
 <li>CSS-网页美容师：层叠样式表的简称</li>
 <li>CSS基础选择器</li>
 <li>CSS语法规范：有选择器以及一条或多条声明</li>
 <li>标签选择器：用HTML标签名称作为选择器</li>
 </ul>
-<h3 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h3><h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.类名 &#123;</span><br><span class="line">	属性1: 属性值1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;类名&quot; </span><br></pre></td></tr></table></figure>
-
+<h3 id="CSS-选择器">CSS 选择器</h3>
+<h4 id="类选择器">类选择器</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.类名 &#123;</span><br><span class="line">	属性1: 属性值1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;类名&quot; </span><br></pre></td></tr></table></figure>
 <p>⚠ <strong>注意</strong></p>
 <ol>
-<li>类选择器使用”.”进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
+<li>类选择器使用&quot;.&quot;进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
 <li>可以理解为给这个标签起了一个名字，来表示</li>
 <li>长名称或词组可以使用中横线来为选择器命名</li>
 <li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li>
 <li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li>
 <li>命名规范：见附件（Web前端开发规范手册.doc）</li>
 </ol>
-<h4 id="多类名"><a href="#多类名" class="headerlink" title="多类名"></a>多类名</h4><ul>
+<h4 id="多类名">多类名</h4>
+<ul>
 <li>在标签class中填写多类名</li>
 <li>每个类名用空格分开</li>
 </ul>
-<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#id名 &#123;</span><br><span class="line">	属性1: 属性值1；</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h4 id="id选择器">id选择器</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#id名 &#123;</span><br><span class="line">	属性1: 属性值1；</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p>
 <p>id选择器和类选择器的区别</p>
 <ol>
@@ -278,10 +286,11 @@
 <li>id选择器和类选择器最大的不同在于使用次数上</li>
 <li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li>
 </ol>
-<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>在CSS中，通配符选择器用”*”定义，他表示选取页面中所有元素</p>
+<h4 id="通配符选择器">通配符选择器</h4>
+<p>在CSS中，通配符选择器用&quot;*&quot;定义，他表示选取页面中所有元素</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">	属性1: 属性值1；</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"># 特殊情况才使用（清除所有元素标签的内外边距）</span><br><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="基础选择器总结"><a href="#基础选择器总结" class="headerlink" title="基础选择器总结"></a>基础选择器总结</h4><table>
+<h4 id="基础选择器总结">基础选择器总结</h4>
+<table>
 <thead>
 <tr>
 <th>基础选择器</th>
@@ -291,7 +300,8 @@
 <th>用法</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>标签选择器</td>
 <td>可以选出所有相同的标签，比如p</td>
 <td>不能差异化选择</td>
@@ -319,18 +329,20 @@
 <td>特殊情况使用</td>
 <td>* {color: red;}</td>
 </tr>
-</tbody></table>
-<h3 id="CSS-字体属性"><a href="#CSS-字体属性" class="headerlink" title="CSS 字体属性"></a>CSS 字体属性</h3><h4 id="字体系列"><a href="#字体系列" class="headerlink" title="字体系列"></a>字体系列</h4><p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
+</tbody>
+</table>
+<h3 id="CSS-字体属性">CSS 字体属性</h3>
+<h4 id="字体系列">字体系列</h4>
+<p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &#123;font-family:&quot;微软雅黑&quot;;&#125;</span><br><span class="line">body &#123;font-family:&quot;Microsoft YaHei&quot;;&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>各种字体之间必须使用英文状态下的逗号隔开</li>
 <li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
 <li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li>
 </ul>
-<h4 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h4><p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
+<h4 id="大小">大小</h4>
+<p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-size: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>px大小是我们网页的最常用的单位</li>
 <li>谷歌浏览器默认的文字大小为16px</li>
@@ -338,9 +350,9 @@
 <li>可以给body指定整个页面的文字大小</li>
 <li>标题标签比较特殊，需要单独指定文字大小</li>
 </ul>
-<h4 id="粗细"><a href="#粗细" class="headerlink" title="粗细"></a>粗细</h4><p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
+<h4 id="粗细">粗细</h4>
+<p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -348,7 +360,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>normal</td>
 <td>默认值（不加粗）</td>
 </tr>
@@ -360,14 +373,15 @@
 <td>100~900·</td>
 <td>400等同于normal，而700等同于bold（数字后面不加单位）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li>
 <li>实际开发时，我们更喜欢用数字表示粗细</li>
 </ul>
-<h4 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h4><p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
+<h4 id="文字样式">文字样式</h4>
+<p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P &#123;</span><br><span class="line">	font-style: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -375,7 +389,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>normal</td>
 <td>默认值，浏览器会显示标准的字体样式font-style：normal；</td>
 </tr>
@@ -383,15 +398,17 @@
 <td>italic</td>
 <td>浏览器会显示斜体的字体样式</td>
 </tr>
-</tbody></table>
-<h4 id="字体符合属性"><a href="#字体符合属性" class="headerlink" title="字体符合属性"></a>字体符合属性</h4><p>字体属性可以把以上文字样式综合来写，节约代码</p>
+</tbody>
+</table>
+<h4 id="字体符合属性">字体符合属性</h4>
+<p>字体属性可以把以上文字样式综合来写，节约代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 复合属性有要求</span><br><span class="line">font: font-style font-weight font-size/line-height font-family</span><br><span class="line">font: italic 700 16px Microsoft yahei</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li>
 <li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li>
 </ul>
-<h4 id="CSS字体属性总结"><a href="#CSS字体属性总结" class="headerlink" title="CSS字体属性总结"></a>CSS字体属性总结</h4><table>
+<h4 id="CSS字体属性总结">CSS字体属性总结</h4>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -399,7 +416,8 @@
 <th>注意点</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>font-size</td>
 <td>字号</td>
 <td>我们通常用的单位时px像素，一定要跟上单位</td>
@@ -424,11 +442,13 @@
 <td>字体连写</td>
 <td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td>
 </tr>
-</tbody></table>
-<h3 id="CSS-文本属性"><a href="#CSS-文本属性" class="headerlink" title="CSS 文本属性"></a>CSS 文本属性</h3><p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
-<h4 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h4><p><strong>color</strong>属性用于定义文本颜色</p>
+</tbody>
+</table>
+<h3 id="CSS-文本属性">CSS 文本属性</h3>
+<p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
+<h4 id="文本颜色">文本颜色</h4>
+<p><strong>color</strong>属性用于定义文本颜色</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -436,7 +456,8 @@
 <th>属性值</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>预定义的颜色值</td>
 <td>red，green，blue，还有pink！</td>
 </tr>
@@ -448,11 +469,12 @@
 <td>RGB代码</td>
 <td>rgb(255,0,0)或rgb(100%,0%,0%)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><em><strong>开发中最常用的是十六进制</strong></em></p>
-<h4 id="对齐文本"><a href="#对齐文本" class="headerlink" title="对齐文本"></a>对齐文本</h4><p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
+<h4 id="对齐文本">对齐文本</h4>
+<p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -460,7 +482,8 @@
 <th>解释</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>left</td>
 <td>左对齐（默认值）</td>
 </tr>
@@ -472,10 +495,11 @@
 <td>center</td>
 <td>居中对齐</td>
 </tr>
-</tbody></table>
-<h4 id="装饰文本"><a href="#装饰文本" class="headerlink" title="装饰文本"></a>装饰文本</h4><p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
+</tbody>
+</table>
+<h4 id="装饰文本">装饰文本</h4>
+<p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -483,7 +507,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>none</td>
 <td>默认。没有装饰线</td>
 </tr>
@@ -499,16 +524,18 @@
 <td>line-through</td>
 <td>删除线。（不常用）</td>
 </tr>
-</tbody></table>
-<h4 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h4><p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
+</tbody>
+</table>
+<h4 id="文本缩进">文本缩进</h4>
+<p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	text-indent: 20px;</span><br><span class="line">	text-indent: 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p>
-<h4 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h4><p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
+<h4 id="行间距">行间距</h4>
+<p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">	line-height: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这一行最下边到下一行最下边的距离就是行高</p>
-<h4 id="CSS文本属性总结"><a href="#CSS文本属性总结" class="headerlink" title="CSS文本属性总结"></a>CSS文本属性总结</h4><table>
+<h4 id="CSS文本属性总结">CSS文本属性总结</h4>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -516,7 +543,8 @@
 <th>注意点</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>color</td>
 <td>文本颜色</td>
 <td>通常用十六进制，简体形式#fff</td>
@@ -541,12 +569,14 @@
 <td>行高</td>
 <td>控制行与行之间的距离</td>
 </tr>
-</tbody></table>
-<h3 id="CSS-引入方式"><a href="#CSS-引入方式" class="headerlink" title="CSS 引入方式"></a>CSS 引入方式</h3><p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
-<h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style&gt;标签中</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	div &#123;</span><br><span class="line">		color: red;</span><br><span class="line">		font-size: 12px;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="行内样式表"><a href="#行内样式表" class="headerlink" title="行内样式表"></a>行内样式表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式</span><br><span class="line">＜div style=&quot;color:red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱</span><br></pre></td></tr></table></figure>
-
+</tbody>
+</table>
+<h3 id="CSS-引入方式">CSS 引入方式</h3>
+<p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
+<h4 id="内部样式表">内部样式表</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style&gt;标签中</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	div &#123;</span><br><span class="line">		color: red;</span><br><span class="line">		font-size: 12px;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="行内样式表">行内样式表</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式</span><br><span class="line">＜div style=&quot;color:red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱</span><br></pre></td></tr></table></figure>
 <ul>
 <li>style其实就是标签的属性</li>
 <li>在双引号中间，写法要符合CSS规范</li>
@@ -554,10 +584,10 @@
 <li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
 <li>使用行内样式表设定CSS，通常也被称为行内式引入</li>
 </ul>
-<h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4><p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
+<h4 id="外部样式表">外部样式表</h4>
+<p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
 <p>引入外部样式表分为两步：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中</span><br><span class="line">2. 在HTML页面中，使用&lt;link&gt;标签引入这个文件</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css文件路径&quot;&gt;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -565,7 +595,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>rel</td>
 <td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
 </tr>
@@ -573,8 +604,10 @@
 <td>href</td>
 <td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td>
 </tr>
-</tbody></table>
-<h4 id="CSS引入方式总结"><a href="#CSS引入方式总结" class="headerlink" title="CSS引入方式总结"></a>CSS引入方式总结</h4><table>
+</tbody>
+</table>
+<h4 id="CSS引入方式总结">CSS引入方式总结</h4>
+<table>
 <thead>
 <tr>
 <th>样式表</th>
@@ -584,7 +617,8 @@
 <th>控制范围</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>行内样式表</td>
 <td>书写方便，权重高</td>
 <td>结构样式混写</td>
@@ -605,7 +639,8 @@
 <td>最多，推荐</td>
 <td>控制多个页面</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
     </div>
 
@@ -744,7 +779,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://jp-verb.herokuapp.com/" title="https:&#x2F;&#x2F;jp-verb.herokuapp.com&#x2F;" rel="noopener" target="_blank">每日一遍o (￣▽￣)ｄ</a>
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
@@ -777,13 +812,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Alexation</span>
 </div>
-<!-- 用下面的符号注释，注释代码用下面括号括起来 -->
-<!-- -->
 
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
--->
 
 <div class="powered-by">
   <i class="fa fa-user-md"></i>
@@ -795,13 +824,14 @@
     本站总访客量：<span id="busuanzi_value_site_uv"></span>人
   </span>
 </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.1k字</span>
+  <span class="post-count">博客全站共18.6k字  </span>
 </div>
 
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
@@ -946,11 +976,16 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+
 </body>
 </html>
 <!-- 你好，很高兴认识你-->
 <!-- 下方是基于Hexo+Next主题的博客模板连接-->
 <!-- https://github.com/Alexation/Hexo-Template -->
+<!--点击桃心-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<!--字体-->
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
 
