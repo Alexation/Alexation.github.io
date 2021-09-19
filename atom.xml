@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2021-09-17T07:04:59.142Z</updated>
+  <updated>2021-09-19T08:09:14.669Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -17,9 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Web渗透——SQL注入简介</title>
+    <link href="https://www.alexation.cn/webos/web/"/>
+    <id>https://www.alexation.cn/webos/web/</id>
+    <published>2021-09-18T11:05:30.000Z</published>
+    <updated>2021-09-19T08:09:14.669Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="渗透流程：">渗透流程：</h4><ol><li>先学习前端编程（了解清楚对方的网站架构，才好判断该如何入手）</li><li>信息搜集（作用：判断网站是否具备漏洞，判断具体漏洞存在的范围）</li><li>绕waf（绕过对方的防火墙拦截，否则一切攻击手段会被拦截）</li><li>漏洞攻击（漏洞类型有很多，针对不一样的漏洞有不一样的攻击方式，例如sql注入，xss，文件上传，反序列化）</li><li>找到漏洞，进行提权</li></ol><h4 id="SQL是什么">SQL是什么</h4><ul><li>SQL 指结构化查询语言，全称是 Structured Query Language。</li><li>SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除。</li><li>SQL 在1986年成为 ANSI（American National Standards Institute 美国国家标准化组织）的一项标准，在 1987 年成为国际标准化组织（ISO）标准。</li></ul><h4 id="SQL注入流程：">SQL注入流程：</h4><ol><li>sql注入的原理以及sqllite数据库</li><li>sqlite的安装以及基本语句</li><li>结合靶场理解sqlite的注入流程</li><li>总结</li></ol><h4 id="sql注入简介">sql注入简介</h4><p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序对用户输入的字符串没有进行过滤或处理不严谨。至今SQL注入仍然是首要的难以修复的安全漏洞。</p><ul><li>sql语言即是结构化查询语言，操作数据库的语言。</li><li>注入在这里就是将用户输入的数据拼接到原始代码里，被当作代码执行。</li></ul><p>SQLite是一种开源， 零配置，独立的，事务关系数据库引擎。它是一个类似Access的轻量级数据库系统，但是更小、更快、容量更大，并发更高，在移动端经常会使用到。</p>]]></content>
+    
+    
+    <summary type="html">我们的目标是：提权！提权！提权！</summary>
+    
+    
+    
+    <category term="Web渗透" scheme="https://www.alexation.cn/categories/Web%E6%B8%97%E9%80%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>CSS（三）</title>
-    <link href="https://www.alexation.cn/web/web4/"/>
-    <id>https://www.alexation.cn/web/web4/</id>
+    <link href="https://www.alexation.cn/webfront/web4/"/>
+    <id>https://www.alexation.cn/webfront/web4/</id>
     <published>2021-09-06T01:10:44.000Z</published>
     <updated>2021-09-17T07:04:59.142Z</updated>
     
@@ -37,8 +56,8 @@
   
   <entry>
     <title>CSS（二）</title>
-    <link href="https://www.alexation.cn/web/web3/"/>
-    <id>https://www.alexation.cn/web/web3/</id>
+    <link href="https://www.alexation.cn/webfront/web3/"/>
+    <id>https://www.alexation.cn/webfront/web3/</id>
     <published>2021-09-05T07:35:07.000Z</published>
     <updated>2021-09-17T07:05:26.508Z</updated>
     
@@ -56,8 +75,8 @@
   
   <entry>
     <title>CSS（一）</title>
-    <link href="https://www.alexation.cn/web/web2/"/>
-    <id>https://www.alexation.cn/web/web2/</id>
+    <link href="https://www.alexation.cn/webfront/web2/"/>
+    <id>https://www.alexation.cn/webfront/web2/</id>
     <published>2021-09-03T11:10:18.000Z</published>
     <updated>2021-09-05T07:37:27.569Z</updated>
     
@@ -94,8 +113,8 @@
   
   <entry>
     <title>HTML-VSCode</title>
-    <link href="https://www.alexation.cn/web/web1/"/>
-    <id>https://www.alexation.cn/web/web1/</id>
+    <link href="https://www.alexation.cn/webfront/web1/"/>
+    <id>https://www.alexation.cn/webfront/web1/</id>
     <published>2021-08-30T08:37:09.000Z</published>
     <updated>2021-09-01T07:34:42.205Z</updated>
     
