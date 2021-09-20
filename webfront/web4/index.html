@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="元素显示模式">
+  <meta name="description" content="元素显示模式、CSS背景">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS（三）">
 <meta property="og:url" content="https://www.alexation.cn/webfront/web4/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="元素显示模式">
+<meta property="og:description" content="元素显示模式、CSS背景">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-06T01:10:44.000Z">
-<meta property="article:modified_time" content="2021-09-17T07:04:59.142Z">
+<meta property="article:modified_time" content="2021-09-20T09:13:01.832Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
@@ -126,12 +126,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-cube fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-资源">
@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-17 15:04:59" itemprop="dateModified" datetime="2021-09-17T15:04:59+08:00">2021-09-17</time>
+                <time title="修改时间：2021-09-20 17:13:01" itemprop="dateModified" datetime="2021-09-20T17:13:01+08:00">2021-09-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +240,7 @@
             </span>
 
           
-            <div class="post-description">元素显示模式</div>
+            <div class="post-description">元素显示模式、CSS背景</div>
 
         </div>
       </header>
@@ -262,7 +262,7 @@
 <li>宽度默认是容器（父级宽度）的100%</li>
 <li>是一个容器及盒子，里面可以放行内或者块级元素</li>
 </ol>
-<p>⚠注意</p>
+<p>⚠<font color=pink>注意：</font></p>
 <ul>
 <li>文字类的元素内不能使用块级元素</li>
 <li>&lt;p标签主要用于存放文字，因此&lt;p里面不能放块级元素，特别是&lt;div</li>
@@ -326,6 +326,197 @@
 </tr>
 </tbody>
 </table>
+<h4 id="元素显示模式转换">元素显示模式转换</h4>
+<p>特殊情况下，我们需要元素模式的转换，简单理解：一个模式的元素需要另一种元素的特性，比如想要增加链接&lt;a的触发范围</p>
+<ul>
+<li>display: block;</li>
+<li>display: inline;</li>
+<li>display: inline-block;</li>
+</ul>
+<h4 id="一个小工具的使用-snipaste">一个小工具的使用 snipaste</h4>
+<ul>
+<li>F1 截图	F3 悬浮	Alt 查看颜色代码+c复制</li>
+</ul>
+<h4 id="单行文字垂直居中代码">单行文字垂直居中代码</h4>
+<p><em>CSS没有提供，可以通过小技巧实现：<strong>让文字的行高等于盒子的高度</strong></em></p>
+<h3 id="CSS的背景">CSS的背景</h3>
+<p>通过CSS背景属性，可以给页面元素添加背景样式</p>
+<p>背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等</p>
+<h4 id="背景颜色">背景颜色</h4>
+<p>background-color属性定义了元素的背景颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color：颜色值；</span><br></pre></td></tr></table></figure>
+<p>一般情况下元素背景颜色默认值是transparent（透明），也可手动指定</p>
+<h4 id="背景图片">背景图片</h4>
+<p>background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置（精灵图也是一种运用场景）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image : none | url(url)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>无背景图（默认）</td>
+</tr>
+<tr>
+<td>url</td>
+<td>使用绝对或相对地址指定背景图像</td>
+</tr>
+</tbody>
+</table>
+<h4 id="背景平铺">背景平铺</h4>
+<p>如果要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-repeat: repeat | no-repeat | repeat-x | repeat-y</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>repeat</td>
+<td>背景图像在纵向和横向上平铺（默认的）</td>
+</tr>
+<tr>
+<td>no-repeat</td>
+<td>背景图像不平铺</td>
+</tr>
+<tr>
+<td>repeat-x</td>
+<td>背景图像在横向上平铺</td>
+</tr>
+<tr>
+<td>repeat-y</td>
+<td>背景图像在纵向上平铺</td>
+</tr>
+</tbody>
+</table>
+<h4 id="背景图片位置">背景图片位置</h4>
+<p>利用background-position属性可以改变图片在背景中的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-position: x y;</span><br></pre></td></tr></table></figure>
+<p>参数代表的意思是：x坐标和y坐标。可以使用<strong>方位名词</strong>或者<strong>精确单位</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>百分数 | 由浮点数字和单位标识符组成的长度值</td>
+</tr>
+<tr>
+<td>position</td>
+<td>top | center | bottom | left | center | right 方位名词</td>
+</tr>
+</tbody>
+</table>
+<p>1.参数是方位名词</p>
+<ul>
+<li>如果两个值都是方位名词，则两个值得前后顺序无关</li>
+<li>如果只指定一个方位名词，另一个值省略，则第二个值默认居中对齐</li>
+</ul>
+<p>2.参数是精确单位</p>
+<ul>
+<li>如果参数值是精确坐标，那么第一个肯定是x坐标，第二个一定是y坐标</li>
+<li>如果只指定一个数值，那该数值一定是x坐标，另一个默认垂直居中</li>
+</ul>
+<p>3.参数是混合单位</p>
+<ul>
+<li>如果指定得两个值是精确单位和方位名词混合使用（x，y顺序不能变）</li>
+</ul>
+<h4 id="背景图像固定（背景附着）">背景图像固定（背景附着）</h4>
+<p>background-attachment属性设置背景图像是否固定或者随着页面得其余部分滚动</p>
+<p>background-attachment后期可以制作视差滚动效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-attachment : scroll | fixed</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scroll</td>
+<td>背景图像随着对象内容滚动</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>背景图像固定</td>
+</tr>
+</tbody>
+</table>
+<h4 id="背景复合写法">背景复合写法</h4>
+<p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中，从而减少代码量。当使用简写属性时，没有一定的书写顺序，一般习惯约定顺序为：</p>
+<p>background：背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: transparent url(image.jpg) repeat-y fixed top;</span><br></pre></td></tr></table></figure>
+<p>实际开发中，我们更提倡的写法</p>
+<h4 id="背景颜色半透明">背景颜色半透明</h4>
+<p>CSS3为我们提供了半透明的效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: rgba(0, 0, 0, 0.3);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>红绿蓝 alpha不透明度，取值范围0~1</li>
+<li>实际开发中，习惯a的0.3的0省略，写为.3</li>
+<li>注意：背景半透明是指盒子背景半透明，盒子里面的内容不受影响</li>
+<li>CSS3新增属性，时IE9+版本浏览器才支持的</li>
+<li>但是现在实际开发，我们不太关注兼容性写法了，可以放心使用</li>
+</ul>
+<h4 id="背景总结">背景总结</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background-color</td>
+<td>背景颜色</td>
+<td>预定义的颜色值/十六进制/RGB代码</td>
+</tr>
+<tr>
+<td>background-image</td>
+<td>背景图片</td>
+<td>url（图片路径）</td>
+</tr>
+<tr>
+<td>background-repeat</td>
+<td>是否平铺</td>
+<td>repeat/no-repeat/repeat-x/repeat-y</td>
+</tr>
+<tr>
+<td>background-position</td>
+<td>背景位置</td>
+<td>length/position 分别是x，y</td>
+</tr>
+<tr>
+<td>background-attachment</td>
+<td>背景附着</td>
+<td>scroll（背景滚动）、fixed（背景固定）</td>
+</tr>
+<tr>
+<td>背景简写</td>
+<td>书写更简单</td>
+<td>背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</td>
+</tr>
+<tr>
+<td>背景色半透明</td>
+<td>背景颜色半透明</td>
+<td>background: rgba(0,0,0,0.3);后面必须四个值</td>
+</tr>
+</tbody>
+</table>
+<p>背景图片：实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置。（精灵图也是一种运用场景）</p>
 
     </div>
 
@@ -414,7 +605,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">CSS的元素显示模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.</span> <span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.3.</span> <span class="nav-text">行内块元素</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">CSS的元素显示模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.</span> <span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.3.</span> <span class="nav-text">行内块元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.4.</span> <span class="nav-text">元素显示模式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8-snipaste"><span class="nav-number">1.5.</span> <span class="nav-text">一个小工具的使用 snipaste</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.</span> <span class="nav-text">单行文字垂直居中代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E7%9A%84%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">CSS的背景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2"><span class="nav-number">2.1.</span> <span class="nav-text">背景颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="nav-number">2.2.</span> <span class="nav-text">背景图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%B9%B3%E9%93%BA"><span class="nav-number">2.3.</span> <span class="nav-text">背景平铺</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.4.</span> <span class="nav-text">背景图片位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E5%83%8F%E5%9B%BA%E5%AE%9A%EF%BC%88%E8%83%8C%E6%99%AF%E9%99%84%E7%9D%80%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">背景图像固定（背景附着）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%A4%8D%E5%90%88%E5%86%99%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">背景复合写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%8D%8A%E9%80%8F%E6%98%8E"><span class="nav-number">2.7.</span> <span class="nav-text">背景颜色半透明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E6%80%BB%E7%BB%93"><span class="nav-number">2.8.</span> <span class="nav-text">背景总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -512,7 +703,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共19k字  </span>
+  <span class="post-count">博客全站共20.2k字  </span>
 </div>
 
 <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">鄂ICP备2021015974号</a> 
