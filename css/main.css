@@ -959,9 +959,10 @@ pre .javascript .function {
   display: flex;
   flex-shrink: 0;
   padding: 0 10px;
+  background-color: #9370db !important;
 }
 .headband {
-  background: #222;
+  background: #9370db;
   height: 3px;
 }
 .site-meta {
@@ -982,7 +983,7 @@ pre .javascript .function {
   position: relative;
 }
 .brand:hover {
-  color: var(--brand-hover-color);
+  color: #8a2be2;
 }
 .site-title {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -1019,7 +1020,7 @@ pre .javascript .function {
 }
 .site-nav-toggle .toggle,
 .site-nav-right .toggle {
-  color: var(--text-color);
+  color: #87cefa;
   padding: 10px;
   width: 22px;
 }
@@ -1168,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #bf62c6;
+  background: #f54474;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2625,6 +2626,22 @@ body {
 }
 .with-love {
   color: #ff71a8;
+}
+.back-to-top {
+  right: 60px;
+  width: 70px;
+  height: 900px;
+  top: -900px;
+  bottom: unset;
+  transition: all 0.5s ease-in-out;
+  background: url("/images/scroll.png");
+}
+.back-to-top > i {
+  display: none;
+}
+.back-to-top.back-to-top-on {
+  bottom: unset;
+  top: calc(100vh - 900px - 200px);
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
