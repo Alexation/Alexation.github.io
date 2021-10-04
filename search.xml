@@ -89,232 +89,365 @@
       </categories>
   </entry>
   <entry>
-    <title>HTML-VSCode</title>
-    <url>/webfront/web1/</url>
-    <content><![CDATA[<p>虽然我不是计算机专业，但我有计算机梦！前端后端嵌入式软件开发、全栈工程师说起来有些夸张，但我一直在向那个方向努力着。我也相信，（只要够卷o(￣▽￣)ｄ）这是个不看出身的专业。想来想去，决定了：我的大学，不能没有计算机</p>
-<h4 id="HTML-Web-浏览器简介">HTML-Web-浏览器简介</h4>
+    <title>Scrapy框架（初探）</title>
+    <url>/pythonwebcatch/pythonwebcatch-scrapy/</url>
+    <content><![CDATA[<h1>Scrapy简介：</h1>
+<p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
+<p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
+<p>非阻塞：关注的是程序在等待结果时的状态，不能立刻得到结果之前，该调用不会阻塞当前线程</p>
+<h2 id="scrapy框架：">scrapy框架：</h2>
+<p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png" alt=""></p>
 <ul>
-<li>HTML不是编程语言，而是一种标记语言</li>
-<li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li>
-<li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li>
-<li>浏览器内核人（渲染引擎）：读取网页内容，计算网页的显示方式并显示页面</li>
+<li>scrapy Engine(引擎)：总指挥:负责数据和信号的在不同模块间的传递，scrapy已经实现</li>
+<li>scheduler(调度器)：一个队列，存放引擎发过来的request请求，scrapy已经实现</li>
+<li>Downloader (下载器)：下载把引擎发过来的requests请求，并返回给引擎，scrapy已经实现</li>
+<li>Spider (爬虫)：处理引擎发来来的response，提取数据，提取url，并交给引擎，需要手写</li>
+<li>Item Pipeline(管道)：处理引擎传过来的数据，比如存储，需要手写</li>
+<li>Downloader Middlewares(下载中间件)：可以自定义的下载扩展，比如设置代理，一般不用手写</li>
+<li>Spider MiddlewaresSpider(中间件)：可以自定义requests请求和进行response过滤，一般不用手写</li>
 </ul>
-<p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p>
-<p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
-<h4 id="HTML标签">HTML标签</h4>
-<h5 id="HTML语法规范">HTML语法规范</h5>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标签成对：&lt;html&gt;  &lt;/html&gt;</span><br><span class="line"></span><br><span class="line">单标签：&lt;br /&gt;</span><br><span class="line"></span><br><span class="line">双标签关系：包含关系，并列关系</span><br></pre></td></tr></table></figure>
-<h5 id="HTML基本机构标签">HTML基本机构标签</h5>
-<table>
-<thead>
-<tr>
-<th>标签名</th>
-<th>定义</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>html</td>
-<td>HTML标签</td>
-<td>页面中最大的标签，我们称为根标签</td>
-</tr>
-<tr>
-<td>head</td>
-<td>文档的头部</td>
-<td>注意在head标签中我们要设置的标题是title</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文档的标题</td>
-<td>让页面拥有一个属于自己的网页标题</td>
-</tr>
-<tr>
-<td>body</td>
-<td>文档的主体</td>
-<td>元素包含文档的所有内容</td>
-</tr>
-</tbody>
-</table>
-<p>VS-Code之！主体结构</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">	&lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	Hello World!</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="！DOCTYPE">！DOCTYPE</h5>
-<p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
-<h5 id="lang语言">lang语言</h5>
-<p>language的缩写：en英语、zh-CH中文</p>
-<h5 id="charset字符集">charset字符集</h5>
-<p>编码方式：GBK、UTF-8（万国码）一定要写</p>
-<h5 id="HTML常用标签">HTML常用标签</h5>
+<h2 id="创建Spider：">创建Spider：</h2>
+<ol>
+<li>创建一个scrapy项目——scrapy startproject myspider</li>
+<li>生成一个爬虫——scrapy genspider xxxx “<a href="http://xxxx.cn">xxxx.cn</a>”</li>
+<li>提取数据——完善spider，使用xpath等方法</li>
+<li>保存数据——pipeline中保存数据</li>
+</ol>
+<p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）<a href="http://xn--spider-2x8i375aqy9kyxa.name">可以通过spider.name</a> == &quot;itcast&quot;进行判断操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># logging：不同等级的日志，保存到本地，</span><br><span class="line">import logging</span><br><span class="line"># 获取当前日志输出位置</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"># setting可以设置LOG_FILE = &#x27;./log.log&#x27;保存到本地</span><br><span class="line">logger.warning(item)</span><br></pre></td></tr></table></figure>
+<p>scrapy</p>
 <ul>
-<li>语义标签，区分标题，段落等</li>
-<li>标题标签h，一行显示</li>
-<li>段落和换行标签p，强制换行br</li>
+<li>settings中设置LOG_LEVEL=“WARNING”</li>
+<li>settings中设置LOG_FILE=“./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li>
+<li>import logging,实例化logger的方式在任何文件中使用logger输出内容。</li>
 </ul>
-<p>文本格式化标签：</p>
-<table>
-<thead>
-<tr>
-<th>语义</th>
-<th>标签</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加粗</td>
-<td>strong或者b</td>
-<td>推荐strong，语气更强烈</td>
-</tr>
-<tr>
-<td>倾斜</td>
-<td>em或者i</td>
-<td>推荐em，语气更强烈</td>
-</tr>
-<tr>
-<td>删除线</td>
-<td>del或者s</td>
-<td>推荐del，语气更强烈</td>
-</tr>
-<tr>
-<td>下划线</td>
-<td>ins或者u</td>
-<td>推荐ins，语气更强烈</td>
-</tr>
-</tbody>
-</table>
-<p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
-<h5 id="img图片">img图片</h5>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在HTML标签中，&lt;img src=&quot;url&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>属性值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>src</td>
-<td>图片路径</td>
-<td>必须属性</td>
-</tr>
-<tr>
-<td>alt</td>
-<td>文本</td>
-<td>替换文本。图像不能显示的文字</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文本</td>
-<td>提示文本。鼠标放到图像上显示的文字</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素</td>
-<td>设置图像的宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>像素</td>
-<td>设置图像的高度</td>
-</tr>
-<tr>
-<td>border</td>
-<td>像素</td>
-<td>设置图像的边框粗细</td>
-</tr>
-</tbody>
-</table>
-<p>border在HTML5已不支持（bordeR）</p>
-<p>属性均采取键值对的形式：key= “value”</p>
-<h5 id="超链接标签-a">超链接标签<a></h5>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>普通项目中</p>
 <ul>
-<li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
-<li>跳转目标：#表示空链接</li>
-<li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li>
-</ul>
-<h5 id="注释标签：-–我是一个注释–">注释标签：!–我是一个注释–</h5>
-<p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png" alt=""></p>
-<h5 id="表格标签">表格标签</h5>
-<p>用于展示数据（不是来布局页面的）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;文字&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"># &lt;table&gt;定义表格</span><br><span class="line"># &lt;tr&gt;用于定义单元格中的行，必须嵌套在&lt;table&gt;中</span><br><span class="line"># &lt;td&gt;用于定义表格中的单元格，必须嵌套在&lt;tr&gt;中</span><br></pre></td></tr></table></figure>
-<p>表格属性，实际开发不常用，后面通过CSS来设置</p>
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>align</td>
-<td>left、center、right</td>
-<td>规定表格相对周围元素的对齐方式</td>
-</tr>
-<tr>
-<td>border</td>
-<td>1或 “”</td>
-<td>规定表格单元是否拥有边框，默认为&quot;&quot;,表示没有边框</td>
-</tr>
-<tr>
-<td>cellpadding</td>
-<td>像素值</td>
-<td>规定单元边沿与其内容之间的空白，默认1像素</td>
-</tr>
-<tr>
-<td>cellspacing</td>
-<td>像素值</td>
-<td>规定单元格之间的空白，默认2像素</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素值或百分比</td>
-<td>规定表格的宽度</td>
-</tr>
-</tbody>
-</table>
-<p>表格结构标签</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;thead&gt;表格的头部区域&lt;tbody&gt;表格的整体区域</span><br></pre></td></tr></table></figure>
-<p>合并单元格</p>
-<ul>
-<li>跨行合并：rowspan=“合并单元格的个数”</li>
-<li>跨列合并：colspan=“合并单元格的个数”</li>
-</ul>
-<h5 id="列表标签">列表标签</h5>
-<p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 主标签只能嵌套&lt;li&gt;，其中可以容纳所有元素</span><br><span class="line"># 无序列表（重点）、排序整齐，没有顺序</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"># 有序列表（不常用，了解即可）</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"># 自定义列表、一个小标题，其他围绕他们说明</span><br><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="表单标签">表单标签</h5>
-<p>目的：收集用户信息</p>
-<p>一个完整的表单由<strong>表单域、表单控件（表单元素）<strong>和</strong>提示信息</strong>三部分组成</p>
-<p>表单域：包含表单元素的区域</p>
-<p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form action=&quot;url地址&quot; method=&quot;提交方式&quot; name=&quot;表单域名称&quot;&gt;</span><br><span class="line">	# 各种表单元素控件</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<p>表单元素</p>
-<ul>
-<li>input输入表单元素</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 用于收集用户信息。&lt;input type=&quot;属性值&quot; /&gt;。</span><br><span class="line">text：文本框、里面可以输入任何文字</span><br><span class="line">password：密码框、用户看不见输入的密码</span><br><span class="line">radio：单选按钮、实现多选一</span><br><span class="line">name：表单元素名字、必须有相同的名字</span><br><span class="line">checkbox：复选框、实现多选</span><br><span class="line">value：显示默认值</span><br><span class="line">checked：默认选择</span><br><span class="line">submit：提交到服务器</span><br><span class="line">reset：清楚表单中的所有数据</span><br><span class="line">button：定义可点击按钮，通常后期结合js一起使用</span><br><span class="line">file：文件域、上传文件使用</span><br><span class="line"></span><br><span class="line">&lt;label for=&quot;名字&quot;&gt;内容&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;名字&quot; id=&quot;名字&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>select下拉表单元素</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 定义下拉列表</span><br><span class="line">&lt;select&gt;</span><br><span class="line">	&lt;option&gt;选项1&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项2&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项3&lt;/option&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>textarea文本域元素</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 大量输入文本，经常用于留言板、评论	</span><br></pre></td></tr></table></figure>
-<h4 id="查找文档">查找文档</h4>
-<ul>
-<li>百度：<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
-<li>W3C：<a href="https://www.w3school.com.cn/">w3school 在线教程</a></li>
-<li>MDN：<a href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li>
+<li>
+<pre><code>import logging
+#设置日志输出的样式，格式。
+logging.basicConfig(...)
+# 实例化logger=logging.getLogger(__name__) 在任何py文件中调用logger即可
+</code></pre>
+</li>
 </ul>
 ]]></content>
       <categories>
-        <category>Web前端</category>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（前言）</title>
+    <url>/pythonwebcatch/pythonwebcatch/</url>
+    <content><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路…</p>
+<p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p>
+<blockquote>
+<p>我不怕不怕，风吹雨打</p>
+</blockquote>
+<p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p>
+<p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广…接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p>
+<p>不过，这才是计算机的魅力！</p>
+<p>开始吧，我的爬虫之路！</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（一、First Blood!）</title>
+    <url>/pythonwebcatch/pythonwebcatch1/</url>
+    <content><![CDATA[<h1><em>request、xpath、parsel爬取静态网页流程</em></h1>
+<ol>
+<li><em>指定URL</em></li>
+<li><em>UA伪装</em></li>
+<li><em>发起请求（模拟浏览器）</em></li>
+<li><em>获取相应数据</em></li>
+<li><em>解析数据</em></li>
+<li><em>进行持久化储存</em></li>
+</ol>
+<h2 id="First-Blood！">First Blood！</h2>
+<h3 id="指定URL">指定URL</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
+<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
+<h3 id="UA伪装">UA伪装</h3>
+<p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
+<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png" alt=""></p>
+<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="发起请求（模拟浏览器）">发起请求（模拟浏览器）</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
+<p>这里注意，后面保存图片就要用content</p>
+<ul>
+<li>response.text 返回的是一个 unicode 型的文本数据</li>
+<li>response.content 返回的是 bytes 型的二进制数据</li>
+</ul>
+<h3 id="获取相应数据">获取相应数据</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure>
+<p>这里涉及xpath语法:</p>
+<p>//表示跨行定位</p>
+<p>[@class=“xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
+<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
+<h3 id="解析数据">解析数据</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line">	# 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
+<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
+</ul>
+<h3 id="进行持久化储存">进行持久化储存</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   	# 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure>
+<p>Nice！！！拿到一血</p>
+<p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒…emm)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure>
+<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
+<h2 id="对程序进行完善">对程序进行完善</h2>
+<p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
+<ul>
+<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
+<li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
+<li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
+<li>还有许多需要补充的地方，只要能想到，就要不断地完善…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（四、继续完善并打包程序）</title>
+    <url>/pythonwebcatch/pythonwebcatch4/</url>
+    <content><![CDATA[<h3 id="对源程序继续完善">对源程序继续完善</h3>
+<h4 id="Sleep延迟">Sleep延迟</h4>
+<p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
+<p>引入库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
+<p>for循环下载img最后一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
+<p>当然，子进程try：第一行加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
+<p>保证在每次下载间隔1~2s</p>
+<h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
+<p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
+<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
+<h4 id="更改logo">更改logo</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
+<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
+<h3 id="cxfreeze打包">cxfreeze打包</h3>
+<h4 id="cxfreeze与pyinstaller">cxfreeze与pyinstaller</h4>
+<p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
+<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
+<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
+<p>安装完毕后，在根目录命令行输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
+<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=&quot;win32gui&quot;是去掉控制台显示。</p>
+<h4 id="附属文件插入">附属文件插入</h4>
+<p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
+<p>这时运行可执行文件即可看到我们的程序。</p>
+<h3 id="开发总结">开发总结</h3>
+<p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（HTTP、WEB基础）</title>
+    <url>/pythonwebcatch/pythonwebcatch0/</url>
+    <content><![CDATA[<h1>HTTP、WEB基础</h1>
+<h2 id="HTTP知识点：">HTTP知识点：</h2>
+<ul>
+<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
+<li>URL（Universal Resource Locator）即统一资源定位符</li>
+</ul>
+<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
+<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
+<h3 id="超文本（Hypertext）："><strong>超文本（Hypertext）：</strong></h3>
+<p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
+<h3 id="HTTP和HTTPS："><strong>HTTP和HTTPS：</strong></h3>
+<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3>
+<p>常见请求有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
+<p>常见服务器请求状态码：</p>
+<ul>
+<li>200-请求成功</li>
+<li>301-资源（网页等）被永久转移到其他URL</li>
+<li>404-请求的资源（网页等）不存在</li>
+<li>500-服务器内部错误</li>
+</ul>
+<h2 id="WEB基础">WEB基础</h2>
+<h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3>
+<p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
+<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
+<p>JavaScript脚本语言（交互动作）</p>
+<h3 id="网页的结构："><strong>网页的结构：</strong></h3>
+<ul>
+<li>head 标签内定义一些页面的配置和引用</li>
+<li>title 标签则定义网页的标题，会显示在网页</li>
+<li>body 标签内是在网页正文中显示的内容</li>
+<li>div 标签定义网页中的区块</li>
+<li>h2 标签表示一个二级标题</li>
+<li>p 标签代表一个段落</li>
+</ul>
+<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以&quot;.&quot;开头表示class。</p>
+<p>摘自：《Python3 网络爬虫开发指南》</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（三、第一次接触Pyside2）</title>
+    <url>/pythonwebcatch/pythonwebcatch3/</url>
+    <content><![CDATA[<h1>独乐乐不如众乐乐！</h1>
+<h2 id="Pyside2">Pyside2</h2>
+<h3 id="Python图形界面开发">Python图形界面开发</h3>
+<p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
+<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
+<p>目前python语言GUI有以下选择</p>
+<ul>
+<li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
+<li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
+<li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
+<h3 id="利用QtDesigner进行布局规划">利用QtDesigner进行布局规划</h3>
+<p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
+<p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png" alt=""></p>
+<p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
+<p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
+<h3 id="对源程序进行重构">对源程序进行重构</h3>
+<p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
+<h4 id="pyside2自定义类例程">pyside2自定义类例程</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
+<h4 id="重构爬虫函数进行类封装">重构爬虫函数进行类封装</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    	# sort即是选择类型</span><br><span class="line">    	self.sort = 0</span><br><span class="line">    	self.signal_1 = 2</span><br><span class="line">    	self.signal_2 = 0</span><br><span class="line">    	self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
+<p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
+<p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
+<p>因此我们创建Catch_Signal类，继承自QObject类：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
+<p>在Wallpaper类中定义实例属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
+<p>再在Wallpaper类中定义GUI绘制函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
+<p>将爬虫程序放入子线程：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
+<p>补充import：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
+<p>这样一来，主程序就不会卡顿了</p>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用python抓取静态网页（二、循环扩大范围、异常处理）</title>
+    <url>/pythonwebcatch/pythonwebcatch2/</url>
+    <content><![CDATA[<h1>利用循环扩大抓取范围</h1>
+<p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p>
+<p>那么，现在就来<em><strong>扩大抓取范围！</strong></em></p>
+<p>记得基地址是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/</span><br></pre></td></tr></table></figure>
+<p>我们来点开第二页，你会发现地址变成了：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_2.html</span><br></pre></td></tr></table></figure>
+<p>点开第三页：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_3.html</span><br></pre></td></tr></table></figure>
+<p>好的，规律显而易见，我们只需要index_{page}进行for循环即可多页抓取。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for page in range(1, 36):</span><br><span class="line">    if page == 1:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br><span class="line">    else:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com&#x27; \</span><br><span class="line">            &#x27;/desk/meinv/index_&#123;&#125;.html&#x27;.format(str(page))</span><br></pre></td></tr></table></figure>
+<p>将整个程序放在for函数里进行抓取即可实现多页抓取。</p>
+<p>现在，我们来让程序打印抓取进度</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 程序开头部分做分割线</span><br><span class="line">print(&quot;----------------------------------------------&quot;)</span><br></pre></td></tr></table></figure>
+<p>在for循环里，对每一页进行提醒</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(&#x27;--------&#123;&#125; page downloading---------&#x27;.format(page))</span><br></pre></td></tr></table></figure>
+<h1>对部分异常进行控制</h1>
+<p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p>
+<p>好在requests已经对部分异常给予返回值进行提醒，我们可以根据这些返回值，进行判断处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">try:</span><br><span class="line">	# 主程序</span><br><span class="line">except requests.Timeout as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.URLRequired as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.ConnectionError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.HTTPError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br></pre></td></tr></table></figure>
+<p>这里有requests库的异常总结：</p>
+<table>
+<thead>
+<tr>
+<th>异常</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requests.ConnectionError</td>
+<td>网络连接错误异常，如DNS查询失败，拒绝连接等</td>
+</tr>
+<tr>
+<td>requests.HTTPError</td>
+<td>HTTP错误异常</td>
+</tr>
+<tr>
+<td>requests.TooManyRedirects</td>
+<td>超过最大重定向次数，产生重定向异常</td>
+</tr>
+<tr>
+<td>requests.ConnectTimeout</td>
+<td>连接远程服务器超时异常</td>
+</tr>
+<tr>
+<td>requests.Timeout</td>
+<td>请求URL超时，产生超时异常</td>
+</tr>
+<tr>
+<td>r.raise_for_status</td>
+<td>如果不是200，产生异常requestsHTTPError</td>
+</tr>
+<tr>
+<td>requests.URLRequired</td>
+<td>URL缺失异常</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Web渗透——SQL注入简介</title>
+    <url>/webos/web/</url>
+    <content><![CDATA[<h4 id="渗透流程：">渗透流程：</h4>
+<ol>
+<li>先学习前端编程（了解清楚对方的网站架构，才好判断该如何入手）</li>
+<li>信息搜集（作用：判断网站是否具备漏洞，判断具体漏洞存在的范围）</li>
+<li>绕waf（绕过对方的防火墙拦截，否则一切攻击手段会被拦截）</li>
+<li>漏洞攻击（漏洞类型有很多，针对不一样的漏洞有不一样的攻击方式，例如sql注入，xss，文件上传，反序列化）</li>
+<li>找到漏洞，进行提权</li>
+</ol>
+<h4 id="SQL是什么">SQL是什么</h4>
+<ul>
+<li>SQL 指结构化查询语言，全称是 Structured Query Language。</li>
+<li>SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除。</li>
+<li>SQL 在1986年成为 ANSI（American National Standards Institute 美国国家标准化组织）的一项标准，在 1987 年成为国际标准化组织（ISO）标准。</li>
+</ul>
+<h4 id="SQL注入流程：">SQL注入流程：</h4>
+<ol>
+<li>sql注入的原理以及sqllite数据库</li>
+<li>sqlite的安装以及基本语句</li>
+<li>结合靶场理解sqlite的注入流程</li>
+<li>总结</li>
+</ol>
+<h4 id="sql注入简介">sql注入简介</h4>
+<p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序对用户输入的字符串没有进行过滤或处理不严谨。至今SQL注入仍然是首要的难以修复的安全漏洞。</p>
+<ul>
+<li>sql语言即是结构化查询语言，操作数据库的语言。</li>
+<li>注入在这里就是将用户输入的数据拼接到原始代码里，被当作代码执行。</li>
+</ul>
+<p>SQLite是一种开源， 零配置，独立的，事务关系数据库引擎。它是一个类似Access的轻量级数据库系统，但是更小、更快、容量更大，并发更高，在移动端经常会使用到。</p>
+]]></content>
+      <categories>
+        <category>Web渗透</category>
       </categories>
   </entry>
   <entry>
@@ -716,119 +849,245 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS（二）</title>
-    <url>/webfront/web3/</url>
-    <content><![CDATA[<h3 id="Emmet语法">Emmet语法</h3>
-<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
-<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
-<ol>
-<li>生成标签直接输入标签名按tab键即可</li>
-<li>如果想要生成多个相同标签加上*就可以了</li>
-<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
-<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
-<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
-<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
-<li>如果想要在生成的$签内部写内容可以用{}表示</li>
-</ol>
-<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
-<p>CSS基本采取简写形式即可</p>
+    <title>HTML-VSCode</title>
+    <url>/webfront/web1/</url>
+    <content><![CDATA[<p>虽然我不是计算机专业，但我有计算机梦！前端后端嵌入式软件开发、全栈工程师说起来有些夸张，但我一直在向那个方向努力着。我也相信，（只要够卷o(￣▽￣)ｄ）这是个不看出身的专业。想来想去，决定了：我的大学，不能没有计算机</p>
+<h4 id="HTML-Web-浏览器简介">HTML-Web-浏览器简介</h4>
 <ul>
-<li>比如 w200 按tab就可以生成 width: 200px;</li>
-<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
+<li>HTML不是编程语言，而是一种标记语言</li>
+<li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li>
+<li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li>
+<li>浏览器内核人（渲染引擎）：读取网页内容，计算网页的显示方式并显示页面</li>
 </ul>
-<h4 id="快速格式化代码">快速格式化代码</h4>
-<p>设置搜索format勾选format on save</p>
-<h3 id="CSS复合选择器">CSS复合选择器</h3>
-<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
-<ul>
-<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
-<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
-<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
-</ul>
-<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
-<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
-<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
-<h4 id="子选择器（重要）">子选择器（重要）</h4>
-<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1 &gt; 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
-<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
-<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
-<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
-<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1, 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
-<p>上述语法表示选择元素1和元素2</p>
-<ul>
-<li>元素1和元素2中间用逗号隔开</li>
-<li>逗号可以理解为<strong>和</strong>的意思</li>
-<li>并集选择器通常用于集体声明</li>
-</ul>
-<h4 id="链接伪类选择器">链接伪类选择器</h4>
-<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a:link		# 选择所有未被访问的链接</span><br><span class="line">a:visited	# 选择所有已被访问的链接</span><br><span class="line">a:hover		# 选择鼠标指针位于其上的链接</span><br><span class="line">a:active	# 选择活动链接（鼠标按下未弹起）</span><br></pre></td></tr></table></figure>
-<h5 id="注意事项">注意事项</h5>
-<ul>
-<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
-<li>记忆法：love hate 或者 lv 宝宝 hao</li>
-<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
-</ul>
-<h5 id="开发写法">开发写法</h5>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="focus伪类选择器">focus伪类选择器</h4>
-<p>focus伪类选择器用于选取获得焦点的表单元素</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">焦点就是光标，一般情况&lt;input&gt;类表单元素才能获取，因此这个选择器也主要针对表单元素来说</span><br><span class="line">input:focus &#123;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="复合选择器总结">复合选择器总结</h4>
+<p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p>
+<p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
+<h4 id="HTML标签">HTML标签</h4>
+<h5 id="HTML语法规范">HTML语法规范</h5>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标签成对：&lt;html&gt;  &lt;/html&gt;</span><br><span class="line"></span><br><span class="line">单标签：&lt;br /&gt;</span><br><span class="line"></span><br><span class="line">双标签关系：包含关系，并列关系</span><br></pre></td></tr></table></figure>
+<h5 id="HTML基本机构标签">HTML基本机构标签</h5>
 <table>
 <thead>
 <tr>
-<th>选择器</th>
-<th>作用</th>
-<th>特征</th>
-<th>使用情况</th>
-<th>隔开符号及用法</th>
+<th>标签名</th>
+<th>定义</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>后代选择器</td>
-<td>选择后代元素</td>
-<td>子孙后代</td>
-<td>较多</td>
-<td>符号是空格 .nav a</td>
+<td>html</td>
+<td>HTML标签</td>
+<td>页面中最大的标签，我们称为根标签</td>
 </tr>
 <tr>
-<td>子代选择器</td>
-<td>选择最近一级元素</td>
-<td>亲儿子</td>
-<td>较少</td>
-<td>符号是大于 .nav&gt;p</td>
+<td>head</td>
+<td>文档的头部</td>
+<td>注意在head标签中我们要设置的标题是title</td>
 </tr>
 <tr>
-<td>并集选择器</td>
-<td>选择相同样式的元素</td>
-<td>集体声明</td>
-<td>较多</td>
-<td>符号是逗号 .nav,.header</td>
+<td>title</td>
+<td>文档的标题</td>
+<td>让页面拥有一个属于自己的网页标题</td>
 </tr>
 <tr>
-<td>链接伪类选择器</td>
-<td>选择不同状态的链接</td>
-<td>和链接相关</td>
-<td>较多</td>
-<td>重点记住a{}和a:hover</td>
-</tr>
-<tr>
-<td>focus选择器</td>
-<td>选择获得光标的表单</td>
-<td>和表单相关</td>
-<td>较少</td>
-<td>记住input:focus</td>
+<td>body</td>
+<td>文档的主体</td>
+<td>元素包含文档的所有内容</td>
 </tr>
 </tbody>
 </table>
+<p>VS-Code之！主体结构</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">	&lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	Hello World!</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="！DOCTYPE">！DOCTYPE</h5>
+<p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
+<h5 id="lang语言">lang语言</h5>
+<p>language的缩写：en英语、zh-CH中文</p>
+<h5 id="charset字符集">charset字符集</h5>
+<p>编码方式：GBK、UTF-8（万国码）一定要写</p>
+<h5 id="HTML常用标签">HTML常用标签</h5>
+<ul>
+<li>语义标签，区分标题，段落等</li>
+<li>标题标签h，一行显示</li>
+<li>段落和换行标签p，强制换行br</li>
+</ul>
+<p>文本格式化标签：</p>
+<table>
+<thead>
+<tr>
+<th>语义</th>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加粗</td>
+<td>strong或者b</td>
+<td>推荐strong，语气更强烈</td>
+</tr>
+<tr>
+<td>倾斜</td>
+<td>em或者i</td>
+<td>推荐em，语气更强烈</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>del或者s</td>
+<td>推荐del，语气更强烈</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>ins或者u</td>
+<td>推荐ins，语气更强烈</td>
+</tr>
+</tbody>
+</table>
+<p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
+<h5 id="img图片">img图片</h5>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在HTML标签中，&lt;img src=&quot;url&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>图片路径</td>
+<td>必须属性</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文本</td>
+<td>替换文本。图像不能显示的文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文本</td>
+<td>提示文本。鼠标放到图像上显示的文字</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素</td>
+<td>设置图像的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素</td>
+<td>设置图像的高度</td>
+</tr>
+<tr>
+<td>border</td>
+<td>像素</td>
+<td>设置图像的边框粗细</td>
+</tr>
+</tbody>
+</table>
+<p>border在HTML5已不支持（bordeR）</p>
+<p>属性均采取键值对的形式：key= “value”</p>
+<h5 id="超链接标签-a">超链接标签<a></h5>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
+<li>跳转目标：#表示空链接</li>
+<li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li>
+</ul>
+<h5 id="注释标签：-–我是一个注释–">注释标签：!–我是一个注释–</h5>
+<p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png" alt=""></p>
+<h5 id="表格标签">表格标签</h5>
+<p>用于展示数据（不是来布局页面的）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;文字&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"># &lt;table&gt;定义表格</span><br><span class="line"># &lt;tr&gt;用于定义单元格中的行，必须嵌套在&lt;table&gt;中</span><br><span class="line"># &lt;td&gt;用于定义表格中的单元格，必须嵌套在&lt;tr&gt;中</span><br></pre></td></tr></table></figure>
+<p>表格属性，实际开发不常用，后面通过CSS来设置</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>align</td>
+<td>left、center、right</td>
+<td>规定表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td>border</td>
+<td>1或 “”</td>
+<td>规定表格单元是否拥有边框，默认为&quot;&quot;,表示没有边框</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>像素值</td>
+<td>规定单元边沿与其内容之间的空白，默认1像素</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>像素值</td>
+<td>规定单元格之间的空白，默认2像素</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素值或百分比</td>
+<td>规定表格的宽度</td>
+</tr>
+</tbody>
+</table>
+<p>表格结构标签</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;thead&gt;表格的头部区域&lt;tbody&gt;表格的整体区域</span><br></pre></td></tr></table></figure>
+<p>合并单元格</p>
+<ul>
+<li>跨行合并：rowspan=“合并单元格的个数”</li>
+<li>跨列合并：colspan=“合并单元格的个数”</li>
+</ul>
+<h5 id="列表标签">列表标签</h5>
+<p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 主标签只能嵌套&lt;li&gt;，其中可以容纳所有元素</span><br><span class="line"># 无序列表（重点）、排序整齐，没有顺序</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"># 有序列表（不常用，了解即可）</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"># 自定义列表、一个小标题，其他围绕他们说明</span><br><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">	....</span><br><span class="line">	&lt;dd&gt;&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="表单标签">表单标签</h5>
+<p>目的：收集用户信息</p>
+<p>一个完整的表单由<strong>表单域、表单控件（表单元素）<strong>和</strong>提示信息</strong>三部分组成</p>
+<p>表单域：包含表单元素的区域</p>
+<p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form action=&quot;url地址&quot; method=&quot;提交方式&quot; name=&quot;表单域名称&quot;&gt;</span><br><span class="line">	# 各种表单元素控件</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>表单元素</p>
+<ul>
+<li>input输入表单元素</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 用于收集用户信息。&lt;input type=&quot;属性值&quot; /&gt;。</span><br><span class="line">text：文本框、里面可以输入任何文字</span><br><span class="line">password：密码框、用户看不见输入的密码</span><br><span class="line">radio：单选按钮、实现多选一</span><br><span class="line">name：表单元素名字、必须有相同的名字</span><br><span class="line">checkbox：复选框、实现多选</span><br><span class="line">value：显示默认值</span><br><span class="line">checked：默认选择</span><br><span class="line">submit：提交到服务器</span><br><span class="line">reset：清楚表单中的所有数据</span><br><span class="line">button：定义可点击按钮，通常后期结合js一起使用</span><br><span class="line">file：文件域、上传文件使用</span><br><span class="line"></span><br><span class="line">&lt;label for=&quot;名字&quot;&gt;内容&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;名字&quot; id=&quot;名字&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>select下拉表单元素</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 定义下拉列表</span><br><span class="line">&lt;select&gt;</span><br><span class="line">	&lt;option&gt;选项1&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项2&lt;/option&gt;</span><br><span class="line">	&lt;option&gt;选项3&lt;/option&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>textarea文本域元素</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 大量输入文本，经常用于留言板、评论	</span><br></pre></td></tr></table></figure>
+<h4 id="查找文档">查找文档</h4>
+<ul>
+<li>百度：<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
+<li>W3C：<a href="https://www.w3school.com.cn/">w3school 在线教程</a></li>
+<li>MDN：<a href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>Web前端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>日语？日语！</title>
+    <url>/japaneselearning/japaneselearning/</url>
+    <content><![CDATA[<p>为什么要学日语？可能我自己也不知道。或许没有理由，又或许太多理由。可能只是一个瞬间的想法、也可能是一幅画面的情感共鸣。我喜欢塞着耳机，一直走在夜色里。看灯火阑珊，望漫天繁星，身边来来往往的人群…</p>
+<p>“为什么我们总觉得书中的爱情轰轰烈烈，而现实却平平淡淡呢？”</p>
+<p>“大抵是因为，我们可以轻而易举地看到书中人内心的波涛汹涌，却体会不到身边人的欲言又止吧。”</p>
+<p>这个回答让我产生太多太多的共鸣，事实很重要，我的态度更重要。我始终谨记着这句话。整个宇宙已经够冷了，真正宝贵的是那些温暖而纯粹的东西，每次打开手机看到朋友发给我的碎碎念就很开心，包括那有趣的事情，也包括伤心的内容。超喜欢接受朋友们的日常，会感觉自己是被需要的！</p>
+<p>再回到开头，可能答案已经出来了。</p>
+]]></content>
+      <categories>
+        <category>日语！</category>
       </categories>
   </entry>
   <entry>
@@ -1172,305 +1431,6 @@
       </categories>
   </entry>
   <entry>
-    <title>利用python抓取静态网页（前言）</title>
-    <url>/pythonwebcatch/pythonwebcatch/</url>
-    <content><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路…</p>
-<p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p>
-<blockquote>
-<p>我不怕不怕，风吹雨打</p>
-</blockquote>
-<p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p>
-<p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广…接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p>
-<p>不过，这才是计算机的魅力！</p>
-<p>开始吧，我的爬虫之路！</p>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Scrapy框架（初探）</title>
-    <url>/pythonwebcatch/pythonwebcatch-scrapy/</url>
-    <content><![CDATA[<h1>Scrapy简介：</h1>
-<p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
-<p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
-<p>非阻塞：关注的是程序在等待结果时的状态，不能立刻得到结果之前，该调用不会阻塞当前线程</p>
-<h2 id="scrapy框架：">scrapy框架：</h2>
-<p><img src="https://i.loli.net/2021/08/21/bhSfcJzgnM3Fjvk.png" alt=""></p>
-<ul>
-<li>scrapy Engine(引擎)：总指挥:负责数据和信号的在不同模块间的传递，scrapy已经实现</li>
-<li>scheduler(调度器)：一个队列，存放引擎发过来的request请求，scrapy已经实现</li>
-<li>Downloader (下载器)：下载把引擎发过来的requests请求，并返回给引擎，scrapy已经实现</li>
-<li>Spider (爬虫)：处理引擎发来来的response，提取数据，提取url，并交给引擎，需要手写</li>
-<li>Item Pipeline(管道)：处理引擎传过来的数据，比如存储，需要手写</li>
-<li>Downloader Middlewares(下载中间件)：可以自定义的下载扩展，比如设置代理，一般不用手写</li>
-<li>Spider MiddlewaresSpider(中间件)：可以自定义requests请求和进行response过滤，一般不用手写</li>
-</ul>
-<h2 id="创建Spider：">创建Spider：</h2>
-<ol>
-<li>创建一个scrapy项目——scrapy startproject myspider</li>
-<li>生成一个爬虫——scrapy genspider xxxx “<a href="http://xxxx.cn">xxxx.cn</a>”</li>
-<li>提取数据——完善spider，使用xpath等方法</li>
-<li>保存数据——pipeline中保存数据</li>
-</ol>
-<p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）<a href="http://xn--spider-2x8i375aqy9kyxa.name">可以通过spider.name</a> == &quot;itcast&quot;进行判断操作。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># logging：不同等级的日志，保存到本地，</span><br><span class="line">import logging</span><br><span class="line"># 获取当前日志输出位置</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"># setting可以设置LOG_FILE = &#x27;./log.log&#x27;保存到本地</span><br><span class="line">logger.warning(item)</span><br></pre></td></tr></table></figure>
-<p>scrapy</p>
-<ul>
-<li>settings中设置LOG_LEVEL=“WARNING”</li>
-<li>settings中设置LOG_FILE=“./a.log”#设置日志保存的位置，设置会后终端不会显示日志内容</li>
-<li>import logging,实例化logger的方式在任何文件中使用logger输出内容。</li>
-</ul>
-<p>普通项目中</p>
-<ul>
-<li>
-<pre><code>import logging
-#设置日志输出的样式，格式。
-logging.basicConfig(...)
-# 实例化logger=logging.getLogger(__name__) 在任何py文件中调用logger即可
-</code></pre>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（HTTP、WEB基础）</title>
-    <url>/pythonwebcatch/pythonwebcatch0/</url>
-    <content><![CDATA[<h1>HTTP、WEB基础</h1>
-<h2 id="HTTP知识点：">HTTP知识点：</h2>
-<ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
-</ul>
-<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h3 id="超文本（Hypertext）："><strong>超文本（Hypertext）：</strong></h3>
-<p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
-<h3 id="HTTP和HTTPS："><strong>HTTP和HTTPS：</strong></h3>
-<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3>
-<p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h2 id="WEB基础">WEB基础</h2>
-<h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3>
-<p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
-<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
-<p>JavaScript脚本语言（交互动作）</p>
-<h3 id="网页的结构："><strong>网页的结构：</strong></h3>
-<ul>
-<li>head 标签内定义一些页面的配置和引用</li>
-<li>title 标签则定义网页的标题，会显示在网页</li>
-<li>body 标签内是在网页正文中显示的内容</li>
-<li>div 标签定义网页中的区块</li>
-<li>h2 标签表示一个二级标题</li>
-<li>p 标签代表一个段落</li>
-</ul>
-<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以&quot;.&quot;开头表示class。</p>
-<p>摘自：《Python3 网络爬虫开发指南》</p>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（二、循环扩大范围、异常处理）</title>
-    <url>/pythonwebcatch/pythonwebcatch2/</url>
-    <content><![CDATA[<h1>利用循环扩大抓取范围</h1>
-<p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p>
-<p>那么，现在就来<em><strong>扩大抓取范围！</strong></em></p>
-<p>记得基地址是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/</span><br></pre></td></tr></table></figure>
-<p>我们来点开第二页，你会发现地址变成了：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_2.html</span><br></pre></td></tr></table></figure>
-<p>点开第三页：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.qqbizhi.com/desk/meinv/index_3.html</span><br></pre></td></tr></table></figure>
-<p>好的，规律显而易见，我们只需要index_{page}进行for循环即可多页抓取。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for page in range(1, 36):</span><br><span class="line">    if page == 1:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br><span class="line">    else:</span><br><span class="line">        base_url = &#x27;http://www.qqbizhi.com&#x27; \</span><br><span class="line">            &#x27;/desk/meinv/index_&#123;&#125;.html&#x27;.format(str(page))</span><br></pre></td></tr></table></figure>
-<p>将整个程序放在for函数里进行抓取即可实现多页抓取。</p>
-<p>现在，我们来让程序打印抓取进度</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 程序开头部分做分割线</span><br><span class="line">print(&quot;----------------------------------------------&quot;)</span><br></pre></td></tr></table></figure>
-<p>在for循环里，对每一页进行提醒</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(&#x27;--------&#123;&#125; page downloading---------&#x27;.format(page))</span><br></pre></td></tr></table></figure>
-<h1>对部分异常进行控制</h1>
-<p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p>
-<p>好在requests已经对部分异常给予返回值进行提醒，我们可以根据这些返回值，进行判断处理。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">try:</span><br><span class="line">	# 主程序</span><br><span class="line">except requests.Timeout as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.URLRequired as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.ConnectionError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br><span class="line">except requests.HTTPError as e:</span><br><span class="line">    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)</span><br></pre></td></tr></table></figure>
-<p>这里有requests库的异常总结：</p>
-<table>
-<thead>
-<tr>
-<th>异常</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>requests.ConnectionError</td>
-<td>网络连接错误异常，如DNS查询失败，拒绝连接等</td>
-</tr>
-<tr>
-<td>requests.HTTPError</td>
-<td>HTTP错误异常</td>
-</tr>
-<tr>
-<td>requests.TooManyRedirects</td>
-<td>超过最大重定向次数，产生重定向异常</td>
-</tr>
-<tr>
-<td>requests.ConnectTimeout</td>
-<td>连接远程服务器超时异常</td>
-</tr>
-<tr>
-<td>requests.Timeout</td>
-<td>请求URL超时，产生超时异常</td>
-</tr>
-<tr>
-<td>r.raise_for_status</td>
-<td>如果不是200，产生异常requestsHTTPError</td>
-</tr>
-<tr>
-<td>requests.URLRequired</td>
-<td>URL缺失异常</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（三、第一次接触Pyside2）</title>
-    <url>/pythonwebcatch/pythonwebcatch3/</url>
-    <content><![CDATA[<h1>独乐乐不如众乐乐！</h1>
-<h2 id="Pyside2">Pyside2</h2>
-<h3 id="Python图形界面开发">Python图形界面开发</h3>
-<p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
-<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
-<p>目前python语言GUI有以下选择</p>
-<ul>
-<li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
-<li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
-<li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
-<h3 id="利用QtDesigner进行布局规划">利用QtDesigner进行布局规划</h3>
-<p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
-<p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png" alt=""></p>
-<p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
-<p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
-<h3 id="对源程序进行重构">对源程序进行重构</h3>
-<p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
-<h4 id="pyside2自定义类例程">pyside2自定义类例程</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
-<h4 id="重构爬虫函数进行类封装">重构爬虫函数进行类封装</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    	# sort即是选择类型</span><br><span class="line">    	self.sort = 0</span><br><span class="line">    	self.signal_1 = 2</span><br><span class="line">    	self.signal_2 = 0</span><br><span class="line">    	self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
-<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
-<p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
-<p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
-<p>因此我们创建Catch_Signal类，继承自QObject类：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
-<p>在Wallpaper类中定义实例属性：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
-<p>再在Wallpaper类中定义GUI绘制函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
-<p>将爬虫程序放入子线程：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
-<p>补充import：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
-<p>这样一来，主程序就不会卡顿了</p>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（一、First Blood!）</title>
-    <url>/pythonwebcatch/pythonwebcatch1/</url>
-    <content><![CDATA[<h1><em>request、xpath、parsel爬取静态网页流程</em></h1>
-<ol>
-<li><em>指定URL</em></li>
-<li><em>UA伪装</em></li>
-<li><em>发起请求（模拟浏览器）</em></li>
-<li><em>获取相应数据</em></li>
-<li><em>解析数据</em></li>
-<li><em>进行持久化储存</em></li>
-</ol>
-<h2 id="First-Blood！">First Blood！</h2>
-<h3 id="指定URL">指定URL</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
-<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
-<h3 id="UA伪装">UA伪装</h3>
-<p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
-<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png" alt=""></p>
-<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="发起请求（模拟浏览器）">发起请求（模拟浏览器）</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
-<p>这里注意，后面保存图片就要用content</p>
-<ul>
-<li>response.text 返回的是一个 unicode 型的文本数据</li>
-<li>response.content 返回的是 bytes 型的二进制数据</li>
-</ul>
-<h3 id="获取相应数据">获取相应数据</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure>
-<p>这里涉及xpath语法:</p>
-<p>//表示跨行定位</p>
-<p>[@class=“xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
-<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
-<h3 id="解析数据">解析数据</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line">	# 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
-<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
-</ul>
-<h3 id="进行持久化储存">进行持久化储存</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   	# 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure>
-<p>Nice！！！拿到一血</p>
-<p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒…emm)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure>
-<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
-<h2 id="对程序进行完善">对程序进行完善</h2>
-<p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
-<ul>
-<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
-<li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
-<li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
-<li>还有许多需要补充的地方，只要能想到，就要不断地完善…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>日语？日语！</title>
-    <url>/japaneselearning/japaneselearning/</url>
-    <content><![CDATA[<p>为什么要学日语？可能我自己也不知道。或许没有理由，又或许太多理由。可能只是一个瞬间的想法、也可能是一幅画面的情感共鸣。我喜欢塞着耳机，一直走在夜色里。看灯火阑珊，望漫天繁星，身边来来往往的人群…</p>
-<p>“为什么我们总觉得书中的爱情轰轰烈烈，而现实却平平淡淡呢？”</p>
-<p>“大抵是因为，我们可以轻而易举地看到书中人内心的波涛汹涌，却体会不到身边人的欲言又止吧。”</p>
-<p>这个回答让我产生太多太多的共鸣，事实很重要，我的态度更重要。我始终谨记着这句话。整个宇宙已经够冷了，真正宝贵的是那些温暖而纯粹的东西，每次打开手机看到朋友发给我的碎碎念就很开心，包括那有趣的事情，也包括伤心的内容。超喜欢接受朋友们的日常，会感觉自己是被需要的！</p>
-<p>再回到开头，可能答案已经出来了。</p>
-]]></content>
-      <categories>
-        <category>日语！</category>
-      </categories>
-  </entry>
-  <entry>
     <title>日语动词十二种变形总结</title>
     <url>/japaneselearning/japaneselearning1/</url>
     <content><![CDATA[<h3 id="所有的动词都以う段结尾">所有的动词都以う段结尾</h3>
@@ -1578,46 +1538,6 @@ logging.basicConfig(...)
       </categories>
   </entry>
   <entry>
-    <title>利用python抓取静态网页（四、继续完善并打包程序）</title>
-    <url>/pythonwebcatch/pythonwebcatch4/</url>
-    <content><![CDATA[<h3 id="对源程序继续完善">对源程序继续完善</h3>
-<h4 id="Sleep延迟">Sleep延迟</h4>
-<p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
-<p>引入库：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
-<p>for循环下载img最后一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
-<p>当然，子进程try：第一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
-<p>保证在每次下载间隔1~2s</p>
-<h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
-<p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
-<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
-<h4 id="更改logo">更改logo</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
-<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
-<h3 id="cxfreeze打包">cxfreeze打包</h3>
-<h4 id="cxfreeze与pyinstaller">cxfreeze与pyinstaller</h4>
-<p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
-<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
-<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
-<p>安装完毕后，在根目录命令行输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
-<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=&quot;win32gui&quot;是去掉控制台显示。</p>
-<h4 id="附属文件插入">附属文件插入</h4>
-<p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
-<p>这时运行可执行文件即可看到我们的程序。</p>
-<h3 id="开发总结">开发总结</h3>
-<p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>《标准日本语·初级》句型语法总结</title>
     <url>/japaneselearning/japaneselearning2/</url>
     <content><![CDATA[<h3 id="重要句型总结以及单词语法扩展">重要句型总结以及单词语法扩展</h3>
@@ -1664,6 +1584,122 @@ logging.basicConfig(...)
 ]]></content>
       <categories>
         <category>日语！</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS（二）</title>
+    <url>/webfront/web3/</url>
+    <content><![CDATA[<h3 id="Emmet语法">Emmet语法</h3>
+<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
+<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
+<ol>
+<li>生成标签直接输入标签名按tab键即可</li>
+<li>如果想要生成多个相同标签加上*就可以了</li>
+<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
+<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
+<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
+<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
+<li>如果想要在生成的$签内部写内容可以用{}表示</li>
+</ol>
+<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
+<p>CSS基本采取简写形式即可</p>
+<ul>
+<li>比如 w200 按tab就可以生成 width: 200px;</li>
+<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
+</ul>
+<h4 id="快速格式化代码">快速格式化代码</h4>
+<p>设置搜索format勾选format on save</p>
+<h3 id="CSS复合选择器">CSS复合选择器</h3>
+<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
+<ul>
+<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
+<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
+<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
+</ul>
+<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
+<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
+<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
+<h4 id="子选择器（重要）">子选择器（重要）</h4>
+<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1 &gt; 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
+<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
+<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
+<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
+<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">元素1, 元素2 &#123; 样式声明 &#125;</span><br></pre></td></tr></table></figure>
+<p>上述语法表示选择元素1和元素2</p>
+<ul>
+<li>元素1和元素2中间用逗号隔开</li>
+<li>逗号可以理解为<strong>和</strong>的意思</li>
+<li>并集选择器通常用于集体声明</li>
+</ul>
+<h4 id="链接伪类选择器">链接伪类选择器</h4>
+<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a:link		# 选择所有未被访问的链接</span><br><span class="line">a:visited	# 选择所有已被访问的链接</span><br><span class="line">a:hover		# 选择鼠标指针位于其上的链接</span><br><span class="line">a:active	# 选择活动链接（鼠标按下未弹起）</span><br></pre></td></tr></table></figure>
+<h5 id="注意事项">注意事项</h5>
+<ul>
+<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
+<li>记忆法：love hate 或者 lv 宝宝 hao</li>
+<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
+</ul>
+<h5 id="开发写法">开发写法</h5>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="focus伪类选择器">focus伪类选择器</h4>
+<p>focus伪类选择器用于选取获得焦点的表单元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">焦点就是光标，一般情况&lt;input&gt;类表单元素才能获取，因此这个选择器也主要针对表单元素来说</span><br><span class="line">input:focus &#123;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="复合选择器总结">复合选择器总结</h4>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>作用</th>
+<th>特征</th>
+<th>使用情况</th>
+<th>隔开符号及用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后代选择器</td>
+<td>选择后代元素</td>
+<td>子孙后代</td>
+<td>较多</td>
+<td>符号是空格 .nav a</td>
+</tr>
+<tr>
+<td>子代选择器</td>
+<td>选择最近一级元素</td>
+<td>亲儿子</td>
+<td>较少</td>
+<td>符号是大于 .nav&gt;p</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>选择相同样式的元素</td>
+<td>集体声明</td>
+<td>较多</td>
+<td>符号是逗号 .nav,.header</td>
+</tr>
+<tr>
+<td>链接伪类选择器</td>
+<td>选择不同状态的链接</td>
+<td>和链接相关</td>
+<td>较多</td>
+<td>重点记住a{}和a:hover</td>
+</tr>
+<tr>
+<td>focus选择器</td>
+<td>选择获得光标的表单</td>
+<td>和表单相关</td>
+<td>较少</td>
+<td>记住input:focus</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>Web前端</category>
       </categories>
   </entry>
   <entry>
@@ -1723,42 +1759,6 @@ logging.basicConfig(...)
 ]]></content>
       <categories>
         <category>日语！</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Web渗透——SQL注入简介</title>
-    <url>/webos/web/</url>
-    <content><![CDATA[<h4 id="渗透流程：">渗透流程：</h4>
-<ol>
-<li>先学习前端编程（了解清楚对方的网站架构，才好判断该如何入手）</li>
-<li>信息搜集（作用：判断网站是否具备漏洞，判断具体漏洞存在的范围）</li>
-<li>绕waf（绕过对方的防火墙拦截，否则一切攻击手段会被拦截）</li>
-<li>漏洞攻击（漏洞类型有很多，针对不一样的漏洞有不一样的攻击方式，例如sql注入，xss，文件上传，反序列化）</li>
-<li>找到漏洞，进行提权</li>
-</ol>
-<h4 id="SQL是什么">SQL是什么</h4>
-<ul>
-<li>SQL 指结构化查询语言，全称是 Structured Query Language。</li>
-<li>SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除。</li>
-<li>SQL 在1986年成为 ANSI（American National Standards Institute 美国国家标准化组织）的一项标准，在 1987 年成为国际标准化组织（ISO）标准。</li>
-</ul>
-<h4 id="SQL注入流程：">SQL注入流程：</h4>
-<ol>
-<li>sql注入的原理以及sqllite数据库</li>
-<li>sqlite的安装以及基本语句</li>
-<li>结合靶场理解sqlite的注入流程</li>
-<li>总结</li>
-</ol>
-<h4 id="sql注入简介">sql注入简介</h4>
-<p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序对用户输入的字符串没有进行过滤或处理不严谨。至今SQL注入仍然是首要的难以修复的安全漏洞。</p>
-<ul>
-<li>sql语言即是结构化查询语言，操作数据库的语言。</li>
-<li>注入在这里就是将用户输入的数据拼接到原始代码里，被当作代码执行。</li>
-</ul>
-<p>SQLite是一种开源， 零配置，独立的，事务关系数据库引擎。它是一个类似Access的轻量级数据库系统，但是更小、更快、容量更大，并发更高，在移动端经常会使用到。</p>
-]]></content>
-      <categories>
-        <category>Web渗透</category>
       </categories>
   </entry>
   <entry>
