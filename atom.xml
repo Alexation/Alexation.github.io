@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2021-09-21T08:28:30.000Z</updated>
+  <updated>2021-10-06T13:51:55.577Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正式接触Python算法</title>
+    <link href="https://www.alexation.cn/python_algorithm/algorithm1/"/>
+    <id>https://www.alexation.cn/python_algorithm/algorithm1/</id>
+    <published>2021-10-06T12:00:00.000Z</published>
+    <updated>2021-10-06T13:51:55.577Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="程序-数据结构-算法"><em>程序=数据结构+算法</em></h3><h4 id="时间复杂度：用来评估算法运行效率的一个式子">时间复杂度：用来评估算法运行效率的一个式子</h4><p>O(1)、O(n)时间规模，保留量级。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while n&gt;1:</span><br><span class="line">print(n)</span><br><span class="line">n = n//2</span><br><span class="line"># 时间复杂度记为O(logn)</span><br></pre></td></tr></table></figure><p>常见：O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n2)&lt;O(n2logn)&lt;O(n3)</p><p><strong>如何判断算法复杂度</strong></p><ul><li>确定问题规模n</li><li>循环减半过程-&gt;logn</li><li>k层关于n的循环—&gt;n↑k</li></ul><h4 id="空间复杂度：用来评估算法内存占用大小的式子">空间复杂度：用来评估算法内存占用大小的式子</h4><p>表示方式和时间复杂度一样，空间换时间</p><h4 id="递归：调用自身、结束条件">递归：调用自身、结束条件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def fun(x):</span><br><span class="line">    if x &gt; 0:</span><br><span class="line">        fun(x-1)</span><br><span class="line">        print(x)</span><br><span class="line">def fun1(x):</span><br><span class="line">    if x &gt; 0:</span><br><span class="line">        print(x)</span><br><span class="line">        fun1(x-1)</span><br><span class="line">fun(4)</span><br><span class="line">print()</span><br><span class="line">fun1(4)</span><br></pre></td></tr></table></figure><p>先递归后打印 和 先打印后递归</p><p>递归实例：汉诺塔问题</p><p>n个盘子时：</p><ul><li>把n-1个圆盘从A经过C移动到B</li><li>把第n个圆盘从A移动到C</li><li>把n-1个圆盘从B经过A移动到C</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def hanoi(n, a, b ,c):</span><br><span class="line">    if n&gt;0:</span><br><span class="line">        hanoi(n-1, a, c, b)</span><br><span class="line">        print(&quot;moving from %s to %s&quot; % (a, c))</span><br><span class="line">        hanoi(n-1, b, a, c)</span><br><span class="line">hanoi(3, &#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">算法！算法！算法！</summary>
+    
+    
+    
+    <category term="Python算法" scheme="https://www.alexation.cn/categories/Python%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World！</title>
@@ -367,25 +386,6 @@
     
     
     <summary type="html">利用requests和xpath进行第一次图片抓取</summary>
-    
-    
-    
-    <category term="python网络爬虫" scheme="https://www.alexation.cn/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>利用python抓取静态网页（HTTP、WEB基础）</title>
-    <link href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/"/>
-    <id>https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/</id>
-    <published>2021-08-20T02:47:08.000Z</published>
-    <updated>2021-08-30T08:34:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1>HTTP、WEB基础</h1><h2 id="HTTP知识点：">HTTP知识点：</h2><ul><li>URI（Uniform Resource Identifier）即统一资源标识符</li><li>URL（Universal Resource Locator）即统一资源定位符</li></ul><p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p><p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p><h3 id="超文本（Hypertext）："><strong>超文本（Hypertext）：</strong></h3><p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p><h3 id="HTTP和HTTPS："><strong>HTTP和HTTPS：</strong></h3><p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p><h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3><p>常见请求有：GET、POST</p><p>GET：直接输入网址</p><p>POST：大多提交表单时，例如登录</p><p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p><p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p><p>常见服务器请求状态码：</p><ul><li>200-请求成功</li><li>301-资源（网页等）被永久转移到其他URL</li><li>404-请求的资源（网页等）不存在</li><li>500-服务器内部错误</li></ul><h2 id="WEB基础">WEB基础</h2><h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3><p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p><p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p><p>JavaScript脚本语言（交互动作）</p><h3 id="网页的结构："><strong>网页的结构：</strong></h3><ul><li>head 标签内定义一些页面的配置和引用</li><li>title 标签则定义网页的标题，会显示在网页</li><li>body 标签内是在网页正文中显示的内容</li><li>div 标签定义网页中的区块</li><li>h2 标签表示一个二级标题</li><li>p 标签代表一个段落</li></ul><p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以&quot;.&quot;开头表示class。</p><p>摘自：《Python3 网络爬虫开发指南》</p>]]></content>
-    
-    
-    <summary type="html">HTTP以及WEB基础知识补充（前端）</summary>
     
     
     
