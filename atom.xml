@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2021-10-20T08:55:08.786Z</updated>
+  <updated>2021-10-20T09:09:01.283Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Netease/"/>
     <id>https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Netease/</id>
     <published>2021-10-20T06:31:20.000Z</published>
-    <updated>2021-10-20T08:55:08.786Z</updated>
+    <updated>2021-10-20T09:09:01.283Z</updated>
     
     <content type="html"><![CDATA[<h3 id="第一步">第一步</h3><ol><li>打开这个网站，在里面去分析我们需要的数据，每个音乐的名称、ID</li><li>通过代码去访问当前这个页面 – 网页源代码</li><li>当前这个网页，并不是一个静态页面</li><li>真正的目标网址(headers中查找)：<a href="https://music.163.com/discover/toplist">https://music.163.com/discover/toplist</a></li></ol><h3 id="第二步">第二步</h3><ol><li><p>通过代码去实现这个步骤</p></li><li><p>拿到源码</p></li><li><p>拿到ID、Name</p></li><li><p>下载音乐</p><p>baidu接口：<a href="https://music.163.com/song/media/outer/url?id=">https://music.163.com/song/media/outer/url?id=</a></p><p>分析加密规则：js</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"># 音频接口</span><br><span class="line">outer = &#x27;https://music.163.com/song/media/outer/url?id=&#x27;</span><br><span class="line"># 目标网址</span><br><span class="line">url = &#x27;https://music.163.com/discover/toplist&#x27;</span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(url=url, headers=headers).text</span><br><span class="line">zip_data = re.findall(&#x27;&lt;li&gt;&lt;a href=&quot;/song\?id=(.*?)&quot;&gt;(.*?)&lt;/a&gt;&lt;/li&gt;&#x27;, response)</span><br><span class="line"></span><br><span class="line">for music_id, title in zip_data:</span><br><span class="line">    url_1 = outer + music_id</span><br><span class="line">    music_data = requests.get(url=url_1, headers=headers).content</span><br><span class="line">    # 写进二进制音频文件、重新命名，防止windows命名出现错误</span><br><span class="line">    title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">    with open(&#x27;music/&#x27; + title + &#x27;.mp3&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">        f.write(music_data)</span><br><span class="line">    print(f&#x27;正在保存：&#123;title&#125;&#x27;)</span><br></pre></td></tr></table></figure><ul><li>text:拿文本数据</li><li>content:拿二进制数据，图片，音频，视频</li></ul>]]></content>
     
     
-    <summary type="html">Use re to catch Netease Music</summary>
+    <summary type="html">Use the RE third-party library to catch Netease Music</summary>
     
     
     
