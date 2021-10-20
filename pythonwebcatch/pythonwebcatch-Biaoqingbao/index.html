@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="HTTP以及WEB基础知识补充（前端）">
+  <meta name="description" content="目标网址：https:&#x2F;&#x2F;www.fabiaoqing.com">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用python抓取静态网页（HTTP、WEB基础）">
-<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/index.html">
+<meta property="og:title" content="表情包抓取">
+<meta property="og:url" content="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Biaoqingbao/index.html">
 <meta property="og:site_name" content="Alexation">
-<meta property="og:description" content="HTTP以及WEB基础知识补充（前端）">
+<meta property="og:description" content="目标网址：https:&#x2F;&#x2F;www.fabiaoqing.com">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-20T02:47:08.000Z">
-<meta property="article:modified_time" content="2021-08-30T08:34:28.000Z">
+<meta property="article:published_time" content="2021-10-20T06:31:20.000Z">
+<meta property="article:modified_time" content="2021-10-20T08:53:10.988Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/">
+<link rel="canonical" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Biaoqingbao/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>利用python抓取静态网页（HTTP、WEB基础） | Alexation</title>
+  <title>表情包抓取 | Alexation</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch0/">
+    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Biaoqingbao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -211,7 +211,7 @@
 	
 
         <h1 class="post-title" itemprop="name headline">
-          利用python抓取静态网页（HTTP、WEB基础）
+          表情包抓取
         </h1>
 
         <div class="post-meta">
@@ -220,16 +220,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-08-20 10:47:08" itemprop="dateCreated datePublished" datetime="2021-08-20T10:47:08+08:00">2021-08-20</time>
+              <time title="创建时间：2021-10-20 14:31:20 / 修改时间：16:53:10" itemprop="dateCreated datePublished" datetime="2021-10-20T14:31:20+08:00">2021-10-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-30 16:34:28" itemprop="dateModified" datetime="2021-08-30T16:34:28+08:00">2021-08-30</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -241,7 +235,7 @@
             </span>
 
           
-            <div class="post-description">HTTP以及WEB基础知识补充（前端）</div>
+            <div class="post-description">目标网址：https://www.fabiaoqing.com</div>
 
         </div>
       </header>
@@ -252,47 +246,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1>HTTP、WEB基础</h1>
-<h2 id="HTTP知识点：">HTTP知识点：</h2>
+        <h3 id="第一步">第一步</h3>
+<ol>
+<li>打开这个网站，找到目标</li>
+<li>发送请求</li>
+<li>获取数据内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">for page in range(1, 201):</span><br><span class="line">    print(f&#x27;-------正在爬取第&#123;page&#125;页--------&#x27;)</span><br><span class="line">    url = f&#x27;https://www.fabiaoqing.com/biaoqing/lists/page/&#123;page&#125;.html&#x27;</span><br><span class="line">    response = requests.get(url=url, headers=headers).text</span><br><span class="line"></span><br><span class="line">    images = re.findall(&#x27;&lt;img class=&quot;ui image lazy&quot; data-original=&quot;(.*?)&quot;&#x27;, response)</span><br><span class="line">    titles = re.findall(&#x27;&lt;a href=&quot;.*?&quot; title=&quot;(.*?)&quot;&gt;&#x27;, response)</span><br><span class="line"></span><br><span class="line">    for img_url, title in zip(images, titles):</span><br><span class="line">        # Windows里面文件命名有一定规则</span><br><span class="line">        title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">        if len(title) &gt; 50:</span><br><span class="line">            title = title[:50]</span><br><span class="line">        # 提取图片尾缀</span><br><span class="line">        suffix = img_url.split(&#x27;.&#x27;)[-1]</span><br><span class="line">        # 图片二进制数据</span><br><span class="line">        img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line">        with open(f&#x27;img/&#123;title&#125;.&#123;suffix&#125;&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(img_data)</span><br><span class="line">        print(f&#x27;正在保存：&#123;title&#125;&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
+<li>text:拿文本数据</li>
+<li>content:拿二进制数据，图片，音频，视频</li>
 </ul>
-<p>例如：<a target="_blank" rel="noopener" href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h3 id="超文本（Hypertext）："><strong>超文本（Hypertext）：</strong></h3>
-<p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
-<h3 id="HTTP和HTTPS："><strong>HTTP和HTTPS：</strong></h3>
-<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3>
-<p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h2 id="WEB基础">WEB基础</h2>
-<h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3>
-<p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
-<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
-<p>JavaScript脚本语言（交互动作）</p>
-<h3 id="网页的结构："><strong>网页的结构：</strong></h3>
-<ul>
-<li>head 标签内定义一些页面的配置和引用</li>
-<li>title 标签则定义网页的标题，会显示在网页</li>
-<li>body 标签内是在网页正文中显示的内容</li>
-<li>div 标签定义网页中的区块</li>
-<li>h2 标签表示一个二级标题</li>
-<li>p 标签代表一个段落</li>
-</ul>
-<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以&quot;.&quot;开头表示class。</p>
-<p>摘自：《Python3 网络爬虫开发指南》</p>
+<p>针对速度过慢的问题：</p>
+<ol>
+<li>多线程、多进程、协程</li>
+<li>通过分布式实现，大量数据下载</li>
+</ol>
 
     </div>
 
@@ -303,6 +272,35 @@
 <div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/pythonwebcatch/pythonwebcatch-Biaoqingbao/">表情包抓取</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+  <p><span>发布时间:</span>2021年10月20日 - 14:10</p>
+  <p><span>最后更新:</span>2021年10月20日 - 16:10</p>
+  <p><span>原始链接:</span><a href="/pythonwebcatch/pythonwebcatch-Biaoqingbao/" title="表情包抓取">https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Biaoqingbao/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.alexation.cn/pythonwebcatch/pythonwebcatch-Biaoqingbao/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
 
 
       
@@ -316,12 +314,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pythonwebcatch/pythonwebcatch/" rel="prev" title="利用python抓取静态网页（前言）">
-      <i class="fa fa-chevron-left"></i> 利用python抓取静态网页（前言）
+    <a href="/python_algorithm/algorithm1/" rel="prev" title="接触Python算法">
+      <i class="fa fa-chevron-left"></i> 接触Python算法
     </a></div>
       <div class="post-nav-item">
-    <a href="/pythonwebcatch/pythonwebcatch1/" rel="next" title="利用python抓取静态网页（一、First Blood!）">
-      利用python抓取静态网页（一、First Blood!） <i class="fa fa-chevron-right"></i>
+    <a href="/pythonwebcatch/pythonwebcatch-Netease/" rel="next" title="网易云音乐">
+      网易云音乐 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -381,7 +379,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">HTTP、WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%EF%BC%88Hypertext%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">超文本（Hypertext）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTP和HTTPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%AF%E5%88%86%E4%B8%BA%E5%9B%9B%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%EF%BC%9A%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E3%80%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E3%80%81%E8%AF%B7%E6%B1%82%E7%BD%91%E5%9D%80%E3%80%81%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">请求可分为四部分内容：请求方法、请求头、请求网址、请求体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.</span> <span class="nav-text">WEB基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9AHTML%EF%BC%88%E9%AA%A8%E6%9E%B6%EF%BC%89%E3%80%81CSS%EF%BC%88%E8%82%8C%E8%82%89%EF%BC%89%E3%80%81JavaScript%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">网页的结构：</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">1.</span> <span class="nav-text">第一步</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

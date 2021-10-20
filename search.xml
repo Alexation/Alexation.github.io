@@ -18,9 +18,70 @@
 ]]></content>
   </entry>
   <entry>
+    <title>网易云音乐</title>
+    <url>/pythonwebcatch/pythonwebcatch-Netease/</url>
+    <content><![CDATA[<h3 id="第一步">第一步</h3>
+<ol>
+<li>打开这个网站，在里面去分析我们需要的数据，每个音乐的名称、ID</li>
+<li>通过代码去访问当前这个页面 – 网页源代码</li>
+<li>当前这个网页，并不是一个静态页面</li>
+<li>真正的目标网址(headers中查找)：<a href="https://music.163.com/discover/toplist">https://music.163.com/discover/toplist</a></li>
+</ol>
+<h3 id="第二步">第二步</h3>
+<ol>
+<li>
+<p>通过代码去实现这个步骤</p>
+</li>
+<li>
+<p>拿到源码</p>
+</li>
+<li>
+<p>拿到ID、Name</p>
+</li>
+<li>
+<p>下载音乐</p>
+<p>baidu接口：<a href="https://music.163.com/song/media/outer/url?id=">https://music.163.com/song/media/outer/url?id=</a></p>
+<p>分析加密规则：js</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"># 音频接口</span><br><span class="line">outer = &#x27;https://music.163.com/song/media/outer/url?id=&#x27;</span><br><span class="line"># 目标网址</span><br><span class="line">url = &#x27;https://music.163.com/discover/toplist&#x27;</span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(url=url, headers=headers).text</span><br><span class="line">zip_data = re.findall(&#x27;&lt;li&gt;&lt;a href=&quot;/song\?id=(.*?)&quot;&gt;(.*?)&lt;/a&gt;&lt;/li&gt;&#x27;, response)</span><br><span class="line"></span><br><span class="line">for music_id, title in zip_data:</span><br><span class="line">    url_1 = outer + music_id</span><br><span class="line">    music_data = requests.get(url=url_1, headers=headers).content</span><br><span class="line">    # 写进二进制音频文件、重新命名，防止windows命名出现错误</span><br><span class="line">    title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">    with open(&#x27;music/&#x27; + title + &#x27;.mp3&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">        f.write(music_data)</span><br><span class="line">    print(f&#x27;正在保存：&#123;title&#125;&#x27;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>text:拿文本数据</li>
+<li>content:拿二进制数据，图片，音频，视频</li>
+</ul>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>表情包抓取</title>
+    <url>/pythonwebcatch/pythonwebcatch-Biaoqingbao/</url>
+    <content><![CDATA[<h3 id="第一步">第一步</h3>
+<ol>
+<li>打开这个网站，找到目标</li>
+<li>发送请求</li>
+<li>获取数据内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">for page in range(1, 201):</span><br><span class="line">    print(f&#x27;-------正在爬取第&#123;page&#125;页--------&#x27;)</span><br><span class="line">    url = f&#x27;https://www.fabiaoqing.com/biaoqing/lists/page/&#123;page&#125;.html&#x27;</span><br><span class="line">    response = requests.get(url=url, headers=headers).text</span><br><span class="line"></span><br><span class="line">    images = re.findall(&#x27;&lt;img class=&quot;ui image lazy&quot; data-original=&quot;(.*?)&quot;&#x27;, response)</span><br><span class="line">    titles = re.findall(&#x27;&lt;a href=&quot;.*?&quot; title=&quot;(.*?)&quot;&gt;&#x27;, response)</span><br><span class="line"></span><br><span class="line">    for img_url, title in zip(images, titles):</span><br><span class="line">        # Windows里面文件命名有一定规则</span><br><span class="line">        title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">        if len(title) &gt; 50:</span><br><span class="line">            title = title[:50]</span><br><span class="line">        # 提取图片尾缀</span><br><span class="line">        suffix = img_url.split(&#x27;.&#x27;)[-1]</span><br><span class="line">        # 图片二进制数据</span><br><span class="line">        img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line">        with open(f&#x27;img/&#123;title&#125;.&#123;suffix&#125;&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(img_data)</span><br><span class="line">        print(f&#x27;正在保存：&#123;title&#125;&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>text:拿文本数据</li>
+<li>content:拿二进制数据，图片，音频，视频</li>
+</ul>
+<p>针对速度过慢的问题：</p>
+<ol>
+<li>多线程、多进程、协程</li>
+<li>通过分布式实现，大量数据下载</li>
+</ol>
+]]></content>
+      <categories>
+        <category>python网络爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>接触Python算法</title>
     <url>/python_algorithm/algorithm1/</url>
-    <content><![CDATA[<h2 style="color:#6495ED;text-align:center;font-weight:700"><i>程序 = 数据结构 + 算法<br>计算机一秒能进行约 十的七次方次运算</i></h2>
+    <content><![CDATA[<h2 style="color:#6495ED;text-align:center;font-weight:700"><i>程序 = 数据结构 + 算法<br>计算机一秒能进行约10^7次运算</i></h2>
 <h3 id="时间复杂度：用来评估算法运行效率的一个式子">时间复杂度：用来评估算法运行效率的一个式子</h3>
 <p>O(1)、O(n)时间规模，保留量级。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while n&gt;1:</span><br><span class="line">	print(n)</span><br><span class="line">	n = n//2</span><br><span class="line"># 时间复杂度记为O(logn)</span><br></pre></td></tr></table></figure>
@@ -112,6 +173,17 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def insert_sort(li):</span><br><span class="line">    for i in range(1,len(li)): # i表示摸到的牌的下标</span><br><span class="line">        temp = li[i]</span><br><span class="line">        j = i - 1 # j指的是手里的牌，下标</span><br><span class="line">        while j &gt;= 0 and li[j] &gt;temp:</span><br><span class="line">            li[j+1] = li[j]</span><br><span class="line">            j -= 1</span><br><span class="line">        li[j+1] = temp</span><br></pre></td></tr></table></figure>
 <h4 id="排序NB三人组">排序NB三人组</h4>
+<h5 id="快速排序（快）">快速排序（快）</h5>
+<ul>
+<li>取第一个元素p，使元素p归位</li>
+<li>列表被p分为两部分，左边都比p小，右边都比p大；</li>
+<li>递归完成排序</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def partition(li, left, right):</span><br><span class="line">    tmp = li[left]</span><br><span class="line">    while left &lt; right:</span><br><span class="line">        while left &lt; right and li[right] &gt;= tmp:  # 从右边找找比tmp的数</span><br><span class="line">            right -= 1  # 向左走一步</span><br><span class="line">        li[left] = li[right]  # 把右边的值放到左边的空位置</span><br><span class="line">        while left &lt; right and li[left] &lt;= tmp:</span><br><span class="line">            left += 1  # 向右走一步</span><br><span class="line">        li[right] = li[left]  # 把左边的值放到右边的空位置上</span><br><span class="line">    li[left] = tmp  # 把tmp归位</span><br><span class="line">    return left</span><br><span class="line"></span><br><span class="line">def quick_sort(li, left, right):</span><br><span class="line">    if left &lt; right:</span><br><span class="line">        mid = partition(li, left ,right)</span><br><span class="line">        quick_sort(li, left , mid-1)</span><br><span class="line">        quick_sort(li, mid+1, right)</span><br></pre></td></tr></table></figure>
+<p>时间复杂度O（nlogn）</p>
+<h5 id="堆排序">堆排序</h5>
+<p>前传：树与二叉树。数是一种数据结构，比如目录结构，可以进行递归定义。树是由n个节点组成的集合：如果n=0，那是一颗空树，如果n&gt;0，那么存在一个节点作为树的根节点，其他节点可以分为m个集合。</p>
+<p>Pass占位。。。</p>
 ]]></content>
       <categories>
         <category>Python算法</category>
@@ -177,7 +249,7 @@
 <p>权重是由4组数字组成，但是不会有进位</p>
 <p>类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推</p>
 <p>等级判断从左到右，如果某一位数位相同，则判断下一位数值</p>
-<p>通配符和继承权重为0，</p>
+<p>通配符和继承权重为0</p>
 ]]></content>
       <categories>
         <category>Web前端</category>
