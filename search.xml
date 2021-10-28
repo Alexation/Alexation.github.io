@@ -115,6 +115,7 @@
     <title>部分热门网站图片、音频、视频抓取下载汇总</title>
     <url>/pythonwebcatch/pythonwebcatch-Hot-catch/</url>
     <content><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>可见即可爬</em></h2>
+<p><a href="https://qingdeng.ke.qq.com/" style="font-weight:700;color:#B399FF"><em>本文案例整理自青灯教育视频公开课</em></a></p>
 <h3 id="第一步">第一步</h3>
 <ol>
 <li>打开网站，在里面去分析我们需要的数据，包括名称、ID、URL</li>
@@ -131,7 +132,7 @@
 <p>拿到源码</p>
 </li>
 <li>
-<p>拿到ID、Name*（正则、CSS选择器、Xpath）*</p>
+<p>拿到ID、Name<em>（正则、CSS选择器、Xpath）</em></p>
 </li>
 <li>
 <p>进行下载</p>
