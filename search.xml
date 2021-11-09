@@ -18,6 +18,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>2021全国电子设计大赛F题反思总结</title>
+    <url>/2021EXE/ele/</url>
+    <content><![CDATA[<p><font style="font-weight:700;color:#B399FF"><em>先占坑，作者刚完赛，格式先打好，补一下觉，整理一下思路来填坑。</em></font></p>
+]]></content>
+      <categories>
+        <category>2021全国电子设计大赛（F题）</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据爬取之xpath</title>
     <url>/pythonwebcatch/pythonwebcatch-xpath/</url>
     <content><![CDATA[<h1>爬虫数据解析的方法</h1>
