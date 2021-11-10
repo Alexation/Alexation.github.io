@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2021-11-10T12:53:00.435Z</updated>
+  <updated>2021-11-10T14:09:35.699Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="https://www.alexation.cn/python-small-knowledge/BASE/"/>
     <id>https://www.alexation.cn/python-small-knowledge/BASE/</id>
     <published>2021-11-10T12:13:05.000Z</published>
-    <updated>2021-11-10T12:53:00.435Z</updated>
+    <updated>2021-11-10T14:09:35.699Z</updated>
     
     <content type="html"><![CDATA[<h4 id="BOOL类型">BOOL类型</h4><p>if判断，会判断if后面的bool类型是True还是Flase。数值类型除了0之外都是True。字符串除了空字符串之外都是True。对象除了空对象之外都是True</p><h4 id="常见错误类型">常见错误类型</h4><ul><li>SyntaxError: unexpected EOF while parsing<br>语法错误，多了无法解析的符号，检查一下是否多了或者少了括号</li><li>SyntaxError: invalid character in identifier<br>语法错误有无效标识符，检查一下中文符号</li><li>IndexError: list index out of range<br>索引错误，超出索引范围，检查一下列表是否为空</li><li>TypeError: must be str, not int<br>数据类型错误，该数据不是正确的数据类型，比如字符串和数字直接拼接，检查一下数据类型</li><li>IndentationError: expected an indented block<br>缩进错误，检查一下代码的缩进是否正确</li><li>KeyError: ‘fond’<br>键错误，字典中没有该的key对应的值，检查一下键名或者字典数据是否正确</li><li>ValueError: substring not found<br>值错误，输入的数据类型跟要求的不符合</li><li>NameError: name ‘a’ is not defined<br>未初始化对象，变量没有被定义</li><li>AttributeError: ‘tuple’ object has no attribute ‘remove’<br>属性错误，该对象没有这个属性、方法，检查一下数据类型</li><li>SystemExit<br>解释器请求退出，出现在exit()函数后</li><li>IOError<br>输入/输出操作失败</li><li>ImportError<br>导入模块/对象失败，检查一下模块是否能够正常使用</li><li>UnicodeDecodeError/UnicodeEncodeError/UnicodeTranslateError<br>Unicode 解码/编码/转换/时的错误</li></ul><h4 id="字符串格式化">字符串格式化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#对齐输出</span><br><span class="line">#左对齐 utf-8 万国码 </span><br><span class="line">In [5]: &#x27;&#123;a:&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[5]: &#x27;12.3      &#x27;</span><br><span class="line"></span><br><span class="line">#数字补x (填充右边, 宽度为10)</span><br><span class="line">In [6]: &#x27;&#123;a:0&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[6]: &#x27;12.3000000&#x27;</span><br><span class="line"></span><br><span class="line">#两边对齐...</span><br><span class="line">In [7]: &#x27;&#123;a:0^10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[7]: &#x27;00012.3000&#x27;</span><br><span class="line"></span><br><span class="line">#保留小数点后两位</span><br><span class="line">In [1]: &#x27;&#123;:.2f&#125;&#x27;.format(12.333) </span><br><span class="line">Out[1]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [2]: &#x27;&#123;a:.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[2]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [3]: &#x27;&#123;a:6.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[3]: &#x27; 12.33&#x27;</span><br></pre></td></tr></table></figure>]]></content>
     
     
-    <summary type="html">个人查缺补漏，细节决定成败！</summary>
+    <summary type="html">一些个知识点</summary>
     
     
     
