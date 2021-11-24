@@ -30,7 +30,7 @@
 <meta property="og:description" content="一些个知识点吧">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-10T12:13:05.000Z">
-<meta property="article:modified_time" content="2021-11-12T08:01:40.649Z">
+<meta property="article:modified_time" content="2021-11-17T11:12:39.401Z">
 <meta property="article:author" content="Alexation">
 <meta name="twitter:card" content="summary">
 
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-12 16:01:40" itemprop="dateModified" datetime="2021-11-12T16:01:40+08:00">2021-11-12</time>
+                <time title="修改时间：2021-11-17 19:12:39" itemprop="dateModified" datetime="2021-11-17T19:12:39+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,12 @@
 
       
         <h4 id="BOOL类型">BOOL类型</h4>
-<p>if判断，会判断if后面的bool类型是True还是Flase。数值类型除了0之外都是True。字符串除了空字符串之外都是True。对象除了空对象之外都是True</p>
+<p>if判断，会判断if后面的bool类型是True还是Flase。</p>
+<ul>
+<li>数值类型除了0之外都是True。</li>
+<li>字符串除了空字符串之外都是True。</li>
+<li>对象除了空对象之外都是True</li>
+</ul>
 <h4 id="常见错误类型">常见错误类型</h4>
 <ul>
 <li>SyntaxError: unexpected EOF while parsing<br>
@@ -285,6 +290,23 @@ Unicode 解码/编码/转换/时的错误</li>
 </ul>
 <h4 id="字符串格式化">字符串格式化</h4>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#对齐输出</span><br><span class="line">#左对齐 utf-8 万国码 </span><br><span class="line">In [5]: &#x27;&#123;a:&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[5]: &#x27;12.3      &#x27;</span><br><span class="line"></span><br><span class="line">#数字补x (填充右边, 宽度为10)</span><br><span class="line">In [6]: &#x27;&#123;a:0&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[6]: &#x27;12.3000000&#x27;</span><br><span class="line"></span><br><span class="line">#两边对齐...</span><br><span class="line">In [7]: &#x27;&#123;a:0^10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[7]: &#x27;00012.3000&#x27;</span><br><span class="line"></span><br><span class="line">#保留小数点后两位</span><br><span class="line">In [1]: &#x27;&#123;:.2f&#125;&#x27;.format(12.333) </span><br><span class="line">Out[1]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [2]: &#x27;&#123;a:.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[2]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [3]: &#x27;&#123;a:6.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[3]: &#x27; 12.33&#x27;</span><br></pre></td></tr></table></figure>
+<h4 id="解包语法（列表、字符串、元组）">*解包语法（列表、字符串、元组）</h4>
+<p>只要是序列都可以解包，解包出来的是元素，无类型，需要对其进行接收</p>
+<p>%s进行元素嵌入</p>
+<h4 id="数据容器">数据容器</h4>
+<ol>
+<li>字符串是一种不可变的有序的数据类型</li>
+<li>列表是一种有序的、可变的、数据容器</li>
+<li>列表中最好装同样格式的数据</li>
+<li>list关键字，可以用于强制转化其他序列为列表</li>
+<li>列表切片，顾首不顾尾（只要是序列就可以切片）</li>
+<li>元组的速度比列表更快，如果仅仅进行遍历，可以用元组</li>
+<li>元组”写保护“更加安全</li>
+<li>集合是可变的无序的不可重复的数据容器</li>
+<li>序列解包&quot;_&quot;舍弃变量，一定要一一对应</li>
+</ol>
+<p>列表推导式，列表里for</p>
+<h4 id="文件">文件</h4>
 
     </div>
 
@@ -311,7 +333,10 @@ Unicode 解码/编码/转换/时的错误</li>
     <a href="/2021EXE/ele/" rel="prev" title="2021全国大学生电子设计竞赛F题">
       <i class="fa fa-chevron-left"></i> 2021全国大学生电子设计竞赛F题
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/pythonwebcatch/pythonwebcatch-pyside2/" rel="next" title="Pyside2封装爬虫程序">
+      Pyside2封装爬虫程序 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -370,7 +395,7 @@ Unicode 解码/编码/转换/时的错误</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BOOL%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">BOOL类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">常见错误类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">字符串格式化</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BOOL%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">BOOL类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">常见错误类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">字符串格式化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%8C%85%E8%AF%AD%E6%B3%95%EF%BC%88%E5%88%97%E8%A1%A8%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%85%83%E7%BB%84%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">*解包语法（列表、字符串、元组）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">数据容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">文件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -386,7 +411,7 @@ Unicode 解码/编码/转换/时的错误</li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -468,7 +493,7 @@ Unicode 解码/编码/转换/时的错误</li>
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">|  博客全站共27.1k字  </span>
+  <span class="post-count">|  博客全站共28.5k字  </span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
