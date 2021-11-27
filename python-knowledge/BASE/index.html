@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.alexation.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一些个知识点吧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础">
+<meta property="og:url" content="https://www.alexation.cn/python-knowledge/BASE/index.html">
+<meta property="og:site_name" content="Alexation">
+<meta property="og:description" content="一些个知识点吧">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-10T12:13:05.000Z">
+<meta property="article:modified_time" content="2021-11-27T08:18:25.100Z">
+<meta property="article:author" content="Alexation">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.alexation.cn/python-knowledge/BASE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python基础 | Alexation</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+<link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+	<a target="_blank" rel="noopener" href="https://github.com/Alexation/Alexation.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#9370DB; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+<header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Alexation</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-folder fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-cube fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-资源">
+
+    <a href="/resource" rel="section"><i class="fa fa-flask fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-测试">
+
+    <a href="/test/" rel="section"><i class="fa fa-sitemap fa-fw"></i>测试</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.alexation.cn/python-knowledge/BASE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.jpg">
+      <meta itemprop="name" content="Alexation">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alexation">
+    </span>
+      <header class="post-header">
+
+	
+
+        <h1 class="post-title" itemprop="name headline">
+          Python基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-10 20:13:05" itemprop="dateCreated datePublished" datetime="2021-11-10T20:13:05+08:00">2021-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-27 16:18:25" itemprop="dateModified" datetime="2021-11-27T16:18:25+08:00">2021-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E7%AE%97%E6%B3%95%E5%8F%8A%E6%8B%93%E5%B1%95/" itemprop="url" rel="index"><span itemprop="name">Python算法及拓展</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">一些个知识点吧</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="BOOL类型">BOOL类型</h4>
+<p>if判断，会判断if后面的bool类型是True还是Flase。</p>
+<ul>
+<li>数值类型除了0之外都是True。</li>
+<li>字符串除了空字符串之外都是True。</li>
+<li>对象除了空对象之外都是True</li>
+</ul>
+<h4 id="常见错误类型">常见错误类型</h4>
+<ul>
+<li>SyntaxError: unexpected EOF while parsing<br>
+语法错误，多了无法解析的符号，检查一下是否多了或者少了括号</li>
+<li>SyntaxError: invalid character in identifier<br>
+语法错误有无效标识符，检查一下中文符号</li>
+<li>IndexError: list index out of range<br>
+索引错误，超出索引范围，检查一下列表是否为空</li>
+<li>TypeError: must be str, not int<br>
+数据类型错误，该数据不是正确的数据类型，比如字符串和数字直接拼接，检查一下数据类型</li>
+<li>IndentationError: expected an indented block<br>
+缩进错误，检查一下代码的缩进是否正确</li>
+<li>KeyError: ‘fond’<br>
+键错误，字典中没有该的key对应的值，检查一下键名或者字典数据是否正确</li>
+<li>ValueError: substring not found<br>
+值错误，输入的数据类型跟要求的不符合</li>
+<li>NameError: name ‘a’ is not defined<br>
+未初始化对象，变量没有被定义</li>
+<li>AttributeError: ‘tuple’ object has no attribute ‘remove’<br>
+属性错误，该对象没有这个属性、方法，检查一下数据类型</li>
+<li>SystemExit<br>
+解释器请求退出，出现在exit()函数后</li>
+<li>IOError<br>
+输入/输出操作失败</li>
+<li>ImportError<br>
+导入模块/对象失败，检查一下模块是否能够正常使用</li>
+<li>UnicodeDecodeError/UnicodeEncodeError/UnicodeTranslateError<br>
+Unicode 解码/编码/转换/时的错误</li>
+</ul>
+<h4 id="字符串格式化">字符串格式化</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#对齐输出</span><br><span class="line">#左对齐 utf-8 万国码 </span><br><span class="line">In [5]: &#x27;&#123;a:&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[5]: &#x27;12.3      &#x27;</span><br><span class="line"></span><br><span class="line">#数字补x (填充右边, 宽度为10)</span><br><span class="line">In [6]: &#x27;&#123;a:0&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[6]: &#x27;12.3000000&#x27;</span><br><span class="line"></span><br><span class="line">#两边对齐...</span><br><span class="line">In [7]: &#x27;&#123;a:0^10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[7]: &#x27;00012.3000&#x27;</span><br><span class="line"></span><br><span class="line">#保留小数点后两位</span><br><span class="line">In [1]: &#x27;&#123;:.2f&#125;&#x27;.format(12.333) </span><br><span class="line">Out[1]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [2]: &#x27;&#123;a:.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[2]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [3]: &#x27;&#123;a:6.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[3]: &#x27; 12.33&#x27;</span><br></pre></td></tr></table></figure>
+<h4 id="解包语法（列表、字符串、元组）">*解包语法（列表、字符串、元组）</h4>
+<p>只要是序列都可以解包，解包出来的是元素，无类型，需要对其进行接收</p>
+<p>%s进行元素嵌入</p>
+<h4 id="数据容器">数据容器</h4>
+<ol>
+<li>字符串是一种不可变的有序的数据类型</li>
+<li>列表是一种有序的、可变的、数据容器</li>
+<li>列表中最好装同样格式的数据</li>
+<li>list关键字，可以用于强制转化其他序列为列表</li>
+<li>列表切片，顾首不顾尾（只要是序列就可以切片）</li>
+<li>元组的速度比列表更快，如果仅仅进行遍历，可以用元组</li>
+<li>元组”写保护“更加安全</li>
+<li>集合是可变的无序的不可重复的数据容器</li>
+<li>序列解包&quot;_&quot;舍弃变量，一定要一一对应</li>
+</ol>
+<p>列表推导式，列表里for</p>
+<h4 id="main"><strong>main</strong></h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># __name__ 魔法变量，输出的时代码运行的文件</span><br><span class="line"># __name__ 如果是从当前文件启动，输出的就是__main__</span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">	print(__name__)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+<div>
+      
+        
+
+
+      
+</div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021EXE/ele/" rel="prev" title="2021全国大学生电子设计竞赛F题">
+      <i class="fa fa-chevron-left"></i> 2021全国大学生电子设计竞赛F题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/pythonwebcatch/pythonwebcatch-pyside2/" rel="next" title="Pyside2封装爬虫程序">
+      Pyside2封装爬虫程序 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BOOL%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">BOOL类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">常见错误类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">字符串格式化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%8C%85%E8%AF%AD%E6%B3%95%EF%BC%88%E5%88%97%E8%A1%A8%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%85%83%E7%BB%84%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">*解包语法（列表、字符串、元组）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">数据容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#main"><span class="nav-number">6.</span> <span class="nav-text">main</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alexation"
+      src="/images/logo.jpg">
+  <p class="site-author-name" itemprop="name">Alexation</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/" title="GitHub → https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=820214971&site=qqq&menu=yes" title="Q-Q → https:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;820214971&amp;site&#x3D;qqq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>Q-Q</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.com/" title="Google → https:&#x2F;&#x2F;google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      おいしい！！！
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://tool.lu/" title="https:&#x2F;&#x2F;tool.lu&#x2F;" rel="noopener" target="_blank">开发工具o (￣▽￣)ｄ</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://bilibili.com/" title="http:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili（ ゜- ゜）つロ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alexation</span>
+</div>
+
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站访问量:<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv">
+    本站总访客量：<span id="busuanzi_value_site_uv"></span>人
+  </span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">|  博客全站共28.6k字  </span>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div style="width:300px;margin:0 auto; padding:20px 0;">
+
+<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" class="beian">ICP备案:鄂ICP备2021015974号</a> 
+
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42050202000665" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="https://gitee.com/Alexation/images/raw/master/img/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">鄂公网安备 42050202000665号</p></a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+<!--你好，很高兴认识你！-->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
+
+
