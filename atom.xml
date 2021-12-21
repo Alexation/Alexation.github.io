@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Alexationの博客</title>
+  <title>Alexation</title>
   
   
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
@@ -75,11 +75,11 @@
     <category term="可恶的电赛" scheme="https://www.alexation.cn/categories/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="竞赛" scheme="https://www.alexation.cn/tags/%E7%AB%9E%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
