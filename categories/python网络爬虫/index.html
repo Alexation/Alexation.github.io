@@ -30,6 +30,13 @@
     
     <style type="text/css">
         
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
     </style>
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
@@ -64,7 +71,8 @@
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -155,6 +163,7 @@
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -351,6 +360,7 @@
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -553,10 +563,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
-                <a href="/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/" title="运动！: 1">
+                <a href="/categories/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" title="可恶的电赛: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">运动！
+                            style="background-color: #F9EBEA;">可恶的电赛
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -571,11 +581,29 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
+                <a href="/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/" title="运动！: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">运动！
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Python%E7%AE%97%E6%B3%95%E5%8F%8A%E6%8B%93%E5%B1%95/" title="Python算法及拓展: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">Python算法及拓展
+                            style="background-color: #E8F8F5;">Python算法及拓展
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" title="python网络爬虫: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #FEF9E7;">python网络爬虫
+                        <span class="tag-length">10</span>
                     </span>
                 </a>
                 
@@ -583,7 +611,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/Web%E6%B8%97%E9%80%8F/" title="Web渗透: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">Web渗透
+                            style="background-color: #F8F9F9;">Web渗透
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -592,26 +620,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/Web%E5%89%8D%E7%AB%AF/" title="Web前端: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">Web前端
+                            style="background-color: #82E0AA;">Web前端
                         <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" title="python网络爬虫: 10">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F8F9F9;">python网络爬虫
-                        <span class="tag-length">10</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" title="可恶的电赛: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">可恶的电赛
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -847,9 +857,11 @@ Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而�
 Sleep延迟
 为了避免被反爬措施发现，我们在for循环里加入sleep函数
 引入库：
-12import timefrom random import randint
+import time
+from random import randint
+
 for循环下载img最后一行加入：
-1time.sle
+time.slee
                             
                         </div>
                         <div class="publish-info">
@@ -952,7 +964,8 @@ Tkinter：
 不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)
 那么，现在就来扩大抓取范围！
 记得基地址是：
-1http://www.qqbizhi.com/desk/meinv/
+http://www.qqbizhi.com/desk/meinv/
+
 我们来点开第二页，你会
                             
                         </div>
@@ -1010,7 +1023,8 @@ UA伪装
 
 First Blood！
 指定URL
-12345import requestsimport 
+import requests
+import pars
                             
                         </div>
                         <div class="publish-info">
@@ -1126,7 +1140,7 @@ URL（Universal Resource Locator）即统一资源定位符
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1149,7 +1163,7 @@ URL（Universal Resource Locator）即统一资源定位符
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1180,13 +1194,11 @@ URL（Universal Resource Locator）即统一资源定位符
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1283,6 +1295,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1294,16 +1307,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1313,16 +1326,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();

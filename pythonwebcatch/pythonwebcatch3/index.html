@@ -37,6 +37,13 @@ Tkinter：">
     
     <style type="text/css">
         
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
     </style>
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
@@ -71,7 +78,8 @@ Tkinter：">
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -162,6 +170,7 @@ Tkinter：">
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -358,6 +367,7 @@ Tkinter：">
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -638,7 +648,7 @@ Tkinter：">
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -686,7 +696,7 @@ Tkinter：">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        1.2k
                     </div>
                     
 
@@ -721,7 +731,9 @@ Tkinter：">
 <li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
 <li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 豆瓣源</span><br><span class="line">pip install pyside2 -i https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
+<pre><code># 豆瓣源
+pip install pyside2 -i https://pypi.douban.com/simple/
+</code></pre>
 <h3 id="利用QtDesigner进行布局规划">利用QtDesigner进行布局规划</h3>
 <p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
 <p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png" alt=""></p>
@@ -730,23 +742,133 @@ Tkinter：">
 <h3 id="对源程序进行重构">对源程序进行重构</h3>
 <p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
 <h4 id="pyside2自定义类例程">pyside2自定义类例程</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">class Wallpaper:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.wp.button</span><br><span class="line">        self.wp.textEdit</span><br><span class="line">        # 注意，刚刚设计的.ui保存至程序当前目录下</span><br><span class="line">        self.wp = QUiLoader().load(&#x27;main.ui&#x27;)</span><br><span class="line">        # xxxx是.ui中的button参数名称</span><br><span class="line">        self.wp.xxxx.clicked.connect(self.handleCalc)</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">		# button点击后运行函数</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">app = QApplication([])</span><br><span class="line">stats = Stats()</span><br><span class="line">stats.wp.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure>
+<pre><code>from PySide2.QtWidgets import QApplication, QMessageBox
+from PySide2.QtUiTools import QUiLoader
+
+class Wallpaper:
+    def __init__(self):
+        self.wp.button
+        self.wp.textEdit
+        # 注意，刚刚设计的.ui保存至程序当前目录下
+        self.wp = QUiLoader().load('main.ui')
+        # xxxx是.ui中的button参数名称
+        self.wp.xxxx.clicked.connect(self.handleCalc)
+
+    def handleCalc(self):
+		# button点击后运行函数
+		
+		
+app = QApplication([])
+stats = Stats()
+stats.wp.show()
+app.exec_()
+</code></pre>
 <h4 id="重构爬虫函数进行类封装">重构爬虫函数进行类封装</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">class Wallpaper:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">    	# sort即是选择类型</span><br><span class="line">    	self.sort = 0</span><br><span class="line">    	self.signal_1 = 2</span><br><span class="line">    	self.signal_2 = 0</span><br><span class="line">    	self.sorts_name = [&#x27;动漫&#x27;, &#x27;女生动漫&#x27;, &#x27;明日方舟&#x27;, &#x27;城市&#x27;, &#x27;简约&#x27;</span><br><span class="line">    , &#x27;科幻&#x27;, &#x27;繁星&#x27;, &#x27;英雄联盟&#x27;, &#x27;太空&#x27;, &#x27;航海王&#x27;, &#x27;天空&#x27;, &#x27;风景&#x27;]</span><br><span class="line">        self.ui = QUiLoader().load(&#x27;wallpaper.ui&#x27;)</span><br><span class="line">        self.ui.button.clicked.connect(self.handleCalc)</span><br><span class="line">        # 添加类型</span><br><span class="line">        self.ui.cb.addItems(self.sorts_name)</span><br><span class="line">		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span><br><span class="line">		# 打印抓取进度</span><br><span class="line">        self.ui.ms.text_print.connect(self.gui)</span><br><span class="line"></span><br><span class="line">    def selectionchange(self, i):</span><br><span class="line">    	# 获取当前类型选中序号i，0为起始  </span><br><span class="line">        self.sort = i</span><br><span class="line"></span><br><span class="line">    def handleCalc(self):</span><br><span class="line">    	# 对每个网址的最大页数分别赋值</span><br><span class="line">        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]</span><br><span class="line">		# 进行勾选框判断</span><br><span class="line">        if self.ui.check.isChecked():</span><br><span class="line">        # 停止或开始信号标记</span><br><span class="line">            self.signal_1 += 1</span><br><span class="line">            # 满足开始信号</span><br><span class="line">            if self.signal_1 % 2 == 1:</span><br><span class="line">            # 更改button名称</span><br><span class="line">                self.ui.button.setText(&#x27;停止&#x27;)</span><br><span class="line">                # 列表元素均为网址，在此插入，略</span><br><span class="line">                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]</span><br><span class="line">                base_url = sorts[self.sort]</span><br><span class="line">                # 对文件夹名称、路径分类化</span><br><span class="line">                fold_name = self.sorts_name[self.sort]</span><br><span class="line">                fold_path = self.sorts_name[self.sort] + &#x27;\\&#x27;</span><br><span class="line"></span><br><span class="line">				# &lt;insert&gt;</span><br><span class="line">				</span><br><span class="line">            if self.signal_1 % 2 == 0:</span><br><span class="line">                self.ui.button.setText(&#x27;开始&#x27;)</span><br><span class="line">        else:</span><br><span class="line">        	# 勾选框未勾选提示</span><br><span class="line">            msgBox1 = QMessageBox()</span><br><span class="line">            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)</span><br><span class="line">            msgBox1.setText(&#x27;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#x27;)</span><br><span class="line">            msgBox1.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">            msgBox1.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">            ret = msgBox1.exec_()</span><br><span class="line"></span><br><span class="line">    def gui(self, text):</span><br><span class="line">    	# 打印抓取进度</span><br><span class="line">        self.ui.infoBox.append(str(text))</span><br><span class="line">        # 让infoBox刷新至最新一条</span><br><span class="line">        self.ui.infoBox.ensureCursorVisible()</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line"># 可以更换自己的logo，保存在当前目录下</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br><span class="line">wallpaper_catch = Wallpaper()</span><br><span class="line">wallpaper_catch.wp.show()</span><br><span class="line"># 当最后一个线程结束时，程序关闭</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<pre><code>class Wallpaper:
+
+    def __init__(self):
+    	# sort即是选择类型
+    	self.sort = 0
+    	self.signal_1 = 2
+    	self.signal_2 = 0
+    	self.sorts_name = ['动漫', '女生动漫', '明日方舟', '城市', '简约'
+    , '科幻', '繁星', '英雄联盟', '太空', '航海王', '天空', '风景']
+        self.ui = QUiLoader().load('wallpaper.ui')
+        self.ui.button.clicked.connect(self.handleCalc)
+        # 添加类型
+        self.ui.cb.addItems(self.sorts_name)
+		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)
+		# 打印抓取进度
+        self.ui.ms.text_print.connect(self.gui)
+
+    def selectionchange(self, i):
+    	# 获取当前类型选中序号i，0为起始  
+        self.sort = i
+
+    def handleCalc(self):
+    	# 对每个网址的最大页数分别赋值
+        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]
+		# 进行勾选框判断
+        if self.ui.check.isChecked():
+        # 停止或开始信号标记
+            self.signal_1 += 1
+            # 满足开始信号
+            if self.signal_1 % 2 == 1:
+            # 更改button名称
+                self.ui.button.setText('停止')
+                # 列表元素均为网址，在此插入，略
+                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]
+                base_url = sorts[self.sort]
+                # 对文件夹名称、路径分类化
+                fold_name = self.sorts_name[self.sort]
+                fold_path = self.sorts_name[self.sort] + '\\'
+
+				# &lt;insert&gt;
+				
+            if self.signal_1 % 2 == 0:
+                self.ui.button.setText('开始')
+        else:
+        	# 勾选框未勾选提示
+            msgBox1 = QMessageBox()
+            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)
+            msgBox1.setText('记得勾选&quot;我已阅读《使用手册》&quot;哦~')
+            msgBox1.setStandardButtons(QMessageBox.Ok)
+            msgBox1.setDefaultButton(QMessageBox.Ok)
+            ret = msgBox1.exec_()
+
+    def gui(self, text):
+    	# 打印抓取进度
+        self.ui.infoBox.append(str(text))
+        # 让infoBox刷新至最新一条
+        self.ui.infoBox.ensureCursorVisible()
+        
+        
+app = QApplication(sys.argv)
+# 可以更换自己的logo，保存在当前目录下
+app.setWindowIcon(QIcon('logo.png'))
+wallpaper_catch = Wallpaper()
+wallpaper_catch.wp.show()
+# 当最后一个线程结束时，程序关闭
+sys.exit(app.exec_())
+</code></pre>
 <p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
 <p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from threading import Thread # 引入threading模块</span><br></pre></td></tr></table></figure>
+<pre><code>from threading import Thread # 引入threading模块
+</code></pre>
 <p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
 <p>因此我们创建Catch_Signal类，继承自QObject类：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Catch_Signals(QObject):</span><br><span class="line">    procedure = Signal(str)</span><br></pre></td></tr></table></figure>
+<pre><code>class Catch_Signals(QObject):
+    procedure = Signal(str)
+</code></pre>
 <p>在Wallpaper类中定义实例属性：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.wp.ms = Catch_Signals()</span><br><span class="line">self.wp.ms.procedure.connect(self.gui)</span><br></pre></td></tr></table></figure>
+<pre><code>        self.wp.ms = Catch_Signals()
+        self.wp.ms.procedure.connect(self.gui)
+</code></pre>
 <p>再在Wallpaper类中定义GUI绘制函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def gui(self, text):</span><br><span class="line">    self.wp.infoBox.append(str(text))</span><br><span class="line">    self.wp.infoBox.ensureCursorVisible()</span><br></pre></td></tr></table></figure>
+<pre><code>    def gui(self, text):
+        self.wp.infoBox.append(str(text))
+        self.wp.infoBox.ensureCursorVisible()
+</code></pre>
 <p>将爬虫程序放入子线程：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 插入&lt;insert&gt;处</span><br><span class="line">            thread = Thread(target=self.threadSend,</span><br><span class="line">                 args=(base_url, fold_name, fold_path))</span><br><span class="line">            thread.start()</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"># 定义子线程函数            </span><br><span class="line">def threadSend(self, base_url, fold_name, fold_path):</span><br><span class="line">    try:</span><br><span class="line">        # 爬虫函数略</span><br><span class="line">    except requests.URLRequired as e:</span><br><span class="line">        # 略</span><br></pre></td></tr></table></figure>
+<pre><code>				# 插入&lt;insert&gt;处
+                thread = Thread(target=self.threadSend,
+                     args=(base_url, fold_name, fold_path))
+                thread.start()
+                
+                
+    # 定义子线程函数            
+    def threadSend(self, base_url, fold_name, fold_path):
+        try:
+            # 爬虫函数略
+        except requests.URLRequired as e:
+            # 略
+</code></pre>
 <p>补充import：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QMessageBox</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line">from PySide2.QtCore import Signal, QObject</span><br></pre></td></tr></table></figure>
+<pre><code>from PySide2.QtWidgets import QApplication, QMessageBox
+from PySide2.QtUiTools import QUiLoader
+from PySide2.QtGui import QIcon
+from PySide2.QtCore import Signal, QObject
+</code></pre>
 <p>这样一来，主程序就不会卡顿了</p>
 
             </div>
@@ -940,9 +1062,11 @@ Tkinter：">
 Sleep延迟
 为了避免被反爬措施发现，我们在for循环里加入sleep函数
 引入库：
-12import timefrom random import randint
+import time
+from random import randint
+
 for循环下载img最后一行加入：
-1time.sle
+time.slee
                         
                     </div>
                     <div class="publish-info">
@@ -995,7 +1119,8 @@ for循环下载img最后一行加入：
 不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)
 那么，现在就来扩大抓取范围！
 记得基地址是：
-1http://www.qqbizhi.com/desk/meinv/
+http://www.qqbizhi.com/desk/meinv/
+
 我们来点开第二页，你会
                         
                     </div>
@@ -1168,21 +1293,10 @@ for循环下载img最后一行加入：
 </main>
 
 
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1205,7 +1319,7 @@ for循环下载img最后一行加入：
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1236,13 +1350,11 @@ for循环下载img最后一行加入：
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1339,6 +1451,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1350,16 +1463,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1369,16 +1482,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();

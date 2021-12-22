@@ -37,6 +37,13 @@
     
     <style type="text/css">
         
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
     </style>
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
@@ -71,7 +78,8 @@
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -162,6 +170,7 @@
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -358,6 +367,7 @@
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -638,7 +648,7 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -686,14 +696,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.4k
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        13 分
+                        10 分
                     </div>
                     
                 
@@ -744,19 +754,371 @@
 </ol>
 <h3 id="案例分析">案例分析</h3>
 <h4 id="网易云音乐">网易云音乐</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"># 音频接口</span><br><span class="line">outer = &#x27;https://music.163.com/song/media/outer/url?id=&#x27;</span><br><span class="line"># 目标网址</span><br><span class="line">url = &#x27;https://music.163.com/discover/toplist&#x27;</span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(url=url, headers=headers).text</span><br><span class="line">zip_data = re.findall(&#x27;&lt;li&gt;&lt;a href=&quot;/song\?id=(.*?)&quot;&gt;(.*?)&lt;/a&gt;&lt;/li&gt;&#x27;, response)</span><br><span class="line"></span><br><span class="line">for music_id, title in zip_data:</span><br><span class="line">    url_1 = outer + music_id</span><br><span class="line">    music_data = requests.get(url=url_1, headers=headers).content</span><br><span class="line">    # 写进二进制音频文件、重新命名，防止windows命名出现错误</span><br><span class="line">    title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">    with open(&#x27;music/&#x27; + title + &#x27;.mp3&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">        f.write(music_data)</span><br><span class="line">    print(f&#x27;正在保存：&#123;title&#125;&#x27;)</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import re
+# 音频接口
+outer = 'https://music.163.com/song/media/outer/url?id='
+# 目标网址
+url = 'https://music.163.com/discover/toplist'
+ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
+      'Gecko/20100101 Firefox/91.0')
+headers = &#123;'User-Agent': ua&#125;
+
+response = requests.get(url=url, headers=headers).text
+zip_data = re.findall('&lt;li&gt;&lt;a href=&quot;/song\?id=(.*?)&quot;&gt;(.*?)&lt;/a&gt;&lt;/li&gt;', response)
+
+for music_id, title in zip_data:
+    url_1 = outer + music_id
+    music_data = requests.get(url=url_1, headers=headers).content
+    # 写进二进制音频文件、重新命名，防止windows命名出现错误
+    title = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', title)
+    with open('music/' + title + '.mp3', mode='wb') as f:
+        f.write(music_data)
+    print(f'正在保存：&#123;title&#125;')
+</code></pre>
 <h4 id="抖音">抖音</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">search = input(&#x27;请输入要下载视频的网址：&#x27;)</span><br><span class="line"></span><br><span class="line">number = re.findall(&#x27;video/(.*?)\?&#x27;, search)[0]</span><br><span class="line"></span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">      &#x27;User-Agent&#x27;: ua,</span><br><span class="line">      &#x27;cookie&#x27;: &#x27;douyin.com; ttcid=b7a626c90e564eb0bb659e0e4ba487db14; ttwid=1%7C52mTFUoxPVW_9df0rfpHEzMp_dICJckDD7lx-UjhipQ%7C1635074322%7C93b5033df3bda1afba099ad422f4030a64f33cc9295d&#x27;</span><br><span class="line">                &#x27;cdb7476394533e362bda; _tea_utm_cache_6383=undefined; douyin.com; MONITOR_WEB_ID=4f6bf6d3-bf21-4a39-906e-62d1ff34bcce; _tea_utm_cache_1300=undefined; passport_csrf_toke&#x27;</span><br><span class="line">                &#x27;n_default=1c1079c67daf0137ceee83993cc08a48; passport_csrf_token=1c1079c67daf0137ceee83993cc08a48; s_v_web_id=verify_kv551chk_wYXkw22P_p2vT_4zAf_8MDb_moNWyeTfjiO5; odin_&#x27;</span><br><span class="line">                &#x27;tt=2932940e1d8dfc2b99bfef1efa8b84838a27f45094acbdb1592931825d28e6ff3173e201ba849537f5f028d446175cc54f21a25d3ec0091f016f70923c30d9c9; msToken=IZWl8guZh3lpYrLzPt0rniHHE9TX&#x27;</span><br><span class="line">                &#x27;rUaOKoa7JcoHePcXUeGZ54fe-xlUL7uluvtBEyY9gr7aQzlrl4DzQkDmgq4AEreVDtJZA7JKQ8JN0WvqKB2P9OvEk4N-; __ac_nonce=0617556590007a9264602; __ac_signature=_02B4Z6wo00f017jbM1QAAIDC55&#x27;</span><br><span class="line">                &#x27;jcjEt3H2O4-zfAAI9Mg6DqbughVHpI1fPKPtx0HieKJbh7UnfVCVD613M1gdnxdmR76Lk-EOgfFUFf6JBHF5nRBx7SWkoqnGITzqEBO7Z0TdCg2-vV9LcY01; tt_scid=x2nvkLZv85uYSPmDwD07EIoQM0aszPVbO8bJoQELi&#x27;</span><br><span class="line">                &#x27;MVHhYYM7LEOpcy3doX3B39cb9ca; msToken=wBfyGPyStektJtnk-lp9N39s-qB7vb7juQo6dvuNtdXkQwA59LHWCMnUfreDvxBzA2P6IvqyTWZiAPCYG4OTBtJz_X3NivdmLGCA3CZ1hb53bddZ_C2wdw==&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">web_url = f&#x27;https://www.douyin.com/video/&#123;number&#125;&#x27;</span><br><span class="line"></span><br><span class="line">response = requests.get(url=web_url, headers=headers)</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line">title = re.findall(&#x27;&lt;title data-react-helmet=&quot;true&quot;&gt;(.*?)&lt;/title&gt;&#x27;, response.text)[0]</span><br><span class="line">title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">href = re.findall(&#x27;src(.*?)vr%3D&#x27;, response.text)[2]</span><br><span class="line">video_url = requests.utils.unquote(href).replace(&#x27;&quot;:&quot;&#x27;, &#x27;https:&#x27;)</span><br><span class="line">video_content = requests.get(url=video_url).content</span><br><span class="line">with open(&#x27;video\\&#x27; + title + &#x27;.mp4&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">    f.write(video_content)</span><br><span class="line">    print(f&#x27;保存成功：&#123;title&#125;&#x27;)</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import re
+
+search = input('请输入要下载视频的网址：')
+
+number = re.findall('video/(.*?)\?', search)[0]
+
+ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
+      'Gecko/20100101 Firefox/91.0')
+
+headers = &#123;
+      'User-Agent': ua,
+      'cookie': 'douyin.com; ttcid=b7a626c90e564eb0bb659e0e4ba487db14; ttwid=1%7C52mTFUoxPVW_9df0rfpHEzMp_dICJckDD7lx-UjhipQ%7C1635074322%7C93b5033df3bda1afba099ad422f4030a64f33cc9295d'
+                'cdb7476394533e362bda; _tea_utm_cache_6383=undefined; douyin.com; MONITOR_WEB_ID=4f6bf6d3-bf21-4a39-906e-62d1ff34bcce; _tea_utm_cache_1300=undefined; passport_csrf_toke'
+                'n_default=1c1079c67daf0137ceee83993cc08a48; passport_csrf_token=1c1079c67daf0137ceee83993cc08a48; s_v_web_id=verify_kv551chk_wYXkw22P_p2vT_4zAf_8MDb_moNWyeTfjiO5; odin_'
+                'tt=2932940e1d8dfc2b99bfef1efa8b84838a27f45094acbdb1592931825d28e6ff3173e201ba849537f5f028d446175cc54f21a25d3ec0091f016f70923c30d9c9; msToken=IZWl8guZh3lpYrLzPt0rniHHE9TX'
+                'rUaOKoa7JcoHePcXUeGZ54fe-xlUL7uluvtBEyY9gr7aQzlrl4DzQkDmgq4AEreVDtJZA7JKQ8JN0WvqKB2P9OvEk4N-; __ac_nonce=0617556590007a9264602; __ac_signature=_02B4Z6wo00f017jbM1QAAIDC55'
+                'jcjEt3H2O4-zfAAI9Mg6DqbughVHpI1fPKPtx0HieKJbh7UnfVCVD613M1gdnxdmR76Lk-EOgfFUFf6JBHF5nRBx7SWkoqnGITzqEBO7Z0TdCg2-vV9LcY01; tt_scid=x2nvkLZv85uYSPmDwD07EIoQM0aszPVbO8bJoQELi'
+                'MVHhYYM7LEOpcy3doX3B39cb9ca; msToken=wBfyGPyStektJtnk-lp9N39s-qB7vb7juQo6dvuNtdXkQwA59LHWCMnUfreDvxBzA2P6IvqyTWZiAPCYG4OTBtJz_X3NivdmLGCA3CZ1hb53bddZ_C2wdw==',
+&#125;
+
+web_url = f'https://www.douyin.com/video/&#123;number&#125;'
+
+response = requests.get(url=web_url, headers=headers)
+response.encoding = response.apparent_encoding
+title = re.findall('&lt;title data-react-helmet=&quot;true&quot;&gt;(.*?)&lt;/title&gt;', response.text)[0]
+title = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', title)
+href = re.findall('src(.*?)vr%3D', response.text)[2]
+video_url = requests.utils.unquote(href).replace('&quot;:&quot;', 'https:')
+video_content = requests.get(url=video_url).content
+with open('video\\' + title + '.mp4', mode='wb') as f:
+    f.write(video_content)
+    print(f'保存成功：&#123;title&#125;')
+</code></pre>
 <h4 id="快手">快手</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">search = input(&#x27;请输入想搜索的关键词(下载前20个搜索视频）：&#x27;)</span><br><span class="line"></span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">      &#x27;User-Agent&#x27;: ua,</span><br><span class="line">      &#x27;accept&#x27;: &#x27;*/*&#x27;,</span><br><span class="line">      &#x27;content-type&#x27;: &#x27;application/json&#x27;,</span><br><span class="line">      &#x27;Cookie&#x27;: &#x27;kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_7570663ff3a97b83e07a3fbae14dc4c6; ktrace-context=1|MS43NjQ1ODM2OTgyODY2OTgyLjIzNDQ5Njc4LjE2MzUwNzcyMzUzMTUuNDU5NTkw|MS43NjQ1ODM2OTgyODY2OTgyLjEzNTMyMzk4LjE2MzUwNzcyMzUzMTUuNDU5NTkx|0|graphql-server|webservice|false|NA&#x27;,</span><br><span class="line">      &#x27;Host&#x27;: &#x27;www.kuaishou.com&#x27;,</span><br><span class="line">      &#x27;Origin&#x27;: &#x27;https://www.kuaishou.com&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">web_url = &#x27;https://www.kuaishou.com/graphql&#x27;</span><br><span class="line">data = &#123;</span><br><span class="line">      &#x27;operationName&#x27;: &#x27;visionSearchPhoto&#x27;,</span><br><span class="line">      &#x27;query&#x27;: &#x27;...此处省略，请自行前往复制...&#x27;,</span><br><span class="line">      &#x27;variables&#x27;: &#123;&#x27;keyword&#x27;: search, &#x27;pcursor&#x27;: &quot;&quot;, &#x27;page&#x27;: &quot;search&quot;&#125;</span><br><span class="line">&#125;</span><br><span class="line">data = json.dumps(data)</span><br><span class="line">response = requests.post(url=web_url, headers=headers, data=data)</span><br><span class="line">video_list = response.json()[&#x27;data&#x27;][&#x27;visionSearchPhoto&#x27;][&#x27;feeds&#x27;]</span><br><span class="line"></span><br><span class="line">for feed in video_list:</span><br><span class="line">      video_name = feed[&#x27;author&#x27;][&#x27;name&#x27;]</span><br><span class="line">      video_name = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, video_name)</span><br><span class="line">      video_content = requests.get(url=feed[&#x27;photo&#x27;][&#x27;photoUrl&#x27;]).content</span><br><span class="line">      with open(&#x27;video\\&#x27; + video_name + &#x27;.mp4&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(video_content)</span><br><span class="line">            print(f&#x27;保存成功：&#123;video_name&#125;&#x27;)</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import re
+import json
+
+search = input('请输入想搜索的关键词(下载前20个搜索视频）：')
+
+ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
+      'Gecko/20100101 Firefox/91.0')
+
+headers = &#123;
+      'User-Agent': ua,
+      'accept': '*/*',
+      'content-type': 'application/json',
+      'Cookie': 'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_7570663ff3a97b83e07a3fbae14dc4c6; ktrace-context=1|MS43NjQ1ODM2OTgyODY2OTgyLjIzNDQ5Njc4LjE2MzUwNzcyMzUzMTUuNDU5NTkw|MS43NjQ1ODM2OTgyODY2OTgyLjEzNTMyMzk4LjE2MzUwNzcyMzUzMTUuNDU5NTkx|0|graphql-server|webservice|false|NA',
+      'Host': 'www.kuaishou.com',
+      'Origin': 'https://www.kuaishou.com'
+&#125;
+
+web_url = 'https://www.kuaishou.com/graphql'
+data = &#123;
+      'operationName': 'visionSearchPhoto',
+      'query': '...此处省略，请自行前往复制...',
+      'variables': &#123;'keyword': search, 'pcursor': &quot;&quot;, 'page': &quot;search&quot;&#125;
+&#125;
+data = json.dumps(data)
+response = requests.post(url=web_url, headers=headers, data=data)
+video_list = response.json()['data']['visionSearchPhoto']['feeds']
+
+for feed in video_list:
+      video_name = feed['author']['name']
+      video_name = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', video_name)
+      video_content = requests.get(url=feed['photo']['photoUrl']).content
+      with open('video\\' + video_name + '.mp4', mode='wb') as f:
+            f.write(video_content)
+            print(f'保存成功：&#123;video_name&#125;')
+</code></pre>
 <h4 id="酷狗">酷狗</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import os</span><br><span class="line">import parsel</span><br><span class="line"></span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">def get_response(html_url):</span><br><span class="line">    response = requests.get(url=html_url, headers=headers)</span><br><span class="line">    return response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def save(music_url, name):</span><br><span class="line">    filename = &#x27;music_kugou\\&#x27;</span><br><span class="line">    if not os.path.exists(filename):</span><br><span class="line">        os.mkdir(filename)</span><br><span class="line">    if music_url:</span><br><span class="line">        name = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, name)</span><br><span class="line">        music_data = get_response(html_url=music_url).content</span><br><span class="line">        with open(filename + name + &#x27;.mp3&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(music_data)</span><br><span class="line">            print(&#x27;save successfully&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_music_id(html_url):</span><br><span class="line">    # 获取hash and id</span><br><span class="line">    html_data = get_response(html_url).text</span><br><span class="line">    # 解析数据</span><br><span class="line">    Hash_list = re.findall(&#x27;&quot;Hash&quot;:&quot;(.*?)&quot;&#x27;, html_data)</span><br><span class="line">    album_ids = re.findall(&#x27;&quot;album_id&quot;:(.*?),&#x27;, html_data)</span><br><span class="line">    zip_data = zip(Hash_list, album_ids)</span><br><span class="line">    return zip_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_music_info(Hash, album_id):</span><br><span class="line">    index_url = &#x27;https://wwwapi.kugou.com/yy/index.php&#x27;</span><br><span class="line">    data = &#123;</span><br><span class="line">        &#x27;r&#x27;: &#x27;play/getdata&#x27;,</span><br><span class="line">        # &#x27;callback&#x27;: &#x27;jQuery19107794429506209624_1634785491657&#x27;,</span><br><span class="line">        &#x27;hash&#x27;: Hash,</span><br><span class="line">        &#x27;dfid&#x27;: &#x27;0jIgIH1HGyiA4IQzep0QDuiB&#x27;,</span><br><span class="line">        &#x27;appid&#x27;: &#x27;1014&#x27;,</span><br><span class="line">        &#x27;mid&#x27;: &#x27;cea2eaa583d6273aeecef6a87475019b&#x27;,</span><br><span class="line">        &#x27;platid&#x27;: &#x27;4&#x27;,</span><br><span class="line">        &#x27;album_id&#x27;: album_id,</span><br><span class="line">        &#x27;_&#x27;: &#x27;1634785491658&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    response = requests.get(url=index_url, params=data, headers=headers)</span><br><span class="line">    # print(response.json())</span><br><span class="line">    title = response.json()[&#x27;data&#x27;][&#x27;audio_name&#x27;]</span><br><span class="line">    play_url = response.json()[&#x27;data&#x27;][&#x27;play_url&#x27;]</span><br><span class="line">    save(music_url=play_url, name=title)</span><br><span class="line">    print(title, play_url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_list_url(html_url):</span><br><span class="line">    html_data = get_response(html_url=html_url).text</span><br><span class="line">    selector = parsel.Selector(html_data)</span><br><span class="line">    list_name = selector.css(&#x27;.pc_rank_sidebar li a::attr(title)&#x27;).getall()</span><br><span class="line">    list_url_each = selector.css(&#x27;.pc_rank_sidebar li a::attr(href)&#x27;).getall()</span><br><span class="line">    # list_info = re.findall(&#x27;&lt;a title=&quot;(.*?)&quot; hidefocus=&quot;true&quot; href=&quot;(.*?)&quot;&#x27;, html_data)</span><br><span class="line">    # print(html_data)</span><br><span class="line">    list_data = zip(list_name, list_url_each)</span><br><span class="line"></span><br><span class="line">    return list_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main(list_url):</span><br><span class="line">    list_data = get_list_url(html_url=list_url)</span><br><span class="line">    for list_name, list_url in list_data:</span><br><span class="line">        print(&#x27;正在爬取&#x27;, list_name)</span><br><span class="line">        get_music_id(html_url=list_url)</span><br><span class="line">        zip_data = get_music_id(html_url=list_url)</span><br><span class="line">        for hash, album_id in zip_data:</span><br><span class="line">            get_music_info(Hash=hash, album_id=album_id)</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    list_url = &#x27;https://www.kugou.com/yy/rank/home/1-8888.html?from=rank&#x27;</span><br><span class="line">    main(list_url)</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import re
+import os
+import parsel
+
+ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
+      'Gecko/20100101 Firefox/91.0')
+headers = &#123;'User-Agent': ua&#125;
+
+def get_response(html_url):
+    response = requests.get(url=html_url, headers=headers)
+    return response
+
+
+def save(music_url, name):
+    filename = 'music_kugou\\'
+    if not os.path.exists(filename):
+        os.mkdir(filename)
+    if music_url:
+        name = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', name)
+        music_data = get_response(html_url=music_url).content
+        with open(filename + name + '.mp3', mode='wb') as f:
+            f.write(music_data)
+            print('save successfully')
+
+
+def get_music_id(html_url):
+    # 获取hash and id
+    html_data = get_response(html_url).text
+    # 解析数据
+    Hash_list = re.findall('&quot;Hash&quot;:&quot;(.*?)&quot;', html_data)
+    album_ids = re.findall('&quot;album_id&quot;:(.*?),', html_data)
+    zip_data = zip(Hash_list, album_ids)
+    return zip_data
+
+
+def get_music_info(Hash, album_id):
+    index_url = 'https://wwwapi.kugou.com/yy/index.php'
+    data = &#123;
+        'r': 'play/getdata',
+        # 'callback': 'jQuery19107794429506209624_1634785491657',
+        'hash': Hash,
+        'dfid': '0jIgIH1HGyiA4IQzep0QDuiB',
+        'appid': '1014',
+        'mid': 'cea2eaa583d6273aeecef6a87475019b',
+        'platid': '4',
+        'album_id': album_id,
+        '_': '1634785491658'
+    &#125;
+    response = requests.get(url=index_url, params=data, headers=headers)
+    # print(response.json())
+    title = response.json()['data']['audio_name']
+    play_url = response.json()['data']['play_url']
+    save(music_url=play_url, name=title)
+    print(title, play_url)
+
+
+def get_list_url(html_url):
+    html_data = get_response(html_url=html_url).text
+    selector = parsel.Selector(html_data)
+    list_name = selector.css('.pc_rank_sidebar li a::attr(title)').getall()
+    list_url_each = selector.css('.pc_rank_sidebar li a::attr(href)').getall()
+    # list_info = re.findall('&lt;a title=&quot;(.*?)&quot; hidefocus=&quot;true&quot; href=&quot;(.*?)&quot;', html_data)
+    # print(html_data)
+    list_data = zip(list_name, list_url_each)
+
+    return list_data
+
+
+def main(list_url):
+    list_data = get_list_url(html_url=list_url)
+    for list_name, list_url in list_data:
+        print('正在爬取', list_name)
+        get_music_id(html_url=list_url)
+        zip_data = get_music_id(html_url=list_url)
+        for hash, album_id in zip_data:
+            get_music_info(Hash=hash, album_id=album_id)
+            
+            
+if __name__ == '__main__':
+    list_url = 'https://www.kugou.com/yy/rank/home/1-8888.html?from=rank'
+    main(list_url)
+</code></pre>
 <h4 id="热门表情包">热门表情包</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">ua = (&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">      &#x27;Gecko/20100101 Firefox/91.0&#x27;)</span><br><span class="line">headers = &#123;&#x27;User-Agent&#x27;: ua&#125;</span><br><span class="line"></span><br><span class="line">for page in range(1, 201):</span><br><span class="line">    print(f&#x27;-------正在爬取第&#123;page&#125;页--------&#x27;)</span><br><span class="line">    url = f&#x27;https://www.fabiaoqing.com/biaoqing/lists/page/&#123;page&#125;.html&#x27;</span><br><span class="line">    response = requests.get(url=url, headers=headers).text</span><br><span class="line"></span><br><span class="line">    images = re.findall(&#x27;&lt;img class=&quot;ui image lazy&quot; data-original=&quot;(.*?)&quot;&#x27;, response)</span><br><span class="line">    titles = re.findall(&#x27;&lt;a href=&quot;.*?&quot; title=&quot;(.*?)&quot;&gt;&#x27;, response)</span><br><span class="line"></span><br><span class="line">    for img_url, title in zip(images, titles):</span><br><span class="line">        # Windows里面文件命名有一定规则</span><br><span class="line">        title = re.sub(r&#x27;[/\\:*?&quot;&lt;&gt;|]&#x27;, &#x27;_&#x27;, title)</span><br><span class="line">        if len(title) &gt; 50:</span><br><span class="line">            title = title[:50]</span><br><span class="line">        # 提取图片尾缀</span><br><span class="line">        suffix = img_url.split(&#x27;.&#x27;)[-1]</span><br><span class="line">        # 图片二进制数据</span><br><span class="line">        img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line">        with open(f&#x27;img/&#123;title&#125;.&#123;suffix&#125;&#x27;, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(img_data)</span><br><span class="line">        print(f&#x27;正在保存：&#123;title&#125;&#x27;)</span><br><span class="line">        </span><br><span class="line"># 针对速度过慢的问题：</span><br><span class="line"># 1. 多线程、多进程、协程</span><br><span class="line"># 2. 通过分布式实现，大量数据下载</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import re
+
+ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
+      'Gecko/20100101 Firefox/91.0')
+headers = &#123;'User-Agent': ua&#125;
+
+for page in range(1, 201):
+    print(f'-------正在爬取第&#123;page&#125;页--------')
+    url = f'https://www.fabiaoqing.com/biaoqing/lists/page/&#123;page&#125;.html'
+    response = requests.get(url=url, headers=headers).text
+
+    images = re.findall('&lt;img class=&quot;ui image lazy&quot; data-original=&quot;(.*?)&quot;', response)
+    titles = re.findall('&lt;a href=&quot;.*?&quot; title=&quot;(.*?)&quot;&gt;', response)
+
+    for img_url, title in zip(images, titles):
+        # Windows里面文件命名有一定规则
+        title = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', title)
+        if len(title) &gt; 50:
+            title = title[:50]
+        # 提取图片尾缀
+        suffix = img_url.split('.')[-1]
+        # 图片二进制数据
+        img_data = requests.get(url=img_url, headers=headers).content
+        with open(f'img/&#123;title&#125;.&#123;suffix&#125;', mode='wb') as f:
+            f.write(img_data)
+        print(f'正在保存：&#123;title&#125;')
+        
+# 针对速度过慢的问题：
+# 1. 多线程、多进程、协程
+# 2. 通过分布式实现，大量数据下载
+</code></pre>
 <h4 id="京东">京东</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from selenium import webdriver</span><br><span class="line">import csv</span><br><span class="line">search = input(&#x27;请输入你要搜索的关键字：&#x27;)</span><br><span class="line"></span><br><span class="line">f = open(f&#x27;&#123;search&#125;数据_京东.csv&#x27;, mode=&#x27;a&#x27;, encoding=&#x27;utf-8-sig&#x27;, newline=&#x27;&#x27;)</span><br><span class="line">csv_writer = csv.DictWriter(f, fieldnames=[&#x27;标题&#x27;, &#x27;价格&#x27;, &#x27;店铺&#x27;, &#x27;评论&#x27;, &#x27;链接&#x27;])</span><br><span class="line">csv_writer.writeheader()</span><br><span class="line"></span><br><span class="line">def drop_down():</span><br><span class="line">    for x in range(1, 12, 2):  # 1 3 5 7 9 在不断下拉的过程中，页面高度也会变化</span><br><span class="line">        time.sleep(1)</span><br><span class="line">        j = x / 9  # 1/12 3/12 5/12 7/12</span><br><span class="line">        js = &#x27;document.documentElement.scrollTop = document.documentElement.scrollHeight * %f&#x27; % j</span><br><span class="line">        driver.execute_script(js)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = &#x27;https://www.jd.com/&#x27;</span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(url)</span><br><span class="line"></span><br><span class="line">driver.find_element_by_xpath(&#x27;//*[@id=&quot;key&quot;]&#x27;).send_keys(search)</span><br><span class="line">driver.find_element_by_xpath(&#x27;//*[@id=&quot;search&quot;]/div/div[2]/button&#x27;).click()</span><br><span class="line">driver.implicitly_wait(10)</span><br><span class="line">drop_down()</span><br><span class="line"></span><br><span class="line">lis = driver.find_elements_by_css_selector(&#x27;.gl-item&#x27;)</span><br><span class="line">for li in lis:</span><br><span class="line">    price = li.find_element_by_css_selector(&#x27;.gl-warp .p-price strong i&#x27;).text</span><br><span class="line">    name = li.find_element_by_css_selector(&#x27;.gl-item .p-name em&#x27;).text</span><br><span class="line"></span><br><span class="line">    shop_name = li.find_element_by_css_selector(&#x27;.p-shop .J_im_icon a&#x27;).text</span><br><span class="line">    comment = li.find_element_by_css_selector(&#x27;.p-commit strong&#x27;).text</span><br><span class="line">    url = li.find_element_by_css_selector(&#x27;.p-img a&#x27;).get_attribute(&#x27;href&#x27;)</span><br><span class="line">    dit = &#123;</span><br><span class="line">        &#x27;价格&#x27;: price,</span><br><span class="line">        &#x27;标题&#x27;: name,</span><br><span class="line">        &#x27;店铺&#x27;: shop_name,</span><br><span class="line">        &#x27;评论&#x27;: comment,</span><br><span class="line">        &#x27;链接&#x27;: url,</span><br><span class="line">    &#125;</span><br><span class="line">    csv_writer.writerow(dit)</span><br><span class="line">print(&#x27;保存完成&#x27;)</span><br></pre></td></tr></table></figure>
+<pre><code>import time
+from selenium import webdriver
+import csv
+search = input('请输入你要搜索的关键字：')
+
+f = open(f'&#123;search&#125;数据_京东.csv', mode='a', encoding='utf-8-sig', newline='')
+csv_writer = csv.DictWriter(f, fieldnames=['标题', '价格', '店铺', '评论', '链接'])
+csv_writer.writeheader()
+
+def drop_down():
+    for x in range(1, 12, 2):  # 1 3 5 7 9 在不断下拉的过程中，页面高度也会变化
+        time.sleep(1)
+        j = x / 9  # 1/12 3/12 5/12 7/12
+        js = 'document.documentElement.scrollTop = document.documentElement.scrollHeight * %f' % j
+        driver.execute_script(js)
+
+
+url = 'https://www.jd.com/'
+
+driver = webdriver.Chrome()
+driver.get(url)
+
+driver.find_element_by_xpath('//*[@id=&quot;key&quot;]').send_keys(search)
+driver.find_element_by_xpath('//*[@id=&quot;search&quot;]/div/div[2]/button').click()
+driver.implicitly_wait(10)
+drop_down()
+
+lis = driver.find_elements_by_css_selector('.gl-item')
+for li in lis:
+    price = li.find_element_by_css_selector('.gl-warp .p-price strong i').text
+    name = li.find_element_by_css_selector('.gl-item .p-name em').text
+
+    shop_name = li.find_element_by_css_selector('.p-shop .J_im_icon a').text
+    comment = li.find_element_by_css_selector('.p-commit strong').text
+    url = li.find_element_by_css_selector('.p-img a').get_attribute('href')
+    dit = &#123;
+        '价格': price,
+        '标题': name,
+        '店铺': shop_name,
+        '评论': comment,
+        '链接': url,
+    &#125;
+    csv_writer.writerow(dit)
+print('保存完成')
+</code></pre>
 <h4 id="唯品会">唯品会</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import csv</span><br><span class="line">search = input(&#x27;请输入要查找的关键字：&#x27;)</span><br><span class="line"></span><br><span class="line">url = &#x27;https://mapi.vip.com/vips-mobile/rest/shopping/pc/search/product/rank&#x27;</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    &#x27;user-agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple&#x27;</span><br><span class="line">    &#x27;WebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30&#x27;,</span><br><span class="line">    &#x27;referer&#x27;: &#x27;https://category.vip.com/&#x27;,</span><br><span class="line">&#125;</span><br><span class="line">data = &#123;</span><br><span class="line">    # &#x27;callback&#x27;: &#x27;getMerchandiseIds&#x27;,</span><br><span class="line">    &#x27;app_name&#x27;: &#x27;shop_pc&#x27;,</span><br><span class="line">    &#x27;app_version&#x27;: &#x27;4.0&#x27;,</span><br><span class="line">    &#x27;warehouse&#x27;: &#x27;VIP_NH&#x27;,</span><br><span class="line">    &#x27;fdc_area_id&#x27;: &#x27;104104101&#x27;,</span><br><span class="line">    &#x27;client&#x27;: &#x27;pc&#x27;,</span><br><span class="line">    &#x27;mobile_platform&#x27;: &#x27;1&#x27;,</span><br><span class="line">    &#x27;province_id&#x27;: &#x27;104104&#x27;,</span><br><span class="line">    &#x27;api_key&#x27;: &#x27;70f71280d5d547b2a7bb370a529aeea1&#x27;,</span><br><span class="line">    &#x27;user_id&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;mars_cid&#x27;: &#x27;1635209143189_efd586d905629bb970641912bb5a11f2&#x27;,</span><br><span class="line">    &#x27;wap_consumer&#x27;: &#x27;a&#x27;,</span><br><span class="line">    &#x27;standby_id&#x27;: &#x27;nature&#x27;,</span><br><span class="line">    &#x27;keyword&#x27;: search,</span><br><span class="line">    &#x27;lv3CatIds&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;lv2CatIds&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;lv1CatIds&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;brandStoreSns&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;props&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;priceMin&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;priceMax&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;vipService&#x27;: &#x27;&#x27;,</span><br><span class="line">    &#x27;sort&#x27;: &#x27;0&#x27;,</span><br><span class="line">    &#x27;pageOffset&#x27;: &#x27;0&#x27;,</span><br><span class="line">    &#x27;channelId&#x27;: &#x27;1&#x27;,</span><br><span class="line">    &#x27;gPlatform&#x27;: &#x27;PC&#x27;,</span><br><span class="line">    &#x27;batchSize&#x27;: &#x27;120&#x27;,</span><br><span class="line">    &#x27;_&#x27;: &#x27;1635209201065&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def get_shop_info(shop_id):</span><br><span class="line">    shop_info_url = &#x27;https://mapi.vip.com/vips-mobile/rest/shopping/pc/product/module/list/v2&#x27;</span><br><span class="line">    params = &#123;</span><br><span class="line">        &#x27;app_name&#x27;: &#x27;shop_pc&#x27;,</span><br><span class="line">        &#x27;app_version&#x27;: &#x27;4.0&#x27;,</span><br><span class="line">        &#x27;warehouse&#x27;: &#x27;VIP_NH&#x27;,</span><br><span class="line">        &#x27;fdc_area_id&#x27;: &#x27;104104101&#x27;,</span><br><span class="line">        &#x27;client&#x27;: &#x27;pc&#x27;,</span><br><span class="line">        &#x27;mobile_platform&#x27;: &#x27;1&#x27;,</span><br><span class="line">        &#x27;province_id&#x27;: &#x27;104104&#x27;,</span><br><span class="line">        &#x27;api_key&#x27;: &#x27;70f71280d5d547b2a7bb370a529aeea1&#x27;,</span><br><span class="line">        &#x27;user_id&#x27;: &#x27;&#x27;,</span><br><span class="line">        &#x27;mars_cid&#x27;: &#x27;1635209143189_efd586d905629bb970641912bb5a11f2&#x27;,</span><br><span class="line">        &#x27;wap_consumer&#x27;: &#x27;a&#x27;,</span><br><span class="line">        &#x27;productIds&#x27;: shop_id,</span><br><span class="line">        &#x27;scene&#x27;: &#x27;search&#x27;,</span><br><span class="line">        &#x27;standby_id&#x27;: &#x27;nature&#x27;,</span><br><span class="line">        &#x27;extParams&#x27;: &#x27;&#123;&quot;stdSizeVids&quot;: &quot;&quot;, &quot;preheatTipsVer&quot;: &quot;3&quot;, &quot;couponVer&quot;: &quot;v2&quot;, &quot;exclusivePrice&quot;: &quot;1&quot;, &quot;iconSpec&quot;: &quot;2x&quot;,&quot;ic2label&quot;: 1&#125;&#x27;,</span><br><span class="line">        &#x27;context&#x27;: &#x27;&#x27;,</span><br><span class="line">        &#x27;_&#x27;: &#x27;1635209201068&#x27;,</span><br><span class="line">    &#125;</span><br><span class="line">    response = requests.get(url=shop_info_url, params=params, headers=headers)</span><br><span class="line">    shop_info_list = response.json()[&#x27;data&#x27;][&#x27;products&#x27;]</span><br><span class="line">    for index in shop_info_list:</span><br><span class="line">        attrs = &#x27;        &#x27;.join([j[&#x27;name&#x27;] + &#x27;:&#x27; + j[&#x27;value&#x27;] for j in index[&#x27;attrs&#x27;]])</span><br><span class="line">        href = f&#x27;https://detail.vip.com/detail-&#123;index[&quot;brandId&quot;]&#125;-&#123;index[&quot;productId&quot;]&#125;.html&#x27;</span><br><span class="line">        dit = &#123;</span><br><span class="line">            &#x27;标题&#x27;: index[&#x27;title&#x27;],</span><br><span class="line">            &#x27;商品名称&#x27;: index[&#x27;brandShowName&#x27;],</span><br><span class="line">            &#x27;商品属性&#x27;: attrs,</span><br><span class="line">            &#x27;原价&#x27;: index[&#x27;price&#x27;][&#x27;marketPrice&#x27;],</span><br><span class="line">            &#x27;折扣&#x27;: index[&#x27;price&#x27;][&#x27;saleDiscount&#x27;],</span><br><span class="line">            &#x27;售价&#x27;: index[&#x27;price&#x27;][&#x27;salePrice&#x27;],</span><br><span class="line">            &#x27;详情页&#x27;: href,</span><br><span class="line">        &#125;</span><br><span class="line">        csv_writer.writerow(dit)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = open(f&#x27;&#123;search&#125;数据_唯品会.csv&#x27;, mode=&#x27;a&#x27;, encoding=&#x27;utf-8-sig&#x27;, newline=&#x27;&#x27;)</span><br><span class="line">csv_writer = csv.DictWriter(f, fieldnames=[</span><br><span class="line">    &#x27;标题&#x27;,</span><br><span class="line">    &#x27;商品名称&#x27;,</span><br><span class="line">    &#x27;商品属性&#x27;,</span><br><span class="line">    &#x27;原价&#x27;,</span><br><span class="line">    &#x27;折扣&#x27;,</span><br><span class="line">    &#x27;售价&#x27;,</span><br><span class="line">    &#x27;详情页&#x27;,</span><br><span class="line">])</span><br><span class="line">csv_writer.writeheader()  # 写入表头</span><br><span class="line"></span><br><span class="line">response = requests.get(url=url, params=data, headers=headers)</span><br><span class="line"></span><br><span class="line">products = response.json()[&#x27;data&#x27;][&#x27;products&#x27;]</span><br><span class="line"></span><br><span class="line">pid_list = [i[&#x27;pid&#x27;] for i in products]</span><br><span class="line"></span><br><span class="line">string_1 = &#x27;,&#x27;.join(pid_list[0:50])</span><br><span class="line">string_2 = &#x27;,&#x27;.join(pid_list[50:100])</span><br><span class="line">string_3 = &#x27;,&#x27;.join(pid_list[100:])</span><br><span class="line"></span><br><span class="line">get_shop_info(string_1)</span><br><span class="line">get_shop_info(string_2)</span><br><span class="line">get_shop_info(string_3)</span><br><span class="line">print(&#x27;保存成功&#x27;)</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import csv
+search = input('请输入要查找的关键字：')
+
+url = 'https://mapi.vip.com/vips-mobile/rest/shopping/pc/search/product/rank'
+
+headers = &#123;
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple'
+    'WebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30',
+    'referer': 'https://category.vip.com/',
+&#125;
+data = &#123;
+    # 'callback': 'getMerchandiseIds',
+    'app_name': 'shop_pc',
+    'app_version': '4.0',
+    'warehouse': 'VIP_NH',
+    'fdc_area_id': '104104101',
+    'client': 'pc',
+    'mobile_platform': '1',
+    'province_id': '104104',
+    'api_key': '70f71280d5d547b2a7bb370a529aeea1',
+    'user_id': '',
+    'mars_cid': '1635209143189_efd586d905629bb970641912bb5a11f2',
+    'wap_consumer': 'a',
+    'standby_id': 'nature',
+    'keyword': search,
+    'lv3CatIds': '',
+    'lv2CatIds': '',
+    'lv1CatIds': '',
+    'brandStoreSns': '',
+    'props': '',
+    'priceMin': '',
+    'priceMax': '',
+    'vipService': '',
+    'sort': '0',
+    'pageOffset': '0',
+    'channelId': '1',
+    'gPlatform': 'PC',
+    'batchSize': '120',
+    '_': '1635209201065',
+&#125;
+
+def get_shop_info(shop_id):
+    shop_info_url = 'https://mapi.vip.com/vips-mobile/rest/shopping/pc/product/module/list/v2'
+    params = &#123;
+        'app_name': 'shop_pc',
+        'app_version': '4.0',
+        'warehouse': 'VIP_NH',
+        'fdc_area_id': '104104101',
+        'client': 'pc',
+        'mobile_platform': '1',
+        'province_id': '104104',
+        'api_key': '70f71280d5d547b2a7bb370a529aeea1',
+        'user_id': '',
+        'mars_cid': '1635209143189_efd586d905629bb970641912bb5a11f2',
+        'wap_consumer': 'a',
+        'productIds': shop_id,
+        'scene': 'search',
+        'standby_id': 'nature',
+        'extParams': '&#123;&quot;stdSizeVids&quot;: &quot;&quot;, &quot;preheatTipsVer&quot;: &quot;3&quot;, &quot;couponVer&quot;: &quot;v2&quot;, &quot;exclusivePrice&quot;: &quot;1&quot;, &quot;iconSpec&quot;: &quot;2x&quot;,&quot;ic2label&quot;: 1&#125;',
+        'context': '',
+        '_': '1635209201068',
+    &#125;
+    response = requests.get(url=shop_info_url, params=params, headers=headers)
+    shop_info_list = response.json()['data']['products']
+    for index in shop_info_list:
+        attrs = '        '.join([j['name'] + ':' + j['value'] for j in index['attrs']])
+        href = f'https://detail.vip.com/detail-&#123;index[&quot;brandId&quot;]&#125;-&#123;index[&quot;productId&quot;]&#125;.html'
+        dit = &#123;
+            '标题': index['title'],
+            '商品名称': index['brandShowName'],
+            '商品属性': attrs,
+            '原价': index['price']['marketPrice'],
+            '折扣': index['price']['saleDiscount'],
+            '售价': index['price']['salePrice'],
+            '详情页': href,
+        &#125;
+        csv_writer.writerow(dit)
+
+
+f = open(f'&#123;search&#125;数据_唯品会.csv', mode='a', encoding='utf-8-sig', newline='')
+csv_writer = csv.DictWriter(f, fieldnames=[
+    '标题',
+    '商品名称',
+    '商品属性',
+    '原价',
+    '折扣',
+    '售价',
+    '详情页',
+])
+csv_writer.writeheader()  # 写入表头
+
+response = requests.get(url=url, params=data, headers=headers)
+
+products = response.json()['data']['products']
+
+pid_list = [i['pid'] for i in products]
+
+string_1 = ','.join(pid_list[0:50])
+string_2 = ','.join(pid_list[50:100])
+string_3 = ','.join(pid_list[100:])
+
+get_shop_info(string_1)
+get_shop_info(string_2)
+get_shop_info(string_3)
+print('保存成功')
+</code></pre>
 <p><font style="font-weight:700;color:#B399FF"><em>Pass占位…</em></font></p>
 
             </div>
@@ -1002,7 +1364,10 @@ xpath——使用场景：适合在html标签当中进行数据提取，路径�
                             程序 = 数据结构 + 算法计算机一秒能进行约10^7次运算
 时间复杂度：用来评估算法运行效率的一个式子
 O(1)、O(n)时间规模，保留量级。
-1234while n&gt;1:	print(n)	n = n//2# 时间复杂度记为O(l
+while n&gt;1:
+	print(n)
+	n = n//2
+# 时间复杂度记为O(lo
                         
                     </div>
                     <div class="publish-info">
@@ -1174,21 +1539,10 @@ O(1)、O(n)时间规模，保留量级。
 </main>
 
 
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1211,7 +1565,7 @@ O(1)、O(n)时间规模，保留量级。
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1242,13 +1596,11 @@ O(1)、O(n)时间规模，保留量级。
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1345,6 +1697,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1356,16 +1709,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1375,16 +1728,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();

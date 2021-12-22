@@ -39,6 +39,13 @@ SyntaxError: unexp">
     
     <style type="text/css">
         
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
     </style>
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
@@ -73,7 +80,8 @@ SyntaxError: unexp">
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -164,6 +172,7 @@ SyntaxError: unexp">
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -360,6 +369,7 @@ SyntaxError: unexp">
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -640,7 +650,7 @@ SyntaxError: unexp">
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -688,7 +698,7 @@ SyntaxError: unexp">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        787
+                        760
                     </div>
                     
 
@@ -749,7 +759,29 @@ SyntaxError: unexp">
 Unicode 解码/编码/转换/时的错误</li>
 </ul>
 <h4 id="字符串格式化">字符串格式化</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#对齐输出</span><br><span class="line">#左对齐 utf-8 万国码 </span><br><span class="line">In [5]: &#x27;&#123;a:&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[5]: &#x27;12.3      &#x27;</span><br><span class="line"></span><br><span class="line">#数字补x (填充右边, 宽度为10)</span><br><span class="line">In [6]: &#x27;&#123;a:0&lt;10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[6]: &#x27;12.3000000&#x27;</span><br><span class="line"></span><br><span class="line">#两边对齐...</span><br><span class="line">In [7]: &#x27;&#123;a:0^10&#125;&#x27;.format(a=12.3,b=13.44) </span><br><span class="line">Out[7]: &#x27;00012.3000&#x27;</span><br><span class="line"></span><br><span class="line">#保留小数点后两位</span><br><span class="line">In [1]: &#x27;&#123;:.2f&#125;&#x27;.format(12.333) </span><br><span class="line">Out[1]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [2]: &#x27;&#123;a:.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[2]: &#x27;12.33&#x27;</span><br><span class="line"></span><br><span class="line">In [3]: &#x27;&#123;a:6.2f&#125;&#x27;.format(a=12.333) </span><br><span class="line">Out[3]: &#x27; 12.33&#x27;</span><br></pre></td></tr></table></figure>
+<pre><code>#对齐输出
+#左对齐 utf-8 万国码 
+In [5]: '&#123;a:&lt;10&#125;'.format(a=12.3,b=13.44) 
+Out[5]: '12.3      '
+
+#数字补x (填充右边, 宽度为10)
+In [6]: '&#123;a:0&lt;10&#125;'.format(a=12.3,b=13.44) 
+Out[6]: '12.3000000'
+
+#两边对齐...
+In [7]: '&#123;a:0^10&#125;'.format(a=12.3,b=13.44) 
+Out[7]: '00012.3000'
+
+#保留小数点后两位
+In [1]: '&#123;:.2f&#125;'.format(12.333) 
+Out[1]: '12.33'
+
+In [2]: '&#123;a:.2f&#125;'.format(a=12.333) 
+Out[2]: '12.33'
+
+In [3]: '&#123;a:6.2f&#125;'.format(a=12.333) 
+Out[3]: ' 12.33'
+</code></pre>
 <h4 id="解包语法（列表、字符串、元组）">*解包语法（列表、字符串、元组）</h4>
 <p>只要是序列都可以解包，解包出来的是元素，无类型，需要对其进行接收</p>
 <p>%s进行元素嵌入</p>
@@ -767,7 +799,12 @@ Unicode 解码/编码/转换/时的错误</li>
 </ol>
 <p>列表推导式，列表里for</p>
 <h4 id="main"><strong>main</strong></h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># __name__ 魔法变量，输出的时代码运行的文件</span><br><span class="line"># __name__ 如果是从当前文件启动，输出的就是__main__</span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">	print(__name__)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code># __name__ 魔法变量，输出的时代码运行的文件
+# __name__ 如果是从当前文件启动，输出的就是__main__
+if __name__ == '__main__':
+	print(__name__)
+
+</code></pre>
 
             </div>
             <hr/>
@@ -1033,16 +1070,16 @@ Unicode 解码/编码/转换/时的错误</li>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
                     <a href="/tags/%E7%AB%9E%E8%B5%9B/" target="_blank">
                         <span class="chip bg-color">竞赛</span>
                     </a>
                     
                     <a href="/tags/OpenMV/" target="_blank">
                         <span class="chip bg-color">OpenMV</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1191,21 +1228,10 @@ Unicode 解码/编码/转换/时的错误</li>
 </main>
 
 
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1228,7 +1254,7 @@ Unicode 解码/编码/转换/时的错误</li>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1259,13 +1285,11 @@ Unicode 解码/编码/转换/时的错误</li>
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1362,6 +1386,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1373,16 +1398,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1392,16 +1417,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();

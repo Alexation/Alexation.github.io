@@ -20,7 +20,8 @@ UA伪装
 
 First Blood！
 指定URL
-12345import requestsimport ">
+import requests
+import pars">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -40,6 +41,13 @@ First Blood！
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
     <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
         
     </style>
 
@@ -75,7 +83,8 @@ First Blood！
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -166,6 +175,7 @@ First Blood！
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -362,6 +372,7 @@ First Blood！
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -642,7 +653,7 @@ First Blood！
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -690,7 +701,7 @@ First Blood！
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        947
+                        915
                     </div>
                     
 
@@ -725,37 +736,81 @@ First Blood！
 </ol>
 <h2 id="First-Blood！">First Blood！</h2>
 <h3 id="指定URL">指定URL</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import parsel		# 引入第三方库</span><br><span class="line"></span><br><span class="line"># 目标网址：</span><br><span class="line">base_url = &#x27;http://www.qqbizhi.com/desk/meinv/&#x27;</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+import parsel		# 引入第三方库
+
+# 目标网址：
+base_url = 'http://www.qqbizhi.com/desk/meinv/'
+</code></pre>
 <p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
 <h3 id="UA伪装">UA伪装</h3>
 <p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
 <p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png" alt=""></p>
 <p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#x27;</span><br><span class="line">                        &#x27;Gecko/20100101 Firefox/91.0&#x27;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>headers = &#123;'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
+                        'Gecko/20100101 Firefox/91.0'&#125;
+</code></pre>
 <h3 id="发起请求（模拟浏览器）">发起请求（模拟浏览器）</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># get返回结果赋值给response</span><br><span class="line">response = requests.get(url=base_url, headers=headers)</span><br><span class="line"># 配置编码方式，使其自适应网站编码类型</span><br><span class="line">response.encoding = response.apparent_encoding</span><br><span class="line"># 获取文本</span><br><span class="line">data = response.text</span><br></pre></td></tr></table></figure>
+<pre><code># get返回结果赋值给response
+response = requests.get(url=base_url, headers=headers)
+# 配置编码方式，使其自适应网站编码类型
+response.encoding = response.apparent_encoding
+# 获取文本
+data = response.text
+</code></pre>
 <p>这里注意，后面保存图片就要用content</p>
 <ul>
 <li>response.text 返回的是一个 unicode 型的文本数据</li>
 <li>response.content 返回的是 bytes 型的二进制数据</li>
 </ul>
 <h3 id="获取相应数据">获取相应数据</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># parsel解析，获取HTML源码</span><br><span class="line">html_data = parsel.Selector(data)</span><br><span class="line"># xpath对目标定位</span><br><span class="line">data_list = html_data.xpath(&#x27;//div[@class=&quot;imglist&quot;]/figure/a/@href&#x27;).extract()</span><br><span class="line"># 获取目标赋给一个列表（不止一个目标）</span><br><span class="line">result = [&#x27;http://www.qqbizhi.com&#x27; + data_url for data_url in data_list]</span><br></pre></td></tr></table></figure>
+<pre><code># parsel解析，获取HTML源码
+html_data = parsel.Selector(data)
+# xpath对目标定位
+data_list = html_data.xpath('//div[@class=&quot;imglist&quot;]/figure/a/@href').extract()
+# 获取目标赋给一个列表（不止一个目标）
+result = ['http://www.qqbizhi.com' + data_url for data_url in data_list]
+</code></pre>
 <p>这里涉及xpath语法:</p>
 <p>//表示跨行定位</p>
 <p>[@class=“xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
 <p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
 <h3 id="解析数据">解析数据</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 对每个url进行抓取</span><br><span class="line">for any_list in result:</span><br><span class="line"></span><br><span class="line">	# 同上，基地址变为相册地址，UA依旧</span><br><span class="line">    response_2 = requests.get(url=any_list, headers=headers).text</span><br><span class="line">    response_2_data = parsel.Selector(response_2)</span><br><span class="line">    img_url = response_2_data.xpath(&#x27;//div[@class=&quot;container&quot;]&#x27;</span><br><span class="line">                &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br><span class="line">                </span><br><span class="line">    if img_url == None:</span><br><span class="line">        img_url = response_2_data.xpath(&#x27;//div[@class=&quot;pc-container&quot;]&#x27;</span><br><span class="line">                            &#x27;//div/figure/a/@data-src&#x27;).extract_first()</span><br></pre></td></tr></table></figure>
+<pre><code># 对每个url进行抓取
+for any_list in result:
+
+	# 同上，基地址变为相册地址，UA依旧
+    response_2 = requests.get(url=any_list, headers=headers).text
+    response_2_data = parsel.Selector(response_2)
+    img_url = response_2_data.xpath('//div[@class=&quot;container&quot;]'
+                '//div/figure/a/@data-src').extract_first()
+                
+    if img_url == None:
+        img_url = response_2_data.xpath('//div[@class=&quot;pc-container&quot;]'
+                            '//div/figure/a/@data-src').extract_first()
+</code></pre>
 <ul>
 <li>extract()：这个方法返回一个数组，里面是str类型！。</li>
 <li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
 </ul>
 <h3 id="进行持久化储存">进行持久化储存</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 获取二进制图片数据并赋值</span><br><span class="line">   img_data = requests.get(url=img_url, headers=headers).content</span><br><span class="line"># 对图片进行命名，截取最后一个/后的数据</span><br><span class="line">   file_name = img_url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"># 打开本目录下创建好的img文件夹进行写入</span><br><span class="line"># &lt;insert&gt;</span><br><span class="line">   with open(&#x27;img\\&#x27; + file_name, mode=&#x27;wb&#x27;) as f:</span><br><span class="line">   	# 打印进度</span><br><span class="line">       print(&#x27;Downloading: &#x27;, file_name)</span><br><span class="line">       f.write(img_data)</span><br></pre></td></tr></table></figure>
+<pre><code>	# 获取二进制图片数据并赋值
+    img_data = requests.get(url=img_url, headers=headers).content
+	# 对图片进行命名，截取最后一个/后的数据
+    file_name = img_url.split('/')[-1]
+	# 打开本目录下创建好的img文件夹进行写入
+	# &lt;insert&gt;
+    with open('img\\' + file_name, mode='wb') as f:
+    	# 打印进度
+        print('Downloading: ', file_name)
+        f.write(img_data)
+</code></pre>
 <p>Nice！！！拿到一血</p>
 <p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒…emm)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os</span><br><span class="line">        if not os.path.exists(&#x27;img&#x27;):</span><br><span class="line">            os.mkdir(&#x27;img&#x27;)</span><br></pre></td></tr></table></figure>
+<pre><code># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os
+        if not os.path.exists('img'):
+            os.mkdir('img')
+</code></pre>
 <p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
 <h2 id="对程序进行完善">对程序进行完善</h2>
 <p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
@@ -957,7 +1012,8 @@ First Blood！
 不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)
 那么，现在就来扩大抓取范围！
 记得基地址是：
-1http://www.qqbizhi.com/desk/meinv/
+http://www.qqbizhi.com/desk/meinv/
+
 我们来点开第二页，你会
                         
                     </div>
@@ -1185,21 +1241,10 @@ URL（Universal Resource Locator）即统一资源定位符
 </main>
 
 
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1222,7 +1267,7 @@ URL（Universal Resource Locator）即统一资源定位符
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1253,13 +1298,11 @@ URL（Universal Resource Locator）即统一资源定位符
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1356,6 +1399,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1367,16 +1411,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1386,16 +1430,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();

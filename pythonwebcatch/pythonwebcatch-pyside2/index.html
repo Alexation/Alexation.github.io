@@ -36,6 +36,13 @@
     
     <style type="text/css">
         
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
     </style>
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
@@ -70,7 +77,8 @@
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -161,6 +169,7 @@
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -357,6 +366,7 @@
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -637,7 +647,7 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -726,20 +736,82 @@
 <p>再想一想，python的话，应该对GUI或者前台没有太大的需求，投入过多精力似乎没有太大必要，毕竟就看小程序来讲，Qt的designer已经足够了。于是，我又开始用designer设计界面，然后保存ui文件调用，等等！就是这里，一定要强调下pyside2使用ui文件的两种方法：</p>
 <p><strong>1.利用pyside2-uic工具把ui文件转化为python类</strong></p>
 <p>命令行输入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyside2-uic mainwindow.ui &gt; ui_mainwindow.py</span><br></pre></td></tr></table></figure>
+<pre><code>pyside2-uic mainwindow.ui &gt; ui_mainwindow.py
+</code></pre>
 <p>创建类时调用以下代码即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class MainWindow(QMainWindow):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(MainWindow, self).__init__()</span><br><span class="line">        self.ui = Ui_MainWindow()</span><br><span class="line">        self.ui.setupUi(self)</span><br></pre></td></tr></table></figure>
+<pre><code>class MainWindow(QMainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+</code></pre>
 <p><strong>2.动态加载</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 导入QtUiTools模块</span><br><span class="line">from PySide2.QtUiTools import QUiLoader</span><br><span class="line"></span><br><span class="line">QUiLoader可以动态加载ui文件并立即使用</span><br><span class="line">ui_file = QFile(&quot;mainwindow.ui&quot;)</span><br><span class="line">ui_file.open(QFile.ReadOnly)</span><br><span class="line"></span><br><span class="line">loader = QUiLoader()</span><br><span class="line">window = loader.load(ui_file)</span><br><span class="line">window.show()</span><br></pre></td></tr></table></figure>
+<pre><code># 导入QtUiTools模块
+from PySide2.QtUiTools import QUiLoader
+
+QUiLoader可以动态加载ui文件并立即使用
+ui_file = QFile(&quot;mainwindow.ui&quot;)
+ui_file.open(QFile.ReadOnly)
+
+loader = QUiLoader()
+window = loader.load(ui_file)
+window.show()
+</code></pre>
 <p><strong>3.补充：pyqt5中使用方法</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 使用pyuic5转换到py文件</span><br><span class="line"># 使用pyrcc5转化资源文件</span><br><span class="line"># 动态加载</span><br><span class="line">from PyQt5.uic import loadUi</span><br><span class="line">...</span><br><span class="line">loadUi(&quot;widget.ui&quot;,self)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<pre><code># 使用pyuic5转换到py文件
+# 使用pyrcc5转化资源文件
+# 动态加载
+from PyQt5.uic import loadUi
+...
+loadUi(&quot;widget.ui&quot;,self)
+...
+</code></pre>
 <p>第一次我使用了“动态加载”，这里会有一些bug。例如我们有设置这个程序的主题title，但这里的主题名称却是“Mfgtool”（默认的主题名）。还比如不会触发QMainWindow窗口的事件等等。当然要能接收窗口事件，需要重写对应的事件接口，而且这样重写出来的效果也不是最佳，所以这里不作详细说明了。具体例子：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/53828666/pyside2-qmainwindow-loaded-from-ui-file-not-triggering-window-events">python - PySide2 QMainWindow loaded from ui file not triggering window events - Stack Overflow</a></p>
 <p>所以，采用静态方式加载，这样事件也可以覆盖，非常类似于直接使用Qt IDE开发工具一样方便。</p>
 <h5 id="整理子爬虫程序（找到相同点和不同点）">整理子爬虫程序（找到相同点和不同点）</h5>
 <p>保证子程序可以正常运行的情况下，整合到主程序里。</p>
 <p>可以找到不同程序的共同点，例如requests请求，可以封装为get请求，保存数据也可以封装到save函数里。针对不同网址放入不同的类型里面即可，既利于对程序的修改，有利于整理思路脉络，还能减少bug发生的概率。</p>
 <h5 id="对不同窗口进行整合">对不同窗口进行整合</h5>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtWidgets import QApplication, QWidget</span><br><span class="line">#引入主窗口</span><br><span class="line">from mainUI import Ui_mainUI</span><br><span class="line">#引入子窗口</span><br><span class="line">from childUI import Ui_childUI</span><br><span class="line"> </span><br><span class="line">#创建主窗口类</span><br><span class="line">class MainWindow(QWidget):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(MainWindow, self).__init__()</span><br><span class="line">        //引入主窗口类</span><br><span class="line">        self.ui = Ui_mainUI()</span><br><span class="line">        self.ui.setupUi(self)</span><br><span class="line"> </span><br><span class="line">        #创建按钮点击信号连接 其中button是主窗口中的按钮，在主窗口类文件中添加，这里不详细说明</span><br><span class="line">        self.ui.button.clicked.connect(self.childShowFun)</span><br><span class="line">    #创建子窗口的方法，即槽函数</span><br><span class="line">    def childShowFun(self):</span><br><span class="line">        #注意，这里的childwindow不能定义成临时变量，必须定义成主窗口类MainWindow的成员变量，&#x27;</span><br><span class="line">        &#x27;如果是临时变量，即前面没有self，那么子窗口只会闪一下，就会消失</span><br><span class="line">        self.childwindow = ChildWindow()</span><br><span class="line">        self.childwindow .show()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">#创建子窗口类</span><br><span class="line">class ChildWindow(QWidget):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(ChildWindow, self).__init__()</span><br><span class="line">        #引入子窗口类</span><br><span class="line">        self.ui = Ui_childUI()</span><br><span class="line">        self.ui.setupUi(self)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line"> </span><br><span class="line">    app = QApplication([])</span><br><span class="line">    mainwindow = MainWindow()</span><br><span class="line">    mainwindow.show()</span><br><span class="line">    app.exec_()</span><br></pre></td></tr></table></figure>
+<pre><code>from PySide2.QtWidgets import QApplication, QWidget
+#引入主窗口
+from mainUI import Ui_mainUI
+#引入子窗口
+from childUI import Ui_childUI
+ 
+#创建主窗口类
+class MainWindow(QWidget):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        //引入主窗口类
+        self.ui = Ui_mainUI()
+        self.ui.setupUi(self)
+ 
+        #创建按钮点击信号连接 其中button是主窗口中的按钮，在主窗口类文件中添加，这里不详细说明
+        self.ui.button.clicked.connect(self.childShowFun)
+    #创建子窗口的方法，即槽函数
+    def childShowFun(self):
+        #注意，这里的childwindow不能定义成临时变量，必须定义成主窗口类MainWindow的成员变量，'
+        '如果是临时变量，即前面没有self，那么子窗口只会闪一下，就会消失
+        self.childwindow = ChildWindow()
+        self.childwindow .show()
+ 
+ 
+#创建子窗口类
+class ChildWindow(QWidget):
+    def __init__(self):
+        super(ChildWindow, self).__init__()
+        #引入子窗口类
+        self.ui = Ui_childUI()
+        self.ui.setupUi(self)
+ 
+ 
+if __name__ == &quot;__main__&quot;:
+ 
+    app = QApplication([])
+    mainwindow = MainWindow()
+    mainwindow.show()
+    app.exec_()
+</code></pre>
 <p>这是一个子窗口模板，这里也要用静态加载。</p>
 <p>⚠注意：如果有多个子窗口，要注意不同模块的函数名是否相同，不然会出现不同槽函数指向同一窗口的现象。我试图通过改文件名，改属性，最后发现进入ui生成的静态py文件更改函数名称是最佳解决方式。</p>
 <h5 id="填充小功能">填充小功能</h5>
@@ -1175,21 +1247,10 @@ SyntaxError: unexp
 </main>
 
 
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1212,7 +1273,7 @@ SyntaxError: unexp
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1243,13 +1304,11 @@ SyntaxError: unexp
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1346,6 +1405,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1357,16 +1417,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1376,16 +1436,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();

@@ -13,9 +13,11 @@
 Sleep延迟
 为了避免被反爬措施发现，我们在for循环里加入sleep函数
 引入库：
-12import timefrom random import randint
+import time
+from random import randint
+
 for循环下载img最后一行加入：
-1time.sle">
+time.slee">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,6 +37,13 @@ for循环下载img最后一行加入：
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
     <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
         
     </style>
 
@@ -70,7 +79,8 @@ for循环下载img最后一行加入：
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alexation" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
     <body>
 
@@ -161,6 +171,7 @@ for循环下载img最后一行加入：
     </li>
 </ul> -->
 
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right nav-menu">
     
@@ -357,6 +368,7 @@ for循环下载img最后一行加入：
 
    
    
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
 <!-- <ul class="menu-list mobile-menu-list">
     
         <li class="m-nav-item">
@@ -637,7 +649,7 @@ for循环下载img最后一行加入：
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -685,7 +697,7 @@ for循环下载img最后一行加入：
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        654
+                        648
                     </div>
                     
 
@@ -713,28 +725,46 @@ for循环下载img最后一行加入：
 <h4 id="Sleep延迟">Sleep延迟</h4>
 <p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
 <p>引入库：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from random import randint</span><br></pre></td></tr></table></figure>
+<pre><code>import time
+from random import randint
+</code></pre>
 <p>for循环下载img最后一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(sleep_time / 100)</span><br></pre></td></tr></table></figure>
+<pre><code>time.sleep(sleep_time / 100)
+</code></pre>
 <p>当然，子进程try：第一行加入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep_time = randint(1, 201)</span><br></pre></td></tr></table></figure>
+<pre><code>sleep_time = randint(1, 201)
+</code></pre>
 <p>保证在每次下载间隔1~2s</p>
 <h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
 <p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
 <p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msgBox = QMessageBox()</span><br><span class="line">msgBox.setWindowTitle(&quot;Warning&quot;)</span><br><span class="line">msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)</span><br><span class="line">msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)</span><br><span class="line">msgBox.setStandardButtons(QMessageBox.Ok)</span><br><span class="line">msgBox.setDefaultButton(QMessageBox.Ok)</span><br><span class="line">ret = msgBox.exec_()</span><br></pre></td></tr></table></figure>
+<pre><code>msgBox = QMessageBox()
+msgBox.setWindowTitle(&quot;Warning&quot;)
+msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)
+msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)
+msgBox.setStandardButtons(QMessageBox.Ok)
+msgBox.setDefaultButton(QMessageBox.Ok)
+ret = msgBox.exec_()
+</code></pre>
 <h4 id="更改logo">更改logo</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PySide2.QtGui import QIcon</span><br><span class="line"># 根目录下保存名为&#x27;logo.png&#x27;的logo</span><br><span class="line">app.setWindowIcon(QIcon(&#x27;logo.png&#x27;))</span><br></pre></td></tr></table></figure>
+<pre><code>from PySide2.QtGui import QIcon
+# 根目录下保存名为'logo.png'的logo
+app.setWindowIcon(QIcon('logo.png'))
+</code></pre>
 <p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
 <h3 id="cxfreeze打包">cxfreeze打包</h3>
 <h4 id="cxfreeze与pyinstaller">cxfreeze与pyinstaller</h4>
 <p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(filename, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">PermissionError: [Errno 13] Permission denied: </span><br></pre></td></tr></table></figure>
+<pre><code>with open(filename, 'w', encoding='utf-8') as f:
+PermissionError: [Errno 13] Permission denied: 
+</code></pre>
 <p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
 <p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cx_freeze</span><br></pre></td></tr></table></figure>
+<pre><code>pip install cx_freeze
+</code></pre>
 <p>安装完毕后，在根目录命令行输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;</span><br></pre></td></tr></table></figure>
+<pre><code>cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;
+</code></pre>
 <p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=&quot;win32gui&quot;是去掉控制台显示。</p>
 <h4 id="附属文件插入">附属文件插入</h4>
 <p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
@@ -1159,21 +1189,10 @@ Tkinter：
 </main>
 
 
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&copy; 2021 Alexation  
+            Copyright&copy; 2021 Alexation. 
 
             <br>
             <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
@@ -1196,7 +1215,7 @@ Tkinter：
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">28.6k</span> 字
+                <span class="white-color">27.9k</span> 字
             
 
             
@@ -1227,13 +1246,11 @@ Tkinter：
 
 
 
-<!--
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
-
---></div>
+</div>
 
     </div>
 </footer>
@@ -1330,6 +1347,7 @@ $(function () {
             <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         
 
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
         <script type="text/javascript">
             var OriginTitile = document.title,
                 st;
@@ -1341,16 +1359,16 @@ $(function () {
             })
         </script>
 
-        <!-- 鼠标点击烟花爆炸效果 -->
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
 
-        <!-- 鼠标点击文字特效 -->
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
         
 
-        <!-- 背景雪花飘落特效 -->
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
         
             <script type="text/javascript">
                 var windowWidth = $(window).width();
@@ -1360,16 +1378,16 @@ $(function () {
             </script>
         
 
-        <!-- 在线聊天工具 -->
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
         
 
-        <!-- 背景 canvas-nest -->
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景静止彩带 -->
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
         
 
-        <!-- 背景动态彩带 -->
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
             <script type="text/javascript">
             var windowWidth = $(window).width();
