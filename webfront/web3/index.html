@@ -998,6 +998,28 @@ input:focus &#123;
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '879ef539c9737bedbdb4',
+        clientSecret: 'dc89d56195ff4108cac21776cc7b8845ead93dc8',
+        repo: 'Alexation.github.io',
+        owner: 'Alexation',
+        admin: ["Alexation"],
+        id: 'webfront/web3/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
