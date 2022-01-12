@@ -14,8 +14,7 @@
 O(1)、O(n)时间规模，保留量级。
 while n&amp;gt;1:
 	print(n)
-	n = n//2
-# 时间复杂度记为O(lo">
+	n &amp;#x3D; n&amp;#x2F;&amp;#x2F;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -724,11 +723,10 @@ while n&amp;gt;1:
                 <h2 style="color:#6495ED;text-align:center;font-weight:700"><i>程序 = 数据结构 + 算法<br>计算机一秒能进行约10^7次运算</i></h2>
 <h3 id="时间复杂度：用来评估算法运行效率的一个式子">时间复杂度：用来评估算法运行效率的一个式子</h3>
 <p>O(1)、O(n)时间规模，保留量级。</p>
-<pre><code>while n&gt;1:
+<pre class="line-numbers language-none"><code class="language-none">while n&gt;1:
 	print(n)
-	n = n//2
-# 时间复杂度记为O(logn)
-</code></pre>
+	n &#x3D; n&#x2F;&#x2F;2
+# 时间复杂度记为O(logn)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>常见：O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n2)&lt;O(n2logn)&lt;O(n3)</p>
 <p><strong>如何判断算法复杂度</strong></p>
 <ul>
@@ -740,7 +738,7 @@ while n&amp;gt;1:
 <p>表示方式和时间复杂度一样，空间换时间</p>
 <h3 id="递归">递归</h3>
 <p><em><strong>调用自身、结束条件</strong></em></p>
-<pre><code>def fun(x):
+<pre class="line-numbers language-none"><code class="language-none">def fun(x):
     if x &gt; 0:
         fun(x-1)
         print(x)
@@ -750,8 +748,7 @@ def fun1(x):
         fun1(x-1)
 fun(4)
 print()
-fun1(4)
-</code></pre>
+fun1(4)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>先递归后打印 和 先打印后递归</p>
 <h5 id="递归实例：汉诺塔问题">递归实例：汉诺塔问题</h5>
 <p>n个盘子时：</p>
@@ -760,13 +757,12 @@ fun1(4)
 <li>把第n个圆盘从A移动到C</li>
 <li>把n-1个圆盘从B经过A移动到C</li>
 </ul>
-<pre><code>def hanoi(n, a, b ,c):
+<pre class="line-numbers language-none"><code class="language-none">def hanoi(n, a, b ,c):
     if n&gt;0:
         hanoi(n-1, a, c, b)
         print(&quot;moving from %s to %s&quot; % (a, c))
         hanoi(n-1, b, a, c)
-hanoi(3, 'A', 'B', 'C')
-</code></pre>
+hanoi(3, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="查找">查找</h3>
 <ul>
 <li>输入：列表、待查找元素</li>
@@ -774,28 +770,26 @@ hanoi(3, 'A', 'B', 'C')
 <li>内置列表查找函数index（）</li>
 </ul>
 <p>顺序查找（线性）</p>
-<pre><code>def linear_search(data_set, value):
+<pre class="line-numbers language-none"><code class="language-none">def linear_search(data_set, value):
     for i in range(len(data_set)):
-        if data_set[i] == value:
+        if data_set[i] &#x3D;&#x3D; value:
             return i
     else:
-        return None
-</code></pre>
+        return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>二分查找（折半）</p>
-<pre><code>def binary_search(li, val):
-    left = 0
-    right = len(li)-1
-    while (left &lt;= right):  # 候选区有值
-        mid = (left+right)//2
-        if li[mid] == val:
+<pre class="line-numbers language-none"><code class="language-none">def binary_search(li, val):
+    left &#x3D; 0
+    right &#x3D; len(li)-1
+    while (left &lt;&#x3D; right):  # 候选区有值
+        mid &#x3D; (left+right)&#x2F;&#x2F;2
+        if li[mid] &#x3D;&#x3D; val:
             return mid
         elif li[mid] &gt; val:  # 待查找的值在mid左侧
-            right = mid - 1
+            right &#x3D; mid - 1
         else:
-            left = mid + 1  # 待查找的值在mid右侧
+            left &#x3D; mid + 1  # 待查找的值在mid右侧
     else:
-        return None
-</code></pre>
+        return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="排序">排序</h3>
 <p>将一组“无序”的记录序列调整为“有序”的记录序列</p>
 <p>列表排序：将无序列表变为有序列表</p>
@@ -838,52 +832,49 @@ hanoi(3, 'A', 'B', 'C')
 <li>一趟排序完成后，则无序区减少一个数，有序区增加一个数</li>
 <li>代码关键点：趟、无序区范围</li>
 </ul>
-<pre><code>def double_sort(li):
+<pre class="line-numbers language-none"><code class="language-none">def double_sort(li):
     for i in range(len(li)-1): # 第一趟
         for j in range(len(li)-i-1):
             if li[j] &gt; li[j+1]:
-            #     temp = li[j]
-            #     li[j] = li[j+1]
-            #     li[j+1] = temp
-                li[j], li[j+1] = li[j+1], li[j]
-</code></pre>
+            #     temp &#x3D; li[j]
+            #     li[j] &#x3D; li[j+1]
+            #     li[j+1] &#x3D; temp
+                li[j], li[j+1] &#x3D; li[j+1], li[j]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="选择排序（O（n2））">选择排序（O（n2））</h5>
 <ul>
 <li>一趟排序记录最小的数，放到第一个位置</li>
 <li>再一趟排序记录记录列表无序区最小的数，放到第二个位置</li>
 <li>算法关键点：有序区和无序区、无序区最小数的位置</li>
 </ul>
-<pre><code>def select_sort_simple(li):
-    li_new=[]
+<pre class="line-numbers language-none"><code class="language-none">def select_sort_simple(li):
+    li_new&#x3D;[]
     for i in range(len(li)):
-        min_val = min(li)
+        min_val &#x3D; min(li)
         li_new.append(min_val)
         li.remove(min_val)
     return li_new
 
 def select_sort(li):
     for i in range(len(li)-1):
-        min_loc = i
+        min_loc &#x3D; i
         for j in range(i+1, len(li)):
             if li[j] &lt; li[min_loc]:
-                min_loc = j
-        if min_loc != i:
-            li[i], li[min_loc] = li[min_loc], li[i]
-</code></pre>
+                min_loc &#x3D; j
+        if min_loc !&#x3D; i:
+            li[i], li[min_loc] &#x3D; li[min_loc], li[i]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="插入排序（O（n2））">插入排序（O（n2））</h5>
 <ul>
 <li>初始时手里（有序区）只有一张牌</li>
 <li>每次（从无序区）摸一张牌，插入到手里已有牌的正确位置</li>
 </ul>
-<pre><code>def insert_sort(li):
+<pre class="line-numbers language-none"><code class="language-none">def insert_sort(li):
     for i in range(1,len(li)): # i表示摸到的牌的下标
-        temp = li[i]
-        j = i - 1 # j指的是手里的牌，下标
-        while j &gt;= 0 and li[j] &gt;temp:
-            li[j+1] = li[j]
-            j -= 1
-        li[j+1] = temp
-</code></pre>
+        temp &#x3D; li[i]
+        j &#x3D; i - 1 # j指的是手里的牌，下标
+        while j &gt;&#x3D; 0 and li[j] &gt;temp:
+            li[j+1] &#x3D; li[j]
+            j -&#x3D; 1
+        li[j+1] &#x3D; temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="排序NB三人组">排序NB三人组</h4>
 <h5 id="快速排序（快）">快速排序（快）</h5>
 <ul>
@@ -891,24 +882,23 @@ def select_sort(li):
 <li>列表被p分为两部分，左边都比p小，右边都比p大；</li>
 <li>递归完成排序</li>
 </ul>
-<pre><code>def partition(li, left, right):
-    tmp = li[left]
+<pre class="line-numbers language-none"><code class="language-none">def partition(li, left, right):
+    tmp &#x3D; li[left]
     while left &lt; right:
-        while left &lt; right and li[right] &gt;= tmp:  # 从右边找找比tmp的数
-            right -= 1  # 向左走一步
-        li[left] = li[right]  # 把右边的值放到左边的空位置
-        while left &lt; right and li[left] &lt;= tmp:
-            left += 1  # 向右走一步
-        li[right] = li[left]  # 把左边的值放到右边的空位置上
-    li[left] = tmp  # 把tmp归位
+        while left &lt; right and li[right] &gt;&#x3D; tmp:  # 从右边找找比tmp的数
+            right -&#x3D; 1  # 向左走一步
+        li[left] &#x3D; li[right]  # 把右边的值放到左边的空位置
+        while left &lt; right and li[left] &lt;&#x3D; tmp:
+            left +&#x3D; 1  # 向右走一步
+        li[right] &#x3D; li[left]  # 把左边的值放到右边的空位置上
+    li[left] &#x3D; tmp  # 把tmp归位
     return left
 
 def quick_sort(li, left, right):
     if left &lt; right:
-        mid = partition(li, left ,right)
+        mid &#x3D; partition(li, left ,right)
         quick_sort(li, left , mid-1)
-        quick_sort(li, mid+1, right)
-</code></pre>
+        quick_sort(li, mid+1, right)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>时间复杂度O（nlogn）</p>
 <h5 id="堆排序">堆排序</h5>
 <p>前传：树与二叉树。数是一种数据结构，比如目录结构，可以进行递归定义。树是由n个节点组成的集合：如果n=0，那是一颗空树，如果n&gt;0，那么存在一个节点作为树的根节点，其他节点可以分为m个集合。</p>
@@ -1387,38 +1377,35 @@ def quick_sort(li, left, right):
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/pythonwebcatch/pythonwebcatch-Hot-catch/">
+                <a href="/python-catch/pythonwebcatch-xpath/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="部分热门网站图片、音频、视频抓取下载汇总">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="数据爬取之xpath">
                         
-                        <span class="card-title">部分热门网站图片、音频、视频抓取下载汇总</span>
+                        <span class="card-title">数据爬取之xpath</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            可见即可爬
-本文案例整理自青灯教育视频公开课
-第一步
+                            爬虫数据解析的方法
 
-打开网站，在里面去分析我们需要的数据，包括名称、ID、URL
-通过代码去访问当前这个页面 – 网页源代码
-当前这个网页，可能并不是一个静态页面
-要找到真正的目标网址(headers中查
+正则表达式——使用场景：数据量相对较少，或者要提取的类型单一，专门用于从字符串里面提取数据
+css选择器——使用场景：适合在html标签中提取数据
+xpath——使用场景：适合在html标签当中进行数据提取，路径选择器
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-20
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
-                                    python网络爬虫
+                            <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
+                                    Python网络爬虫
                                 </a>
                             
                             
@@ -1430,6 +1417,14 @@ def quick_sort(li, left, right):
                     
                     <a href="/tags/Python/" target="_blank">
                         <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/" target="_blank">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/" target="_blank">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>
@@ -1637,7 +1632,7 @@ def quick_sort(li, left, right):
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">30k</span> 字
+                <span class="white-color">27.4k</span> 字
             
 
             

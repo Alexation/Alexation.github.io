@@ -696,7 +696,7 @@ SyntaxError: unexp">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        760
+                        800
                     </div>
                     
 
@@ -757,29 +757,28 @@ SyntaxError: unexp">
 Unicode 解码/编码/转换/时的错误</li>
 </ul>
 <h4 id="字符串格式化">字符串格式化</h4>
-<pre><code>#对齐输出
+<pre class="line-numbers language-none"><code class="language-none">#对齐输出
 #左对齐 utf-8 万国码 
-In [5]: '&#123;a:&lt;10&#125;'.format(a=12.3,b=13.44) 
-Out[5]: '12.3      '
+In [5]: &#39;&#123;a:&lt;10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) 
+Out[5]: &#39;12.3      &#39;
 
 #数字补x (填充右边, 宽度为10)
-In [6]: '&#123;a:0&lt;10&#125;'.format(a=12.3,b=13.44) 
-Out[6]: '12.3000000'
+In [6]: &#39;&#123;a:0&lt;10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) 
+Out[6]: &#39;12.3000000&#39;
 
 #两边对齐...
-In [7]: '&#123;a:0^10&#125;'.format(a=12.3,b=13.44) 
-Out[7]: '00012.3000'
+In [7]: &#39;&#123;a:0^10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) 
+Out[7]: &#39;00012.3000&#39;
 
 #保留小数点后两位
-In [1]: '&#123;:.2f&#125;'.format(12.333) 
-Out[1]: '12.33'
+In [1]: &#39;&#123;:.2f&#125;&#39;.format(12.333) 
+Out[1]: &#39;12.33&#39;
 
-In [2]: '&#123;a:.2f&#125;'.format(a=12.333) 
-Out[2]: '12.33'
+In [2]: &#39;&#123;a:.2f&#125;&#39;.format(a&#x3D;12.333) 
+Out[2]: &#39;12.33&#39;
 
-In [3]: '&#123;a:6.2f&#125;'.format(a=12.333) 
-Out[3]: ' 12.33'
-</code></pre>
+In [3]: &#39;&#123;a:6.2f&#125;&#39;.format(a&#x3D;12.333) 
+Out[3]: &#39; 12.33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="解包语法（列表、字符串、元组）">*解包语法（列表、字符串、元组）</h4>
 <p>只要是序列都可以解包，解包出来的是元素，无类型，需要对其进行接收</p>
 <p>%s进行元素嵌入</p>
@@ -797,12 +796,12 @@ Out[3]: ' 12.33'
 </ol>
 <p>列表推导式，列表里for</p>
 <h4 id="main"><strong>main</strong></h4>
-<pre><code># __name__ 魔法变量，输出的时代码运行的文件
+<pre class="line-numbers language-none"><code class="language-none"># __name__ 魔法变量，输出的时代码运行的文件
 # __name__ 如果是从当前文件启动，输出的就是__main__
-if __name__ == '__main__':
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 	print(__name__)
-
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="类与继承">类与继承</h4>
 
             </div>
             <hr/>
@@ -1277,7 +1276,7 @@ if __name__ == '__main__':
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/pythonwebcatch/pythonwebcatch-pyside2/">
+                <a href="/python-catch/pythonwebcatch-pyside2/">
                     <div class="card-image">
                         
                         
@@ -1306,8 +1305,8 @@ if __name__ == '__main__':
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
-                                    python网络爬虫
+                            <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
+                                    Python网络爬虫
                                 </a>
                             
                             
@@ -1344,7 +1343,7 @@ if __name__ == '__main__':
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021EXE/ele/">
+                <a href="/contest/ele/">
                     <div class="card-image">
                         
                         
@@ -1562,7 +1561,7 @@ if __name__ == '__main__':
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">30k</span> 字
+                <span class="white-color">27.4k</span> 字
             
 
             

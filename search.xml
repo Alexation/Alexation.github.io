@@ -21,7 +21,7 @@
   </entry>
   <entry>
     <title>Lemon - 米津玄師 (よねづ けんし)</title>
-    <url>/japaneselearning/Lemon/</url>
+    <url>/japanese-learning/Lemon/</url>
     <content><![CDATA[<h3 style="text-align:center;font-weight:700;color:#B399FF">Lemon - 米津玄師 (よねづ けんし)</h3>
 <div style="position: relative; width: 100%; height:0; padding-bottom: 10%;"><iframe src="//music.163.com/outchain/player?type=2&id=536622304&auto=1&height=66" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div>
 <br>
@@ -37,7 +37,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue基础</title>
+    <title>Vue</title>
     <url>/webfront/Vue/</url>
     <content><![CDATA[<h4 id="Vue">Vue</h4>
 <p>Vue一套用于构建用户界面的<strong>渐进式</strong>JavaScript框架（Vue可以自底向上逐层的应用）</p>
@@ -108,7 +108,7 @@
 <li>methods中配置的函数，都是被vue所管理的函数，this的指向是vm或组件实例对象</li>
 <li>@click=“demo”和@click=“demo($event)&quot;效果一致，但后者可以传参：</li>
 </ol>
-<h5 id="vue中常用的按键别名：">vue中常用的按键别名：</h5>
+<p>vue中常用的按键别名：</p>
 <ul>
 <li>回车：enter</li>
 <li>删除：delete（捕获删除和退格</li>
@@ -116,26 +116,82 @@
 <li>空格：space</li>
 <li>换行：tab</li>
 </ul>
-<h5 id="vue未提供别名的按键，可以使用按键原实的key去绑定，但注意要转为kebab-case（短横线命名）">vue未提供别名的按键，可以使用按键原实的key去绑定，但注意要转为kebab-case（短横线命名）</h5>
-<h5 id="系统修饰键（用法特殊）：ctrl、alt、shift、meta">系统修饰键（用法特殊）：ctrl、alt、shift、meta</h5>
+<p>vue未提供别名的按键，可以使用按键原实的key去绑定，但注意要转为kebab-case（短横线命名）</p>
+<p>系统修饰键（用法特殊）：ctrl、alt、shift、meta</p>
 <ul>
 <li>配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才触发</li>
 <li>配合keydown使用：正常触发事件</li>
 </ul>
-<h5 id="也可以keycode去指定具体的按键（不推荐">也可以keycode去指定具体的按键（不推荐</h5>
-<h5 id="vue-config-keyCodes-自定义键名-键码，可以去定制按键别名">vue.config.keyCodes.自定义键名  = 键码，可以去定制按键别名</h5>
+<p>也可以keycode去指定具体的按键（不推荐</p>
+<p>vue.config.keyCodes.自定义键名  = 键码，可以去定制按键别名</p>
+<h4 id="计算属性">计算属性</h4>
+<ol>
+<li>
+<p>定义：要用的属性不存在，要通过已有的属性计算得来</p>
+</li>
+<li>
+<p>原理：底层借助了Object.defineproperty方法提供的getter和setter</p>
+<p>get什么时候调用？</p>
+<ul>
+<li>初次读取时、所依赖的数据发生变化时</li>
+</ul>
+<p>set什么时候调用？</p>
+<ul>
+<li>当值被修改时l</li>
+</ul>
+</li>
+<li>
+<p>优势：与methods实现相比，内部有缓存机制（复用），效率更高，调试方便</p>
+</li>
+<li>
+<p>备注：</p>
+<p>计算属性最终会出现在vm上，直接读取使用即可</p>
+<p>如果计算属性要被修改，那必须写set函数去相应修改，且set中要引起计算时依赖的数据发生。</p>
+</li>
+</ol>
+<h4 id="监视属性">监视属性</h4>
+<ol>
+<li>
+<p>当监视属性变化时，回调函数自动调用，进行相关操作</p>
+</li>
+<li>
+<p>监视的属性必须同时存在，才能进行监视！！@</p>
+</li>
+<li>
+<p>监视的两种写法：</p>
+<ul>
+<li>
+<p>new Vue时传入watch配置</p>
+</li>
+<li>
+<p>通过vm.$watch监视</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="深度监视">深度监视</h5>
+<ol>
+<li>vue中的watch默认不监测对象内部值的改变（一层）</li>
+<li>配置deep:true可以监测对象内部值得改变（多层）</li>
+</ol>
+<p><strong>备注：</strong></p>
+<ol>
+<li>vue自身可以监测对象内部值得改变，但是vue提供得watch默认不可以！</li>
+<li>使用watch时根据数据得具体结构，决定是否采用深度监视</li>
+</ol>
 ]]></content>
       <categories>
-        <category>Vue</category>
+        <category>Web前端</category>
       </categories>
       <tags>
         <tag>Web</tag>
         <tag>Vue</tag>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
     <title>Pyside2封装爬虫程序</title>
-    <url>/pythonwebcatch/pythonwebcatch-pyside2/</url>
+    <url>/python-catch/pythonwebcatch-pyside2/</url>
     <content><![CDATA[<h3 style="text-align:center;font-weight:700;color:#B399FF"><em>先附一张成果图吧</em></h3>
 <p><img src="https://i.loli.net/2021/11/24/NhMPfmDYrltEc2y.png" alt=""></p>
 <h3 style="text-align:center;font-weight:700;color:#B399FF">程序框架</h3>
@@ -153,43 +209,39 @@
 <p>再想一想，python的话，应该对GUI或者前台没有太大的需求，投入过多精力似乎没有太大必要，毕竟就看小程序来讲，Qt的designer已经足够了。于是，我又开始用designer设计界面，然后保存ui文件调用，等等！就是这里，一定要强调下pyside2使用ui文件的两种方法：</p>
 <p><strong>1.利用pyside2-uic工具把ui文件转化为python类</strong></p>
 <p>命令行输入以下代码</p>
-<pre><code>pyside2-uic mainwindow.ui &gt; ui_mainwindow.py
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">pyside2-uic mainwindow.ui &gt; ui_mainwindow.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>创建类时调用以下代码即可</p>
-<pre><code>class MainWindow(QMainWindow):
+<pre class="line-numbers language-none"><code class="language-none">class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-</code></pre>
+        self.ui &#x3D; Ui_MainWindow()
+        self.ui.setupUi(self)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>2.动态加载</strong></p>
-<pre><code># 导入QtUiTools模块
+<pre class="line-numbers language-none"><code class="language-none"># 导入QtUiTools模块
 from PySide2.QtUiTools import QUiLoader
 
 QUiLoader可以动态加载ui文件并立即使用
-ui_file = QFile(&quot;mainwindow.ui&quot;)
+ui_file &#x3D; QFile(&quot;mainwindow.ui&quot;)
 ui_file.open(QFile.ReadOnly)
 
-loader = QUiLoader()
-window = loader.load(ui_file)
-window.show()
-</code></pre>
+loader &#x3D; QUiLoader()
+window &#x3D; loader.load(ui_file)
+window.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>3.补充：pyqt5中使用方法</strong></p>
-<pre><code># 使用pyuic5转换到py文件
+<pre class="line-numbers language-none"><code class="language-none"># 使用pyuic5转换到py文件
 # 使用pyrcc5转化资源文件
 # 动态加载
 from PyQt5.uic import loadUi
 ...
 loadUi(&quot;widget.ui&quot;,self)
-...
-</code></pre>
+...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>第一次我使用了“动态加载”，这里会有一些bug。例如我们有设置这个程序的主题title，但这里的主题名称却是“Mfgtool”（默认的主题名）。还比如不会触发QMainWindow窗口的事件等等。当然要能接收窗口事件，需要重写对应的事件接口，而且这样重写出来的效果也不是最佳，所以这里不作详细说明了。具体例子：<a href="https://stackoverflow.com/questions/53828666/pyside2-qmainwindow-loaded-from-ui-file-not-triggering-window-events">python - PySide2 QMainWindow loaded from ui file not triggering window events - Stack Overflow</a></p>
 <p>所以，采用静态方式加载，这样事件也可以覆盖，非常类似于直接使用Qt IDE开发工具一样方便。</p>
 <h5 id="整理子爬虫程序（找到相同点和不同点）">整理子爬虫程序（找到相同点和不同点）</h5>
 <p>保证子程序可以正常运行的情况下，整合到主程序里。</p>
 <p>可以找到不同程序的共同点，例如requests请求，可以封装为get请求，保存数据也可以封装到save函数里。针对不同网址放入不同的类型里面即可，既利于对程序的修改，有利于整理思路脉络，还能减少bug发生的概率。</p>
 <h5 id="对不同窗口进行整合">对不同窗口进行整合</h5>
-<pre><code>from PySide2.QtWidgets import QApplication, QWidget
+<pre class="line-numbers language-none"><code class="language-none">from PySide2.QtWidgets import QApplication, QWidget
 #引入主窗口
 from mainUI import Ui_mainUI
 #引入子窗口
@@ -199,17 +251,17 @@ from childUI import Ui_childUI
 class MainWindow(QWidget):
     def __init__(self):
         super(MainWindow, self).__init__()
-        //引入主窗口类
-        self.ui = Ui_mainUI()
+        &#x2F;&#x2F;引入主窗口类
+        self.ui &#x3D; Ui_mainUI()
         self.ui.setupUi(self)
  
         #创建按钮点击信号连接 其中button是主窗口中的按钮，在主窗口类文件中添加，这里不详细说明
         self.ui.button.clicked.connect(self.childShowFun)
     #创建子窗口的方法，即槽函数
     def childShowFun(self):
-        #注意，这里的childwindow不能定义成临时变量，必须定义成主窗口类MainWindow的成员变量，'
-        '如果是临时变量，即前面没有self，那么子窗口只会闪一下，就会消失
-        self.childwindow = ChildWindow()
+        #注意，这里的childwindow不能定义成临时变量，必须定义成主窗口类MainWindow的成员变量，&#39;
+        &#39;如果是临时变量，即前面没有self，那么子窗口只会闪一下，就会消失
+        self.childwindow &#x3D; ChildWindow()
         self.childwindow .show()
  
  
@@ -218,17 +270,16 @@ class ChildWindow(QWidget):
     def __init__(self):
         super(ChildWindow, self).__init__()
         #引入子窗口类
-        self.ui = Ui_childUI()
+        self.ui &#x3D; Ui_childUI()
         self.ui.setupUi(self)
  
  
-if __name__ == &quot;__main__&quot;:
+if __name__ &#x3D;&#x3D; &quot;__main__&quot;:
  
-    app = QApplication([])
-    mainwindow = MainWindow()
+    app &#x3D; QApplication([])
+    mainwindow &#x3D; MainWindow()
     mainwindow.show()
-    app.exec_()
-</code></pre>
+    app.exec_()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这是一个子窗口模板，这里也要用静态加载。</p>
 <p>⚠注意：如果有多个子窗口，要注意不同模块的函数名是否相同，不然会出现不同槽函数指向同一窗口的现象。我试图通过改文件名，改属性，最后发现进入ui生成的静态py文件更改函数名称是最佳解决方式。</p>
 <h5 id="填充小功能">填充小功能</h5>
@@ -240,7 +291,7 @@ if __name__ == &quot;__main__&quot;:
 <p>打包程序请前往<a href="https://alexation.lanzoui.com/i5979wxb19g" style="font-weight:700;color:#B399FF">Alexation（这就是我的主程序名字哦）</a></p>
 ]]></content>
       <categories>
-        <category>python网络爬虫</category>
+        <category>Python网络爬虫</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -289,29 +340,28 @@ if __name__ == &quot;__main__&quot;:
 Unicode 解码/编码/转换/时的错误</li>
 </ul>
 <h4 id="字符串格式化">字符串格式化</h4>
-<pre><code>#对齐输出
+<pre class="line-numbers language-none"><code class="language-none">#对齐输出
 #左对齐 utf-8 万国码 
-In [5]: '&#123;a:&lt;10&#125;'.format(a=12.3,b=13.44) 
-Out[5]: '12.3      '
+In [5]: &#39;&#123;a:&lt;10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) 
+Out[5]: &#39;12.3      &#39;
 
 #数字补x (填充右边, 宽度为10)
-In [6]: '&#123;a:0&lt;10&#125;'.format(a=12.3,b=13.44) 
-Out[6]: '12.3000000'
+In [6]: &#39;&#123;a:0&lt;10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) 
+Out[6]: &#39;12.3000000&#39;
 
 #两边对齐...
-In [7]: '&#123;a:0^10&#125;'.format(a=12.3,b=13.44) 
-Out[7]: '00012.3000'
+In [7]: &#39;&#123;a:0^10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) 
+Out[7]: &#39;00012.3000&#39;
 
 #保留小数点后两位
-In [1]: '&#123;:.2f&#125;'.format(12.333) 
-Out[1]: '12.33'
+In [1]: &#39;&#123;:.2f&#125;&#39;.format(12.333) 
+Out[1]: &#39;12.33&#39;
 
-In [2]: '&#123;a:.2f&#125;'.format(a=12.333) 
-Out[2]: '12.33'
+In [2]: &#39;&#123;a:.2f&#125;&#39;.format(a&#x3D;12.333) 
+Out[2]: &#39;12.33&#39;
 
-In [3]: '&#123;a:6.2f&#125;'.format(a=12.333) 
-Out[3]: ' 12.33'
-</code></pre>
+In [3]: &#39;&#123;a:6.2f&#125;&#39;.format(a&#x3D;12.333) 
+Out[3]: &#39; 12.33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="解包语法（列表、字符串、元组）">*解包语法（列表、字符串、元组）</h4>
 <p>只要是序列都可以解包，解包出来的是元素，无类型，需要对其进行接收</p>
 <p>%s进行元素嵌入</p>
@@ -329,12 +379,12 @@ Out[3]: ' 12.33'
 </ol>
 <p>列表推导式，列表里for</p>
 <h4 id="main"><strong>main</strong></h4>
-<pre><code># __name__ 魔法变量，输出的时代码运行的文件
+<pre class="line-numbers language-none"><code class="language-none"># __name__ 魔法变量，输出的时代码运行的文件
 # __name__ 如果是从当前文件启动，输出的就是__main__
-if __name__ == '__main__':
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 	print(__name__)
-
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="类与继承">类与继承</h4>
 ]]></content>
       <categories>
         <category>Python算法及拓展</category>
@@ -345,7 +395,7 @@ if __name__ == '__main__':
   </entry>
   <entry>
     <title>2021全国大学生电子设计竞赛F题</title>
-    <url>/2021EXE/ele/</url>
+    <url>/contest/ele/</url>
     <content><![CDATA[<p><font style="font-weight:700;color:#B399FF"><em>关于作者：本科大二在读，电气专业。基础不好，不喜勿喷，感谢访问本网站，如果能给你提供新思路就是我最大的荣幸！</em></font></p>
 <p><a href="https://alexation.lanzoui.com/iuUzbwkxx7a" style="font-weight:700;color:#B399FF"><em>点击此处获取F题PDF题目以及数字字模</em></a></p>
 <p>开赛前看了看各大论坛上的控制题目的预测，包括亚克力球里面放小车，用小车和无人机通信…为此特地去学了学串口、蓝牙通信，最后看到题目震惊：原来摄像头可带处理器模块原来是这个意思！<span class="emoji" alias="upside_down_face" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png?v8">🙃</span> 因为组内没有人会用OpenMV，确定下这个题目还是不容易的。毕竟明年想去智能车比赛，想不到电赛让我速成摄像头 <span class="emoji" alias="laughing" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
@@ -388,7 +438,7 @@ if __name__ == '__main__':
   </entry>
   <entry>
     <title>数据爬取之xpath</title>
-    <url>/pythonwebcatch/pythonwebcatch-xpath/</url>
+    <url>/python-catch/pythonwebcatch-xpath/</url>
     <content><![CDATA[<h1>爬虫数据解析的方法</h1>
 <ul>
 <li>正则表达式——使用场景：数据量相对较少，或者要提取的类型单一，专门用于从字符串里面提取数据</li>
@@ -477,422 +527,12 @@ if __name__ == '__main__':
 </table>
 ]]></content>
       <categories>
-        <category>python网络爬虫</category>
+        <category>Python网络爬虫</category>
       </categories>
       <tags>
         <tag>Python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>部分热门网站图片、音频、视频抓取下载汇总</title>
-    <url>/pythonwebcatch/pythonwebcatch-Hot-catch/</url>
-    <content><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>可见即可爬</em></h2>
-<p><a href="https://qingdeng.ke.qq.com/" style="font-weight:700;color:#B399FF"><em>本文案例整理自青灯教育视频公开课</em></a></p>
-<h3 id="第一步">第一步</h3>
-<ol>
-<li>打开网站，在里面去分析我们需要的数据，包括名称、ID、URL</li>
-<li>通过代码去访问当前这个页面 – 网页源代码</li>
-<li>当前这个网页，可能并不是一个静态页面</li>
-<li>要找到真正的目标网址(headers中查找)</li>
-</ol>
-<h3 id="第二步">第二步</h3>
-<ol>
-<li>
-<p>通过代码去实现这个步骤</p>
-</li>
-<li>
-<p>拿到源码</p>
-</li>
-<li>
-<p>拿到ID、Name<em>（正则、CSS选择器、Xpath）</em></p>
-</li>
-<li>
-<p>进行下载</p>
-</li>
-<li>
-<p>text:拿文本数据</p>
-</li>
-<li>
-<p>content:拿二进制数据，图片，音频，视频</p>
-<p>寻找接口：Google</p>
-<p>分析加密规则：Javascript</p>
-</li>
-</ol>
-<h3 id="案例分析">案例分析</h3>
-<h4 id="网易云音乐">网易云音乐</h4>
-<pre><code>import requests
-import re
-# 音频接口
-outer = 'https://music.163.com/song/media/outer/url?id='
-# 目标网址
-url = 'https://music.163.com/discover/toplist'
-ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
-      'Gecko/20100101 Firefox/91.0')
-headers = &#123;'User-Agent': ua&#125;
-
-response = requests.get(url=url, headers=headers).text
-zip_data = re.findall('&lt;li&gt;&lt;a href=&quot;/song\?id=(.*?)&quot;&gt;(.*?)&lt;/a&gt;&lt;/li&gt;', response)
-
-for music_id, title in zip_data:
-    url_1 = outer + music_id
-    music_data = requests.get(url=url_1, headers=headers).content
-    # 写进二进制音频文件、重新命名，防止windows命名出现错误
-    title = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', title)
-    with open('music/' + title + '.mp3', mode='wb') as f:
-        f.write(music_data)
-    print(f'正在保存：&#123;title&#125;')
-</code></pre>
-<h4 id="抖音">抖音</h4>
-<pre><code>import requests
-import re
-
-search = input('请输入要下载视频的网址：')
-
-number = re.findall('video/(.*?)\?', search)[0]
-
-ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
-      'Gecko/20100101 Firefox/91.0')
-
-headers = &#123;
-      'User-Agent': ua,
-      'cookie': 'douyin.com; ttcid=b7a626c90e564eb0bb659e0e4ba487db14; ttwid=1%7C52mTFUoxPVW_9df0rfpHEzMp_dICJckDD7lx-UjhipQ%7C1635074322%7C93b5033df3bda1afba099ad422f4030a64f33cc9295d'
-                'cdb7476394533e362bda; _tea_utm_cache_6383=undefined; douyin.com; MONITOR_WEB_ID=4f6bf6d3-bf21-4a39-906e-62d1ff34bcce; _tea_utm_cache_1300=undefined; passport_csrf_toke'
-                'n_default=1c1079c67daf0137ceee83993cc08a48; passport_csrf_token=1c1079c67daf0137ceee83993cc08a48; s_v_web_id=verify_kv551chk_wYXkw22P_p2vT_4zAf_8MDb_moNWyeTfjiO5; odin_'
-                'tt=2932940e1d8dfc2b99bfef1efa8b84838a27f45094acbdb1592931825d28e6ff3173e201ba849537f5f028d446175cc54f21a25d3ec0091f016f70923c30d9c9; msToken=IZWl8guZh3lpYrLzPt0rniHHE9TX'
-                'rUaOKoa7JcoHePcXUeGZ54fe-xlUL7uluvtBEyY9gr7aQzlrl4DzQkDmgq4AEreVDtJZA7JKQ8JN0WvqKB2P9OvEk4N-; __ac_nonce=0617556590007a9264602; __ac_signature=_02B4Z6wo00f017jbM1QAAIDC55'
-                'jcjEt3H2O4-zfAAI9Mg6DqbughVHpI1fPKPtx0HieKJbh7UnfVCVD613M1gdnxdmR76Lk-EOgfFUFf6JBHF5nRBx7SWkoqnGITzqEBO7Z0TdCg2-vV9LcY01; tt_scid=x2nvkLZv85uYSPmDwD07EIoQM0aszPVbO8bJoQELi'
-                'MVHhYYM7LEOpcy3doX3B39cb9ca; msToken=wBfyGPyStektJtnk-lp9N39s-qB7vb7juQo6dvuNtdXkQwA59LHWCMnUfreDvxBzA2P6IvqyTWZiAPCYG4OTBtJz_X3NivdmLGCA3CZ1hb53bddZ_C2wdw==',
-&#125;
-
-web_url = f'https://www.douyin.com/video/&#123;number&#125;'
-
-response = requests.get(url=web_url, headers=headers)
-response.encoding = response.apparent_encoding
-title = re.findall('&lt;title data-react-helmet=&quot;true&quot;&gt;(.*?)&lt;/title&gt;', response.text)[0]
-title = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', title)
-href = re.findall('src(.*?)vr%3D', response.text)[2]
-video_url = requests.utils.unquote(href).replace('&quot;:&quot;', 'https:')
-video_content = requests.get(url=video_url).content
-with open('video\\' + title + '.mp4', mode='wb') as f:
-    f.write(video_content)
-    print(f'保存成功：&#123;title&#125;')
-</code></pre>
-<h4 id="快手">快手</h4>
-<pre><code>import requests
-import re
-import json
-
-search = input('请输入想搜索的关键词(下载前20个搜索视频）：')
-
-ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
-      'Gecko/20100101 Firefox/91.0')
-
-headers = &#123;
-      'User-Agent': ua,
-      'accept': '*/*',
-      'content-type': 'application/json',
-      'Cookie': 'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_7570663ff3a97b83e07a3fbae14dc4c6; ktrace-context=1|MS43NjQ1ODM2OTgyODY2OTgyLjIzNDQ5Njc4LjE2MzUwNzcyMzUzMTUuNDU5NTkw|MS43NjQ1ODM2OTgyODY2OTgyLjEzNTMyMzk4LjE2MzUwNzcyMzUzMTUuNDU5NTkx|0|graphql-server|webservice|false|NA',
-      'Host': 'www.kuaishou.com',
-      'Origin': 'https://www.kuaishou.com'
-&#125;
-
-web_url = 'https://www.kuaishou.com/graphql'
-data = &#123;
-      'operationName': 'visionSearchPhoto',
-      'query': '...此处省略，请自行前往复制...',
-      'variables': &#123;'keyword': search, 'pcursor': &quot;&quot;, 'page': &quot;search&quot;&#125;
-&#125;
-data = json.dumps(data)
-response = requests.post(url=web_url, headers=headers, data=data)
-video_list = response.json()['data']['visionSearchPhoto']['feeds']
-
-for feed in video_list:
-      video_name = feed['author']['name']
-      video_name = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', video_name)
-      video_content = requests.get(url=feed['photo']['photoUrl']).content
-      with open('video\\' + video_name + '.mp4', mode='wb') as f:
-            f.write(video_content)
-            print(f'保存成功：&#123;video_name&#125;')
-</code></pre>
-<h4 id="酷狗">酷狗</h4>
-<pre><code>import requests
-import re
-import os
-import parsel
-
-ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
-      'Gecko/20100101 Firefox/91.0')
-headers = &#123;'User-Agent': ua&#125;
-
-def get_response(html_url):
-    response = requests.get(url=html_url, headers=headers)
-    return response
-
-
-def save(music_url, name):
-    filename = 'music_kugou\\'
-    if not os.path.exists(filename):
-        os.mkdir(filename)
-    if music_url:
-        name = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', name)
-        music_data = get_response(html_url=music_url).content
-        with open(filename + name + '.mp3', mode='wb') as f:
-            f.write(music_data)
-            print('save successfully')
-
-
-def get_music_id(html_url):
-    # 获取hash and id
-    html_data = get_response(html_url).text
-    # 解析数据
-    Hash_list = re.findall('&quot;Hash&quot;:&quot;(.*?)&quot;', html_data)
-    album_ids = re.findall('&quot;album_id&quot;:(.*?),', html_data)
-    zip_data = zip(Hash_list, album_ids)
-    return zip_data
-
-
-def get_music_info(Hash, album_id):
-    index_url = 'https://wwwapi.kugou.com/yy/index.php'
-    data = &#123;
-        'r': 'play/getdata',
-        # 'callback': 'jQuery19107794429506209624_1634785491657',
-        'hash': Hash,
-        'dfid': '0jIgIH1HGyiA4IQzep0QDuiB',
-        'appid': '1014',
-        'mid': 'cea2eaa583d6273aeecef6a87475019b',
-        'platid': '4',
-        'album_id': album_id,
-        '_': '1634785491658'
-    &#125;
-    response = requests.get(url=index_url, params=data, headers=headers)
-    # print(response.json())
-    title = response.json()['data']['audio_name']
-    play_url = response.json()['data']['play_url']
-    save(music_url=play_url, name=title)
-    print(title, play_url)
-
-
-def get_list_url(html_url):
-    html_data = get_response(html_url=html_url).text
-    selector = parsel.Selector(html_data)
-    list_name = selector.css('.pc_rank_sidebar li a::attr(title)').getall()
-    list_url_each = selector.css('.pc_rank_sidebar li a::attr(href)').getall()
-    # list_info = re.findall('&lt;a title=&quot;(.*?)&quot; hidefocus=&quot;true&quot; href=&quot;(.*?)&quot;', html_data)
-    # print(html_data)
-    list_data = zip(list_name, list_url_each)
-
-    return list_data
-
-
-def main(list_url):
-    list_data = get_list_url(html_url=list_url)
-    for list_name, list_url in list_data:
-        print('正在爬取', list_name)
-        get_music_id(html_url=list_url)
-        zip_data = get_music_id(html_url=list_url)
-        for hash, album_id in zip_data:
-            get_music_info(Hash=hash, album_id=album_id)
-            
-            
-if __name__ == '__main__':
-    list_url = 'https://www.kugou.com/yy/rank/home/1-8888.html?from=rank'
-    main(list_url)
-</code></pre>
-<h4 id="热门表情包">热门表情包</h4>
-<pre><code>import requests
-import re
-
-ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
-      'Gecko/20100101 Firefox/91.0')
-headers = &#123;'User-Agent': ua&#125;
-
-for page in range(1, 201):
-    print(f'-------正在爬取第&#123;page&#125;页--------')
-    url = f'https://www.fabiaoqing.com/biaoqing/lists/page/&#123;page&#125;.html'
-    response = requests.get(url=url, headers=headers).text
-
-    images = re.findall('&lt;img class=&quot;ui image lazy&quot; data-original=&quot;(.*?)&quot;', response)
-    titles = re.findall('&lt;a href=&quot;.*?&quot; title=&quot;(.*?)&quot;&gt;', response)
-
-    for img_url, title in zip(images, titles):
-        # Windows里面文件命名有一定规则
-        title = re.sub(r'[/\\:*?&quot;&lt;&gt;|]', '_', title)
-        if len(title) &gt; 50:
-            title = title[:50]
-        # 提取图片尾缀
-        suffix = img_url.split('.')[-1]
-        # 图片二进制数据
-        img_data = requests.get(url=img_url, headers=headers).content
-        with open(f'img/&#123;title&#125;.&#123;suffix&#125;', mode='wb') as f:
-            f.write(img_data)
-        print(f'正在保存：&#123;title&#125;')
-        
-# 针对速度过慢的问题：
-# 1. 多线程、多进程、协程
-# 2. 通过分布式实现，大量数据下载
-</code></pre>
-<h4 id="京东">京东</h4>
-<pre><code>import time
-from selenium import webdriver
-import csv
-search = input('请输入你要搜索的关键字：')
-
-f = open(f'&#123;search&#125;数据_京东.csv', mode='a', encoding='utf-8-sig', newline='')
-csv_writer = csv.DictWriter(f, fieldnames=['标题', '价格', '店铺', '评论', '链接'])
-csv_writer.writeheader()
-
-def drop_down():
-    for x in range(1, 12, 2):  # 1 3 5 7 9 在不断下拉的过程中，页面高度也会变化
-        time.sleep(1)
-        j = x / 9  # 1/12 3/12 5/12 7/12
-        js = 'document.documentElement.scrollTop = document.documentElement.scrollHeight * %f' % j
-        driver.execute_script(js)
-
-
-url = 'https://www.jd.com/'
-
-driver = webdriver.Chrome()
-driver.get(url)
-
-driver.find_element_by_xpath('//*[@id=&quot;key&quot;]').send_keys(search)
-driver.find_element_by_xpath('//*[@id=&quot;search&quot;]/div/div[2]/button').click()
-driver.implicitly_wait(10)
-drop_down()
-
-lis = driver.find_elements_by_css_selector('.gl-item')
-for li in lis:
-    price = li.find_element_by_css_selector('.gl-warp .p-price strong i').text
-    name = li.find_element_by_css_selector('.gl-item .p-name em').text
-
-    shop_name = li.find_element_by_css_selector('.p-shop .J_im_icon a').text
-    comment = li.find_element_by_css_selector('.p-commit strong').text
-    url = li.find_element_by_css_selector('.p-img a').get_attribute('href')
-    dit = &#123;
-        '价格': price,
-        '标题': name,
-        '店铺': shop_name,
-        '评论': comment,
-        '链接': url,
-    &#125;
-    csv_writer.writerow(dit)
-print('保存完成')
-</code></pre>
-<h4 id="唯品会">唯品会</h4>
-<pre><code>import requests
-import csv
-search = input('请输入要查找的关键字：')
-
-url = 'https://mapi.vip.com/vips-mobile/rest/shopping/pc/search/product/rank'
-
-headers = &#123;
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple'
-    'WebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30',
-    'referer': 'https://category.vip.com/',
-&#125;
-data = &#123;
-    # 'callback': 'getMerchandiseIds',
-    'app_name': 'shop_pc',
-    'app_version': '4.0',
-    'warehouse': 'VIP_NH',
-    'fdc_area_id': '104104101',
-    'client': 'pc',
-    'mobile_platform': '1',
-    'province_id': '104104',
-    'api_key': '70f71280d5d547b2a7bb370a529aeea1',
-    'user_id': '',
-    'mars_cid': '1635209143189_efd586d905629bb970641912bb5a11f2',
-    'wap_consumer': 'a',
-    'standby_id': 'nature',
-    'keyword': search,
-    'lv3CatIds': '',
-    'lv2CatIds': '',
-    'lv1CatIds': '',
-    'brandStoreSns': '',
-    'props': '',
-    'priceMin': '',
-    'priceMax': '',
-    'vipService': '',
-    'sort': '0',
-    'pageOffset': '0',
-    'channelId': '1',
-    'gPlatform': 'PC',
-    'batchSize': '120',
-    '_': '1635209201065',
-&#125;
-
-def get_shop_info(shop_id):
-    shop_info_url = 'https://mapi.vip.com/vips-mobile/rest/shopping/pc/product/module/list/v2'
-    params = &#123;
-        'app_name': 'shop_pc',
-        'app_version': '4.0',
-        'warehouse': 'VIP_NH',
-        'fdc_area_id': '104104101',
-        'client': 'pc',
-        'mobile_platform': '1',
-        'province_id': '104104',
-        'api_key': '70f71280d5d547b2a7bb370a529aeea1',
-        'user_id': '',
-        'mars_cid': '1635209143189_efd586d905629bb970641912bb5a11f2',
-        'wap_consumer': 'a',
-        'productIds': shop_id,
-        'scene': 'search',
-        'standby_id': 'nature',
-        'extParams': '&#123;&quot;stdSizeVids&quot;: &quot;&quot;, &quot;preheatTipsVer&quot;: &quot;3&quot;, &quot;couponVer&quot;: &quot;v2&quot;, &quot;exclusivePrice&quot;: &quot;1&quot;, &quot;iconSpec&quot;: &quot;2x&quot;,&quot;ic2label&quot;: 1&#125;',
-        'context': '',
-        '_': '1635209201068',
-    &#125;
-    response = requests.get(url=shop_info_url, params=params, headers=headers)
-    shop_info_list = response.json()['data']['products']
-    for index in shop_info_list:
-        attrs = '        '.join([j['name'] + ':' + j['value'] for j in index['attrs']])
-        href = f'https://detail.vip.com/detail-&#123;index[&quot;brandId&quot;]&#125;-&#123;index[&quot;productId&quot;]&#125;.html'
-        dit = &#123;
-            '标题': index['title'],
-            '商品名称': index['brandShowName'],
-            '商品属性': attrs,
-            '原价': index['price']['marketPrice'],
-            '折扣': index['price']['saleDiscount'],
-            '售价': index['price']['salePrice'],
-            '详情页': href,
-        &#125;
-        csv_writer.writerow(dit)
-
-
-f = open(f'&#123;search&#125;数据_唯品会.csv', mode='a', encoding='utf-8-sig', newline='')
-csv_writer = csv.DictWriter(f, fieldnames=[
-    '标题',
-    '商品名称',
-    '商品属性',
-    '原价',
-    '折扣',
-    '售价',
-    '详情页',
-])
-csv_writer.writeheader()  # 写入表头
-
-response = requests.get(url=url, params=data, headers=headers)
-
-products = response.json()['data']['products']
-
-pid_list = [i['pid'] for i in products]
-
-string_1 = ','.join(pid_list[0:50])
-string_2 = ','.join(pid_list[50:100])
-string_3 = ','.join(pid_list[100:])
-
-get_shop_info(string_1)
-get_shop_info(string_2)
-get_shop_info(string_3)
-print('保存成功')
-</code></pre>
-<p><font style="font-weight:700;color:#B399FF"><em>本文章仅作学习资料、Pass占位…</em></font></p>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -901,11 +541,10 @@ print('保存成功')
     <content><![CDATA[<h2 style="color:#6495ED;text-align:center;font-weight:700"><i>程序 = 数据结构 + 算法<br>计算机一秒能进行约10^7次运算</i></h2>
 <h3 id="时间复杂度：用来评估算法运行效率的一个式子">时间复杂度：用来评估算法运行效率的一个式子</h3>
 <p>O(1)、O(n)时间规模，保留量级。</p>
-<pre><code>while n&gt;1:
+<pre class="line-numbers language-none"><code class="language-none">while n&gt;1:
 	print(n)
-	n = n//2
-# 时间复杂度记为O(logn)
-</code></pre>
+	n &#x3D; n&#x2F;&#x2F;2
+# 时间复杂度记为O(logn)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>常见：O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n2)&lt;O(n2logn)&lt;O(n3)</p>
 <p><strong>如何判断算法复杂度</strong></p>
 <ul>
@@ -917,7 +556,7 @@ print('保存成功')
 <p>表示方式和时间复杂度一样，空间换时间</p>
 <h3 id="递归">递归</h3>
 <p><em><strong>调用自身、结束条件</strong></em></p>
-<pre><code>def fun(x):
+<pre class="line-numbers language-none"><code class="language-none">def fun(x):
     if x &gt; 0:
         fun(x-1)
         print(x)
@@ -927,8 +566,7 @@ def fun1(x):
         fun1(x-1)
 fun(4)
 print()
-fun1(4)
-</code></pre>
+fun1(4)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>先递归后打印 和 先打印后递归</p>
 <h5 id="递归实例：汉诺塔问题">递归实例：汉诺塔问题</h5>
 <p>n个盘子时：</p>
@@ -937,13 +575,12 @@ fun1(4)
 <li>把第n个圆盘从A移动到C</li>
 <li>把n-1个圆盘从B经过A移动到C</li>
 </ul>
-<pre><code>def hanoi(n, a, b ,c):
+<pre class="line-numbers language-none"><code class="language-none">def hanoi(n, a, b ,c):
     if n&gt;0:
         hanoi(n-1, a, c, b)
         print(&quot;moving from %s to %s&quot; % (a, c))
         hanoi(n-1, b, a, c)
-hanoi(3, 'A', 'B', 'C')
-</code></pre>
+hanoi(3, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="查找">查找</h3>
 <ul>
 <li>输入：列表、待查找元素</li>
@@ -951,28 +588,26 @@ hanoi(3, 'A', 'B', 'C')
 <li>内置列表查找函数index（）</li>
 </ul>
 <p>顺序查找（线性）</p>
-<pre><code>def linear_search(data_set, value):
+<pre class="line-numbers language-none"><code class="language-none">def linear_search(data_set, value):
     for i in range(len(data_set)):
-        if data_set[i] == value:
+        if data_set[i] &#x3D;&#x3D; value:
             return i
     else:
-        return None
-</code></pre>
+        return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>二分查找（折半）</p>
-<pre><code>def binary_search(li, val):
-    left = 0
-    right = len(li)-1
-    while (left &lt;= right):  # 候选区有值
-        mid = (left+right)//2
-        if li[mid] == val:
+<pre class="line-numbers language-none"><code class="language-none">def binary_search(li, val):
+    left &#x3D; 0
+    right &#x3D; len(li)-1
+    while (left &lt;&#x3D; right):  # 候选区有值
+        mid &#x3D; (left+right)&#x2F;&#x2F;2
+        if li[mid] &#x3D;&#x3D; val:
             return mid
         elif li[mid] &gt; val:  # 待查找的值在mid左侧
-            right = mid - 1
+            right &#x3D; mid - 1
         else:
-            left = mid + 1  # 待查找的值在mid右侧
+            left &#x3D; mid + 1  # 待查找的值在mid右侧
     else:
-        return None
-</code></pre>
+        return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="排序">排序</h3>
 <p>将一组“无序”的记录序列调整为“有序”的记录序列</p>
 <p>列表排序：将无序列表变为有序列表</p>
@@ -1015,52 +650,49 @@ hanoi(3, 'A', 'B', 'C')
 <li>一趟排序完成后，则无序区减少一个数，有序区增加一个数</li>
 <li>代码关键点：趟、无序区范围</li>
 </ul>
-<pre><code>def double_sort(li):
+<pre class="line-numbers language-none"><code class="language-none">def double_sort(li):
     for i in range(len(li)-1): # 第一趟
         for j in range(len(li)-i-1):
             if li[j] &gt; li[j+1]:
-            #     temp = li[j]
-            #     li[j] = li[j+1]
-            #     li[j+1] = temp
-                li[j], li[j+1] = li[j+1], li[j]
-</code></pre>
+            #     temp &#x3D; li[j]
+            #     li[j] &#x3D; li[j+1]
+            #     li[j+1] &#x3D; temp
+                li[j], li[j+1] &#x3D; li[j+1], li[j]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="选择排序（O（n2））">选择排序（O（n2））</h5>
 <ul>
 <li>一趟排序记录最小的数，放到第一个位置</li>
 <li>再一趟排序记录记录列表无序区最小的数，放到第二个位置</li>
 <li>算法关键点：有序区和无序区、无序区最小数的位置</li>
 </ul>
-<pre><code>def select_sort_simple(li):
-    li_new=[]
+<pre class="line-numbers language-none"><code class="language-none">def select_sort_simple(li):
+    li_new&#x3D;[]
     for i in range(len(li)):
-        min_val = min(li)
+        min_val &#x3D; min(li)
         li_new.append(min_val)
         li.remove(min_val)
     return li_new
 
 def select_sort(li):
     for i in range(len(li)-1):
-        min_loc = i
+        min_loc &#x3D; i
         for j in range(i+1, len(li)):
             if li[j] &lt; li[min_loc]:
-                min_loc = j
-        if min_loc != i:
-            li[i], li[min_loc] = li[min_loc], li[i]
-</code></pre>
+                min_loc &#x3D; j
+        if min_loc !&#x3D; i:
+            li[i], li[min_loc] &#x3D; li[min_loc], li[i]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="插入排序（O（n2））">插入排序（O（n2））</h5>
 <ul>
 <li>初始时手里（有序区）只有一张牌</li>
 <li>每次（从无序区）摸一张牌，插入到手里已有牌的正确位置</li>
 </ul>
-<pre><code>def insert_sort(li):
+<pre class="line-numbers language-none"><code class="language-none">def insert_sort(li):
     for i in range(1,len(li)): # i表示摸到的牌的下标
-        temp = li[i]
-        j = i - 1 # j指的是手里的牌，下标
-        while j &gt;= 0 and li[j] &gt;temp:
-            li[j+1] = li[j]
-            j -= 1
-        li[j+1] = temp
-</code></pre>
+        temp &#x3D; li[i]
+        j &#x3D; i - 1 # j指的是手里的牌，下标
+        while j &gt;&#x3D; 0 and li[j] &gt;temp:
+            li[j+1] &#x3D; li[j]
+            j -&#x3D; 1
+        li[j+1] &#x3D; temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="排序NB三人组">排序NB三人组</h4>
 <h5 id="快速排序（快）">快速排序（快）</h5>
 <ul>
@@ -1068,24 +700,23 @@ def select_sort(li):
 <li>列表被p分为两部分，左边都比p小，右边都比p大；</li>
 <li>递归完成排序</li>
 </ul>
-<pre><code>def partition(li, left, right):
-    tmp = li[left]
+<pre class="line-numbers language-none"><code class="language-none">def partition(li, left, right):
+    tmp &#x3D; li[left]
     while left &lt; right:
-        while left &lt; right and li[right] &gt;= tmp:  # 从右边找找比tmp的数
-            right -= 1  # 向左走一步
-        li[left] = li[right]  # 把右边的值放到左边的空位置
-        while left &lt; right and li[left] &lt;= tmp:
-            left += 1  # 向右走一步
-        li[right] = li[left]  # 把左边的值放到右边的空位置上
-    li[left] = tmp  # 把tmp归位
+        while left &lt; right and li[right] &gt;&#x3D; tmp:  # 从右边找找比tmp的数
+            right -&#x3D; 1  # 向左走一步
+        li[left] &#x3D; li[right]  # 把右边的值放到左边的空位置
+        while left &lt; right and li[left] &lt;&#x3D; tmp:
+            left +&#x3D; 1  # 向右走一步
+        li[right] &#x3D; li[left]  # 把左边的值放到右边的空位置上
+    li[left] &#x3D; tmp  # 把tmp归位
     return left
 
 def quick_sort(li, left, right):
     if left &lt; right:
-        mid = partition(li, left ,right)
+        mid &#x3D; partition(li, left ,right)
         quick_sort(li, left , mid-1)
-        quick_sort(li, mid+1, right)
-</code></pre>
+        quick_sort(li, mid+1, right)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>时间复杂度O（nlogn）</p>
 <h5 id="堆排序">堆排序</h5>
 <p>前传：树与二叉树。数是一种数据结构，比如目录结构，可以进行递归定义。树是由n个节点组成的集合：如果n=0，那是一颗空树，如果n&gt;0，那么存在一个节点作为树的根节点，其他节点可以分为m个集合。</p>
@@ -1100,78 +731,8 @@ def quick_sort(li, left, right):
       </tags>
   </entry>
   <entry>
-    <title>CSS（四）</title>
-    <url>/webfront/web5/</url>
-    <content><![CDATA[<h3 id="CSS三大特性">CSS三大特性</h3>
-<p>CSS中有三个非常重要的特性：层叠性、继承性、优先级</p>
-<h4 id="层叠性">层叠性</h4>
-<p>相同选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。</p>
-<p>层叠性原则：</p>
-<ul>
-<li>样式冲突，遵循原则是就近原则，哪个样式结构近，就执行哪个样式</li>
-<li>样式不冲突，不会层叠</li>
-</ul>
-<h4 id="继承性">继承性</h4>
-<p>CSS中的继承：子标签会继承父标签的某些样式，比如文本的颜色和字号</p>
-<ul>
-<li>恰当使用继承可以简化代码，降低CSS样式的复杂性</li>
-<li>子元素可以继承父元素的样式（text、size、line这些元素开头的可以继承，以及color属性）</li>
-<li>继承性口诀：龙生龙，凤生凤，老鼠的孩子会打洞</li>
-</ul>
-<h5 id="行高的继承性">行高的继承性</h5>
-<h4 id="优先级">优先级</h4>
-<p>当同一个元素指定多个选择器，就会有优先级</p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>选择器权重</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>继承或者*</td>
-<td>0，0，0，0</td>
-</tr>
-<tr>
-<td>元素选择器</td>
-<td>0，0，0，1</td>
-</tr>
-<tr>
-<td>类选择器，伪类选择器</td>
-<td>0，0，1，0</td>
-</tr>
-<tr>
-<td>ID选择器</td>
-<td>0，1，0，0</td>
-</tr>
-<tr>
-<td>行内样式</td>
-<td>1，0，0，0</td>
-</tr>
-<tr>
-<td>!important</td>
-<td>∞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>优先级注意点</strong></p>
-<p>权重是由4组数字组成，但是不会有进位</p>
-<p>类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推</p>
-<p>等级判断从左到右，如果某一位数位相同，则判断下一位数值</p>
-<p>通配符和继承权重为0</p>
-]]></content>
-      <categories>
-        <category>Web前端</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Web渗透——SQL注入简介</title>
-    <url>/webfront/web/</url>
+    <url>/webfront/Permeate/</url>
     <content><![CDATA[<h4 id="渗透流程：">渗透流程：</h4>
 <ol>
 <li>先学习前端编程（了解清楚对方的网站架构，才好判断该如何入手）</li>
@@ -1200,18 +761,569 @@ def quick_sort(li, left, right):
 <li>注入在这里就是将用户输入的数据拼接到原始代码里，被当作代码执行。</li>
 </ul>
 <p>SQLite是一种开源， 零配置，独立的，事务关系数据库引擎。它是一个类似Access的轻量级数据库系统，但是更小、更快、容量更大，并发更高，在移动端经常会使用到。</p>
+<h4 id="待续…">待续…</h4>
 ]]></content>
       <categories>
-        <category>Web渗透</category>
+        <category>Web前端</category>
       </categories>
       <tags>
         <tag>Web</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
-    <title>CSS（三）</title>
-    <url>/webfront/web4/</url>
-    <content><![CDATA[<h3 id="CSS的元素显示模式">CSS的元素显示模式</h3>
+    <title>CSS</title>
+    <url>/webfront/CSS/</url>
+    <content><![CDATA[<h2 id="CSS的主要使用场景就是美化网页、布局页面的">CSS的主要使用场景就是美化网页、布局页面的</h2>
+<ul>
+<li>HTML的局限性：只关注内容的语义</li>
+<li>CSS-网页美容师：层叠样式表的简称</li>
+<li>CSS基础选择器</li>
+<li>CSS语法规范：有选择器以及一条或多条声明</li>
+<li>标签选择器：用HTML标签名称作为选择器</li>
+</ul>
+<h3 id="CSS-选择器">CSS 选择器</h3>
+<h4 id="类选择器">类选择器</h4>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.类名</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+&lt;div class=<span class="token string">"类名"</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>⚠ <strong>注意</strong></p>
+<ol>
+<li>类选择器使用&quot;.&quot;进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
+<li>可以理解为给这个标签起了一个名字，来表示</li>
+<li>长名称或词组可以使用中横线来为选择器命名</li>
+<li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li>
+<li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li>
+<li>命名规范：见附件（Web前端开发规范手册.doc）</li>
+</ol>
+<h4 id="多类名">多类名</h4>
+<ul>
+<li>在标签class中填写多类名</li>
+<li>每个类名用空格分开</li>
+</ul>
+<h4 id="id选择器">id选择器</h4>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">#id名</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1；
+	...
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p>
+<p>id选择器和类选择器的区别</p>
+<ol>
+<li>类选择器好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用</li>
+<li>id选择器好比人的身份证号码，全中国是唯一的，不得重复</li>
+<li>id选择器和类选择器最大的不同在于使用次数上</li>
+<li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li>
+</ol>
+<h4 id="通配符选择器">通配符选择器</h4>
+<p>在CSS中，通配符选择器用&quot;*&quot;定义，他表示选取页面中所有元素</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1；
+	...
+<span class="token punctuation">&#125;</span>
+<span class="token selector"># 特殊情况才使用（清除所有元素标签的内外边距）
+*</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="基础选择器总结">基础选择器总结</h4>
+<table>
+<thead>
+<tr>
+<th>基础选择器</th>
+<th>作用</th>
+<th>特点</th>
+<th>使用情况</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签选择器</td>
+<td>可以选出所有相同的标签，比如p</td>
+<td>不能差异化选择</td>
+<td>较多</td>
+<td>p {color: red;}</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>可以选出1个或多个标签</td>
+<td>可以根据需求选择</td>
+<td>非常多</td>
+<td>.nav {color: red;}</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>一次只能选择1个标签</td>
+<td>id属性只能在每个HTML文档中出现一次</td>
+<td>一般和JS搭配</td>
+<td>#nav {color: red;}</td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>选择所有的标签</td>
+<td>选择的太多，有部分不需要</td>
+<td>特殊情况使用</td>
+<td>* {color: red;}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-字体属性">CSS 字体属性</h3>
+<h4 id="字体系列">字体系列</h4>
+<p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">"微软雅黑"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token selector">body</span> <span class="token punctuation">&#123;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">"Microsoft YaHei"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>各种字体之间必须使用英文状态下的逗号隔开</li>
+<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
+<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li>
+</ul>
+<h4 id="大小">大小</h4>
+<p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>px大小是我们网页的最常用的单位</li>
+<li>谷歌浏览器默认的文字大小为16px</li>
+<li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li>
+<li>可以给body指定整个页面的文字大小</li>
+<li>标题标签比较特殊，需要单独指定文字大小</li>
+</ul>
+<h4 id="粗细">粗细</h4>
+<p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>默认值（不加粗）</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>定义粗体（加粗）</td>
+</tr>
+<tr>
+<td>100~900·</td>
+<td>400等同于normal，而700等同于bold（数字后面不加单位）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li>
+<li>实际开发时，我们更喜欢用数字表示粗细</li>
+</ul>
+<h4 id="文字样式">文字样式</h4>
+<p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">P</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>默认值，浏览器会显示标准的字体样式font-style：normal；</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>浏览器会显示斜体的字体样式</td>
+</tr>
+</tbody>
+</table>
+<h4 id="字体符合属性">字体符合属性</h4>
+<p>字体属性可以把以上文字样式综合来写，节约代码</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"># 复合属性有要求
+<span class="token property">font</span><span class="token punctuation">:</span> font-style font-weight font-size/line-height font-family
+<span class="token property">font</span><span class="token punctuation">:</span> italic 700 16px Microsoft yahei<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li>
+<li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li>
+</ul>
+<h4 id="CSS字体属性总结">CSS字体属性总结</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font-size</td>
+<td>字号</td>
+<td>我们通常用的单位时px像素，一定要跟上单位</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>字体</td>
+<td>实际工作中按照团队约定来写字体</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>字体粗细</td>
+<td>记住加粗时700或者bold不加粗是normal或者400（不加单位</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>字体样式</td>
+<td>记住倾斜是italic    不倾斜是normal工作中我们最常用normal</td>
+</tr>
+<tr>
+<td>font</td>
+<td>字体连写</td>
+<td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-文本属性">CSS 文本属性</h3>
+<p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
+<h4 id="文本颜色">文本颜色</h4>
+<p><strong>color</strong>属性用于定义文本颜色</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预定义的颜色值</td>
+<td>red，green，blue，还有pink！</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>#FF0000，#FF6600</td>
+</tr>
+<tr>
+<td>RGB代码</td>
+<td>rgb(255,0,0)或rgb(100%,0%,0%)</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>开发中最常用的是十六进制</strong></em></p>
+<h4 id="对齐文本">对齐文本</h4>
+<p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left</td>
+<td>左对齐（默认值）</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+</tbody>
+</table>
+<h4 id="装饰文本">装饰文本</h4>
+<p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>默认。没有装饰线</td>
+</tr>
+<tr>
+<td>underline</td>
+<td>下划线。链接a自带下划线（常用）</td>
+</tr>
+<tr>
+<td>overline</td>
+<td>上划线。（几乎不用）</td>
+</tr>
+<tr>
+<td>line-through</td>
+<td>删除线。（不常用）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="文本缩进">文本缩进</h4>
+<p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">text-indent</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+	<span class="token property">text-indent</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p>
+<h4 id="行间距">行间距</h4>
+<p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这一行最下边到下一行最下边的距离就是行高</p>
+<h4 id="CSS文本属性总结">CSS文本属性总结</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>文本颜色</td>
+<td>通常用十六进制，简体形式#fff</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>文本对齐</td>
+<td>可以设置文字水平的对齐方式</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>文本缩进</td>
+<td>通常我们用于段落首行缩进两个字的距离</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+<td>文本修饰</td>
+<td>记住添加下划线underline、取消下划线none</td>
+</tr>
+<tr>
+<td>line-height</td>
+<td>行高</td>
+<td>控制行与行之间的距离</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-引入方式">CSS 引入方式</h3>
+<p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
+<h4 id="内部样式表">内部样式表</h4>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style>标签中
+&lt;style>
+	div</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+		<span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+&lt;/style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="行内样式表">行内样式表</h4>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式
+＜div style="color:red; font-size: 12px;">青春不常在，抓紧谈恋爱<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>style其实就是标签的属性</li>
+<li>在双引号中间，写法要符合CSS规范</li>
+<li>可以控制当前的标签设置样式</li>
+<li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
+<li>使用行内样式表设定CSS，通常也被称为行内式引入</li>
+</ul>
+<h4 id="外部样式表">外部样式表</h4>
+<p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
+<p>引入外部样式表分为两步：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中
+2. 在HTML页面中，使用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span><span class="token punctuation">></span></span>标签引入这个文件
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css文件路径<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rel</td>
+<td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
+</tr>
+<tr>
+<td>href</td>
+<td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td>
+</tr>
+</tbody>
+</table>
+<h4 id="CSS引入方式总结">CSS引入方式总结</h4>
+<table>
+<thead>
+<tr>
+<th>样式表</th>
+<th>优点</th>
+<th>缺点</th>
+<th>使用情况</th>
+<th>控制范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行内样式表</td>
+<td>书写方便，权重高</td>
+<td>结构样式混写</td>
+<td>较少</td>
+<td>控制一个标签</td>
+</tr>
+<tr>
+<td>内部样式表</td>
+<td>部分结构和样式相分离</td>
+<td>没有彻底分离</td>
+<td>较多</td>
+<td>控制一个页面</td>
+</tr>
+<tr>
+<td>外部样式表</td>
+<td>完全实现结构和样式相分离</td>
+<td>需要引入</td>
+<td>最多，推荐</td>
+<td>控制多个页面</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Emmet语法">Emmet语法</h3>
+<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
+<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
+<ol>
+<li>生成标签直接输入标签名按tab键即可</li>
+<li>如果想要生成多个相同标签加上*就可以了</li>
+<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
+<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
+<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
+<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
+<li>如果想要在生成的$签内部写内容可以用{}表示</li>
+</ol>
+<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
+<p>CSS基本采取简写形式即可</p>
+<ul>
+<li>比如 w200 按tab就可以生成 width: 200px;</li>
+<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
+</ul>
+<h4 id="快速格式化代码">快速格式化代码</h4>
+<p>设置搜索format勾选format on save</p>
+<h3 id="CSS复合选择器">CSS复合选择器</h3>
+<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
+<ul>
+<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
+<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
+<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
+</ul>
+<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
+<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">元素1 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
+<h4 id="子选择器（重要）">子选择器（重要）</h4>
+<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">元素1 > 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
+<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
+<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
+<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">元素1, 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上述语法表示选择元素1和元素2</p>
+<ul>
+<li>元素1和元素2中间用逗号隔开</li>
+<li>逗号可以理解为<strong>和</strong>的意思</li>
+<li>并集选择器通常用于集体声明</li>
+</ul>
+<h4 id="链接伪类选择器">链接伪类选择器</h4>
+<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">a</span><span class="token punctuation">:</span>link		# 选择所有未被访问的链接
+<span class="token property">a</span><span class="token punctuation">:</span>visited	# 选择所有已被访问的链接
+<span class="token property">a</span><span class="token punctuation">:</span>hover		# 选择鼠标指针位于其上的链接
+<span class="token property">a</span><span class="token punctuation">:</span>active	# 选择活动链接（鼠标按下未弹起）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="注意事项">注意事项</h5>
+<ul>
+<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
+<li>记忆法：love hate 或者 lv 宝宝 hao</li>
+<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
+</ul>
+<h5 id="开发写法">开发写法</h5>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="focus伪类选择器">focus伪类选择器</h4>
+<p>focus伪类选择器用于选取获得焦点的表单元素</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">焦点就是光标，一般情况&lt;input>类表单元素才能获取，因此这个选择器也主要针对表单元素来说
+input:focus</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="复合选择器总结">复合选择器总结</h4>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>作用</th>
+<th>特征</th>
+<th>使用情况</th>
+<th>隔开符号及用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后代选择器</td>
+<td>选择后代元素</td>
+<td>子孙后代</td>
+<td>较多</td>
+<td>符号是空格 .nav a</td>
+</tr>
+<tr>
+<td>子代选择器</td>
+<td>选择最近一级元素</td>
+<td>亲儿子</td>
+<td>较少</td>
+<td>符号是大于 .nav&gt;p</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>选择相同样式的元素</td>
+<td>集体声明</td>
+<td>较多</td>
+<td>符号是逗号 .nav,.header</td>
+</tr>
+<tr>
+<td>链接伪类选择器</td>
+<td>选择不同状态的链接</td>
+<td>和链接相关</td>
+<td>较多</td>
+<td>重点记住a{}和a:hover</td>
+</tr>
+<tr>
+<td>focus选择器</td>
+<td>选择获得光标的表单</td>
+<td>和表单相关</td>
+<td>较少</td>
+<td>记住input:focus</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS的元素显示模式">CSS的元素显示模式</h3>
 <p>元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局我们的网页。比如&lt;div自己占一行，一行可以放多个&lt;span。HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
 <h4 id="块元素">块元素</h4>
 <p>常见的块元素有&lt;h1-6、&lt;p、&lt;div、&lt;ul等，其中div最典型</p>
@@ -1304,13 +1416,11 @@ def quick_sort(li, left, right):
 <p>背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等</p>
 <h4 id="背景颜色">背景颜色</h4>
 <p>background-color属性定义了元素的背景颜色</p>
-<pre><code>background-color：颜色值；
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css">background-color：颜色值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>一般情况下元素背景颜色默认值是transparent（透明），也可手动指定</p>
 <h4 id="背景图片">背景图片</h4>
 <p>background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置（精灵图也是一种运用场景）</p>
-<pre><code>background-image : none | url(url)
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-image</span> <span class="token punctuation">:</span> none | <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -1331,8 +1441,7 @@ def quick_sort(li, left, right):
 </table>
 <h4 id="背景平铺">背景平铺</h4>
 <p>如果要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性</p>
-<pre><code>background-repeat: repeat | no-repeat | repeat-x | repeat-y
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-repeat</span><span class="token punctuation">:</span> repeat | no-repeat | repeat-x | repeat-y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -1361,8 +1470,7 @@ def quick_sort(li, left, right):
 </table>
 <h4 id="背景图片位置">背景图片位置</h4>
 <p>利用background-position属性可以改变图片在背景中的位置</p>
-<pre><code>background-position: x y;
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-position</span><span class="token punctuation">:</span> x y<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>参数代表的意思是：x坐标和y坐标。可以使用<strong>方位名词</strong>或者<strong>精确单位</strong></p>
 <table>
 <thead>
@@ -1399,8 +1507,7 @@ def quick_sort(li, left, right):
 <h4 id="背景图像固定（背景附着）">背景图像固定（背景附着）</h4>
 <p>background-attachment属性设置背景图像是否固定或者随着页面得其余部分滚动</p>
 <p>background-attachment后期可以制作视差滚动效果</p>
-<pre><code>background-attachment : scroll | fixed
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-attachment</span> <span class="token punctuation">:</span> scroll | fixed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -1422,13 +1529,11 @@ def quick_sort(li, left, right):
 <h4 id="背景复合写法">背景复合写法</h4>
 <p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中，从而减少代码量。当使用简写属性时，没有一定的书写顺序，一般习惯约定顺序为：</p>
 <p>background：背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置</p>
-<pre><code>background: transparent url(image.jpg) repeat-y fixed top;
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> transparent <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>image.jpg<span class="token punctuation">)</span></span> repeat-y fixed top<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>实际开发中，我们更提倡的写法</p>
 <h4 id="背景颜色半透明">背景颜色半透明</h4>
 <p>CSS3为我们提供了半透明的效果</p>
-<pre><code>background: rgba(0, 0, 0, 0.3);
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.3<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>红绿蓝 alpha不透明度，取值范围0~1</li>
 <li>实际开发中，习惯a的0.3的0省略，写为.3</li>
@@ -1484,6 +1589,64 @@ def quick_sort(li, left, right):
 </tbody>
 </table>
 <p>背景图片：实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置。（精灵图也是一种运用场景）</p>
+<h3 id="CSS三大特性">CSS三大特性</h3>
+<p>CSS中有三个非常重要的特性：层叠性、继承性、优先级</p>
+<h4 id="层叠性">层叠性</h4>
+<p>相同选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。</p>
+<p>层叠性原则：</p>
+<ul>
+<li>样式冲突，遵循原则是就近原则，哪个样式结构近，就执行哪个样式</li>
+<li>样式不冲突，不会层叠</li>
+</ul>
+<h4 id="继承性">继承性</h4>
+<p>CSS中的继承：子标签会继承父标签的某些样式，比如文本的颜色和字号</p>
+<ul>
+<li>恰当使用继承可以简化代码，降低CSS样式的复杂性</li>
+<li>子元素可以继承父元素的样式（text、size、line这些元素开头的可以继承，以及color属性）</li>
+<li>继承性口诀：龙生龙，凤生凤，老鼠的孩子会打洞</li>
+</ul>
+<h5 id="行高的继承性">行高的继承性</h5>
+<h4 id="优先级">优先级</h4>
+<p>当同一个元素指定多个选择器，就会有优先级</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>选择器权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>继承或者*</td>
+<td>0，0，0，0</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>0，0，0，1</td>
+</tr>
+<tr>
+<td>类选择器，伪类选择器</td>
+<td>0，0，1，0</td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>0，1，0，0</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1，0，0，0</td>
+</tr>
+<tr>
+<td>!important</td>
+<td>∞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>优先级注意点</strong></p>
+<p>权重是由4组数字组成，但是不会有进位</p>
+<p>类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推</p>
+<p>等级判断从左到右，如果某一位数位相同，则判断下一位数值</p>
+<p>通配符和继承权重为0</p>
 ]]></content>
       <categories>
         <category>Web前端</category>
@@ -1494,602 +1657,8 @@ def quick_sort(li, left, right):
       </tags>
   </entry>
   <entry>
-    <title>CSS（二）</title>
-    <url>/webfront/web3/</url>
-    <content><![CDATA[<h3 id="Emmet语法">Emmet语法</h3>
-<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
-<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
-<ol>
-<li>生成标签直接输入标签名按tab键即可</li>
-<li>如果想要生成多个相同标签加上*就可以了</li>
-<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
-<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
-<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
-<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
-<li>如果想要在生成的$签内部写内容可以用{}表示</li>
-</ol>
-<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
-<p>CSS基本采取简写形式即可</p>
-<ul>
-<li>比如 w200 按tab就可以生成 width: 200px;</li>
-<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
-</ul>
-<h4 id="快速格式化代码">快速格式化代码</h4>
-<p>设置搜索format勾选format on save</p>
-<h3 id="CSS复合选择器">CSS复合选择器</h3>
-<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
-<ul>
-<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
-<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
-<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
-</ul>
-<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
-<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
-<pre><code>元素1 元素2 &#123; 样式声明 &#125;
-</code></pre>
-<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
-<h4 id="子选择器（重要）">子选择器（重要）</h4>
-<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
-<pre><code>元素1 &gt; 元素2 &#123; 样式声明 &#125;
-</code></pre>
-<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
-<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
-<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
-<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
-<pre><code>元素1, 元素2 &#123; 样式声明 &#125;
-</code></pre>
-<p>上述语法表示选择元素1和元素2</p>
-<ul>
-<li>元素1和元素2中间用逗号隔开</li>
-<li>逗号可以理解为<strong>和</strong>的意思</li>
-<li>并集选择器通常用于集体声明</li>
-</ul>
-<h4 id="链接伪类选择器">链接伪类选择器</h4>
-<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
-<pre><code>a:link		# 选择所有未被访问的链接
-a:visited	# 选择所有已被访问的链接
-a:hover		# 选择鼠标指针位于其上的链接
-a:active	# 选择活动链接（鼠标按下未弹起）
-</code></pre>
-<h5 id="注意事项">注意事项</h5>
-<ul>
-<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
-<li>记忆法：love hate 或者 lv 宝宝 hao</li>
-<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
-</ul>
-<h5 id="开发写法">开发写法</h5>
-<pre><code>a &#123;
-	color: gray;
-&#125;
-</code></pre>
-<h4 id="focus伪类选择器">focus伪类选择器</h4>
-<p>focus伪类选择器用于选取获得焦点的表单元素</p>
-<pre><code>焦点就是光标，一般情况&lt;input&gt;类表单元素才能获取，因此这个选择器也主要针对表单元素来说
-input:focus &#123;
-	background-color: yellow;
-&#125;
-</code></pre>
-<h4 id="复合选择器总结">复合选择器总结</h4>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>作用</th>
-<th>特征</th>
-<th>使用情况</th>
-<th>隔开符号及用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>后代选择器</td>
-<td>选择后代元素</td>
-<td>子孙后代</td>
-<td>较多</td>
-<td>符号是空格 .nav a</td>
-</tr>
-<tr>
-<td>子代选择器</td>
-<td>选择最近一级元素</td>
-<td>亲儿子</td>
-<td>较少</td>
-<td>符号是大于 .nav&gt;p</td>
-</tr>
-<tr>
-<td>并集选择器</td>
-<td>选择相同样式的元素</td>
-<td>集体声明</td>
-<td>较多</td>
-<td>符号是逗号 .nav,.header</td>
-</tr>
-<tr>
-<td>链接伪类选择器</td>
-<td>选择不同状态的链接</td>
-<td>和链接相关</td>
-<td>较多</td>
-<td>重点记住a{}和a:hover</td>
-</tr>
-<tr>
-<td>focus选择器</td>
-<td>选择获得光标的表单</td>
-<td>和表单相关</td>
-<td>较少</td>
-<td>记住input:focus</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>Web前端</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS（一）</title>
-    <url>/webfront/web2/</url>
-    <content><![CDATA[<h2 id="CSS的主要使用场景就是美化网页、布局页面的">CSS的主要使用场景就是美化网页、布局页面的</h2>
-<ul>
-<li>HTML的局限性：只关注内容的语义</li>
-<li>CSS-网页美容师：层叠样式表的简称</li>
-<li>CSS基础选择器</li>
-<li>CSS语法规范：有选择器以及一条或多条声明</li>
-<li>标签选择器：用HTML标签名称作为选择器</li>
-</ul>
-<h3 id="CSS-选择器">CSS 选择器</h3>
-<h4 id="类选择器">类选择器</h4>
-<pre><code>.类名 &#123;
-	属性1: 属性值1;
-&#125;
-&lt;div class=&quot;类名&quot; 
-</code></pre>
-<p>⚠ <strong>注意</strong></p>
-<ol>
-<li>类选择器使用&quot;.&quot;进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
-<li>可以理解为给这个标签起了一个名字，来表示</li>
-<li>长名称或词组可以使用中横线来为选择器命名</li>
-<li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li>
-<li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li>
-<li>命名规范：见附件（Web前端开发规范手册.doc）</li>
-</ol>
-<h4 id="多类名">多类名</h4>
-<ul>
-<li>在标签class中填写多类名</li>
-<li>每个类名用空格分开</li>
-</ul>
-<h4 id="id选择器">id选择器</h4>
-<pre><code>#id名 &#123;
-	属性1: 属性值1；
-	...
-&#125;
-</code></pre>
-<p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p>
-<p>id选择器和类选择器的区别</p>
-<ol>
-<li>类选择器好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用</li>
-<li>id选择器好比人的身份证号码，全中国是唯一的，不得重复</li>
-<li>id选择器和类选择器最大的不同在于使用次数上</li>
-<li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li>
-</ol>
-<h4 id="通配符选择器">通配符选择器</h4>
-<p>在CSS中，通配符选择器用&quot;*&quot;定义，他表示选取页面中所有元素</p>
-<pre><code>* &#123;
-	属性1: 属性值1；
-	...
-&#125;
-# 特殊情况才使用（清除所有元素标签的内外边距）
-* &#123;
-	margin: 0;
-	padding: 0;
-&#125;
-</code></pre>
-<h4 id="基础选择器总结">基础选择器总结</h4>
-<table>
-<thead>
-<tr>
-<th>基础选择器</th>
-<th>作用</th>
-<th>特点</th>
-<th>使用情况</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>标签选择器</td>
-<td>可以选出所有相同的标签，比如p</td>
-<td>不能差异化选择</td>
-<td>较多</td>
-<td>p {color: red;}</td>
-</tr>
-<tr>
-<td>类选择器</td>
-<td>可以选出1个或多个标签</td>
-<td>可以根据需求选择</td>
-<td>非常多</td>
-<td>.nav {color: red;}</td>
-</tr>
-<tr>
-<td>id选择器</td>
-<td>一次只能选择1个标签</td>
-<td>id属性只能在每个HTML文档中出现一次</td>
-<td>一般和JS搭配</td>
-<td>#nav {color: red;}</td>
-</tr>
-<tr>
-<td>通配符选择器</td>
-<td>选择所有的标签</td>
-<td>选择的太多，有部分不需要</td>
-<td>特殊情况使用</td>
-<td>* {color: red;}</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS-字体属性">CSS 字体属性</h3>
-<h4 id="字体系列">字体系列</h4>
-<p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
-<pre><code>p &#123;font-family:&quot;微软雅黑&quot;;&#125;
-body &#123;font-family:&quot;Microsoft YaHei&quot;;&#125;
-</code></pre>
-<ul>
-<li>各种字体之间必须使用英文状态下的逗号隔开</li>
-<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
-<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li>
-</ul>
-<h4 id="大小">大小</h4>
-<p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
-<pre><code>p &#123;
-	font-size: 20px;
-&#125;
-</code></pre>
-<ul>
-<li>px大小是我们网页的最常用的单位</li>
-<li>谷歌浏览器默认的文字大小为16px</li>
-<li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li>
-<li>可以给body指定整个页面的文字大小</li>
-<li>标题标签比较特殊，需要单独指定文字大小</li>
-</ul>
-<h4 id="粗细">粗细</h4>
-<p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
-<pre><code>p &#123;
-	font-weight: bold;
-&#125;
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>默认值（不加粗）</td>
-</tr>
-<tr>
-<td>bold</td>
-<td>定义粗体（加粗）</td>
-</tr>
-<tr>
-<td>100~900·</td>
-<td>400等同于normal，而700等同于bold（数字后面不加单位）</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li>
-<li>实际开发时，我们更喜欢用数字表示粗细</li>
-</ul>
-<h4 id="文字样式">文字样式</h4>
-<p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
-<pre><code>P &#123;
-	font-style: normal;
-&#125;
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>默认值，浏览器会显示标准的字体样式font-style：normal；</td>
-</tr>
-<tr>
-<td>italic</td>
-<td>浏览器会显示斜体的字体样式</td>
-</tr>
-</tbody>
-</table>
-<h4 id="字体符合属性">字体符合属性</h4>
-<p>字体属性可以把以上文字样式综合来写，节约代码</p>
-<pre><code># 复合属性有要求
-font: font-style font-weight font-size/line-height font-family
-font: italic 700 16px Microsoft yahei
-</code></pre>
-<ul>
-<li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li>
-<li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li>
-</ul>
-<h4 id="CSS字体属性总结">CSS字体属性总结</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>表示</th>
-<th>注意点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>font-size</td>
-<td>字号</td>
-<td>我们通常用的单位时px像素，一定要跟上单位</td>
-</tr>
-<tr>
-<td>font-family</td>
-<td>字体</td>
-<td>实际工作中按照团队约定来写字体</td>
-</tr>
-<tr>
-<td>font-weight</td>
-<td>字体粗细</td>
-<td>记住加粗时700或者bold不加粗是normal或者400（不加单位</td>
-</tr>
-<tr>
-<td>font-style</td>
-<td>字体样式</td>
-<td>记住倾斜是italic    不倾斜是normal工作中我们最常用normal</td>
-</tr>
-<tr>
-<td>font</td>
-<td>字体连写</td>
-<td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS-文本属性">CSS 文本属性</h3>
-<p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
-<h4 id="文本颜色">文本颜色</h4>
-<p><strong>color</strong>属性用于定义文本颜色</p>
-<pre><code>div &#123;
-	color: red;
-&#125;
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>表示</th>
-<th>属性值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预定义的颜色值</td>
-<td>red，green，blue，还有pink！</td>
-</tr>
-<tr>
-<td>十六进制</td>
-<td>#FF0000，#FF6600</td>
-</tr>
-<tr>
-<td>RGB代码</td>
-<td>rgb(255,0,0)或rgb(100%,0%,0%)</td>
-</tr>
-</tbody>
-</table>
-<p><em><strong>开发中最常用的是十六进制</strong></em></p>
-<h4 id="对齐文本">对齐文本</h4>
-<p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
-<pre><code>div &#123;
-	text-align: center;
-&#125;
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>left</td>
-<td>左对齐（默认值）</td>
-</tr>
-<tr>
-<td>right</td>
-<td>右对齐</td>
-</tr>
-<tr>
-<td>center</td>
-<td>居中对齐</td>
-</tr>
-</tbody>
-</table>
-<h4 id="装饰文本">装饰文本</h4>
-<p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
-<pre><code>div &#123;
-	text-decoration: underline;
-&#125;
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>none</td>
-<td>默认。没有装饰线</td>
-</tr>
-<tr>
-<td>underline</td>
-<td>下划线。链接a自带下划线（常用）</td>
-</tr>
-<tr>
-<td>overline</td>
-<td>上划线。（几乎不用）</td>
-</tr>
-<tr>
-<td>line-through</td>
-<td>删除线。（不常用）</td>
-</tr>
-</tbody>
-</table>
-<h4 id="文本缩进">文本缩进</h4>
-<p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
-<pre><code>div &#123;
-	text-indent: 20px;
-	text-indent: 2em;
-&#125;
-</code></pre>
-<p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p>
-<h4 id="行间距">行间距</h4>
-<p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
-<pre><code>p &#123;
-	line-height: 20px;
-&#125;
-</code></pre>
-<p>这一行最下边到下一行最下边的距离就是行高</p>
-<h4 id="CSS文本属性总结">CSS文本属性总结</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>表示</th>
-<th>注意点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>color</td>
-<td>文本颜色</td>
-<td>通常用十六进制，简体形式#fff</td>
-</tr>
-<tr>
-<td>text-align</td>
-<td>文本对齐</td>
-<td>可以设置文字水平的对齐方式</td>
-</tr>
-<tr>
-<td>text-indent</td>
-<td>文本缩进</td>
-<td>通常我们用于段落首行缩进两个字的距离</td>
-</tr>
-<tr>
-<td>text-decoration</td>
-<td>文本修饰</td>
-<td>记住添加下划线underline、取消下划线none</td>
-</tr>
-<tr>
-<td>line-height</td>
-<td>行高</td>
-<td>控制行与行之间的距离</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS-引入方式">CSS 引入方式</h3>
-<p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
-<h4 id="内部样式表">内部样式表</h4>
-<pre><code>内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style&gt;标签中
-&lt;style&gt;
-	div &#123;
-		color: red;
-		font-size: 12px;
-	&#125;
-&lt;/style&gt;
-</code></pre>
-<h4 id="行内样式表">行内样式表</h4>
-<pre><code>行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式
-＜div style=&quot;color:red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱
-</code></pre>
-<ul>
-<li>style其实就是标签的属性</li>
-<li>在双引号中间，写法要符合CSS规范</li>
-<li>可以控制当前的标签设置样式</li>
-<li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
-<li>使用行内样式表设定CSS，通常也被称为行内式引入</li>
-</ul>
-<h4 id="外部样式表">外部样式表</h4>
-<p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
-<p>引入外部样式表分为两步：</p>
-<pre><code>1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中
-2. 在HTML页面中，使用&lt;link&gt;标签引入这个文件
-&lt;link rel=&quot;stylesheet&quot; href=&quot;css文件路径&quot;&gt;
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>rel</td>
-<td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
-</tr>
-<tr>
-<td>href</td>
-<td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td>
-</tr>
-</tbody>
-</table>
-<h4 id="CSS引入方式总结">CSS引入方式总结</h4>
-<table>
-<thead>
-<tr>
-<th>样式表</th>
-<th>优点</th>
-<th>缺点</th>
-<th>使用情况</th>
-<th>控制范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>行内样式表</td>
-<td>书写方便，权重高</td>
-<td>结构样式混写</td>
-<td>较少</td>
-<td>控制一个标签</td>
-</tr>
-<tr>
-<td>内部样式表</td>
-<td>部分结构和样式相分离</td>
-<td>没有彻底分离</td>
-<td>较多</td>
-<td>控制一个页面</td>
-</tr>
-<tr>
-<td>外部样式表</td>
-<td>完全实现结构和样式相分离</td>
-<td>需要引入</td>
-<td>最多，推荐</td>
-<td>控制多个页面</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>Web前端</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>羽毛球🏸</title>
-    <url>/badminton/badminton/</url>
+    <url>/sports/badminton/</url>
     <content><![CDATA[<h3 id="动作、结构、空间感"><em>动作、结构、空间感</em></h3>
 <h4 id="握拍的目的：发力">握拍的目的：发力</h4>
 <p>V字握法，像握手一样（苍蝇拍握法，排面稍微内旋）。食指推，拇指稍微去挡</p>
@@ -2163,9 +1732,31 @@ font: italic 700 16px Microsoft yahei
       </tags>
   </entry>
   <entry>
-    <title>HTML-VSCode</title>
-    <url>/webfront/web1/</url>
-    <content><![CDATA[<p>虽然我不是计算机专业，但我有计算机梦！前端后端嵌入式软件开发、全栈工程师说起来有些夸张，但我一直在向那个方向努力着。我也相信，（只要够卷o(￣▽￣)ｄ）这是个不看出身的专业。想来想去，决定了：我的大学，不能没有计算机</p>
+    <title>HTML</title>
+    <url>/webfront/HTML/</url>
+    <content><![CDATA[<h4 id="HTTP知识点">HTTP知识点</h4>
+<ul>
+<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
+<li>URL（Universal Resource Locator）即统一资源定位符</li>
+</ul>
+<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
+<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
+<h4 id="HTTP和HTTPS">HTTP和HTTPS</h4>
+<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
+<h4 id="网络请求">网络请求</h4>
+<p>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</p>
+<p>常见请求有：GET、POST</p>
+<p>GET：直接输入网址</p>
+<p>POST：大多提交表单时，例如登录</p>
+<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
+<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
+<p>常见服务器请求状态码：</p>
+<ul>
+<li>200-请求成功</li>
+<li>301-资源（网页等）被永久转移到其他URL</li>
+<li>404-请求的资源（网页等）不存在</li>
+<li>500-服务器内部错误</li>
+</ul>
 <h4 id="HTML-Web-浏览器简介">HTML-Web-浏览器简介</h4>
 <ul>
 <li>HTML不是编程语言，而是一种标记语言</li>
@@ -2177,12 +1768,11 @@ font: italic 700 16px Microsoft yahei
 <p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
 <h4 id="HTML标签">HTML标签</h4>
 <h5 id="HTML语法规范">HTML语法规范</h5>
-<pre><code>标签成对：&lt;html&gt;  &lt;/html&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">标签成对：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
 
-单标签：&lt;br /&gt;
+单标签：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>
 
-双标签关系：包含关系，并列关系
-</code></pre>
+双标签关系：包含关系，并列关系<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="HTML基本机构标签">HTML基本机构标签</h5>
 <table>
 <thead>
@@ -2216,19 +1806,18 @@ font: italic 700 16px Microsoft yahei
 </tbody>
 </table>
 <p>VS-Code之！主体结构</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-	&lt;meta charset=&quot;UTF-8&quot;&gt;
-	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-	&lt;title&gt;我的第一个网页&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">&lt;<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>我的第一个网页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
 	Hello World!
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="！DOCTYPE">！DOCTYPE</h5>
 <p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
 <h5 id="lang语言">lang语言</h5>
@@ -2275,8 +1864,7 @@ font: italic 700 16px Microsoft yahei
 </table>
 <p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
 <h5 id="img图片">img图片</h5>
-<pre><code>在HTML标签中，&lt;img src=&quot;url&quot; /&gt;
-</code></pre>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">在HTML标签中，<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -2320,9 +1908,8 @@ font: italic 700 16px Microsoft yahei
 </table>
 <p>border在HTML5已不支持（bordeR）</p>
 <p>属性均采取键值对的形式：key= “value”</p>
-<h5 id="超链接标签-a">超链接标签<a></h5>
-<pre><code>&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方式&quot;&gt; 文本或图像 &lt;/a&gt;
-</code></pre>
+<h5 id="超链接标签">超链接标签</h5>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>跳转目标<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>目标窗口的弹出方式<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 文本或图像 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
 <li>跳转目标：#表示空链接</li>
@@ -2332,15 +1919,14 @@ font: italic 700 16px Microsoft yahei
 <p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png" alt=""></p>
 <h5 id="表格标签">表格标签</h5>
 <p>用于展示数据（不是来布局页面的）</p>
-<pre><code>&lt;table&gt;
-	&lt;tr&gt;
-		&lt;td&gt;文字&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/table&gt;
-# &lt;table&gt;定义表格
-# &lt;tr&gt;用于定义单元格中的行，必须嵌套在&lt;table&gt;中
-# &lt;td&gt;用于定义表格中的单元格，必须嵌套在&lt;tr&gt;中
-</code></pre>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>文字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>定义表格
+# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>用于定义单元格中的行，必须嵌套在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>中
+# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>用于定义表格中的单元格，必须嵌套在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>表格属性，实际开发不常用，后面通过CSS来设置</p>
 <table>
 <thead>
@@ -2379,8 +1965,7 @@ font: italic 700 16px Microsoft yahei
 </tbody>
 </table>
 <p>表格结构标签</p>
-<pre><code>&lt;thead&gt;表格的头部区域&lt;tbody&gt;表格的整体区域
-</code></pre>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>表格的头部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>表格的整体区域<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>合并单元格</p>
 <ul>
 <li>跨行合并：rowspan=“合并单元格的个数”</li>
@@ -2388,43 +1973,41 @@ font: italic 700 16px Microsoft yahei
 </ul>
 <h5 id="列表标签">列表标签</h5>
 <p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
-<pre><code># 主标签只能嵌套&lt;li&gt;，其中可以容纳所有元素
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 主标签只能嵌套<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>，其中可以容纳所有元素
 # 无序列表（重点）、排序整齐，没有顺序
-&lt;ul&gt;
-	&lt;li&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;/li&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
 	....
-	&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
 # 有序列表（不常用，了解即可）
-&lt;ol&gt;
-	&lt;li&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;/li&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
 	....
-	&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
 # 自定义列表、一个小标题，其他围绕他们说明
-&lt;dl&gt;
-	&lt;dt&gt;&lt;/dt&gt;
-	&lt;dd&gt;&lt;/dd&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
 	....
-	&lt;dd&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-</code></pre>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="表单标签">表单标签</h5>
 <p>目的：收集用户信息</p>
 <p>一个完整的表单由<strong>表单域、表单控件（表单元素）<strong>和</strong>提示信息</strong>三部分组成</p>
 <p>表单域：包含表单元素的区域</p>
 <p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
-<pre><code>&lt;form action=&quot;url地址&quot; method=&quot;提交方式&quot; name=&quot;表单域名称&quot;&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url地址<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>提交方式<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>表单域名称<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 	# 各种表单元素控件
-&lt;/form&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>表单元素</p>
 <ul>
 <li>input输入表单元素</li>
 </ul>
-<pre><code># 用于收集用户信息。&lt;input type=&quot;属性值&quot; /&gt;。
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 用于收集用户信息。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>属性值<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>。
 text：文本框、里面可以输入任何文字
 password：密码框、用户看不见输入的密码
 radio：单选按钮、实现多选一
@@ -2437,25 +2020,22 @@ reset：清楚表单中的所有数据
 button：定义可点击按钮，通常后期结合js一起使用
 file：文件域、上传文件使用
 
-&lt;label for=&quot;名字&quot;&gt;内容&lt;/label&gt;
-&lt;input type=&quot;radio&quot; name=&quot;名字&quot; id=&quot;名字&quot; /&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>select下拉表单元素</li>
 </ul>
-<pre><code># 定义下拉列表
-&lt;select&gt;
-	&lt;option&gt;选项1&lt;/option&gt;
-	&lt;option&gt;选项2&lt;/option&gt;
-	&lt;option&gt;选项3&lt;/option&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 定义下拉列表
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
 	...
-&lt;/select&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>textarea文本域元素</li>
 </ul>
-<pre><code># 大量输入文本，经常用于留言板、评论	
-</code></pre>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 大量输入文本，经常用于留言板、评论	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="查找文档">查找文档</h4>
 <ul>
 <li>百度：<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
@@ -2468,11 +2048,12 @@ file：文件域、上传文件使用
       </categories>
       <tags>
         <tag>HTML</tag>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
     <title>日本十大主要城市</title>
-    <url>/japaneselearning/japaneselearning5/</url>
+    <url>/japanese-learning/japaneselearning5/</url>
     <content><![CDATA[<p>本文摘自：<a href="https://livejapan.com/zh-cn/">景点名胜、体验指南 - LIVE JAPAN</a></p>
 <h2 id="札幌"><strong>札幌</strong></h2>
 <p><strong>都道府县：</strong> 北海道<br>
@@ -2547,7 +2128,7 @@ file：文件域、上传文件使用
   </entry>
   <entry>
     <title>《标日·初》中的细节拓展！</title>
-    <url>/japaneselearning/japaneselearning4/</url>
+    <url>/japanese-learning/japaneselearning4/</url>
     <content><![CDATA[<h4 id="1-は表示对比">1.は表示对比</h4>
 <p>对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、から、まで、と的后面构成复合形式。例如：私の　部屋には　電話が　ありません。</p>
 <h4 id="2-いえ、うち">2.いえ、うち</h4>
@@ -2585,7 +2166,7 @@ file：文件域、上传文件使用
   </entry>
   <entry>
     <title>「料理のさしすせそ」</title>
-    <url>/japaneselearning/japaneselearning3/</url>
+    <url>/japanese-learning/japaneselearning3/</url>
     <content><![CDATA[<h2 id="「料理のさしすせそ」でおいしくなる理由は？">「料理のさしすせそ」でおいしくなる理由は？</h2>
 <h3 id="「さ」砂糖">「さ」砂糖</h3>
 <p>砂糖は塩より分子が大きく浸透性が低いので、先に入れて味を馴染ませるのがおすすめです！<br>
@@ -2612,7 +2193,7 @@ file：文件域、上传文件使用
   </entry>
   <entry>
     <title>《标准日本语·初级》句型语法总结</title>
-    <url>/japaneselearning/japaneselearning2/</url>
+    <url>/japanese-learning/japaneselearning2/</url>
     <content><![CDATA[<h3 id="重要句型总结以及单词语法扩展">重要句型总结以及单词语法扩展</h3>
 <h4 id="4-あります、います">4.あります、います</h4>
 <p>源自ある、いる，都有存在的意思，至于书上的理解是将事物分为有无意志，而我更认同另外一种理解——是否可以运动。如：電車がある、電車がいる，就可以根据这个要点来理解。这也解释了部分植物可以使用いる来形容。</p>
@@ -2750,7 +2331,7 @@ file：文件域、上传文件使用
   </entry>
   <entry>
     <title>日语动词十二种变形总结</title>
-    <url>/japaneselearning/japaneselearning1/</url>
+    <url>/japanese-learning/japaneselearning1/</url>
     <content><![CDATA[<h3 id="动词以う段结尾">动词以う段结尾</h3>
 <p><img src="https://i.loli.net/2021/08/24/U7HB8yK9FiYJuhc.png" alt=""></p>
 <ul>
@@ -2860,24 +2441,8 @@ file：文件域、上传文件使用
       </tags>
   </entry>
   <entry>
-    <title>日语？日语！</title>
-    <url>/japaneselearning/japaneselearning/</url>
-    <content><![CDATA[<p>为什么要学日语？可能我自己也不知道。或许没有理由，又或许太多理由。可能只是一个瞬间的想法、也可能是一幅画面的情感共鸣。我喜欢塞着耳机，一直走在夜色里。看灯火阑珊，望漫天繁星，身边来来往往的人群…</p>
-<p>“为什么我们总觉得书中的爱情轰轰烈烈，而现实却平平淡淡呢？”</p>
-<p>“大抵是因为，我们可以轻而易举地看到书中人内心的波涛汹涌，却体会不到身边人的欲言又止吧。”</p>
-<p>这个回答让我产生太多太多的共鸣，事实很重要，我的态度更重要。我始终谨记着这句话。整个宇宙已经够冷了，真正宝贵的是那些温暖而纯粹的东西，每次打开手机看到朋友发给我的碎碎念就很开心，包括那有趣的事情，也包括伤心的内容。超喜欢接受朋友们的日常，会感觉自己是被需要的！</p>
-<p>再回到开头，可能答案已经出来了。</p>
-]]></content>
-      <categories>
-        <category>日语！</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Scrapy框架（初探）</title>
-    <url>/pythonwebcatch/pythonwebcatch-scrapy/</url>
+    <title>Scrapy框架</title>
+    <url>/python-catch/pythonwebcatch-scrapy/</url>
     <content><![CDATA[<h1>Scrapy简介：</h1>
 <p>Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而编写的应用框架，用途非常广泛。Scrapy使用了Twisted异步网络框架，可以加快我们的下载速度。</p>
 <p>异步：调用在发出之后，这个调用就直接返回，不管有无结果</p>
@@ -2901,13 +2466,12 @@ file：文件域、上传文件使用
 <li>保存数据——pipeline中保存数据</li>
 </ol>
 <p>定义多个pipeline，例如先处理数据再存储数据，例如不同的域名要进行不同的提取，但要注意process_item名称不能变，其形参（spider）<a href="http://xn--spider-2x8i375aqy9kyxa.name">可以通过spider.name</a> == &quot;itcast&quot;进行判断操作。</p>
-<pre><code># logging：不同等级的日志，保存到本地，
+<pre class="line-numbers language-none"><code class="language-none"># logging：不同等级的日志，保存到本地，
 import logging
 # 获取当前日志输出位置
-logger = logging.getLogger(__name__)
-# setting可以设置LOG_FILE = './log.log'保存到本地
-logger.warning(item)
-</code></pre>
+logger &#x3D; logging.getLogger(__name__)
+# setting可以设置LOG_FILE &#x3D; &#39;.&#x2F;log.log&#39;保存到本地
+logger.warning(item)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>scrapy</p>
 <ul>
 <li>settings中设置LOG_LEVEL=“WARNING”</li>
@@ -2926,7 +2490,7 @@ logging.basicConfig(...)
 </ul>
 ]]></content>
       <categories>
-        <category>python网络爬虫</category>
+        <category>Python网络爬虫</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -2934,93 +2498,27 @@ logging.basicConfig(...)
       </tags>
   </entry>
   <entry>
-    <title>利用python抓取静态网页（四、继续完善并打包程序）</title>
-    <url>/pythonwebcatch/pythonwebcatch4/</url>
-    <content><![CDATA[<h3 id="对源程序继续完善">对源程序继续完善</h3>
-<h4 id="Sleep延迟">Sleep延迟</h4>
-<p>为了避免被反爬措施发现，我们在for循环里加入sleep函数</p>
-<p>引入库：</p>
-<pre><code>import time
-from random import randint
-</code></pre>
-<p>for循环下载img最后一行加入：</p>
-<pre><code>time.sleep(sleep_time / 100)
-</code></pre>
-<p>当然，子进程try：第一行加入：</p>
-<pre><code>sleep_time = randint(1, 201)
-</code></pre>
-<p>保证在每次下载间隔1~2s</p>
-<h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
-<p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
-<p>因此，我只能设置一个MessageBox来提醒用户关闭主程序前，停止子线程。我也一直会寻找更好的办法，目前只能采取此策略了QAQ</p>
-<pre><code>msgBox = QMessageBox()
-msgBox.setWindowTitle(&quot;Warning&quot;)
-msgBox.setText(&quot;退出程序前一定要停止下载！&quot;)
-msgBox.setInformativeText(&quot;不然我会偷偷下载的！(严肃&quot;)
-msgBox.setStandardButtons(QMessageBox.Ok)
-msgBox.setDefaultButton(QMessageBox.Ok)
-ret = msgBox.exec_()
-</code></pre>
-<h4 id="更改logo">更改logo</h4>
-<pre><code>from PySide2.QtGui import QIcon
-# 根目录下保存名为'logo.png'的logo
-app.setWindowIcon(QIcon('logo.png'))
-</code></pre>
-<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
-<h3 id="cxfreeze打包">cxfreeze打包</h3>
-<h4 id="cxfreeze与pyinstaller">cxfreeze与pyinstaller</h4>
-<p>其实，我还是习惯用pyinstaller，因为它更加完善，但在打包时，出现</p>
-<pre><code>with open(filename, 'w', encoding='utf-8') as f:
-PermissionError: [Errno 13] Permission denied: 
-</code></pre>
-<p>我推断是pyinstaller打包程序不支持写入二进制文件，于是改用cxfreeze。</p>
-<p>注意：py文件最好不要太长，且不要出现下划线，例如Python_catch_10086.py文件名可能程序识别不了而报无法找到该文件的错误。</p>
-<pre><code>pip install cx_freeze
-</code></pre>
-<p>安装完毕后，在根目录命令行输入：</p>
-<pre><code>cxfreeze software.py --target-dir Alexation --target-name Alexation --icon logo.ico --base-name=&quot;win32gui&quot;
-</code></pre>
-<p>其中software.py是python项目，–target-dir xxxx是生成文件夹名称，–target-name xxxx是生成.exe可执行文件的名称，–icon xxxx是该.exe文件的ico，最后–base-name=&quot;win32gui&quot;是去掉控制台显示。</p>
-<h4 id="附属文件插入">附属文件插入</h4>
-<p>打包完成后别着急运行，好些个附属文件还没有转移，例如wallpaper.ui、logo.png这些文件是没有被打包进去的，因此需要我们手动粘贴到根目录下。</p>
-<p>这时运行可执行文件即可看到我们的程序。</p>
-<h3 id="开发总结">开发总结</h3>
-<p>当然，这里面还有太多太多的Bug，每当我有更好的点子便会对程序进行补充、重构，重绘，我们都在成长着阿。</p>
-]]></content>
-      <categories>
-        <category>程序打包</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>程序打包</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（三、第一次接触Pyside2）</title>
-    <url>/pythonwebcatch/pythonwebcatch3/</url>
-    <content><![CDATA[<h1>独乐乐不如众乐乐！</h1>
-<h2 id="Pyside2">Pyside2</h2>
-<h3 id="Python图形界面开发">Python图形界面开发</h3>
-<p>每次程序运行，都是那个黑框框（发给好朋友总觉得怪怪的</p>
-<p>我们需要GUI，给他提升提升颜值，程序的用户交互界面我们称之为UI</p>
+    <title>Pyside2封装爬虫</title>
+    <url>/python-catch/Pyside2/</url>
+    <content><![CDATA[<h3 id="Python图形界面开发">Python图形界面开发</h3>
+<p>程序的用户交互界面我们称之为UI</p>
 <p>目前python语言GUI有以下选择</p>
 <ul>
 <li>Tkinter：官方标准库，稳定，程序小，控件较少</li>
 <li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
 <li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
 </ul>
-<pre><code># 豆瓣源
-pip install pyside2 -i https://pypi.douban.com/simple/
-</code></pre>
-<h3 id="利用QtDesigner进行布局规划">利用QtDesigner进行布局规划</h3>
-<p>pip安装好pyside2包后到package文件夹下查看会发现有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 豆瓣源
+pip install pyside2 -i https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="利用QtDesigner进行布局规python划">利用QtDesigner进行布局规python划</h3>
+<p>pip安装好pyside2包后到package文件夹下有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
 <p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png" alt=""></p>
 <p>具体使用方法这里参考官方文档：<a href="https://doc.qt.io/qt-5/qapplication.html">QApplication Class | Qt Widgets 5.15.5</a></p>
 <p>中文版简化教程：<a href="http://www.byhy.net/tut/py/gui/qt_01/">Python Qt 简介 | 白月黑羽 (byhy.net)</a></p>
 <h3 id="对源程序进行重构">对源程序进行重构</h3>
 <p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
 <h4 id="pyside2自定义类例程">pyside2自定义类例程</h4>
-<pre><code>from PySide2.QtWidgets import QApplication, QMessageBox
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from PySide2.QtWidgets import QApplication, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 
 class Wallpaper:
@@ -3028,7 +2526,7 @@ class Wallpaper:
         self.wp.button
         self.wp.textEdit
         # 注意，刚刚设计的.ui保存至程序当前目录下
-        self.wp = QUiLoader().load('main.ui')
+        self.wp &#x3D; QUiLoader().load(&#39;main.ui&#39;)
         # xxxx是.ui中的button参数名称
         self.wp.xxxx.clicked.connect(self.handleCalc)
 
@@ -3036,22 +2534,21 @@ class Wallpaper:
 		# button点击后运行函数
 		
 		
-app = QApplication([])
-stats = Stats()
+app &#x3D; QApplication([])
+stats &#x3D; Stats()
 stats.wp.show()
-app.exec_()
-</code></pre>
+app.exec_()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="重构爬虫函数进行类封装">重构爬虫函数进行类封装</h4>
-<pre><code>class Wallpaper:
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">class Wallpaper:
 
     def __init__(self):
     	# sort即是选择类型
-    	self.sort = 0
-    	self.signal_1 = 2
-    	self.signal_2 = 0
-    	self.sorts_name = ['动漫', '女生动漫', '明日方舟', '城市', '简约'
-    , '科幻', '繁星', '英雄联盟', '太空', '航海王', '天空', '风景']
-        self.ui = QUiLoader().load('wallpaper.ui')
+    	self.sort &#x3D; 0
+    	self.signal_1 &#x3D; 2
+    	self.signal_2 &#x3D; 0
+    	self.sorts_name &#x3D; [&#39;动漫&#39;, &#39;女生动漫&#39;, &#39;明日方舟&#39;, &#39;城市&#39;, &#39;简约&#39;
+    , &#39;科幻&#39;, &#39;繁星&#39;, &#39;英雄联盟&#39;, &#39;太空&#39;, &#39;航海王&#39;, &#39;天空&#39;, &#39;风景&#39;]
+        self.ui &#x3D; QUiLoader().load(&#39;wallpaper.ui&#39;)
         self.ui.button.clicked.connect(self.handleCalc)
         # 添加类型
         self.ui.cb.addItems(self.sorts_name)
@@ -3061,38 +2558,38 @@ app.exec_()
 
     def selectionchange(self, i):
     	# 获取当前类型选中序号i，0为起始  
-        self.sort = i
+        self.sort &#x3D; i
 
     def handleCalc(self):
     	# 对每个网址的最大页数分别赋值
-        page = [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]
+        page &#x3D; [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]
 		# 进行勾选框判断
         if self.ui.check.isChecked():
         # 停止或开始信号标记
-            self.signal_1 += 1
+            self.signal_1 +&#x3D; 1
             # 满足开始信号
-            if self.signal_1 % 2 == 1:
+            if self.signal_1 % 2 &#x3D;&#x3D; 1:
             # 更改button名称
-                self.ui.button.setText('停止')
+                self.ui.button.setText(&#39;停止&#39;)
                 # 列表元素均为网址，在此插入，略
-                sorts = [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]
-                base_url = sorts[self.sort]
+                sorts &#x3D; [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]
+                base_url &#x3D; sorts[self.sort]
                 # 对文件夹名称、路径分类化
-                fold_name = self.sorts_name[self.sort]
-                fold_path = self.sorts_name[self.sort] + '\\'
+                fold_name &#x3D; self.sorts_name[self.sort]
+                fold_path &#x3D; self.sorts_name[self.sort] + &#39;\\&#39;
 
 				# &lt;insert&gt;
 				
-            if self.signal_1 % 2 == 0:
-                self.ui.button.setText('开始')
+            if self.signal_1 % 2 &#x3D;&#x3D; 0:
+                self.ui.button.setText(&#39;开始&#39;)
         else:
         	# 勾选框未勾选提示
-            msgBox1 = QMessageBox()
+            msgBox1 &#x3D; QMessageBox()
             msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)
-            msgBox1.setText('记得勾选&quot;我已阅读《使用手册》&quot;哦~')
+            msgBox1.setText(&#39;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#39;)
             msgBox1.setStandardButtons(QMessageBox.Ok)
             msgBox1.setDefaultButton(QMessageBox.Ok)
-            ret = msgBox1.exec_()
+            ret &#x3D; msgBox1.exec_()
 
     def gui(self, text):
     	# 打印抓取进度
@@ -3100,57 +2597,71 @@ app.exec_()
         # 让infoBox刷新至最新一条
         self.ui.infoBox.ensureCursorVisible()
         
-        
-app = QApplication(sys.argv)
+app &#x3D; QApplication(sys.argv)
 # 可以更换自己的logo，保存在当前目录下
-app.setWindowIcon(QIcon('logo.png'))
-wallpaper_catch = Wallpaper()
+app.setWindowIcon(QIcon(&#39;logo.png&#39;))
+wallpaper_catch &#x3D; Wallpaper()
 wallpaper_catch.wp.show()
 # 当最后一个线程结束时，程序关闭
-sys.exit(app.exec_())
-</code></pre>
-<p>设计、封装、重构、运行！唉？怎么无响应了？？返回文件夹查看，确实下载到了呀，原来我们requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作，不然程序有可能会出现莫名其妙的问题。</p>
+sys.exit(app.exec_())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作</p>
 <p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
-<pre><code>from threading import Thread # 引入threading模块
-</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from threading import Thread # 引入threading模块<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
 <p>因此我们创建Catch_Signal类，继承自QObject类：</p>
-<pre><code>class Catch_Signals(QObject):
-    procedure = Signal(str)
-</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">class Catch_Signals(QObject):
+    procedure &#x3D; Signal(str)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在Wallpaper类中定义实例属性：</p>
-<pre><code>        self.wp.ms = Catch_Signals()
-        self.wp.ms.procedure.connect(self.gui)
-</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">self.wp.ms &#x3D; Catch_Signals()
+self.wp.ms.procedure.connect(self.gui)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>再在Wallpaper类中定义GUI绘制函数：</p>
-<pre><code>    def gui(self, text):
-        self.wp.infoBox.append(str(text))
-        self.wp.infoBox.ensureCursorVisible()
-</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def gui(self, text):
+    self.wp.infoBox.append(str(text))
+    self.wp.infoBox.ensureCursorVisible()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>将爬虫程序放入子线程：</p>
-<pre><code>				# 插入&lt;insert&gt;处
-                thread = Thread(target=self.threadSend,
-                     args=(base_url, fold_name, fold_path))
-                thread.start()
-                
-                
-    # 定义子线程函数            
-    def threadSend(self, base_url, fold_name, fold_path):
-        try:
-            # 爬虫函数略
-        except requests.URLRequired as e:
-            # 略
-</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 插入&lt;insert&gt;处
+            thread &#x3D; Thread(target&#x3D;self.threadSend,
+                 args&#x3D;(base_url, fold_name, fold_path))
+            thread.start()
+# 定义子线程函数            
+def threadSend(self, base_url, fold_name, fold_path):
+    try:
+        # 爬虫函数略
+    except requests.URLRequired as e:
+        # 略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>补充import：</p>
-<pre><code>from PySide2.QtWidgets import QApplication, QMessageBox
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from PySide2.QtWidgets import QApplication, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QIcon
-from PySide2.QtCore import Signal, QObject
-</code></pre>
-<p>这样一来，主程序就不会卡顿了</p>
+from PySide2.QtCore import Signal, QObject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="对源程序继续完善">对源程序继续完善</h3>
+<h4 id="Sleep延迟">Sleep延迟</h4>
+<p>我们在for循环里加入sleep函数</p>
+<p>引入库：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import time
+from random import randint<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>for循环下载img最后一行加入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">time.sleep(sleep_time &#x2F; 100)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>当然，子进程try：第一行加入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">sleep_time &#x3D; randint(1, 201)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>保证在每次下载间隔1~2s</p>
+<h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
+<p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
+<p>注意！这里是个坑，当ui界面是动态加载时，重写closeEvent函数是无效的！</p>
+<p>也就是说，当需要重写closeEvent函数时，必须要静态加载ui文件，在同目录cmd命令行下运行以下命令</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pyside2-uic xxxxx.ui -&gt; xxxxx.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后在主函数中调用该py文件即相当于调用ui文件</p>
+<h4 id="更改logo">更改logo</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from PySide2.QtGui import QIcon
+# 根目录下保存名为&#39;logo.png&#39;的logo
+app.setWindowIcon(QIcon(&#39;logo.png&#39;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
+<h4 id="附属文件插入">附属文件插入</h4>
+<p>打包完成后别着急运行，好些个附属文件还没有转移，例如logo.png文件是没有被打包进去的，因此需要我们手动粘贴到相应目录下。</p>
+<p>这时运行可执行文件即可看到我们的程序。</p>
 ]]></content>
       <categories>
-        <category>Gui</category>
+        <category>Pyside2</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -3160,51 +2671,146 @@ from PySide2.QtCore import Signal, QObject
       </tags>
   </entry>
   <entry>
-    <title>利用python抓取静态网页（二、循环扩大范围、异常处理）</title>
-    <url>/pythonwebcatch/pythonwebcatch2/</url>
-    <content><![CDATA[<h1>利用循环扩大抓取范围</h1>
+    <title>Python爬虫基础普及</title>
+    <url>/python-catch/Python-catch-base/</url>
+    <content><![CDATA[<p>其实Python采集网络数据以及与用户交互的能力或许没有JavaScript强，但是对采集到的数据进行分析，二次加工以及数据库存储的能力就要好很多。随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。反爬技术也是根据爬虫技术衍生而来的，只要我们不断地提高技术，<em><strong>可见即可爬</strong></em>。</p>
+<h3 id="Python爬虫思路">Python爬虫思路</h3>
+<h4 id="1-明确需求（Website）">1.明确需求（Website）</h4>
+<h4 id="2-发送请求（Request）">2.发送请求（Request）</h4>
+<ul>
+<li>请求方式：Get、Post</li>
+<li>请求URL：URL全称统一资源定位符，如一个网页文档、一张图片、一个视频等都可以用URL唯一来确定</li>
+<li>请求头：头部信息如User-Agent、Host、Cookies等信息</li>
+<li>请求体：请求时额外携带的数据，如表单提交时的表单数据</li>
+</ul>
+<h4 id="3-获取数据（Response）">3.获取数据（Response）</h4>
+<ul>
+<li>响应状态：有多种响应状态，如200代表成果、301跳转、404找不到页面、502服务器错误等</li>
+<li>响应头：如内容类型、内容长度、服务器信息、设置Cookie等</li>
+<li>响应体：最主要的部分、包含了请求资源的内容，如网页的HTML、图片的二进制数据等</li>
+</ul>
+<h4 id="4-解析数据（Parse）">4.解析数据（Parse）</h4>
+<ul>
+<li>直接处理</li>
+<li>Json解析</li>
+<li>正则表达式</li>
+<li>BeautifulSoup</li>
+<li>Parsel</li>
+<li>Xpath/CSS</li>
+</ul>
+<h4 id="5-存储数据（Database）">5.存储数据（Database）</h4>
+<ul>
+<li>文本：如纯文本、Json、Xml等</li>
+<li>关系型数据库：如MySQL、Orcacle、SQL Server等</li>
+<li>非关系型数据库：如MongoDB、Redis等key-value形式储存</li>
+<li>二进制文件：如图片、视频、音频等直接保存成特定文件格式</li>
+</ul>
+<h3 id="实战（QQ壁纸）">实战（QQ壁纸）</h3>
+<h4 id="指定URL">指定URL</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
+import parsel		# 引入第三方库
+# 目标网址：
+base_url &#x3D; &#39;http:&#x2F;&#x2F;www.qqbizhi.com&#x2F;desk&#x2F;meinv&#x2F;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
+<h4 id="UA伪装">UA伪装</h4>
+<p>UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
+<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png" alt=""></p>
+<p>看！蓝色的，即是UA，不配置的话默认是python哦。那该如何配置呢？修改headers中的键值对即可，即加上下面这句话：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">headers &#x3D; &#123;&#39;User-Agent&#39;:&#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#39;
+                        &#39;Gecko&#x2F;20100101 Firefox&#x2F;91.0&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="发起请求（模拟浏览器）">发起请求（模拟浏览器）</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># get返回结果赋值给response
+response &#x3D; requests.get(url&#x3D;base_url, headers&#x3D;headers)
+# 配置编码方式，使其自适应网站编码类型
+response.encoding &#x3D; response.apparent_encoding
+# 获取文本
+data &#x3D; response.text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里注意，后面保存图片为二进制，获取二进制数据格式就要用content</p>
+<ul>
+<li>response.text 返回的是一个 unicode 型的文本数据</li>
+<li>response.content 返回的是 bytes 型的二进制数据</li>
+</ul>
+<h4 id="获取相应数据">获取相应数据</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># parsel解析，获取HTML源码
+html_data &#x3D; parsel.Selector(data)
+# xpath对目标定位
+data_list &#x3D; html_data.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;imglist&quot;]&#x2F;figure&#x2F;a&#x2F;@href&#39;).extract()
+# 获取目标赋给一个列表（不止一个目标）
+result &#x3D; [&#39;http:&#x2F;&#x2F;www.qqbizhi.com&#39; + data_url for data_url in data_list]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里涉及一丢丢xpath语法:</p>
+<p>//表示跨行定位</p>
+<p>[@class=“xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
+<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
+<h4 id="解析数据">解析数据</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 对每个url进行抓取
+for any_list in result:
+
+	# 同上，基地址变为相册地址，UA依旧
+    response_2 &#x3D; requests.get(url&#x3D;any_list, headers&#x3D;headers).text
+    response_2_data &#x3D; parsel.Selector(response_2)
+    img_url &#x3D; response_2_data.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;container&quot;]&#39;
+                &#39;&#x2F;&#x2F;div&#x2F;figure&#x2F;a&#x2F;@data-src&#39;).extract_first()
+                
+    if img_url &#x3D;&#x3D; None:
+        img_url &#x3D; response_2_data.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;pc-container&quot;]&#39;
+                            &#39;&#x2F;&#x2F;div&#x2F;figure&#x2F;a&#x2F;@data-src&#39;).extract_first()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
+<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
+</ul>
+<h4 id="进行持久化储存">进行持久化储存</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 获取二进制图片数据并赋值
+   img_data &#x3D; requests.get(url&#x3D;img_url, headers&#x3D;headers).content
+# 对图片进行命名，截取最后一个&#x2F;后的数据
+   file_name &#x3D; img_url.split(&#39;&#x2F;&#39;)[-1]
+# 打开本目录下创建好的img文件夹进行写入
+# &lt;insert&gt;
+   with open(&#39;img\\&#39; + file_name, mode&#x3D;&#39;wb&#39;) as f:
+   	# 打印进度
+       print(&#39;Downloading: &#39;, file_name)
+       f.write(img_data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>每次抓都要新建文件夹是不是太麻烦哦，引入os库（虽然打过包后会被360安全卫士报毒…emm)</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os
+        if not os.path.exists(&#39;img&#39;):
+            os.mkdir(&#39;img&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
+<h4 id="完善程序">完善程序</h4>
+<h5 id="扩大抓取范围">扩大抓取范围</h5>
 <p>不行，只抓取第一页的二十一张图片已经满足不了我的欲望 (&gt;.&lt;)</p>
 <p>那么，现在就来<em><strong>扩大抓取范围！</strong></em></p>
 <p>记得基地址是：</p>
-<pre><code>http://www.qqbizhi.com/desk/meinv/
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;www.qqbizhi.com&#x2F;desk&#x2F;meinv&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>我们来点开第二页，你会发现地址变成了：</p>
-<pre><code>http://www.qqbizhi.com/desk/meinv/index_2.html
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;www.qqbizhi.com&#x2F;desk&#x2F;meinv&#x2F;index_2.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>点开第三页：</p>
-<pre><code>http://www.qqbizhi.com/desk/meinv/index_3.html
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;www.qqbizhi.com&#x2F;desk&#x2F;meinv&#x2F;index_3.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>好的，规律显而易见，我们只需要index_{page}进行for循环即可多页抓取。</p>
-<pre><code>for page in range(1, 36):
-    if page == 1:
-        base_url = 'http://www.qqbizhi.com/desk/meinv/'
+<pre class="line-numbers language-none"><code class="language-none">for page in range(1, 36):
+    if page &#x3D;&#x3D; 1:
+        base_url &#x3D; &#39;http:&#x2F;&#x2F;www.qqbizhi.com&#x2F;desk&#x2F;meinv&#x2F;&#39;
     else:
-        base_url = 'http://www.qqbizhi.com' \
-            '/desk/meinv/index_&#123;&#125;.html'.format(str(page))
-</code></pre>
+        base_url &#x3D; &#39;http:&#x2F;&#x2F;www.qqbizhi.com&#39; \
+            &#39;&#x2F;desk&#x2F;meinv&#x2F;index_&#123;&#125;.html&#39;.format(str(page))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>将整个程序放在for函数里进行抓取即可实现多页抓取。</p>
 <p>现在，我们来让程序打印抓取进度</p>
-<pre><code># 程序开头部分做分割线
-print(&quot;----------------------------------------------&quot;)
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none"># 程序开头部分做分割线
+print(&quot;----------------------------------------------&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在for循环里，对每一页进行提醒</p>
-<pre><code>    print('--------&#123;&#125; page downloading---------'.format(page))
-</code></pre>
-<h1>对部分异常进行控制</h1>
-<p>下载图片肯定需要网络，那断开网络会怎样？Error！emm…那我联网了为啥还报错嘞、、、Web好不复杂，也许恰恰在你运行程序时候服务器死机，目标数据标签更改、我们都需要对这些异常进行控制，每当出现异常时，好的情况是程序异常退出，不好的情况是出现报错，崩溃，甚至失控。</p>
+<pre class="line-numbers language-none"><code class="language-none">print(&#39;--------&#123;&#125; page downloading---------&#39;.format(page))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="异常捕获">异常捕获</h5>
+<p>在没有网络连接的时候、服务器崩溃的时候、目标标签框架变更的时候等等各种因素都会影响到我们对数据的采集，这时，对部分异常的可控处理就显得尤为重要。</p>
 <p>好在requests已经对部分异常给予返回值进行提醒，我们可以根据这些返回值，进行判断处理。</p>
-<pre><code>        try:
-        	# 主程序
-        except requests.Timeout as e:
-            print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
-        except requests.URLRequired as e:
-            print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
-        except requests.ConnectionError as e:
-            print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
-        except requests.HTTPError as e:
-            print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
-</code></pre>
-<p>这里有requests库的异常总结：</p>
+<pre class="line-numbers language-none"><code class="language-none">try:
+	# 主程序
+except requests.Timeout as e:
+    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
+except requests.URLRequired as e:
+    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
+except requests.ConnectionError as e:
+    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)
+except requests.HTTPError as e:
+    print(&quot;出现异常，请查看网络连接或过段时间重试\n&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一些requests库的异常总结</p>
 <table>
 <thead>
 <tr>
@@ -3243,190 +2849,11 @@ print(&quot;----------------------------------------------&quot;)
 </tr>
 </tbody>
 </table>
+<h5 id="sleep延迟">sleep延迟</h5>
+<p>为了不给目标服务器过大压力、通常每个循环便添加一个sleep延迟（和平相处嘛 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8">😝</span></p>
 ]]></content>
       <categories>
-        <category>python网络爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（一、First Blood!）</title>
-    <url>/pythonwebcatch/pythonwebcatch1/</url>
-    <content><![CDATA[<h1><em>request、xpath、parsel爬取静态网页流程</em></h1>
-<ol>
-<li><em>指定URL</em></li>
-<li><em>UA伪装</em></li>
-<li><em>发起请求（模拟浏览器）</em></li>
-<li><em>获取相应数据</em></li>
-<li><em>解析数据</em></li>
-<li><em>进行持久化储存</em></li>
-</ol>
-<h2 id="First-Blood！">First Blood！</h2>
-<h3 id="指定URL">指定URL</h3>
-<pre><code>import requests
-import parsel		# 引入第三方库
-
-# 目标网址：
-base_url = 'http://www.qqbizhi.com/desk/meinv/'
-</code></pre>
-<p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
-<h3 id="UA伪装">UA伪装</h3>
-<p>啥是UA？UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
-<p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png" alt=""></p>
-<p>看！蓝色的，即是UA，如果没有配置请求头的话，犹如对网站门卫说：“我是python爬虫可以抓点儿图片吗》. 》”。那该如何配置呢？很简单，requests里get函数已经写好参数了（header），即加上下面这句话：</p>
-<pre><code>headers = &#123;'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '
-                        'Gecko/20100101 Firefox/91.0'&#125;
-</code></pre>
-<h3 id="发起请求（模拟浏览器）">发起请求（模拟浏览器）</h3>
-<pre><code># get返回结果赋值给response
-response = requests.get(url=base_url, headers=headers)
-# 配置编码方式，使其自适应网站编码类型
-response.encoding = response.apparent_encoding
-# 获取文本
-data = response.text
-</code></pre>
-<p>这里注意，后面保存图片就要用content</p>
-<ul>
-<li>response.text 返回的是一个 unicode 型的文本数据</li>
-<li>response.content 返回的是 bytes 型的二进制数据</li>
-</ul>
-<h3 id="获取相应数据">获取相应数据</h3>
-<pre><code># parsel解析，获取HTML源码
-html_data = parsel.Selector(data)
-# xpath对目标定位
-data_list = html_data.xpath('//div[@class=&quot;imglist&quot;]/figure/a/@href').extract()
-# 获取目标赋给一个列表（不止一个目标）
-result = ['http://www.qqbizhi.com' + data_url for data_url in data_list]
-</code></pre>
-<p>这里涉及xpath语法:</p>
-<p>//表示跨行定位</p>
-<p>[@class=“xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
-<p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
-<h3 id="解析数据">解析数据</h3>
-<pre><code># 对每个url进行抓取
-for any_list in result:
-
-	# 同上，基地址变为相册地址，UA依旧
-    response_2 = requests.get(url=any_list, headers=headers).text
-    response_2_data = parsel.Selector(response_2)
-    img_url = response_2_data.xpath('//div[@class=&quot;container&quot;]'
-                '//div/figure/a/@data-src').extract_first()
-                
-    if img_url == None:
-        img_url = response_2_data.xpath('//div[@class=&quot;pc-container&quot;]'
-                            '//div/figure/a/@data-src').extract_first()
-</code></pre>
-<ul>
-<li>extract()：这个方法返回一个数组，里面是str类型！。</li>
-<li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
-</ul>
-<h3 id="进行持久化储存">进行持久化储存</h3>
-<pre><code>	# 获取二进制图片数据并赋值
-    img_data = requests.get(url=img_url, headers=headers).content
-	# 对图片进行命名，截取最后一个/后的数据
-    file_name = img_url.split('/')[-1]
-	# 打开本目录下创建好的img文件夹进行写入
-	# &lt;insert&gt;
-    with open('img\\' + file_name, mode='wb') as f:
-    	# 打印进度
-        print('Downloading: ', file_name)
-        f.write(img_data)
-</code></pre>
-<p>Nice！！！拿到一血</p>
-<p>每次抓都要新建文件夹是不是太麻烦了呀，不要怕，引入os库（虽然会被360安全卫士报毒…emm)</p>
-<pre><code># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os
-        if not os.path.exists('img'):
-            os.mkdir('img')
-</code></pre>
-<p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
-<h2 id="对程序进行完善">对程序进行完善</h2>
-<p><em><strong>实现功能之后，就要开始让程序更加健壮！</strong></em></p>
-<ul>
-<li>我们只抓取到第一页的二十一张图片，我们还想做到多页抓取。</li>
-<li>如果服务器异常，或本地失去网络连接，我们不希望它报错，而是合理提醒。</li>
-<li>这样一直不断地抓取，被发现怎么办呢，可以加入适当的sleep函数。</li>
-<li>还有许多需要补充的地方，只要能想到，就要不断地完善…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（HTTP、WEB基础）</title>
-    <url>/pythonwebcatch/pythonwebcatch0/</url>
-    <content><![CDATA[<h1>HTTP、WEB基础</h1>
-<h2 id="HTTP知识点：">HTTP知识点：</h2>
-<ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
-</ul>
-<p>例如：<a href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h3 id="超文本（Hypertext）："><strong>超文本（Hypertext）：</strong></h3>
-<p>浏览器里看到的网页就是超文本解析而成，其网页源代码就是一系列HTML，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签，便形成了我们平常看到的网页，而网页的源代码HTML就可以称作超文本。</p>
-<h3 id="HTTP和HTTPS："><strong>HTTP和HTTPS：</strong></h3>
-<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h3 id="请求可分为四部分内容：请求方法、请求头、请求网址、请求体"><em><strong>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</strong></em></h3>
-<p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h2 id="WEB基础">WEB基础</h2>
-<h3 id="网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）"><em><strong>网页可以分为三部分：HTML（骨架）、CSS（肌肉）、JavaScript（皮肤）</strong></em></h3>
-<p>HTML（Hyper Text Markup Language）超文本标记语言（标签表示元素，如img）</p>
-<p>CSS层叠样式表，是目前唯一的网页页面排版样式标准</p>
-<p>JavaScript脚本语言（交互动作）</p>
-<h3 id="网页的结构："><strong>网页的结构：</strong></h3>
-<ul>
-<li>head 标签内定义一些页面的配置和引用</li>
-<li>title 标签则定义网页的标题，会显示在网页</li>
-<li>body 标签内是在网页正文中显示的内容</li>
-<li>div 标签定义网页中的区块</li>
-<li>h2 标签表示一个二级标题</li>
-<li>p 标签代表一个段落</li>
-</ul>
-<p>在CSS中，我们使用CSS选择器来定位节点（<div id = "container">）表示为#container，其中 # 开头表示选择id，其后紧跟id名称。以&quot;.&quot;开头表示class。</p>
-<p>摘自：《Python3 网络爬虫开发指南》</p>
-]]></content>
-      <categories>
-        <category>Web前端</category>
-      </categories>
-      <tags>
-        <tag>HTTP</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用python抓取静态网页（前言）</title>
-    <url>/pythonwebcatch/pythonwebcatch/</url>
-    <content><![CDATA[<p>随着编程教育逐渐向低年级普及，python由于其语法相对简单，基础功能强大，受到不少程序员的喜爱，甚至曾在全国刮起“全民学python”风。我也因其简单的语法，第三方库的强大功能而开始入坑。当然学习它肯定要和兴趣相结合，于是我开始了我的爬虫之路…</p>
-<p>但是，随着社会的发展，科学技术的提升，发展的不只有爬虫技术，还有反爬技术和企业对数据保护的重视程度。许多视频的部分案例已经失效，包括O’Reilly的部分老版书籍。你会发现，以前抓来的是源代码，现在是JavaScript加密后的代码；你会发现，以前跨页抓取十分丝滑，现在却莫名失效，原来管理员在换页前加入了验证码；你会发现，以前可以抓取的网页突然无法访问，原来是对方狠下心来封杀了你的IP、账号（太狠了555…）</p>
-<blockquote>
-<p>我不怕不怕，风吹雨打</p>
-</blockquote>
-<p>反爬技术也是根据爬虫技术衍生而来的，只要不断地提高技术，我相信天下没有不能抓的网站。</p>
-<p>当然，写这篇文章的时候，我是个计算机小萌新，而爬虫涉及的领域真的好广…接触网页源码会涉及前端知识，抓取数据后进行提取储存又会用到数据库，如果要自己解析结果还要进行数据分析（虽然一般爬虫工程师会把数据给数据分析师进行处理），访问网络会涉及计算机网络、网络安全等，当然这一切还是建立在编程基础上。（—_—）</p>
-<p>不过，这才是计算机的魅力！</p>
-<p>开始吧，我的爬虫之路！</p>
-]]></content>
-      <categories>
-        <category>python网络爬虫</category>
+        <category>Python网络爬虫</category>
       </categories>
       <tags>
         <tag>Python</tag>

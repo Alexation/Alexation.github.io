@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue基础, Alexation">
+    <meta name="keywords" content="Vue, Alexation">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="Vue
@@ -24,7 +24,7 @@ Vue的特点
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vue基础 | Alexation</title>
+    <title>Vue | Alexation</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -544,7 +544,7 @@ Vue的特点
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Vue基础
+                        Vue
                     </div>
                 </div>
             </div>
@@ -664,6 +664,10 @@ Vue的特点
                                 <span class="chip bg-color">Vue</span>
                             </a>
                         
+                            <a href="/tags/Javascript/" target="_blank">
+                                <span class="chip bg-color">Javascript</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -672,8 +676,8 @@ Vue的特点
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Vue/" class="post-category" target="_blank">
-                                Vue
+                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
+                                Web前端
                             </a>
                         
                     </div>
@@ -698,14 +702,14 @@ Vue的特点
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        731
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -791,7 +795,7 @@ Vue的特点
 <li>methods中配置的函数，都是被vue所管理的函数，this的指向是vm或组件实例对象</li>
 <li>@click=“demo”和@click=“demo($event)&quot;效果一致，但后者可以传参：</li>
 </ol>
-<h5 id="vue中常用的按键别名：">vue中常用的按键别名：</h5>
+<p>vue中常用的按键别名：</p>
 <ul>
 <li>回车：enter</li>
 <li>删除：delete（捕获删除和退格</li>
@@ -799,14 +803,69 @@ Vue的特点
 <li>空格：space</li>
 <li>换行：tab</li>
 </ul>
-<h5 id="vue未提供别名的按键，可以使用按键原实的key去绑定，但注意要转为kebab-case（短横线命名）">vue未提供别名的按键，可以使用按键原实的key去绑定，但注意要转为kebab-case（短横线命名）</h5>
-<h5 id="系统修饰键（用法特殊）：ctrl、alt、shift、meta">系统修饰键（用法特殊）：ctrl、alt、shift、meta</h5>
+<p>vue未提供别名的按键，可以使用按键原实的key去绑定，但注意要转为kebab-case（短横线命名）</p>
+<p>系统修饰键（用法特殊）：ctrl、alt、shift、meta</p>
 <ul>
 <li>配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才触发</li>
 <li>配合keydown使用：正常触发事件</li>
 </ul>
-<h5 id="也可以keycode去指定具体的按键（不推荐">也可以keycode去指定具体的按键（不推荐</h5>
-<h5 id="vue-config-keyCodes-自定义键名-键码，可以去定制按键别名">vue.config.keyCodes.自定义键名  = 键码，可以去定制按键别名</h5>
+<p>也可以keycode去指定具体的按键（不推荐</p>
+<p>vue.config.keyCodes.自定义键名  = 键码，可以去定制按键别名</p>
+<h4 id="计算属性">计算属性</h4>
+<ol>
+<li>
+<p>定义：要用的属性不存在，要通过已有的属性计算得来</p>
+</li>
+<li>
+<p>原理：底层借助了Object.defineproperty方法提供的getter和setter</p>
+<p>get什么时候调用？</p>
+<ul>
+<li>初次读取时、所依赖的数据发生变化时</li>
+</ul>
+<p>set什么时候调用？</p>
+<ul>
+<li>当值被修改时l</li>
+</ul>
+</li>
+<li>
+<p>优势：与methods实现相比，内部有缓存机制（复用），效率更高，调试方便</p>
+</li>
+<li>
+<p>备注：</p>
+<p>计算属性最终会出现在vm上，直接读取使用即可</p>
+<p>如果计算属性要被修改，那必须写set函数去相应修改，且set中要引起计算时依赖的数据发生。</p>
+</li>
+</ol>
+<h4 id="监视属性">监视属性</h4>
+<ol>
+<li>
+<p>当监视属性变化时，回调函数自动调用，进行相关操作</p>
+</li>
+<li>
+<p>监视的属性必须同时存在，才能进行监视！！@</p>
+</li>
+<li>
+<p>监视的两种写法：</p>
+<ul>
+<li>
+<p>new Vue时传入watch配置</p>
+</li>
+<li>
+<p>通过vm.$watch监视</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="深度监视">深度监视</h5>
+<ol>
+<li>vue中的watch默认不监测对象内部值的改变（一层）</li>
+<li>配置deep:true可以监测对象内部值得改变（多层）</li>
+</ol>
+<p><strong>备注：</strong></p>
+<ol>
+<li>vue自身可以监测对象内部值得改变，但是vue提供得watch默认不可以！</li>
+<li>使用watch时根据数据得具体结构，决定是否采用深度监视</li>
+</ol>
 
             </div>
             <hr/>
@@ -957,7 +1016,7 @@ Vue的特点
                     </span>
                     <a href="https://www.alexation.cn" class="b-link-green">Alexation</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/webfront/Vue/" class="b-link-green">Vue基础</a>
+                    <a href="/webfront/Vue/" class="b-link-green">Vue</a>
                 </p>
             </div>
 
@@ -1281,7 +1340,7 @@ Vue的特点
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/japaneselearning/Lemon/">
+                <a href="/japanese-learning/Lemon/">
                     <div class="card-image">
                         
                         <img src="https://m2.im5i.com/2022/01/10/UhbKdf.jpg" class="responsive-img" alt="Lemon - 米津玄師 (よねづ けんし)">
@@ -1292,7 +1351,7 @@ Vue的特点
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            时至今日 你仍是我的光芒
+                            今でもあなたはわたしの光
                         
                     </div>
                     <div class="publish-info">
@@ -1329,7 +1388,7 @@ Vue的特点
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/pythonwebcatch/pythonwebcatch-pyside2/">
+                <a href="/python-catch/pythonwebcatch-pyside2/">
                     <div class="card-image">
                         
                         
@@ -1358,8 +1417,8 @@ Vue的特点
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
-                                    python网络爬虫
+                            <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
+                                    Python网络爬虫
                                 </a>
                             
                             
@@ -1557,7 +1616,7 @@ Vue的特点
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">30k</span> 字
+                <span class="white-color">27.4k</span> 字
             
 
             
