@@ -6,10 +6,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="留言板, Alexation">
+    <meta name="keywords" content="Python初步, Alexation">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="留言板 | Alexation">
+    <meta name="description" content="本课程为爬虫技术，所有的知识点是中高级爬虫工程师必会的。本课程涵盖三个大章节，里面的内容都是精挑细选出来的核心要点。并辅以多个案例，使枯燥的知识点学起来生动有趣，配合多个自主研发的练习，多敲连之后就能彻底掌握所学知识点。
+
+
+
+章节名
+课时">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>留言板 | Alexation</title>
+    <title>Python初步 | Alexation</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -515,71 +520,604 @@
 </header>
 
         
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                <!-- 
-                    subtitle
-                 -->
-                
-                    留言板
-                
-            </div>
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
-            <div class="description center-align">
-                
-                    <font style="font-weight:700;color:#B399FF">我见过银河，但我仍爱你这一颗星。</font>
-                
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/4.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Python初步
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
+                                Python网络爬虫
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
             
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-01-14
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        Alexation
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        4 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本课程为爬虫技术，所有的知识点是中高级爬虫工程师必会的。本课程涵盖三个大章节，里面的内容都是精挑细选出来的核心要点。并辅以多个案例，使枯燥的知识点学起来生动有趣，配合多个自主研发的练习，多敲连之后就能彻底掌握所学知识点。</p>
+<table>
+<thead>
+<tr>
+<th>章节名</th>
+<th>课时名</th>
+<th>收获知识点</th>
+<th>本节目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通用爬虫</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>爬虫基础</td>
+<td>爬虫的分类、爬虫的用处、简单爬虫。开发者工具的使用。</td>
+<td>了解爬虫是什么，爬虫的应用范围。简单爬虫的编写，开发者工具的使用。</td>
+</tr>
+<tr>
+<td></td>
+<td>请求与响应</td>
+<td>http与https、请求体、响应体、响应状态码、请求报文与响应报文</td>
+<td>了解爬虫技术也是请求和响应的过程。通过分析请求与响应能够帮助我们伪造请求。</td>
+</tr>
+<tr>
+<td></td>
+<td>requests入门</td>
+<td>requests模块关键字参数的使用</td>
+<td>了解常用的请求方法、请求参数。响应体的常用方法，HTTP协议的基本通信格式。异常的处理。</td>
+</tr>
+<tr>
+<td></td>
+<td>数据解析-css选择器</td>
+<td>HTML标签，动态页面与静态页面。标签选择选择、类选择器、ID选择器、组合选择器、伪类选择器、属性选择器</td>
+<td>了解HTML标签，清楚动态页面与静态页面的区别。能使用css选择器提取前端数据。</td>
+</tr>
+<tr>
+<td></td>
+<td>数据解析-正则</td>
+<td>元字符、数量词、精确匹配、非贪婪匹配，re模块</td>
+<td>能熟练使用正则表达式提升工作效率。</td>
+</tr>
+<tr>
+<td></td>
+<td>数据解析-xpath</td>
+<td>xpath语法的学习</td>
+<td>能熟练使用xpath进行数据的解析</td>
+</tr>
+<tr>
+<td>数据存储</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>数据持久化</td>
+<td>文件操作、txt文本、csv格式、json格式、excel保存</td>
+<td>学会常见的数据格式，能将数据保存为常见的数据格式。</td>
+</tr>
+<tr>
+<td>反反爬</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>requests高级</td>
+<td>会话维持、cookies、session、requests模块常见异常</td>
+<td>了解会话保持，会使用cookie，会用session维持会话、会处理requests模块常见的异常</td>
+</tr>
+<tr>
+<td></td>
+<td>selenium入门</td>
+<td>selenium工作原理，动态网页处理方式。元素提取、页面等待。点击、输入、模拟登陆。</td>
+<td>了解selenium的工作原理。能使用selenium模拟人为操作。</td>
+</tr>
+<tr>
+<td></td>
+<td>selenium进阶</td>
+<td>嵌套网页处理，执行JS代码、鼠标动作链、下拉框与弹窗的处理</td>
+<td>熟练使用selenium操作浏览器</td>
+</tr>
+<tr>
+<td></td>
+<td>多线程+多进程</td>
+<td>多任务的概念、threading模块创建多任务、多线程的优缺点、线程池的使用</td>
+<td>掌握多线程并发编程</td>
+</tr>
+<tr>
+<td>高级提升</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>验证码的处理</td>
+<td>对接打码平台识别验证码</td>
+<td>熟练对接打码平台对验证码进行识别</td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy入门</td>
+<td>scrapy简介及安装、命令行讲解、scrapy运行原理</td>
+<td>了解如何用scrapy框架进行爬虫项目的开发，爬虫文件的编写，管道文件的数据保存</td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy进阶</td>
+<td>管道存储数据，发送post请求，解决反扒</td>
+<td>熟练管道类的书写方式， 中间件的书写方式</td>
+</tr>
+<tr>
+<td></td>
+<td>js解密入门</td>
+<td>JavaScript概述及安装配置</td>
+<td>了解百度翻译和有道翻译js解密的实现</td>
+</tr>
+<tr>
+<td>反反爬专题</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>图片验证码</td>
+<td>图片验证码应用场景、ORC识别验证码。图片的分割、降噪、二值化。对接打码平台。</td>
+<td>了解验证的应用场景，并且会自己处理常见的验证码。</td>
+</tr>
+<tr>
+<td></td>
+<td>滑动验证码</td>
+<td>滑动验证码处理，调用链，轨迹构建。极验验证处理</td>
+<td>学习滑动验证码的处理。能够自己处理常见的滑动验证。</td>
+</tr>
+<tr>
+<td></td>
+<td>字体反扒</td>
+<td>字体文件、python处理字体</td>
+<td>了解字体反扒的使用场景，学会如何处理所有的字体反扒。</td>
+</tr>
+<tr>
+<td></td>
+<td>APP爬虫</td>
+<td>fiddler的使用、手机app抓包</td>
+<td>将之前学习的HTTP协议的知识用于实战。</td>
+</tr>
+<tr>
+<td></td>
+<td>自建代理池（上）</td>
+<td>采集模块、存储模块、检测模块、web服务、调度模块、配置文档</td>
+<td>了解代理服务提供的方式，自建代理池项目。明白代理的使用方式</td>
+</tr>
+<tr>
+<td></td>
+<td>自建代理池（下）</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>scrapy专题</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy入门</td>
+<td>scrapy指令、scrapy入门案例、scrapy组件、scrapy运行流畅、item</td>
+<td>学习scrapy的常用指令，能够自己使用scrapy编写爬虫项目。用指令讲数据保存为</td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy进阶</td>
+<td>spider、item</td>
+<td>学会spider、item的使用</td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy深入</td>
+<td>Item pipeline，middlerware</td>
+<td>将数据保存为csv、json、mysql，学会ua中间件、代理中间件、cookie中间件的使用</td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy补充</td>
+<td>scrawlspider、redis</td>
+<td>学习redis的基础指令及使用，在python中操作redis</td>
+</tr>
+<tr>
+<td></td>
+<td>scrapy-redis分布式</td>
+<td>分布式爬虫、过滤器</td>
+<td>学会使用scrapy-redis搭建分布式爬虫。使用过滤器进行断点续爬</td>
+</tr>
+<tr>
+<td></td>
+<td>数据存储到MongoDB</td>
+<td>MongoDB数据库、python操作MongoDB数据库。</td>
+<td>学会MongoDB数据库的使用，以及将数据保存到MongoDB</td>
+</tr>
+<tr>
+<td>JS解密专题</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>JS语法与简单解密</td>
+<td>JavaScript基本语法，JavaScript常见混淆。浏览器断点调试、md5解密</td>
+<td>了解JS基本语法，清楚nodejs与web api的区别，掌握浏览断点调试</td>
+</tr>
+<tr>
+<td></td>
+<td>JS解密案例详解1</td>
+<td>JavaScript特殊语法，python调用JavaScript代码，伪造浏览器环境</td>
+<td>JavaScript的特殊语法、浏览器环境与node环境的区别、伪造浏览器环境</td>
+</tr>
+<tr>
+<td></td>
+<td>JS解密案例详解2</td>
+<td>案例教学</td>
+<td>实战案例</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+            <hr/>
+
             
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-
+    $(function () {
+        $('.tabs').tabs();
+    });
 </script>
+            
 
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 
-    </div>
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
 </div>
 
-<main class="content">
-    <div id="aboutme" class="container contact-container">
-            <div class="card">
-                    <div class="card-content">
-                            <div id="articleContent" data-aos="fade-up">
-                                    <h2 id="畅所欲言">畅所欲言</h2>
-<hr>
-<p>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链，一起交流学习！</p>
-<h2 id="友链">友链</h2>
-<hr>
-<p>Alexationの友链信息</p>
-<p>博客名称: Alexationの博客</p>
-<p>博客网址: <a target="_blank" rel="noopener" href="https://alexation.cn">https://alexation.cn</a></p>
-<p>博客头像: <a href="https://www.alexation.cn/medias/avatars/hwsun.jpg">https://www.alexation.cn/medias/avatars/hwsun.jpg</a></p>
-<p>博客介绍: Myself</p>
+<script src="/libs/share/js/social-share.min.js"></script>
 
-                                </div>
-                    </div>
-                </div>
-                   
-                        
-        
-                        
-        
-                        
-        
-                        
-        
-                        
-                        <style>
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://www.alexation.cn" class="b-link-green">Alexation</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/python-catch/Python-catch/" class="b-link-green">Python初步</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -876,10 +1414,250 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 //   }, 800)
 
 </script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/python-catch/Python-catch/">
+                    <div class="card-image">
                         
+                        <img src="/medias/banner/4.jpg" class="responsive-img" alt="Python初步">
+                        
+                        <span class="card-title">Python初步</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python爬虫大纲
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-01-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
+                                    Python网络爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/japanese-learning/Lemon/">
+                    <div class="card-image">
+                        
+                        <img src="https://m2.im5i.com/2022/01/10/UhbKdf.jpg" class="responsive-img" alt="Lemon - 米津玄師 (よねづ けんし)">
+                        
+                        <span class="card-title">Lemon - 米津玄師 (よねづ けんし)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            今でもあなたはわたしの光
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-01-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/" class="post-category" target="_blank">
+                                    日语！
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%97%A5%E8%AF%AD/" target="_blank">
+                        <span class="chip bg-color">日语</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Alexation<br />'
+            + '作者: Alexation<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
 </main>
+
+
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
