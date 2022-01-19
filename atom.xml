@@ -173,11 +173,11 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -200,9 +200,9 @@
     
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
-    <category term="爬虫" scheme="https://www.alexation.cn/tags/%E7%88%AC%E8%99%AB/"/>
-    
     <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
+    
+    <category term="爬虫" scheme="https://www.alexation.cn/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -370,9 +370,9 @@
     <category term="Web前端" scheme="https://www.alexation.cn/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
-    
     <category term="Web" scheme="https://www.alexation.cn/tags/Web/"/>
+    
+    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
     
   </entry>
   
