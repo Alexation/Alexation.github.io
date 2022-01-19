@@ -200,9 +200,9 @@
     
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
-    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
-    
     <category term="爬虫" scheme="https://www.alexation.cn/tags/%E7%88%AC%E8%99%AB/"/>
+    
+    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
     
   </entry>
   
@@ -370,9 +370,9 @@
     <category term="Web前端" scheme="https://www.alexation.cn/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Web" scheme="https://www.alexation.cn/tags/Web/"/>
-    
     <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
+    
+    <category term="Web" scheme="https://www.alexation.cn/tags/Web/"/>
     
   </entry>
   
