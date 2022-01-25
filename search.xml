@@ -3375,7 +3375,7 @@ app.setWindowIcon(QIcon(&#39;logo.png&#39;))<span aria-hidden="true" class="line
 <p>这时运行可执行文件即可看到我们的程序。</p>
 ]]></content>
       <categories>
-        <category>Pyside网络爬虫</category>
+        <category>Python网络爬虫</category>
       </categories>
       <tags>
         <tag>Python</tag>
