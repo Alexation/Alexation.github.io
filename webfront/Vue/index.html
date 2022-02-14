@@ -702,14 +702,14 @@ Vue的特点
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        5.8k
+                        6.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        21 分
+                        24 分
                     </div>
                     
                 
@@ -1394,8 +1394,113 @@ Vue的实例对象，以后简称vm。</p>
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>说明：</p>
 <ol>
-<li>优点：可以配置多个代理，且可以灵活的控制请求是否走代理。</li>
-<li>缺点：配置略微繁琐，请求资源时必须加前缀。</li>
+<li>
+<p>优点：可以配置多个代理，且可以灵活的控制请求是否走代理。</p>
+</li>
+<li>
+<p>缺点：配置略微繁琐，请求资源时必须加前缀。</p>
+</li>
+<li>
+<p>可以配置多个代理，且可以灵活的控制请求是否走代理。</p>
+</li>
+<li>
+<p>缺点：配置略微繁琐，请求资源时必须加前缀。</p>
+</li>
+</ol>
+<h4 id="插槽">插槽</h4>
+<ol>
+<li>
+<p>作用：让父组件可以向子组件指定位置插入html结构，也是一种组件间通信的方式，适用于 <strong style="color:orange">父组件 ===&gt; 子组件</strong> 。</p>
+</li>
+<li>
+<p>分类：默认插槽、具名插槽、作用域插槽</p>
+</li>
+<li>
+<p>使用方式：</p>
+<ol>
+<li>
+<p>默认插槽：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">父组件中：
+        &lt;Category&gt;
+           &lt;div&gt;html结构1&lt;&#x2F;div&gt;
+        &lt;&#x2F;Category&gt;
+子组件中：
+        &lt;template&gt;
+            &lt;div&gt;
+               &lt;!-- 定义插槽 --&gt;
+               &lt;slot&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>具名插槽：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">父组件中：
+        &lt;Category&gt;
+            &lt;template slot&#x3D;&quot;center&quot;&gt;
+              &lt;div&gt;html结构1&lt;&#x2F;div&gt;
+            &lt;&#x2F;template&gt;
+
+            &lt;template v-slot:footer&gt;
+               &lt;div&gt;html结构2&lt;&#x2F;div&gt;
+            &lt;&#x2F;template&gt;
+        &lt;&#x2F;Category&gt;
+子组件中：
+        &lt;template&gt;
+            &lt;div&gt;
+               &lt;!-- 定义插槽 --&gt;
+               &lt;slot name&#x3D;&quot;center&quot;&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+               &lt;slot name&#x3D;&quot;footer&quot;&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>作用域插槽：</p>
+<ol>
+<li>
+<p>理]解：数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。（games数据在Category组件中，但使用数据所遍历出来的结构由App组件决定）</p>
+</li>
+<li>
+<p>具体编码：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">父组件中：
+		&lt;Category&gt;
+			&lt;template scope&#x3D;&quot;scopeData&quot;&gt;
+				&lt;!-- 生成的是ul列表 --&gt;
+				&lt;ul&gt;
+					&lt;li v-for&#x3D;&quot;g in scopeData.games&quot; :key&#x3D;&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;&#x2F;li&gt;
+				&lt;&#x2F;ul&gt;
+			&lt;&#x2F;template&gt;
+		&lt;&#x2F;Category&gt;
+
+		&lt;Category&gt;
+			&lt;template slot-scope&#x3D;&quot;scopeData&quot;&gt;
+				&lt;!-- 生成的是h4标题 --&gt;
+				&lt;h4 v-for&#x3D;&quot;g in scopeData.games&quot; :key&#x3D;&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;&#x2F;h4&gt;
+			&lt;&#x2F;template&gt;
+		&lt;&#x2F;Category&gt;
+子组件中：
+        &lt;template&gt;
+            &lt;div&gt;
+                &lt;slot :games&#x3D;&quot;games&quot;&gt;&lt;&#x2F;slot&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;template&gt;
+		
+        &lt;script&gt;
+            export default &#123;
+                name:&#39;Category&#39;,
+                props:[&#39;title&#39;],
+                &#x2F;&#x2F;数据在子组件自身
+                data() &#123;
+                    return &#123;
+                        games:[&#39;红色警戒&#39;,&#39;穿越火线&#39;,&#39;劲舞团&#39;,&#39;超级玛丽&#39;]
+                    &#125;
+                &#125;,
+            &#125;
+        &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 
             </div>
@@ -2146,7 +2251,7 @@ Vue的实例对象，以后简称vm。</p>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">54.6k</span> 字
+                <span class="white-color">56.9k</span> 字
             
 
             

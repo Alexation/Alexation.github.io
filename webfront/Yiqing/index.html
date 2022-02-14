@@ -6,15 +6,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML, Alexation">
+    <meta name="keywords" content="CTGU自动打卡, Alexation">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="HTTP知识点
-
-URI（Uniform Resource Identifier）即统一资源标识符
-URL（Universal Resource Locator）即统一资源定位符
-
-例如：https://github.com/favicon">
+    <meta name="description" content="CTGU自动安全上报
+项目名称：CTGU自动安全上报
+所使用技术栈：Vue2 + Flask + MySQL
+实现过程：用户通过提交表单数据到Flask提供的API接口，将学号密码存储到MySQL数据库中，再通过服务器端Python脚本每天">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +20,7 @@ URL（Universal Resource Locator）即统一资源定位符
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>HTML | Alexation</title>
+    <title>CTGU自动打卡 | Alexation</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -536,13 +534,13 @@ URL（Universal Resource Locator）即统一资源定位符
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i1.wp.com/www.silocreativo.com/en/wp-content/uploads/2016/12/make-we-html.png?fit=666%2C370&quality=100&strip=all&ssl=1')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        HTML
+                        CTGU自动打卡
                     </div>
                 </div>
             </div>
@@ -654,12 +652,24 @@ URL（Universal Resource Locator）即统一资源定位符
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/" target="_blank">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/%E8%B7%A8%E5%9F%9F/" target="_blank">
+                                <span class="chip bg-color">跨域</span>
                             </a>
                         
-                            <a href="/tags/Web/" target="_blank">
-                                <span class="chip bg-color">Web</span>
+                            <a href="/tags/Flask/" target="_blank">
+                                <span class="chip bg-color">Flask</span>
+                            </a>
+                        
+                            <a href="/tags/Vue/" target="_blank">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%85%A8%E6%A0%88/" target="_blank">
+                                <span class="chip bg-color">全栈</span>
+                            </a>
+                        
+                            <a href="/tags/MySQL/" target="_blank">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -682,7 +692,7 @@ URL（Universal Resource Locator）即统一资源定位符
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-30
+                    2022-02-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -696,7 +706,7 @@ URL（Universal Resource Locator）即统一资源定位符
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2k
+                        1.7k
                     </div>
                     
 
@@ -720,314 +730,227 @@ URL（Universal Resource Locator）即统一资源定位符
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="HTTP知识点">HTTP知识点</h4>
-<ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
-</ul>
-<p>例如：<a target="_blank" rel="noopener" href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h4 id="HTTP和HTTPS">HTTP和HTTPS</h4>
-<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h4 id="网络请求">网络请求</h4>
-<p>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</p>
-<p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h4 id="HTML-Web-浏览器简介">HTML-Web-浏览器简介</h4>
-<ul>
-<li>HTML不是编程语言，而是一种标记语言</li>
-<li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li>
-<li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li>
-<li>浏览器内核人（渲染引擎）：读取网页内容，计算网页的显示方式并显示页面</li>
-</ul>
-<p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p>
-<p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
-<h4 id="HTML标签">HTML标签</h4>
-<h5 id="HTML语法规范">HTML语法规范</h5>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">标签成对：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+                <h1 style="text-align:center;font-weight:700;color:#B399FF"><i>CTGU自动安全上报</i></h1>
+<p>项目名称：CTGU自动安全上报</p>
+<p>所使用技术栈：Vue2 + Flask + MySQL</p>
+<p>实现过程：用户通过提交表单数据到Flask提供的API接口，将学号密码存储到MySQL数据库中，再通过服务器端Python脚本每天调用数据库参数对CTGU安全上报接口进行请求，达到自动安全上报。</p>
+<p>实现过程大致分为三个阶段：</p>
+<ol>
+<li>自动安全上报脚本编写</li>
+<li>前端用户信息收集</li>
+<li>后端提供API接口</li>
+</ol>
+<h2 id="自动安全上报脚本编写">自动安全上报脚本编写</h2>
+<h2 id="后端提供API接口">后端提供API接口</h2>
+<p>Flask本身不限定数据库的选择，你可以选择SQL或NOSQL的任何一种。也可以选择更方便的SQLALchemy，类似于Django的ORM。SQLALchemy实际上是对数据库的抽象，让开发者不用直接和SQL语句打交道，而是通过Python对象来操作数据库，在舍弃一些性能开销的同时，换来的是开发效率的较大提升。</p>
+<p>SQLAlchemy是一个关系型数据库框架，它提供了高层的ORM和底层的原生数据库的操作。<a target="_blank" rel="noopener" href="https://flask-sqlalchemy.palletsprojects.com/en/master/quickstart/">Flask-SQLAlchemy</a>是一个简化了SQLAlchemy操作的flask扩展。</p>
+<p>新建api.py文件</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
-单标签：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>
+app &#x3D; Flask(__name__, static_url_path&#x3D;&#39;&#x2F;&#39;, static_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;, template_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;)
 
-双标签关系：包含关系，并列关系<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="HTML基本机构标签">HTML基本机构标签</h5>
-<table>
-<thead>
-<tr>
-<th>标签名</th>
-<th>定义</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>html</td>
-<td>HTML标签</td>
-<td>页面中最大的标签，我们称为根标签</td>
-</tr>
-<tr>
-<td>head</td>
-<td>文档的头部</td>
-<td>注意在head标签中我们要设置的标题是title</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文档的标题</td>
-<td>让页面拥有一个属于自己的网页标题</td>
-</tr>
-<tr>
-<td>body</td>
-<td>文档的主体</td>
-<td>元素包含文档的所有内容</td>
-</tr>
-</tbody>
-</table>
-<p>VS-Code之！主体结构</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">&lt;<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>我的第一个网页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-	Hello World!
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="！DOCTYPE">！DOCTYPE</h5>
-<p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
-<h5 id="lang语言">lang语言</h5>
-<p>language的缩写：en英语、zh-CH中文</p>
-<h5 id="charset字符集">charset字符集</h5>
-<p>编码方式：GBK、UTF-8（万国码）一定要写</p>
-<h5 id="HTML常用标签">HTML常用标签</h5>
-<ul>
-<li>语义标签，区分标题，段落等</li>
-<li>标题标签h，一行显示</li>
-<li>段落和换行标签p，强制换行br</li>
-</ul>
-<p>文本格式化标签：</p>
-<table>
-<thead>
-<tr>
-<th>语义</th>
-<th>标签</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加粗</td>
-<td>strong或者b</td>
-<td>推荐strong，语气更强烈</td>
-</tr>
-<tr>
-<td>倾斜</td>
-<td>em或者i</td>
-<td>推荐em，语气更强烈</td>
-</tr>
-<tr>
-<td>删除线</td>
-<td>del或者s</td>
-<td>推荐del，语气更强烈</td>
-</tr>
-<tr>
-<td>下划线</td>
-<td>ins或者u</td>
-<td>推荐ins，语气更强烈</td>
-</tr>
-</tbody>
-</table>
-<p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
-<h5 id="img图片">img图片</h5>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">在HTML标签中，<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>属性值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>src</td>
-<td>图片路径</td>
-<td>必须属性</td>
-</tr>
-<tr>
-<td>alt</td>
-<td>文本</td>
-<td>替换文本。图像不能显示的文字</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文本</td>
-<td>提示文本。鼠标放到图像上显示的文字</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素</td>
-<td>设置图像的宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>像素</td>
-<td>设置图像的高度</td>
-</tr>
-<tr>
-<td>border</td>
-<td>像素</td>
-<td>设置图像的边框粗细</td>
-</tr>
-</tbody>
-</table>
-<p>border在HTML5已不支持（bordeR）</p>
-<p>属性均采取键值对的形式：key= “value”</p>
-<h5 id="超链接标签">超链接标签</h5>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>跳转目标<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>目标窗口的弹出方式<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 文本或图像 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
-<li>跳转目标：#表示空链接</li>
-<li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li>
-</ul>
-<h5 id="注释标签：-–我是一个注释–">注释标签：!–我是一个注释–</h5>
-<p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png" alt=""></p>
-<h5 id="表格标签">表格标签</h5>
-<p>用于展示数据（不是来布局页面的）</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>文字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
-# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>定义表格
-# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>用于定义单元格中的行，必须嵌套在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>中
-# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>用于定义表格中的单元格，必须嵌套在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>表格属性，实际开发不常用，后面通过CSS来设置</p>
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>align</td>
-<td>left、center、right</td>
-<td>规定表格相对周围元素的对齐方式</td>
-</tr>
-<tr>
-<td>border</td>
-<td>1或 “”</td>
-<td>规定表格单元是否拥有边框，默认为&quot;&quot;,表示没有边框</td>
-</tr>
-<tr>
-<td>cellpadding</td>
-<td>像素值</td>
-<td>规定单元边沿与其内容之间的空白，默认1像素</td>
-</tr>
-<tr>
-<td>cellspacing</td>
-<td>像素值</td>
-<td>规定单元格之间的空白，默认2像素</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素值或百分比</td>
-<td>规定表格的宽度</td>
-</tr>
-</tbody>
-</table>
-<p>表格结构标签</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>表格的头部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>表格的整体区域<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>合并单元格</p>
-<ul>
-<li>跨行合并：rowspan=“合并单元格的个数”</li>
-<li>跨列合并：colspan=“合并单元格的个数”</li>
-</ul>
-<h5 id="列表标签">列表标签</h5>
-<p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 主标签只能嵌套<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>，其中可以容纳所有元素
-# 无序列表（重点）、排序整齐，没有顺序
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	....
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
-# 有序列表（不常用，了解即可）
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	....
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
-# 自定义列表、一个小标题，其他围绕他们说明
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
-	....
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="表单标签">表单标签</h5>
-<p>目的：收集用户信息</p>
-<p>一个完整的表单由<strong>表单域、表单控件（表单元素）<strong>和</strong>提示信息</strong>三部分组成</p>
-<p>表单域：包含表单元素的区域</p>
-<p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url地址<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>提交方式<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>表单域名称<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	# 各种表单元素控件
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>表单元素</p>
-<ul>
-<li>input输入表单元素</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 用于收集用户信息。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>属性值<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>。
-text：文本框、里面可以输入任何文字
-password：密码框、用户看不见输入的密码
-radio：单选按钮、实现多选一
-name：表单元素名字、必须有相同的名字
-checkbox：复选框、实现多选
-value：显示默认值
-checked：默认选择
-submit：提交到服务器
-reset：清楚表单中的所有数据
-button：定义可点击按钮，通常后期结合js一起使用
-file：文件域、上传文件使用
+app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] &#x3D; &#39;mysql+pymysql:&#x2F;&#x2F;name:pwd@106.13.174.205:3306&#x2F;mls_web&#39;
+# mysql+pymysql 这是声明数据库和链接数据库的引擎  
+# name pwd 就是可以访问数据库的用户名密码 
+# 106.13.174.205:3306 是数据库地址 
+# &#x2F;mls_web 这是数据库名字
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>select下拉表单元素</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 定义下拉列表
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-	...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>textarea文本域元素</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 大量输入文本，经常用于留言板、评论	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="查找文档">查找文档</h4>
-<ul>
-<li>百度：<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
-<li>W3C：<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/">w3school 在线教程</a></li>
-<li>MDN：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li>
-</ul>
+app.config[&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;] &#x3D; True  
+ 如果设置成 True (默认情况)，Flask-SQLAlchemy 将会追踪对象的修改并且发送信号。这需要额外的内存， 如果不必要的可以禁用它。
+ 
+db &#x3D; SQLAlchemy(app)
+声明数据对象
+
+@app.route(&#39;&#x2F;&#39;)
+def index():
+    return render_template(&#39;index.html&#39;)
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装包</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install sqlacodegen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>cmd 切换到 flask目录 执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sqlacodegen --outfile&#x3D;models.py mysql+pymysql:&#x2F;&#x2F;name:pwd@106.13.174.205:3306&#x2F;mls_web<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>生成一个models.py文件 user表的映射，在该文件中，如果需要json格式传递，在class中添加如下代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def to_json(self):
+       return &#123;
+           &#39;id&#39;: self.id,
+           &#39;name&#39;: self.name,
+           &#39;pwd&#39;: self.pwd
+       &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将model.py引入api.py中</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, render_template, jsonify, request
+from flask_sqlalchemy import SQLAlchemy
+from models import *
+
+app &#x3D; Flask(__name__, static_url_path&#x3D;&#39;&#x2F;&#39;, static_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;, template_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;)
+app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] &#x3D; &#39;mysql+pymysql:&#x2F;&#x2F;mls:a838502774@106.13.174.205:3306&#x2F;mls_web&#39;
+app.config[&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;] &#x3D; True
+app.config[&#39;SQLALCHEMY_UCSO&#39;] &#x3D; True
+
+db &#x3D; SQLAlchemy(app)
+
+@app.route(&#39;&#x2F;&#39;)
+def index():
+    return render_template(&#39;index.html&#39;)
+
+
+@app.route(&#39;&#x2F;getUser&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])   # 查询数据的接口
+def get_user():
+    res &#x3D; db.session.query(User).all()				#User是从models里导入的 
+    temp &#x3D; []
+    for x in res:
+        temp.append(x.to_json())
+    return jsonify(data&#x3D;temp)
+
+
+@app.route(&#39;&#x2F;addUser&#39;, methods&#x3D;[&#39;POST&#39;])      #新增数据的接口
+def add_user():
+    data &#x3D; request.json        #获取传过来的参数
+    u &#x3D; User(name&#x3D;data.get(&quot;name&quot;),pwd&#x3D;data.get(&quot;pwd&quot;))      #根据传过来参数创建一条数据
+    db.session.add(u)  #add 是增加数据
+    db.session.commit()   #提交了才会到数据库中
+    return &#39;success&#39;
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Flask解决跨域问题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install flask-cors<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>flask-cors 有两种用法，一种为全局使用，一种对指定的路由使用</p>
+<p>配置全局路由</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, request
+from flask_cors import CORS
+
+app &#x3D; Flask(__name__)
+CORS(app, supports_credentials&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>配置单行路由</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, request
+from flask_cors import cross_origin
+
+app &#x3D; Flask(__name__)
+
+@app.route(&#39;&#x2F;&#39;)
+@cross_origin(supports_credentials&#x3D;True)
+def hello():
+    name &#x3D; request.args.get(&quot;name&quot;, &quot;World&quot;)
+    return f&#39;Hello, &#123;name&#125;!&#39;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>到这里接口已经可以正常访问了，但是当程序退出时无法访问，这里我使用gunicorn将flask挂起到后台</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装最新版本的gunicorn
+pip install gunicorn
+#安装指定版本的gunicorn
+pip install gunicorn&#x3D;&#x3D;19.9.0
+#异步模式
+pip install gevent&#x3D;&#x3D;1.4.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>定义常用的配置文件</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">#!usr&#x2F;bin&#x2F;env python
+#encoding:utf-8
+ 
+ 
+import os
+import gevent.monkey
+gevent.monkey.patch_all()
+import multiprocessing
+ 
+ 
+#开发环境可以打开，生产环境可以
+#debug &#x3D; True  
+ 
+#用于控制errorlog的信息级别，可以设置为debug、info、warning、error、critical
+loglevel &#x3D; &#39;debug&#39;
+ 
+#监听地址+端口
+bind &#x3D; &quot;0.0.0.0:5000&quot;
+ 
+#定义日志存储
+if not os.path.exists(&#39;log&#x2F;&#39;):
+    os.makedirs(&#39;log&#x2F;&#39;)
+pidfile &#x3D; &quot;log&#x2F;gunicorn.pid&quot;
+#访问日志
+accesslog &#x3D; &quot;log&#x2F;access.log&quot;
+#错误日志
+errorlog &#x3D; &quot;log&#x2F;debug.log&quot;
+ 
+#开启后台运行，默认值为False
+daemon &#x3D; True
+ 
+#启动的进程数，推荐值为：CPU核数*2+1
+workers &#x3D; multiprocessing.cpu_count()*2+1
+ 
+#指开启的每个工作进程的模式类型，默认为sync模式，也可使用gevent模式
+worker_class &#x3D; &#39;gevent&#39;
+x_forwarded_for_header &#x3D; &#39;X-FORWARDED-FOR&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>启动方式</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 第一种
+gunicorn -w 4 -b 172.19.6.213:5000 api:app
+# 第二种
+gunicorn --config&#x3D;config.py api:app<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果出现占用情况，可先查看pid然后关停即可</p>
+<pre class="line-numbers language-none"><code class="language-none">netstat -tulpn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4096即为占位端口的pid</p>
+<pre class="line-numbers language-none"><code class="language-none">kill -9 4096<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="前端用户信息收集">前端用户信息收集</h2>
+<p>因为仅仅是收集用户的学号和密码，故不需要router以及vuex等组件，也不需要对axios进行二次封装，所以这里我采用ElementUI的一个表单组件。再通过对样式进行微调，为了放置页面过于单调，为其添加一个SVG的动态背景。</p>
+<p>本地调试的时候由于可以通过后端解决跨域问题，便不再对vue.config.js进行更改，不过需要注意的是要在里面更改页面title</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// vue.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">//关闭es6</span>
+  lintOnSave<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">chainWebpack</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    config
+      <span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token parameter">args</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token operator">=</span><span class="token string">'CTGU自动安全上报'</span>
+        <span class="token keyword">return</span> args
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于ElementUI的按需引入需要在babel.config.js文件里添加配置，包括message也要挂载到vue原型上，这些<a target="_blank" rel="noopener" href="https://element.eleme.io/#/zh-CN/component/quickstart">ElementUI官方文档</a>都有的。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// babel.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@vue/cli-plugin-babel/preset'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token string">"modules"</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">"component"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token string">"libraryName"</span><span class="token operator">:</span> <span class="token string">"element-ui"</span><span class="token punctuation">,</span>
+        <span class="token string">"styleLibraryName"</span><span class="token operator">:</span> <span class="token string">"theme-chalk"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>向API提交表单，提交的数据格式要和后台接口统一，不然解析后数据可能为空。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// login.vue</span>
+<span class="token comment">// 设置数据格式</span>
+<span class="token keyword">const</span> headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"multipart/form-data"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 构造表单</span>
+<span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+data<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>ruleForm<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+data<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>ruleForm<span class="token punctuation">.</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 发请求</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$axios
+<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"后台数据库地址"</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+headers<span class="token operator">:</span> headers<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<span class="token comment">// console.log(res)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 提交完毕后重置表格，避免重复提交</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span>formName<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">resetFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>剩下的就是完善一些细节，比如如何取消自动上报的一些信息以及用户操作完毕后的及时反馈。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// login.vue</span>
+<span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        showClose<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        message<span class="token operator">:</span> <span class="token string">"注意：更改密码即可取消自动安全上报"</span><span class="token punctuation">,</span>
+        type<span class="token operator">:</span> <span class="token string">"info"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1178,7 +1101,7 @@ file：文件域、上传文件使用
                     </span>
                     <a href="https://www.alexation.cn" class="b-link-green">Alexation</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/webfront/HTML/" class="b-link-green">HTML</a>
+                    <a href="/webfront/Yiqing/" class="b-link-green">CTGU自动打卡</a>
                 </p>
             </div>
 
@@ -1498,49 +1421,64 @@ file：文件域、上传文件使用
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/sports/badminton/">
+                <a href="/webfront/Yiqing/">
                     <div class="card-image">
                         
-                        <img src="https://s2.loli.net/2022/01/25/UvAoDtc3RuqESeK.jpg" class="responsive-img" alt="羽毛球🏸">
                         
-                        <span class="card-title">羽毛球🏸</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="CTGU自动打卡">
+                        
+                        <span class="card-title">CTGU自动打卡</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            打羽毛球真的能缓解近视
+                            自动打卡签到服务器部署
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-02-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/" class="post-category" target="_blank">
-                                    运动！
+                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
+                                    Web前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%90%E5%8A%A8/" target="_blank">
-                        <span class="chip bg-color">运动</span>
+                    <a href="/tags/%E8%B7%A8%E5%9F%9F/" target="_blank">
+                        <span class="chip bg-color">跨域</span>
                     </a>
                     
-                    <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" target="_blank">
-                        <span class="chip bg-color">羽毛球</span>
+                    <a href="/tags/Flask/" target="_blank">
+                        <span class="chip bg-color">Flask</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%85%A8%E6%A0%88/" target="_blank">
+                        <span class="chip bg-color">全栈</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL/" target="_blank">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -1554,31 +1492,30 @@ file：文件域、上传文件使用
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/japanese-learning/japaneselearning5/">
+                <a href="/javascript/JsCoder/">
                     <div class="card-image">
                         
+                        <img src="https://m.leiphone.com/uploads/new/article/pic/201702/58af89295b8a8.jpg" class="responsive-img" alt="JS混淆与反混淆">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="日本十大主要城市">
-                        
-                        <span class="card-title">日本十大主要城市</span>
+                        <span class="card-title">JS混淆与反混淆</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            日本十大主要城市
+                            简单介绍常见混淆与反混淆方法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-01-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/" class="post-category" target="_blank">
-                                    日语！
+                            <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" class="post-category" target="_blank">
+                                    Python网络爬虫
                                 </a>
                             
                             
@@ -1588,8 +1525,16 @@ file：文件域、上传文件使用
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E8%AF%AD/" target="_blank">
-                        <span class="chip bg-color">日语</span>
+                    <a href="/tags/Javascript/" target="_blank">
+                        <span class="chip bg-color">Javascript</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B7%B7%E6%B7%86/" target="_blank">
+                        <span class="chip bg-color">混淆</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%8D%E6%B7%B7%E6%B7%86/" target="_blank">
+                        <span class="chip bg-color">反混淆</span>
                     </a>
                     
                 </div>
