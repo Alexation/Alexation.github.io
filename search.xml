@@ -1004,8 +1004,8 @@ print(d)
         <category>加密算法</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>Python</tag>
+        <tag>Javascript</tag>
         <tag>AES</tag>
         <tag>Base64</tag>
         <tag>DES</tag>
@@ -3588,9 +3588,9 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         <category>竞赛</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>可恶的电赛</tag>
         <tag>OpenMV</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
