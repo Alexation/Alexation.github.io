@@ -541,7 +541,7 @@
 
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 
 </script>
 
@@ -571,19 +571,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 </a>
                 
                 
-                <a href="/tags/%E6%97%A5%E8%AF%AD/" title="日语: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="日语" style="background-color: #F5EEF8;">日语
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" title="可恶的电赛: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="可恶的电赛" style="background-color: #D5F5E3;">可恶的电赛
+                            data-tagname="可恶的电赛" style="background-color: #F5EEF8;">可恶的电赛
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -592,7 +583,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/OpenMV/" title="OpenMV: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="OpenMV" style="background-color: #E8F8F5;">OpenMV
+                            data-tagname="OpenMV" style="background-color: #D5F5E3;">OpenMV
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -601,35 +592,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/Python/" title="Python: 9">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Python" style="background-color: #FEF9E7;">Python
+                            data-tagname="Python" style="background-color: #E8F8F5;">Python
                         <span class="tag-length">9</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Javascript/" title="Javascript: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Javascript" style="background-color: #F8F9F9;">Javascript
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%B7%B7%E6%B7%86/" title="混淆: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="混淆" style="background-color: #82E0AA;">混淆
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%8F%8D%E6%B7%B7%E6%B7%86/" title="反混淆: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="反混淆" style="background-color: #D7BDE2;">反混淆
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -637,8 +601,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="爬虫" style="background-color: #A3E4D7;">爬虫
+                            data-tagname="爬虫" style="background-color: #FEF9E7;">爬虫
                         <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTML/" title="HTML: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="HTML" style="background-color: #F8F9F9;">HTML
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -646,7 +619,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/Pyside2/" title="Pyside2: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Pyside2" style="background-color: #85C1E9;">Pyside2
+                            data-tagname="Pyside2" style="background-color: #82E0AA;">Pyside2
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -655,7 +628,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/Gui/" title="Gui: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Gui" style="background-color: #F8C471;">Gui
+                            data-tagname="Gui" style="background-color: #D7BDE2;">Gui
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -664,8 +637,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/%E5%B0%81%E8%A3%85/" title="封装: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="封装" style="background-color: #F9E79F;">封装
+                            data-tagname="封装" style="background-color: #A3E4D7;">封装
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%97%A5%E8%AF%AD/" title="日语: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="日语" style="background-color: #85C1E9;">日语
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -673,17 +655,35 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/tags/Scrapy/" title="Scrapy: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Scrapy" style="background-color: #F5EEF8;">Scrapy
+                            data-tagname="Scrapy" style="background-color: #F8C471;">Scrapy
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/HTML/" title="HTML: 2">
+                <a href="/tags/Javascript/" title="Javascript: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="HTML" style="background-color: #FEF9E7;">HTML
-                        <span class="tag-length">2</span>
+                            data-tagname="Javascript" style="background-color: #F9E79F;">Javascript
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%B7%B7%E6%B7%86/" title="混淆: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="混淆" style="background-color: #F9EBEA;">混淆
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8F%8D%E6%B7%B7%E6%B7%86/" title="反混淆: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="反混淆" style="background-color: #F8C471;">反混淆
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -760,6 +760,24 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 </a>
                 
                 
+                <a href="/tags/SQL/" title="SQL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="SQL" style="background-color: #A3E4D7;">SQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/XSS/" title="XSS: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="XSS" style="background-color: #D7BDE2;">XSS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Flask/" title="Flask: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -791,24 +809,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="MySQL" style="background-color: #F9EBEA;">MySQL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/SQL/" title="SQL: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="SQL" style="background-color: #A3E4D7;">SQL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/XSS/" title="XSS: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="XSS" style="background-color: #D7BDE2;">XSS
                         <span class="tag-length">1</span>
                     </span>
                 </a>

@@ -549,7 +549,7 @@
 
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 
 </script>
 
@@ -778,7 +778,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"日语！","value":6},{"name":"竞赛","value":1},{"name":"Python网络爬虫","value":6},{"name":"Python算法及拓展","value":2},{"name":"运动！","value":1},{"name":"Web前端","value":6},{"name":"加密算法","value":1},{"name":"JavaScript","value":1}],
+                data: [{"name":"竞赛","value":1},{"name":"Python网络爬虫","value":6},{"name":"日语！","value":6},{"name":"Python算法及拓展","value":2},{"name":"运动！","value":1},{"name":"Web前端","value":6},{"name":"加密算法","value":1},{"name":"JavaScript","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -802,7 +802,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
         xAxis: [
             {
                 type: 'category',
-                data: ["Python","日语","Javascript","Web","爬虫","Pyside2","HTML","跨域","Vue","Myself"]
+                data: ["Python","日语","Javascript","Web","爬虫","HTML","Pyside2","跨域","Vue","Myself"]
             }
         ],
         yAxis: [
@@ -990,12 +990,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
             
             
             
-            <a href="/tags/%E6%97%A5%E8%AF%AD/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">日语</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">可恶的电赛</span>
             </a>
@@ -1010,23 +1004,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
             
             
             
-            
-            
-            <a href="/tags/%E6%B7%B7%E6%B7%86/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">混淆</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E5%8F%8D%E6%B7%B7%E6%B7%86/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">反混淆</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E7%88%AC%E8%99%AB/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">爬虫</span>
             </a>
+            
+            
             
             
             
@@ -1048,11 +1030,29 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
             
             
             
+            <a href="/tags/%E6%97%A5%E8%AF%AD/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">日语</span>
+            </a>
+            
+            
+            
             <a href="/tags/Scrapy/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Scrapy</span>
             </a>
             
             
+            
+            
+            
+            <a href="/tags/%E6%B7%B7%E6%B7%86/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">混淆</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%8F%8D%E6%B7%B7%E6%B7%86/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">反混淆</span>
+            </a>
             
             
             
@@ -1104,6 +1104,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
             
             
             
+            
+            
+            <a href="/tags/XSS/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">XSS</span>
+            </a>
+            
+            
+            
             <a href="/tags/Flask/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Flask</span>
             </a>
@@ -1124,14 +1132,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
             
             <a href="/tags/MySQL/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">MySQL</span>
-            </a>
-            
-            
-            
-            
-            
-            <a href="/tags/XSS/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">XSS</span>
             </a>
             
             

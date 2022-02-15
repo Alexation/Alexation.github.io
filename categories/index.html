@@ -541,7 +541,7 @@
 
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 
 </script>
 
@@ -563,19 +563,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 
                 
                 
-                <a href="/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/" title="日语！: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">日语！
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E7%AB%9E%E8%B5%9B/" title="竞赛: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">竞赛
+                            style="background-color: #F9EBEA;">竞赛
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -584,7 +575,16 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                 <a href="/categories/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" title="Python网络爬虫: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">Python网络爬虫
+                            style="background-color: #F5EEF8;">Python网络爬虫
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/" title="日语！: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">日语！
                         <span class="tag-length">6</span>
                     </span>
                 </a>
@@ -676,7 +676,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"日语！","max":7},{"name":"竞赛","max":7},{"name":"Python网络爬虫","max":7},{"name":"Python算法及拓展","max":7},{"name":"运动！","max":7},{"name":"Web前端","max":7},{"name":"加密算法","max":7},{"name":"JavaScript","max":7}],
+            indicator: [{"name":"竞赛","max":7},{"name":"Python网络爬虫","max":7},{"name":"日语！","max":7},{"name":"Python算法及拓展","max":7},{"name":"运动！","max":7},{"name":"Web前端","max":7},{"name":"加密算法","max":7},{"name":"JavaScript","max":7}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -687,7 +687,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '5.jpg)');
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [6,1,6,2,1,6,1,1],
+                    value : [1,6,6,2,1,6,1,1],
                     name : '文章分类数量'
                 }
             ]
