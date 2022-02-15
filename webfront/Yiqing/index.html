@@ -775,9 +775,9 @@
 </ul>
 <h3 id="根据网页结构编写代码">根据网页结构编写代码</h3>
 <p>来到登录页面按下F12并刷新网页，因为登录涉及跳转甚至重定向，因此要勾选Preserve log选项。</p>
-<h3 id=""><img src="C:/Users/Alexation/Desktop/%E7%96%AB%E6%83%85python%E8%84%9A%E6%9C%AC%E6%98%AF%E5%9B%BE%E7%89%87/login.png" alt=""></h3>
+<h3 id=""><img src="https://s2.loli.net/2022/02/15/syrAFtjGVi95b4f.png" alt=""></h3>
 <p>实际抓包过程中，我们发现登录的Post请求并没有返回相应的关键字段，但是我们发现cookie字段中含有JSESSION便可推断当我们访问登录页面时，服务器返回JSESSION，之后通过我们登陆时的JSESSION对相应的账户进行匹配，于是我们可以直接构造Session对象维持会话。</p>
-<p><img src="C:/Users/Alexation/Desktop/%E7%96%AB%E6%83%85python%E8%84%9A%E6%9C%AC%E6%98%AF%E5%9B%BE%E7%89%87/jsession.png" alt=""></p>
+<p><img src="https://s2.loli.net/2022/02/15/lOJvXWRuxNEbnCs.png" alt=""></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Origin Headers
 headers &#x3D; &#123;
     &#39;Host&#39;: &#39;yiqing.ctgu.edu.cn&#39;,
@@ -802,7 +802,7 @@ login_url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;index&#x2
 response_data &#x3D; session.post(url&#x3D;login_url, data&#x3D;data).text
 print(&#39;登录状态: &#39; + response_data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>登录成功返回success，失败返回false。后续我们可以通过该接口返回值对有效用户进行筛选。接下来我们利用该session请求提交页面拿到隐藏的token</p>
-<p><img src="C:/Users/Alexation/Desktop/%E7%96%AB%E6%83%85python%E8%84%9A%E6%9C%AC%E6%98%AF%E5%9B%BE%E7%89%87/token.png" alt=""></p>
+<p><img src="https://s2.loli.net/2022/02/15/IjUKrvb13AF2YiD.png" alt=""></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Get token
 apply_url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;health&#x2F;toApply.do&#39;
 apply_response &#x3D; session.get(url&#x3D;apply_url).text
@@ -848,7 +848,7 @@ data_submit &#x3D; &#123;
 &#39;qt&#39;: before_data_json[0][&#39;qt&#39;],
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>找到最后提交的URL进行请求即可</p>
-<p><img src="C:/Users/Alexation/Desktop/%E7%96%AB%E6%83%85python%E8%84%9A%E6%9C%AC%E6%98%AF%E5%9B%BE%E7%89%87/submit.png" alt=""></p>
+<p><img src="https://s2.loli.net/2022/02/15/5x2f1q9jyeaA3mz.png" alt=""></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Final Submit API
 url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;health&#x2F;saveApply.do&#39;
 submit &#x3D; session.post(url&#x3D;url, data&#x3D;data_submit).text
