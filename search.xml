@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Fastapi</title>
+      <link href="/fastapi/fastapi/"/>
+      <url>/fastapi/fastapi/</url>
+      
+        <content type="html"><![CDATA[<p>这次，我选择Fastapi</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Fastapi </tag>
+            
+            <tag> 后端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CTGU自动打卡</title>
       <link href="/webfront/Yiqing/"/>
       <url>/webfront/Yiqing/</url>
@@ -82,9 +103,9 @@
       
         <tags>
             
-            <tag> Javascript </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Javascript </tag>
             
             <tag> AES </tag>
             

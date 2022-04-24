@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2022-02-15T03:25:47.804Z</updated>
+  <updated>2022-04-24T09:05:35.992Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fastapi</title>
+    <link href="https://www.alexation.cn/fastapi/fastapi/"/>
+    <id>https://www.alexation.cn/fastapi/fastapi/</id>
+    <published>2022-04-24T09:03:37.000Z</published>
+    <updated>2022-04-24T09:05:35.992Z</updated>
+    
+    <content type="html"><![CDATA[<p>这次，我选择Fastapi</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这次，我选择Fastapi&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="Fastapi" scheme="https://www.alexation.cn/tags/Fastapi/"/>
+    
+    <category term="后端" scheme="https://www.alexation.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>CTGU自动打卡</title>
@@ -105,9 +130,9 @@
     <category term="加密算法" scheme="https://www.alexation.cn/categories/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
-    
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
+    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
     
     <category term="AES" scheme="https://www.alexation.cn/tags/AES/"/>
     
@@ -557,33 +582,6 @@
       
     <summary type="html">&lt;h4 id=&quot;1-は表示对比&quot;&gt;1.は表示对比&lt;/h4&gt;
 &lt;p&gt;对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、</summary>
-      
-    
-    
-    
-    <category term="日语！" scheme="https://www.alexation.cn/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/"/>
-    
-    
-    <category term="日语" scheme="https://www.alexation.cn/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「料理のさしすせそ」</title>
-    <link href="https://www.alexation.cn/japanese-learning/japaneselearning3/"/>
-    <id>https://www.alexation.cn/japanese-learning/japaneselearning3/</id>
-    <published>2021-08-26T10:48:20.000Z</published>
-    <updated>2022-01-25T13:01:42.165Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="「料理のさしすせそ」でおいしくなる理由は？">「料理のさしすせそ」でおいしくなる理由は？</h2><h3 id="「さ」砂糖">「さ」砂糖</h3><p>砂糖は塩より分子が大きく浸透性が低いので、先に入れて味を馴染ませるのがおすすめです！<br>砂糖はサトウキビや砂糖大根から作られています。食材をやわらかくし、料理につやも出してくれますよ。加熱すると焼き色がついて香ばしい香りも広がります。水に溶けやすく食材の水分を吸着する働きがあるので、食材の乾燥を防ぐこともできる調味料です。</p><h3 id="「し」塩">「し」塩</h3><p>塩は砂糖より分子が小さく浸透性が高くなるため、先に入れてしまうと砂糖が馴染みにくくなります。なので砂糖より後から塩を入れるのがおすすめです。<br>日本には海水を煮詰めてる来る自然塩と、高い濃度の自然塩を再生加工した精製塩があります。塩には食材の水分を吸い取り、保存性を高める作用があります。発酵食品を作るためや、果物や野菜の色を良くするためにも使われます。魚介類や肉類の身を引き締める効果もありますよ。</p><h3 id="「す」酢">「す」酢</h3><p>酢は酸味が飛んでしまうので、後から入れましょう。「さしすせそ」では3番目にありますが、煮物の場合は酸味を活かすために最後に入れるといいとも言われています。<br>米や麦などの穀物や果物を原料にしたもろみ、またはこれにアルコールや砂糖を加えて酢酸発酵させたものが酢です。塩気と甘味を緩和してくれ、野菜の褐変を防ぎ、みょうがや紫キャベツなど赤色などの食材の色を鮮やかにする効果もあります。殺菌作用もありますよ。</p><h3 id="「せ」醤油（せうゆ）">「せ」醤油（せうゆ）</h3><p>醤油は風味が飛んでしまうので、後から入れましょう。<br>大豆、小麦、食塩を発酵させてできたもろみをしぼって作られます。魚介や肉類の生臭さを消し、風味を良くしてくれますよ。殺菌や保存を助ける作用もあります。</p><h3 id="「そ」味噌">「そ」味噌</h3><p>味噌は風味が飛んでしまうので、後から入れましょう。<br>茹でた大豆と塩に麹を混ぜ、発酵させると味噌ができます。使う麹により、米麹を使った米味噌、麦麹を使った麦味噌、豆の麹である種麹を使った豆味噌の3種類に分かれます。風味をつけ、保存性を高めてくれますよ。味噌にも魚介や肉類の生臭さを消し、風味を良くしてくれる作用があります。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;「料理のさしすせそ」でおいしくなる理由は？&quot;&gt;「料理のさしすせそ」でおいしくなる理由は？&lt;/h2&gt;
-&lt;h3 id=&quot;「さ」砂糖&quot;&gt;「さ」砂糖&lt;/h3&gt;
-&lt;p&gt;砂糖は塩より分子が大きく浸透性が低いので、先に入れて味を馴染ませるのがおすすめです！&lt;br&gt;
-砂糖はサトウ</summary>
       
     
     
