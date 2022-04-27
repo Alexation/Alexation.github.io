@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2022-04-27T07:06:05.873Z</updated>
+  <updated>2022-04-27T07:11:14.824Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.alexation.cn/fastapi/fastapi/"/>
     <id>https://www.alexation.cn/fastapi/fastapi/</id>
     <published>2022-04-24T09:03:37.000Z</published>
-    <updated>2022-04-27T07:06:05.873Z</updated>
+    <updated>2022-04-27T07:11:14.824Z</updated>
     
     <content type="html"><![CDATA[<p>FastAPI 是一个用于构建 API 的现代、快速（高性能）的 web 框架，使用 Python 3.6+ 并基于标准的 Python 类型提示。</p><p>关键特性:</p><ul><li><strong>快速</strong>：可与 <strong>NodeJS</strong> 和 <strong>Go</strong> 比肩的极高性能（归功于 Starlette 和 Pydantic）。<a href="https://fastapi.tiangolo.com/zh/#_11">最快的 Python web 框架之一</a>。</li><li><strong>高效编码</strong>：提高功能开发速度约 200％ 至 300％。*</li><li><strong>更少 bug</strong>：减少约 40％ 的人为（开发者）导致错误。*</li><li><strong>智能</strong>：极佳的编辑器支持。处处皆可自动补全，减少调试时间。</li><li><strong>简单</strong>：设计的易于使用和学习，阅读文档的时间更短。</li><li><strong>简短</strong>：使代码重复最小化。通过不同的参数声明实现丰富功能。bug 更少。</li><li><strong>健壮</strong>：生产可用级别的代码。还有自动生成的交互式文档。</li><li><strong>标准化</strong>：基于（并完全兼容）API 的相关开放标准：<a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI</a> (以前被称为 Swagger) 和 <a href="https://json-schema.org/">JSON Schema</a>。</li></ul><p>* 根据对某个构建线上应用的内部开发团队所进行的测试估算得出。</p><p>上一次的全栈项目自动安全上报后端启用的是flask，这次让我们来拥抱FastAPI！</p><p>官网文档：<a href="https://fastapi.tiangolo.com/zh/">FastAPI (tiangolo.com)</a></p>]]></content>
     
@@ -37,11 +37,11 @@
     
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="Fastapi" scheme="https://www.alexation.cn/tags/Fastapi/"/>
     
     <category term="后端" scheme="https://www.alexation.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -339,11 +339,11 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
-    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
