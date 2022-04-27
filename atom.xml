@@ -37,11 +37,11 @@
     
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="Fastapi" scheme="https://www.alexation.cn/tags/Fastapi/"/>
     
     <category term="后端" scheme="https://www.alexation.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -339,11 +339,11 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
-    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   

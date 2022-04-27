@@ -1018,16 +1018,16 @@ xpath——使用场景：适合在html标签当中进行数据提取，路径�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
                     <a href="/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" target="_blank">
                         <span class="chip bg-color">可恶的电赛</span>
                     </a>
                     
                     <a href="/tags/OpenMV/" target="_blank">
                         <span class="chip bg-color">OpenMV</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1398,18 +1398,19 @@ $(function () {
 
         <!-- 背景雪花飘落特效  -->
         
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+            </script>
+        
 
         <!-- 鼠标点击文字特效 -->
         
 
         <!-- 背景雪花飘落特效  -->
-        
-            <script type="text/javascript">
-                var windowWidth = $(window).width();
-                if (windowWidth > 768) {
-                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
-                }
-            </script>
         
 
         <!-- 在线聊天工具   -->

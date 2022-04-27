@@ -557,7 +557,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                             <div id="articleContent" data-aos="fade-up">
                                     <h2 id="畅所欲言">畅所欲言</h2>
 <hr>
-<p>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链，一起交流学习！</p>
+<p>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链，一起交流学习！<br>
+（评论区暂时关闭）</p>
 <h2 id="友链">友链</h2>
 <hr>
 <p>Alexationの友链信息</p>
@@ -751,18 +752,19 @@ $(function () {
 
         <!-- 背景雪花飘落特效  -->
         
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+            </script>
+        
 
         <!-- 鼠标点击文字特效 -->
         
 
         <!-- 背景雪花飘落特效  -->
-        
-            <script type="text/javascript">
-                var windowWidth = $(window).width();
-                if (windowWidth > 768) {
-                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
-                }
-            </script>
         
 
         <!-- 在线聊天工具   -->

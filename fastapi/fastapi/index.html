@@ -652,16 +652,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
                             <a href="/tags/Fastapi/" target="_blank">
                                 <span class="chip bg-color">Fastapi</span>
                             </a>
                         
                             <a href="/tags/%E5%90%8E%E7%AB%AF/" target="_blank">
                                 <span class="chip bg-color">后端</span>
-                            </a>
-                        
-                            <a href="/tags/Python/" target="_blank">
-                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -932,16 +932,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
                     <a href="/tags/Fastapi/" target="_blank">
                         <span class="chip bg-color">Fastapi</span>
                     </a>
                     
                     <a href="/tags/%E5%90%8E%E7%AB%AF/" target="_blank">
                         <span class="chip bg-color">后端</span>
-                    </a>
-                    
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1323,18 +1323,19 @@ $(function () {
 
         <!-- 背景雪花飘落特效  -->
         
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+            </script>
+        
 
         <!-- 鼠标点击文字特效 -->
         
 
         <!-- 背景雪花飘落特效  -->
-        
-            <script type="text/javascript">
-                var windowWidth = $(window).width();
-                if (windowWidth > 768) {
-                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
-                }
-            </script>
         
 
         <!-- 在线聊天工具   -->
