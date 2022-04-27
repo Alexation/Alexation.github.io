@@ -226,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/galleries/index.html</loc>
+    <loc>https://www.alexation.cn/archives/index.html</loc>
     
     <lastmod>2020-07-01</lastmod>
     
@@ -240,7 +240,7 @@
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/archives/index.html</loc>
+    <loc>https://www.alexation.cn/galleries/index.html</loc>
     
     <lastmod>2020-07-01</lastmod>
     
@@ -368,6 +368,13 @@
   </url>
   
   <url>
+    <loc>https://www.alexation.cn/tags/Scrapy/</loc>
+    <lastmod>2022-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.alexation.cn/tags/HTML/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
@@ -375,7 +382,7 @@
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/tags/Scrapy/</loc>
+    <loc>https://www.alexation.cn/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -390,13 +397,6 @@
   
   <url>
     <loc>https://www.alexation.cn/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/</loc>
-    <lastmod>2022-04-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -438,6 +438,20 @@
   </url>
   
   <url>
+    <loc>https://www.alexation.cn/tags/SQL/</loc>
+    <lastmod>2022-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.alexation.cn/tags/XSS/</loc>
+    <lastmod>2022-04-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.alexation.cn/tags/Flask/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
@@ -460,20 +474,6 @@
   
   <url>
     <loc>https://www.alexation.cn/tags/MySQL/</loc>
-    <lastmod>2022-04-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/tags/SQL/</loc>
-    <lastmod>2022-04-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.alexation.cn/tags/XSS/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -545,14 +545,14 @@
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/</loc>
+    <loc>https://www.alexation.cn/categories/Python%E7%AE%97%E6%B3%95%E5%8F%8A%E6%8B%93%E5%B1%95/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.alexation.cn/categories/Python%E7%AE%97%E6%B3%95%E5%8F%8A%E6%8B%93%E5%B1%95/</loc>
+    <loc>https://www.alexation.cn/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
