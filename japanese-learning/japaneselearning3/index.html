@@ -540,7 +540,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        「料理のさしすせそ」
+                    <font style="font-weight:700;color:#B399FF">「料理のさしすせそ」</font>
                     </div>
                 </div>
             </div>
@@ -1296,8 +1296,8 @@ $(function () {
             var OriginTitile = document.title,
                 st;
             document.addEventListener("visibilitychange", function () {
-                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
-                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                document.hidden ? (document.title = "看不见我~", clearTimeout(st)) : (document.title =
+                    "被发现了！", st = setTimeout(function () {
                         document.title = OriginTitile
                     }, 3e3))
             })

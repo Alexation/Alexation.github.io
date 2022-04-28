@@ -540,7 +540,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        CTGU自动打卡
+                    <font style="font-weight:700;color:#B399FF">CTGU自动打卡</font>
                     </div>
                 </div>
             </div>
@@ -1283,6 +1283,13 @@ headers<span class="token operator">:</span> headers<span class="token punctuati
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
@@ -1660,8 +1667,8 @@ $(function () {
             var OriginTitile = document.title,
                 st;
             document.addEventListener("visibilitychange", function () {
-                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
-                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                document.hidden ? (document.title = "看不见我~", clearTimeout(st)) : (document.title =
+                    "被发现了！", st = setTimeout(function () {
                         document.title = OriginTitile
                     }, 3e3))
             })
