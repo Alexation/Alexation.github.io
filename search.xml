@@ -31,7 +31,7 @@
   </entry>
   <entry>
     <title>拥抱FastAPI</title>
-    <url>/fastapi/fastapi/</url>
+    <url>/backend/fastapi/</url>
     <content><![CDATA[<p>FastAPI 是一个用于构建 API 的现代、快速（高性能）的 web 框架，使用 Python 3.6+ 并基于标准的 Python 类型提示。</p>
 <p>关键特性:</p>
 <ul>
@@ -52,14 +52,14 @@
         <category>后端</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>FastAPI</tag>
         <tag>后端</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
     <title>CTGU自动打卡</title>
-    <url>/webfront/Yiqing/</url>
+    <url>/frontend/Yiqing/</url>
     <content><![CDATA[<h1 style="text-align:center;font-weight:700;color:#B399FF"><i>CTGU自动安全上报</i></h1>
 <p>项目名称：CTGU自动安全上报</p>
 <p>所使用技术栈：Vue2 + Flask + MySQL</p>
@@ -1178,7 +1178,7 @@ print(d)
   </entry>
   <entry>
     <title>Ajax介绍</title>
-    <url>/webfront/Ajax/</url>
+    <url>/frontend/Ajax/</url>
     <content><![CDATA[<h1>AJAX的学习笔记(Node.js环境)</h1>
 <p>AJAX学习的笔记，主要环境为Node.js</p>
 <p>课程地址： <a href="https://www.bilibili.com/video/BV1WC4y1b78y">https://www.bilibili.com/video/BV1WC4y1b78y</a></p>
@@ -2723,7 +2723,7 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
   </entry>
   <entry>
     <title>Vue</title>
-    <url>/webfront/Vue/</url>
+    <url>/frontend/Vue/</url>
     <content><![CDATA[<div align="center"><h4>Vue</h4></div>
 <p>Vue一套用于构建用户界面的<strong>渐进式</strong>JavaScript框架（Vue可以自底向上逐层的应用）</p>
 <h3 id="Vue核心">Vue核心</h3>
@@ -3505,9 +3505,9 @@ Vue的实例对象，以后简称vm。</p>
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>Web</tag>
         <tag>Vue</tag>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -3752,9 +3752,9 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         <category>竞赛</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>可恶的电赛</tag>
         <tag>OpenMV</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3852,8 +3852,8 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>爬虫</tag>
         <tag>HTML</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -4053,7 +4053,7 @@ def quick_sort(li, left, right):
   </entry>
   <entry>
     <title>Web安全</title>
-    <url>/webfront/Permeate/</url>
+    <url>/frontend/Permeate/</url>
     <content><![CDATA[<div align="center"><h3>SQL</h3></div>
 <h4 id="SQL简单介绍">SQL简单介绍</h4>
 <ul>
@@ -4168,7 +4168,7 @@ def quick_sort(li, left, right):
   </entry>
   <entry>
     <title>CSS</title>
-    <url>/webfront/CSS/</url>
+    <url>/frontend/CSS/</url>
     <content><![CDATA[<h2 id="CSS的主要使用场景就是美化网页、布局页面的">CSS的主要使用场景就是美化网页、布局页面的</h2>
 <ul>
 <li>HTML的局限性：只关注内容的语义</li>
@@ -5128,7 +5128,7 @@ input:focus</span> <span class="token punctuation">&#123;</span>
   </entry>
   <entry>
     <title>HTML</title>
-    <url>/webfront/HTML/</url>
+    <url>/frontend/HTML/</url>
     <content><![CDATA[<h4 id="HTTP知识点">HTTP知识点</h4>
 <ul>
 <li>URI（Uniform Resource Identifier）即统一资源标识符</li>
@@ -5442,8 +5442,8 @@ file：文件域、上传文件使用
         <category>前端</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
         <tag>Web</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>

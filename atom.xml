@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>恋し</title>
+  <title>恋しい</title>
   
   
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://www.alexation.cn/</id>
   
   <author>
-    <name>恋し</name>
+    <name>恋しい</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>拥抱FastAPI</title>
-    <link href="https://www.alexation.cn/fastapi/fastapi/"/>
-    <id>https://www.alexation.cn/fastapi/fastapi/</id>
+    <link href="https://www.alexation.cn/backend/fastapi/"/>
+    <id>https://www.alexation.cn/backend/fastapi/</id>
     <published>2022-04-24T09:03:37.000Z</published>
     <updated>2022-04-28T09:34:36.025Z</updated>
     
@@ -39,18 +39,18 @@
     <category term="后端" scheme="https://www.alexation.cn/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
-    
     <category term="FastAPI" scheme="https://www.alexation.cn/tags/FastAPI/"/>
     
     <category term="后端" scheme="https://www.alexation.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>CTGU自动打卡</title>
-    <link href="https://www.alexation.cn/webfront/Yiqing/"/>
-    <id>https://www.alexation.cn/webfront/Yiqing/</id>
+    <link href="https://www.alexation.cn/frontend/Yiqing/"/>
+    <id>https://www.alexation.cn/frontend/Yiqing/</id>
     <published>2022-02-14T04:37:09.000Z</published>
     <updated>2022-04-28T09:30:23.095Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>Ajax介绍</title>
-    <link href="https://www.alexation.cn/webfront/Ajax/"/>
-    <id>https://www.alexation.cn/webfront/Ajax/</id>
+    <link href="https://www.alexation.cn/frontend/Ajax/"/>
+    <id>https://www.alexation.cn/frontend/Ajax/</id>
     <published>2022-01-25T04:37:09.000Z</published>
     <updated>2022-04-28T09:34:49.786Z</updated>
     
@@ -239,8 +239,8 @@
   
   <entry>
     <title>Vue</title>
-    <link href="https://www.alexation.cn/webfront/Vue/"/>
-    <id>https://www.alexation.cn/webfront/Vue/</id>
+    <link href="https://www.alexation.cn/frontend/Vue/"/>
+    <id>https://www.alexation.cn/frontend/Vue/</id>
     <published>2022-01-08T11:05:30.000Z</published>
     <updated>2022-04-28T09:35:12.807Z</updated>
     
@@ -260,11 +260,11 @@
     <category term="前端" scheme="https://www.alexation.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
-    
     <category term="Web" scheme="https://www.alexation.cn/tags/Web/"/>
     
     <category term="Vue" scheme="https://www.alexation.cn/tags/Vue/"/>
+    
+    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
     
   </entry>
   
@@ -341,11 +341,11 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -368,9 +368,9 @@
     
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
-    <category term="爬虫" scheme="https://www.alexation.cn/tags/%E7%88%AC%E8%99%AB/"/>
-    
     <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
+    
+    <category term="爬虫" scheme="https://www.alexation.cn/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -426,8 +426,8 @@
   
   <entry>
     <title>Web安全</title>
-    <link href="https://www.alexation.cn/webfront/Permeate/"/>
-    <id>https://www.alexation.cn/webfront/Permeate/</id>
+    <link href="https://www.alexation.cn/frontend/Permeate/"/>
+    <id>https://www.alexation.cn/frontend/Permeate/</id>
     <published>2021-09-18T11:05:30.000Z</published>
     <updated>2022-04-28T09:29:55.101Z</updated>
     
@@ -458,8 +458,8 @@
   
   <entry>
     <title>CSS</title>
-    <link href="https://www.alexation.cn/webfront/CSS/"/>
-    <id>https://www.alexation.cn/webfront/CSS/</id>
+    <link href="https://www.alexation.cn/frontend/CSS/"/>
+    <id>https://www.alexation.cn/frontend/CSS/</id>
     <published>2021-09-03T11:10:18.000Z</published>
     <updated>2022-04-28T09:34:54.575Z</updated>
     
@@ -519,8 +519,8 @@
   
   <entry>
     <title>HTML</title>
-    <link href="https://www.alexation.cn/webfront/HTML/"/>
-    <id>https://www.alexation.cn/webfront/HTML/</id>
+    <link href="https://www.alexation.cn/frontend/HTML/"/>
+    <id>https://www.alexation.cn/frontend/HTML/</id>
     <published>2021-08-30T08:37:09.000Z</published>
     <updated>2022-04-28T09:35:01.186Z</updated>
     
@@ -542,9 +542,9 @@
     <category term="前端" scheme="https://www.alexation.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
-    
     <category term="Web" scheme="https://www.alexation.cn/tags/Web/"/>
+    
+    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
     
   </entry>
   
