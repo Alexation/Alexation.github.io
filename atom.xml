@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>恋しい</title>
+  <title>恋し</title>
   
   
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2022-04-28T09:34:36.025Z</updated>
+  <updated>2022-05-04T05:51:03.356Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
-    <name>恋しい</name>
+    <name>恋し</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL语句</title>
+    <link href="https://www.alexation.cn/backend/mysql/"/>
+    <id>https://www.alexation.cn/backend/mysql/</id>
+    <published>2022-04-28T08:22:40.000Z</published>
+    <updated>2022-05-04T05:51:03.356Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="MySQL的数据类型">MySQL的数据类型</h3><ul><li>MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。</li><li>备注: char 和varchar 一定要指定长度，float 会自动提升为double，timestamp 是时间的混合类型，理 论上可以存储 时间格式和时间戳。</li></ul><table><thead><tr><th>类型</th><th>用途</th></tr></thead><tbody><tr><td>int</td><td>整型，相当于java的int</td></tr><tr><td>bigint</td><td>整型，相当于java的long</td></tr><tr><td>float</td><td>浮点型</td></tr><tr><td>double</td><td>浮点型</td></tr><tr><td>datatime</td><td>日期类型</td></tr><tr><td>timestamp</td><td>日期类型（可储存时间戳</td></tr><tr><td>char</td><td>定长字符</td></tr><tr><td>varchar</td><td>不定长字符</td></tr><tr><td>text</td><td>大文本，用于储存比较长的字符内容</td></tr><tr><td>blob</td><td>字节数据类型，储存图片、音频等文件</td></tr></tbody></table><h3 id="建表操作">建表操作</h3><p>– 删除表<br>DROP TABLE IF EXISTS 表名;<br>– 新建表<br>create table 表名(字段名 类型 约束（主键，非空，唯一，默认值），字段名 类型 约束（主键，非空，唯一，默认值)编码，存储引擎；</p><blockquote><p>在 SQL 中，我们有如下约束：</p><ul><li>NOT NULL - 指示某列不能存储 NULL 值。</li><li>UNIQUE - 保证某列的每行必须有唯一的值。</li><li>PRIMARY KEY - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助 于更容易更快速地找到表中的一个特定的记录。</li><li>FOREIGN KEY - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li><li>CHECK - 保证列中的值符合指定的条件。</li><li>DEFAULT - 规定没有给列赋值时的默认值。</li></ul></blockquote><ul><li>实例</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">DROP TABLE IF EXISTS &#96;websites&#96;;CREATE TABLE &#96;websites&#96; (id int(11) NOT NULL AUTO_INCREMENT,name char(20) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;站点名称&#39;,url varchar(255) NOT NULL DEFAULT &#39;&#39;,alexa int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;Alexa 排名&#39;,sal double COMMENT &#39;广告收入&#39;,country char(10) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;国家&#39;,PRIMARY KEY (id)) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="插入、删除、更新">插入、删除、更新</h3><ul><li>插入语句</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">INSERT INTO websites(name, url,alexa,sal,country ) VALUES (&#39;腾讯&#39;, &#39;https:&#x2F;&#x2F;www.qq.com&#39;,18, 1000,&#39;CN&#39; ) ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ul><li>删除语句</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">delete from websites where id &#x3D; 5;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>更新语句</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">update websites set sal &#x3D; null where id &#x3D; 3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="基本select查询语句">基本select查询语句</h3><ul><li>初始化数据</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">DROP TABLE IF EXISTS &#96;websites&#96;;CREATE TABLE &#96;websites&#96; (id int(11) NOT NULL AUTO_INCREMENT,name char(20) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;站点名称&#39;,url varchar(255) NOT NULL DEFAULT &#39;&#39;,alexa int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;Alexa 排名&#39;,sal double COMMENT &#39;广告收入&#39;,country char(10) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;国家&#39;,PRIMARY KEY (id)) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;INSERT INTO &#96;websites&#96; VALUES(1, &#39;Google&#39;, &#39;https:&#x2F;&#x2F;www.google.cm&#x2F;&#39;, &#39;1&#39;, 2000,&#39;USA&#39;),(2, &#39;淘宝&#39;, &#39;https:&#x2F;&#x2F;www.taobao.com&#x2F;&#39;, &#39;13&#39;,2050, &#39;CN&#39;),(3, &#39;菜鸟教程&#39;, &#39;http:&#x2F;&#x2F;www.runoob.com&#x2F;&#39;, &#39;4689&#39;,0.0001, &#39;CN&#39;),(4, &#39;微博&#39;, &#39;http:&#x2F;&#x2F;weibo.com&#x2F;&#39;, &#39;20&#39;,50, &#39;CN&#39;),(5, &#39;Facebook&#39;, &#39;https:&#x2F;&#x2F;www.facebook.com&#x2F;&#39;, &#39;3&#39;, 500,&#39;USA&#39;);CREATE TABLE IF NOT EXISTS &#96;access_log&#96; (&#96;aid&#96; int(11) NOT NULL AUTO_INCREMENT,&#96;site_id&#96; int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;网站id&#39;,&#96;count&#96; int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;访问次数&#39;,&#96;date&#96; date NOT NULL,PRIMARY KEY (&#96;aid&#96;)) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;INSERT INTO &#96;access_log&#96; (&#96;aid&#96;, &#96;site_id&#96;, &#96;count&#96;, &#96;date&#96;) VALUES(1, 1, 45, &#39;2016-05-10&#39;),(2, 3, 100, &#39;2016-05-13&#39;),(3, 1, 230, &#39;2016-05-14&#39;),(4, 2, 10, &#39;2016-05-14&#39;),(5, 5, 205, &#39;2016-05-14&#39;),(6, 4, 13, &#39;2016-05-15&#39;),(7, 3, 220, &#39;2016-05-15&#39;),(8, 5, 545, &#39;2016-05-16&#39;),(9, 3, 201, &#39;2016-05-17&#39;),(10, 88, 9999, &#39;2016-09-09&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>查询语句</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websitesselect id, name, url, alexa, sal, country from websites<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="分页查询">分页查询</h3><blockquote><p>MySQL分页很优雅</p></blockquote><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites limit 2,3 ; -- 从第2条(下标从0开始)开始查，查3条数据select * from websites limit 3 ; -- 从第0条(下标从0开始)开始查，查3条数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="distinct关键字">distinct关键字</h3><blockquote><p>Distinct关键字用于返回唯一不同的值</p></blockquote><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select distinct country from websites<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="where语句">where语句</h3><blockquote><p>作为条件筛选, 运算符: &gt; &lt; &gt;= &lt;= &lt;&gt; != =</p><p>is null is not null (因为在sql 语句中null 和任何东西比较都是假，包括它本身)</p><p>like in</p></blockquote><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where sal &gt; 500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="逻辑条件：and、or">逻辑条件：and、or</h3><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where sal &gt;&#x3D; 0 and sal &lt;&#x3D;2000 ; -- 收入在 0 到 2000 之间select * from websites where sal between 0 and 2000； -- 和上面一样的，没事找事select * from websites where sal &lt; 5 or sal is null ; -- 收入小于5 或者没收入<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><blockquote><p>注意： null 的条件判断用 is null 或 is not null</p></blockquote><h3 id="order-by">order by</h3><p>排序: 默认情况下是升序，asc 可以省略 。</p><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites order by sal asc,alexa desc ;-- 先根据sal 升序排序，再根据 alexa 降序<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="like-和-通配符">like 和 通配符</h3><blockquote><ul><li>like 模糊查询</li><li>通配符<ul><li>% ： 0个或多个字符</li><li>_ : 1 个字符</li></ul></li></ul></blockquote><h3 id="in">in</h3><ul><li>匹配多个条件</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where country in (&#39;USA&#39;,&#39;鸟国&#39;,&#39;CN&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>等价于</li></ul><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where country &#x3D; &#39;USA&#39; or country &#x3D; &#39;鸟国&#39; or country &#x3D; &#39;CN&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="别名">别名</h3><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select tt.name &#39;网站名字&#39; from websites tt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Group-by-分组查询">Group by 分组查询</h4><blockquote><p>注意：分组时候的筛选用 having</p><p>常见的几个组函数： max() min() avg() count() sum()</p></blockquote><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select avg(sal) aa from websites where sal is not null group by country having aa &gt; 1500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="连接查询">连接查询</h3><pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select name,count,date from websites w , access_log a ; -- 著名的笛卡尔积，没什么意义的select name,count,date from websites w , access_log a where w.id &#x3D; a.site_id；-- 这是 1992的语法select name,count,date from websites w inner join access_log a on w.id &#x3D; a.site_id；-- 这是1999 年的语法，推荐使用select name,count,date from websites w left outer join access_log a on w.id &#x3D; a.site_id；-- 把没有访问的网站也显示出来-- 注意: inner 和 outer 是可以默认省略的。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;MySQL的数据类型&quot;&gt;MySQL的数据类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。&lt;/li&gt;
+&lt;li&gt;备注: char 和varchar 一定要指定长度，float 会自动提升为double，</summary>
+      
+    
+    
+    
+    <category term="后端" scheme="https://www.alexation.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>拥抱FastAPI</title>
@@ -69,7 +96,7 @@
     <category term="Project" scheme="https://www.alexation.cn/categories/Project/"/>
     
     
-    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
+    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
     
     <category term="Flask" scheme="https://www.alexation.cn/tags/Flask/"/>
     
@@ -77,7 +104,7 @@
     
     <category term="全栈" scheme="https://www.alexation.cn/tags/%E5%85%A8%E6%A0%88/"/>
     
-    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
+    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
@@ -172,13 +199,13 @@
     <category term="前端" scheme="https://www.alexation.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
+    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
     <category term="Ajax" scheme="https://www.alexation.cn/tags/Ajax/"/>
     
     <category term="Node.js" scheme="https://www.alexation.cn/tags/Node-js/"/>
     
     <category term="XML" scheme="https://www.alexation.cn/tags/XML/"/>
-    
-    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
@@ -563,31 +590,6 @@
     <summary type="html">&lt;p&gt;本文摘自：&lt;a href=&quot;https://livejapan.com/zh-cn/&quot;&gt;景点名胜、体验指南 - LIVE JAPAN&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;札幌&quot;&gt;&lt;strong&gt;札幌&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;都道府县：&lt;/strong&gt;</summary>
-      
-    
-    
-    
-    <category term="日语！" scheme="https://www.alexation.cn/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/"/>
-    
-    
-    <category term="日语" scheme="https://www.alexation.cn/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《标日·初》中的细节拓展！</title>
-    <link href="https://www.alexation.cn/japanese-learning/japaneselearning4/"/>
-    <id>https://www.alexation.cn/japanese-learning/japaneselearning4/</id>
-    <published>2021-08-26T11:54:23.000Z</published>
-    <updated>2022-01-12T13:06:41.483Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="1-は表示对比">1.は表示对比</h4><p>对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、から、まで、と的后面构成复合形式。例如：私の　部屋には　電話が　ありません。</p><h4 id="2-いえ、うち">2.いえ、うち</h4><p>两者的意思都是（我）家，意指建筑物时一般用前者，着重指家人时一般会用后者。另外，うち本身就表示“我家”的含义，但是用いえ时必须要说わたしのいえ。</p><h4 id="3-”を”－＞”は”">3.”を”－＞”は”</h4><p>”を”前面的名词做话题，或者进行对比时，使用助词は，这时候原来的を必须去掉，不能变成をは的形式。</p><h4 id="4-多い和少ない">4.多い和少ない</h4><p>他们不同于其他一类形容词，不能单独修饰名词。</p><h4 id="5-おゆ和みず">5.おゆ和みず</h4><p>日语中，前者是”热水“或“开水”，而后者仅指”凉水“。</p><h4 id="6-”こうよう”-”もみじ”">6.”こうよう”　”もみじ”</h4><p>”こうよう”表示秋天阔叶林的落叶变红或树叶全部变成红色。“もみじ”多表示枫树的红叶。</p><h4 id="7-いかがですか">7.いかがですか</h4><p>是どうですか的委婉表示法，此外拒绝对方的建议或推荐时，直接使用いいえ会显得不是很礼貌。可采用其他方式。如：今は　結構です</p><h4 id="8-に”">8.&quot;に”</h4><ul><li>表示存在的场所。如：公園に</li><li>表示时间。如：5時に</li><li>表示动作的对象。如：友達に</li><li>表示移动行为的目的。如：本を買いに</li><li>表示附着点。如：車に</li></ul><p><em>这些用法不能用へ来替换，只有表示“来います”等典型的移动动词的目的地时，才可以通用。</em></p><h4 id="9-こえおと">9.こえおと</h4><p>前者为人和动物发出的声音，后者是物体发出的声音。</p><h4 id="10-なさい是なさる的命令形">10.なさい是なさる的命令形</h4><p>なさい是なさる的命令形，因为なさる是很特殊的五段动词，它的连用形和命令形都是なさい，其他还有いらっしゃる、ござる、おっしゃる和くださる。在古代的话，它们的命令形也有なされ这种形式，只是现在不太用了。有些语言学者把这类动词称作ラ変动词。なさる事实上是する的敬语，既然是表尊敬，就要用礼貌体，可以这样说:おやめなさいますか。请您住手，行吗？やめなさい则有轻微命令语气。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h4 id=&quot;1-は表示对比&quot;&gt;1.は表示对比&lt;/h4&gt;
-&lt;p&gt;对比句一般至少需要有两个事物才可以形成，但有的时候其他对比的事物非常明显时都会省略。强调今天，就是和平常的这个时间做对比。例如：小野さんは　いしもは　働きますが、今日はやすみます。这时，は的使用可以加在に、で、へ、</summary>
       
     
     

@@ -6,15 +6,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML, 恋し">
+    <meta name="keywords" content="MySQL语句, 恋し">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="HTTP知识点
+    <meta name="description" content="MySQL的数据类型
 
-URI（Uniform Resource Identifier）即统一资源标识符
-URL（Universal Resource Locator）即统一资源定位符
-
-例如：https://github.com/favicon">
+MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
+备注: char 和varchar 一定要指定长度，float 会自动提升为double，timestamp 是时间的混合类型，理 论">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +20,7 @@ URL（Universal Resource Locator）即统一资源定位符
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>HTML | 恋し</title>
+    <title>MySQL语句 | 恋し</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -536,13 +534,13 @@ URL（Universal Resource Locator）即统一资源定位符
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i1.wp.com/www.silocreativo.com/en/wp-content/uploads/2016/12/make-we-html.png?fit=666%2C370&quality=100&strip=all&ssl=1')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.runoon.com/wp-content/uploads/2021/10/mysql-logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                    <font style="font-weight:700;color:#B399FF">HTML</font>
+                    <font style="font-weight:700;color:#B399FF">MySQL语句</font>
                     </div>
                 </div>
             </div>
@@ -654,12 +652,8 @@ URL（Universal Resource Locator）即统一资源定位符
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/" target="_blank">
-                                <span class="chip bg-color">Web</span>
-                            </a>
-                        
-                            <a href="/tags/HTML/" target="_blank">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/MySQL/" target="_blank">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -670,8 +664,8 @@ URL（Universal Resource Locator）即统一资源定位符
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category" target="_blank">
+                                后端
                             </a>
                         
                     </div>
@@ -682,7 +676,7 @@ URL（Universal Resource Locator）即统一资源定位符
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-30
+                    2022-04-28
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -696,14 +690,14 @@ URL（Universal Resource Locator）即统一资源定位符
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        6 分
                     </div>
                     
                 
@@ -720,314 +714,210 @@ URL（Universal Resource Locator）即统一资源定位符
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="HTTP知识点">HTTP知识点</h4>
+                <h3 id="MySQL的数据类型">MySQL的数据类型</h3>
 <ul>
-<li>URI（Uniform Resource Identifier）即统一资源标识符</li>
-<li>URL（Universal Resource Locator）即统一资源定位符</li>
+<li>MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。</li>
+<li>备注: char 和varchar 一定要指定长度，float 会自动提升为double，timestamp 是时间的混合类型，理 论上可以存储 时间格式和时间戳。</li>
 </ul>
-<p>例如：<a target="_blank" rel="noopener" href="https://github.com/favicon.ico%E6%97%A2%E6%98%AF%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AAURI">https://github.com/favicon.ico既是一个URL，也是一个URI</a></p>
-<p>每一个URL都是URI，但不是每一个URI都是URL，URI还包括一个子类叫做URN（Universal Resource Name）即统一资源名称：只命名资源而不指定如何定位资源</p>
-<h4 id="HTTP和HTTPS">HTTP和HTTPS</h4>
-<p>URL开头会有HTTP或HTTPS，这个就是访问资源需要的协议类型，有时还会看到ftp、sftp、smb开头的URL，他们均是协议类型。HTTP（Hyper Text Transfer Protocol）中文名叫做超文本传输协议，用于从网络传输超文本数据到本地浏览器的传送协议，能保证高效而准确地传送超文本文档。HTTPS（Hyper Text Transfer Protocol over Secure Socket Layer）：是以安全为目标的HPTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层。Google以及iOS App在2017年1月1日均对HTTPS做出相关规定，HTTPS已经是大势所趋。</p>
-<h4 id="网络请求">网络请求</h4>
-<p>请求可分为四部分内容：请求方法、请求头、请求网址、请求体</p>
-<p>常见请求有：GET、POST</p>
-<p>GET：直接输入网址</p>
-<p>POST：大多提交表单时，例如登录</p>
-<p>GET请求参数包含在URL里，POST都是通过表单形式传输数据，会包含在请求体里,GET提交数据最多只有1024字节，POST无限制（保护密码、文件较大）</p>
-<p>请求头用来说明服务器要使用的附加信息，有User-Agent、Cookies、Referer等</p>
-<p>常见服务器请求状态码：</p>
-<ul>
-<li>200-请求成功</li>
-<li>301-资源（网页等）被永久转移到其他URL</li>
-<li>404-请求的资源（网页等）不存在</li>
-<li>500-服务器内部错误</li>
-</ul>
-<h4 id="HTML-Web-浏览器简介">HTML-Web-浏览器简介</h4>
-<ul>
-<li>HTML不是编程语言，而是一种标记语言</li>
-<li>超文本：可以加入图片，声音，动画，可以一个文件跳到另一个文件</li>
-<li>常用浏览器：IE、火狐（Firefox）、谷歌（Chrome）、Safari、Opera</li>
-<li>浏览器内核人（渲染引擎）：读取网页内容，计算网页的显示方式并显示页面</li>
-</ul>
-<p><strong>Web标准是由W3C（万维网联盟）组织和其他标准化组织指定的一系列标准的集合</strong></p>
-<p><em>浏览器不同，显示页面或者排版就有些许差异，主要包括：结构（HTML）、表现（CSS）、行为（Javascript）————最佳体验方案：三者相分离</em></p>
-<h4 id="HTML标签">HTML标签</h4>
-<h5 id="HTML语法规范">HTML语法规范</h5>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">标签成对：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-
-单标签：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>
-
-双标签关系：包含关系，并列关系<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="HTML基本机构标签">HTML基本机构标签</h5>
 <table>
 <thead>
 <tr>
-<th>标签名</th>
-<th>定义</th>
-<th>说明</th>
+<th>类型</th>
+<th>用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>html</td>
-<td>HTML标签</td>
-<td>页面中最大的标签，我们称为根标签</td>
+<td>int</td>
+<td>整型，相当于java的int</td>
 </tr>
 <tr>
-<td>head</td>
-<td>文档的头部</td>
-<td>注意在head标签中我们要设置的标题是title</td>
+<td>bigint</td>
+<td>整型，相当于java的long</td>
 </tr>
 <tr>
-<td>title</td>
-<td>文档的标题</td>
-<td>让页面拥有一个属于自己的网页标题</td>
+<td>float</td>
+<td>浮点型</td>
 </tr>
 <tr>
-<td>body</td>
-<td>文档的主体</td>
-<td>元素包含文档的所有内容</td>
+<td>double</td>
+<td>浮点型</td>
+</tr>
+<tr>
+<td>datatime</td>
+<td>日期类型</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>日期类型（可储存时间戳</td>
+</tr>
+<tr>
+<td>char</td>
+<td>定长字符</td>
+</tr>
+<tr>
+<td>varchar</td>
+<td>不定长字符</td>
+</tr>
+<tr>
+<td>text</td>
+<td>大文本，用于储存比较长的字符内容</td>
+</tr>
+<tr>
+<td>blob</td>
+<td>字节数据类型，储存图片、音频等文件</td>
 </tr>
 </tbody>
 </table>
-<p>VS-Code之！主体结构</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">&lt;<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>我的第一个网页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-	Hello World!
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="！DOCTYPE">！DOCTYPE</h5>
-<p>文档类型声明，告诉浏览器哪种HTML版本来显示网页HTML5（必须第一行）</p>
-<h5 id="lang语言">lang语言</h5>
-<p>language的缩写：en英语、zh-CH中文</p>
-<h5 id="charset字符集">charset字符集</h5>
-<p>编码方式：GBK、UTF-8（万国码）一定要写</p>
-<h5 id="HTML常用标签">HTML常用标签</h5>
+<h3 id="建表操作">建表操作</h3>
+<p>– 删除表<br>
+DROP TABLE IF EXISTS 表名;<br>
+– 新建表<br>
+create table 表名(字段名 类型 约束（主键，非空，唯一，默认值），字段名 类型 约束（主键，非空，唯一，默认值)编码，存储引擎；</p>
+<blockquote>
+<p>在 SQL 中，我们有如下约束：</p>
 <ul>
-<li>语义标签，区分标题，段落等</li>
-<li>标题标签h，一行显示</li>
-<li>段落和换行标签p，强制换行br</li>
+<li>NOT NULL - 指示某列不能存储 NULL 值。</li>
+<li>UNIQUE - 保证某列的每行必须有唯一的值。</li>
+<li>PRIMARY KEY - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助 于更容易更快速地找到表中的一个特定的记录。</li>
+<li>FOREIGN KEY - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li>CHECK - 保证列中的值符合指定的条件。</li>
+<li>DEFAULT - 规定没有给列赋值时的默认值。</li>
 </ul>
-<p>文本格式化标签：</p>
-<table>
-<thead>
-<tr>
-<th>语义</th>
-<th>标签</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加粗</td>
-<td>strong或者b</td>
-<td>推荐strong，语气更强烈</td>
-</tr>
-<tr>
-<td>倾斜</td>
-<td>em或者i</td>
-<td>推荐em，语气更强烈</td>
-</tr>
-<tr>
-<td>删除线</td>
-<td>del或者s</td>
-<td>推荐del，语气更强烈</td>
-</tr>
-<tr>
-<td>下划线</td>
-<td>ins或者u</td>
-<td>推荐ins，语气更强烈</td>
-</tr>
-</tbody>
-</table>
-<p>标签div和span没有语义，只是一个盒子，用来装内容的。div是一个超大盒子，一行只能一个div。而span是个小盒子，一行可以多个。</p>
-<h5 id="img图片">img图片</h5>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">在HTML标签中，<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>属性值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>src</td>
-<td>图片路径</td>
-<td>必须属性</td>
-</tr>
-<tr>
-<td>alt</td>
-<td>文本</td>
-<td>替换文本。图像不能显示的文字</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文本</td>
-<td>提示文本。鼠标放到图像上显示的文字</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素</td>
-<td>设置图像的宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>像素</td>
-<td>设置图像的高度</td>
-</tr>
-<tr>
-<td>border</td>
-<td>像素</td>
-<td>设置图像的边框粗细</td>
-</tr>
-</tbody>
-</table>
-<p>border在HTML5已不支持（bordeR）</p>
-<p>属性均采取键值对的形式：key= “value”</p>
-<h5 id="超链接标签">超链接标签</h5>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>跳转目标<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>目标窗口的弹出方式<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 文本或图像 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
 <ul>
-<li>弹出方式：_self：在该窗口打开、__blank：新窗口打开页面</li>
-<li>跳转目标：#表示空链接</li>
-<li>锚点链接：设置href属性名为**#名字**的形式、id属性=刚刚的名字</li>
+<li>实例</li>
 </ul>
-<h5 id="注释标签：-–我是一个注释–">注释标签：!–我是一个注释–</h5>
-<p><img src="https://i.loli.net/2021/08/30/ItLNCf48Szg1UOD.png" alt=""></p>
-<h5 id="表格标签">表格标签</h5>
-<p>用于展示数据（不是来布局页面的）</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>文字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
-# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>定义表格
-# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>用于定义单元格中的行，必须嵌套在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>中
-# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>用于定义表格中的单元格，必须嵌套在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>表格属性，实际开发不常用，后面通过CSS来设置</p>
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>align</td>
-<td>left、center、right</td>
-<td>规定表格相对周围元素的对齐方式</td>
-</tr>
-<tr>
-<td>border</td>
-<td>1或 “”</td>
-<td>规定表格单元是否拥有边框，默认为&quot;&quot;,表示没有边框</td>
-</tr>
-<tr>
-<td>cellpadding</td>
-<td>像素值</td>
-<td>规定单元边沿与其内容之间的空白，默认1像素</td>
-</tr>
-<tr>
-<td>cellspacing</td>
-<td>像素值</td>
-<td>规定单元格之间的空白，默认2像素</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素值或百分比</td>
-<td>规定表格的宽度</td>
-</tr>
-</tbody>
-</table>
-<p>表格结构标签</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>表格的头部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>表格的整体区域<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>合并单元格</p>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">DROP TABLE IF EXISTS &#96;websites&#96;;
+CREATE TABLE &#96;websites&#96; (
+id int(11) NOT NULL AUTO_INCREMENT,
+name char(20) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;站点名称&#39;,
+url varchar(255) NOT NULL DEFAULT &#39;&#39;,
+alexa int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;Alexa 排名&#39;,
+sal double COMMENT &#39;广告收入&#39;,
+country char(10) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;国家&#39;,
+PRIMARY KEY (id)
+) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="插入、删除、更新">插入、删除、更新</h3>
 <ul>
-<li>跨行合并：rowspan=“合并单元格的个数”</li>
-<li>跨列合并：colspan=“合并单元格的个数”</li>
+<li>插入语句</li>
 </ul>
-<h5 id="列表标签">列表标签</h5>
-<p>列表可以分为三大类：无序列表、有序列表、自定义列表</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 主标签只能嵌套<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>，其中可以容纳所有元素
-# 无序列表（重点）、排序整齐，没有顺序
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	....
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
-# 有序列表（不常用，了解即可）
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-	....
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
-# 自定义列表、一个小标题，其他围绕他们说明
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
-	....
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="表单标签">表单标签</h5>
-<p>目的：收集用户信息</p>
-<p>一个完整的表单由<strong>表单域、表单控件（表单元素）<strong>和</strong>提示信息</strong>三部分组成</p>
-<p>表单域：包含表单元素的区域</p>
-<p>在HTML中，form标签用于定义表单域，以实现用户信息的收集与传递，递交到服务器</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url地址<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>提交方式<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>表单域名称<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	# 各种表单元素控件
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>表单元素</p>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">INSERT INTO websites(name, url,alexa,sal,country ) VALUES (&#39;腾讯&#39;, &#39;https:&#x2F;&#x2F;www.qq.com&#39;,
+18, 1000,&#39;CN&#39; ) ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li>input输入表单元素</li>
+<li>删除语句</li>
 </ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 用于收集用户信息。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>属性值<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>。
-text：文本框、里面可以输入任何文字
-password：密码框、用户看不见输入的密码
-radio：单选按钮、实现多选一
-name：表单元素名字、必须有相同的名字
-checkbox：复选框、实现多选
-value：显示默认值
-checked：默认选择
-submit：提交到服务器
-reset：清楚表单中的所有数据
-button：定义可点击按钮，通常后期结合js一起使用
-file：文件域、上传文件使用
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>名字<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">delete from websites where id &#x3D; 5;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
-<li>select下拉表单元素</li>
+<li>更新语句</li>
 </ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 定义下拉列表
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">></span></span>选项3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-	...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">update websites set sal &#x3D; null where id &#x3D; 3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="基本select查询语句">基本select查询语句</h3>
 <ul>
-<li>textarea文本域元素</li>
+<li>初始化数据</li>
 </ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"># 大量输入文本，经常用于留言板、评论	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="查找文档">查找文档</h4>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">DROP TABLE IF EXISTS &#96;websites&#96;;
+CREATE TABLE &#96;websites&#96; (
+id int(11) NOT NULL AUTO_INCREMENT,
+name char(20) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;站点名称&#39;,
+url varchar(255) NOT NULL DEFAULT &#39;&#39;,
+alexa int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;Alexa 排名&#39;,
+sal double COMMENT &#39;广告收入&#39;,
+country char(10) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;国家&#39;,
+PRIMARY KEY (id)
+) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;
+INSERT INTO &#96;websites&#96; VALUES
+(1, &#39;Google&#39;, &#39;https:&#x2F;&#x2F;www.google.cm&#x2F;&#39;, &#39;1&#39;, 2000,&#39;USA&#39;),
+(2, &#39;淘宝&#39;, &#39;https:&#x2F;&#x2F;www.taobao.com&#x2F;&#39;, &#39;13&#39;,2050, &#39;CN&#39;),
+(3, &#39;菜鸟教程&#39;, &#39;http:&#x2F;&#x2F;www.runoob.com&#x2F;&#39;, &#39;4689&#39;,0.0001, &#39;CN&#39;),
+(4, &#39;微博&#39;, &#39;http:&#x2F;&#x2F;weibo.com&#x2F;&#39;, &#39;20&#39;,50, &#39;CN&#39;),
+(5, &#39;Facebook&#39;, &#39;https:&#x2F;&#x2F;www.facebook.com&#x2F;&#39;, &#39;3&#39;, 500,&#39;USA&#39;);
+CREATE TABLE IF NOT EXISTS &#96;access_log&#96; (
+&#96;aid&#96; int(11) NOT NULL AUTO_INCREMENT,
+&#96;site_id&#96; int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;网站id&#39;,
+&#96;count&#96; int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;访问次数&#39;,
+&#96;date&#96; date NOT NULL,
+PRIMARY KEY (&#96;aid&#96;)
+) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;
+INSERT INTO &#96;access_log&#96; (&#96;aid&#96;, &#96;site_id&#96;, &#96;count&#96;, &#96;date&#96;) VALUES
+(1, 1, 45, &#39;2016-05-10&#39;),
+(2, 3, 100, &#39;2016-05-13&#39;),
+(3, 1, 230, &#39;2016-05-14&#39;),
+(4, 2, 10, &#39;2016-05-14&#39;),
+(5, 5, 205, &#39;2016-05-14&#39;),
+(6, 4, 13, &#39;2016-05-15&#39;),
+(7, 3, 220, &#39;2016-05-15&#39;),
+(8, 5, 545, &#39;2016-05-16&#39;),
+(9, 3, 201, &#39;2016-05-17&#39;),
+(10, 88, 9999, &#39;2016-09-09&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>百度：<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></li>
-<li>W3C：<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/">w3school 在线教程</a></li>
-<li>MDN：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/">MDN Web Docs (mozilla.org)</a></li>
+<li>查询语句</li>
 </ul>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites
+select id, name, url, alexa, sal, country from websites<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="分页查询">分页查询</h3>
+<blockquote>
+<p>MySQL分页很优雅</p>
+</blockquote>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites limit 2,3 ; -- 从第2条(下标从0开始)开始查，查3条数据
+select * from websites limit 3 ; -- 从第0条(下标从0开始)开始查，查3条数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="distinct关键字">distinct关键字</h3>
+<blockquote>
+<p>Distinct关键字用于返回唯一不同的值</p>
+</blockquote>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select distinct country from websites<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="where语句">where语句</h3>
+<blockquote>
+<p>作为条件筛选, 运算符: &gt; &lt; &gt;= &lt;= &lt;&gt; != =</p>
+<p>is null is not null (因为在sql 语句中null 和任何东西比较都是假，包括它本身)</p>
+<p>like in</p>
+</blockquote>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where sal &gt; 500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="逻辑条件：and、or">逻辑条件：and、or</h3>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where sal &gt;&#x3D; 0 and sal &lt;&#x3D;2000 ; -- 收入在 0 到 2000 之间
+select * from websites where sal between 0 and 2000； -- 和上面一样的，没事找事
+select * from websites where sal &lt; 5 or sal is null ; -- 收入小于5 或者没收入<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注意： null 的条件判断用 is null 或 is not null</p>
+</blockquote>
+<h3 id="order-by">order by</h3>
+<p>排序: 默认情况下是升序，asc 可以省略 。</p>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites order by sal asc,alexa desc ;-- 先根据sal 升序排序，再根据 alexa 降序<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="like-和-通配符">like 和 通配符</h3>
+<blockquote>
+<ul>
+<li>like 模糊查询</li>
+<li>通配符
+<ul>
+<li>% ： 0个或多个字符</li>
+<li>_ : 1 个字符</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="in">in</h3>
+<ul>
+<li>匹配多个条件</li>
+</ul>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where country in (&#39;USA&#39;,&#39;鸟国&#39;,&#39;CN&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>等价于</li>
+</ul>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select * from websites where country &#x3D; &#39;USA&#39; or country &#x3D; &#39;鸟国&#39; or country &#x3D; &#39;CN&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="别名">别名</h3>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select tt.name &#39;网站名字&#39; from websites tt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Group-by-分组查询">Group by 分组查询</h4>
+<blockquote>
+<p>注意：分组时候的筛选用 having</p>
+<p>常见的几个组函数： max() min() avg() count() sum()</p>
+</blockquote>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select avg(sal) aa from websites where sal is not null group by country having aa &gt; 1500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="连接查询">连接查询</h3>
+<pre class="line-numbers language-sqlite" data-language="sqlite"><code class="language-sqlite">select name,count,date from websites w , access_log a ; -- 著名的笛卡尔积，没什么意义的
+select name,count,date from websites w , access_log a where w.id &#x3D; a.site_id；-- 这是 1992的语法
+select name,count,date from websites w inner join access_log a on w.id &#x3D; a.site_id；-- 这是1999 年的语法，推荐使用
+select name,count,date from websites w left outer join access_log a on w.id &#x3D; a.site_id；-- 把没有访问的网站也显示出来
+-- 注意: inner 和 outer 是可以默认省略的。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1178,7 +1068,7 @@ file：文件域、上传文件使用
                     </span>
                     <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/frontend/HTML/" class="b-link-green">HTML</a>
+                    <a href="/backend/mysql/" class="b-link-green">MySQL语句</a>
                 </p>
             </div>
 
@@ -1200,49 +1090,47 @@ file：文件域、上传文件使用
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/sports/badminton/">
+                <a href="/backend/mysql/">
                     <div class="card-image">
                         
-                        <img src="https://s2.loli.net/2022/01/25/UvAoDtc3RuqESeK.jpg" class="responsive-img" alt="羽毛球🏸">
+                        <img src="https://www.runoon.com/wp-content/uploads/2021/10/mysql-logo.jpg" class="responsive-img" alt="MySQL语句">
                         
-                        <span class="card-title">羽毛球🏸</span>
+                        <span class="card-title">MySQL语句</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            打羽毛球真的能缓解近视
+                            这是一份MySQL语句总结、当然也是一份入门教程。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/" class="post-category" target="_blank">
-                                    运动！
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%90%E5%8A%A8/" target="_blank">
-                        <span class="chip bg-color">运动</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" target="_blank">
-                        <span class="chip bg-color">羽毛球</span>
+                    <a href="/tags/MySQL/" target="_blank">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -1256,31 +1144,30 @@ file：文件域、上传文件使用
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/japanese-learning/japaneselearning5/">
+                <a href="/backend/fastapi/">
                     <div class="card-image">
                         
+                        <img src="https://s2.loli.net/2022/04/27/9t3pPVYuWi5ywTD.jpg" class="responsive-img" alt="拥抱FastAPI">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="日本十大主要城市">
-                        
-                        <span class="card-title">日本十大主要城市</span>
+                        <span class="card-title">拥抱FastAPI</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            日本十大主要城市
+                            FastAPI 框架，高性能，易于学习，高效编码，生产可用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-04-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E8%AF%AD%EF%BC%81/" class="post-category" target="_blank">
-                                    日语！
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                             
                             
@@ -1290,8 +1177,16 @@ file：文件域、上传文件使用
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E8%AF%AD/" target="_blank">
-                        <span class="chip bg-color">日语</span>
+                    <a href="/tags/FastAPI/" target="_blank">
+                        <span class="chip bg-color">FastAPI</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/" target="_blank">
+                        <span class="chip bg-color">后端</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
