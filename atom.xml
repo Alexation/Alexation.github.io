@@ -96,15 +96,15 @@
     <category term="Project" scheme="https://www.alexation.cn/categories/Project/"/>
     
     
+    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
+    
+    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
     <category term="Flask" scheme="https://www.alexation.cn/tags/Flask/"/>
     
     <category term="Vue" scheme="https://www.alexation.cn/tags/Vue/"/>
     
     <category term="全栈" scheme="https://www.alexation.cn/tags/%E5%85%A8%E6%A0%88/"/>
-    
-    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
-    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
     
   </entry>
   
@@ -199,13 +199,13 @@
     <category term="前端" scheme="https://www.alexation.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
     <category term="Ajax" scheme="https://www.alexation.cn/tags/Ajax/"/>
     
     <category term="Node.js" scheme="https://www.alexation.cn/tags/Node-js/"/>
     
     <category term="XML" scheme="https://www.alexation.cn/tags/XML/"/>
+    
+    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
@@ -393,9 +393,9 @@
     <category term="Python" scheme="https://www.alexation.cn/categories/Python/"/>
     
     
-    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
-    
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
+    <category term="HTML" scheme="https://www.alexation.cn/tags/HTML/"/>
     
     <category term="爬虫" scheme="https://www.alexation.cn/tags/%E7%88%AC%E8%99%AB/"/>
     
