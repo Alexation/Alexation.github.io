@@ -265,9 +265,9 @@ select name,count,date from websites w left outer join access_log a on w.id &#x3
         <category>后端</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>FastAPI</tag>
         <tag>后端</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -635,11 +635,11 @@ headers<span class="token operator">:</span> headers<span class="token punctuati
         <category>Project</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
-        <tag>跨域</tag>
         <tag>Flask</tag>
         <tag>Vue</tag>
         <tag>全栈</tag>
+        <tag>跨域</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1487,10 +1487,10 @@ type：设置返回内容格式，xml、html、script、json、text、_default<s
         <category>前端</category>
       </categories>
       <tags>
+        <tag>跨域</tag>
         <tag>Ajax</tag>
         <tag>Node.js</tag>
         <tag>XML</tag>
-        <tag>跨域</tag>
       </tags>
   </entry>
   <entry>
@@ -3965,9 +3965,9 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         <category>竞赛</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>可恶的电赛</tag>
         <tag>OpenMV</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -4064,8 +4064,8 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>HTML</tag>
+        <tag>Python</tag>
         <tag>爬虫</tag>
       </tags>
   </entry>
