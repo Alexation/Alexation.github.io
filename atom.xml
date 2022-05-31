@@ -66,11 +66,11 @@
     <category term="后端" scheme="https://www.alexation.cn/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="FastAPI" scheme="https://www.alexation.cn/tags/FastAPI/"/>
     
     <category term="后端" scheme="https://www.alexation.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -98,13 +98,13 @@
     
     <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
     
+    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
     <category term="Flask" scheme="https://www.alexation.cn/tags/Flask/"/>
     
     <category term="Vue" scheme="https://www.alexation.cn/tags/Vue/"/>
     
     <category term="全栈" scheme="https://www.alexation.cn/tags/%E5%85%A8%E6%A0%88/"/>
-    
-    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
@@ -199,13 +199,13 @@
     <category term="前端" scheme="https://www.alexation.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
     <category term="Ajax" scheme="https://www.alexation.cn/tags/Ajax/"/>
     
     <category term="Node.js" scheme="https://www.alexation.cn/tags/Node-js/"/>
     
     <category term="XML" scheme="https://www.alexation.cn/tags/XML/"/>
+    
+    <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
@@ -368,11 +368,11 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
-    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -433,9 +433,9 @@
     <link href="https://www.alexation.cn/HelloWorld/"/>
     <id>https://www.alexation.cn/HelloWorld/</id>
     <published>2021-10-01T11:19:34.513Z</published>
-    <updated>2022-04-28T09:43:00.956Z</updated>
+    <updated>2022-05-31T14:49:59.439Z</updated>
     
-    <content type="html"><![CDATA[<h1 align='center'><font style="font-family:华文行楷;font-weight:500;font-size=50px;">卷首语</font></h1><p><font style="font-family:黑体;font-size:18px">奋斗是青春最亮丽的底色。“自信人生二百年，会当水击三千里。”民族复兴的使命要靠奋斗来实现，人生理想的风帆要靠奋斗来扬起。忆往昔，思绪万千。这是一代代中华儿女敢教日月换新天的苦干实干，是亿万人民敢闯敢干的豪情壮志。青年一代必须倍加珍惜今日的生活，不为任何风险所惧，不为任何干扰所惑。这就是当代中国青年对国家和民族、对我们自己和后辈所应当肩负的历史责任。</font></p><br><p><font style="font-family:黑体;font-size:18px">我们安稳地享受着能遮风避雨的房子，却不见父母劳累的汗水；我们习以为常及时高效的电力，却不见无人寻迹的地区那劳碌的背影；我们享受着这太平盛世，却不见边疆那持枪傲立的身影，亦不见那实验室中忙碌的身影。这世界哪有什么岁月静好，只是有人在替我们负重前行罢了。爱国从来不是一种潮流，它是奠定在骨子里的责任。承担起这份责任，我们所有人也在努力着，默默地把平凡琐碎的事情做好，默默地成长着。</font></p><br><p><font style="font-family:黑体;font-size:18px">在我高三这一年，成绩仿佛坐上了过山车，而高考那一刻，总是那么令人激动。我也发现无论怎么努力，还是有些事无能为力。如果某一天，父母开始变得沉默；如果某一天，父母开始向我们请教问题；如果某一天，父母愿意跟你说所谓“大人们的话”，请一定要多一点耐心、多一些关心，他们把我们带到这个世界来，我们要帮着他们融入这个年轻人的新世界，对父母来说，也许我们就是他们的世界啊！</p><br><p><font style="font-family:黑体;font-size:18px">奔跑在最冷的夜，攻坚在最苦的山，为的是给老乡们点上一盏灯、照亮一条路，一条通往新生活的路。我们国家对基础设施的投入，特别是在艰苦地区，往往不是基于经济效益而是社会效益，就像为一个学生上网课，建一座信号塔，为一个小山村修公路、通公交车，这些不计成本的投入谋的不仅是眼下，还有未来，还有我们每一个人对美好生活的向往。</font></p><br><div align="center"><font style="font-family:华文行楷;font-size:24px">这是最好的时代，这是最坏的时代;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是智慧的时代,这是愚蠢的时代;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是信仰的时期，这是怀疑的时期;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是光明的季节，这是黑暗的季节;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是希望之春，这是失望之冬;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">人们面前有着各种事物，人们面前一无所有;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">人们正在直登天堂，人们正在直下地狱。</font></div><br><blockquote><p><font style="font-family:华文行楷;font-size:24px">献给正在奋斗路上的我们，让我们一起努力吧！</font></p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=929501133&bvid=BV1tK4y1D7ZQ&cid=308286310&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+    <content type="html"><![CDATA[<h1 align='center'><font style="font-family:华文行楷;font-weight:500;font-size=50px;">卷首语</font></h1><p><font style="font-family:黑体;font-size:18px">奋斗是青春最亮丽的底色。“自信人生二百年，会当水击三千里。”民族复兴的使命要靠奋斗来实现，人生理想的风帆要靠奋斗来扬起。忆往昔，思绪万千。这是一代代中华儿女敢教日月换新天的苦干实干，是亿万人民敢闯敢干的豪情壮志。青年一代必须倍加珍惜今日的生活，不为任何风险所惧，不为任何干扰所惑。这就是当代中国青年对国家和民族、对我们自己和后辈所应当肩负的历史责任。</font></p><br><p><font style="font-family:黑体;font-size:18px">我们安稳地享受着能遮风避雨的房子，却不见父母劳累的汗水；我们习以为常及时高效的电力，却不见无人寻迹的地区那劳碌的背影；我们享受着这太平盛世，却不见边疆那持枪傲立的身影，亦不见那实验室中忙碌的身影。这世界哪有什么岁月静好，只是有人在替我们负重前行罢了。爱国从来不是一种潮流，它是奠定在骨子里的责任。承担起这份责任，我们所有人也在努力着，默默地把平凡琐碎的事情做好，默默地成长着。</font></p><br><p><font style="font-family:黑体;font-size:18px">奔跑在最冷的夜，攻坚在最苦的山，为的是给老乡们点上一盏灯、照亮一条路，一条通往新生活的路。我们国家对基础设施的投入，特别是在艰苦地区，往往不是基于经济效益而是社会效益，就像为一个学生上网课，建一座信号塔，为一个小山村修公路、通公交车，这些不计成本的投入谋的不仅是眼下，还有未来，还有我们每一个人对美好生活的向往。</font></p><br><div align="center"><font style="font-family:华文行楷;font-size:24px">这是最好的时代，这是最坏的时代;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是智慧的时代,这是愚蠢的时代;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是信仰的时期，这是怀疑的时期;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是光明的季节，这是黑暗的季节;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">这是希望之春，这是失望之冬;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">人们面前有着各种事物，人们面前一无所有;</font></div><div align="center"><font style="font-family:华文行楷;font-size:24px">人们正在直登天堂，人们正在直下地狱。</font></div><br><blockquote><p><font style="font-family:华文行楷;font-size:24px">献给正在奋斗路上的我们，让我们一起努力吧！</font></p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=929501133&bvid=BV1tK4y1D7ZQ&cid=308286310&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
     
     
       
