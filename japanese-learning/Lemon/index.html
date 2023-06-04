@@ -898,7 +898,7 @@ yu me na ra ba do re ho do yo ka tta de sho u梦（ゆめ）ならば&amp;nbsp; 
     /* valine 评论框增加背景图片 */
     #vcomments textarea {
         box-sizing: border-box;
-        background: url("") 100% 100% no-repeat;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
     }
 
     #vcomments input[type=text],
@@ -1140,15 +1140,16 @@ yu me na ra ba do re ho do yo ka tta de sho u梦（ゆめ）ならば&amp;nbsp; 
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
 <script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
 <script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
 <script>
     new Valine({
         el: '#vcomments',
-        appId: 'sftyzb30uPyx7aTxdTv3x03a-gzGzoHsz',
-        appKey: 'NzvLUhCbSbIoLkhWID6YnLmr',
+        appId: 'ZG7mIijHQU3yBoYGFWXcYcqs-gzGzoHsz',
+        appKey: 'ZEl3Y5Bd19Z8QHnFjI6k8CTi',
+        serverURLs: 'https://zg7miijh.lc-cn-n1-shared.com',
         notify: 'true' === 'true',
         verify: 'true' === 'true',
         visitor: 'true' === 'true',
@@ -1213,32 +1214,6 @@ yu me na ra ba do re ho do yo ka tta de sho u梦（ゆめ）ならば&amp;nbsp; 
         },
         requiredFields: ['nick','mail'], //设置必填项
     });
-
-
-//     function parse_emoji() {
-//     jQuery(".vcontent").emojiParse({
-//       basePath: '/libs/jQuery-emoji/images/emoji',
-//       icons: emojiLists   // 注：详见 js/emoji.list.js
-//     });
-//   }
-  
-//   setTimeout(function() {
-//     // jQuery emoji 解析
-//     parse_emoji();
-//     // jquery emoji 初始化
-//     jQuery(".veditor").emoji({
-//       showTab: true,
-//       animation: 'slide',
-//       basePath: '/libs/jQuery-emoji/images/emoji',
-//       icons: emojiLists  // 注：详见 js/emoji.list.js
-//     });
-//     jQuery(".vmore").on("click", function() {
-//       setTimeout(function() {
-//         parse_emoji();
-//       }, 500);
-//     });
-//   }, 800)
-
 </script>
     
 
@@ -1336,16 +1311,16 @@ yu me na ra ba do re ho do yo ka tta de sho u梦（ゆめ）ならば&amp;nbsp; 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/" target="_blank">
-                        <span class="chip bg-color">Javascript</span>
-                    </a>
-                    
                     <a href="/tags/Web/" target="_blank">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
                     <a href="/tags/Vue/" target="_blank">
                         <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/Javascript/" target="_blank">
+                        <span class="chip bg-color">Javascript</span>
                     </a>
                     
                 </div>
