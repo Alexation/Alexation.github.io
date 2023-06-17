@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2023-05-20T00:34:09.745Z</updated>
+  <updated>2023-06-17T20:57:19.799Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2022湖北省大学生电子设计竞赛E题（TI杯）</title>
+    <link href="https://www.alexation.cn/contest/ele3/"/>
+    <id>https://www.alexation.cn/contest/ele3/</id>
+    <published>2023-06-17T20:05:30.000Z</published>
+    <updated>2023-06-17T20:57:19.799Z</updated>
+    
+    <content type="html"><![CDATA[<p><font style="font-weight:700;color:#B399FF"><em>关于作者：本科大三在读，电气专业。基础不好，不喜勿喷，感谢访问本网站，如果能给你提供新思路就是我最大的荣幸！</em></font></p><p><a href="https://ctgu.site:8003/index.php/s/EDfeLHr87T8nqBF" style="font-weight:700;color:#B399FF"><em>点击此处获取2022年TI杯大学生电子设计竞赛参考赛题</em></a></p><h2 style="text-align:center;font-weight:700;color:#B399FF">关于题目</h2><p>​设计制作一个声源定位跟踪系统，能够实时显示及指示声源的位置，当声源移动时能够用激光笔动态跟踪声源。 声源检测系统测量区域分布俯视如图 1 所示。</p><p><img src="https://s2.loli.net/2023/06/18/sCorxdA1bIMSjEn.jpg" alt="图1 系统测量区域俯视图"></p><h4 id="要求">要求</h4><ol><li>设计并制作声音发生装置——“声源”，装置能独立工作，声音音量手动可调，装置最大边长或直径不超过 10cm，装置可用支架安装，并可在地面移动；声源中心点 B 用红色或其他醒目颜色标识，并在 B 点所在的平面以 B 点为圆心，直径为 5cm 画圆圈，用醒目线条标识，该平面面向检测指示装置（图中 A 点）。（4 分）</li><li>设计并制作一个声源定位检测装置，传感器安装在图 1 的 C 区范围内，高度不超过 1m，系统采用的拾音器 或麦克风传感器数量不超过 10 个；在装置上标记测试参考点 A，作为位置坐标的原点；装置上有显示电路，实时显 示 D 区域内声源的位置，显示 A、B 两点直线距离 γ 和以 A 点为原点，AB 在地面的投影与图 1 中心线的夹角 θ， 测量时间不超过 5s，距离 γ 和角度 θ 的测值误差越小越好。（36 分）</li><li>设计并制作一个声源指示控制装置，此装置和上述声源定位检测装置可以合为一体。也放置在图 1 的 C 区， 安装有激光笔和二维电动云台，能控制激光笔指向声源，定位计算过程中时，激光笔关闭，定位运算完成时激光笔 开启。定位指示声源时，动作反应时间不超过 10s，光点与 B 点偏差越小越好。（30 分）</li><li>声源移动动态追踪：当声源摆放在地面，用细绳牵引，以 0.2m/s 左右的速度在 D 区移动时，激光笔光点指 向 B 点，光点与 B 点偏差越小好，跟踪反应时间越短越好。（20 分）</li></ol><h2 style="text-align:center;font-weight:700;color:#B399FF">解题过程</h2><p>听说Sipeed的MIC阵列模块可以秒杀E题？解题过程？不存在的</p><p><a href="https://wiki.sipeed.com/hardware/zh/modules/micarray.html">MicArray 麦克风阵列 - Sipeed Wiki</a></p><p>对就是这个<span class="emoji" alias="anguished" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8">😧</span></p><p>包括官方还给了一个2022年电赛E题声源定位跟踪系统做好的链接，直接套用代码接线就可以。。。所以我直接照着完善了一下代码框架，接上线后由于阵列模块非常容易受干扰（当然可以通过选择音源提高效果），所以需要进行一些处理。</p><pre class="line-numbers language-python" data-language="python"><code class="language-python">from Maix import MIC_ARRAY as micimport lcd, imageimport timeimport mathfrom Maix import GPIOfrom fpioa_manager import fmfrom machine import Timer, PWM# MIC-IOmic.init(i2s_d0&#x3D;32, i2s_d1&#x3D;33, i2s_d2&#x3D;34, i2s_d3&#x3D;35, i2s_ws&#x3D;9, i2s_sclk&#x3D;10, sk9822_dat&#x3D;11, sk9822_clk&#x3D;15)# Laser-IOfm.register(7, fm.fpioa.GPIO0)Laser &#x3D; GPIO(GPIO.GPIO0, GPIO.OUT)# KEY-IOfm.register(26, fm.fpioa.GPIO1)KG0 &#x3D; GPIO(GPIO.GPIO1, GPIO.IN, GPIO.PULL_DOWN)fm.register(27, fm.fpioa.GPIO2)KG1 &#x3D; GPIO(GPIO.GPIO2, GPIO.IN, GPIO.PULL_DOWN)# SERVO-IOtim &#x3D; Timer(Timer.TIMER0, Timer.CHANNEL0, mode&#x3D;Timer.MODE_PWM)Servo_laser &#x3D; PWM(tim, freq&#x3D;50, duty&#x3D;0, pin&#x3D;17)# LCD-INIT-320*240 and MAP-INITlcd.init()lcd.fill_rectangle(46, 5, 230, 4, (255, 0, 0))  # 上边线lcd.fill_rectangle(46, 5, 4, 230, (255, 0, 0))  # 左边线lcd.fill_rectangle(46, 235, 230, 4, (255, 0, 0))  # 下边线lcd.fill_rectangle(276, 5, 4, 234, (255, 0, 0))  # 右边线lcd.fill_rectangle(237, 5, 4, 234, (255, 0, 0))  # 右边线2lcd.fill_rectangle(0, 77, 47, 4, (255, 0, 0))  # 左区域上边线lcd.fill_rectangle(0, 154, 47, 4, (255, 0, 0))  # 左区域下边线lcd.fill_rectangle(0, 77, 4, 77, (255, 0, 0))  # 左区域左边线class Argument:    &quot;&quot;&quot;Some Argus&quot;&quot;&quot;    def __init__(self):        super(Argument, self).__init__()        # Normal        self.num &#x3D; 0        self.num2 &#x3D; 0        self.Angle_LB &#x3D; [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]        self.t &#x3D; 0        self.t1 &#x3D; 0        self.t2 &#x3D; 0        self.maxnum &#x3D; 0        self.minnum &#x3D; 0        self.jiaodu &#x3D; 0        self.Angle_last &#x3D; 0        self.b &#x3D; [3, 1, 2, 5, 6]        self.i &#x3D; 100        self.a &#x3D; []        self.times &#x3D; 0        self.pid &#x3D; 0        self.err &#x3D; 0        self.JD &#x3D; 0        self.output &#x3D; 0        # Kalman Filter        self.KF_lastP &#x3D; 0.1  # 上次的协方差        self.KF_nowP &#x3D; 0  # 本次的协方差        self.KF_x_hat &#x3D; 0  # 卡尔曼滤波的计算值，即为后验最优值        self.KF_Kg &#x3D; 0  # 卡尔曼增益系数        self.KF_Q &#x3D; 0  # 过程噪声        self.KF_R &#x3D; 0.01  # 测量噪声arguments &#x3D; Argument()def kalman_filter(argus, value):    argus.output &#x3D; 0  # output为卡尔曼滤波计算值    x_t &#x3D; argus.KF_x_hat  # 当前先验预测值 &#x3D; 上一次最优值    argus.KF_nowP &#x3D; argus.KF_lastP + argus.KF_Q  # 本次的协方差矩阵    argus.KF_Kg &#x3D; argus.KF_nowP &#x2F; (argus.KF_nowP + argus.KF_R)  # 卡尔曼增益系数计算    argus.output &#x3D; x_t + argus.KF_Kg * (value - x_t)  # 当前最优值    argus.KF_x_hat &#x3D; argus.output  # 更新最优值    argus.KF_lastP &#x3D; (1 - argus.KF_Kg) * argus.KF_nowP  # 更新协方差矩阵def servo(servo_inter, angle):    servo_inter.duty((angle + 90) &#x2F; 180 * 10 + 2.5)while True:    # Inner Params: [AngleX, AngleY, AngleR, Angle, AngleAddPi]    angle_params &#x3D; [0, 0, 0, 0, 0]    # MIC-Detecting    img_a &#x3D; mic.get_map()    img_b &#x3D; mic.get_dir(img_a)    mic.set_led(img_b, (10, 10, 0))    # If Ques 3    if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 0:        arguments.times +&#x3D; 1        if arguments.times &#x3D;&#x3D; 1:            time.sleep(1)            Laser.value(0)    # Angle    for i in range(len(img_b)):        if img_b[i] &gt;&#x3D; 0:            angle_params[0] +&#x3D; img_b[i] * math.sin(i * math.pi &#x2F; 6)            angle_params[1] +&#x3D; img_b[i] * math.cos(i * math.pi &#x2F; 6)    angle_params[0] &#x3D; round(angle_params[0], 6)    angle_params[1] &#x3D; round(angle_params[1], 6)    if angle_params[1] &lt; 0:        angle_params[4] &#x3D; 180    if angle_params[0] &lt; 0 and angle_params[1] &gt; 0:        angle_params[4] &#x3D; 360    if angle_params[0] !&#x3D; 0 or angle_params[1] !&#x3D; 0:        if angle_params[1] &#x3D;&#x3D; 0:            angle_params[3] &#x3D; 90 if angle_params[0] &gt; 0 else 270        else:            angle_params[3] &#x3D; angle_params[4] + round(math.degrees(math.atan(angle_params[0] &#x2F; angle_params[1])), 4)        # Determine the scope        if 90 &lt; angle_params[3] &lt; 270:            angle_params[3] &#x3D; arguments.Angle_last * 0.1 + angle_params[3] * 0.9            kalman_filter(arguments, angle_params[3])            arguments.Angle_last &#x3D; angle_params[3]            show_angle &#x3D; 180 - angle_params[3]            # Check Ques 3            if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 0:                Laser.value(1)                servo(Servo_laser, show_angle)            lcd.draw_string(60, 200, &quot;Angle: &quot; + str(show_angle), lcd.BLUE, lcd.BLACK)            lcd.draw_string(60, 180, &quot;Distance: &quot; + str(275 &#x2F; math.cos(-show_angle * math.pi &#x2F; 180)), lcd.BLUE,                            lcd.BLACK)            lcd.fill_rectangle(251, 10, 25, 225, (0, 0, 0))            location &#x3D; int(108 + math.tan(-show_angle * math.pi &#x2F; 180) * 48)            print(show_angle, location)            if 0 &lt; location &lt; 200:                lcd.fill_rectangle(251, location, 15, 15, (0, 255, 200))            # Check Ques 4            if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 1:                arguments.JD &#x3D; angle_params[3]                Laser.value(1)                error &#x3D; arguments.JD - arguments.pid                arguments.pid +&#x3D; error * 0.1                arguments.output &#x3D; -arguments.pid                if -270 &lt; arguments.output &lt; -90:                    servo(Servo_laser, 180 + arguments.output)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 style="text-align:center;font-weight:700;color:#B399FF">反思总结</h2><ol><li>音源很重要</li><li>可以滤波</li><li>可以PID控制舵机提高稳定性</li></ol>]]></content>
+    
+    
+    <summary type="html">大三老学长的一次划水校赛记录、、、</summary>
+    
+    
+    
+    <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
+    
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
+    <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
+    
+    <category term="K210" scheme="https://www.alexation.cn/tags/K210/"/>
+    
+  </entry>
   
   <entry>
     <title>美国得克萨斯州2·14大停电</title>
@@ -336,6 +361,8 @@
     <category term="Project" scheme="https://www.alexation.cn/categories/Project/"/>
     
     
+    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
+    
     <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
     <category term="Vue" scheme="https://www.alexation.cn/tags/Vue/"/>
@@ -343,8 +370,6 @@
     <category term="Flask" scheme="https://www.alexation.cn/tags/Flask/"/>
     
     <category term="全栈" scheme="https://www.alexation.cn/tags/%E5%85%A8%E6%A0%88/"/>
-    
-    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
     
   </entry>
   
@@ -403,9 +428,9 @@
     <category term="加密算法" scheme="https://www.alexation.cn/categories/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
-    
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
+    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
     
     <category term="AES" scheme="https://www.alexation.cn/tags/AES/"/>
     
@@ -559,35 +584,6 @@
     <category term="Pyside2" scheme="https://www.alexation.cn/tags/Pyside2/"/>
     
     <category term="封装" scheme="https://www.alexation.cn/tags/%E5%B0%81%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python基础</title>
-    <link href="https://www.alexation.cn/python-data/BASE/"/>
-    <id>https://www.alexation.cn/python-data/BASE/</id>
-    <published>2021-11-10T12:13:05.000Z</published>
-    <updated>2022-04-28T09:30:39.349Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="BOOL类型">BOOL类型</h4><p>if判断，会判断if后面的bool类型是True还是Flase。</p><ul><li>数值类型除了0之外都是True。</li><li>字符串除了空字符串之外都是True。</li><li>对象除了空对象之外都是True</li></ul><h4 id="常见错误类型">常见错误类型</h4><ul><li>SyntaxError: unexpected EOF while parsing<br>语法错误，多了无法解析的符号，检查一下是否多了或者少了括号</li><li>SyntaxError: invalid character in identifier<br>语法错误有无效标识符，检查一下中文符号</li><li>IndexError: list index out of range<br>索引错误，超出索引范围，检查一下列表是否为空</li><li>TypeError: must be str, not int<br>数据类型错误，该数据不是正确的数据类型，比如字符串和数字直接拼接，检查一下数据类型</li><li>IndentationError: expected an indented block<br>缩进错误，检查一下代码的缩进是否正确</li><li>KeyError: ‘fond’<br>键错误，字典中没有该的key对应的值，检查一下键名或者字典数据是否正确</li><li>ValueError: substring not found<br>值错误，输入的数据类型跟要求的不符合</li><li>NameError: name ‘a’ is not defined<br>未初始化对象，变量没有被定义</li><li>AttributeError: ‘tuple’ object has no attribute ‘remove’<br>属性错误，该对象没有这个属性、方法，检查一下数据类型</li><li>SystemExit<br>解释器请求退出，出现在exit()函数后</li><li>IOError<br>输入/输出操作失败</li><li>ImportError<br>导入模块/对象失败，检查一下模块是否能够正常使用</li><li>UnicodeDecodeError/UnicodeEncodeError/UnicodeTranslateError<br>Unicode 解码/编码/转换/时的错误</li></ul><h4 id="字符串格式化">字符串格式化</h4><pre class="line-numbers language-none"><code class="language-none">#对齐输出#左对齐 utf-8 万国码 In [5]: &#39;&#123;a:&lt;10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) Out[5]: &#39;12.3      &#39;#数字补x (填充右边, 宽度为10)In [6]: &#39;&#123;a:0&lt;10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) Out[6]: &#39;12.3000000&#39;#两边对齐...In [7]: &#39;&#123;a:0^10&#125;&#39;.format(a&#x3D;12.3,b&#x3D;13.44) Out[7]: &#39;00012.3000&#39;#保留小数点后两位In [1]: &#39;&#123;:.2f&#125;&#39;.format(12.333) Out[1]: &#39;12.33&#39;In [2]: &#39;&#123;a:.2f&#125;&#39;.format(a&#x3D;12.333) Out[2]: &#39;12.33&#39;In [3]: &#39;&#123;a:6.2f&#125;&#39;.format(a&#x3D;12.333) Out[3]: &#39; 12.33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="解包语法（列表、字符串、元组）">*解包语法（列表、字符串、元组）</h4><p>只要是序列都可以解包，解包出来的是元素，无类型，需要对其进行接收</p><p>%s进行元素嵌入</p><h4 id="数据容器">数据容器</h4><ol><li>字符串是一种不可变的有序的数据类型</li><li>列表是一种有序的、可变的、数据容器</li><li>列表中最好装同样格式的数据</li><li>list关键字，可以用于强制转化其他序列为列表</li><li>列表切片，顾首不顾尾（只要是序列就可以切片）</li><li>元组的速度比列表更快，如果仅仅进行遍历，可以用元组</li><li>元组”写保护“更加安全</li><li>集合是可变的无序的不可重复的数据容器</li><li>序列解包&quot;_&quot;舍弃变量，一定要一一对应</li></ol><p>列表推导式，列表里for</p><h4 id="main"><strong>main</strong></h4><pre class="line-numbers language-none"><code class="language-none"># __name__ 魔法变量，输出的时代码运行的文件# __name__ 如果是从当前文件启动，输出的就是__main__if __name__ &#x3D;&#x3D; &#39;__main__&#39;:print(__name__)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h4 id="类与继承">类与继承</h4>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h4 id=&quot;BOOL类型&quot;&gt;BOOL类型&lt;/h4&gt;
-&lt;p&gt;if判断，会判断if后面的bool类型是True还是Flase。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数值类型除了0之外都是True。&lt;/li&gt;
-&lt;li&gt;字符串除了空字符串之外都是True。&lt;/li&gt;
-&lt;li&gt;对象除了空对象之外</summary>
-      
-    
-    
-    
-    <category term="Python" scheme="https://www.alexation.cn/categories/Python/"/>
-    
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   

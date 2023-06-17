@@ -6,18 +6,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS, 恋し">
+    <meta name="keywords" content="2022湖北省大学生电子设计竞赛E题（TI杯）, 恋し">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="CSS的主要使用场景就是美化网页、布局页面的
-
-HTML的局限性：只关注内容的语义
-CSS-网页美容师：层叠样式表的简称
-CSS基础选择器
-CSS语法规范：有选择器以及一条或多条声明
-标签选择器：用HTML标签名称作为选择器
-
-CSS 选择">
+    <meta name="description" content="关于作者：本科大三在读，电气专业。基础不好，不喜勿喷，感谢访问本网站，如果能给你提供新思路就是我最大的荣幸！
+点击此处获取2022年TI杯大学生电子设计竞赛参考赛题
+关于题目
+​		设计制作一个声源定位跟踪系统，能够实时显示及指示声源的位置">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +20,7 @@ CSS 选择">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>CSS | 恋し</title>
+    <title>2022湖北省大学生电子设计竞赛E题（TI杯） | 恋し</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -539,13 +534,13 @@ CSS 选择">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.victorkingsley.com/wp-content/uploads/edd/2020/12/css.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.loli.net/2022/01/25/gDfYCeSs6WzLFlk.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                    <font style="font-weight:700;color:#B399FF">CSS</font>
+                    <font style="font-weight:700;color:#B399FF">2022湖北省大学生电子设计竞赛E题（TI杯）</font>
                     </div>
                 </div>
             </div>
@@ -657,12 +652,16 @@ CSS 选择">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/" target="_blank">
-                                <span class="chip bg-color">Web</span>
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/CSS/" target="_blank">
-                                <span class="chip bg-color">CSS</span>
+                            <a href="/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" target="_blank">
+                                <span class="chip bg-color">可恶的电赛</span>
+                            </a>
+                        
+                            <a href="/tags/K210/" target="_blank">
+                                <span class="chip bg-color">K210</span>
                             </a>
                         
                     </div>
@@ -673,8 +672,8 @@ CSS 选择">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/%E7%AB%9E%E8%B5%9B/" class="post-category" target="_blank">
+                                竞赛
                             </a>
                         
                     </div>
@@ -685,7 +684,7 @@ CSS 选择">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-03
+                    2023-06-18
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -699,14 +698,14 @@ CSS 选择">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        5.8k
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        21 分
+                        8 分
                     </div>
                     
                 
@@ -723,879 +722,173 @@ CSS 选择">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="CSS的主要使用场景就是美化网页、布局页面的">CSS的主要使用场景就是美化网页、布局页面的</h2>
-<ul>
-<li>HTML的局限性：只关注内容的语义</li>
-<li>CSS-网页美容师：层叠样式表的简称</li>
-<li>CSS基础选择器</li>
-<li>CSS语法规范：有选择器以及一条或多条声明</li>
-<li>标签选择器：用HTML标签名称作为选择器</li>
-</ul>
-<h3 id="CSS-选择器">CSS 选择器</h3>
-<h4 id="类选择器">类选择器</h4>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.类名</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-&lt;div class=<span class="token string">"类名"</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>⚠ <strong>注意</strong></p>
+                <p><font style="font-weight:700;color:#B399FF"><em>关于作者：本科大三在读，电气专业。基础不好，不喜勿喷，感谢访问本网站，如果能给你提供新思路就是我最大的荣幸！</em></font></p>
+<p><a target="_blank" rel="noopener" href="https://ctgu.site:8003/index.php/s/EDfeLHr87T8nqBF" style="font-weight:700;color:#B399FF"><em>点击此处获取2022年TI杯大学生电子设计竞赛参考赛题</em></a></p>
+<h2 style="text-align:center;font-weight:700;color:#B399FF">关于题目</h2>
+<p>​		设计制作一个声源定位跟踪系统，能够实时显示及指示声源的位置，当声源移动时能够用激光笔动态跟踪声源。 声源检测系统测量区域分布俯视如图 1 所示。</p>
+<p><img src="https://s2.loli.net/2023/06/18/sCorxdA1bIMSjEn.jpg" alt="图1 系统测量区域俯视图"></p>
+<h4 id="要求">要求</h4>
 <ol>
-<li>类选择器使用&quot;.&quot;进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
-<li>可以理解为给这个标签起了一个名字，来表示</li>
-<li>长名称或词组可以使用中横线来为选择器命名</li>
-<li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li>
-<li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li>
-<li>命名规范：见附件（Web前端开发规范手册.doc）</li>
+<li>设计并制作声音发生装置——“声源”，装置能独立工作，声音音量手动可调，装置最大边长或直径不超过 10cm，装置可用支架安装，并可在地面移动；声源中心点 B 用红色或其他醒目颜色标识，并在 B 点所在的平面以 B 点为圆心，直径为 5cm 画圆圈，用醒目线条标识，该平面面向检测指示装置（图中 A 点）。（4 分）</li>
+<li>设计并制作一个声源定位检测装置，传感器安装在图 1 的 C 区范围内，高度不超过 1m，系统采用的拾音器 或麦克风传感器数量不超过 10 个；在装置上标记测试参考点 A，作为位置坐标的原点；装置上有显示电路，实时显 示 D 区域内声源的位置，显示 A、B 两点直线距离 γ 和以 A 点为原点，AB 在地面的投影与图 1 中心线的夹角 θ， 测量时间不超过 5s，距离 γ 和角度 θ 的测值误差越小越好。（36 分）</li>
+<li>设计并制作一个声源指示控制装置，此装置和上述声源定位检测装置可以合为一体。也放置在图 1 的 C 区， 安装有激光笔和二维电动云台，能控制激光笔指向声源，定位计算过程中时，激光笔关闭，定位运算完成时激光笔 开启。定位指示声源时，动作反应时间不超过 10s，光点与 B 点偏差越小越好。（30 分）</li>
+<li>声源移动动态追踪：当声源摆放在地面，用细绳牵引，以 0.2m/s 左右的速度在 D 区移动时，激光笔光点指 向 B 点，光点与 B 点偏差越小好，跟踪反应时间越短越好。（20 分）</li>
 </ol>
-<h4 id="多类名">多类名</h4>
-<ul>
-<li>在标签class中填写多类名</li>
-<li>每个类名用空格分开</li>
-</ul>
-<h4 id="id选择器">id选择器</h4>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">#id名</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1；
-	...
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p>
-<p>id选择器和类选择器的区别</p>
+<h2 style="text-align:center;font-weight:700;color:#B399FF">解题过程</h2>
+<p>听说Sipeed的MIC阵列模块可以秒杀E题？解题过程？不存在的</p>
+<p><a target="_blank" rel="noopener" href="https://wiki.sipeed.com/hardware/zh/modules/micarray.html">MicArray 麦克风阵列 - Sipeed Wiki</a></p>
+<p>对就是这个<span class="emoji" alias="anguished" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8">😧</span></p>
+<p>包括官方还给了一个2022年电赛E题声源定位跟踪系统做好的链接，直接套用代码接线就可以。。。所以我直接照着完善了一下代码框架，接上线后由于阵列模块非常容易受干扰（当然可以通过选择音源提高效果），所以需要进行一些处理。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from Maix import MIC_ARRAY as mic
+import lcd, image
+import time
+import math
+from Maix import GPIO
+from fpioa_manager import fm
+from machine import Timer, PWM
+
+# MIC-IO
+mic.init(i2s_d0&#x3D;32, i2s_d1&#x3D;33, i2s_d2&#x3D;34, i2s_d3&#x3D;35, i2s_ws&#x3D;9, i2s_sclk&#x3D;10, sk9822_dat&#x3D;11, sk9822_clk&#x3D;15)
+# Laser-IO
+fm.register(7, fm.fpioa.GPIO0)
+Laser &#x3D; GPIO(GPIO.GPIO0, GPIO.OUT)
+# KEY-IO
+fm.register(26, fm.fpioa.GPIO1)
+KG0 &#x3D; GPIO(GPIO.GPIO1, GPIO.IN, GPIO.PULL_DOWN)
+fm.register(27, fm.fpioa.GPIO2)
+KG1 &#x3D; GPIO(GPIO.GPIO2, GPIO.IN, GPIO.PULL_DOWN)
+# SERVO-IO
+tim &#x3D; Timer(Timer.TIMER0, Timer.CHANNEL0, mode&#x3D;Timer.MODE_PWM)
+Servo_laser &#x3D; PWM(tim, freq&#x3D;50, duty&#x3D;0, pin&#x3D;17)
+# LCD-INIT-320*240 and MAP-INIT
+lcd.init()
+lcd.fill_rectangle(46, 5, 230, 4, (255, 0, 0))  # 上边线
+lcd.fill_rectangle(46, 5, 4, 230, (255, 0, 0))  # 左边线
+lcd.fill_rectangle(46, 235, 230, 4, (255, 0, 0))  # 下边线
+lcd.fill_rectangle(276, 5, 4, 234, (255, 0, 0))  # 右边线
+lcd.fill_rectangle(237, 5, 4, 234, (255, 0, 0))  # 右边线2
+lcd.fill_rectangle(0, 77, 47, 4, (255, 0, 0))  # 左区域上边线
+lcd.fill_rectangle(0, 154, 47, 4, (255, 0, 0))  # 左区域下边线
+lcd.fill_rectangle(0, 77, 4, 77, (255, 0, 0))  # 左区域左边线
+
+
+class Argument:
+    &quot;&quot;&quot;Some Argus&quot;&quot;&quot;
+
+    def __init__(self):
+        super(Argument, self).__init__()
+        # Normal
+        self.num &#x3D; 0
+        self.num2 &#x3D; 0
+        self.Angle_LB &#x3D; [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.t &#x3D; 0
+        self.t1 &#x3D; 0
+        self.t2 &#x3D; 0
+        self.maxnum &#x3D; 0
+        self.minnum &#x3D; 0
+        self.jiaodu &#x3D; 0
+        self.Angle_last &#x3D; 0
+        self.b &#x3D; [3, 1, 2, 5, 6]
+        self.i &#x3D; 100
+        self.a &#x3D; []
+        self.times &#x3D; 0
+        self.pid &#x3D; 0
+        self.err &#x3D; 0
+        self.JD &#x3D; 0
+        self.output &#x3D; 0
+
+        # Kalman Filter
+        self.KF_lastP &#x3D; 0.1  # 上次的协方差
+        self.KF_nowP &#x3D; 0  # 本次的协方差
+        self.KF_x_hat &#x3D; 0  # 卡尔曼滤波的计算值，即为后验最优值
+        self.KF_Kg &#x3D; 0  # 卡尔曼增益系数
+        self.KF_Q &#x3D; 0  # 过程噪声
+        self.KF_R &#x3D; 0.01  # 测量噪声
+
+
+arguments &#x3D; Argument()
+
+
+def kalman_filter(argus, value):
+    argus.output &#x3D; 0  # output为卡尔曼滤波计算值
+    x_t &#x3D; argus.KF_x_hat  # 当前先验预测值 &#x3D; 上一次最优值
+    argus.KF_nowP &#x3D; argus.KF_lastP + argus.KF_Q  # 本次的协方差矩阵
+    argus.KF_Kg &#x3D; argus.KF_nowP &#x2F; (argus.KF_nowP + argus.KF_R)  # 卡尔曼增益系数计算
+    argus.output &#x3D; x_t + argus.KF_Kg * (value - x_t)  # 当前最优值
+    argus.KF_x_hat &#x3D; argus.output  # 更新最优值
+    argus.KF_lastP &#x3D; (1 - argus.KF_Kg) * argus.KF_nowP  # 更新协方差矩阵
+
+
+def servo(servo_inter, angle):
+    servo_inter.duty((angle + 90) &#x2F; 180 * 10 + 2.5)
+
+
+while True:
+    # Inner Params: [AngleX, AngleY, AngleR, Angle, AngleAddPi]
+    angle_params &#x3D; [0, 0, 0, 0, 0]
+    # MIC-Detecting
+    img_a &#x3D; mic.get_map()
+    img_b &#x3D; mic.get_dir(img_a)
+    mic.set_led(img_b, (10, 10, 0))
+    # If Ques 3
+    if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 0:
+        arguments.times +&#x3D; 1
+        if arguments.times &#x3D;&#x3D; 1:
+            time.sleep(1)
+            Laser.value(0)
+    # Angle
+    for i in range(len(img_b)):
+        if img_b[i] &gt;&#x3D; 0:
+            angle_params[0] +&#x3D; img_b[i] * math.sin(i * math.pi &#x2F; 6)
+            angle_params[1] +&#x3D; img_b[i] * math.cos(i * math.pi &#x2F; 6)
+    angle_params[0] &#x3D; round(angle_params[0], 6)
+    angle_params[1] &#x3D; round(angle_params[1], 6)
+    if angle_params[1] &lt; 0:
+        angle_params[4] &#x3D; 180
+    if angle_params[0] &lt; 0 and angle_params[1] &gt; 0:
+        angle_params[4] &#x3D; 360
+    if angle_params[0] !&#x3D; 0 or angle_params[1] !&#x3D; 0:
+        if angle_params[1] &#x3D;&#x3D; 0:
+            angle_params[3] &#x3D; 90 if angle_params[0] &gt; 0 else 270
+        else:
+            angle_params[3] &#x3D; angle_params[4] + round(math.degrees(math.atan(angle_params[0] &#x2F; angle_params[1])), 4)
+        # Determine the scope
+        if 90 &lt; angle_params[3] &lt; 270:
+            angle_params[3] &#x3D; arguments.Angle_last * 0.1 + angle_params[3] * 0.9
+            kalman_filter(arguments, angle_params[3])
+            arguments.Angle_last &#x3D; angle_params[3]
+            show_angle &#x3D; 180 - angle_params[3]
+
+            # Check Ques 3
+            if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 0:
+                Laser.value(1)
+                servo(Servo_laser, show_angle)
+
+            lcd.draw_string(60, 200, &quot;Angle: &quot; + str(show_angle), lcd.BLUE, lcd.BLACK)
+            lcd.draw_string(60, 180, &quot;Distance: &quot; + str(275 &#x2F; math.cos(-show_angle * math.pi &#x2F; 180)), lcd.BLUE,
+                            lcd.BLACK)
+            lcd.fill_rectangle(251, 10, 25, 225, (0, 0, 0))
+            location &#x3D; int(108 + math.tan(-show_angle * math.pi &#x2F; 180) * 48)
+            print(show_angle, location)
+            if 0 &lt; location &lt; 200:
+                lcd.fill_rectangle(251, location, 15, 15, (0, 255, 200))
+
+            # Check Ques 4
+            if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 1:
+                arguments.JD &#x3D; angle_params[3]
+                Laser.value(1)
+                error &#x3D; arguments.JD - arguments.pid
+                arguments.pid +&#x3D; error * 0.1
+                arguments.output &#x3D; -arguments.pid
+                if -270 &lt; arguments.output &lt; -90:
+                    servo(Servo_laser, 180 + arguments.output)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 style="text-align:center;font-weight:700;color:#B399FF">反思总结</h2>
 <ol>
-<li>类选择器好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用</li>
-<li>id选择器好比人的身份证号码，全中国是唯一的，不得重复</li>
-<li>id选择器和类选择器最大的不同在于使用次数上</li>
-<li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li>
+<li>音源很重要</li>
+<li>可以滤波</li>
+<li>可以PID控制舵机提高稳定性</li>
 </ol>
-<h4 id="通配符选择器">通配符选择器</h4>
-<p>在CSS中，通配符选择器用&quot;*&quot;定义，他表示选取页面中所有元素</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1；
-	...
-<span class="token punctuation">&#125;</span>
-<span class="token selector"># 特殊情况才使用（清除所有元素标签的内外边距）
-*</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-	<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="基础选择器总结">基础选择器总结</h4>
-<table>
-<thead>
-<tr>
-<th>基础选择器</th>
-<th>作用</th>
-<th>特点</th>
-<th>使用情况</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>标签选择器</td>
-<td>可以选出所有相同的标签，比如p</td>
-<td>不能差异化选择</td>
-<td>较多</td>
-<td>p {color: red;}</td>
-</tr>
-<tr>
-<td>类选择器</td>
-<td>可以选出1个或多个标签</td>
-<td>可以根据需求选择</td>
-<td>非常多</td>
-<td>.nav {color: red;}</td>
-</tr>
-<tr>
-<td>id选择器</td>
-<td>一次只能选择1个标签</td>
-<td>id属性只能在每个HTML文档中出现一次</td>
-<td>一般和JS搭配</td>
-<td>#nav {color: red;}</td>
-</tr>
-<tr>
-<td>通配符选择器</td>
-<td>选择所有的标签</td>
-<td>选择的太多，有部分不需要</td>
-<td>特殊情况使用</td>
-<td>* {color: red;}</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS-字体属性">CSS 字体属性</h3>
-<h4 id="字体系列">字体系列</h4>
-<p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">"微软雅黑"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
-<span class="token selector">body</span> <span class="token punctuation">&#123;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">"Microsoft YaHei"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>各种字体之间必须使用英文状态下的逗号隔开</li>
-<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
-<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li>
-</ul>
-<h4 id="大小">大小</h4>
-<p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>px大小是我们网页的最常用的单位</li>
-<li>谷歌浏览器默认的文字大小为16px</li>
-<li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li>
-<li>可以给body指定整个页面的文字大小</li>
-<li>标题标签比较特殊，需要单独指定文字大小</li>
-</ul>
-<h4 id="粗细">粗细</h4>
-<p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>默认值（不加粗）</td>
-</tr>
-<tr>
-<td>bold</td>
-<td>定义粗体（加粗）</td>
-</tr>
-<tr>
-<td>100~900·</td>
-<td>400等同于normal，而700等同于bold（数字后面不加单位）</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li>
-<li>实际开发时，我们更喜欢用数字表示粗细</li>
-</ul>
-<h4 id="文字样式">文字样式</h4>
-<p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">P</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>默认值，浏览器会显示标准的字体样式font-style：normal；</td>
-</tr>
-<tr>
-<td>italic</td>
-<td>浏览器会显示斜体的字体样式</td>
-</tr>
-</tbody>
-</table>
-<h4 id="字体符合属性">字体符合属性</h4>
-<p>字体属性可以把以上文字样式综合来写，节约代码</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"># 复合属性有要求
-<span class="token property">font</span><span class="token punctuation">:</span> font-style font-weight font-size/line-height font-family
-<span class="token property">font</span><span class="token punctuation">:</span> italic 700 16px Microsoft yahei<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li>
-<li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li>
-</ul>
-<h4 id="CSS字体属性总结">CSS字体属性总结</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>表示</th>
-<th>注意点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>font-size</td>
-<td>字号</td>
-<td>我们通常用的单位时px像素，一定要跟上单位</td>
-</tr>
-<tr>
-<td>font-family</td>
-<td>字体</td>
-<td>实际工作中按照团队约定来写字体</td>
-</tr>
-<tr>
-<td>font-weight</td>
-<td>字体粗细</td>
-<td>记住加粗时700或者bold不加粗是normal或者400（不加单位</td>
-</tr>
-<tr>
-<td>font-style</td>
-<td>字体样式</td>
-<td>记住倾斜是italic    不倾斜是normal工作中我们最常用normal</td>
-</tr>
-<tr>
-<td>font</td>
-<td>字体连写</td>
-<td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS-文本属性">CSS 文本属性</h3>
-<p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
-<h4 id="文本颜色">文本颜色</h4>
-<p><strong>color</strong>属性用于定义文本颜色</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>表示</th>
-<th>属性值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预定义的颜色值</td>
-<td>red，green，blue，还有pink！</td>
-</tr>
-<tr>
-<td>十六进制</td>
-<td>#FF0000，#FF6600</td>
-</tr>
-<tr>
-<td>RGB代码</td>
-<td>rgb(255,0,0)或rgb(100%,0%,0%)</td>
-</tr>
-</tbody>
-</table>
-<p><em><strong>开发中最常用的是十六进制</strong></em></p>
-<h4 id="对齐文本">对齐文本</h4>
-<p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>left</td>
-<td>左对齐（默认值）</td>
-</tr>
-<tr>
-<td>right</td>
-<td>右对齐</td>
-</tr>
-<tr>
-<td>center</td>
-<td>居中对齐</td>
-</tr>
-</tbody>
-</table>
-<h4 id="装饰文本">装饰文本</h4>
-<p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>none</td>
-<td>默认。没有装饰线</td>
-</tr>
-<tr>
-<td>underline</td>
-<td>下划线。链接a自带下划线（常用）</td>
-</tr>
-<tr>
-<td>overline</td>
-<td>上划线。（几乎不用）</td>
-</tr>
-<tr>
-<td>line-through</td>
-<td>删除线。（不常用）</td>
-</tr>
-</tbody>
-</table>
-<h4 id="文本缩进">文本缩进</h4>
-<p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">text-indent</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
-	<span class="token property">text-indent</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p>
-<h4 id="行间距">行间距</h4>
-<p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>这一行最下边到下一行最下边的距离就是行高</p>
-<h4 id="CSS文本属性总结">CSS文本属性总结</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>表示</th>
-<th>注意点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>color</td>
-<td>文本颜色</td>
-<td>通常用十六进制，简体形式#fff</td>
-</tr>
-<tr>
-<td>text-align</td>
-<td>文本对齐</td>
-<td>可以设置文字水平的对齐方式</td>
-</tr>
-<tr>
-<td>text-indent</td>
-<td>文本缩进</td>
-<td>通常我们用于段落首行缩进两个字的距离</td>
-</tr>
-<tr>
-<td>text-decoration</td>
-<td>文本修饰</td>
-<td>记住添加下划线underline、取消下划线none</td>
-</tr>
-<tr>
-<td>line-height</td>
-<td>行高</td>
-<td>控制行与行之间的距离</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS-引入方式">CSS 引入方式</h3>
-<p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
-<h4 id="内部样式表">内部样式表</h4>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style>标签中
-&lt;style>
-	div</span> <span class="token punctuation">&#123;</span>
-		<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-		<span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-&lt;/style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="行内样式表">行内样式表</h4>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式
-＜div style="color:red; font-size: 12px;">青春不常在，抓紧谈恋爱<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>style其实就是标签的属性</li>
-<li>在双引号中间，写法要符合CSS规范</li>
-<li>可以控制当前的标签设置样式</li>
-<li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
-<li>使用行内样式表设定CSS，通常也被称为行内式引入</li>
-</ul>
-<h4 id="外部样式表">外部样式表</h4>
-<p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
-<p>引入外部样式表分为两步：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中
-2. 在HTML页面中，使用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span><span class="token punctuation">></span></span>标签引入这个文件
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css文件路径<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>rel</td>
-<td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
-</tr>
-<tr>
-<td>href</td>
-<td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td>
-</tr>
-</tbody>
-</table>
-<h4 id="CSS引入方式总结">CSS引入方式总结</h4>
-<table>
-<thead>
-<tr>
-<th>样式表</th>
-<th>优点</th>
-<th>缺点</th>
-<th>使用情况</th>
-<th>控制范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>行内样式表</td>
-<td>书写方便，权重高</td>
-<td>结构样式混写</td>
-<td>较少</td>
-<td>控制一个标签</td>
-</tr>
-<tr>
-<td>内部样式表</td>
-<td>部分结构和样式相分离</td>
-<td>没有彻底分离</td>
-<td>较多</td>
-<td>控制一个页面</td>
-</tr>
-<tr>
-<td>外部样式表</td>
-<td>完全实现结构和样式相分离</td>
-<td>需要引入</td>
-<td>最多，推荐</td>
-<td>控制多个页面</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Emmet语法">Emmet语法</h3>
-<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
-<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
-<ol>
-<li>生成标签直接输入标签名按tab键即可</li>
-<li>如果想要生成多个相同标签加上*就可以了</li>
-<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
-<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
-<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
-<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
-<li>如果想要在生成的$签内部写内容可以用{}表示</li>
-</ol>
-<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
-<p>CSS基本采取简写形式即可</p>
-<ul>
-<li>比如 w200 按tab就可以生成 width: 200px;</li>
-<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
-</ul>
-<h4 id="快速格式化代码">快速格式化代码</h4>
-<p>设置搜索format勾选format on save</p>
-<h3 id="CSS复合选择器">CSS复合选择器</h3>
-<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
-<ul>
-<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
-<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
-<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
-</ul>
-<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
-<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">元素1 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
-<h4 id="子选择器（重要）">子选择器（重要）</h4>
-<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">元素1 > 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
-<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
-<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
-<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">元素1, 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>上述语法表示选择元素1和元素2</p>
-<ul>
-<li>元素1和元素2中间用逗号隔开</li>
-<li>逗号可以理解为<strong>和</strong>的意思</li>
-<li>并集选择器通常用于集体声明</li>
-</ul>
-<h4 id="链接伪类选择器">链接伪类选择器</h4>
-<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">a</span><span class="token punctuation">:</span>link		# 选择所有未被访问的链接
-<span class="token property">a</span><span class="token punctuation">:</span>visited	# 选择所有已被访问的链接
-<span class="token property">a</span><span class="token punctuation">:</span>hover		# 选择鼠标指针位于其上的链接
-<span class="token property">a</span><span class="token punctuation">:</span>active	# 选择活动链接（鼠标按下未弹起）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="注意事项">注意事项</h5>
-<ul>
-<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
-<li>记忆法：love hate 或者 lv 宝宝 hao</li>
-<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
-</ul>
-<h5 id="开发写法">开发写法</h5>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="focus伪类选择器">focus伪类选择器</h4>
-<p>focus伪类选择器用于选取获得焦点的表单元素</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">焦点就是光标，一般情况&lt;input>类表单元素才能获取，因此这个选择器也主要针对表单元素来说
-input:focus</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="复合选择器总结">复合选择器总结</h4>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>作用</th>
-<th>特征</th>
-<th>使用情况</th>
-<th>隔开符号及用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>后代选择器</td>
-<td>选择后代元素</td>
-<td>子孙后代</td>
-<td>较多</td>
-<td>符号是空格 .nav a</td>
-</tr>
-<tr>
-<td>子代选择器</td>
-<td>选择最近一级元素</td>
-<td>亲儿子</td>
-<td>较少</td>
-<td>符号是大于 .nav&gt;p</td>
-</tr>
-<tr>
-<td>并集选择器</td>
-<td>选择相同样式的元素</td>
-<td>集体声明</td>
-<td>较多</td>
-<td>符号是逗号 .nav,.header</td>
-</tr>
-<tr>
-<td>链接伪类选择器</td>
-<td>选择不同状态的链接</td>
-<td>和链接相关</td>
-<td>较多</td>
-<td>重点记住a{}和a:hover</td>
-</tr>
-<tr>
-<td>focus选择器</td>
-<td>选择获得光标的表单</td>
-<td>和表单相关</td>
-<td>较少</td>
-<td>记住input:focus</td>
-</tr>
-</tbody>
-</table>
-<h3 id="CSS的元素显示模式">CSS的元素显示模式</h3>
-<p>元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局我们的网页。比如&lt;div自己占一行，一行可以放多个&lt;span。HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
-<h4 id="块元素">块元素</h4>
-<p>常见的块元素有&lt;h1-6、&lt;p、&lt;div、&lt;ul等，其中div最典型</p>
-<p>块级元素的特点：</p>
-<ol>
-<li>比较霸道，自己独占一行</li>
-<li>高度，宽度，外边距以及内边距都可以控制</li>
-<li>宽度默认是容器（父级宽度）的100%</li>
-<li>是一个容器及盒子，里面可以放行内或者块级元素</li>
-</ol>
-<p>⚠<font color=pink>注意：</font></p>
-<ul>
-<li>文字类的元素内不能使用块级元素</li>
-<li>&lt;p标签主要用于存放文字，因此&lt;p里面不能放块级元素，特别是&lt;div</li>
-<li>同理，&lt;h1-6等都是文字类块级标签，里面也不能放其他块级元素</li>
-</ul>
-<h4 id="行内元素">行内元素</h4>
-<p>常见的行内元素有&lt;a、&lt;strong、&lt;b、&lt;em、&lt;i、&lt;del、&lt;span等，其中&lt;span标签是最典型的行内元素。有的地方也将行内元素成为内联元素。</p>
-<p>行内元素的特点：</p>
-<p>相邻行内元素在一行上，有一行可以显示多个</p>
-<p>高、宽直接设置是无效的</p>
-<p>默认的宽度就是它本身的宽度</p>
-<p>行内元素只能容纳文本或其他行内元素</p>
-<p>注意：</p>
-<ul>
-<li>
-<p>链接里面不能在放链接</p>
-</li>
-<li>
-<p>特殊情况链接&lt;a里面可以放块级元素，但是给&lt;a转换一下块级模式最安全</p>
-</li>
-</ul>
-<h4 id="行内块元素">行内块元素</h4>
-<p>在行内元素中有几个特殊的标签——&lt;img &lt;input &lt;td，他们同时具有块元素和行内元素的特点。有些资料称他们为行内块元素。</p>
-<p>行内块元素的特点：</p>
-<ul>
-<li>和相邻行内元素（行内块）在一行上，但是他们之间会有空白间隙，一行可以显示多个（行内元素特点）</li>
-<li>默认宽度就是它本身内容的宽度（行内元素特点）</li>
-<li>高度，行高，外边距以及内边距都可以控制（块级元素特点</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>元素模式</th>
-<th>元素排列</th>
-<th>设置样式</th>
-<th>默认宽度</th>
-<th>包含</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>块级元素</td>
-<td>一行只能放一个块级元素</td>
-<td>可以设置宽度高度</td>
-<td>容器的100%</td>
-<td>容器可以包含任何标签</td>
-</tr>
-<tr>
-<td>行内元素</td>
-<td>一行可以放多个行内元素</td>
-<td>不可以设置宽高</td>
-<td>本身内容宽度</td>
-<td>容器文本或其他行内元素</td>
-</tr>
-<tr>
-<td>行内块元素</td>
-<td>一行放多个行内块元素</td>
-<td>可以设置宽高</td>
-<td>本身内容宽度</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="元素显示模式转换">元素显示模式转换</h4>
-<p>特殊情况下，我们需要元素模式的转换，简单理解：一个模式的元素需要另一种元素的特性，比如想要增加链接&lt;a的触发范围</p>
-<ul>
-<li>display: block;</li>
-<li>display: inline;</li>
-<li>display: inline-block;</li>
-</ul>
-<h4 id="一个小工具的使用-snipaste">一个小工具的使用 snipaste</h4>
-<ul>
-<li>F1 截图	F3 悬浮	Alt 查看颜色代码+c复制</li>
-</ul>
-<h4 id="单行文字垂直居中代码">单行文字垂直居中代码</h4>
-<p><em>CSS没有提供，可以通过小技巧实现：<strong>让文字的行高等于盒子的高度</strong></em></p>
-<h3 id="CSS的背景">CSS的背景</h3>
-<p>通过CSS背景属性，可以给页面元素添加背景样式</p>
-<p>背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等</p>
-<h4 id="背景颜色">背景颜色</h4>
-<p>background-color属性定义了元素的背景颜色</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css">background-color：颜色值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>一般情况下元素背景颜色默认值是transparent（透明），也可手动指定</p>
-<h4 id="背景图片">背景图片</h4>
-<p>background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置（精灵图也是一种运用场景）</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-image</span> <span class="token punctuation">:</span> none | <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>none</td>
-<td>无背景图（默认）</td>
-</tr>
-<tr>
-<td>url</td>
-<td>使用绝对或相对地址指定背景图像</td>
-</tr>
-</tbody>
-</table>
-<h4 id="背景平铺">背景平铺</h4>
-<p>如果要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-repeat</span><span class="token punctuation">:</span> repeat | no-repeat | repeat-x | repeat-y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>参数值</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>repeat</td>
-<td>背景图像在纵向和横向上平铺（默认的）</td>
-</tr>
-<tr>
-<td>no-repeat</td>
-<td>背景图像不平铺</td>
-</tr>
-<tr>
-<td>repeat-x</td>
-<td>背景图像在横向上平铺</td>
-</tr>
-<tr>
-<td>repeat-y</td>
-<td>背景图像在纵向上平铺</td>
-</tr>
-</tbody>
-</table>
-<h4 id="背景图片位置">背景图片位置</h4>
-<p>利用background-position属性可以改变图片在背景中的位置</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-position</span><span class="token punctuation">:</span> x y<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>参数代表的意思是：x坐标和y坐标。可以使用<strong>方位名词</strong>或者<strong>精确单位</strong></p>
-<table>
-<thead>
-<tr>
-<th>参数值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>length</td>
-<td>百分数 | 由浮点数字和单位标识符组成的长度值</td>
-</tr>
-<tr>
-<td>position</td>
-<td>top | center | bottom | left | center | right 方位名词</td>
-</tr>
-</tbody>
-</table>
-<p>1.参数是方位名词</p>
-<ul>
-<li>如果两个值都是方位名词，则两个值得前后顺序无关</li>
-<li>如果只指定一个方位名词，另一个值省略，则第二个值默认居中对齐</li>
-</ul>
-<p>2.参数是精确单位</p>
-<ul>
-<li>如果参数值是精确坐标，那么第一个肯定是x坐标，第二个一定是y坐标</li>
-<li>如果只指定一个数值，那该数值一定是x坐标，另一个默认垂直居中</li>
-</ul>
-<p>3.参数是混合单位</p>
-<ul>
-<li>如果指定得两个值是精确单位和方位名词混合使用（x，y顺序不能变）</li>
-</ul>
-<h4 id="背景图像固定（背景附着）">背景图像固定（背景附着）</h4>
-<p>background-attachment属性设置背景图像是否固定或者随着页面得其余部分滚动</p>
-<p>background-attachment后期可以制作视差滚动效果</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-attachment</span> <span class="token punctuation">:</span> scroll | fixed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>scroll</td>
-<td>背景图像随着对象内容滚动</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>背景图像固定</td>
-</tr>
-</tbody>
-</table>
-<h4 id="背景复合写法">背景复合写法</h4>
-<p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中，从而减少代码量。当使用简写属性时，没有一定的书写顺序，一般习惯约定顺序为：</p>
-<p>background：背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> transparent <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>image.jpg<span class="token punctuation">)</span></span> repeat-y fixed top<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>实际开发中，我们更提倡的写法</p>
-<h4 id="背景颜色半透明">背景颜色半透明</h4>
-<p>CSS3为我们提供了半透明的效果</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.3<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>红绿蓝 alpha不透明度，取值范围0~1</li>
-<li>实际开发中，习惯a的0.3的0省略，写为.3</li>
-<li>注意：背景半透明是指盒子背景半透明，盒子里面的内容不受影响</li>
-<li>CSS3新增属性，时IE9+版本浏览器才支持的</li>
-<li>但是现在实际开发，我们不太关注兼容性写法了，可以放心使用</li>
-</ul>
-<h4 id="背景总结">背景总结</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>background-color</td>
-<td>背景颜色</td>
-<td>预定义的颜色值/十六进制/RGB代码</td>
-</tr>
-<tr>
-<td>background-image</td>
-<td>背景图片</td>
-<td>url（图片路径）</td>
-</tr>
-<tr>
-<td>background-repeat</td>
-<td>是否平铺</td>
-<td>repeat/no-repeat/repeat-x/repeat-y</td>
-</tr>
-<tr>
-<td>background-position</td>
-<td>背景位置</td>
-<td>length/position 分别是x，y</td>
-</tr>
-<tr>
-<td>background-attachment</td>
-<td>背景附着</td>
-<td>scroll（背景滚动）、fixed（背景固定）</td>
-</tr>
-<tr>
-<td>背景简写</td>
-<td>书写更简单</td>
-<td>背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</td>
-</tr>
-<tr>
-<td>背景色半透明</td>
-<td>背景颜色半透明</td>
-<td>background: rgba(0,0,0,0.3);后面必须四个值</td>
-</tr>
-</tbody>
-</table>
-<p>背景图片：实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置。（精灵图也是一种运用场景）</p>
-<h3 id="CSS三大特性">CSS三大特性</h3>
-<p>CSS中有三个非常重要的特性：层叠性、继承性、优先级</p>
-<h4 id="层叠性">层叠性</h4>
-<p>相同选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。</p>
-<p>层叠性原则：</p>
-<ul>
-<li>样式冲突，遵循原则是就近原则，哪个样式结构近，就执行哪个样式</li>
-<li>样式不冲突，不会层叠</li>
-</ul>
-<h4 id="继承性">继承性</h4>
-<p>CSS中的继承：子标签会继承父标签的某些样式，比如文本的颜色和字号</p>
-<ul>
-<li>恰当使用继承可以简化代码，降低CSS样式的复杂性</li>
-<li>子元素可以继承父元素的样式（text、size、line这些元素开头的可以继承，以及color属性）</li>
-<li>继承性口诀：龙生龙，凤生凤，老鼠的孩子会打洞</li>
-</ul>
-<h5 id="行高的继承性">行高的继承性</h5>
-<h4 id="优先级">优先级</h4>
-<p>当同一个元素指定多个选择器，就会有优先级</p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>选择器权重</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>继承或者*</td>
-<td>0，0，0，0</td>
-</tr>
-<tr>
-<td>元素选择器</td>
-<td>0，0，0，1</td>
-</tr>
-<tr>
-<td>类选择器，伪类选择器</td>
-<td>0，0，1，0</td>
-</tr>
-<tr>
-<td>ID选择器</td>
-<td>0，1，0，0</td>
-</tr>
-<tr>
-<td>行内样式</td>
-<td>1，0，0，0</td>
-</tr>
-<tr>
-<td>!important</td>
-<td>∞</td>
-</tr>
-</tbody>
-</table>
-<p><strong>优先级注意点</strong></p>
-<p>权重是由4组数字组成，但是不会有进位</p>
-<p>类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推</p>
-<p>等级判断从左到右，如果某一位数位相同，则判断下一位数值</p>
-<p>通配符和继承权重为0</p>
 
             </div>
             <hr/>
@@ -1746,7 +1039,7 @@ input:focus</span> <span class="token punctuation">&#123;</span>
                     </span>
                     <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/frontend/CSS/" class="b-link-green">CSS</a>
+                    <a href="/contest/ele3/" class="b-link-green">2022湖北省大学生电子设计竞赛E题（TI杯）</a>
                 </p>
             </div>
 
@@ -2097,53 +1390,55 @@ input:focus</span> <span class="token punctuation">&#123;</span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/frontend/Permeate/">
+                <a href="/contest/ele3/">
                     <div class="card-image">
                         
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlFcSeH1e4gm3z_2mzz5NWSiEo6UA9qj2LPg&amp;usqp=CAU" class="responsive-img" alt="Web安全">
+                        <img src="https://s2.loli.net/2022/01/25/gDfYCeSs6WzLFlk.jpg" class="responsive-img" alt="2022湖北省大学生电子设计竞赛E题（TI杯）">
                         
-                        <span class="card-title">Web安全</span>
+                        <span class="card-title">2022湖北省大学生电子设计竞赛E题（TI杯）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            渗透测试/信息安全/网络安全
+                            2022湖北省大学生电子设计竞赛E题（TI杯）
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-06-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="post-category" target="_blank">
-                                    网络安全
+                            <a href="/categories/%E7%AB%9E%E8%B5%9B/" class="post-category" target="_blank">
+                                    竞赛
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web/" target="_blank">
-                        <span class="chip bg-color">Web</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/SQL/" target="_blank">
-                        <span class="chip bg-color">SQL</span>
+                    <a href="/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/" target="_blank">
+                        <span class="chip bg-color">可恶的电赛</span>
                     </a>
                     
-                    <a href="/tags/XSS/" target="_blank">
-                        <span class="chip bg-color">XSS</span>
+                    <a href="/tags/K210/" target="_blank">
+                        <span class="chip bg-color">K210</span>
                     </a>
                     
                 </div>
@@ -2157,30 +1452,30 @@ input:focus</span> <span class="token punctuation">&#123;</span>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/sports/badminton/">
+                <a href="/other/PowerOutage/">
                     <div class="card-image">
                         
-                        <img src="https://s2.loli.net/2022/01/25/UvAoDtc3RuqESeK.jpg" class="responsive-img" alt="羽毛球🏸">
+                        <img src="https://www.ctgu.site/media/R-D.jpg" class="responsive-img" alt="美国得克萨斯州2·14大停电">
                         
-                        <span class="card-title">羽毛球🏸</span>
+                        <span class="card-title">美国得克萨斯州2·14大停电</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            打羽毛球真的能缓解近视
+                            2021年德州大停电小调查~
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BF%90%E5%8A%A8%EF%BC%81/" class="post-category" target="_blank">
-                                    运动！
+                            <a href="/categories/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" class="post-category" target="_blank">
+                                    生活中有趣的知识点
                                 </a>
                             
                             
@@ -2190,12 +1485,8 @@ input:focus</span> <span class="token punctuation">&#123;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%90%E5%8A%A8/" target="_blank">
-                        <span class="chip bg-color">运动</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" target="_blank">
-                        <span class="chip bg-color">羽毛球</span>
+                    <a href="/tags/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F%E7%BB%A7%E7%94%B5%E4%BF%9D%E6%8A%A4/" target="_blank">
+                        <span class="chip bg-color">电力系统继电保护</span>
                     </a>
                     
                 </div>
