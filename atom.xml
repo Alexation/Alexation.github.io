@@ -6,7 +6,7 @@
   <link href="https://www.alexation.cn/atom.xml" rel="self"/>
   
   <link href="https://www.alexation.cn/"/>
-  <updated>2023-08-31T08:47:40.287Z</updated>
+  <updated>2023-09-02T03:04:40.852Z</updated>
   <id>https://www.alexation.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>只要有心、瞬间就能改变世界</title>
+    <title>EYES THAT WATCH THE WORLD</title>
     <link href="https://www.alexation.cn/HelloWorld/"/>
     <id>https://www.alexation.cn/HelloWorld/</id>
     <published>2023-08-31T02:57:33.000Z</published>
-    <updated>2023-08-31T08:47:40.287Z</updated>
+    <updated>2023-09-02T03:04:40.852Z</updated>
     
     <content type="html"><![CDATA[<h1 align='center'><font style="font-family:华文行楷;font-weight:500;font-size=50px;">观黑夜如白昼，洞微处若观火</font></h1><p><font style="font-family:华文行楷;font-size:24px">    你好，很高兴以这种方式认识你。在这里，我会分享我的生活趣事、研究成果、新奇想法等任何值得记录下来的美好事物。这里陪伴我的两年以来，我的想法有着很大的变化，包括本篇文章也经历了三次修改。 希望这些想法能对你有帮助•ᴗ-</font></p><br><p><font style="font-family:华文行楷;font-size:24px">    原奥数金牌获得者柳志宇分享的一段话——&quot;大家公认数学是逻辑思维，或者理性思维；但其实真正美妙的、神奇的地方，是超越逻辑和理性的部分，是对事物内在属性的深刻洞见。不管是代数、数论还是更高深的数学分支。我在其中，发现这种精神同样重要。我们需要把复杂的事物简化，并看到事物背后深层的内涵。”这种简化能力不仅仅在数学上有所体现，在其他所有学科中都有所涉及，而在抽象程度极高的数学上展现的淋漓尽致。抽象到极致的事物一定是极其美丽的，包括其所有的分支，都将合理而自然。</font></p><h2 align='left'><font style="font-family:华文行楷;font-weight:500;font-size=50px;">&nbsp;&nbsp;&nbsp;&nbsp;审美</font><font style="font-family:Courgette-Regular;font-size:24px;font-weight:500;">(Aesthetic)</font></h2><p><font style="font-family:华文行楷;font-size:24px">    简化事物的能力会伴随我们成长的各个阶段，在人生最初的阶段原生家庭起着主导作用，而在后续性格特点的形成过程中则是对于审美的不断完善。</font></p><h2 align='left'><font style="font-family:华文行楷;font-weight:500;font-size=50px;">&nbsp;&nbsp;&nbsp;&nbsp;节奏</font><font style="font-family:Courgette-Regular;font-size:24px;font-weight:500;">(Rhythm)</font></h2><p><font style="font-family:华文行楷;font-size:24px">    网站前后端有着生命周期、一场游戏有着攻防转换、工程的进度需要不断调整等等我们身边的各种事物都有着独特的运行规律。对于这种节奏的把握是至关重要的，它将直接决定执行效率、完成度等关键指标。</font></p><h2 align='left'><font style="font-family:华文行楷;font-weight:500;font-size=50px;">&nbsp;&nbsp;&nbsp;&nbsp;专注</font><font style="font-family:Courgette-Regular;font-size:24px;font-weight:500;">(Concentration)</font></h2><p><font style="font-family:华文行楷;font-size:24px">    现代生活节奏快，信息和刺激源不断涌现。这导致人们对即时满足感和快速反馈的需求增加，而缺乏耐心和持久力。把握主要矛盾、提高专注力是提高分析能力的关键。</font></p><br><p><font style="font-family:华文行楷;font-size:24px">    审美、节奏、专注——构成了以ARC为核心的系统思维，我相信它的稳定性是极强的、并一定能够及时回归到正常状态</font><sup><i><b>[1]</b></i></sup><font style="font-family:华文行楷;font-size:24px">。（你也是</font></p><blockquote><p><font style="font-family:华文行楷;font-size:24px">希望你能感到被理解、被看见。</font></p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=468710207&bvid=BV1W541127zq&cid=588846146&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><br><p><font style="font-family:Courgette-Regular;font-size:18px;font-weight:500;">[1]</font> <font style="font-family:华文行楷;font-size:24px">ARC在电力系统中指自动重合闸：如电力系统发生的故障是暂时性的，经继电保护装置使断路器跳闸切断电源后，经预定时间再使其自动重合，如故障已自动消除，线路即重新恢复供电。</font></p>]]></content>
     
@@ -56,9 +56,9 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
-    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
     <category term="K210" scheme="https://www.alexation.cn/tags/K210/"/>
     
@@ -210,11 +210,11 @@
     <category term="竞赛" scheme="https://www.alexation.cn/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
-    
     <category term="可恶的电赛" scheme="https://www.alexation.cn/tags/%E5%8F%AF%E6%81%B6%E7%9A%84%E7%94%B5%E8%B5%9B/"/>
     
     <category term="OpenMV" scheme="https://www.alexation.cn/tags/OpenMV/"/>
+    
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
     <category term="MSP430" scheme="https://www.alexation.cn/tags/MSP430/"/>
     
@@ -332,11 +332,11 @@
     <category term="后端" scheme="https://www.alexation.cn/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
+    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
     <category term="FastAPI" scheme="https://www.alexation.cn/tags/FastAPI/"/>
     
     <category term="后端" scheme="https://www.alexation.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
     
   </entry>
   
@@ -362,6 +362,8 @@
     <category term="Project" scheme="https://www.alexation.cn/categories/Project/"/>
     
     
+    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
+    
     <category term="跨域" scheme="https://www.alexation.cn/tags/%E8%B7%A8%E5%9F%9F/"/>
     
     <category term="Vue" scheme="https://www.alexation.cn/tags/Vue/"/>
@@ -369,8 +371,6 @@
     <category term="Flask" scheme="https://www.alexation.cn/tags/Flask/"/>
     
     <category term="全栈" scheme="https://www.alexation.cn/tags/%E5%85%A8%E6%A0%88/"/>
-    
-    <category term="MySQL" scheme="https://www.alexation.cn/tags/MySQL/"/>
     
   </entry>
   
@@ -429,9 +429,9 @@
     <category term="加密算法" scheme="https://www.alexation.cn/categories/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
-    
     <category term="Python" scheme="https://www.alexation.cn/tags/Python/"/>
+    
+    <category term="Javascript" scheme="https://www.alexation.cn/tags/Javascript/"/>
     
     <category term="AES" scheme="https://www.alexation.cn/tags/AES/"/>
     
