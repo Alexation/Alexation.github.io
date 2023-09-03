@@ -1878,13 +1878,13 @@ footer .copy-right {
 }
 
 .img-shadow {
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2), 0 10px 30px -11px rgba(0, 0, 0, .6)
+/*    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2), 0 10px 30px -11px rgba(0, 0, 0, .6)*/
 }
 
 /* .img-margin {
     margin: 25px auto 10px auto;
 } */
-/* 洪卫 shw2018 modify 2019.08.31 */
+
 .img-margin {
     margin: 2px auto 5px auto;
 }
