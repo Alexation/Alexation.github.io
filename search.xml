@@ -189,8 +189,8 @@ while True:
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>可恶的电赛</tag>
         <tag>pyAI-K210</tag>
+        <tag>可恶的电赛</tag>
       </tags>
   </entry>
   <entry>
@@ -350,7 +350,7 @@ while True:
 <p>        第二次世界大战结束后，美国的制造业曾经达到近全球制造业的50%。制造业曾经是美国经济的支柱，但近年来面临着许多挑战，如国际竞争、技术变革和全球化等。因此，美国经济逐渐向服务业和科技业等高附加值领域转移。但是近年来美国对于各种产品的金融化、高端化导致轻工业和加工产业，工业产业链不完整，生产加工和一部分工业转移到亚洲。虽然高新技术产业以及服务业全球领先，但是大多数重工业产业空心化，这种整体的产业结构目前来看属于亚健康的状态。美国这种资本导向的国家如果不加强建设基础设施、加快完善整体产业链，那么一旦受到任何外部因素的影响导致高附加值产业削弱，最终叫苦的只能是美国的普通人民。相比之下，中国目前大力发展实体经济，稳健发展金融，要实现国内大循环的战略就是为了规避这种产业结构偏科所造成的风险，创造更多的就业机会的同时不断创新和改进技术，以提高生产效率和产品质量，从而保持竞争力。这种技术进步不仅有利于实体经济本身的发展，也可以带动整个经济的技术进步。在防止经济区域分化和产业集中度过高的同时，为国家的经济发展带来更多机遇和挑战。</p>
 ]]></content>
       <categories>
-        <category>生活中有趣的知识点</category>
+        <category>电力系统</category>
       </categories>
       <tags>
         <tag>电力系统</tag>
@@ -802,7 +802,7 @@ while True:
       </tags>
   </entry>
   <entry>
-    <title>SEO到网站优化排名</title>
+    <title>SEO</title>
     <url>/other/seo/</url>
     <content><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>SEO</em></h2>
 <p>SEO： Search Engine Optimization, 搜索引擎优化。利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名。目的是让其在行业内占据领先地位，获得品牌收益。很大程度上是网站经营者的一种商业行为，将自己或自己公司的排名前移。SEO是提高你网站排名的一个很有效的方法，这个完善和优化你网站的排名因素的方法就是能影响搜索引擎的排名的算法。 因此，SEO是网络营销策略 （online marketing Digital strategy）和数字营销策略 （Digital Marketing strategy）中很重要的一个环节。SEO使你的网站获取得更多的流量（traffic）同时也可以提高你在搜索引擎的排名。那就意味你可以获取得更多的订单，更多的利润。</p>
@@ -850,20 +850,20 @@ while True:
 <p>做SEO的目的当然是为了销售，所以在这个角度看，SEO也算是付款营销的一种手段。不过SEO不想广告那样的直接能立马见效。SEO更像是一个细水长流的积累过程，效果不会立竿见影。但SEO胜在稳定和投入较少。</p>
 ]]></content>
       <categories>
-        <category>生活中有趣的知识点</category>
+        <category>算法</category>
       </categories>
       <tags>
         <tag>SEO</tag>
       </tags>
   </entry>
   <entry>
-    <title>PS速成记录</title>
+    <title>Adobe Photoshop</title>
     <url>/other/ps/</url>
-    <content><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>PS is just a tool</em></h2>
-<h2 id="前言">前言</h2>
-<p>略</p>
-<h2 id="学习网址">学习网址</h2>
-<p><a href="http://99ut.blueidea.com/">大师之路 Unify tutorial (blueidea.com)</a></p>
+    <content><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>PS记录点</em></h2>
+<p>自从大一入学开始就非常想学习PS、但可惜一直没有时间（现在好像也没有》》》。正好这次选修了《PH0T0SH0P绘画创作》这门选修课，在这里做一下记录吧！</p>
+<p>官方教程：<a href="https://helpx.adobe.com/cn/photoshop/tutorials.html" style="font-weight:700;color:#B399FF">Photoshop 教程| 学习使用 Photoshop CC (adobe.com)</a></p>
+<p>其他教程：<a href="http://99ut.blueidea.com/" style="font-weight:700;color:#B399FF">大师之路 Unify tutorial (blueidea.com)</a></p>
+<p>辅助工具：<a href="https://ctgu.site:8003/index.php/s/eBGpLoRQkQwYW2B" style="font-weight:700;color:#B399FF">老师提供的辅助工具</a></p>
 ]]></content>
       <categories>
         <category>TOOLS</category>
@@ -2196,9 +2196,9 @@ select name,count,date from websites w left outer join access_log a on w.id &#x3
         <category>后端</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>FastAPI</tag>
         <tag>后端</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -2761,7 +2761,7 @@ jsfuck 源于一门编程语言 brainfuck ，其主要的思想就是只使用8�
 <p><a href="https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim%7C%7B%22tag%22%3A%20%22RL_sim2%22%7D">https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|{&quot;tag&quot;%3A &quot;RL_sim2&quot;}</a></p>
 ]]></content>
       <categories>
-        <category>加密算法</category>
+        <category>算法</category>
       </categories>
       <tags>
         <tag>Javascript</tag>
@@ -2771,7 +2771,7 @@ jsfuck 源于一门编程语言 brainfuck ，其主要的思想就是只使用8�
   </entry>
   <entry>
     <title>常见加密方式</title>
-    <url>/javascript/Coder/</url>
+    <url>/algorithm/Coder/</url>
     <content><![CDATA[<h3 id="前言">前言</h3>
 <p>我们所说的加密方式，都是对二进制编码的格式进行加密的，对应到Python中，则是我们的<code>Bytes</code>。</p>
 <p>所以当我们在Python中进行加密操作的时候，要确保我们操作的是<code>Bytes</code>，否则就会报错。</p>
@@ -3309,11 +3309,11 @@ print(d)
 <a href="https://www.bilibili.com/video/BV1Ts411H7u9?from=search&amp;seid=2602407138388579895">https://www.bilibili.com/video/BV1Ts411H7u9?from=search&amp;seid=2602407138388579895</a></p>
 ]]></content>
       <categories>
-        <category>加密算法</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Javascript</tag>
+        <tag>Python</tag>
         <tag>AES</tag>
         <tag>Base64</tag>
         <tag>DES</tag>
@@ -5649,9 +5649,9 @@ Vue的实例对象，以后简称vm。</p>
         <category>前端</category>
       </categories>
       <tags>
+        <tag>Javascript</tag>
         <tag>Web</tag>
         <tag>Vue</tag>
-        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -7262,7 +7262,7 @@ input:focus</span> <span class="token punctuation">&#123;</span>
 <p>练的时候一定要带着思考去练习。</p>
 ]]></content>
       <categories>
-        <category>运动！</category>
+        <category>运动</category>
       </categories>
       <tags>
         <tag>羽毛球</tag>
