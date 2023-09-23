@@ -121,56 +121,6 @@
     
     
     <entry>
-      <title>SEO</title>
-      <link href="/Algorithm/seo/"/>
-      <url>/Algorithm/seo/</url>
-      
-        <content type="html"><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>SEO</em></h2><p>SEO： Search Engine Optimization, 搜索引擎优化。利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名。目的是让其在行业内占据领先地位，获得品牌收益。很大程度上是网站经营者的一种商业行为，将自己或自己公司的排名前移。SEO是提高你网站排名的一个很有效的方法，这个完善和优化你网站的排名因素的方法就是能影响搜索引擎的排名的算法。 因此，SEO是网络营销策略 （online marketing Digital strategy）和数字营销策略 （Digital Marketing strategy）中很重要的一个环节。SEO使你的网站获取得更多的流量（traffic）同时也可以提高你在搜索引擎的排名。那就意味你可以获取得更多的订单，更多的利润。</p><p><a href="https://chuhaiyi.baidu.com/news/detail/45983037">Google 和 Yandex 之间的主要区别是什么？ (baidu.com)</a></p><p>排名分数-考试-标准答案-算法</p><p>游戏规则-（包括自媒体、b站、知乎发布文章等）</p><p>数据分析（核心）</p><ol><li><p>放出蜘蛛（代码</p></li><li><p>蜘蛛来访抓取</p></li><li><p>页面收录（索引</p></li><li><p>算法计算分数</p></li><li><p>排名</p></li><li><p>链接的长度 （中文英文）</p></li><li><p>网站识别回访（打开速度、识别难度）</p></li><li><p>有效收录</p></li><li><p>访问日志</p></li></ol><p>权重值、用户存留、提高质量、追求高指数关键词的排名</p><p>选择关键词</p><ul><li>指数</li><li>相关结果</li><li>广告位</li><li>首页数量</li></ul><p>做SEO的目的当然是为了销售，所以在这个角度看，SEO也算是付款营销的一种手段。不过SEO不想广告那样的直接能立马见效。SEO更像是一个细水长流的积累过程，效果不会立竿见影。但SEO胜在稳定和投入较少。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> SEO </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Adobe Photoshop</title>
-      <link href="/Art/ps/"/>
-      <url>/Art/ps/</url>
-      
-        <content type="html"><![CDATA[<h2 style="text-align:center;font-weight:700;color:#B399FF"><em>PS记录点</em></h2><p>自从大一入学开始就非常想学习PS、但可惜一直没有时间（现在好像也没有》》》。正好这次选修了《PH0T0SH0P绘画创作》这门选修课，在这里做一下记录吧！</p><p>官方教程：<a href="https://helpx.adobe.com/cn/photoshop/tutorials.html" style="font-weight:700;color:#B399FF">Photoshop 教程| 学习使用 Photoshop CC (adobe.com)</a></p><p>其他教程：<a href="http://99ut.blueidea.com/" style="font-weight:700;color:#B399FF">大师之路 Unify tutorial (blueidea.com)</a></p><p>辅助工具：<a href="https://ctgu.site:8003/index.php/s/eBGpLoRQkQwYW2B" style="font-weight:700;color:#B399FF">老师提供的辅助工具</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> TOOLS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> PS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ABOUT CSGO</title>
       <link href="/game/csgo/"/>
       <url>/game/csgo/</url>
@@ -388,9 +338,9 @@
             
             <tag> 跨域 </tag>
             
-            <tag> Flask </tag>
-            
             <tag> Vue </tag>
+            
+            <tag> Flask </tag>
             
             <tag> 全栈 </tag>
             
@@ -446,9 +396,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> Python </tag>
             
             <tag> AES </tag>
             
@@ -761,9 +711,9 @@
       
         <tags>
             
-            <tag> Web </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> Web </tag>
             
         </tags>
       
