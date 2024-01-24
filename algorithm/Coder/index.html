@@ -72,10 +72,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -710,14 +710,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        6.4k
+                        6.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        25 分
+                        24 分
                     </div>
                     
                 
@@ -738,50 +738,50 @@
 <p>我们所说的加密方式，都是对二进制编码的格式进行加密的，对应到Python中，则是我们的<code>Bytes</code>。</p>
 <p>所以当我们在Python中进行加密操作的时候，要确保我们操作的是<code>Bytes</code>，否则就会报错。</p>
 <p>将字符串和<code>Bytes</code>互相转换可以使用<code>encode()</code>和<code>decode()</code>方法。如下所示：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 方法中不传参数则是以默认的utf-8编码进行转换
-a &#x3D; &quot;中国欢迎您&quot;.encode(&quot;utf-8&quot;)
-print(a)  # b&#39;\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8&#39;
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 方法中不传参数则是以默认的utf-8编码进行转换</span>
+a <span class="token operator">=</span> <span class="token string">"中国欢迎您"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># b'\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8'</span>
 
-b &#x3D; a.decode(&quot;utf-8&quot;)
-print(b)  # 中国欢迎您<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>注：两位十六进制常常用来显示一个二进制字节。</strong></p>
 <p>利用<code>binascii</code>模块可以将十六进制显示的字节转换成我们在加解密中更常用的显示方式：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import binascii
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> binascii
 
-# 方法中不传参数则是以默认的utf-8编码进行转换
-a &#x3D; &quot;中国欢迎您&quot;.encode(&quot;utf-8&quot;)
-print(a)  # b&#39;\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8&#39;
+<span class="token comment"># 方法中不传参数则是以默认的utf-8编码进行转换</span>
+a <span class="token operator">=</span> <span class="token string">"中国欢迎您"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># b'\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8'</span>
 
-b &#x3D; a.decode(&quot;utf-8&quot;)
-print(b)  # 中国欢迎您
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span>
 
-# 二进制到十二进制
-c &#x3D; binascii.b2a_hex(&#39;中国欢迎您&#39;.encode())
-print(&quot;c&quot;, c)  # c&#x3D;&#x3D;&#x3D; b&#39;e4b8ade59bbde6aca2e8bf8ee682a8&#39;
+<span class="token comment"># 二进制到十二进制</span>
+c <span class="token operator">=</span> binascii<span class="token punctuation">.</span>b2a_hex<span class="token punctuation">(</span><span class="token string">'中国欢迎您'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>  <span class="token comment"># c=== b'e4b8ade59bbde6aca2e8bf8ee682a8'</span>
 
-# 十六进制到二进制
-d &#x3D; binascii.a2b_hex(c)
-print(d)  # b&#39;\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8&#39;
+<span class="token comment"># 十六进制到二进制</span>
+d <span class="token operator">=</span> binascii<span class="token punctuation">.</span>a2b_hex<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>  <span class="token comment"># b'\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8'</span>
 
-v &#x3D; binascii.a2b_hex(c).decode(&quot;utf-8&quot;)
-print(v)  # 中国欢迎您
+v <span class="token operator">=</span> binascii<span class="token punctuation">.</span>a2b_hex<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span>
 
-b &#x3D; a.decode(&quot;utf-8&quot;)
-print(b)  # 中国欢迎您
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="URL编码">URL编码</h3>
 <p><strong>1、简介</strong></p>
 <p>正常的URL中是只能包含ASCII字符的，也就是字符、数字和一些符号。而URL编码就是一种浏览器用来避免url中出现特殊字符（如汉字）的编码方式。其实就是将超出ASCII范围的字符转换成带<code>%</code>的十六进制格式。</p>
 <p><strong>2、Python实现</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from urllib import parse
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> urllib <span class="token keyword">import</span> parse
 
-# 编码
-a &#x3D; parse.quote(&quot;中国欢迎您&quot;)
-print(a)  # %E4%B8%AD%E5%9B%BD%E6%AC%A2%E8%BF%8E%E6%82%A8
+<span class="token comment"># 编码</span>
+a <span class="token operator">=</span> parse<span class="token punctuation">.</span>quote<span class="token punctuation">(</span><span class="token string">"中国欢迎您"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># %E4%B8%AD%E5%9B%BD%E6%AC%A2%E8%BF%8E%E6%82%A8</span>
 
-# 解码
-b &#x3D; parse.unquote(a)
-print(b)  # 中国欢迎您<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 解码</span>
+b <span class="token operator">=</span> parse<span class="token punctuation">.</span>unquote<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Base64编码">Base64编码</h3>
 <p><strong>1、简介</strong></p>
 <p>Base64是一种用64个字符来表示任意二进制数据的方法。</p>
@@ -808,15 +808,15 @@ print(b)  # 中国欢迎您<span aria-hidden="true" class="line-numbers-rows"><s
 <p><strong>4、Python的Base64使用</strong></p>
 <p>Python内置的<code>base64</code>模块可以直接进行base64的编解码</p>
 <p><strong>注意：用于base64编码的，要么是ASCII包含的字符，要么是二进制数据</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import base64
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64
 
-# 编码
-a &#x3D; base64.b64encode(b&quot;hello world&quot;)
-print(a)  # b&#39;aGVsbG8gd29ybGQ&#x3D;&#39;
+<span class="token comment"># 编码</span>
+a <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span><span class="token string">b"hello world"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># b'aGVsbG8gd29ybGQ='</span>
 
-# 解码
-b &#x3D; base64.b64decode(a)
-print(b)  # b&quot;hello world&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 解码</span>
+b <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># b"hello world"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>5、Base64格式的文件</strong></p>
 <p>在前端中，有很多文件也被编辑成base的文件，使用这种格式也可以进行还原</p>
 <h3 id="MD5（信息-摘要算法）">MD5（信息-摘要算法）</h3>
@@ -835,37 +835,37 @@ print(b)  # b&quot;hello world&quot;<span aria-hidden="true" class="line-numbers
 <p>举个栗子：我从树下捡了一片叶子，全世界有数不清的树叶，我就想整个世界会不会有一片完全一样的叶子? 以一片有限的叶子对世界上无限的树叶，这个理论上的确是可以找到一片完全的叶子，可是实际情况下很难很难找到。</p>
 <p><strong>4、Python的MD5使用</strong></p>
 <p>由于MD5模块在python3中被移除，在python3中使用<code>hashlib</code>模块进行md5操作</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import hashlib
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
 
-# 待加密信息
-str &#x3D; &#39;中国你好&#39;
+<span class="token comment"># 待加密信息</span>
+<span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">'中国你好'</span>
 
-# 创建md5对象，
-# md5对象，md5不能反解，但是加密是固定的，就是关系是一一对应，所以有缺陷，可以被对撞出来
-hl &#x3D; hashlib.md5()
+<span class="token comment"># 创建md5对象，</span>
+<span class="token comment"># md5对象，md5不能反解，但是加密是固定的，就是关系是一一对应，所以有缺陷，可以被对撞出来</span>
+hl <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-# 要对哪个字符串进行加密，就放这里
-# 此处必须声明encode
-# 若写法为hl.update(str)  报错为： Unicode-objects must be encoded before hashing
-hl.update(str.encode(encoding&#x3D;&#39;utf-8&#39;))
+<span class="token comment"># 要对哪个字符串进行加密，就放这里</span>
+<span class="token comment"># 此处必须声明encode</span>
+<span class="token comment"># 若写法为hl.update(str)  报错为： Unicode-objects must be encoded before hashing</span>
+hl<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-print(&#39;MD5加密前为 ：&#39; + str)
-# hl.hexdigest()) #拿到加密字符串
-print(&#39;MD5加密后为 ：&#39; + hl.hexdigest())
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'MD5加密前为 ：'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
+<span class="token comment"># hl.hexdigest()) #拿到加密字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'MD5加密后为 ：'</span> <span class="token operator">+</span> hl<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-&quot;&quot;&quot;
+<span class="token triple-quoted-string string">"""
 MD5加密前为 ：中国你好
 MD5加密后为 ：560a6b11a85d436acfa4bd7f34462f40
-&quot;&quot;&quot;
+"""</span>
 
-hash3 &#x3D; hashlib.md5(bytes(&#39;abd&#39;, encoding&#x3D;&#39;utf-8&#39;))
-&#39;&#39;&#39; 
+hash3 <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token string">'abd'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">''' 
 如果没有参数，所以md5遵守一个规则，生成同一个对应关系，如果加了参数，
 就是在原先加密的基础上再加密一层，这样的话参数只有自己知道，防止被撞库，
 因为别人永远拿不到这个参数
-&#39;&#39;&#39;
-hash3.update(bytes(&quot;admin&quot;, encoding&#x3D;&quot;utf-8&quot;))
-print(hash3.hexdigest())  # 9aea3c0a6c51555c1a4d0a5e9b689ded
+'''</span>
+hash3<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hash3<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 9aea3c0a6c51555c1a4d0a5e9b689ded</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>MD5不仅仅是上面这个例子这样用来处理字符串，还有更广泛的用途：</p>
 <ul>
@@ -878,22 +878,22 @@ print(hash3.hexdigest())  # 9aea3c0a6c51555c1a4d0a5e9b689ded
 <p><strong>处理大文件：</strong></p>
 <p>上面说过可以用MD5来检测两个文件是否相同，但想想，如果是两个很大的文件，担心内存不够用，这时怎么办？</p>
 <p>这就要使用 update 方法了。代码如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import hashlib
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
  
-def get_file_md5(f):
-    m &#x3D; hashlib.md5()
+<span class="token keyword">def</span> <span class="token function">get_file_md5</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    m <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span>
  
-    while True:
-        data &#x3D; f.read(10240)
-        if not data:
-            break
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">10240</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> data<span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
  
-        m.update(data)
-    return m.hexdigest()
+        m<span class="token punctuation">.</span>update<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> m<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
  
  
-with open(YOUR_FILE, &#39;rb&#39;) as f:
-    file_md5 &#x3D; get_file_md5(f)
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>YOUR_FILE<span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    file_md5 <span class="token operator">=</span> get_file_md5<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上的加密算法虽然非常厉害，但还是存在缺陷，即：通过撞库可以反解，所以，有必要对加密算法中添加自定义key再来做加密</p>
 <p><strong>5、MD5长度</strong></p>
@@ -904,17 +904,17 @@ with open(YOUR_FILE, &#39;rb&#39;) as f:
 <p>SHA1的全称是Secure Hash Algorithm(安全哈希算法) 。SHA1基于MD5，加密后的数据长度更长，</p>
 <p>它对长度小于264的输入，产生长度为160bit的散列值。比MD5多32位。</p>
 <p>因此，比MD5更加安全，但SHA1的运算速度就比MD5要慢了。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import hashlib
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
  
-str &#x3D; &quot;中国你好&quot;
-a &#x3D; hashlib.sha1(str.encode(&quot;utf-8&quot;)).hexdigest()
-print(&quot;sha1加密前为 ：&quot;,str)
-print(&quot;sha1加密前后 ：&quot;,a)
+<span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"中国你好"</span>
+a <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>sha1<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sha1加密前为 ："</span><span class="token punctuation">,</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sha1加密前后 ："</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
  
-&quot;&quot;&quot;
+<span class="token triple-quoted-string string">"""
 sha1加密前为 ： 中国你好
 sha1加密前后 ： 3e6c570876775d0031dbf66247ed1054d4ef695e
-&quot;&quot;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="PyCryptodome">PyCryptodome</h3>
 <p>PyCrypto是 Python 中密码学方面最有名的第三方软件包。可惜的是，它的开发工作于2012年就已停止。</p>
 <p>幸运的是，有一个该项目的分支 PyCrytodome 取代了 PyCrypto 。</p>
@@ -923,11 +923,11 @@ sha1加密前后 ： 3e6c570876775d0031dbf66247ed1054d4ef695e
 <p>在Linux上安装，可以使用以下 pip 命令：</p>
 <pre class="line-numbers language-none"><code class="language-none">pip install pycryptodome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>导入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import Crypto<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> Crypto<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在Windows 系统上安装则稍有不同：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">pip install pycryptodomex<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>导入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import Cryptodome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> Cryptodome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="2、DES">2、DES</h4>
 <p><strong>1)简介</strong></p>
 <p>DES算法为密码体制中的对称密码体制，又被称为美国数据加密标准。</p>
@@ -946,68 +946,68 @@ sha1加密前后 ： 3e6c570876775d0031dbf66247ed1054d4ef695e
 经过16次迭代运算后,得到L16、R16,将此作为输入,进行逆置换,逆置换正好是初始置换的逆运算，由此即得到密文输出。<br>
 此算法是对称加密算法体系中的代表,在计算机网络系统中广泛使用.</p>
 <p>加密和解密的过程</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 导入DES模块
-from Cryptodome.Cipher import DES
-import binascii
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入DES模块</span>
+<span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> DES
+<span class="token keyword">import</span> binascii
  
-# 这是密钥,此处需要将字符串转为字节
-key &#x3D; b&#39;abcdefgh&#39;
+<span class="token comment"># 这是密钥,此处需要将字符串转为字节</span>
+key <span class="token operator">=</span> <span class="token string">b'abcdefgh'</span>
  
-# 需要去生成一个DES对象
-def pad(text):
-     &quot;&quot;&quot;
+<span class="token comment"># 需要去生成一个DES对象</span>
+<span class="token keyword">def</span> <span class="token function">pad</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token triple-quoted-string string">"""
        # 加密函数，如果text不是8的倍数【加密文本text必须为8的倍数！】，那就补足为8的倍数
         :param text:
         :return:
-     &quot;&quot;&quot;
-     while len(text) % 8 !&#x3D; 0:
-        text +&#x3D; &#39; &#39;
-     return text
+     """</span>
+     <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">8</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        text <span class="token operator">+=</span> <span class="token string">' '</span>
+     <span class="token keyword">return</span> text
  
-# 创建一个DES实例
-des &#x3D; DES.new(key,DES.MODE_ECB)
-text &#x3D;&quot;I&#39;m china!&quot;
-padded_text &#x3D; pad(text)
-print(padded_text)
-#加密
-encrypted_text &#x3D; des.encrypt(padded_text.encode(&quot;utf-8&quot;))
-print(encrypted_text)
-# rstrip(&#39; &#39;)返回从字符串末尾删除所有字符串的字符串(默认空白字符)的副本
+<span class="token comment"># 创建一个DES实例</span>
+des <span class="token operator">=</span> DES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span>DES<span class="token punctuation">.</span>MODE_ECB<span class="token punctuation">)</span>
+text <span class="token operator">=</span><span class="token string">"I'm china!"</span>
+padded_text <span class="token operator">=</span> pad<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>padded_text<span class="token punctuation">)</span>
+<span class="token comment">#加密</span>
+encrypted_text <span class="token operator">=</span> des<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>padded_text<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>encrypted_text<span class="token punctuation">)</span>
+<span class="token comment"># rstrip(' ')返回从字符串末尾删除所有字符串的字符串(默认空白字符)的副本</span>
  
-# 解密
-plain_text &#x3D; des.decrypt(encrypted_text).decode().rstrip(&#39; &#39;)
-print(plain_text)
+<span class="token comment"># 解密</span>
+plain_text <span class="token operator">=</span> des<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>encrypted_text<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>rstrip<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plain_text<span class="token punctuation">)</span>
  
-&quot;&quot;&quot;
-I&#39;m china!      
-b&#39;\xc0&#96;I\x15\x8bo\x00\x00\xb0\xe27\xfe)\xc3\xde,&#39;
-I&#39;m china!
-&quot;&quot;&quot;
+<span class="token triple-quoted-string string">"""
+I'm china!      
+b'\xc0`I\x15\x8bo\x00\x00\xb0\xe27\xfe)\xc3\xde,'
+I'm china!
+"""</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 导入DES模块
-from Cryptodome.Cipher import DES
-import binascii
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入DES模块</span>
+<span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> DES
+<span class="token keyword">import</span> binascii
  
-# 这是密钥
-key &#x3D; b&#39;abcdefgh&#39;
-# 需要去生成一个DES对象
-des &#x3D; DES.new(key, DES.MODE_ECB)
-# 需要加密的数据
-text &#x3D; &#39;python spider!&#39;
-text &#x3D; text + (8 - (len(text) % 8)) * &#39;&#x3D;&#39;
-# 加密的过程
-encrypto_text &#x3D; des.encrypt(text.encode())
-# 加密过后二进制转化为ASCII 
-encrypto_text &#x3D; binascii.b2a_hex(encrypto_text)
-print(encrypto_text)
-# 解密需要ASCII 先转化为二进制 然后再进行解密
-plaint &#x3D; des.decrypt(binascii.a2b_hex(encrypto_text))
-print(plaint)
+<span class="token comment"># 这是密钥</span>
+key <span class="token operator">=</span> <span class="token string">b'abcdefgh'</span>
+<span class="token comment"># 需要去生成一个DES对象</span>
+des <span class="token operator">=</span> DES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> DES<span class="token punctuation">.</span>MODE_ECB<span class="token punctuation">)</span>
+<span class="token comment"># 需要加密的数据</span>
+text <span class="token operator">=</span> <span class="token string">'python spider!'</span>
+text <span class="token operator">=</span> text <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token string">'='</span>
+<span class="token comment"># 加密的过程</span>
+encrypto_text <span class="token operator">=</span> des<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>text<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 加密过后二进制转化为ASCII </span>
+encrypto_text <span class="token operator">=</span> binascii<span class="token punctuation">.</span>b2a_hex<span class="token punctuation">(</span>encrypto_text<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>encrypto_text<span class="token punctuation">)</span>
+<span class="token comment"># 解密需要ASCII 先转化为二进制 然后再进行解密</span>
+plaint <span class="token operator">=</span> des<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>binascii<span class="token punctuation">.</span>a2b_hex<span class="token punctuation">(</span>encrypto_text<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plaint<span class="token punctuation">)</span>
  
-&quot;&quot;&quot;
-b&#39;084725d8f5ffafc61814fae0796bfd2f&#39;
-b&#39;python spider!&#x3D;&#x3D;&#39;
-&quot;&quot;&quot;
+<span class="token triple-quoted-string string">"""
+b'084725d8f5ffafc61814fae0796bfd2f'
+b'python spider!=='
+"""</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3、3DES">3、3DES</h4>
 <p>3DES（或称为Triple DES）是三重数据加密算法（TDEA，Triple Data Encryption Algorithm）块密码的通称。它相当于是对每个数据块应用三次DES加密算法。</p>
@@ -1023,31 +1023,31 @@ b&#39;python spider!&#x3D;&#x3D;&#39;
 <p><img src="https://s2.loli.net/2022/01/25/wBu6hHKlVs2EiOf.png" alt=""></p>
 <p>AES为分组密码，分组密码也就是把明文分成一组一组的，每组长度相等，每次加密一组数据，直到加密完整个明文。在AES标准规范中，分组长度只能是128位，也就是说，每个分组为16个字节（每个字节8位）。密钥的长度可以使用128位、192位或256位。密钥的长度不同，推荐加密轮数也不同。</p>
 <p>一般常用的是128位</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from Cryptodome.Cipher import AES
-from Cryptodome import Random
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
+<span class="token keyword">from</span> Cryptodome <span class="token keyword">import</span> Random
  
-from binascii import a2b_hex
+<span class="token keyword">from</span> binascii <span class="token keyword">import</span> a2b_hex
  
-# 要加密的明文
-data &#x3D; &#39;南来北往&#39;
-# 密钥key必须为 16（AES-128）， 24（AES-192）， 32（AES-256）
-key &#x3D; b&#39;this is a 16 key&#39;
-# 生成长度等于AES 块大小的不可重复的密钥向量
-iv &#x3D; Random.new().read(AES.block_size)
-print(iv)
-# 使用 key 和iv 初始化AES 对象， 使用MODE_CFB模式
-mycipher &#x3D; AES.new(key, AES.MODE_CFB, iv)
-print(mycipher)
-# 加密的明文长度必须为16的倍数， 如果长度不为16的倍数， 则需要补足为16的倍数
-# 将iv(密钥向量)加到加密的密钥开头， 一起传输
-ciptext &#x3D; iv + mycipher.encrypt(data.encode())
-# 解密的话需要用key 和iv 生成的AES对象
-print(ciptext)
-mydecrypt &#x3D; AES.new(key, AES.MODE_CFB, ciptext[:16])
-# 使用新生成的AES 对象， 将加密的密钥解密
-decrytext &#x3D; mydecrypt.decrypt(ciptext[16:])
+<span class="token comment"># 要加密的明文</span>
+data <span class="token operator">=</span> <span class="token string">'南来北往'</span>
+<span class="token comment"># 密钥key必须为 16（AES-128）， 24（AES-192）， 32（AES-256）</span>
+key <span class="token operator">=</span> <span class="token string">b'this is a 16 key'</span>
+<span class="token comment"># 生成长度等于AES 块大小的不可重复的密钥向量</span>
+iv <span class="token operator">=</span> Random<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span>AES<span class="token punctuation">.</span>block_size<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>iv<span class="token punctuation">)</span>
+<span class="token comment"># 使用 key 和iv 初始化AES 对象， 使用MODE_CFB模式</span>
+mycipher <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_CFB<span class="token punctuation">,</span> iv<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mycipher<span class="token punctuation">)</span>
+<span class="token comment"># 加密的明文长度必须为16的倍数， 如果长度不为16的倍数， 则需要补足为16的倍数</span>
+<span class="token comment"># 将iv(密钥向量)加到加密的密钥开头， 一起传输</span>
+ciptext <span class="token operator">=</span> iv <span class="token operator">+</span> mycipher<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>data<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 解密的话需要用key 和iv 生成的AES对象</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ciptext<span class="token punctuation">)</span>
+mydecrypt <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_CFB<span class="token punctuation">,</span> ciptext<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># 使用新生成的AES 对象， 将加密的密钥解密</span>
+decrytext <span class="token operator">=</span> mydecrypt<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>ciptext<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
  
-print(decrytext.decode())
+<span class="token keyword">print</span><span class="token punctuation">(</span>decrytext<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="ECB模式">ECB模式</h5>
 <p>ECB模式（电子密码本模式：Electronic codebook）</p>
@@ -1162,109 +1162,109 @@ CFB的加密工作分为两部分：</p>
 </ul>
 <p>pq的作用用于求n==pq，再用 (p-1)(q-1)求φ(n)，在φ(n)范围内随机选择即为e，d==e对于φ(n)的模反元素</p>
 <h5 id="代码案例">代码案例</h5>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import rsa
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> rsa
  
  
-# rsa加密
-def rsaEncrypt(str):
-    # 生成公钥、私钥
-    (pubkey, privkey) &#x3D; rsa.newkeys(512)
-    print(&quot;pub: &quot;, pubkey)
-    print(&quot;priv: &quot;, privkey)
-    # 明文编码格式
-    content &#x3D; str.encode(&#39;utf-8&#39;)
-    # 公钥加密
-    crypto &#x3D; rsa.encrypt(content, pubkey)
-    return (crypto, privkey)
+<span class="token comment"># rsa加密</span>
+<span class="token keyword">def</span> <span class="token function">rsaEncrypt</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 生成公钥、私钥</span>
+    <span class="token punctuation">(</span>pubkey<span class="token punctuation">,</span> privkey<span class="token punctuation">)</span> <span class="token operator">=</span> rsa<span class="token punctuation">.</span>newkeys<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"pub: "</span><span class="token punctuation">,</span> pubkey<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"priv: "</span><span class="token punctuation">,</span> privkey<span class="token punctuation">)</span>
+    <span class="token comment"># 明文编码格式</span>
+    content <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 公钥加密</span>
+    crypto <span class="token operator">=</span> rsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>content<span class="token punctuation">,</span> pubkey<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>crypto<span class="token punctuation">,</span> privkey<span class="token punctuation">)</span>
  
  
-# rsa解密
-def rsaDecrypt(str, pk):
-    # 私钥解密
-    content &#x3D; rsa.decrypt(str, pk)
-    con &#x3D; content.decode(&#39;utf-8&#39;)
-    return con
+<span class="token comment"># rsa解密</span>
+<span class="token keyword">def</span> <span class="token function">rsaDecrypt</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> pk<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 私钥解密</span>
+    content <span class="token operator">=</span> rsa<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> pk<span class="token punctuation">)</span>
+    con <span class="token operator">=</span> content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> con
  
  
-a, b &#x3D; rsaEncrypt(&quot;hello&quot;)
-print(&#39;加密后密文：&#39;)
-print(a)
-content &#x3D; rsaDecrypt(a, b)
-print(&#39;解密后明文：&#39;)
-print(content)  
+a<span class="token punctuation">,</span> b <span class="token operator">=</span> rsaEncrypt<span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'加密后密文：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+content <span class="token operator">=</span> rsaDecrypt<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'解密后明文：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import rsa
-import binascii
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> rsa
+<span class="token keyword">import</span> binascii
  
-def rsa_encrypt(rsa_n, rsa_e, message):
-    key &#x3D; rsa.PublicKey(rsa_n, rsa_e)
-    message &#x3D; rsa.encrypt(message.encode(), key)
-    message &#x3D; binascii.b2a_hex(message)
-    return message.decode()
+<span class="token keyword">def</span> <span class="token function">rsa_encrypt</span><span class="token punctuation">(</span>rsa_n<span class="token punctuation">,</span> rsa_e<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    key <span class="token operator">=</span> rsa<span class="token punctuation">.</span>PublicKey<span class="token punctuation">(</span>rsa_n<span class="token punctuation">,</span> rsa_e<span class="token punctuation">)</span>
+    message <span class="token operator">=</span> rsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>message<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    message <span class="token operator">=</span> binascii<span class="token punctuation">.</span>b2a_hex<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> message<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
  
  
-pubkey_n &#x3D; &#39;8d7e6949d411ce14d7d233d7160f5b2cc753930caba4d5ad24f923a505253b9c39b09a059732250e56c594d735077cfcb0c3508e9f544f101bdf7e97fe1b0d97f273468264b8b24caaa2a90cd9708a417c51cf8ba35444d37c514a0490441a773ccb121034f29748763c6c4f76eb0303559c57071fd89234d140c8bb965f9725&#39;
-pubkey_e &#x3D; &#39;10001&#39;
-rsa_n &#x3D; int(pubkey_n, 16)
-rsa_e &#x3D; int(pubkey_e, 16)
-message &#x3D; &#39;南北今天很忙&#39;
-print(&quot;公钥n值长度：&quot;, len(pubkey_n))
+pubkey_n <span class="token operator">=</span> <span class="token string">'8d7e6949d411ce14d7d233d7160f5b2cc753930caba4d5ad24f923a505253b9c39b09a059732250e56c594d735077cfcb0c3508e9f544f101bdf7e97fe1b0d97f273468264b8b24caaa2a90cd9708a417c51cf8ba35444d37c514a0490441a773ccb121034f29748763c6c4f76eb0303559c57071fd89234d140c8bb965f9725'</span>
+pubkey_e <span class="token operator">=</span> <span class="token string">'10001'</span>
+rsa_n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>pubkey_n<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+rsa_e <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>pubkey_e<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+message <span class="token operator">=</span> <span class="token string">'南北今天很忙'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"公钥n值长度："</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>pubkey_n<span class="token punctuation">)</span><span class="token punctuation">)</span>
  
-aa &#x3D; rsa_encrypt(rsa_n, rsa_e, message)
-print(aa)
+aa <span class="token operator">=</span> rsa_encrypt<span class="token punctuation">(</span>rsa_n<span class="token punctuation">,</span> rsa_e<span class="token punctuation">,</span> message<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>aa<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from Cryptodome.PublicKey import RSA
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>PublicKey <span class="token keyword">import</span> RSA
 
-from Cryptodome.Cipher import PKCS1_OAEP, PKCS1_v1_5
+<span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> PKCS1_OAEP<span class="token punctuation">,</span> PKCS1_v1_5
 
 
-class MyRSA:
-    def create_rsa_key(self, password):
-        &quot;&quot;&quot;
+<span class="token keyword">class</span> <span class="token class-name">MyRSA</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">create_rsa_key</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
         创建RSA密钥
         步骤说明：
         1、从 Crypto.PublicKey 包中导入 RSA，创建一个密码
-        2、生成 1024&#x2F;2048 位的 RSA 密钥
+        2、生成 1024/2048 位的 RSA 密钥
         3、调用 RSA 密钥实例的 exportKey 方法，传入密码、使用的 PKCS 标准以及加密方案这三个参数。
         4、将私钥写入磁盘的文件。
         5、使用方法链调用 publickey 和 exportKey 方法生成公钥，写入磁盘上的文件。
-        &quot;&quot;&quot;
-        key &#x3D; RSA.generate(1024)
-        encrypted_key &#x3D; key.exportKey(passphrase&#x3D;password.encode(&quot;utf-8&quot;), pkcs&#x3D;8,
-                                      protection&#x3D;&quot;scryptAndAES128-CBC&quot;)
-        with open(&quot;my_private_rsa_key.bin&quot;, &quot;wb&quot;) as f:
-            f.write(encrypted_key)
-        with open(&quot;my_rsa_public.pem&quot;, &quot;wb&quot;) as f:
-            f.write(key.publickey().exportKey())
+        """</span>
+        key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>generate<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+        encrypted_key <span class="token operator">=</span> key<span class="token punctuation">.</span>exportKey<span class="token punctuation">(</span>passphrase<span class="token operator">=</span>password<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pkcs<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span>
+                                      protection<span class="token operator">=</span><span class="token string">"scryptAndAES128-CBC"</span><span class="token punctuation">)</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_private_rsa_key.bin"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>encrypted_key<span class="token punctuation">)</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_rsa_public.pem"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>key<span class="token punctuation">.</span>publickey<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>exportKey<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    def encrypt(self, plaintext):
-        # 加载公钥
-        recipient_key &#x3D; RSA.import_key(
-            open(&quot;my_rsa_public.pem&quot;).read()
-        )
-        cipher_rsa &#x3D; PKCS1_v1_5.new(recipient_key)
-        en_data &#x3D; cipher_rsa.encrypt(plaintext.encode(&quot;utf-8&quot;))
-        return en_data
-        # print(len(en_data), en_data)
+    <span class="token keyword">def</span> <span class="token function">encrypt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> plaintext<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 加载公钥</span>
+        recipient_key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>import_key<span class="token punctuation">(</span>
+            <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_rsa_public.pem"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+        cipher_rsa <span class="token operator">=</span> PKCS1_v1_5<span class="token punctuation">.</span>new<span class="token punctuation">(</span>recipient_key<span class="token punctuation">)</span>
+        en_data <span class="token operator">=</span> cipher_rsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>plaintext<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> en_data
+        <span class="token comment"># print(len(en_data), en_data)</span>
 
-    def decrypt(self, en_data, password):
-        # 读取密钥
-        private_key &#x3D; RSA.import_key(
-            open(&quot;my_private_rsa_key.bin&quot;).read(),
-            passphrase&#x3D;password
-        )
-        cipher_rsa &#x3D; PKCS1_v1_5.new(private_key)
-        data &#x3D; cipher_rsa.decrypt(en_data, None)
-        return data
-        # print(data)
+    <span class="token keyword">def</span> <span class="token function">decrypt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> en_data<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 读取密钥</span>
+        private_key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>import_key<span class="token punctuation">(</span>
+            <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_private_rsa_key.bin"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            passphrase<span class="token operator">=</span>password
+        <span class="token punctuation">)</span>
+        cipher_rsa <span class="token operator">=</span> PKCS1_v1_5<span class="token punctuation">.</span>new<span class="token punctuation">(</span>private_key<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> cipher_rsa<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>en_data<span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> data
+        <span class="token comment"># print(data)</span>
 
 
-mrsa &#x3D; MyRSA()
-mrsa.create_rsa_key(&#39;123456&#39;)
-e &#x3D; mrsa.encrypt(&#39;hello&#39;)
-d &#x3D; mrsa.decrypt(e, &#39;123456&#39;)
-print(e)
-print(d)
+mrsa <span class="token operator">=</span> MyRSA<span class="token punctuation">(</span><span class="token punctuation">)</span>
+mrsa<span class="token punctuation">.</span>create_rsa_key<span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">)</span>
+e <span class="token operator">=</span> mrsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> mrsa<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="附录：">@附录：</h2>
 <p>非对称加密<br>
@@ -1417,7 +1417,7 @@ print(d)
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/Algorithm/Coder/" class="b-link-green">常见加密方式</a>
                 </p>
@@ -2051,7 +2051,7 @@ print(d)
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -2128,7 +2128,7 @@ print(d)
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

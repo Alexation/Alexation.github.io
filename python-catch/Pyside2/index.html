@@ -75,10 +75,10 @@ Py">
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -705,7 +705,7 @@ Py">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.5k
                     </div>
                     
 
@@ -737,8 +737,8 @@ Py">
 <li>wxPython：基于wxWidgets的python库，控件丰富，文档少，用户少</li>
 <li>Pyside2、PyQt5：基于Qt的python库，控件丰富，跨平台体验好，文档完善用户多，但程序较大。（是真的555</li>
 </ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 豆瓣源
-pip install pyside2 -i https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 豆瓣源</span>
+pip install pyside2 <span class="token operator">-</span>i https<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>douban<span class="token punctuation">.</span>com<span class="token operator">/</span>simple<span class="token operator">/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="利用QtDesigner进行布局规python划">利用QtDesigner进行布局规python划</h3>
 <p>pip安装好pyside2包后到package文件夹下有Designer.exe，打开进行布局，如下是我的布局。这里要注意，一定要把所有控件布局在一起，这样控件才会随着软件的缩放而整体缩放。</p>
 <p><img src="https://i.loli.net/2021/08/21/8pWVTxKyRF2ABaf.png" alt=""></p>
@@ -747,143 +747,143 @@ pip install pyside2 -i https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;<span 
 <h3 id="对源程序进行重构">对源程序进行重构</h3>
 <p>源程序目标网址类型较少，在这里更换为Wallhaven。</p>
 <h4 id="pyside2自定义类例程">pyside2自定义类例程</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from PySide2.QtWidgets import QApplication, QMessageBox
-from PySide2.QtUiTools import QUiLoader
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtWidgets <span class="token keyword">import</span> QApplication<span class="token punctuation">,</span> QMessageBox
+<span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtUiTools <span class="token keyword">import</span> QUiLoader
 
-class Wallpaper:
-    def __init__(self):
-        self.wp.button
-        self.wp.textEdit
-        # 注意，刚刚设计的.ui保存至程序当前目录下
-        self.wp &#x3D; QUiLoader().load(&#39;main.ui&#39;)
-        # xxxx是.ui中的button参数名称
-        self.wp.xxxx.clicked.connect(self.handleCalc)
+<span class="token keyword">class</span> <span class="token class-name">Wallpaper</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>button
+        self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>textEdit
+        <span class="token comment"># 注意，刚刚设计的.ui保存至程序当前目录下</span>
+        self<span class="token punctuation">.</span>wp <span class="token operator">=</span> QUiLoader<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">'main.ui'</span><span class="token punctuation">)</span>
+        <span class="token comment"># xxxx是.ui中的button参数名称</span>
+        self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>xxxx<span class="token punctuation">.</span>clicked<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>handleCalc<span class="token punctuation">)</span>
 
-    def handleCalc(self):
-		# button点击后运行函数
+    <span class="token keyword">def</span> <span class="token function">handleCalc</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token comment"># button点击后运行函数</span>
 		
 		
-app &#x3D; QApplication([])
-stats &#x3D; Stats()
-stats.wp.show()
-app.exec_()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+app <span class="token operator">=</span> QApplication<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+stats <span class="token operator">=</span> Stats<span class="token punctuation">(</span><span class="token punctuation">)</span>
+stats<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="重构爬虫函数进行类封装">重构爬虫函数进行类封装</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">class Wallpaper:
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Wallpaper</span><span class="token punctuation">:</span>
 
-    def __init__(self):
-    	# sort即是选择类型
-    	self.sort &#x3D; 0
-    	self.signal_1 &#x3D; 2
-    	self.signal_2 &#x3D; 0
-    	self.sorts_name &#x3D; [&#39;动漫&#39;, &#39;女生动漫&#39;, &#39;明日方舟&#39;, &#39;城市&#39;, &#39;简约&#39;
-    , &#39;科幻&#39;, &#39;繁星&#39;, &#39;英雄联盟&#39;, &#39;太空&#39;, &#39;航海王&#39;, &#39;天空&#39;, &#39;风景&#39;]
-        self.ui &#x3D; QUiLoader().load(&#39;wallpaper.ui&#39;)
-        self.ui.button.clicked.connect(self.handleCalc)
-        # 添加类型
-        self.ui.cb.addItems(self.sorts_name)
-		# 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)
-		# 打印抓取进度
-        self.ui.ms.text_print.connect(self.gui)
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    	<span class="token comment"># sort即是选择类型</span>
+    	self<span class="token punctuation">.</span>sort <span class="token operator">=</span> <span class="token number">0</span>
+    	self<span class="token punctuation">.</span>signal_1 <span class="token operator">=</span> <span class="token number">2</span>
+    	self<span class="token punctuation">.</span>signal_2 <span class="token operator">=</span> <span class="token number">0</span>
+    	self<span class="token punctuation">.</span>sorts_name <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'动漫'</span><span class="token punctuation">,</span> <span class="token string">'女生动漫'</span><span class="token punctuation">,</span> <span class="token string">'明日方舟'</span><span class="token punctuation">,</span> <span class="token string">'城市'</span><span class="token punctuation">,</span> <span class="token string">'简约'</span>
+    <span class="token punctuation">,</span> <span class="token string">'科幻'</span><span class="token punctuation">,</span> <span class="token string">'繁星'</span><span class="token punctuation">,</span> <span class="token string">'英雄联盟'</span><span class="token punctuation">,</span> <span class="token string">'太空'</span><span class="token punctuation">,</span> <span class="token string">'航海王'</span><span class="token punctuation">,</span> <span class="token string">'天空'</span><span class="token punctuation">,</span> <span class="token string">'风景'</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>ui <span class="token operator">=</span> QUiLoader<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">'wallpaper.ui'</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>button<span class="token punctuation">.</span>clicked<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>handleCalc<span class="token punctuation">)</span>
+        <span class="token comment"># 添加类型</span>
+        self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cb<span class="token punctuation">.</span>addItems<span class="token punctuation">(</span>self<span class="token punctuation">.</span>sorts_name<span class="token punctuation">)</span>
+		<span class="token comment"># 将类型选择框与信号槽连接     self.ui.cb.currentIndexChanged.connect(self.selectionchange)</span>
+		<span class="token comment"># 打印抓取进度</span>
+        self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>ms<span class="token punctuation">.</span>text_print<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>gui<span class="token punctuation">)</span>
 
-    def selectionchange(self, i):
-    	# 获取当前类型选中序号i，0为起始  
-        self.sort &#x3D; i
+    <span class="token keyword">def</span> <span class="token function">selectionchange</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    	<span class="token comment"># 获取当前类型选中序号i，0为起始  </span>
+        self<span class="token punctuation">.</span>sort <span class="token operator">=</span> i
 
-    def handleCalc(self):
-    	# 对每个网址的最大页数分别赋值
-        page &#x3D; [2763, 2678, 58, 315, 539, 418, 208, 151, 336, 38, 764, 1311]
-		# 进行勾选框判断
-        if self.ui.check.isChecked():
-        # 停止或开始信号标记
-            self.signal_1 +&#x3D; 1
-            # 满足开始信号
-            if self.signal_1 % 2 &#x3D;&#x3D; 1:
-            # 更改button名称
-                self.ui.button.setText(&#39;停止&#39;)
-                # 列表元素均为网址，在此插入，略
-                sorts &#x3D; [anime, anime_girl, ark_nights, cityscape, minimalism, science, stars, legends, space, one_peace, sky, landscape]
-                base_url &#x3D; sorts[self.sort]
-                # 对文件夹名称、路径分类化
-                fold_name &#x3D; self.sorts_name[self.sort]
-                fold_path &#x3D; self.sorts_name[self.sort] + &#39;\\&#39;
+    <span class="token keyword">def</span> <span class="token function">handleCalc</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    	<span class="token comment"># 对每个网址的最大页数分别赋值</span>
+        page <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2763</span><span class="token punctuation">,</span> <span class="token number">2678</span><span class="token punctuation">,</span> <span class="token number">58</span><span class="token punctuation">,</span> <span class="token number">315</span><span class="token punctuation">,</span> <span class="token number">539</span><span class="token punctuation">,</span> <span class="token number">418</span><span class="token punctuation">,</span> <span class="token number">208</span><span class="token punctuation">,</span> <span class="token number">151</span><span class="token punctuation">,</span> <span class="token number">336</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">764</span><span class="token punctuation">,</span> <span class="token number">1311</span><span class="token punctuation">]</span>
+		<span class="token comment"># 进行勾选框判断</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>check<span class="token punctuation">.</span>isChecked<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 停止或开始信号标记</span>
+            self<span class="token punctuation">.</span>signal_1 <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token comment"># 满足开始信号</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>signal_1 <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token comment"># 更改button名称</span>
+                self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>button<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'停止'</span><span class="token punctuation">)</span>
+                <span class="token comment"># 列表元素均为网址，在此插入，略</span>
+                sorts <span class="token operator">=</span> <span class="token punctuation">[</span>anime<span class="token punctuation">,</span> anime_girl<span class="token punctuation">,</span> ark_nights<span class="token punctuation">,</span> cityscape<span class="token punctuation">,</span> minimalism<span class="token punctuation">,</span> science<span class="token punctuation">,</span> stars<span class="token punctuation">,</span> legends<span class="token punctuation">,</span> space<span class="token punctuation">,</span> one_peace<span class="token punctuation">,</span> sky<span class="token punctuation">,</span> landscape<span class="token punctuation">]</span>
+                base_url <span class="token operator">=</span> sorts<span class="token punctuation">[</span>self<span class="token punctuation">.</span>sort<span class="token punctuation">]</span>
+                <span class="token comment"># 对文件夹名称、路径分类化</span>
+                fold_name <span class="token operator">=</span> self<span class="token punctuation">.</span>sorts_name<span class="token punctuation">[</span>self<span class="token punctuation">.</span>sort<span class="token punctuation">]</span>
+                fold_path <span class="token operator">=</span> self<span class="token punctuation">.</span>sorts_name<span class="token punctuation">[</span>self<span class="token punctuation">.</span>sort<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'\\'</span>
 
-				# &lt;insert&gt;
+				<span class="token comment"># &lt;insert></span>
 				
-            if self.signal_1 % 2 &#x3D;&#x3D; 0:
-                self.ui.button.setText(&#39;开始&#39;)
-        else:
-        	# 勾选框未勾选提示
-            msgBox1 &#x3D; QMessageBox()
-            msgBox1.setWindowTitle(&quot;( ゜-゜)つロ&quot;)
-            msgBox1.setText(&#39;记得勾选&quot;我已阅读《使用手册》&quot;哦~&#39;)
-            msgBox1.setStandardButtons(QMessageBox.Ok)
-            msgBox1.setDefaultButton(QMessageBox.Ok)
-            ret &#x3D; msgBox1.exec_()
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>signal_1 <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>button<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'开始'</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+        	<span class="token comment"># 勾选框未勾选提示</span>
+            msgBox1 <span class="token operator">=</span> QMessageBox<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            msgBox1<span class="token punctuation">.</span>setWindowTitle<span class="token punctuation">(</span><span class="token string">"( ゜-゜)つロ"</span><span class="token punctuation">)</span>
+            msgBox1<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'记得勾选"我已阅读《使用手册》"哦~'</span><span class="token punctuation">)</span>
+            msgBox1<span class="token punctuation">.</span>setStandardButtons<span class="token punctuation">(</span>QMessageBox<span class="token punctuation">.</span>Ok<span class="token punctuation">)</span>
+            msgBox1<span class="token punctuation">.</span>setDefaultButton<span class="token punctuation">(</span>QMessageBox<span class="token punctuation">.</span>Ok<span class="token punctuation">)</span>
+            ret <span class="token operator">=</span> msgBox1<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    def gui(self, text):
-    	# 打印抓取进度
-        self.ui.infoBox.append(str(text))
-        # 让infoBox刷新至最新一条
-        self.ui.infoBox.ensureCursorVisible()
+    <span class="token keyword">def</span> <span class="token function">gui</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    	<span class="token comment"># 打印抓取进度</span>
+        self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>infoBox<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment"># 让infoBox刷新至最新一条</span>
+        self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>infoBox<span class="token punctuation">.</span>ensureCursorVisible<span class="token punctuation">(</span><span class="token punctuation">)</span>
         
-app &#x3D; QApplication(sys.argv)
-# 可以更换自己的logo，保存在当前目录下
-app.setWindowIcon(QIcon(&#39;logo.png&#39;))
-wallpaper_catch &#x3D; Wallpaper()
-wallpaper_catch.wp.show()
-# 当最后一个线程结束时，程序关闭
-sys.exit(app.exec_())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+app <span class="token operator">=</span> QApplication<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span>
+<span class="token comment"># 可以更换自己的logo，保存在当前目录下</span>
+app<span class="token punctuation">.</span>setWindowIcon<span class="token punctuation">(</span>QIcon<span class="token punctuation">(</span><span class="token string">'logo.png'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+wallpaper_catch <span class="token operator">=</span> Wallpaper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+wallpaper_catch<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 当最后一个线程结束时，程序关闭</span>
+sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span>app<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>requests向服务器请求需要时间，爬虫打印进程又直接对主程序进行渲染，其中最末尾的app.exec_()就是让主线程，不断循环处理用户操作的事件。要解决这个问题，就要让爬虫在子线程里运行，注意不能直接对主窗口进行渲染操作</p>
 <p>python既支持多进程，也支持多线程。运行在操作系统中的每一个进程都可以拥有多个线程，每个进程具有自己的内存。即便如此，网页抓取不能仅仅依靠提高进程的数量，而应该从代码优化的角度考虑问题。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from threading import Thread # 引入threading模块<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread <span class="token comment"># 引入threading模块</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>同时，我们要让子线程在打印时发出信号给主线程（推荐所有图片渲染的操作都在主线程中进行，避免出现程序无响应的问题）</p>
 <p>因此我们创建Catch_Signal类，继承自QObject类：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">class Catch_Signals(QObject):
-    procedure &#x3D; Signal(str)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Catch_Signals</span><span class="token punctuation">(</span>QObject<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    procedure <span class="token operator">=</span> Signal<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在Wallpaper类中定义实例属性：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">self.wp.ms &#x3D; Catch_Signals()
-self.wp.ms.procedure.connect(self.gui)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>ms <span class="token operator">=</span> Catch_Signals<span class="token punctuation">(</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>ms<span class="token punctuation">.</span>procedure<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>gui<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>再在Wallpaper类中定义GUI绘制函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def gui(self, text):
-    self.wp.infoBox.append(str(text))
-    self.wp.infoBox.ensureCursorVisible()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gui</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>infoBox<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>wp<span class="token punctuation">.</span>infoBox<span class="token punctuation">.</span>ensureCursorVisible<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>将爬虫程序放入子线程：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 插入&lt;insert&gt;处
-            thread &#x3D; Thread(target&#x3D;self.threadSend,
-                 args&#x3D;(base_url, fold_name, fold_path))
-            thread.start()
-# 定义子线程函数            
-def threadSend(self, base_url, fold_name, fold_path):
-    try:
-        # 爬虫函数略
-    except requests.URLRequired as e:
-        # 略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 插入&lt;insert>处</span>
+            thread <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>self<span class="token punctuation">.</span>threadSend<span class="token punctuation">,</span>
+                 args<span class="token operator">=</span><span class="token punctuation">(</span>base_url<span class="token punctuation">,</span> fold_name<span class="token punctuation">,</span> fold_path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 定义子线程函数            </span>
+<span class="token keyword">def</span> <span class="token function">threadSend</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> base_url<span class="token punctuation">,</span> fold_name<span class="token punctuation">,</span> fold_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token comment"># 爬虫函数略</span>
+    <span class="token keyword">except</span> requests<span class="token punctuation">.</span>URLRequired <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token comment"># 略</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>补充import：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from PySide2.QtWidgets import QApplication, QMessageBox
-from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QIcon
-from PySide2.QtCore import Signal, QObject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtWidgets <span class="token keyword">import</span> QApplication<span class="token punctuation">,</span> QMessageBox
+<span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtUiTools <span class="token keyword">import</span> QUiLoader
+<span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtGui <span class="token keyword">import</span> QIcon
+<span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtCore <span class="token keyword">import</span> Signal<span class="token punctuation">,</span> QObject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="对源程序继续完善">对源程序继续完善</h3>
 <h4 id="Sleep延迟">Sleep延迟</h4>
 <p>我们在for循环里加入sleep函数</p>
 <p>引入库：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import time
-from random import randint<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+<span class="token keyword">from</span> random <span class="token keyword">import</span> randint<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>for循环下载img最后一行加入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">time.sleep(sleep_time &#x2F; 100)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>sleep_time <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>当然，子进程try：第一行加入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">sleep_time &#x3D; randint(1, 201)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">sleep_time <span class="token operator">=</span> randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">201</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>保证在每次下载间隔1~2s</p>
 <h4 id="sys-exit-app-exec">sys.exit(app.exec_())</h4>
 <p>sys.exit(app.exec_())这行代码的意思是，当最后一个线程结束时，退出命令行（即总程序）。但是一旦子线程开始便无法通过这行语句停下来，尝试用signal进行判断限制，无果；尝试直接将其放入子线程，无果；尝试寻找退出主程序弹窗函数，无果…</p>
 <p>注意！这里是个坑，当ui界面是动态加载时，重写closeEvent函数是无效的！</p>
 <p>也就是说，当需要重写closeEvent函数时，必须要静态加载ui文件，在同目录cmd命令行下运行以下命令</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">pyside2-uic xxxxx.ui -&gt; xxxxx.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pyside2<span class="token operator">-</span>uic xxxxx<span class="token punctuation">.</span>ui <span class="token operator">-</span><span class="token operator">></span> xxxxx<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后在主函数中调用该py文件即相当于调用ui文件</p>
 <h4 id="更改logo">更改logo</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from PySide2.QtGui import QIcon
-# 根目录下保存名为&#39;logo.png&#39;的logo
-app.setWindowIcon(QIcon(&#39;logo.png&#39;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> PySide2<span class="token punctuation">.</span>QtGui <span class="token keyword">import</span> QIcon
+<span class="token comment"># 根目录下保存名为'logo.png'的logo</span>
+app<span class="token punctuation">.</span>setWindowIcon<span class="token punctuation">(</span>QIcon<span class="token punctuation">(</span><span class="token string">'logo.png'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>当然这时Qt窗口的logo，APP的logo会在打包时添加</p>
 <h4 id="附属文件插入">附属文件插入</h4>
 <p>打包完成后别着急运行，好些个附属文件还没有转移，例如logo.png文件是没有被打包进去的，因此需要我们手动粘贴到相应目录下。</p>
@@ -1036,7 +1036,7 @@ app.setWindowIcon(QIcon(&#39;logo.png&#39;))<span aria-hidden="true" class="line
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/python-catch/Pyside2/" class="b-link-green">Pyside2封装爬虫</a>
                 </p>
@@ -1654,7 +1654,7 @@ app.setWindowIcon(QIcon(&#39;logo.png&#39;))<span aria-hidden="true" class="line
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1731,7 +1731,7 @@ app.setWindowIcon(QIcon(&#39;logo.png&#39;))<span aria-hidden="true" class="line
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

@@ -72,10 +72,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -698,14 +698,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        1.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        7 分
                     </div>
                     
                 
@@ -739,149 +739,149 @@
 <p><a target="_blank" rel="noopener" href="https://wiki.sipeed.com/hardware/zh/modules/micarray.html">MicArray 麦克风阵列 - Sipeed Wiki</a></p>
 <p>对就是这个<span class="emoji" alias="anguished" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8">😧</span></p>
 <p>包括官方还给了一个2022年电赛E题声源定位跟踪系统做好的链接，直接套用代码接线就可以。。。所以我直接照着完善了一下代码框架，接上线后由于阵列模块非常容易受干扰（当然可以通过选择音源提高效果），所以需要进行一些处理。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from Maix import MIC_ARRAY as mic
-import lcd, image
-import time
-import math
-from Maix import GPIO
-from fpioa_manager import fm
-from machine import Timer, PWM
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Maix <span class="token keyword">import</span> MIC_ARRAY <span class="token keyword">as</span> mic
+<span class="token keyword">import</span> lcd<span class="token punctuation">,</span> image
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> math
+<span class="token keyword">from</span> Maix <span class="token keyword">import</span> GPIO
+<span class="token keyword">from</span> fpioa_manager <span class="token keyword">import</span> fm
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> Timer<span class="token punctuation">,</span> PWM
 
-# MIC-IO
-mic.init(i2s_d0&#x3D;32, i2s_d1&#x3D;33, i2s_d2&#x3D;34, i2s_d3&#x3D;35, i2s_ws&#x3D;9, i2s_sclk&#x3D;10, sk9822_dat&#x3D;11, sk9822_clk&#x3D;15)
-# Laser-IO
-fm.register(7, fm.fpioa.GPIO0)
-Laser &#x3D; GPIO(GPIO.GPIO0, GPIO.OUT)
-# KEY-IO
-fm.register(26, fm.fpioa.GPIO1)
-KG0 &#x3D; GPIO(GPIO.GPIO1, GPIO.IN, GPIO.PULL_DOWN)
-fm.register(27, fm.fpioa.GPIO2)
-KG1 &#x3D; GPIO(GPIO.GPIO2, GPIO.IN, GPIO.PULL_DOWN)
-# SERVO-IO
-tim &#x3D; Timer(Timer.TIMER0, Timer.CHANNEL0, mode&#x3D;Timer.MODE_PWM)
-Servo_laser &#x3D; PWM(tim, freq&#x3D;50, duty&#x3D;0, pin&#x3D;17)
-# LCD-INIT-320*240 and MAP-INIT
-lcd.init()
-lcd.fill_rectangle(46, 5, 230, 4, (255, 0, 0))  # 上边线
-lcd.fill_rectangle(46, 5, 4, 230, (255, 0, 0))  # 左边线
-lcd.fill_rectangle(46, 235, 230, 4, (255, 0, 0))  # 下边线
-lcd.fill_rectangle(276, 5, 4, 234, (255, 0, 0))  # 右边线
-lcd.fill_rectangle(237, 5, 4, 234, (255, 0, 0))  # 右边线2
-lcd.fill_rectangle(0, 77, 47, 4, (255, 0, 0))  # 左区域上边线
-lcd.fill_rectangle(0, 154, 47, 4, (255, 0, 0))  # 左区域下边线
-lcd.fill_rectangle(0, 77, 4, 77, (255, 0, 0))  # 左区域左边线
-
-
-class Argument:
-    &quot;&quot;&quot;Some Argus&quot;&quot;&quot;
-
-    def __init__(self):
-        super(Argument, self).__init__()
-        # Normal
-        self.num &#x3D; 0
-        self.num2 &#x3D; 0
-        self.Angle_LB &#x3D; [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        self.t &#x3D; 0
-        self.t1 &#x3D; 0
-        self.t2 &#x3D; 0
-        self.maxnum &#x3D; 0
-        self.minnum &#x3D; 0
-        self.jiaodu &#x3D; 0
-        self.Angle_last &#x3D; 0
-        self.b &#x3D; [3, 1, 2, 5, 6]
-        self.i &#x3D; 100
-        self.a &#x3D; []
-        self.times &#x3D; 0
-        self.pid &#x3D; 0
-        self.err &#x3D; 0
-        self.JD &#x3D; 0
-        self.output &#x3D; 0
-
-        # Kalman Filter
-        self.KF_lastP &#x3D; 0.1  # 上次的协方差
-        self.KF_nowP &#x3D; 0  # 本次的协方差
-        self.KF_x_hat &#x3D; 0  # 卡尔曼滤波的计算值，即为后验最优值
-        self.KF_Kg &#x3D; 0  # 卡尔曼增益系数
-        self.KF_Q &#x3D; 0  # 过程噪声
-        self.KF_R &#x3D; 0.01  # 测量噪声
+<span class="token comment"># MIC-IO</span>
+mic<span class="token punctuation">.</span>init<span class="token punctuation">(</span>i2s_d0<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">,</span> i2s_d1<span class="token operator">=</span><span class="token number">33</span><span class="token punctuation">,</span> i2s_d2<span class="token operator">=</span><span class="token number">34</span><span class="token punctuation">,</span> i2s_d3<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">,</span> i2s_ws<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">,</span> i2s_sclk<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> sk9822_dat<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> sk9822_clk<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">)</span>
+<span class="token comment"># Laser-IO</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIO0<span class="token punctuation">)</span>
+Laser <span class="token operator">=</span> GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIO0<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>OUT<span class="token punctuation">)</span>
+<span class="token comment"># KEY-IO</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIO1<span class="token punctuation">)</span>
+KG0 <span class="token operator">=</span> GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIO1<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>PULL_DOWN<span class="token punctuation">)</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">27</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIO2<span class="token punctuation">)</span>
+KG1 <span class="token operator">=</span> GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIO2<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>PULL_DOWN<span class="token punctuation">)</span>
+<span class="token comment"># SERVO-IO</span>
+tim <span class="token operator">=</span> Timer<span class="token punctuation">(</span>Timer<span class="token punctuation">.</span>TIMER0<span class="token punctuation">,</span> Timer<span class="token punctuation">.</span>CHANNEL0<span class="token punctuation">,</span> mode<span class="token operator">=</span>Timer<span class="token punctuation">.</span>MODE_PWM<span class="token punctuation">)</span>
+Servo_laser <span class="token operator">=</span> PWM<span class="token punctuation">(</span>tim<span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> duty<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> pin<span class="token operator">=</span><span class="token number">17</span><span class="token punctuation">)</span>
+<span class="token comment"># LCD-INIT-320*240 and MAP-INIT</span>
+lcd<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">230</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 上边线</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">230</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 左边线</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">235</span><span class="token punctuation">,</span> <span class="token number">230</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 下边线</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">276</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">234</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 右边线</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">237</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">234</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 右边线2</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 左区域上边线</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">154</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 左区域下边线</span>
+lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 左区域左边线</span>
 
 
-arguments &#x3D; Argument()
+<span class="token keyword">class</span> <span class="token class-name">Argument</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Some Argus"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>Argument<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># Normal</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>num2 <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>Angle_LB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>t <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>t1 <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>t2 <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>maxnum <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>minnum <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>jiaodu <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>Angle_last <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>i <span class="token operator">=</span> <span class="token number">100</span>
+        self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>times <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>pid <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>err <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>JD <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>output <span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token comment"># Kalman Filter</span>
+        self<span class="token punctuation">.</span>KF_lastP <span class="token operator">=</span> <span class="token number">0.1</span>  <span class="token comment"># 上次的协方差</span>
+        self<span class="token punctuation">.</span>KF_nowP <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本次的协方差</span>
+        self<span class="token punctuation">.</span>KF_x_hat <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 卡尔曼滤波的计算值，即为后验最优值</span>
+        self<span class="token punctuation">.</span>KF_Kg <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 卡尔曼增益系数</span>
+        self<span class="token punctuation">.</span>KF_Q <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 过程噪声</span>
+        self<span class="token punctuation">.</span>KF_R <span class="token operator">=</span> <span class="token number">0.01</span>  <span class="token comment"># 测量噪声</span>
 
 
-def kalman_filter(argus, value):
-    argus.output &#x3D; 0  # output为卡尔曼滤波计算值
-    x_t &#x3D; argus.KF_x_hat  # 当前先验预测值 &#x3D; 上一次最优值
-    argus.KF_nowP &#x3D; argus.KF_lastP + argus.KF_Q  # 本次的协方差矩阵
-    argus.KF_Kg &#x3D; argus.KF_nowP &#x2F; (argus.KF_nowP + argus.KF_R)  # 卡尔曼增益系数计算
-    argus.output &#x3D; x_t + argus.KF_Kg * (value - x_t)  # 当前最优值
-    argus.KF_x_hat &#x3D; argus.output  # 更新最优值
-    argus.KF_lastP &#x3D; (1 - argus.KF_Kg) * argus.KF_nowP  # 更新协方差矩阵
+arguments <span class="token operator">=</span> Argument<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
-def servo(servo_inter, angle):
-    servo_inter.duty((angle + 90) &#x2F; 180 * 10 + 2.5)
+<span class="token keyword">def</span> <span class="token function">kalman_filter</span><span class="token punctuation">(</span>argus<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    argus<span class="token punctuation">.</span>output <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># output为卡尔曼滤波计算值</span>
+    x_t <span class="token operator">=</span> argus<span class="token punctuation">.</span>KF_x_hat  <span class="token comment"># 当前先验预测值 = 上一次最优值</span>
+    argus<span class="token punctuation">.</span>KF_nowP <span class="token operator">=</span> argus<span class="token punctuation">.</span>KF_lastP <span class="token operator">+</span> argus<span class="token punctuation">.</span>KF_Q  <span class="token comment"># 本次的协方差矩阵</span>
+    argus<span class="token punctuation">.</span>KF_Kg <span class="token operator">=</span> argus<span class="token punctuation">.</span>KF_nowP <span class="token operator">/</span> <span class="token punctuation">(</span>argus<span class="token punctuation">.</span>KF_nowP <span class="token operator">+</span> argus<span class="token punctuation">.</span>KF_R<span class="token punctuation">)</span>  <span class="token comment"># 卡尔曼增益系数计算</span>
+    argus<span class="token punctuation">.</span>output <span class="token operator">=</span> x_t <span class="token operator">+</span> argus<span class="token punctuation">.</span>KF_Kg <span class="token operator">*</span> <span class="token punctuation">(</span>value <span class="token operator">-</span> x_t<span class="token punctuation">)</span>  <span class="token comment"># 当前最优值</span>
+    argus<span class="token punctuation">.</span>KF_x_hat <span class="token operator">=</span> argus<span class="token punctuation">.</span>output  <span class="token comment"># 更新最优值</span>
+    argus<span class="token punctuation">.</span>KF_lastP <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> argus<span class="token punctuation">.</span>KF_Kg<span class="token punctuation">)</span> <span class="token operator">*</span> argus<span class="token punctuation">.</span>KF_nowP  <span class="token comment"># 更新协方差矩阵</span>
 
 
-while True:
-    # Inner Params: [AngleX, AngleY, AngleR, Angle, AngleAddPi]
-    angle_params &#x3D; [0, 0, 0, 0, 0]
-    # MIC-Detecting
-    img_a &#x3D; mic.get_map()
-    img_b &#x3D; mic.get_dir(img_a)
-    mic.set_led(img_b, (10, 10, 0))
-    # If Ques 3
-    if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 0:
-        arguments.times +&#x3D; 1
-        if arguments.times &#x3D;&#x3D; 1:
-            time.sleep(1)
-            Laser.value(0)
-    # Angle
-    for i in range(len(img_b)):
-        if img_b[i] &gt;&#x3D; 0:
-            angle_params[0] +&#x3D; img_b[i] * math.sin(i * math.pi &#x2F; 6)
-            angle_params[1] +&#x3D; img_b[i] * math.cos(i * math.pi &#x2F; 6)
-    angle_params[0] &#x3D; round(angle_params[0], 6)
-    angle_params[1] &#x3D; round(angle_params[1], 6)
-    if angle_params[1] &lt; 0:
-        angle_params[4] &#x3D; 180
-    if angle_params[0] &lt; 0 and angle_params[1] &gt; 0:
-        angle_params[4] &#x3D; 360
-    if angle_params[0] !&#x3D; 0 or angle_params[1] !&#x3D; 0:
-        if angle_params[1] &#x3D;&#x3D; 0:
-            angle_params[3] &#x3D; 90 if angle_params[0] &gt; 0 else 270
-        else:
-            angle_params[3] &#x3D; angle_params[4] + round(math.degrees(math.atan(angle_params[0] &#x2F; angle_params[1])), 4)
-        # Determine the scope
-        if 90 &lt; angle_params[3] &lt; 270:
-            angle_params[3] &#x3D; arguments.Angle_last * 0.1 + angle_params[3] * 0.9
-            kalman_filter(arguments, angle_params[3])
-            arguments.Angle_last &#x3D; angle_params[3]
-            show_angle &#x3D; 180 - angle_params[3]
+<span class="token keyword">def</span> <span class="token function">servo</span><span class="token punctuation">(</span>servo_inter<span class="token punctuation">,</span> angle<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    servo_inter<span class="token punctuation">.</span>duty<span class="token punctuation">(</span><span class="token punctuation">(</span>angle <span class="token operator">+</span> <span class="token number">90</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">180</span> <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">2.5</span><span class="token punctuation">)</span>
 
-            # Check Ques 3
-            if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 0:
-                Laser.value(1)
-                servo(Servo_laser, show_angle)
 
-            lcd.draw_string(60, 200, &quot;Angle: &quot; + str(show_angle), lcd.BLUE, lcd.BLACK)
-            lcd.draw_string(60, 180, &quot;Distance: &quot; + str(275 &#x2F; math.cos(-show_angle * math.pi &#x2F; 180)), lcd.BLUE,
-                            lcd.BLACK)
-            lcd.fill_rectangle(251, 10, 25, 225, (0, 0, 0))
-            location &#x3D; int(108 + math.tan(-show_angle * math.pi &#x2F; 180) * 48)
-            print(show_angle, location)
-            if 0 &lt; location &lt; 200:
-                lcd.fill_rectangle(251, location, 15, 15, (0, 255, 200))
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment"># Inner Params: [AngleX, AngleY, AngleR, Angle, AngleAddPi]</span>
+    angle_params <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment"># MIC-Detecting</span>
+    img_a <span class="token operator">=</span> mic<span class="token punctuation">.</span>get_map<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img_b <span class="token operator">=</span> mic<span class="token punctuation">.</span>get_dir<span class="token punctuation">(</span>img_a<span class="token punctuation">)</span>
+    mic<span class="token punctuation">.</span>set_led<span class="token punctuation">(</span>img_b<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># If Ques 3</span>
+    <span class="token keyword">if</span> KG0<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword">and</span> KG1<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        arguments<span class="token punctuation">.</span>times <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> arguments<span class="token punctuation">.</span>times <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+            Laser<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token comment"># Angle</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>img_b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> img_b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+=</span> img_b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">6</span><span class="token punctuation">)</span>
+            angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span> img_b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">6</span><span class="token punctuation">)</span>
+    angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+    angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        angle_params<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">180</span>
+    <span class="token keyword">if</span> angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword">and</span> angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        angle_params<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">360</span>
+    <span class="token keyword">if</span> angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token keyword">or</span> angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">90</span> <span class="token keyword">if</span> angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span> <span class="token keyword">else</span> <span class="token number">270</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> angle_params<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token builtin">round</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>degrees<span class="token punctuation">(</span>math<span class="token punctuation">.</span>atan<span class="token punctuation">(</span>angle_params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> angle_params<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+        <span class="token comment"># Determine the scope</span>
+        <span class="token keyword">if</span> <span class="token number">90</span> <span class="token operator">&lt;</span> angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">270</span><span class="token punctuation">:</span>
+            angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> arguments<span class="token punctuation">.</span>Angle_last <span class="token operator">*</span> <span class="token number">0.1</span> <span class="token operator">+</span> angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">0.9</span>
+            kalman_filter<span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            arguments<span class="token punctuation">.</span>Angle_last <span class="token operator">=</span> angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+            show_angle <span class="token operator">=</span> <span class="token number">180</span> <span class="token operator">-</span> angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
 
-            # Check Ques 4
-            if KG0.value() &#x3D;&#x3D; 1 and KG1.value() &#x3D;&#x3D; 1:
-                arguments.JD &#x3D; angle_params[3]
-                Laser.value(1)
-                error &#x3D; arguments.JD - arguments.pid
-                arguments.pid +&#x3D; error * 0.1
-                arguments.output &#x3D; -arguments.pid
-                if -270 &lt; arguments.output &lt; -90:
-                    servo(Servo_laser, 180 + arguments.output)
+            <span class="token comment"># Check Ques 3</span>
+            <span class="token keyword">if</span> KG0<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword">and</span> KG1<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                Laser<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+                servo<span class="token punctuation">(</span>Servo_laser<span class="token punctuation">,</span> show_angle<span class="token punctuation">)</span>
+
+            lcd<span class="token punctuation">.</span>draw_string<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"Angle: "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>show_angle<span class="token punctuation">)</span><span class="token punctuation">,</span> lcd<span class="token punctuation">.</span>BLUE<span class="token punctuation">,</span> lcd<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span>
+            lcd<span class="token punctuation">.</span>draw_string<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">,</span> <span class="token string">"Distance: "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">275</span> <span class="token operator">/</span> math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span><span class="token operator">-</span>show_angle <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lcd<span class="token punctuation">.</span>BLUE<span class="token punctuation">,</span>
+                            lcd<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span>
+            lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">251</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">225</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            location <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">108</span> <span class="token operator">+</span> math<span class="token punctuation">.</span>tan<span class="token punctuation">(</span><span class="token operator">-</span>show_angle <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">48</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>show_angle<span class="token punctuation">,</span> location<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;</span> location <span class="token operator">&lt;</span> <span class="token number">200</span><span class="token punctuation">:</span>
+                lcd<span class="token punctuation">.</span>fill_rectangle<span class="token punctuation">(</span><span class="token number">251</span><span class="token punctuation">,</span> location<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+            <span class="token comment"># Check Ques 4</span>
+            <span class="token keyword">if</span> KG0<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword">and</span> KG1<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                arguments<span class="token punctuation">.</span>JD <span class="token operator">=</span> angle_params<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+                Laser<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+                error <span class="token operator">=</span> arguments<span class="token punctuation">.</span>JD <span class="token operator">-</span> arguments<span class="token punctuation">.</span>pid
+                arguments<span class="token punctuation">.</span>pid <span class="token operator">+=</span> error <span class="token operator">*</span> <span class="token number">0.1</span>
+                arguments<span class="token punctuation">.</span>output <span class="token operator">=</span> <span class="token operator">-</span>arguments<span class="token punctuation">.</span>pid
+                <span class="token keyword">if</span> <span class="token operator">-</span><span class="token number">270</span> <span class="token operator">&lt;</span> arguments<span class="token punctuation">.</span>output <span class="token operator">&lt;</span> <span class="token operator">-</span><span class="token number">90</span><span class="token punctuation">:</span>
+                    servo<span class="token punctuation">(</span>Servo_laser<span class="token punctuation">,</span> <span class="token number">180</span> <span class="token operator">+</span> arguments<span class="token punctuation">.</span>output<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 style="text-align:center;font-weight:700;color:#B399FF">反思总结</h2>
 <ol>
@@ -1037,7 +1037,7 @@ while True:
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/contest/ele3/" class="b-link-green">2022湖北省大学生电子设计竞赛E题（TI杯）</a>
                 </p>
@@ -1636,7 +1636,7 @@ while True:
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1713,7 +1713,7 @@ while True:
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

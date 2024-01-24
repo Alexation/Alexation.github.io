@@ -73,6 +73,21 @@ h6 {
     font-size: 1.1rem;
     line-height: 1.1rem;
 } */
+
+
+/* Alexation modify 2023.12.20 */
+/*.line-numbers-rows {
+    border-right-width: 0px !important;
+}
+
+.line-numbers {
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem !important;
+    margin: 1rem 0 !important;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.35rem;
+    tab-size: 4;
+}*/
 /* 洪卫 shw2018 modify 2019.08.31 */
 h1 {
     margin: 38px 0 22px -5px;

@@ -75,10 +75,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -988,13 +988,13 @@ jupyter notebook<span aria-hidden="true" class="line-numbers-rows"><span></span>
 </ul>
 <p><strong>注意事项</strong></p>
 <p><code>jupyter notebook</code>每一个<code>cell</code>运行完后都会把这个<code>cell</code>中的变量保存到内存中，如果在一个<code>cell</code>中修改了之前的变量，再此运行这个<code>cell</code>的时候可能会导致一些问题产生。比如以下代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 第一个cell中的代码
-a &#x3D; 10
-b &#x3D; 20
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 第一个cell中的代码</span>
+a <span class="token operator">=</span> <span class="token number">10</span>
+b <span class="token operator">=</span> <span class="token number">20</span>
 
-# 第二个cell中的代码
-c &#x3D; a&#x2F;b
-b &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 第二个cell中的代码</span>
+c <span class="token operator">=</span> a<span class="token operator">/</span>b
+b <span class="token operator">=</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>因为第二个<code>cell</code>修改了<code>b</code>变量，此时在整个环境中<code>b</code>都是等于0的，所以以后再运行这个<code>cell</code>的时候，<code>a/b</code>这个就会出问题了。这时候可以使用<code>Kernel-&gt;Restart&amp;Run All</code>来重新运行整个项目。</p>
 <h2 id="附录：Jupyter-常用快捷键">附录：Jupyter 常用快捷键</h2>
 <h3 id="命令模式（按Esc键）：">命令模式（按Esc键）：</h3>
@@ -1075,7 +1075,7 @@ b &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p><code>conda</code>伴随着<code>Anaconda</code>安装而自动安装的。<code>conda</code>可以跟<code>virtualenv</code>一样管理不同的环境，也可以跟<code>pip</code>一样管理某个环境下的包。以下来看看两个功能的用法。</p>
 <h3 id="环境管理：">环境管理：</h3>
 <p><code>conda</code>能跟<code>virtualenv</code>一样管理不同的<code>Python</code>环境，不同的环境之间是互相隔离，互不影响的。为什么需要创建不同的环境呢？原因是有时候项目比较多，但是项目依赖的包不一样，比如<code>A</code>项目用的是<code>Python2</code>开发的，而<code>B</code>项目用的是<code>Python3</code>开发的，那么我们在同一台电脑上就需要两套不同的环境来支撑他们运行了。创建环境的基本命令如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># conda create --name [环境名称] 比如以下：
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># conda create --name [环境名称] 比如以下：</span>
 conda create --name da-env<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这样将创建一个叫做<code>da-env</code>的环境，这个环境的<code>python</code>解释器根据<code>anaconda</code>来，如果<code>anaconda</code>为<code>3.7</code>，那么将默认使用<code>3.7</code>的环境，如果<code>anaconda</code>内置的是<code>2.7</code>，那么将默认使用<code>2.7</code>的环境。然后你就可以使用<code>conda install numpy</code>的方式来安装包了，并且这样安装进来的包，只会安装在当前环境中。有的同学可能有想问，如果想要装一个<code>Python2.7</code>的环境，<code>anaconda</code>中没有内置<code>Python2.7</code>，那么该怎么实现呢？。实际上，我们只需要在安装的时候指定<code>python</code>的版本，如果这个版本现在不存在，那么<code>anaconda</code>会自动的给我们下载。所以安装<code>Python2.7</code>的环境，使用以下代码即可实现：</p>
 <pre class="line-numbers language-none"><code class="language-none">conda create --name xxx python&#x3D;2.7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1287,7 +1287,7 @@ conda config --set show_channel_urls yes<span aria-hidden="true" class="line-num
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/python-data/data-base/" class="b-link-green">数据分析的基础知识以及环境搭建（附Jupyter快捷键）</a>
                 </p>
@@ -1917,7 +1917,7 @@ conda config --set show_channel_urls yes<span aria-hidden="true" class="line-num
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1994,7 +1994,7 @@ conda config --set show_channel_urls yes<span aria-hidden="true" class="line-num
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

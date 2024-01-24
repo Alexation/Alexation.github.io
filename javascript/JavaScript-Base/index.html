@@ -76,10 +76,10 @@ JavaScript 是世界上最流行的语言之一，是一种运行在客户端的
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -1644,11 +1644,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>
 <p>在其他编程语言中（如 java、c#等），在 if 语句、循环语句中创建的变量，仅仅只能在本 if 语句、本循环语句中使用，如下面的Java代码：</p>
 <p>python 有块级作用域：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">if True:
-    num &#x3D; 123
-    print(num)  # 123
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    num <span class="token operator">=</span> <span class="token number">123</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>  <span class="token comment"># 123</span>
 
-print(num)  # 报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>  <span class="token comment"># 报错</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上java代码会报错，是因为代码中 { } 即一块作用域，其中声明的变量 num，在 “{ }” 之外不能使用；</p>
 <p>而与之类似的JavaScript代码，则不会报错：</p>
 <p>Js中没有块级作用域（在ES6之前）</p>
@@ -2282,7 +2282,7 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/javascript/JavaScript-Base/" class="b-link-green">Javascript基础知识</a>
                 </p>
@@ -2908,7 +2908,7 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -2985,7 +2985,7 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

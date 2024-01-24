@@ -71,10 +71,10 @@ Matplotl">
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -705,14 +705,14 @@ Matplotl">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        6 分
                     </div>
                     
                 
@@ -745,115 +745,115 @@ Matplotl">
 <p>多变量分析可以让你在一张图上可以查看两个以上变量的关系。比如“身高”和“年龄”，你可以理解是同一个人的两个参数，这样在同一张图中可以看到每个人的“身高”和“年龄”的取值，从而分析出来这两个变量之间是否存在某种联系。</p>
 <p>可视化的视图可以说是分门别类，多种多样，今天我主要介绍常用的10种视图，这些视图包括了散点图、折线图、直方图、条形图、箱线图、饼图、热力图、蜘蛛图、二元变量分布和成对关系。</p>
 <p><img src="https://s2.loli.net/2022/07/09/QhFDqmrjysfkAgi.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import matplotlib.pyplot as plt
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
-# 0.准备数据
-x &#x3D; [1, 2, 3, 4, 5, 6, 7]
-y_shanghai &#x3D; [17, 17, 18, 15, 11, 11, 13]
+<span class="token comment"># 0.准备数据</span>
+x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span>
+y_shanghai <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">]</span>
 
-# 1.创建画布
-# figsize:指定图的长宽
-# dpi:图像的清晰度
-# 返回fig对象
-plt.figure(figsize&#x3D;(20, 8), dpi&#x3D;100)
+<span class="token comment"># 1.创建画布</span>
+<span class="token comment"># figsize:指定图的长宽</span>
+<span class="token comment"># dpi:图像的清晰度</span>
+<span class="token comment"># 返回fig对象</span>
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
 
-# 2.绘制图像
-plt.plot(x, y_shanghai)
+<span class="token comment"># 2.绘制图像</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_shanghai<span class="token punctuation">)</span>
 
-# 3.图像显示
-plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 3.图像显示</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>添加自定义x,y刻度</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 增加以下两行代码
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 增加以下两行代码</span>
 
-# 2.1 添加x,y轴刻度
-# 设置x,y轴刻度
-x_ticks_label &#x3D; [&quot;11点&#123;&#125;分&quot;.format(i) for i in x]
-y_ticks &#x3D; range(40)
+<span class="token comment"># 2.1 添加x,y轴刻度</span>
+<span class="token comment"># 设置x,y轴刻度</span>
+x_ticks_label <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"11点&#123;&#125;分"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">]</span>
+y_ticks <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span>
 
-# 修改x,y轴坐标刻度显示
-# plt.xticks(x_ticks_label[::5]) # 坐标刻度不可以直接通过字符串进行修改
-plt.xticks(x[::5], x_ticks_label[::5])
-plt.yticks(y_ticks[::5])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 修改x,y轴坐标刻度显示</span>
+<span class="token comment"># plt.xticks(x_ticks_label[::5]) # 坐标刻度不可以直接通过字符串进行修改</span>
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x_ticks_label<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>yticks<span class="token punctuation">(</span>y_ticks<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>添加网格显示</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 2.2 添加网格显示
-plt.grid(True, linestyle&#x3D;&quot;--&quot;, alpha&#x3D;1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 2.2 添加网格显示</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">"--"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>添加x轴、y轴描述信息及标题</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 2.3 添加描述信息
-plt.xlabel(&quot;时间&quot;)
-plt.ylabel(&quot;温度&quot;)
-plt.title(&quot;中午11点-12点某城市温度变化图&quot;, fontsize&#x3D;20)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 2.3 添加描述信息</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"时间"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"温度"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"中午11点-12点某城市温度变化图"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>绘制多个图像</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 增加北京的温度数据
-y_beijing &#x3D; [random.uniform(1, 3) for i in x]
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 增加北京的温度数据</span>
+y_beijing <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">]</span>
 
-# 2.绘制图像
-plt.plot(x, y_shanghai, label&#x3D;&quot;上海&quot;)
-plt.plot(x, y_beijing, color&#x3D;&quot;r&quot;, linestyle&#x3D;&quot;--&quot;, label&#x3D;&quot;北京&quot;)  # 新增绘制北京的数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 2.绘制图像</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_shanghai<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"上海"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_beijing<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"r"</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">"--"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"北京"</span><span class="token punctuation">)</span>  <span class="token comment"># 新增绘制北京的数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>显示图例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 绘制折线图
-plt.plot(x, y_shanghai, label&#x3D;&quot;上海&quot;)
-# 使用多次plot可以画多个折线
-plt.plot(x, y_beijing, color&#x3D;&#39;r&#39;, linestyle&#x3D;&#39;--&#39;, label&#x3D;&quot;北京&quot;)
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 绘制折线图</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_shanghai<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"上海"</span><span class="token punctuation">)</span>
+<span class="token comment"># 使用多次plot可以画多个折线</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_beijing<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'--'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"北京"</span><span class="token punctuation">)</span>
 
-# 显示图例
-plt.legend(loc&#x3D;&quot;best&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 显示图例</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token string">"best"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>多个坐标系显示</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 0.准备数据
-x &#x3D; range(60)
-y_shanghai &#x3D; [random.uniform(15, 18) for i in x]
-y_beijing &#x3D; [random.uniform(1, 5) for i in x]
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 0.准备数据</span>
+x <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span>
+y_shanghai <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">]</span>
+y_beijing <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">]</span>
 
-# 1.创建画布
-# plt.figure(figsize&#x3D;(20, 8), dpi&#x3D;100)
-fig, axes &#x3D; plt.subplots(nrows&#x3D;1, ncols&#x3D;2, figsize&#x3D;(20, 8), dpi&#x3D;100)
+<span class="token comment"># 1.创建画布</span>
+<span class="token comment"># plt.figure(figsize=(20, 8), dpi=100)</span>
+fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>nrows<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> ncols<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
 
-# 2.绘制图像
-# plt.plot(x, y_shanghai, label&#x3D;&quot;上海&quot;)
-# plt.plot(x, y_beijing, color&#x3D;&quot;r&quot;, linestyle&#x3D;&quot;--&quot;, label&#x3D;&quot;北京&quot;)
-axes[0].plot(x, y_shanghai, label&#x3D;&quot;上海&quot;)
-axes[1].plot(x, y_beijing, color&#x3D;&quot;r&quot;, linestyle&#x3D;&quot;--&quot;, label&#x3D;&quot;北京&quot;)
+<span class="token comment"># 2.绘制图像</span>
+<span class="token comment"># plt.plot(x, y_shanghai, label="上海")</span>
+<span class="token comment"># plt.plot(x, y_beijing, color="r", linestyle="--", label="北京")</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_shanghai<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"上海"</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y_beijing<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"r"</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">"--"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"北京"</span><span class="token punctuation">)</span>
 
-# 2.1 添加x,y轴刻度
-# 构造x,y轴刻度标签
-x_ticks_label &#x3D; [&quot;11点&#123;&#125;分&quot;.format(i) for i in x]
-y_ticks &#x3D; range(40)
+<span class="token comment"># 2.1 添加x,y轴刻度</span>
+<span class="token comment"># 构造x,y轴刻度标签</span>
+x_ticks_label <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"11点&#123;&#125;分"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">]</span>
+y_ticks <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span>
 
-# 刻度显示
-# plt.xticks(x[::5], x_ticks_label[::5])
-# plt.yticks(y_ticks[::5])
-axes[0].set_xticks(x[::5])
-axes[0].set_yticks(y_ticks[::5])
-axes[0].set_xticklabels(x_ticks_label[::5])
-axes[1].set_xticks(x[::5])
-axes[1].set_yticks(y_ticks[::5])
-axes[1].set_xticklabels(x_ticks_label[::5])
+<span class="token comment"># 刻度显示</span>
+<span class="token comment"># plt.xticks(x[::5], x_ticks_label[::5])</span>
+<span class="token comment"># plt.yticks(y_ticks[::5])</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_xticks<span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_yticks<span class="token punctuation">(</span>y_ticks<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_xticklabels<span class="token punctuation">(</span>x_ticks_label<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_xticks<span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_yticks<span class="token punctuation">(</span>y_ticks<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_xticklabels<span class="token punctuation">(</span>x_ticks_label<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-# 2.2 添加网格显示
-# plt.grid(True, linestyle&#x3D;&quot;--&quot;, alpha&#x3D;0.5)
-axes[0].grid(True, linestyle&#x3D;&quot;--&quot;, alpha&#x3D;0.5)
-axes[1].grid(True, linestyle&#x3D;&quot;--&quot;, alpha&#x3D;0.5)
+<span class="token comment"># 2.2 添加网格显示</span>
+<span class="token comment"># plt.grid(True, linestyle="--", alpha=0.5)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">"--"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">"--"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
 
-# 2.3 添加描述信息
-# plt.xlabel(&quot;时间&quot;)
-# plt.ylabel(&quot;温度&quot;)
-# plt.title(&quot;中午11点--12点某城市温度变化图&quot;, fontsize&#x3D;20)
-axes[0].set_xlabel(&quot;时间&quot;)
-axes[0].set_ylabel(&quot;温度&quot;)
-axes[0].set_title(&quot;中午11点--12点某城市温度变化图&quot;, fontsize&#x3D;20)
-axes[1].set_xlabel(&quot;时间&quot;)
-axes[1].set_ylabel(&quot;温度&quot;)
-axes[1].set_title(&quot;中午11点--12点某城市温度变化图&quot;, fontsize&#x3D;20)
+<span class="token comment"># 2.3 添加描述信息</span>
+<span class="token comment"># plt.xlabel("时间")</span>
+<span class="token comment"># plt.ylabel("温度")</span>
+<span class="token comment"># plt.title("中午11点--12点某城市温度变化图", fontsize=20)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">"时间"</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">"温度"</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"中午11点--12点某城市温度变化图"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">"时间"</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">"温度"</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"中午11点--12点某城市温度变化图"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
 
-# # 2.4 图像保存
-plt.savefig(&quot;.&#x2F;test.png&quot;)
+<span class="token comment"># # 2.4 图像保存</span>
+plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"./test.png"</span><span class="token punctuation">)</span>
 
-# # 2.5 添加图例
-# plt.legend(loc&#x3D;0)
-axes[0].legend(loc&#x3D;0)
-axes[1].legend(loc&#x3D;0)
+<span class="token comment"># # 2.5 添加图例</span>
+<span class="token comment"># plt.legend(loc=0)</span>
+axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
 
-# 3.图像显示
-plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 3.图像显示</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="小结">小结</h4>
 <ul>
 <li>添加x,y轴刻度【知道】
@@ -906,12 +906,12 @@ plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <h4 id="附录：中文显示问题解决">附录：中文显示问题解决</h4>
 <p><strong>解决方案二：</strong></p>
 <p>在Python脚本中动态设置matplotlibrc,这样也可以避免由于更改配置文件而造成的麻烦，具体代码如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import matplotlib.pyplot as plt
-# 设置显示中文字体
-plt.rcParams[&#39;font.sans-serif&#39;] &#x3D; [&#39;SimHei&#39;] # 指定默认字体<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token comment"># 设置显示中文字体</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.sans-serif'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'SimHei'</span><span class="token punctuation">]</span> <span class="token comment"># 指定默认字体</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>有时候，字体更改后，会导致坐标轴中的部分字符无法正常显示，此时需要更改axes.unicode_minus参数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 设置正常显示符号
-plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 设置正常显示符号</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'axes.unicode_minus'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">False</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Numpy">Numpy</h3>
 <p><code>NumPy</code>是一个功能强大的<code>Python</code>库，主要用于对多维数组执行计算。<code>NumPy</code>这个词来源于两个单词-- <code>Numerical</code>和<code>Python</code>。<code>NumPy</code>提供了大量的库函数和操作，可以帮助程序员轻松地进行数值计算。在数据分析和机器学习领域被广泛使用。他有以下几个特点：</p>
 <ol>
@@ -1069,7 +1069,7 @@ plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False <span aria-hidden="true"
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/python-data/some-demo/" class="b-link-green">数据分析Demo</a>
                 </p>
@@ -1696,7 +1696,7 @@ plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False <span aria-hidden="true"
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1773,7 +1773,7 @@ plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False <span aria-hidden="true"
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

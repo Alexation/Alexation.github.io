@@ -69,10 +69,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -687,7 +687,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
+                        1.8k
                     </div>
                     
 
@@ -745,72 +745,72 @@
 </ul>
 <h3 id="实战（QQ壁纸）">实战（QQ壁纸）</h3>
 <h4 id="指定URL">指定URL</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
-import parsel		# 引入第三方库
-# 目标网址：
-base_url &#x3D; &#39;http:&#x2F;&#x2F;www.qqbizhi.com&#x2F;desk&#x2F;meinv&#x2F;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> parsel		<span class="token comment"># 引入第三方库</span>
+<span class="token comment"># 目标网址：</span>
+base_url <span class="token operator">=</span> <span class="token string">'http://www.qqbizhi.com/desk/meinv/'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>打开网址，看到有二十一张图片，点开来发现其实是另一个网址，因此我们要在基地址抓取到第二级地址，再对图片进行抓取。</p>
 <h4 id="UA伪装">UA伪装</h4>
 <p>UA，即User-Agent，也就是请求头，随便打开一个网址，按下F12</p>
 <p><img src="https://i.loli.net/2021/08/20/KAet8voUBPGFyTE.png" alt=""></p>
 <p>看！蓝色的，即是UA，不配置的话默认是python哦。那该如何配置呢？修改headers中的键值对即可，即加上下面这句话：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">headers &#x3D; &#123;&#39;User-Agent&#39;:&#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64; rv:91.0) &#39;
-                        &#39;Gecko&#x2F;20100101 Firefox&#x2F;91.0&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) '</span>
+                        <span class="token string">'Gecko/20100101 Firefox/91.0'</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="发起请求（模拟浏览器）">发起请求（模拟浏览器）</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># get返回结果赋值给response
-response &#x3D; requests.get(url&#x3D;base_url, headers&#x3D;headers)
-# 配置编码方式，使其自适应网站编码类型
-response.encoding &#x3D; response.apparent_encoding
-# 获取文本
-data &#x3D; response.text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># get返回结果赋值给response</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>base_url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+<span class="token comment"># 配置编码方式，使其自适应网站编码类型</span>
+response<span class="token punctuation">.</span>encoding <span class="token operator">=</span> response<span class="token punctuation">.</span>apparent_encoding
+<span class="token comment"># 获取文本</span>
+data <span class="token operator">=</span> response<span class="token punctuation">.</span>text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里注意，后面保存图片为二进制，获取二进制数据格式就要用content</p>
 <ul>
 <li>response.text 返回的是一个 unicode 型的文本数据</li>
 <li>response.content 返回的是 bytes 型的二进制数据</li>
 </ul>
 <h4 id="获取相应数据">获取相应数据</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># parsel解析，获取HTML源码
-html_data &#x3D; parsel.Selector(data)
-# xpath对目标定位
-data_list &#x3D; html_data.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;imglist&quot;]&#x2F;figure&#x2F;a&#x2F;@href&#39;).extract()
-# 获取目标赋给一个列表（不止一个目标）
-result &#x3D; [&#39;http:&#x2F;&#x2F;www.qqbizhi.com&#39; + data_url for data_url in data_list]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># parsel解析，获取HTML源码</span>
+html_data <span class="token operator">=</span> parsel<span class="token punctuation">.</span>Selector<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token comment"># xpath对目标定位</span>
+data_list <span class="token operator">=</span> html_data<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//div[@class="imglist"]/figure/a/@href'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 获取目标赋给一个列表（不止一个目标）</span>
+result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'http://www.qqbizhi.com'</span> <span class="token operator">+</span> data_url <span class="token keyword">for</span> data_url <span class="token keyword">in</span> data_list<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里涉及一丢丢xpath语法:</p>
 <p>//表示跨行定位</p>
 <p>[@class=“xxxxxxx”]表示属性class的值为xxxxxxx的标签，也可通过id等其他属性进行定位，但要注意有些属性是动态属性，一般就取id或class。</p>
 <p>@href其属性的值就是我们所需，结合基地址赋值，后面进行循环提取</p>
 <h4 id="解析数据">解析数据</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 对每个url进行抓取
-for any_list in result:
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 对每个url进行抓取</span>
+<span class="token keyword">for</span> any_list <span class="token keyword">in</span> result<span class="token punctuation">:</span>
 
-	# 同上，基地址变为相册地址，UA依旧
-    response_2 &#x3D; requests.get(url&#x3D;any_list, headers&#x3D;headers).text
-    response_2_data &#x3D; parsel.Selector(response_2)
-    img_url &#x3D; response_2_data.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;container&quot;]&#39;
-                &#39;&#x2F;&#x2F;div&#x2F;figure&#x2F;a&#x2F;@data-src&#39;).extract_first()
+	<span class="token comment"># 同上，基地址变为相册地址，UA依旧</span>
+    response_2 <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>any_list<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+    response_2_data <span class="token operator">=</span> parsel<span class="token punctuation">.</span>Selector<span class="token punctuation">(</span>response_2<span class="token punctuation">)</span>
+    img_url <span class="token operator">=</span> response_2_data<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//div[@class="container"]'</span>
+                <span class="token string">'//div/figure/a/@data-src'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract_first<span class="token punctuation">(</span><span class="token punctuation">)</span>
                 
-    if img_url &#x3D;&#x3D; None:
-        img_url &#x3D; response_2_data.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;pc-container&quot;]&#39;
-                            &#39;&#x2F;&#x2F;div&#x2F;figure&#x2F;a&#x2F;@data-src&#39;).extract_first()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">if</span> img_url <span class="token operator">==</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        img_url <span class="token operator">=</span> response_2_data<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//div[@class="pc-container"]'</span>
+                            <span class="token string">'//div/figure/a/@data-src'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract_first<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>extract()：这个方法返回一个数组，里面是str类型！。</li>
 <li>extract_first()：这个方法返回一个string字符串，是其数组里面第一个字符串哦。</li>
 </ul>
 <h4 id="进行持久化储存">进行持久化储存</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 获取二进制图片数据并赋值
-   img_data &#x3D; requests.get(url&#x3D;img_url, headers&#x3D;headers).content
-# 对图片进行命名，截取最后一个&#x2F;后的数据
-   file_name &#x3D; img_url.split(&#39;&#x2F;&#39;)[-1]
-# 打开本目录下创建好的img文件夹进行写入
-# &lt;insert&gt;
-   with open(&#39;img\\&#39; + file_name, mode&#x3D;&#39;wb&#39;) as f:
-   	# 打印进度
-       print(&#39;Downloading: &#39;, file_name)
-       f.write(img_data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取二进制图片数据并赋值</span>
+   img_data <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>img_url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content
+<span class="token comment"># 对图片进行命名，截取最后一个/后的数据</span>
+   file_name <span class="token operator">=</span> img_url<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment"># 打开本目录下创建好的img文件夹进行写入</span>
+<span class="token comment"># &lt;insert></span>
+   <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'img\\'</span> <span class="token operator">+</span> file_name<span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+   	<span class="token comment"># 打印进度</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Downloading: '</span><span class="token punctuation">,</span> file_name<span class="token punctuation">)</span>
+       f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>img_data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>每次抓都要新建文件夹是不是太麻烦哦，引入os库（虽然打过包后会被360安全卫士报毒…emm)</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 在&lt;insert&gt;处插入下面代码，当然第一行也不要忘记import os
-        if not os.path.exists(&#39;img&#39;):
-            os.mkdir(&#39;img&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 在&lt;insert>处插入下面代码，当然第一行也不要忘记import os</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>os库判断当前文件夹下是否有名为‘img’的文件夹，如果没有就创建。</p>
 <h4 id="完善程序">完善程序</h4>
 <h5 id="扩大抓取范围">扩大抓取范围</h5>
@@ -1037,7 +1037,7 @@ except requests.HTTPError as e:
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/python-catch/Python-catch-base/" class="b-link-green">Python爬虫基础普及</a>
                 </p>
@@ -1664,7 +1664,7 @@ except requests.HTTPError as e:
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1741,7 +1741,7 @@ except requests.HTTPError as e:
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

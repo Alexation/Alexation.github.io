@@ -71,10 +71,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -697,14 +697,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.1k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        8 分
                     </div>
                     
                 
@@ -767,141 +767,141 @@
 <p>MQTT 是 IBM 于 1999 年提出的，和 HTTP 一样属于应用层，它工作在 TCP/IP 239 协议族上，通常还会调用 socket 接口。是一个基于客户端-服务器的消息发布/订 阅传输协议。其特点是协议是轻量、简单、开放和易于实现的，这些特点使它适 用范围非常广泛。在很多情况下，包括受限的环境中，如：机器与机器（M2M） 通信和物联网（IoT）。其在，通过卫星链路通信传感器、偶尔拨号的医疗设备、 智能家居、及一些小型化设备中已广泛使用。 总结下来 MQTT 有如下特性/优势： ➢ 异步消息协议 ➢ 面向长连接 ➢ 双向数据传输 ➢ 协议轻量级 ➢ 被动数据获取</p>
 <p><img src="https://s2.loli.net/2022/08/04/3Wzf6UkpEmCFrMx.png" alt="MQTT流程图"></p>
 <h3 id="源代码">源代码</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import network,time
-from machine import UART,Timer
-from Maix import GPIO
-from fpioa_manager import fm
-from simple import MQTTClient
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> network<span class="token punctuation">,</span>time
+<span class="token keyword">from</span> machine <span class="token keyword">import</span> UART<span class="token punctuation">,</span>Timer
+<span class="token keyword">from</span> Maix <span class="token keyword">import</span> GPIO
+<span class="token keyword">from</span> fpioa_manager <span class="token keyword">import</span> fm
+<span class="token keyword">from</span> simple <span class="token keyword">import</span> MQTTClient
 
-# User and Password
-SSID&#x3D;&#39;xxxxxxxx&#39; # WiFi 账号
-KEY&#x3D;&#39;xxxxxxxx&#39;  # WiFi 密码
+<span class="token comment"># User and Password</span>
+SSID<span class="token operator">=</span><span class="token string">'xxxxxxxx'</span> <span class="token comment"># WiFi 账号</span>
+KEY<span class="token operator">=</span><span class="token string">'xxxxxxxx'</span>  <span class="token comment"># WiFi 密码</span>
 
-# Mic Control Init
-fm.register(10, fm.fpioa.GPIOHS4, force&#x3D;True)
-fm.register(31, fm.fpioa.GPIOHS5, force&#x3D;True)
-fm.register(30, fm.fpioa.GPIOHS6, force&#x3D;True)
-open_air &#x3D; GPIO(GPIO.GPIOHS4, GPIO.IN)
-close_air &#x3D; GPIO(GPIO.GPIOHS5, GPIO.IN)
-time_air &#x3D; GPIO(GPIO.GPIOHS6, GPIO.IN)
+<span class="token comment"># Mic Control Init</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIOHS4<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIOHS5<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIOHS6<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+open_air <span class="token operator">=</span> GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIOHS4<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">)</span>
+close_air <span class="token operator">=</span> GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIOHS5<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">)</span>
+time_air <span class="token operator">=</span> GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIOHS6<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">)</span>
 
-# Wifi En Pin
-fm.register(11, fm.fpioa.GPIOHS0, force&#x3D;True)
-wifi_en&#x3D;GPIO(GPIO.GPIOHS0, GPIO.OUT)
+<span class="token comment"># Wifi En Pin</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>GPIOHS0<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+wifi_en<span class="token operator">=</span>GPIO<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>GPIOHS0<span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>OUT<span class="token punctuation">)</span>
 
-# Wifi Init
-fm.register(7, fm.fpioa.UART2_TX, force&#x3D;True)
-fm.register(6, fm.fpioa.UART2_RX, force&#x3D;True)
-uart_wifi &#x3D; UART(UART.UART2,115200,timeout&#x3D;1000,read_buf_len&#x3D;4096)
-# Red Init
-fm.register(9, fm.fpioa.UART1_TX, force&#x3D;True)
-fm.register(32, fm.fpioa.UART1_RX, force&#x3D;True)
-uart_red &#x3D; UART(UART.UART1,115200,timeout&#x3D;1000,read_buf_len&#x3D;4096)
+<span class="token comment"># Wifi Init</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>UART2_TX<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>UART2_RX<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+uart_wifi <span class="token operator">=</span> UART<span class="token punctuation">(</span>UART<span class="token punctuation">.</span>UART2<span class="token punctuation">,</span><span class="token number">115200</span><span class="token punctuation">,</span>timeout<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span>read_buf_len<span class="token operator">=</span><span class="token number">4096</span><span class="token punctuation">)</span>
+<span class="token comment"># Red Init</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>UART1_TX<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+fm<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span>fpioa<span class="token punctuation">.</span>UART1_RX<span class="token punctuation">,</span> force<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+uart_red <span class="token operator">=</span> UART<span class="token punctuation">(</span>UART<span class="token punctuation">.</span>UART1<span class="token punctuation">,</span><span class="token number">115200</span><span class="token punctuation">,</span>timeout<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span>read_buf_len<span class="token operator">=</span><span class="token number">4096</span><span class="token punctuation">)</span>
 
-# WiFi
-def wifi_enable(en):
-    global wifi_en
-    wifi_en.value(en)
+<span class="token comment"># WiFi</span>
+<span class="token keyword">def</span> <span class="token function">wifi_enable</span><span class="token punctuation">(</span>en<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> wifi_en
+    wifi_en<span class="token punctuation">.</span>value<span class="token punctuation">(</span>en<span class="token punctuation">)</span>
 
-def wifi_init():
-    global uart_wifi
-    wifi_enable(0)
-    time.sleep_ms(200)
-    wifi_enable(1)
-    time.sleep(2)
-    uart_wifi &#x3D; UART(UART.UART2,115200,timeout&#x3D;1000, read_buf_len&#x3D;4096)
-    tmp &#x3D; uart_wifi.read()
-    uart_wifi.write(&quot;AT+UART_CUR&#x3D;921600,8,1,0,0\r\n&quot;)
-    print(uart_wifi.read())
-    # important! baudrate too low or read_buf_len too small will loose data
-    uart_wifi &#x3D; UART(UART.UART2,921600,timeout&#x3D;1000, read_buf_len&#x3D;10240)
-    uart_wifi.write(&quot;AT\r\n&quot;)
-    tmp &#x3D; uart_wifi.read()
-    print(tmp)
-    if not tmp.endswith(&quot;OK\r\n&quot;):
-        print(&quot;reset fail&quot;)
-        return None
-    try:
-        nic &#x3D; network.ESP8285(uart_wifi)
-    except Exception:
-        return None
-    return nic
+<span class="token keyword">def</span> <span class="token function">wifi_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> uart_wifi
+    wifi_enable<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep_ms<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+    wifi_enable<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    uart_wifi <span class="token operator">=</span> UART<span class="token punctuation">(</span>UART<span class="token punctuation">.</span>UART2<span class="token punctuation">,</span><span class="token number">115200</span><span class="token punctuation">,</span>timeout<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> read_buf_len<span class="token operator">=</span><span class="token number">4096</span><span class="token punctuation">)</span>
+    tmp <span class="token operator">=</span> uart_wifi<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    uart_wifi<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"AT+UART_CUR=921600,8,1,0,0\r\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>uart_wifi<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># important! baudrate too low or read_buf_len too small will loose data</span>
+    uart_wifi <span class="token operator">=</span> UART<span class="token punctuation">(</span>UART<span class="token punctuation">.</span>UART2<span class="token punctuation">,</span><span class="token number">921600</span><span class="token punctuation">,</span>timeout<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> read_buf_len<span class="token operator">=</span><span class="token number">10240</span><span class="token punctuation">)</span>
+    uart_wifi<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"AT\r\n"</span><span class="token punctuation">)</span>
+    tmp <span class="token operator">=</span> uart_wifi<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> tmp<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">"OK\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"reset fail"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">None</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        nic <span class="token operator">=</span> network<span class="token punctuation">.</span>ESP8285<span class="token punctuation">(</span>uart_wifi<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">None</span>
+    <span class="token keyword">return</span> nic
 
-def MQTT_callback(topic, msg):
-    global uart_red
+<span class="token keyword">def</span> <span class="token function">MQTT_callback</span><span class="token punctuation">(</span>topic<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> uart_red
 
-    print(&#39;topic: &#123;&#125;&#39;.format(topic))
-    print(&#39;msg: &#123;&#125;&#39;.format(msg))
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'topic: &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>topic<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'msg: &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    if msg &#x3D;&#x3D; b&#39;open&#39;:
-        uart_red.write(b&#39;\x68\x08\x00\xFF\x12\x01\x12\x16&#39;)
-    if msg &#x3D;&#x3D; b&#39;close&#39;:
-        uart_red.write(b&#39;\x68\x08\x00\xFF\x12\x00\x11\x16&#39;)
-    if msg &#x3D;&#x3D; b&#39;time&#39;:
-        uart_red.write(b&#39;\x68\x08\x00\xFF\x12\x02\x13\x16&#39;)
+    <span class="token keyword">if</span> msg <span class="token operator">==</span> <span class="token string">b'open'</span><span class="token punctuation">:</span>
+        uart_red<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">b'\x68\x08\x00\xFF\x12\x01\x12\x16'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> msg <span class="token operator">==</span> <span class="token string">b'close'</span><span class="token punctuation">:</span>
+        uart_red<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">b'\x68\x08\x00\xFF\x12\x00\x11\x16'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> msg <span class="token operator">==</span> <span class="token string">b'time'</span><span class="token punctuation">:</span>
+        uart_red<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">b'\x68\x08\x00\xFF\x12\x02\x13\x16'</span><span class="token punctuation">)</span>
         
-def MQTT_Rev(tim):
-    try:
-        client.check_msg()
-    except OSError:
-        pass
+<span class="token keyword">def</span> <span class="token function">MQTT_Rev</span><span class="token punctuation">(</span>tim<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        client<span class="token punctuation">.</span>check_msg<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> OSError<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
 
-# Connecting
-wlan &#x3D; wifi_init()
-wlan.connect(SSID,KEY)
-print(wlan.ifconfig())
+<span class="token comment"># Connecting</span>
+wlan <span class="token operator">=</span> wifi_init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+wlan<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>SSID<span class="token punctuation">,</span>KEY<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>wlan<span class="token punctuation">.</span>ifconfig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# Mqtt Params
-SERVER &#x3D; &#39;xxxxxxxx&#39;
-PORT &#x3D; 1883
-CLIENT_ID &#x3D; &#39;xxxxxxxx&#39;
-USER &#x3D; &#39;xxxxxxxx&#39;
-PASSWORD &#x3D; &#39;xxxxxxxx&#39;
-TOPIC &#x3D; &#39;xxxxxxxx&#39;
-client &#x3D; MQTTClient(CLIENT_ID, SERVER, PORT,user&#x3D;USER, password&#x3D;PASSWORD)
-client.set_callback(MQTT_callback)
-client.connect()
-client.subscribe(TOPIC)
+<span class="token comment"># Mqtt Params</span>
+SERVER <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+PORT <span class="token operator">=</span> <span class="token number">1883</span>
+CLIENT_ID <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+USER <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+PASSWORD <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+TOPIC <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+client <span class="token operator">=</span> MQTTClient<span class="token punctuation">(</span>CLIENT_ID<span class="token punctuation">,</span> SERVER<span class="token punctuation">,</span> PORT<span class="token punctuation">,</span>user<span class="token operator">=</span>USER<span class="token punctuation">,</span> password<span class="token operator">=</span>PASSWORD<span class="token punctuation">)</span>
+client<span class="token punctuation">.</span>set_callback<span class="token punctuation">(</span>MQTT_callback<span class="token punctuation">)</span>
+client<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+client<span class="token punctuation">.</span>subscribe<span class="token punctuation">(</span>TOPIC<span class="token punctuation">)</span>
 
-tim &#x3D; Timer(Timer.TIMER0, Timer.CHANNEL0, mode&#x3D;Timer.MODE_PERIODIC,period&#x3D;300, callback&#x3D;MQTT_Rev)
+tim <span class="token operator">=</span> Timer<span class="token punctuation">(</span>Timer<span class="token punctuation">.</span>TIMER0<span class="token punctuation">,</span> Timer<span class="token punctuation">.</span>CHANNEL0<span class="token punctuation">,</span> mode<span class="token operator">=</span>Timer<span class="token punctuation">.</span>MODE_PERIODIC<span class="token punctuation">,</span>period<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> callback<span class="token operator">=</span>MQTT_Rev<span class="token punctuation">)</span>
 
-t_before &#x3D; time.time()
-while True:
-    # Reconnecting
-    if time.time() - t_before &gt; 60:
-        # Disconnecting
-        client.disconnect()
-        tim.deinit()
-        # Connecting
-        wlan &#x3D; wifi_init()
-        wlan.connect(SSID,KEY)
-        print(wlan.ifconfig())
+t_before <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment"># Reconnecting</span>
+    <span class="token keyword">if</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> t_before <span class="token operator">></span> <span class="token number">60</span><span class="token punctuation">:</span>
+        <span class="token comment"># Disconnecting</span>
+        client<span class="token punctuation">.</span>disconnect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        tim<span class="token punctuation">.</span>deinit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># Connecting</span>
+        wlan <span class="token operator">=</span> wifi_init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        wlan<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>SSID<span class="token punctuation">,</span>KEY<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>wlan<span class="token punctuation">.</span>ifconfig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-        # Mqtt Params
-        SERVER &#x3D; &#39;xxxxxxxx&#39;
-        PORT &#x3D; 1883
-        CLIENT_ID &#x3D; &#39;xxxxxxxx&#39;
-        USER &#x3D; &#39;xxxxxxxx&#39;
-        PASSWORD &#x3D; &#39;xxxxxxxx&#39;
-        TOPIC &#x3D; &#39;xxxxxxxx&#39;
-        client &#x3D; MQTTClient(CLIENT_ID, SERVER, PORT,user&#x3D;USER, password&#x3D;PASSWORD)
-        client.set_callback(MQTT_callback)
-        client.connect()
-        client.subscribe(TOPIC)
-        tim &#x3D; Timer(Timer.TIMER0, Timer.CHANNEL0, mode&#x3D;Timer.MODE_PERIODIC,period&#x3D;300, callback&#x3D;MQTT_Rev)
-        t_before &#x3D; time.time()
-    # Mic
-    if open_air.value() &#x3D;&#x3D; 1:
-        uart_red.write(b&#39;\x68\x08\x00\xFF\x12\x01\x12\x16&#39;)
-        time.sleep(1) 
-    if close_air.value() &#x3D;&#x3D; 1:
-        uart_red.write(b&#39;\x68\x08\x00\xFF\x12\x00\x11\x16&#39;)
-        time.sleep(1)
-    if time_air.value() &#x3D;&#x3D; 1:
-        uart_red.write(b&#39;\x68\x08\x00\xFF\x12\x02\x13\x16&#39;)
-        time.sleep(1)
+        <span class="token comment"># Mqtt Params</span>
+        SERVER <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+        PORT <span class="token operator">=</span> <span class="token number">1883</span>
+        CLIENT_ID <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+        USER <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+        PASSWORD <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+        TOPIC <span class="token operator">=</span> <span class="token string">'xxxxxxxx'</span>
+        client <span class="token operator">=</span> MQTTClient<span class="token punctuation">(</span>CLIENT_ID<span class="token punctuation">,</span> SERVER<span class="token punctuation">,</span> PORT<span class="token punctuation">,</span>user<span class="token operator">=</span>USER<span class="token punctuation">,</span> password<span class="token operator">=</span>PASSWORD<span class="token punctuation">)</span>
+        client<span class="token punctuation">.</span>set_callback<span class="token punctuation">(</span>MQTT_callback<span class="token punctuation">)</span>
+        client<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        client<span class="token punctuation">.</span>subscribe<span class="token punctuation">(</span>TOPIC<span class="token punctuation">)</span>
+        tim <span class="token operator">=</span> Timer<span class="token punctuation">(</span>Timer<span class="token punctuation">.</span>TIMER0<span class="token punctuation">,</span> Timer<span class="token punctuation">.</span>CHANNEL0<span class="token punctuation">,</span> mode<span class="token operator">=</span>Timer<span class="token punctuation">.</span>MODE_PERIODIC<span class="token punctuation">,</span>period<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> callback<span class="token operator">=</span>MQTT_Rev<span class="token punctuation">)</span>
+        t_before <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># Mic</span>
+    <span class="token keyword">if</span> open_air<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        uart_red<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">b'\x68\x08\x00\xFF\x12\x01\x12\x16'</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 
+    <span class="token keyword">if</span> close_air<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        uart_red<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">b'\x68\x08\x00\xFF\x12\x00\x11\x16'</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> time_air<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        uart_red<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">b'\x68\x08\x00\xFF\x12\x02\x13\x16'</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
         
-    time.sleep(0.2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="小程序前端">小程序前端</h2>
 <p>MQTT服务器我选择的是环信即时通讯云</p>
 <p><a target="_blank" rel="noopener" href="https://docs-im.easemob.com/mqtt/intro">产品概述 IM 开发文档] (easemob.com)</a></p>
@@ -1065,7 +1065,7 @@ while True:
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/contest/AirWifi/" class="b-link-green">远程控制空调物联网项目</a>
                 </p>
@@ -1691,7 +1691,7 @@ while True:
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1768,7 +1768,7 @@ while True:
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

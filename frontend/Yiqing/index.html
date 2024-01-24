@@ -72,10 +72,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -706,14 +706,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3k
+                        2.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        14 分
+                        11 分
                     </div>
                     
                 
@@ -778,251 +778,251 @@
 <h3 id=""><img src="https://s2.loli.net/2022/02/15/syrAFtjGVi95b4f.png" alt=""></h3>
 <p>实际抓包过程中，我们发现登录的Post请求并没有返回相应的关键字段，但是我们发现cookie字段中含有JSESSION便可推断当我们访问登录页面时，服务器返回JSESSION，之后通过我们登陆时的JSESSION对相应的账户进行匹配，于是我们可以直接构造Session对象维持会话。</p>
 <p><img src="https://s2.loli.net/2022/02/15/lOJvXWRuxNEbnCs.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># Origin Headers
-headers &#x3D; &#123;
-    &#39;Host&#39;: &#39;yiqing.ctgu.edu.cn&#39;,
-    &#39;Referer&#39;: &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;index&#x2F;main.do?currSchool&#x3D;ctgu&amp;CURRENT_YEAR&#x3D;2019&amp;showWjdc&#x3D;false&amp;studentShowWjdc&#x3D;false&#39;,
-    # &#39;Upgrade-Insecure-Requests&#39;: &#39;1&#39;,
-    &#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;97.0.4692.99 Safari&#x2F;537.36&#39;,
-&#125;
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Origin Headers</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'Host'</span><span class="token punctuation">:</span> <span class="token string">'yiqing.ctgu.edu.cn'</span><span class="token punctuation">,</span>
+    <span class="token string">'Referer'</span><span class="token punctuation">:</span> <span class="token string">'http://yiqing.ctgu.edu.cn/wx/index/main.do?currSchool=ctgu&amp;CURRENT_YEAR=2019&amp;showWjdc=false&amp;studentShowWjdc=false'</span><span class="token punctuation">,</span>
+    <span class="token comment"># 'Upgrade-Insecure-Requests': '1',</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
 
-# 获取服务器端 JSESSIONID
-session &#x3D; requests.Session()
-session_url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;health&#x2F;main.do&#39;
-response_session &#x3D; session.get(url&#x3D;session_url, headers&#x3D;headers, allow_redirects&#x3D;False)
+<span class="token comment"># 获取服务器端 JSESSIONID</span>
+session <span class="token operator">=</span> requests<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+session_url <span class="token operator">=</span> <span class="token string">'http://yiqing.ctgu.edu.cn/wx/health/main.do'</span>
+response_session <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>session_url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> allow_redirects<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 
-# post data
-data &#x3D; &#123;
-    &#39;username&#39;: username,
-    &#39;password&#39;: password,
-&#125;
+<span class="token comment"># post data</span>
+data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'username'</span><span class="token punctuation">:</span> username<span class="token punctuation">,</span>
+    <span class="token string">'password'</span><span class="token punctuation">:</span> password<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
 
-# 模拟登录请求，进行 JSESSIONID 账号配对
-login_url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;index&#x2F;loginSubmit.do&#39;
-response_data &#x3D; session.post(url&#x3D;login_url, data&#x3D;data).text
-print(&#39;登录状态: &#39; + response_data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 模拟登录请求，进行 JSESSIONID 账号配对</span>
+login_url <span class="token operator">=</span> <span class="token string">'http://yiqing.ctgu.edu.cn/wx/index/loginSubmit.do'</span>
+response_data <span class="token operator">=</span> session<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>login_url<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'登录状态: '</span> <span class="token operator">+</span> response_data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>登录成功返回success，失败返回false。后续我们可以通过该接口返回值对有效用户进行筛选。接下来我们利用该session请求提交页面拿到隐藏的token</p>
 <p><img src="https://s2.loli.net/2022/02/15/IjUKrvb13AF2YiD.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># Get token
-apply_url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;health&#x2F;toApply.do&#39;
-apply_response &#x3D; session.get(url&#x3D;apply_url).text
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Get token</span>
+apply_url <span class="token operator">=</span> <span class="token string">'http://yiqing.ctgu.edu.cn/wx/health/toApply.do'</span>
+apply_response <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>apply_url<span class="token punctuation">)</span><span class="token punctuation">.</span>text
 
-# 判断是否已提交请求，如果已经提交的话服务器便不再响应
-if re.findall(&#39;&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;ttoken&quot; value&#x3D;&quot;(.*?)&quot;&#x2F;&gt;&#39;, apply_response):
-token &#x3D; re.findall(&#39;&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;ttoken&quot; value&#x3D;&quot;(.*?)&quot;&#x2F;&gt;&#39;, apply_response)[0]
+<span class="token comment"># 判断是否已提交请求，如果已经提交的话服务器便不再响应</span>
+<span class="token keyword">if</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'&lt;input type="hidden" name="ttoken" value="(.*?)"/>'</span><span class="token punctuation">,</span> apply_response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+token <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'&lt;input type="hidden" name="ttoken" value="(.*?)"/>'</span><span class="token punctuation">,</span> apply_response<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 
-# 获取上一次提交数据进行构造请求
-before_url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;health&#x2F;studentHis.do&#39;
-before_data &#x3D; session.post(url&#x3D;before_url, data&#x3D;data).text
-before_data_json &#x3D; json.loads(before_data)
+<span class="token comment"># 获取上一次提交数据进行构造请求</span>
+before_url <span class="token operator">=</span> <span class="token string">'http://yiqing.ctgu.edu.cn/wx/health/studentHis.do'</span>
+before_data <span class="token operator">=</span> session<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>before_url<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+before_data_json <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>before_data<span class="token punctuation">)</span>
 
-# 构造提交参数
-data_submit &#x3D; &#123;
-&#39;ttoken&#39;: token,
-&#39;province&#39;: before_data_json[0][&#39;province&#39;],
-&#39;city&#39;: before_data_json[0][&#39;city&#39;],
-&#39;district&#39;: before_data_json[0][&#39;district&#39;],
-&#39;adcode&#39;: before_data_json[0][&#39;adcode&#39;],
-&#39;longitude&#39;: before_data_json[0][&#39;longitude&#39;],
-&#39;latitude&#39;: before_data_json[0][&#39;latitude&#39;],
-&#39;sfqz&#39;: before_data_json[0][&#39;sfqz&#39;],
-&#39;sfys&#39;: before_data_json[0][&#39;sfys&#39;],
-&#39;sfzy&#39;: before_data_json[0][&#39;sfzy&#39;],
-&#39;sfgl&#39;: before_data_json[0][&#39;sfgl&#39;],
-&#39;status&#39;: before_data_json[0][&#39;status&#39;],
-&#39;szdz&#39;: before_data_json[0][&#39;szdz&#39;],
-&#39;sjh&#39;: before_data_json[0][&#39;sjh&#39;],
-&#39;lxrxm&#39;: before_data_json[0][&#39;lxrxm&#39;],
-&#39;lxrsjh&#39;: before_data_json[0][&#39;lxrsjh&#39;],
-&#39;sffr&#39;: before_data_json[0][&#39;sffr&#39;],
-&#39;sffrAm&#39;: before_data_json[0][&#39;sffrAm&#39;],
-&#39;sffrNoon&#39;: before_data_json[0][&#39;sffrNoon&#39;],
-&#39;sffrPm&#39;: before_data_json[0][&#39;sffrPm&#39;],
-&#39;sffy&#39;: before_data_json[0][&#39;sffy&#39;],
-&#39;sfgr&#39;: before_data_json[0][&#39;sfgr&#39;],
-&#39;qzglsj&#39;: before_data_json[0][&#39;qzglsj&#39;],
-&#39;qzgldd&#39;: before_data_json[0][&#39;qzgldd&#39;],
-&#39;glyy&#39;: before_data_json[0][&#39;glyy&#39;],
-&#39;mqzz&#39;: before_data_json[0][&#39;mqzz&#39;],
-&#39;sffx&#39;: before_data_json[0][&#39;sffx&#39;],
-&#39;qt&#39;: before_data_json[0][&#39;qt&#39;],
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 构造提交参数</span>
+data_submit <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+<span class="token string">'ttoken'</span><span class="token punctuation">:</span> token<span class="token punctuation">,</span>
+<span class="token string">'province'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'province'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'city'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'city'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'district'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'district'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'adcode'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'adcode'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'longitude'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'latitude'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sfqz'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sfqz'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sfys'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sfys'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sfzy'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sfzy'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sfgl'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sfgl'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'status'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'szdz'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'szdz'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sjh'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sjh'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'lxrxm'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'lxrxm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'lxrsjh'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'lxrsjh'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sffr'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sffr'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sffrAm'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sffrAm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sffrNoon'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sffrNoon'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sffrPm'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sffrPm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sffy'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sffy'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sfgr'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sfgr'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'qzglsj'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'qzglsj'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'qzgldd'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'qzgldd'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'glyy'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'glyy'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'mqzz'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'mqzz'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'sffx'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'sffx'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">'qt'</span><span class="token punctuation">:</span> before_data_json<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'qt'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>找到最后提交的URL进行请求即可</p>
 <p><img src="https://s2.loli.net/2022/02/15/5x2f1q9jyeaA3mz.png" alt=""></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># Final Submit API
-url &#x3D; &#39;http:&#x2F;&#x2F;yiqing.ctgu.edu.cn&#x2F;wx&#x2F;health&#x2F;saveApply.do&#39;
-submit &#x3D; session.post(url&#x3D;url, data&#x3D;data_submit).text
-submit_json &#x3D; json.loads(submit)
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Final Submit API</span>
+url <span class="token operator">=</span> <span class="token string">'http://yiqing.ctgu.edu.cn/wx/health/saveApply.do'</span>
+submit <span class="token operator">=</span> session<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>data_submit<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+submit_json <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>submit<span class="token punctuation">)</span>
 
-print(&#39;提交状态：&#39; + submit_json[&#39;msgStatus&#39;])
-time.sleep(1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'提交状态：'</span> <span class="token operator">+</span> submit_json<span class="token punctuation">[</span><span class="token string">'msgStatus'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="对接MySQL数据库">对接MySQL数据库</h3>
 <p>利用pymysql库将数据库信息拉到本地遍历请求即可</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">try:
-    # Connect MySQL
-    connection &#x3D; pymysql.connect(host&#x3D;&#39;IP地址&#39;, user&#x3D;&#39;数据库用户&#39;, passwd&#x3D;&#39;数据库密码&#39;, port&#x3D;3306, db&#x3D;&#39;数据库名称&#39;, charset&#x3D;&#39;utf8&#39;)
-    cursor &#x3D; connection.cursor()
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token comment"># Connect MySQL</span>
+    connection <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'IP地址'</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'数据库用户'</span><span class="token punctuation">,</span> passwd<span class="token operator">=</span><span class="token string">'数据库密码'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'数据库名称'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+    cursor <span class="token operator">=</span> connection<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    # Get user and password
-    cursor.execute(&#39;select * from yiqing&#39;)
+    <span class="token comment"># Get user and password</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'select * from yiqing'</span><span class="token punctuation">)</span>
     
-    # 收集所有用户信息
-    user_information &#x3D; cursor.fetchall()
+    <span class="token comment"># 收集所有用户信息</span>
+    user_information <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    # Disconnect MySQL
-    connection.commit()
-    cursor.close()
-    connection.close()
-except:
-    ErrorLog(&#39;Error---MySQL&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment"># Disconnect MySQL</span>
+    connection<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    connection<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    ErrorLog<span class="token punctuation">(</span><span class="token string">'Error---MySQL'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="后端提供API接口">后端提供API接口</h2>
 <h3 id="利用Flask搭建接口">利用Flask搭建接口</h3>
 <p>Flask本身不限定数据库的选择，你可以选择SQL或NOSQL的任何一种。也可以选择更方便的SQLALchemy，类似于Django的ORM。SQLALchemy实际上是对数据库的抽象，让开发者不用直接和SQL语句打交道，而是通过Python对象来操作数据库，在舍弃一些性能开销的同时，换来的是开发效率的较大提升。</p>
 <p>SQLAlchemy是一个关系型数据库框架，它提供了高层的ORM和底层的原生数据库的操作。<a target="_blank" rel="noopener" href="https://flask-sqlalchemy.palletsprojects.com/en/master/quickstart/">Flask-SQLAlchemy</a>是一个简化了SQLAlchemy操作的flask扩展。</p>
 <p>新建api.py文件</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> render_template
+<span class="token keyword">from</span> flask_sqlalchemy <span class="token keyword">import</span> SQLAlchemy
 
-app &#x3D; Flask(__name__, static_url_path&#x3D;&#39;&#x2F;&#39;, static_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;, template_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;)
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span> static_url_path<span class="token operator">=</span><span class="token string">'/'</span><span class="token punctuation">,</span> static_folder<span class="token operator">=</span><span class="token string">'./../../flask-dist'</span><span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">'./../../flask-dist'</span><span class="token punctuation">)</span>
 
-app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] &#x3D; &#39;mysql+pymysql:&#x2F;&#x2F;name:pwd@106.13.174.205:3306&#x2F;mls_web&#39;
-# mysql+pymysql 这是声明数据库和链接数据库的引擎  
-# name pwd 就是可以访问数据库的用户名密码 
-# 106.13.174.205:3306 是数据库地址 
-# &#x2F;mls_web 这是数据库名字
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SQLALCHEMY_DATABASE_URI'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'mysql+pymysql://name:pwd@106.13.174.205:3306/mls_web'</span>
+<span class="token comment"># mysql+pymysql 这是声明数据库和链接数据库的引擎  </span>
+<span class="token comment"># name pwd 就是可以访问数据库的用户名密码 </span>
+<span class="token comment"># 106.13.174.205:3306 是数据库地址 </span>
+<span class="token comment"># /mls_web 这是数据库名字</span>
 
-app.config[&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;] &#x3D; True  
- 如果设置成 True (默认情况)，Flask-SQLAlchemy 将会追踪对象的修改并且发送信号。这需要额外的内存， 如果不必要的可以禁用它。
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SQLALCHEMY_TRACK_MODIFICATIONS'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>  
+ 如果设置成 <span class="token boolean">True</span> <span class="token punctuation">(</span>默认情况<span class="token punctuation">)</span>，Flask<span class="token operator">-</span>SQLAlchemy 将会追踪对象的修改并且发送信号。这需要额外的内存， 如果不必要的可以禁用它。
  
-db &#x3D; SQLAlchemy(app)
+db <span class="token operator">=</span> SQLAlchemy<span class="token punctuation">(</span>app<span class="token punctuation">)</span>
 声明数据对象
 
-@app.route(&#39;&#x2F;&#39;)
-def index():
-    return render_template(&#39;index.html&#39;)
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
 
-if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
-    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>安装包</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install sqlacodegen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> sqlacodegen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>cmd 切换到 flask目录 执行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sqlacodegen --outfile&#x3D;models.py mysql+pymysql:&#x2F;&#x2F;name:pwd@106.13.174.205:3306&#x2F;mls_web<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sqlacodegen --outfile<span class="token operator">=</span>models.py mysql+pymysql://name:pwd@106.13.174.205:3306/mls_web<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>生成一个models.py文件 user表的映射，在该文件中，如果需要json格式传递，在class中添加如下代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def to_json(self):
-       return &#123;
-           &#39;id&#39;: self.id,
-           &#39;name&#39;: self.name,
-           &#39;pwd&#39;: self.pwd
-       &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">to_json</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+           <span class="token string">'id'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">,</span>
+           <span class="token string">'name'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+           <span class="token string">'pwd'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>pwd
+       <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>将model.py引入api.py中</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, render_template, jsonify, request
-from flask_sqlalchemy import SQLAlchemy
-from models import *
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> render_template<span class="token punctuation">,</span> jsonify<span class="token punctuation">,</span> request
+<span class="token keyword">from</span> flask_sqlalchemy <span class="token keyword">import</span> SQLAlchemy
+<span class="token keyword">from</span> models <span class="token keyword">import</span> <span class="token operator">*</span>
 
-app &#x3D; Flask(__name__, static_url_path&#x3D;&#39;&#x2F;&#39;, static_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;, template_folder&#x3D;&#39;.&#x2F;..&#x2F;..&#x2F;flask-dist&#39;)
-app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] &#x3D; &#39;mysql+pymysql:&#x2F;&#x2F;mls:a838502774@106.13.174.205:3306&#x2F;mls_web&#39;
-app.config[&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;] &#x3D; True
-app.config[&#39;SQLALCHEMY_UCSO&#39;] &#x3D; True
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span> static_url_path<span class="token operator">=</span><span class="token string">'/'</span><span class="token punctuation">,</span> static_folder<span class="token operator">=</span><span class="token string">'./../../flask-dist'</span><span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">'./../../flask-dist'</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SQLALCHEMY_DATABASE_URI'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'mysql+pymysql://mls:a838502774@106.13.174.205:3306/mls_web'</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SQLALCHEMY_TRACK_MODIFICATIONS'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SQLALCHEMY_UCSO'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
 
-db &#x3D; SQLAlchemy(app)
+db <span class="token operator">=</span> SQLAlchemy<span class="token punctuation">(</span>app<span class="token punctuation">)</span>
 
-@app.route(&#39;&#x2F;&#39;)
-def index():
-    return render_template(&#39;index.html&#39;)
-
-
-@app.route(&#39;&#x2F;getUser&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])   # 查询数据的接口
-def get_user():
-    res &#x3D; db.session.query(User).all()				#User是从models里导入的 
-    temp &#x3D; []
-    for x in res:
-        temp.append(x.to_json())
-    return jsonify(data&#x3D;temp)
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
 
 
-@app.route(&#39;&#x2F;addUser&#39;, methods&#x3D;[&#39;POST&#39;])      #新增数据的接口
-def add_user():
-    data &#x3D; request.json        #获取传过来的参数
-    u &#x3D; User(name&#x3D;data.get(&quot;name&quot;),pwd&#x3D;data.get(&quot;pwd&quot;))      #根据传过来参数创建一条数据
-    db.session.add(u)  #add 是增加数据
-    db.session.commit()   #提交了才会到数据库中
-    return &#39;success&#39;
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/getUser'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment"># 查询数据的接口</span>
+<span class="token keyword">def</span> <span class="token function">get_user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res <span class="token operator">=</span> db<span class="token punctuation">.</span>session<span class="token punctuation">.</span>query<span class="token punctuation">(</span>User<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>				<span class="token comment">#User是从models里导入的 </span>
+    temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> res<span class="token punctuation">:</span>
+        temp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">.</span>to_json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> jsonify<span class="token punctuation">(</span>data<span class="token operator">=</span>temp<span class="token punctuation">)</span>
 
 
-if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
-    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/addUser'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>      <span class="token comment">#新增数据的接口</span>
+<span class="token keyword">def</span> <span class="token function">add_user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data <span class="token operator">=</span> request<span class="token punctuation">.</span>json        <span class="token comment">#获取传过来的参数</span>
+    u <span class="token operator">=</span> User<span class="token punctuation">(</span>name<span class="token operator">=</span>data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>pwd<span class="token operator">=</span>data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"pwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment">#根据传过来参数创建一条数据</span>
+    db<span class="token punctuation">.</span>session<span class="token punctuation">.</span>add<span class="token punctuation">(</span>u<span class="token punctuation">)</span>  <span class="token comment">#add 是增加数据</span>
+    db<span class="token punctuation">.</span>session<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">#提交了才会到数据库中</span>
+    <span class="token keyword">return</span> <span class="token string">'success'</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Flask解决跨域问题">Flask解决跨域问题</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install flask-cors<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> flask-cors<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>flask-cors 有两种用法，一种为全局使用，一种对指定的路由使用</p>
 <p>配置全局路由</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, request
-from flask_cors import CORS
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">from</span> flask_cors <span class="token keyword">import</span> CORS
 
-app &#x3D; Flask(__name__)
-CORS(app, supports_credentials&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+CORS<span class="token punctuation">(</span>app<span class="token punctuation">,</span> supports_credentials<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>配置单行路由</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">from flask import Flask, request
-from flask_cors import cross_origin
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">from</span> flask_cors <span class="token keyword">import</span> cross_origin
 
-app &#x3D; Flask(__name__)
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
 
-@app.route(&#39;&#x2F;&#39;)
-@cross_origin(supports_credentials&#x3D;True)
-def hello():
-    name &#x3D; request.args.get(&quot;name&quot;, &quot;World&quot;)
-    return f&#39;Hello, &#123;name&#125;!&#39;
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@cross_origin</span><span class="token punctuation">(</span>supports_credentials<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"World"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'Hello, </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">!'</span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="服务器后台挂起">服务器后台挂起</h3>
 <p>到这里接口已经可以正常访问了，但是当程序退出时无法访问，这里我使用gunicorn将flask挂起到后台</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装最新版本的gunicorn
-pip install gunicorn
-#安装指定版本的gunicorn
-pip install gunicorn&#x3D;&#x3D;19.9.0
-#异步模式
-pip install gevent&#x3D;&#x3D;1.4.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装最新版本的gunicorn</span>
+pip <span class="token function">install</span> gunicorn
+<span class="token comment">#安装指定版本的gunicorn</span>
+pip <span class="token function">install</span> <span class="token assign-left variable">gunicorn</span><span class="token operator">==</span><span class="token number">19.9</span>.0
+<span class="token comment">#异步模式</span>
+pip <span class="token function">install</span> <span class="token assign-left variable">gevent</span><span class="token operator">==</span><span class="token number">1.4</span>.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>定义常用的配置文件</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">#!usr&#x2F;bin&#x2F;env python
-#encoding:utf-8
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!usr/bin/env python</span>
+<span class="token comment">#encoding:utf-8</span>
  
  
-import os
-import gevent.monkey
-gevent.monkey.patch_all()
-import multiprocessing
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> gevent<span class="token punctuation">.</span>monkey
+gevent<span class="token punctuation">.</span>monkey<span class="token punctuation">.</span>patch_all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> multiprocessing
  
  
-#开发环境可以打开，生产环境可以
-#debug &#x3D; True  
+<span class="token comment">#开发环境可以打开，生产环境可以</span>
+<span class="token comment">#debug = True  </span>
  
-#用于控制errorlog的信息级别，可以设置为debug、info、warning、error、critical
-loglevel &#x3D; &#39;debug&#39;
+<span class="token comment">#用于控制errorlog的信息级别，可以设置为debug、info、warning、error、critical</span>
+loglevel <span class="token operator">=</span> <span class="token string">'debug'</span>
  
-#监听地址+端口
-bind &#x3D; &quot;0.0.0.0:5000&quot;
+<span class="token comment">#监听地址+端口</span>
+bind <span class="token operator">=</span> <span class="token string">"0.0.0.0:5000"</span>
  
-#定义日志存储
-if not os.path.exists(&#39;log&#x2F;&#39;):
-    os.makedirs(&#39;log&#x2F;&#39;)
-pidfile &#x3D; &quot;log&#x2F;gunicorn.pid&quot;
-#访问日志
-accesslog &#x3D; &quot;log&#x2F;access.log&quot;
-#错误日志
-errorlog &#x3D; &quot;log&#x2F;debug.log&quot;
+<span class="token comment">#定义日志存储</span>
+<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">'log/'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span><span class="token string">'log/'</span><span class="token punctuation">)</span>
+pidfile <span class="token operator">=</span> <span class="token string">"log/gunicorn.pid"</span>
+<span class="token comment">#访问日志</span>
+accesslog <span class="token operator">=</span> <span class="token string">"log/access.log"</span>
+<span class="token comment">#错误日志</span>
+errorlog <span class="token operator">=</span> <span class="token string">"log/debug.log"</span>
  
-#开启后台运行，默认值为False
-daemon &#x3D; True
+<span class="token comment">#开启后台运行，默认值为False</span>
+daemon <span class="token operator">=</span> <span class="token boolean">True</span>
  
-#启动的进程数，推荐值为：CPU核数*2+1
-workers &#x3D; multiprocessing.cpu_count()*2+1
+<span class="token comment">#启动的进程数，推荐值为：CPU核数*2+1</span>
+workers <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>cpu_count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">1</span>
  
-#指开启的每个工作进程的模式类型，默认为sync模式，也可使用gevent模式
-worker_class &#x3D; &#39;gevent&#39;
-x_forwarded_for_header &#x3D; &#39;X-FORWARDED-FOR&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#指开启的每个工作进程的模式类型，默认为sync模式，也可使用gevent模式</span>
+worker_class <span class="token operator">=</span> <span class="token string">'gevent'</span>
+x_forwarded_for_header <span class="token operator">=</span> <span class="token string">'X-FORWARDED-FOR'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>启动方式</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 第一种
-gunicorn -w 4 -b 172.19.6.213:5000 api:app
-# 第二种
-gunicorn --config&#x3D;config.py api:app<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 第一种</span>
+gunicorn -w <span class="token number">4</span> -b <span class="token number">172.19</span>.6.213:5000 api:app
+<span class="token comment"># 第二种</span>
+gunicorn --config<span class="token operator">=</span>config.py api:app<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果出现占用情况，可先查看pid然后关停即可</p>
 <pre class="line-numbers language-none"><code class="language-none">netstat -tulpn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>4096即为占位端口的pid</p>
@@ -1235,7 +1235,7 @@ headers<span class="token operator">:</span> headers<span class="token punctuati
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/frontend/Yiqing/" class="b-link-green">CTGU自动打卡</a>
                 </p>
@@ -1865,7 +1865,7 @@ headers<span class="token operator">:</span> headers<span class="token punctuati
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1942,7 +1942,7 @@ headers<span class="token operator">:</span> headers<span class="token punctuati
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 

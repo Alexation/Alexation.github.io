@@ -71,10 +71,10 @@
             })();
         </script>
     
+    <link rel="stylesheet" href="/js/prism/prism.css">
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
     <body>
 
@@ -708,7 +708,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        4 分
                     </div>
                     
                 
@@ -740,12 +740,12 @@
 </li>
 <li>
 <p>起点路线的判断：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># Basic_speeds -&gt; 0.3m&#x2F;s -&gt; 0.5m&#x2F;s -&gt; 0.6m&#x2F;s -&gt; 0.7m&#x2F;s -&gt; 0.9m&#x2F;s -&gt; 1.0m&#x2F;s
-self.basic_speed_list &#x3D; [25, 40, 48, 56, 64, 70]
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Basic_speeds -> 0.3m/s -> 0.5m/s -> 0.6m/s -> 0.7m/s -> 0.9m/s -> 1.0m/s</span>
+self<span class="token punctuation">.</span>basic_speed_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">]</span>
 
-# Question Speed and Route lists
-self.ques_speed_list &#x3D; [25, 40, 32, 70]
-self.ques_route_list &#x3D; [[2], [2,2], [2,1,2], [2]]
+<span class="token comment"># Question Speed and Route lists</span>
+self<span class="token punctuation">.</span>ques_speed_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">]</span>
+self<span class="token punctuation">.</span>ques_route_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这次将所有的配置参数提取到setting.py中构造Setting类来提高封装度，也便于修改参数，ques_route_list即是小车所要行驶的路线通过遍历这个二维列表即可以知道小车的路线，那么，关键就在于转弯路口的判断</p>
 </li>
@@ -922,7 +922,7 @@ self.ques_route_list &#x3D; [[2], [2,2], [2,1,2], [2]]
                     <span class="reprint1-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="https://www.alexation.cn" class="b-link-green">恋し</a>
+                    <a href="https://www.unohe.com" class="b-link-green">恋し</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/contest/ele2/" class="b-link-green">2022湖北省大学生电子设计竞赛C题（TI杯）</a>
                 </p>
@@ -1560,7 +1560,7 @@ self.ques_route_list &#x3D; [[2], [2,2], [2,1,2], [2]]
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">99.4k</span> 字
+                <span class="white-color">99.3k</span> 字
             
 
             
@@ -1637,7 +1637,7 @@ self.ques_route_list &#x3D; [[2], [2,2], [2,1,2], [2]]
     siteTime();
 </script>
 
-
+<script src="/js/prism/prism.js" async></script>
 
 
 
