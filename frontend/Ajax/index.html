@@ -76,7 +76,36 @@ Aj">
         </script>
     
     <link rel="stylesheet" href="/js/prism/prism.css">
-
+    <!-- busuanzi初始值 -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const uvE = document.getElementById('busuanzi_value_site_uv');
+            const pvE = document.getElementById('busuanzi_value_site_pv');
+            const uvObs = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        uvObs.disconnect();
+                        mutation.target.innerHTML = parseInt(mutation.target.innerHTML) + 7561;
+                        break;
+                    }
+                }
+            });
+            const pvObs = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        pvObs.disconnect();
+                        mutation.target.innerHTML = parseInt(mutation.target.innerHTML) + 9643;
+                        break;
+                    }
+                }
+            });
+            const config = {
+                childList: true
+            };
+            uvObs.observe(uvE, config);
+            pvObs.observe(pvE, config);
+        });
+    </script>
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
 </head>
 
@@ -1357,12 +1386,12 @@ type：设置返回内容格式，xml、html、script、json、text、_default<s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
                     <a href="/tags/Javascript/" target="_blank">
                         <span class="chip bg-color">Javascript</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                     <a href="/tags/AES/" target="_blank">

@@ -72,7 +72,36 @@ Scrapy是用纯python实现一个爬取网站数据、提取结构性数据而�
         </script>
     
     <link rel="stylesheet" href="/js/prism/prism.css">
-
+    <!-- busuanzi初始值 -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const uvE = document.getElementById('busuanzi_value_site_uv');
+            const pvE = document.getElementById('busuanzi_value_site_pv');
+            const uvObs = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        uvObs.disconnect();
+                        mutation.target.innerHTML = parseInt(mutation.target.innerHTML) + 7561;
+                        break;
+                    }
+                }
+            });
+            const pvObs = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        pvObs.disconnect();
+                        mutation.target.innerHTML = parseInt(mutation.target.innerHTML) + 9643;
+                        break;
+                    }
+                }
+            });
+            const config = {
+                childList: true
+            };
+            uvObs.observe(uvE, config);
+            pvObs.observe(pvE, config);
+        });
+    </script>
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
 </head>
 

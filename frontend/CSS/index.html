@@ -78,7 +78,36 @@ CSS 选择">
         </script>
     
     <link rel="stylesheet" href="/js/prism/prism.css">
-
+    <!-- busuanzi初始值 -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const uvE = document.getElementById('busuanzi_value_site_uv');
+            const pvE = document.getElementById('busuanzi_value_site_pv');
+            const uvObs = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        uvObs.disconnect();
+                        mutation.target.innerHTML = parseInt(mutation.target.innerHTML) + 7561;
+                        break;
+                    }
+                }
+            });
+            const pvObs = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        pvObs.disconnect();
+                        mutation.target.innerHTML = parseInt(mutation.target.innerHTML) + 9643;
+                        break;
+                    }
+                }
+            });
+            const config = {
+                childList: true
+            };
+            uvObs.observe(uvE, config);
+            pvObs.observe(pvE, config);
+        });
+    </script>
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="恋し" type="application/atom+xml">
 </head>
 
@@ -657,12 +686,12 @@ CSS 选择">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/" target="_blank">
-                                <span class="chip bg-color">Web</span>
-                            </a>
-                        
                             <a href="/tags/CSS/" target="_blank">
                                 <span class="chip bg-color">CSS</span>
+                            </a>
+                        
+                            <a href="/tags/Web/" target="_blank">
+                                <span class="chip bg-color">Web</span>
                             </a>
                         
                     </div>
