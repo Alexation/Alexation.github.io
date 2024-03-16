@@ -6,7 +6,7 @@
   <link href="https://www.unohe.com/atom.xml" rel="self"/>
   
   <link href="https://www.unohe.com/"/>
-  <updated>2024-03-16T09:33:27.260Z</updated>
+  <updated>2024-03-16T14:58:20.373Z</updated>
   <id>https://www.unohe.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.unohe.com/Blog/1/"/>
     <id>https://www.unohe.com/Blog/1/</id>
     <published>2024-03-13T04:05:05.000Z</published>
-    <updated>2024-03-16T09:33:27.260Z</updated>
+    <updated>2024-03-16T14:58:20.373Z</updated>
     
     <content type="html"><![CDATA[<p>2024年，是我本科毕业的一年，在我的学业生涯中注定扮演着极其不平凡的一年。回望着四年经历，我有太多太多想说的话，想做的事去为我的本科阶段画上一个圆满的句号。那么，为了迎接我的新生活，我决定重新找回在2021年创立的博客，也就是在我大二时迈入计算机学科的那一刻的初心。</p><p>当已经长大两岁的我再回头看自己写的文章百感交集（<s>虽然现在写得也不咋地）</s>，但是我认识到技术一直在进步，时代也一直在发展，没有最好，只有更好。那么，我也想为我的博客做一次更新，作为见证我技术进步最重要的一个地方。</p><p>本次博客的主题迁移至Anzhiyu，作者是基于Butterfly主题进行魔改的，我也结合了自己的爱好与一些优秀的博主进行了二次创作，但因为魔改源码需要深入了解代码结构与目录，我耗时两天才完成本次迁移工作，其中大量的文章内容还没有来得及更改请见谅。</p><p>最后，很高兴认识你，我是UNOHE。</p>]]></content>
     
@@ -293,9 +293,9 @@
     <category term="后端" scheme="https://www.unohe.com/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
-    <category term="FastAPI" scheme="https://www.unohe.com/tags/FastAPI/"/>
-    
     <category term="Python" scheme="https://www.unohe.com/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://www.unohe.com/tags/FastAPI/"/>
     
   </entry>
   
