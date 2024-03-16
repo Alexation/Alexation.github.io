@@ -1,0 +1,1472 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>CSS基础知识介绍！ | UNOHE</title><meta name="keywords" content="CSS"><meta name="author" content="UNOHE"><meta name="copyright" content="UNOHE"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="CSS基础知识介绍！"><meta name="application-name" content="CSS基础知识介绍！"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="CSS基础知识介绍！"><meta property="og:url" content="https://www.unohe.com/Web/CSS/index.html"><meta property="og:site_name" content="UNOHE"><meta property="og:description" content="CSS的主要使用场景就是美化网页、布局页面的  HTML的局限性：只关注内容的语义 CSS-网页美容师：层叠样式表的简称 CSS基础选择器 CSS语法规范：有选择器以及一条或多条声明 标签选择器：用HTML标签名称作为选择器  CSS 选择器 类选择器 .类名 &amp;amp;#123; 	属性1: 属性值1;"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://s2.loli.net/2024/03/16/arkWf2cBxJZuy8U.png"><meta property="article:author" content="UNOHE"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://s2.loli.net/2024/03/16/arkWf2cBxJZuy8U.png"><meta name="description" content="CSS的主要使用场景就是美化网页、布局页面的  HTML的局限性：只关注内容的语义 CSS-网页美容师：层叠样式表的简称 CSS基础选择器 CSS语法规范：有选择器以及一条或多条声明 标签选择器：用HTML标签名称作为选择器  CSS 选择器 类选择器 .类名 &amp;amp;#123; 	属性1: 属性值1;"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://www.unohe.com/Web/CSS/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"UNOHE","mode":"tianli","switchBtn":false,"btnLink":"https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00","randomNum":3,"basicWordCount":1000,"key":"bda6671fa72f28df9b75","Referer":"https://www.unohe.com"},
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"3HmyCoI0FotMuQmk","LingQueMonitorID":"3HmyCoI0FotMuQmk"},
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":"https://friends.anheyu.com/"},
+  navMusic: true,
+  mainTone: {"mode":"api","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":["🤖️ 益智玩具爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专注交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 一言不合就开干"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":true,"limitCount":50,"languages":{"author":"作者: UNOHE","link":"链接: ","source":"来源: UNOHE","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'UNOHE',
+  title: 'CSS基础知识介绍！',
+  postAI: '',
+  pageFillDescription: 'CSS的主要使用场景就是美化网页、布局页面的, CSS 选择器, 类选择器, 多类名, id选择器, 通配符选择器, 基础选择器总结, CSS 字体属性, 字体系列, 大小, 粗细, 文字样式, 字体符合属性, CSS字体属性总结, CSS 文本属性, 文本颜色, 对齐文本, 装饰文本, 文本缩进, 行间距, CSS文本属性总结, CSS 引入方式, 内部样式表, 行内样式表, 外部样式表, CSS引入方式总结, Emmet语法, 快速生成HTML结构语法, 快速生成CSS样式语法, 快速格式化代码, CSS复合选择器, 后代选择器（重要）, 子选择器（重要）, 并集选择器（重要）, 链接伪类选择器, 注意事项, 开发写法, focus伪类选择器, 复合选择器总结, CSS的元素显示模式, 块元素, 行内元素, 行内块元素, 元素显示模式转换, 一个小工具的使用 snipaste, 单行文字垂直居中代码, CSS的背景, 背景颜色, 背景图片, 背景平铺, 背景图片位置, 背景图像固定（背景附着）, 背景复合写法, 背景颜色半透明, 背景总结, CSS三大特性, 层叠性, 继承性, 行高的继承性, 优先级的主要使用场景就是美化网页布局页面的的局限性只关注内容的语义网页美容师层叠样式表的简称基础选择器语法规范有选择器以及一条或多条声明标签选择器用标签名称作为选择器选择器类选择器类名属性属性值类名注意类选择器使用进行标识后面紧跟类名自定义我们自己命名的可以理解为给这个标签起了一个名字来表示长名称或词组可以使用中横线来为选择器命名不要使用纯数字中文等命名尽量使用英文字母来表示命名要有意义尽量使别人一眼就知道这个类名的目的命名规范见附件前端开发规范手册多类名在标签中填写多类名每个类名用空格分开选择器名属性属性值注意属性只能在每个文档中出现一次选择器和类选择器的区别类选择器好比人的名字一个人可以有多个名字同时一个名字也可以被多个人使用选择器好比人的身份证号码全中国是唯一的不得重复选择器和类选择器最大的不同在于使用次数上类选择器在修改样式中用的最多选择器一般用于页面唯一性的元素经常和搭配使用通配符选择器在中通配符选择器用定义他表示选取页面中所有元素属性属性值特殊情况才使用清除所有元素标签的内外边距基础选择器总结基础选择器作用特点使用情况用法标签选择器可以选出所有相同的标签比如不能差异化选择较多类选择器可以选出个或多个标签可以根据需求选择非常多选择器一次只能选择个标签属性只能在每个文档中出现一次一般和搭配通配符选择器选择所有的标签选择的太多有部分不需要特殊情况使用字体属性字体系列使用属性定义文本的字体系列微软雅黑各种字体之间必须使用英文状态下的逗号隔开一般情况下如果有空格隔开的多个单词组成的字体加引号尽量使用系统默认自带字体保证在任何用户的浏览器中都能正常显示大小使用属性定义字体大小大小是我们网页的最常用的单位谷歌浏览器默认的文字大小为不同浏览器可能默认显示的字号大小不一致我们尽量给一个明确值大小不要默认大小可以给指定整个页面的文字大小标题标签比较特殊需要单独指定文字大小粗细使用属性设置文本粗细属性值描述默认值不加粗定义粗体加粗等同于而等同于数字后面不加单位学会让加粗标签比如和等不加粗或者其他标签加粗实际开发时我们更喜欢用数字表示粗细文字样式使用属性设置文本的风格属性值作用默认值浏览器会显示标准的字体样式浏览器会显示斜体的字体样式字体符合属性字体属性可以把以上文字样式综合来写节约代码复合属性有要求使用属性时必须按上面语法格式中的顺序书写不能更换顺序并且各个属性之间以空格分开不需要设置的属性可以省略取默认值但必须保留和属性否则属性将不起作用字体属性总结属性表示注意点字号我们通常用的单位时像素一定要跟上单位字体实际工作中按照团队约定来写字体字体粗细记住加粗时或者不加粗是或者不加单位字体样式记住倾斜是不倾斜是工作中我们最常用字体连写字体连写是有顺序的不能随意换位置字体和字号必须有文本属性文本属性可定义文本的外观比如文本的颜色对齐文本装饰文本文本缩进行间距等文本颜色属性用于定义文本颜色表示属性值预定义的颜色值还有十六进制代码或开发中最常用的是十六进制对齐文本属性用于设置元素内文本内容的水平对齐方式属性值解释左对齐默认值右对齐居中对齐装饰文本属性规定添加到文本的修饰可以给文本添加下划线删除线上划线等属性值描述默认没有装饰线下划线链接自带下划线常用上划线几乎不用删除线不常用文本缩进属性用来指定文本的第一行的缩进通常是将段落的首行缩进是一个相对单位就是当前元素个文字的大小如果当前元素没有大小则会按照父元素的一个文字大小行间距属性用于设置行间的距离可以控制文字行与行之间的距离这一行最下边到下一行最下边的距离就是行高文本属性总结属性表示注意点文本颜色通常用十六进制简体形式文本对齐可以设置文字水平的对齐方式文本缩进通常我们用于段落首行缩进两个字的距离文本修饰记住添加下划线取消下划线行高控制行与行之间的距离引入方式按照样式书写的位置或者引入的方式可以分为三大类行内样式表行内式内部样式表嵌入式外部样式表链接式内部样式表内部样式表是写到页面内部是将所有的代码抽取出来单独放到一个标签中行内样式表行内样式表是在元素标签内部的属性中设定样式适合简单修改样式青春不常在抓紧谈恋爱其实就是标签的属性在双引号中间写法要符合规范可以控制当前的标签设置样式由于书写繁琐并且没有体现出结构与样式分离的思想所以不推荐大量使用只有对当前元素添加简单样式的时候可以考虑使用使用行内样式表设定通常也被称为行内式引入外部样式表实际开发都是外部样式表适合于样式比较多的情况样式单独写到文件中之后把文件引入到页面中使用引入外部样式表分为两步新建一个后缀名为的样式文件把所有的代码都放在此文件中在页面中使用标签引入这个文件文件路径属性作用定义当前文档与被链接文档之间的关系在这里需要指定为表示被链接的文档是一个样式表文件定义所连接外部样式表文件的相对路径绝对路径都可引入方式总结样式表优点缺点使用情况控制范围行内样式表书写方便权重高结构样式混写较少控制一个标签内部样式表部分结构和样式相分离没有彻底分离较多控制一个页面外部样式表完全实现结构和样式相分离需要引入最多推荐控制多个页面语法语法的前身是它使用缩写来提高的编写速度内部已经集成该语法快速生成结构语法生成标签直接输入标签名按键即可如果想要生成多个相同标签加上就可以了如果有父子级关系的标签可以用比如就可以了如果有兄弟关系的标签用就可以了比如如果生成带有类名或者名字的直接写或者键就可以了如果生成的类名是有顺序的可以用自增符号如果想要在生成的签内部写内容可以用表示快速生成样式语法基本采取简写形式即可比如按就可以生成比如按可以生成快速格式化代码设置搜索勾选复合选择器在中可以根据选择器的类型把选择器分为基础选择器和复合选择器复合选择器是建立在基础选择器之上对基本选择器进行组合而形成的复合选择器可以更准确更高效的选择目标元素标签复合选择器是由两个或多个基础选择器通过不同的方式组合而成的常用的复合选择器包括后代选择器子选择器并集选择器伪类选择器等后代选择器重要后代选择器又称为包含选择器可以选择父元素里面的子元素其写法就是把外侧标签写在前面内层标签写在后面中间用空格分隔当标签发生嵌套是内层标签就成为外层标签的后代元素元素样式声明上述语法表示选择元素里面的所有元素后代元素子选择器重要子元素选择器子选择器只能选择作为某元素的最近一级子元素简单理解就是选亲儿子元素元素元素样式声明上述语法表示选择元素里面的所有直接后代子元素元素并集选择器重要并集选择器可以选择多组标签同时为他们定义相同的格式通常用于集体声明并集选择器是通各个选择器通过英文逗号连接而成任何形式的选择器都可以作为并集选择器的一部分元素元素样式声明上述语法表示选择元素和元素元素和元素中间用逗号隔开逗号可以理解为和的意思并集选择器通常用于集体声明链接伪类选择器伪类选择器用于向某些选择器添加特殊的效果比如给链接添加特殊效果或选择第一个第个元素选择所有未被访问的链接选择所有已被访问的链接选择鼠标指针位于其上的链接选择活动链接鼠标按下未弹起注意事项为确保生效请按照的顺序声明记忆法或者宝宝因为链接在浏览器中具有默认样式所以我们实际工作中都需要给链接单独指定样式开发写法伪类选择器伪类选择器用于选取获得焦点的表单元素焦点就是光标一般情况类表单元素才能获取因此这个选择器也主要针对表单元素来说复合选择器总结选择器作用特征使用情况隔开符号及用法后代选择器选择后代元素子孙后代较多符号是空格子代选择器选择最近一级元素亲儿子较少符号是大于并集选择器选择相同样式的元素集体声明较多符号是逗号链接伪类选择器选择不同状态的链接和链接相关较多重点记住和选择器选择获得光标的表单和表单相关较少记住的元素显示模式元素显示模式就是元素标签以什么方式进行显示了解他们的特点可以更好的布局我们的网页比如自己占一行一行可以放多个元素一般分为块元素和行内元素两种类型块元素常见的块元素有等其中最典型块级元素的特点比较霸道自己独占一行高度宽度外边距以及内边距都可以控制宽度默认是容器父级宽度的是一个容器及盒子里面可以放行内或者块级元素注意文字类的元素内不能使用块级元素标签主要用于存放文字因此里面不能放块级元素特别是同理等都是文字类块级标签里面也不能放其他块级元素行内元素常见的行内元素有等其中标签是最典型的行内元素有的地方也将行内元素成为内联元素行内元素的特点相邻行内元素在一行上有一行可以显示多个高宽直接设置是无效的默认的宽度就是它本身的宽度行内元素只能容纳文本或其他行内元素注意链接里面不能在放链接特殊情况链接里面可以放块级元素但是给转换一下块级模式最安全行内块元素在行内元素中有几个特殊的标签他们同时具有块元素和行内元素的特点有些资料称他们为行内块元素行内块元素的特点和相邻行内元素行内块在一行上但是他们之间会有空白间隙一行可以显示多个行内元素特点默认宽度就是它本身内容的宽度行内元素特点高度行高外边距以及内边距都可以控制块级元素特点元素模式元素排列设置样式默认宽度包含块级元素一行只能放一个块级元素可以设置宽度高度容器的容器可以包含任何标签行内元素一行可以放多个行内元素不可以设置宽高本身内容宽度容器文本或其他行内元素行内块元素一行放多个行内块元素可以设置宽高本身内容宽度元素显示模式转换特殊情况下我们需要元素模式的转换简单理解一个模式的元素需要另一种元素的特性比如想要增加链接的触发范围一个小工具的使用截图悬浮查看颜色代码复制单行文字垂直居中代码没有提供可以通过小技巧实现让文字的行高等于盒子的高度的背景通过背景属性可以给页面元素添加背景样式背景属性可以设置背景颜色背景图片背景平铺背景图片位置背景图像固定等背景颜色属性定义了元素的背景颜色颜色值一般情况下元素背景颜色默认值是透明也可手动指定背景图片属性描述了元素的背景图像实际开发常见于或者一些装饰性的小图片或者是超大的背景图片优点是非常便于控制位置精灵图也是一种运用场景参数作用无背景图默认使用绝对或相对地址指定背景图像背景平铺如果要在页面上对背景图像进行平铺可以使用属性参数值作用背景图像在纵向和横向上平铺默认的背景图像不平铺背景图像在横向上平铺背景图像在纵向上平铺背景图片位置利用属性可以改变图片在背景中的位置参数代表的意思是坐标和坐标可以使用方位名词或者精确单位参数值说明百分数由浮点数字和单位标识符组成的长度值方位名词参数是方位名词如果两个值都是方位名词则两个值得前后顺序无关如果只指定一个方位名词另一个值省略则第二个值默认居中对齐参数是精确单位如果参数值是精确坐标那么第一个肯定是坐标第二个一定是坐标如果只指定一个数值那该数值一定是坐标另一个默认垂直居中参数是混合单位如果指定得两个值是精确单位和方位名词混合使用顺序不能变背景图像固定背景附着属性设置背景图像是否固定或者随着页面得其余部分滚动后期可以制作视差滚动效果参数作用背景图像随着对象内容滚动背景图像固定背景复合写法为了简化背景属性的代码我们可以将这些属性合并简写在同一个属性中从而减少代码量当使用简写属性时没有一定的书写顺序一般习惯约定顺序为背景颜色背景图片地址背景平铺背景图像滚动背景图片位置实际开发中我们更提倡的写法背景颜色半透明为我们提供了半透明的效果红绿蓝不透明度取值范围实际开发中习惯的的省略写为注意背景半透明是指盒子背景半透明盒子里面的内容不受影响新增属性时版本浏览器才支持的但是现在实际开发我们不太关注兼容性写法了可以放心使用背景总结属性作用值背景颜色预定义的颜色值十六进制代码背景图片图片路径是否平铺背景位置分别是背景附着背景滚动背景固定背景简写书写更简单背景颜色背景图片地址背景平铺背景滚动背景位置背景色半透明背景颜色半透明后面必须四个值背景图片实际开发常见于或者一些装饰性的小图片或者是超大的背景图片优点是非常便于控制位置精灵图也是一种运用场景三大特性中有三个非常重要的特性层叠性继承性优先级层叠性相同选择器给设置相同的样式此时一个样式就会覆盖另一个冲突的样式层叠性原则样式冲突遵循原则是就近原则哪个样式结构近就执行哪个样式样式不冲突不会层叠继承性中的继承子标签会继承父标签的某些样式比如文本的颜色和字号恰当使用继承可以简化代码降低样式的复杂性子元素可以继承父元素的样式这些元素开头的可以继承以及属性继承性口诀龙生龙凤生凤老鼠的孩子会打洞行高的继承性优先级当同一个元素指定多个选择器就会有优先级选择器选择器权重继承或者元素选择器类选择器伪类选择器选择器行内样式优先级注意点权重是由组数字组成但是不会有进位类选择器永远大于元素选择器选择器永远大于类选择器以此类推等级判断从左到右如果某一位数位相同则判断下一位数值通配符和继承权重为',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-16 17:56:50',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="/js/busuanzi_ini.js"></script><link rel="stylesheet" href="/css/spark.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="UNOHE" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/favicon.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><script>function initMourn() {
+    const date = new Date();
+    const today = (date.getMonth() + 1) + "-" + date.getDate()
+    const mourn_days = ["4-5","5-12","7-7","9-18","12-13"]
+    if (mourn_days.includes(today)) {
+        document.documentElement.style.filter = "grayscale(1)";
+    }}
+initMourn();</script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.unohe.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Yiqing" title="签到全栈系统"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/cxARdlnytjPbXuL.png" alt="签到全栈系统"/><span class="back-menu-item-text">签到全栈系统</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/ncm2mp3" title="NCM-&gt;MP3"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/aVmysP3JS4t5jNF.png" alt="NCM-&gt;MP3"/><span class="back-menu-item-text">NCM-&gt;MP3</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Scramble_Classes" title="选课接口封装"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/kJIMGiSmh6T1Bzv.png" alt="选课接口封装"/><span class="back-menu-item-text">选课接口封装</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">UNOHE</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="anzhiyufont anzhiyu-icon-bolt faa-tada" style="font-size: 0.9em;"></i><span> 日志</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 订阅</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=385817663&amp;server=netease&amp;type=playlist"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 游戏天地</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/media/wechat.bmp" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/wechat.bmp"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/media/alipay.bmp" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/alipay.bmp"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Ajax/" style="font-size: 1.05rem;">Ajax<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 1.05rem;">CSS<sup>1</sup></a><a href="/tags/FastAPI/" style="font-size: 1.05rem;">FastAPI<sup>1</sup></a><a href="/tags/Flask/" style="font-size: 1.05rem;">Flask<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 1.05rem;">HTML<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>1</sup></a><a href="/tags/ICM-MCM/" style="font-size: 1.05rem;">ICM/MCM<sup>2</sup></a><a href="/tags/JavaScript/" style="font-size: 1.05rem;">JavaScript<sup>2</sup></a><a href="/tags/Javascript/" style="font-size: 1.05rem;">Javascript<sup>1</sup></a><a href="/tags/Jupyter/" style="font-size: 1.05rem;">Jupyter<sup>1</sup></a><a href="/tags/Matplotlib/" style="font-size: 1.05rem;">Matplotlib<sup>1</sup></a><a href="/tags/MySQL/" style="font-size: 1.05rem;">MySQL<sup>2</sup></a><a href="/tags/NUEDC/" style="font-size: 1.05rem;">NUEDC<sup>3</sup></a><a href="/tags/Node-js/" style="font-size: 1.05rem;">Node.js<sup>1</sup></a><a href="/tags/Numpy/" style="font-size: 1.05rem;">Numpy<sup>1</sup></a><a href="/tags/Pyside2/" style="font-size: 1.05rem;">Pyside2<sup>2</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>8</sup></a><a href="/tags/SQL/" style="font-size: 1.05rem;">SQL<sup>1</sup></a><a href="/tags/Scrapy/" style="font-size: 1.05rem;">Scrapy<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 1.05rem;">Vue<sup>2</sup></a><a href="/tags/XSS/" style="font-size: 1.05rem;">XSS<sup>1</sup></a><a href="/tags/jQuery/" style="font-size: 1.05rem;">jQuery<sup>1</sup></a><a href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">加密算法<sup>1</sup></a><a href="/tags/%E6%B7%B7%E6%B7%86/" style="font-size: 1.05rem;">混淆<sup>1</sup></a><a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 1.05rem;">物联网<sup>1</sup></a><a href="/tags/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">电力系统<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archive/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/02/"><span class="card-archive-list-date">二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2022/08/"><span class="card-archive-list-date">八月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2022/07/"><span class="card-archive-list-date">七月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2022/06/"><span class="card-archive-list-date">六月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url">前端</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/CSS/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>CSS</span></a></span></div></div><h1 class="post-title" itemprop="name headline">CSS基础知识介绍！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2021-09-03T11:10:18.000Z" title="发表于 2021-09-03 19:10:18">2021-09-03</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-03-16T09:56:50.038Z" title="更新于 2024-03-16 17:56:50">2024-03-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">5.8k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>18分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="CSS基础知识介绍！"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为宜昌"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>宜昌</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://s2.loli.net/2024/03/16/arkWf2cBxJZuy8U.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.unohe.com/Web/CSS/"><header><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url">前端</a><a href="/tags/CSS/" tabindex="-1" itemprop="url">CSS</a><h1 id="CrawlerTitle" itemprop="name headline">CSS基础知识介绍！</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">UNOHE</span><time itemprop="dateCreated datePublished" datetime="2021-09-03T11:10:18.000Z" title="发表于 2021-09-03 19:10:18">2021-09-03</time><time itemprop="dateCreated datePublished" datetime="2024-03-16T09:56:50.038Z" title="更新于 2024-03-16 17:56:50">2024-03-16</time></header><h2 id="CSS的主要使用场景就是美化网页、布局页面的">CSS的主要使用场景就是美化网页、布局页面的</h2>
+<ul>
+<li>HTML的局限性：只关注内容的语义</li>
+<li>CSS-网页美容师：层叠样式表的简称</li>
+<li>CSS基础选择器</li>
+<li>CSS语法规范：有选择器以及一条或多条声明</li>
+<li>标签选择器：用HTML标签名称作为选择器</li>
+</ul>
+<h3 id="CSS-选择器">CSS 选择器</h3>
+<h4 id="类选择器">类选择器</h4>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.类名</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+&lt;div class=<span class="token string">"类名"</span> </code></pre>
+<p>⚠ <strong>注意</strong></p>
+<ol>
+<li>类选择器使用&quot;.&quot;进行标识，后面紧跟类名（自定义，我们自己命名的）</li>
+<li>可以理解为给这个标签起了一个名字，来表示</li>
+<li>长名称或词组可以使用中横线来为选择器命名</li>
+<li>不要使用纯数字、中文等命名，尽量使用英文字母来表示</li>
+<li>命名要有意义，尽量使别人一眼就知道这个类名的目的</li>
+<li>命名规范：见附件（Web前端开发规范手册.doc）</li>
+</ol>
+<h4 id="多类名">多类名</h4>
+<ul>
+<li>在标签class中填写多类名</li>
+<li>每个类名用空格分开</li>
+</ul>
+<h4 id="id选择器">id选择器</h4>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">#id名</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1；
+	...
+<span class="token punctuation">&#125;</span></code></pre>
+<p><strong>注意id属性只能在每个HTML文档中出现一次。</strong></p>
+<p>id选择器和类选择器的区别</p>
+<ol>
+<li>类选择器好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用</li>
+<li>id选择器好比人的身份证号码，全中国是唯一的，不得重复</li>
+<li>id选择器和类选择器最大的不同在于使用次数上</li>
+<li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素，经常和JS搭配使用</li>
+</ol>
+<h4 id="通配符选择器">通配符选择器</h4>
+<p>在CSS中，通配符选择器用&quot;*&quot;定义，他表示选取页面中所有元素</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">属性1</span><span class="token punctuation">:</span> 属性值1；
+	...
+<span class="token punctuation">&#125;</span>
+<span class="token selector"># 特殊情况才使用（清除所有元素标签的内外边距）
+*</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h4 id="基础选择器总结">基础选择器总结</h4>
+<table>
+<thead>
+<tr>
+<th>基础选择器</th>
+<th>作用</th>
+<th>特点</th>
+<th>使用情况</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签选择器</td>
+<td>可以选出所有相同的标签，比如p</td>
+<td>不能差异化选择</td>
+<td>较多</td>
+<td>p {color: red;}</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>可以选出1个或多个标签</td>
+<td>可以根据需求选择</td>
+<td>非常多</td>
+<td>.nav {color: red;}</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>一次只能选择1个标签</td>
+<td>id属性只能在每个HTML文档中出现一次</td>
+<td>一般和JS搭配</td>
+<td>#nav {color: red;}</td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>选择所有的标签</td>
+<td>选择的太多，有部分不需要</td>
+<td>特殊情况使用</td>
+<td>* {color: red;}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-字体属性">CSS 字体属性</h3>
+<h4 id="字体系列">字体系列</h4>
+<p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">"微软雅黑"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token selector">body</span> <span class="token punctuation">&#123;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">"Microsoft YaHei"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span></code></pre>
+<ul>
+<li>各种字体之间必须使用英文状态下的逗号隔开</li>
+<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
+<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正常显示</li>
+</ul>
+<h4 id="大小">大小</h4>
+<p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<ul>
+<li>px大小是我们网页的最常用的单位</li>
+<li>谷歌浏览器默认的文字大小为16px</li>
+<li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li>
+<li>可以给body指定整个页面的文字大小</li>
+<li>标题标签比较特殊，需要单独指定文字大小</li>
+</ul>
+<h4 id="粗细">粗细</h4>
+<p>CSS使用<strong>font-weight</strong>属性设置文本粗细</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>默认值（不加粗）</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>定义粗体（加粗）</td>
+</tr>
+<tr>
+<td>100~900·</td>
+<td>400等同于normal，而700等同于bold（数字后面不加单位）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>学会让加粗标签（比如h和strong等）不加粗，或者其他标签加粗</li>
+<li>实际开发时，我们更喜欢用数字表示粗细</li>
+</ul>
+<h4 id="文字样式">文字样式</h4>
+<p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">P</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>默认值，浏览器会显示标准的字体样式font-style：normal；</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>浏览器会显示斜体的字体样式</td>
+</tr>
+</tbody>
+</table>
+<h4 id="字体符合属性">字体符合属性</h4>
+<p>字体属性可以把以上文字样式综合来写，节约代码</p>
+<pre class="language-css" data-language="css"><code class="language-css"># 复合属性有要求
+<span class="token property">font</span><span class="token punctuation">:</span> font-style font-weight font-size/line-height font-family
+<span class="token property">font</span><span class="token punctuation">:</span> italic 700 16px Microsoft yahei</code></pre>
+<ul>
+<li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性之间以空格分开</li>
+<li>不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用</li>
+</ul>
+<h4 id="CSS字体属性总结">CSS字体属性总结</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font-size</td>
+<td>字号</td>
+<td>我们通常用的单位时px像素，一定要跟上单位</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>字体</td>
+<td>实际工作中按照团队约定来写字体</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>字体粗细</td>
+<td>记住加粗时700或者bold不加粗是normal或者400（不加单位</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>字体样式</td>
+<td>记住倾斜是italic    不倾斜是normal工作中我们最常用normal</td>
+</tr>
+<tr>
+<td>font</td>
+<td>字体连写</td>
+<td>字体连写是有顺序的，不能随意换位置，字体和字号必须有</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-文本属性">CSS 文本属性</h3>
+<p>CSS Text（文本）属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
+<h4 id="文本颜色">文本颜色</h4>
+<p><strong>color</strong>属性用于定义文本颜色</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预定义的颜色值</td>
+<td>red，green，blue，还有pink！</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>#FF0000，#FF6600</td>
+</tr>
+<tr>
+<td>RGB代码</td>
+<td>rgb(255,0,0)或rgb(100%,0%,0%)</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>开发中最常用的是十六进制</strong></em></p>
+<h4 id="对齐文本">对齐文本</h4>
+<p><strong>text-align</strong>属性用于设置元素内文本内容的水平对齐方式</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left</td>
+<td>左对齐（默认值）</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+</tbody>
+</table>
+<h4 id="装饰文本">装饰文本</h4>
+<p><strong>text-decoration</strong>属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>默认。没有装饰线</td>
+</tr>
+<tr>
+<td>underline</td>
+<td>下划线。链接a自带下划线（常用）</td>
+</tr>
+<tr>
+<td>overline</td>
+<td>上划线。（几乎不用）</td>
+</tr>
+<tr>
+<td>line-through</td>
+<td>删除线。（不常用）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="文本缩进">文本缩进</h4>
+<p><strong>text-indent</strong>属性用来指定文本的<strong>第一行</strong>的缩进，通常是将段落的首行缩进</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">text-indent</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+	<span class="token property">text-indent</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有大小，则会按照父元素的一个文字大小</p>
+<h4 id="行间距">行间距</h4>
+<p><strong>line-height</strong>属性用于设置行间的距离，可以控制文字行与行之间的距离</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>这一行最下边到下一行最下边的距离就是行高</p>
+<h4 id="CSS文本属性总结">CSS文本属性总结</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>文本颜色</td>
+<td>通常用十六进制，简体形式#fff</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>文本对齐</td>
+<td>可以设置文字水平的对齐方式</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>文本缩进</td>
+<td>通常我们用于段落首行缩进两个字的距离</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+<td>文本修饰</td>
+<td>记住添加下划线underline、取消下划线none</td>
+</tr>
+<tr>
+<td>line-height</td>
+<td>行高</td>
+<td>控制行与行之间的距离</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-引入方式">CSS 引入方式</h3>
+<p>按照CSS样式书写的位置（或者引入的方式），可以分为三大类：行内样式表（行内式）、内部样式表（嵌入式）、外部样式表（链接式）</p>
+<h4 id="内部样式表">内部样式表</h4>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">内部样式表是写到HTML页面内部，是将所有的CSS代码抽取出来，单独放到一个&lt;style>标签中
+&lt;style>
+	div</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+		<span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+&lt;/style></code></pre>
+<h4 id="行内样式表">行内样式表</h4>
+<pre class="language-markup" data-language="markup"><code class="language-markup">行内样式表是在元素标签内部的style属性中设定CSS样式，适合简单修改样式
+＜div style="color:red; font-size: 12px;">青春不常在，抓紧谈恋爱</code></pre>
+<ul>
+<li>style其实就是标签的属性</li>
+<li>在双引号中间，写法要符合CSS规范</li>
+<li>可以控制当前的标签设置样式</li>
+<li>由于书写繁琐，并且没有体现出结构与样式分离的思想，所以不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
+<li>使用行内样式表设定CSS，通常也被称为行内式引入</li>
+</ul>
+<h4 id="外部样式表">外部样式表</h4>
+<p>实际开发都是外部样式表，适合于样式比较多的情况:样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
+<p>引入外部样式表分为两步：</p>
+<pre class="language-markup" data-language="markup"><code class="language-markup">1. 新建一个后缀名为.css的样式文件，把所有的CSS代码都放在此文件中
+2. 在HTML页面中，使用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span><span class="token punctuation">></span></span>标签引入这个文件
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css文件路径<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rel</td>
+<td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
+</tr>
+<tr>
+<td>href</td>
+<td>定义所连接外部样式表文件的URL，相对路径、绝对路径都可</td>
+</tr>
+</tbody>
+</table>
+<h4 id="CSS引入方式总结">CSS引入方式总结</h4>
+<table>
+<thead>
+<tr>
+<th>样式表</th>
+<th>优点</th>
+<th>缺点</th>
+<th>使用情况</th>
+<th>控制范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行内样式表</td>
+<td>书写方便，权重高</td>
+<td>结构样式混写</td>
+<td>较少</td>
+<td>控制一个标签</td>
+</tr>
+<tr>
+<td>内部样式表</td>
+<td>部分结构和样式相分离</td>
+<td>没有彻底分离</td>
+<td>较多</td>
+<td>控制一个页面</td>
+</tr>
+<tr>
+<td>外部样式表</td>
+<td>完全实现结构和样式相分离</td>
+<td>需要引入</td>
+<td>最多，推荐</td>
+<td>控制多个页面</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Emmet语法">Emmet语法</h3>
+<p>Emmet语法的前身是Zen coding，它使用缩写，来提高html、css的编写速度，Vscode内部已经集成该语法。</p>
+<h4 id="快速生成HTML结构语法">快速生成HTML结构语法</h4>
+<ol>
+<li>生成标签直接输入标签名按tab键即可</li>
+<li>如果想要生成多个相同标签加上*就可以了</li>
+<li>如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</li>
+<li>如果有兄弟关系的标签，用＋就可以了比如div+p</li>
+<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
+<li>如果生成的div类名是有顺序的，可以用自增符号$</li>
+<li>如果想要在生成的$签内部写内容可以用{}表示</li>
+</ol>
+<h4 id="快速生成CSS样式语法">快速生成CSS样式语法</h4>
+<p>CSS基本采取简写形式即可</p>
+<ul>
+<li>比如 w200 按tab就可以生成 width: 200px;</li>
+<li>比如 lh26 按tab可以生成 line-height: 26px;</li>
+</ul>
+<h4 id="快速格式化代码">快速格式化代码</h4>
+<p>设置搜索format勾选format on save</p>
+<h3 id="CSS复合选择器">CSS复合选择器</h3>
+<p>在CSS中，可以根据选择器的类型把选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>，复合选择器是建立在基础选择器之上，对基本选择器进行组合而形成的</p>
+<ul>
+<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
+<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
+<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
+</ul>
+<h4 id="后代选择器（重要）">后代选择器（重要）</h4>
+<p>后代选择器又称为包含选择器，可以选择父元素里面的子元素。其写法就是把外侧标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套是，内层标签就成为外层标签的后代。</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">元素1 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span></code></pre>
+<p>上述语法表示选择<strong>元素1里面的所有元素2</strong>（后代元素）</p>
+<h4 id="子选择器（重要）">子选择器（重要）</h4>
+<p>子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">元素1 > 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span></code></pre>
+<p>上述语法表示选择元素1里面的所有直接后代（子元素）元素2</p>
+<h4 id="并集选择器（重要）">并集选择器（重要）</h4>
+<p>并集选择器可以选择多组标签，同时为他们定义相同的格式。通常用于集体声明</p>
+<p>并集选择器是通各个选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">元素1, 元素2</span> <span class="token punctuation">&#123;</span> 样式声明 <span class="token punctuation">&#125;</span></code></pre>
+<p>上述语法表示选择元素1和元素2</p>
+<ul>
+<li>元素1和元素2中间用逗号隔开</li>
+<li>逗号可以理解为<strong>和</strong>的意思</li>
+<li>并集选择器通常用于集体声明</li>
+</ul>
+<h4 id="链接伪类选择器">链接伪类选择器</h4>
+<p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第一个，第n个元素</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">a</span><span class="token punctuation">:</span>link		# 选择所有未被访问的链接
+<span class="token property">a</span><span class="token punctuation">:</span>visited	# 选择所有已被访问的链接
+<span class="token property">a</span><span class="token punctuation">:</span>hover		# 选择鼠标指针位于其上的链接
+<span class="token property">a</span><span class="token punctuation">:</span>active	# 选择活动链接（鼠标按下未弹起）</code></pre>
+<h5 id="注意事项">注意事项</h5>
+<ul>
+<li>为确保生效，请按照LVHA的顺序声明:link-:visited-:hover-:active</li>
+<li>记忆法：love hate 或者 lv 宝宝 hao</li>
+<li>因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式</li>
+</ul>
+<h5 id="开发写法">开发写法</h5>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h4 id="focus伪类选择器">focus伪类选择器</h4>
+<p>focus伪类选择器用于选取获得焦点的表单元素</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">焦点就是光标，一般情况&lt;input>类表单元素才能获取，因此这个选择器也主要针对表单元素来说
+input:focus</span> <span class="token punctuation">&#123;</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h4 id="复合选择器总结">复合选择器总结</h4>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>作用</th>
+<th>特征</th>
+<th>使用情况</th>
+<th>隔开符号及用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后代选择器</td>
+<td>选择后代元素</td>
+<td>子孙后代</td>
+<td>较多</td>
+<td>符号是空格 .nav a</td>
+</tr>
+<tr>
+<td>子代选择器</td>
+<td>选择最近一级元素</td>
+<td>亲儿子</td>
+<td>较少</td>
+<td>符号是大于 .nav&gt;p</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>选择相同样式的元素</td>
+<td>集体声明</td>
+<td>较多</td>
+<td>符号是逗号 .nav,.header</td>
+</tr>
+<tr>
+<td>链接伪类选择器</td>
+<td>选择不同状态的链接</td>
+<td>和链接相关</td>
+<td>较多</td>
+<td>重点记住a{}和a:hover</td>
+</tr>
+<tr>
+<td>focus选择器</td>
+<td>选择获得光标的表单</td>
+<td>和表单相关</td>
+<td>较少</td>
+<td>记住input:focus</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS的元素显示模式">CSS的元素显示模式</h3>
+<p>元素显示模式就是元素（标签）以什么方式进行显示，了解他们的特点可以更好的布局我们的网页。比如&lt;div自己占一行，一行可以放多个&lt;span。HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
+<h4 id="块元素">块元素</h4>
+<p>常见的块元素有&lt;h1-6、&lt;p、&lt;div、&lt;ul等，其中div最典型</p>
+<p>块级元素的特点：</p>
+<ol>
+<li>比较霸道，自己独占一行</li>
+<li>高度，宽度，外边距以及内边距都可以控制</li>
+<li>宽度默认是容器（父级宽度）的100%</li>
+<li>是一个容器及盒子，里面可以放行内或者块级元素</li>
+</ol>
+<p>⚠<font color=pink>注意：</font></p>
+<ul>
+<li>文字类的元素内不能使用块级元素</li>
+<li>&lt;p标签主要用于存放文字，因此&lt;p里面不能放块级元素，特别是&lt;div</li>
+<li>同理，&lt;h1-6等都是文字类块级标签，里面也不能放其他块级元素</li>
+</ul>
+<h4 id="行内元素">行内元素</h4>
+<p>常见的行内元素有&lt;a、&lt;strong、&lt;b、&lt;em、&lt;i、&lt;del、&lt;span等，其中&lt;span标签是最典型的行内元素。有的地方也将行内元素成为内联元素。</p>
+<p>行内元素的特点：</p>
+<p>相邻行内元素在一行上，有一行可以显示多个</p>
+<p>高、宽直接设置是无效的</p>
+<p>默认的宽度就是它本身的宽度</p>
+<p>行内元素只能容纳文本或其他行内元素</p>
+<p>注意：</p>
+<ul>
+<li>
+<p>链接里面不能在放链接</p>
+</li>
+<li>
+<p>特殊情况链接&lt;a里面可以放块级元素，但是给&lt;a转换一下块级模式最安全</p>
+</li>
+</ul>
+<h4 id="行内块元素">行内块元素</h4>
+<p>在行内元素中有几个特殊的标签——&lt;img &lt;input &lt;td，他们同时具有块元素和行内元素的特点。有些资料称他们为行内块元素。</p>
+<p>行内块元素的特点：</p>
+<ul>
+<li>和相邻行内元素（行内块）在一行上，但是他们之间会有空白间隙，一行可以显示多个（行内元素特点）</li>
+<li>默认宽度就是它本身内容的宽度（行内元素特点）</li>
+<li>高度，行高，外边距以及内边距都可以控制（块级元素特点</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>元素模式</th>
+<th>元素排列</th>
+<th>设置样式</th>
+<th>默认宽度</th>
+<th>包含</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>块级元素</td>
+<td>一行只能放一个块级元素</td>
+<td>可以设置宽度高度</td>
+<td>容器的100%</td>
+<td>容器可以包含任何标签</td>
+</tr>
+<tr>
+<td>行内元素</td>
+<td>一行可以放多个行内元素</td>
+<td>不可以设置宽高</td>
+<td>本身内容宽度</td>
+<td>容器文本或其他行内元素</td>
+</tr>
+<tr>
+<td>行内块元素</td>
+<td>一行放多个行内块元素</td>
+<td>可以设置宽高</td>
+<td>本身内容宽度</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="元素显示模式转换">元素显示模式转换</h4>
+<p>特殊情况下，我们需要元素模式的转换，简单理解：一个模式的元素需要另一种元素的特性，比如想要增加链接&lt;a的触发范围</p>
+<ul>
+<li>display: block;</li>
+<li>display: inline;</li>
+<li>display: inline-block;</li>
+</ul>
+<h4 id="一个小工具的使用-snipaste">一个小工具的使用 snipaste</h4>
+<ul>
+<li>F1 截图	F3 悬浮	Alt 查看颜色代码+c复制</li>
+</ul>
+<h4 id="单行文字垂直居中代码">单行文字垂直居中代码</h4>
+<p><em>CSS没有提供，可以通过小技巧实现：<strong>让文字的行高等于盒子的高度</strong></em></p>
+<h3 id="CSS的背景">CSS的背景</h3>
+<p>通过CSS背景属性，可以给页面元素添加背景样式</p>
+<p>背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等</p>
+<h4 id="背景颜色">背景颜色</h4>
+<p>background-color属性定义了元素的背景颜色</p>
+<pre class="language-css" data-language="css"><code class="language-css">background-color：颜色值；</code></pre>
+<p>一般情况下元素背景颜色默认值是transparent（透明），也可手动指定</p>
+<h4 id="背景图片">背景图片</h4>
+<p>background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置（精灵图也是一种运用场景）</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">background-image</span> <span class="token punctuation">:</span> none | <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>无背景图（默认）</td>
+</tr>
+<tr>
+<td>url</td>
+<td>使用绝对或相对地址指定背景图像</td>
+</tr>
+</tbody>
+</table>
+<h4 id="背景平铺">背景平铺</h4>
+<p>如果要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">background-repeat</span><span class="token punctuation">:</span> repeat | no-repeat | repeat-x | repeat-y</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>repeat</td>
+<td>背景图像在纵向和横向上平铺（默认的）</td>
+</tr>
+<tr>
+<td>no-repeat</td>
+<td>背景图像不平铺</td>
+</tr>
+<tr>
+<td>repeat-x</td>
+<td>背景图像在横向上平铺</td>
+</tr>
+<tr>
+<td>repeat-y</td>
+<td>背景图像在纵向上平铺</td>
+</tr>
+</tbody>
+</table>
+<h4 id="背景图片位置">背景图片位置</h4>
+<p>利用background-position属性可以改变图片在背景中的位置</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">background-position</span><span class="token punctuation">:</span> x y<span class="token punctuation">;</span></code></pre>
+<p>参数代表的意思是：x坐标和y坐标。可以使用<strong>方位名词</strong>或者<strong>精确单位</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>百分数 | 由浮点数字和单位标识符组成的长度值</td>
+</tr>
+<tr>
+<td>position</td>
+<td>top | center | bottom | left | center | right 方位名词</td>
+</tr>
+</tbody>
+</table>
+<p>1.参数是方位名词</p>
+<ul>
+<li>如果两个值都是方位名词，则两个值得前后顺序无关</li>
+<li>如果只指定一个方位名词，另一个值省略，则第二个值默认居中对齐</li>
+</ul>
+<p>2.参数是精确单位</p>
+<ul>
+<li>如果参数值是精确坐标，那么第一个肯定是x坐标，第二个一定是y坐标</li>
+<li>如果只指定一个数值，那该数值一定是x坐标，另一个默认垂直居中</li>
+</ul>
+<p>3.参数是混合单位</p>
+<ul>
+<li>如果指定得两个值是精确单位和方位名词混合使用（x，y顺序不能变）</li>
+</ul>
+<h4 id="背景图像固定（背景附着）">背景图像固定（背景附着）</h4>
+<p>background-attachment属性设置背景图像是否固定或者随着页面得其余部分滚动</p>
+<p>background-attachment后期可以制作视差滚动效果</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">background-attachment</span> <span class="token punctuation">:</span> scroll | fixed</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scroll</td>
+<td>背景图像随着对象内容滚动</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>背景图像固定</td>
+</tr>
+</tbody>
+</table>
+<h4 id="背景复合写法">背景复合写法</h4>
+<p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中，从而减少代码量。当使用简写属性时，没有一定的书写顺序，一般习惯约定顺序为：</p>
+<p>background：背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> transparent <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>image.jpg<span class="token punctuation">)</span></span> repeat-y fixed top<span class="token punctuation">;</span></code></pre>
+<p>实际开发中，我们更提倡的写法</p>
+<h4 id="背景颜色半透明">背景颜色半透明</h4>
+<p>CSS3为我们提供了半透明的效果</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.3<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>红绿蓝 alpha不透明度，取值范围0~1</li>
+<li>实际开发中，习惯a的0.3的0省略，写为.3</li>
+<li>注意：背景半透明是指盒子背景半透明，盒子里面的内容不受影响</li>
+<li>CSS3新增属性，时IE9+版本浏览器才支持的</li>
+<li>但是现在实际开发，我们不太关注兼容性写法了，可以放心使用</li>
+</ul>
+<h4 id="背景总结">背景总结</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background-color</td>
+<td>背景颜色</td>
+<td>预定义的颜色值/十六进制/RGB代码</td>
+</tr>
+<tr>
+<td>background-image</td>
+<td>背景图片</td>
+<td>url（图片路径）</td>
+</tr>
+<tr>
+<td>background-repeat</td>
+<td>是否平铺</td>
+<td>repeat/no-repeat/repeat-x/repeat-y</td>
+</tr>
+<tr>
+<td>background-position</td>
+<td>背景位置</td>
+<td>length/position 分别是x，y</td>
+</tr>
+<tr>
+<td>background-attachment</td>
+<td>背景附着</td>
+<td>scroll（背景滚动）、fixed（背景固定）</td>
+</tr>
+<tr>
+<td>背景简写</td>
+<td>书写更简单</td>
+<td>背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</td>
+</tr>
+<tr>
+<td>背景色半透明</td>
+<td>背景颜色半透明</td>
+<td>background: rgba(0,0,0,0.3);后面必须四个值</td>
+</tr>
+</tbody>
+</table>
+<p>背景图片：实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置。（精灵图也是一种运用场景）</p>
+<h3 id="CSS三大特性">CSS三大特性</h3>
+<p>CSS中有三个非常重要的特性：层叠性、继承性、优先级</p>
+<h4 id="层叠性">层叠性</h4>
+<p>相同选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。</p>
+<p>层叠性原则：</p>
+<ul>
+<li>样式冲突，遵循原则是就近原则，哪个样式结构近，就执行哪个样式</li>
+<li>样式不冲突，不会层叠</li>
+</ul>
+<h4 id="继承性">继承性</h4>
+<p>CSS中的继承：子标签会继承父标签的某些样式，比如文本的颜色和字号</p>
+<ul>
+<li>恰当使用继承可以简化代码，降低CSS样式的复杂性</li>
+<li>子元素可以继承父元素的样式（text、size、line这些元素开头的可以继承，以及color属性）</li>
+<li>继承性口诀：龙生龙，凤生凤，老鼠的孩子会打洞</li>
+</ul>
+<h5 id="行高的继承性">行高的继承性</h5>
+<h4 id="优先级">优先级</h4>
+<p>当同一个元素指定多个选择器，就会有优先级</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>选择器权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>继承或者*</td>
+<td>0，0，0，0</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>0，0，0，1</td>
+</tr>
+<tr>
+<td>类选择器，伪类选择器</td>
+<td>0，0，1，0</td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>0，1，0，0</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1，0，0，0</td>
+</tr>
+<tr>
+<td>!important</td>
+<td>∞</td>
+</tr>
+</tbody>
+</table>
+<p><strong>优先级注意点</strong></p>
+<p>权重是由4组数字组成，但是不会有进位</p>
+<p>类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推</p>
+<p>等级判断从左到右，如果某一位数位相同，则判断下一位数值</p>
+<p>通配符和继承权重为0</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/favicon.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">UNOHE</div><div class="post-copyright__author_desc">爱自己，是终身浪漫的开始</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.unohe.com/Web/CSS/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.unohe.com/Web/CSS/')">CSS基础知识介绍！</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/media/wechat.bmp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/wechat.bmp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/media/alipay.bmp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/alipay.bmp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.unohe.com/Web/CSS/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=CSS基础知识介绍！&amp;url=https://www.unohe.com/Web/CSS/&amp;pic=https://s2.loli.net/2024/03/16/arkWf2cBxJZuy8U.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.unohe.com" target="_blank">UNOHE</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/CSS/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>CSS<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2024/03/16/Ec7vum2Tf5QnI6r.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://emotion.acs.pw/emotion/bilibili_face/害羞.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about"><h1 class="author-info__name">UNOHE</h1><div class="author-info__desc">爱自己，是终身浪漫的开始</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/alexation" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://s2.loli.net/2024/03/15/XxNAlmEVIMacfuC.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%B0%B1%E6%98%AF%E7%BE%8E%E5%8C%96%E7%BD%91%E9%A1%B5%E3%80%81%E5%B8%83%E5%B1%80%E9%A1%B5%E9%9D%A2%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">CSS的主要使用场景就是美化网页、布局页面的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">CSS 选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%B1%BB%E5%90%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">多类名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">id选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.1.4.</span> <span class="toc-text">通配符选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.5.</span> <span class="toc-text">基础选择器总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">CSS 字体属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">字体系列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%97%E7%BB%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">粗细</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.2.4.</span> <span class="toc-text">文字样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E7%AC%A6%E5%90%88%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.5.</span> <span class="toc-text">字体符合属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.6.</span> <span class="toc-text">CSS字体属性总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text">CSS 文本属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E9%A2%9C%E8%89%B2"><span class="toc-number">1.3.1.</span> <span class="toc-text">文本颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E9%BD%90%E6%96%87%E6%9C%AC"><span class="toc-number">1.3.2.</span> <span class="toc-text">对齐文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E6%96%87%E6%9C%AC"><span class="toc-number">1.3.3.</span> <span class="toc-text">装饰文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%A9%E8%BF%9B"><span class="toc-number">1.3.4.</span> <span class="toc-text">文本缩进</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E9%97%B4%E8%B7%9D"><span class="toc-number">1.3.5.</span> <span class="toc-text">行间距</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.6.</span> <span class="toc-text">CSS文本属性总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">CSS 引入方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">内部样式表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">行内样式表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-number">1.4.3.</span> <span class="toc-text">外部样式表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.4.</span> <span class="toc-text">CSS引入方式总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Emmet%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">Emmet语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90HTML%E7%BB%93%E6%9E%84%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">快速生成HTML结构语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.2.</span> <span class="toc-text">快速生成CSS样式语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="toc-number">1.5.3.</span> <span class="toc-text">快速格式化代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.6.</span> <span class="toc-text">CSS复合选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E4%BB%A3%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">1.6.1.</span> <span class="toc-text">后代选择器（重要）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">1.6.2.</span> <span class="toc-text">子选择器（重要）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E9%9B%86%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">1.6.3.</span> <span class="toc-text">并集选择器（重要）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.6.4.</span> <span class="toc-text">链接伪类选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E5%86%99%E6%B3%95"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">开发写法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#focus%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.6.5.</span> <span class="toc-text">focus伪类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.6.</span> <span class="toc-text">复合选择器总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">CSS的元素显示模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0"><span class="toc-number">1.7.1.</span> <span class="toc-text">块元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="toc-number">1.7.2.</span> <span class="toc-text">行内元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0"><span class="toc-number">1.7.3.</span> <span class="toc-text">行内块元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.7.4.</span> <span class="toc-text">元素显示模式转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8-snipaste"><span class="toc-number">1.7.5.</span> <span class="toc-text">一个小工具的使用 snipaste</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E4%BB%A3%E7%A0%81"><span class="toc-number">1.7.6.</span> <span class="toc-text">单行文字垂直居中代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E7%9A%84%E8%83%8C%E6%99%AF"><span class="toc-number">1.8.</span> <span class="toc-text">CSS的背景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2"><span class="toc-number">1.8.1.</span> <span class="toc-text">背景颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="toc-number">1.8.2.</span> <span class="toc-text">背景图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%B9%B3%E9%93%BA"><span class="toc-number">1.8.3.</span> <span class="toc-text">背景平铺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.8.4.</span> <span class="toc-text">背景图片位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E5%83%8F%E5%9B%BA%E5%AE%9A%EF%BC%88%E8%83%8C%E6%99%AF%E9%99%84%E7%9D%80%EF%BC%89"><span class="toc-number">1.8.5.</span> <span class="toc-text">背景图像固定（背景附着）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%A4%8D%E5%90%88%E5%86%99%E6%B3%95"><span class="toc-number">1.8.6.</span> <span class="toc-text">背景复合写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%8D%8A%E9%80%8F%E6%98%8E"><span class="toc-number">1.8.7.</span> <span class="toc-text">背景颜色半透明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.8.</span> <span class="toc-text">背景总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">1.9.</span> <span class="toc-text">CSS三大特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="toc-number">1.9.1.</span> <span class="toc-text">层叠性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">1.9.2.</span> <span class="toc-text">继承性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E9%AB%98%E7%9A%84%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">1.9.2.1.</span> <span class="toc-text">行高的继承性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.9.3.</span> <span class="toc-text">优先级</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Blog/1/" title="Hexo主题Anzhiyu迁移记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/16/Ec7vum2Tf5QnI6r.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo主题Anzhiyu迁移记录"/></a><div class="content"><a class="title" href="/Blog/1/" title="Hexo主题Anzhiyu迁移记录">Hexo主题Anzhiyu迁移记录</a><time datetime="2024-03-13T04:05:05.000Z" title="发表于 2024-03-13 12:05:05">2024-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Competition/nuedc_3/" title="2022大学生电子设计竞赛"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/09/03/LnyeWwiGf1N8I9h.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022大学生电子设计竞赛"/></a><div class="content"><a class="title" href="/Competition/nuedc_3/" title="2022大学生电子设计竞赛">2022大学生电子设计竞赛</a><time datetime="2023-06-17T20:05:30.000Z" title="发表于 2023-06-18 04:05:30">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/EE/PowerOutage/" title="美国得克萨斯州2·14大停电"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/13/XJDWh8bIz52QBwU.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美国得克萨斯州2·14大停电"/></a><div class="content"><a class="title" href="/EE/PowerOutage/" title="美国得克萨斯州2·14大停电">美国得克萨斯州2·14大停电</a><time datetime="2023-05-01T04:04:28.000Z" title="发表于 2023-05-01 12:04:28">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Competition/ICM/" title="2023 ICM Problem Z The Future of the Olympics"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/09/03/6IYtv8uJzpBfaHQ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023 ICM Problem Z The Future of the Olympics"/></a><div class="content"><a class="title" href="/Competition/ICM/" title="2023 ICM Problem Z The Future of the Olympics">2023 ICM Problem Z The Future of the Olympics</a><time datetime="2023-04-03T10:05:26.000Z" title="发表于 2023-04-03 18:05:26">2023-04-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Competition/MCM/" title="2023 MCM Problem C Predicting Wordle Results"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/09/03/GRicUqYLjI3xVkp.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023 MCM Problem C Predicting Wordle Results"/></a><div class="content"><a class="title" href="/Competition/MCM/" title="2023 MCM Problem C Predicting Wordle Results">2023 MCM Problem C Predicting Wordle Results</a><time datetime="2023-02-06T10:05:26.000Z" title="发表于 2023-02-06 18:05:26">2023-02-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:alexation@foxmail.com" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820214971&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" href="/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/5wmFNTf1ozjAxip.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/alexation" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.greenpeace.org.cn/" title="Greenpeace"><i class="anzhiyufont anzhiyu-icon-plant-fill"></i></a><a class="deal_link" href="/copyright" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div><div id="workboard"><div id="runtimeTextTip"></div></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" rel="noopener" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" rel="noopener" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" rel="noopener" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" rel="noopener" href="https://docs.anheyu.com/">文档</a><a class="footer-item" title="源码" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://www.cloudflare.com/" style="margin-inline:5px" data-title="本站使用cloudflare为静态资源提供CDN加速" title="本站使用cloudflare为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/bzG4fho9MiOJ1rn.png" alt="本站使用cloudflare为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2021 - 2024 By <a class="footer-bar-link" href="/" title="UNOHE" target="_blank">UNOHE</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link cc" href="/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer><script defer>var hasShownPopup = sessionStorage.getItem('sessionNegotiatePopupShown');
+
+if (!hasShownPopup) {
+  setTimeout(() => {
+    anzhiyuPopupManager && anzhiyuPopupManager.enqueuePopup('协议提醒助手', '查看本站为你的个人隐私做出的努力', '/privacy', 4000);
+    sessionStorage.setItem('sessionNegotiatePopupShown', 'true');
+  }, 1000);
+}
+</script></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archive/" title="archive"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">11</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.unohe.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Yiqing" title="签到全栈系统"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/cxARdlnytjPbXuL.png" alt="签到全栈系统"/><span class="back-menu-item-text">签到全栈系统</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/ncm2mp3" title="NCM-&gt;MP3"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/aVmysP3JS4t5jNF.png" alt="NCM-&gt;MP3"/><span class="back-menu-item-text">NCM-&gt;MP3</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Scramble_Classes" title="选课接口封装"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/kJIMGiSmh6T1Bzv.png" alt="选课接口封装"/><span class="back-menu-item-text">选课接口封装</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="anzhiyufont anzhiyu-icon-bolt faa-tada" style="font-size: 0.9em;"></i><span> 日志</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 订阅</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=385817663&amp;server=netease&amp;type=playlist"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 游戏天地</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Ajax/" style="font-size: 0.88rem;">Ajax<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 0.88rem;">CSS<sup>1</sup></a><a href="/tags/FastAPI/" style="font-size: 0.88rem;">FastAPI<sup>1</sup></a><a href="/tags/Flask/" style="font-size: 0.88rem;">Flask<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 0.88rem;">HTML<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 0.88rem;">Hexo<sup>1</sup></a><a href="/tags/ICM-MCM/" style="font-size: 0.88rem;">ICM/MCM<sup>2</sup></a><a href="/tags/JavaScript/" style="font-size: 0.88rem;">JavaScript<sup>2</sup></a><a href="/tags/Javascript/" style="font-size: 0.88rem;">Javascript<sup>1</sup></a><a href="/tags/Jupyter/" style="font-size: 0.88rem;">Jupyter<sup>1</sup></a><a href="/tags/Matplotlib/" style="font-size: 0.88rem;">Matplotlib<sup>1</sup></a><a href="/tags/MySQL/" style="font-size: 0.88rem;">MySQL<sup>2</sup></a><a href="/tags/NUEDC/" style="font-size: 0.88rem;">NUEDC<sup>3</sup></a><a href="/tags/Node-js/" style="font-size: 0.88rem;">Node.js<sup>1</sup></a><a href="/tags/Numpy/" style="font-size: 0.88rem;">Numpy<sup>1</sup></a><a href="/tags/Pyside2/" style="font-size: 0.88rem;">Pyside2<sup>2</sup></a><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>8</sup></a><a href="/tags/SQL/" style="font-size: 0.88rem;">SQL<sup>1</sup></a><a href="/tags/Scrapy/" style="font-size: 0.88rem;">Scrapy<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 0.88rem;">Vue<sup>2</sup></a><a href="/tags/XSS/" style="font-size: 0.88rem;">XSS<sup>1</sup></a><a href="/tags/jQuery/" style="font-size: 0.88rem;">jQuery<sup>1</sup></a><a href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" style="font-size: 0.88rem;">加密算法<sup>1</sup></a><a href="/tags/%E6%B7%B7%E6%B7%86/" style="font-size: 0.88rem;">混淆<sup>1</sup></a><a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.88rem;">物联网<sup>1</sup></a><a href="/tags/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">电力系统<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("08/10/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用UNOHE!`,
+    `不要太劳累了，早睡更健康~`,
+    `
+        
+      ██╗   ██╗    ███╗   ██╗     ██████╗     ██╗  ██╗    ███████╗
+      ██║   ██║    ████╗  ██║    ██╔═══██╗    ██║  ██║    ██╔════╝
+      ██║   ██║    ██╔██╗ ██║    ██║   ██║    ███████║    █████╗  
+      ██║   ██║    ██║╚██╗██║    ██║   ██║    ██╔══██║    ██╔══╝  
+      ╚██████╔╝    ██║ ╚████║    ╚██████╔╝    ██║  ██║    ███████╗
+       ╚═════╝     ╚═╝  ╚═══╝     ╚═════╝     ╚═╝  ╚═╝    ╚══════╝
+                                                                  
+                                                  
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2021 By UNOHE V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by UNOHE %c 你正在访问 UNOHE 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("08/10/2021 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "";
+        img.title = "";
+        img.alt = "";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'ZG7mIijHQU3yBoYGFWXcYcqs-gzGzoHsz',
+      appKey: 'ZEl3Y5Bd19Z8QHnFjI6k8CTi',
+      avatar: 'mp',
+      serverURLs: 'https://zg7miijh.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=mp'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://zg7miijh.lc-cn-n1-shared.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'ZG7mIijHQU3yBoYGFWXcYcqs-gzGzoHsz',
+        "X-LC-Key": 'ZEl3Y5Bd19Z8QHnFjI6k8CTi',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

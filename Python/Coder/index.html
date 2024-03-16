@@ -1,0 +1,1134 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>常见加密方式 | UNOHE</title><meta name="keywords" content="Python,加密算法"><meta name="author" content="UNOHE"><meta name="copyright" content="UNOHE"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="常见加密方式"><meta name="application-name" content="常见加密方式"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="常见加密方式"><meta property="og:url" content="https://www.unohe.com/Python/Coder/index.html"><meta property="og:site_name" content="UNOHE"><meta property="og:description" content="前言 我们所说的加密方式，都是对二进制编码的格式进行加密的，对应到Python中，则是我们的Bytes。 所以当我们在Python中进行加密操作的时候，要确保我们操作的是Bytes，否则就会报错。 将字符串和Bytes互相转换可以使用encode()和decode()方法。如下所示： # 方法中不传"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://s2.loli.net/2024/03/16/8M3CmrwLasVecS6.png"><meta property="article:author" content="UNOHE"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://s2.loli.net/2024/03/16/8M3CmrwLasVecS6.png"><meta name="description" content="前言 我们所说的加密方式，都是对二进制编码的格式进行加密的，对应到Python中，则是我们的Bytes。 所以当我们在Python中进行加密操作的时候，要确保我们操作的是Bytes，否则就会报错。 将字符串和Bytes互相转换可以使用encode()和decode()方法。如下所示： # 方法中不传"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://www.unohe.com/Python/Coder/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"UNOHE","mode":"tianli","switchBtn":false,"btnLink":"https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00","randomNum":3,"basicWordCount":1000,"key":"bda6671fa72f28df9b75","Referer":"https://www.unohe.com"},
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"3HmyCoI0FotMuQmk","LingQueMonitorID":"3HmyCoI0FotMuQmk"},
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":"https://friends.anheyu.com/"},
+  navMusic: true,
+  mainTone: {"mode":"api","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":["🤖️ 益智玩具爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专注交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 一言不合就开干"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":true,"limitCount":50,"languages":{"author":"作者: UNOHE","link":"链接: ","source":"来源: UNOHE","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'UNOHE',
+  title: '常见加密方式',
+  postAI: '',
+  pageFillDescription: '前言, URL编码, Base64编码, MD5（信息-摘要算法）, PyCryptodome, 1、安装与导入, 2、DES, 3、3DES, 4、AES, ECB模式, CBC模式, 计算器模式, 密码反馈模式, 5、RSA, 应用场景, 非对称加密算法, RSA算法, 数学基础, 密钥生成, 代码案例, @附录：前言我们所说的加密方式都是对二进制编码的格式进行加密的对应到中则是我们的所以当我们在中进行加密操作的时候要确保我们操作的是否则就会报错将字符串和互相转换可以使用和方法如下所示方法中不传参数则是以默认的编码进行转换中国欢迎您中国欢迎您注两位十六进制常常用来显示一个二进制字节利用模块可以将十六进制显示的字节转换成我们在加解密中更常用的显示方式方法中不传参数则是以默认的编码进行转换中国欢迎您中国欢迎您二进制到十二进制中国欢迎您十六进制到二进制中国欢迎您中国欢迎您编码简介正常的中是只能包含字符的也就是字符数字和一些符号而编码就是一种浏览器用来避免中出现特殊字符如汉字的编码方式其实就是将超出范围的字符转换成带的十六进制格式实现编码中国欢迎您解码中国欢迎您编码简介是一种用个字符来表示任意二进制数据的方法编码可以成为密码学的基石可以将任意的二进制数据进行编码所有的数据都能被编码为并只用个字符就能表示的文本文件字符编码后的数据编码前数据的会大左右编码的原理将所有字符转化为码将码转化为位二进制将二进制个归成一组不足个在后边补共位再拆分成组每组位统一在位二进制前补两个凑足位将补后的二进制转为十进制从编码表获取十进制对应的编码编码的说明转换的时候将三个的数据先后放入一个的缓冲区中先来的占高位数据不足的话于缓冲区中剩下的用补足然后每次取出个按照其值选择查表选择对应的字符作为编码后的输出不断进行直到全部输入数据转换完成如果最后剩下两个输入数据在编码结果后加个如果最后剩下一个输入数据编码结果后加个如果没有剩下任何数据就什么都不要加这样才可以保证资料还原的正确性的使用内置的模块可以直接进行的编解码注意用于编码的要么是包含的字符要么是二进制数据编码解码格式的文件在前端中有很多文件也被编辑成的文件使用这种格式也可以进行还原信息摘要算法简述信息摘要算法经常说的加密就是它信息摘要算法其实就是一种算法可以将一个字符串或文件或压缩包执行后就可以生成一个固定长度为的串这个串基本上是唯一的不可逆性每个人都有不同的指纹看到这个人可以得出他的指纹等信息并且唯一对应但你只看一个指纹是不可能看到或读到这个人的长相或身份等信息特点压缩性任意长度的数据算出的值长度都是固定的容易计算从原数据计算出值很容易抗修改性对原数据进行任何改动哪怕只修改个字节所得到的值都有很大区别强抗碰撞已知原数据和其值想找到一个具有相同值的数据即伪造数据是非常困难的举个栗子我从树下捡了一片叶子全世界有数不清的树叶我就想整个世界会不会有一片完全一样的叶子以一片有限的叶子对世界上无限的树叶这个理论上的确是可以找到一片完全的叶子可是实际情况下很难很难找到的使用由于模块在中被移除在中使用模块进行操作待加密信息中国你好创建对象对象不能反解但是加密是固定的就是关系是一一对应所以有缺陷可以被对撞出来要对哪个字符串进行加密就放这里此处必须声明若写法为报错为加密前为拿到加密字符串加密后为加密前为中国你好加密后为如果没有参数所以遵守一个规则生成同一个对应关系如果加了参数就是在原先加密的基础上再加密一层这样的话参数只有自己知道防止被撞库因为别人永远拿不到这个参数不仅仅是上面这个例子这样用来处理字符串还有更广泛的用途加密网站注册用户的密码但去年的各大网站密码泄漏事件确实让人蛋疼网站用户上传图片文件后计算出值作为文件名可以保证唯一性数据库中使用值作为比较两个文件是否相同大家在下载一些资源的时候就会发现网站提供了值就是用来检测文件是否被篡改处理大文件上面说过可以用来检测两个文件是否相同但想想如果是两个很大的文件担心内存不够用这时怎么办这就要使用方法了代码如下以上的加密算法虽然非常厉害但还是存在缺陷即通过撞库可以反解所以有必要对加密算法中添加自定义再来做加密长度的长度默认为也就是个和的二进制串这样表达是很不友好的所以将二进制转成了进制每个表示一个进制所以换成进制表示后为位了为什么网上还有是位的呢其实位的长度是从位值来的是将位去掉前八位去掉后八位得到的加密的全称是安全哈希算法基于加密后的数据长度更长它对长度小于的输入产生长度为的散列值比多位因此比更加安全但的运算速度就比要慢了中国你好加密前为加密前后加密前为中国你好加密前后是中密码学方面最有名的第三方软件包可惜的是它的开发工作于年就已停止幸运的是有一个该项目的分支取代了安装与导入安装之前需要先安装在上安装可以使用以下命令导入在系统上安装则稍有不同导入简介算法为密码体制中的对称密码体制又被称为美国数据加密标准是一个分组加密算法典型的以位为分组对数据加密加密和解密用的是同一个算法算法的入口参数有三个其中为个字节共位是算法的工作密钥为个字节位是要被加密或被解密的数据为的工作方式有两种加密或解密密钥长位密钥事实上是位参与运算第位是校验位使得每个密钥都有奇数个分组后的明文组和位的密钥按位替代或交换的方法形成密文组算法步骤初始置换其功能是把输入的位数据块按位重新组合并把输出分为两部分每部分各长位其置换规则为将输入的第位换到第一位第位换到第位依此类推最后一位是原来的第位则是换位输出后的两部分是输出的左位是右位例设置换前的输入值为则经过初始置换后的结果为其置换规则见下表逆置换经过次迭代运算后得到将此作为输入进行逆置换逆置换正好是初始置换的逆运算由此即得到密文输出此算法是对称加密算法体系中的代表在计算机网络系统中广泛使用加密和解密的过程导入模块这是密钥此处需要将字符串转为字节需要去生成一个对象加密函数如果不是的倍数加密文本必须为的倍数那就补足为的倍数创建一个实例加密返回从字符串末尾删除所有字符串的字符串默认空白字符的副本解密导入模块这是密钥需要去生成一个对象需要加密的数据加密的过程加密过后二进制转化为解密需要先转化为二进制然后再进行解密或称为是三重数据加密算法块密码的通称它相当于是对每个数据块应用三次加密算法由于计算机运算能力的增强原版密码的密钥长度变得容易被暴力破解即是设计用来提供一种相对简单的方法即通过增加的密钥长度来避免类似的攻击而不是设计一种全新的块密码算法即是向过渡的加密算法年将指定为过渡的加密标准加密算法其具体实现如下设和代表算法的加密和解密过程代表算法使用的密钥代表明文代表密文这样加密过程为解密过程为简介高级加密标准英语缩写在密码学中又称加密法是美国联邦政府采用的一种区块加密标准这个标准用来替代原先的已经被多方分析且广为全世界所使用经过五年的甄选流程高级加密标准由美国国家标准与技术研究院于年月日发布于并在年月日成为有效的标准年高级加密标准已然成为对称密钥加密中最流行的算法之一在软件及硬件上都能快速地加解密相对来说较易于实作且只需要很少的存储器作为一个新的加密标准目前正被部署应用到更广大的范围特点与思想抵抗所有已知的攻击在多个平台上速度快编码紧凑设计简单为分组密码分组密码也就是把明文分成一组一组的每组长度相等每次加密一组数据直到加密完整个明文在标准规范中分组长度只能是位也就是说每个分组为个字节每个字节位密钥的长度可以使用位位或位密钥的长度不同推荐加密轮数也不同一般常用的是位要加密的明文南来北往密钥必须为生成长度等于块大小的不可重复的密钥向量使用和初始化对象使用模式加密的明文长度必须为的倍数如果长度不为的倍数则需要补足为的倍数将密钥向量加到加密的密钥开头一起传输解密的话需要用和生成的对象使用新生成的对象将加密的密钥解密模式模式电子密码本模式是最简单的块密码加密模式加密前根据加密块大小如为位分成若干块之后将每块使用相同的密钥单独加密解密同理优缺点模式作为一种基本工作模式具有操作简单易于实现的特点同时由于其分组的独立性利于实现并行处理并且能很好地防止误差传播另一方面由于所有分组的加密方式一致明文中的重复内容会在密文中有所体现因此难以抵抗统计分析攻击因此模式一般只适用于小数据量的字符信息的安全性保护例如密钥保护模式模式密码分组链接模式对于每个待加密的密码块在加密前会先与前一个密码块的密文异或然后再用加密器加密第一个明文块与一个叫初始化向量的数据块异或计算器模式计算器模式计算器模式不常见在模式中有一个自增的算子这个算子用密钥加密之后的输出和明文异或的结果得到密文相当于一次一密这种加密方式简单快速安全可靠而且可以并行加密但是在计算器不能维持很长的情况下密钥只能使用一次的示意图如下所示密码反馈模式密码反馈模式与和模式只能够加密块数据不同能够将块密文转换为流密文注意和模式中解密也都是用的加密器而非解密器的加密工作分为两部分将一前段加密得到的密文再加密将第步加密得到的数据与当前段的明文异或由于加密流程和解密流程中被块加密器加密的数据是前一段密文因此即使明文数据的长度不是加密块大小的整数倍也是不需要填充的这保证了数据长度在加密前后是相同的使用之前需要安装模块应用场景在公开密钥加密和电子商业中被广泛使用该算法基于一个十分简单的数论事实将两个大素数相乘十分容易但那时想要对其乘积进行因式分解却极其困难因此可以将乘积公开作为加密密钥即公钥而两个大素数组合成私钥公钥是可发布的供任何人使用私钥则为自己所有供解密之用非对称加密算法乙方生成两把密钥公钥和私钥公钥是公开的任何人都可以获得私钥则是保密的甲方获取乙方的公钥然后用它对信息加密乙方得到加密后的信息用私钥解密算法年三位数学家和设计了一种算法可以实现非对称加密这种算法用他们三个人的名字命名叫做算法从那时直到现在算法一直是最广为使用的非对称加密算法毫不夸张地说只要有计算机网络的地方就有算法这种算法非常可靠密钥越长它就越难破解根据已经披露的文献目前被破解的最长密钥是个二进制位也就是说长度超过位的密钥还无法破解至少没人公开宣布因此可以认为位的密钥基本安全位的密钥极其安全数学基础互质关系如果两个正整数除了以外没有其他公因子我们就称这两个数是互质关系比如和没有公因子所以它们是互质关系这说明不是质数也可以构成互质关系关于互质关系不难得到以下结论任意两个质数构成互质关系比如和一个数是质数另一个数只要不是前者的倍数两者就构成互质关系比如和如果两个数之中较大的那个数是质数则两者构成互质关系比如和和任意一个自然数是都是互质关系比如和是大于的整数则和构成互质关系比如和是大于的奇数则和构成互质关系比如和欧拉函数请思考以下问题任意给定正整数请问在小于等于的正整数之中有多少个与构成互质关系比如在到之中有多少个数与构成互质关系计算这个值的方法就叫做欧拉函数以表示在到之中与形成互质关系的是所以的计算方法并不复杂但是为了得到最后那个公式需要一步步讨论密钥生成我们通过一个例子来理解算法假设爱丽丝要与鲍勃进行加密通信她该怎么生成公钥和私钥呢第一步随机选择两个不相等的质数和爱丽丝选择了和实际应用中这两个质数越大就越难破解第二步计算和的乘积爱丽丝就把和相乘的长度就是密钥长度写成二进制是一共有位所以这个密钥就是位实际应用中密钥一般是位重要场合则为位第三步计算的欧拉函数根据公式爱丽丝算出等于即第四步随机选择一个整数条件是且与互质爱丽丝就在到之间随机选择了实际应用中常常选择第五步计算对于的模反元素所谓模反元素就是指有一个整数可以使得被除的余数为这个式子等价于于是找到模反元素实质上就是对下面这个二元一次方程求解已知这个方程可以用扩展欧几里得算法求解此处省略具体过程总之爱丽丝算出一组整数解为即至此所有计算完成第六步将和封装成公钥和封装成私钥在爱丽丝的例子中所以公钥就是私钥就是总结实际上就是计算的过程的作用用于求再用求在范围内随机选择即为对于的模反元素代码案例加密生成公钥私钥明文编码格式公钥加密解密私钥解密加密后密文解密后明文南北今天很忙公钥值长度创建密钥步骤说明从包中导入创建一个密码生成位的密钥调用密钥实例的方法传入密码使用的标准以及加密方案这三个参数将私钥写入磁盘的文件使用方法链调用和方法生成公钥写入磁盘上的文件加载公钥读取密钥附录非对称加密',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-16 18:07:17',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="/js/busuanzi_ini.js"></script><link rel="stylesheet" href="/css/spark.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="UNOHE" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/favicon.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><script>function initMourn() {
+    const date = new Date();
+    const today = (date.getMonth() + 1) + "-" + date.getDate()
+    const mourn_days = ["4-5","5-12","7-7","9-18","12-13"]
+    if (mourn_days.includes(today)) {
+        document.documentElement.style.filter = "grayscale(1)";
+    }}
+initMourn();</script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.unohe.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Yiqing" title="签到全栈系统"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/cxARdlnytjPbXuL.png" alt="签到全栈系统"/><span class="back-menu-item-text">签到全栈系统</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/ncm2mp3" title="NCM-&gt;MP3"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/aVmysP3JS4t5jNF.png" alt="NCM-&gt;MP3"/><span class="back-menu-item-text">NCM-&gt;MP3</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Scramble_Classes" title="选课接口封装"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/kJIMGiSmh6T1Bzv.png" alt="选课接口封装"/><span class="back-menu-item-text">选课接口封装</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">UNOHE</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="anzhiyufont anzhiyu-icon-bolt faa-tada" style="font-size: 0.9em;"></i><span> 日志</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 订阅</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=385817663&amp;server=netease&amp;type=playlist"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 游戏天地</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/media/wechat.bmp" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/wechat.bmp"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/media/alipay.bmp" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/alipay.bmp"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Ajax/" style="font-size: 1.05rem;">Ajax<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 1.05rem;">CSS<sup>1</sup></a><a href="/tags/FastAPI/" style="font-size: 1.05rem;">FastAPI<sup>1</sup></a><a href="/tags/Flask/" style="font-size: 1.05rem;">Flask<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 1.05rem;">HTML<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>1</sup></a><a href="/tags/ICM-MCM/" style="font-size: 1.05rem;">ICM/MCM<sup>2</sup></a><a href="/tags/JavaScript/" style="font-size: 1.05rem;">JavaScript<sup>2</sup></a><a href="/tags/Javascript/" style="font-size: 1.05rem;">Javascript<sup>1</sup></a><a href="/tags/Jupyter/" style="font-size: 1.05rem;">Jupyter<sup>1</sup></a><a href="/tags/Matplotlib/" style="font-size: 1.05rem;">Matplotlib<sup>1</sup></a><a href="/tags/MySQL/" style="font-size: 1.05rem;">MySQL<sup>2</sup></a><a href="/tags/NUEDC/" style="font-size: 1.05rem;">NUEDC<sup>3</sup></a><a href="/tags/Node-js/" style="font-size: 1.05rem;">Node.js<sup>1</sup></a><a href="/tags/Numpy/" style="font-size: 1.05rem;">Numpy<sup>1</sup></a><a href="/tags/Pyside2/" style="font-size: 1.05rem;">Pyside2<sup>2</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>8</sup></a><a href="/tags/SQL/" style="font-size: 1.05rem;">SQL<sup>1</sup></a><a href="/tags/Scrapy/" style="font-size: 1.05rem;">Scrapy<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 1.05rem;">Vue<sup>2</sup></a><a href="/tags/XSS/" style="font-size: 1.05rem;">XSS<sup>1</sup></a><a href="/tags/jQuery/" style="font-size: 1.05rem;">jQuery<sup>1</sup></a><a href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">加密算法<sup>1</sup></a><a href="/tags/%E6%B7%B7%E6%B7%86/" style="font-size: 1.05rem;">混淆<sup>1</sup></a><a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 1.05rem;">物联网<sup>1</sup></a><a href="/tags/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">电力系统<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archive/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2023/02/"><span class="card-archive-list-date">二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2022/08/"><span class="card-archive-list-date">八月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2022/07/"><span class="card-archive-list-date">七月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archive/2022/06/"><span class="card-archive-list-date">六月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url">算法</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Python/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Python</span></a><a class="article-meta__tags" href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>加密算法</span></a></span></div></div><h1 class="post-title" itemprop="name headline">常见加密方式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2022-01-25T10:57:33.000Z" title="发表于 2022-01-25 18:57:33">2022-01-25</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-03-16T10:07:17.069Z" title="更新于 2024-03-16 18:07:17">2024-03-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">6.1k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>21分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="常见加密方式"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为宜昌"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>宜昌</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://s2.loli.net/2024/03/16/8M3CmrwLasVecS6.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.unohe.com/Python/Coder/"><header><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url">算法</a><a href="/tags/Python/" tabindex="-1" itemprop="url">Python</a><a href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" tabindex="-1" itemprop="url">加密算法</a><h1 id="CrawlerTitle" itemprop="name headline">常见加密方式</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">UNOHE</span><time itemprop="dateCreated datePublished" datetime="2022-01-25T10:57:33.000Z" title="发表于 2022-01-25 18:57:33">2022-01-25</time><time itemprop="dateCreated datePublished" datetime="2024-03-16T10:07:17.069Z" title="更新于 2024-03-16 18:07:17">2024-03-16</time></header><h3 id="前言">前言</h3>
+<p>我们所说的加密方式，都是对二进制编码的格式进行加密的，对应到Python中，则是我们的<code>Bytes</code>。</p>
+<p>所以当我们在Python中进行加密操作的时候，要确保我们操作的是<code>Bytes</code>，否则就会报错。</p>
+<p>将字符串和<code>Bytes</code>互相转换可以使用<code>encode()</code>和<code>decode()</code>方法。如下所示：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 方法中不传参数则是以默认的utf-8编码进行转换</span>
+a <span class="token operator">=</span> <span class="token string">"中国欢迎您"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># b'\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8'</span>
+
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span></code></pre>
+<p><strong>注：两位十六进制常常用来显示一个二进制字节。</strong></p>
+<p>利用<code>binascii</code>模块可以将十六进制显示的字节转换成我们在加解密中更常用的显示方式：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> binascii
+
+<span class="token comment"># 方法中不传参数则是以默认的utf-8编码进行转换</span>
+a <span class="token operator">=</span> <span class="token string">"中国欢迎您"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># b'\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8'</span>
+
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span>
+
+<span class="token comment"># 二进制到十二进制</span>
+c <span class="token operator">=</span> binascii<span class="token punctuation">.</span>b2a_hex<span class="token punctuation">(</span><span class="token string">'中国欢迎您'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>  <span class="token comment"># c=== b'e4b8ade59bbde6aca2e8bf8ee682a8'</span>
+
+<span class="token comment"># 十六进制到二进制</span>
+d <span class="token operator">=</span> binascii<span class="token punctuation">.</span>a2b_hex<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>  <span class="token comment"># b'\xe4\xb8\xad\xe5\x9b\xbd\xe6\xac\xa2\xe8\xbf\x8e\xe6\x82\xa8'</span>
+
+v <span class="token operator">=</span> binascii<span class="token punctuation">.</span>a2b_hex<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span>
+
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span>
+</code></pre>
+<h3 id="URL编码">URL编码</h3>
+<p><strong>1、简介</strong></p>
+<p>正常的URL中是只能包含ASCII字符的，也就是字符、数字和一些符号。而URL编码就是一种浏览器用来避免url中出现特殊字符（如汉字）的编码方式。其实就是将超出ASCII范围的字符转换成带<code>%</code>的十六进制格式。</p>
+<p><strong>2、Python实现</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> urllib <span class="token keyword">import</span> parse
+
+<span class="token comment"># 编码</span>
+a <span class="token operator">=</span> parse<span class="token punctuation">.</span>quote<span class="token punctuation">(</span><span class="token string">"中国欢迎您"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># %E4%B8%AD%E5%9B%BD%E6%AC%A2%E8%BF%8E%E6%82%A8</span>
+
+<span class="token comment"># 解码</span>
+b <span class="token operator">=</span> parse<span class="token punctuation">.</span>unquote<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># 中国欢迎您</span></code></pre>
+<h3 id="Base64编码">Base64编码</h3>
+<p><strong>1、简介</strong></p>
+<p>Base64是一种用64个字符来表示任意二进制数据的方法。</p>
+<p>Base64编码可以成为密码学的基石。可以将任意的二进制数据进行Base64编码。所有的数据都能被编码为并只用65个字符就能表示的文本文件。（ 65字符：A~Z a~z 0~9 + / = ）编码后的数据~=编码前数据的4/3，会大1/3左右。</p>
+<p><strong>2、Base64编码的原理</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/cPkQK3IM97vtbsj.jpg" alt="aryxq-axx4s"></p>
+<ol>
+<li>将所有字符转化为ASCII码。</li>
+<li>将ASCII码转化为8位二进制 。</li>
+<li>将二进制3个归成一组(不足3个在后边补0)共24位，再拆分成4组，每组6位。</li>
+<li>统一在6位二进制前补两个0凑足8位。</li>
+<li>将补0后的二进制转为十进制。</li>
+<li>从Base64编码表获取十进制对应的Base64编码。</li>
+</ol>
+<p><strong>3、Base64编码的说明</strong></p>
+<ol>
+<li>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。</li>
+<li>数据不足3byte的话，于缓冲区中剩下的bit用0补足。然后，每次取出6个bit，按照其值选择查表选择对应的字符作为编码后的输出。</li>
+<li>不断进行，直到全部输入数据转换完成。</li>
+<li>如果最后剩下两个输入数据，在编码结果后加1个“=”。</li>
+<li>如果最后剩下一个输入数据，编码结果后加2个“=”。</li>
+<li>如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</li>
+</ol>
+<p><strong>4、Python的Base64使用</strong></p>
+<p>Python内置的<code>base64</code>模块可以直接进行base64的编解码</p>
+<p><strong>注意：用于base64编码的，要么是ASCII包含的字符，要么是二进制数据</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64
+
+<span class="token comment"># 编码</span>
+a <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span><span class="token string">b"hello world"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># b'aGVsbG8gd29ybGQ='</span>
+
+<span class="token comment"># 解码</span>
+b <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment"># b"hello world"</span></code></pre>
+<p><strong>5、Base64格式的文件</strong></p>
+<p>在前端中，有很多文件也被编辑成base的文件，使用这种格式也可以进行还原</p>
+<h3 id="MD5（信息-摘要算法）">MD5（信息-摘要算法）</h3>
+<p><strong>1、简述</strong></p>
+<p>message-digest algorithm 5（信息-摘要算法）。经常说的“MD5加密”，就是它→信息-摘要算法。</p>
+<p>md5，其实就是一种算法。可以将一个字符串，或文件，或压缩包，执行md5后，就可以生成一个固定长度为128bit 的串。这个串，基本上是唯一的。</p>
+<p><strong>2、不可逆性</strong></p>
+<p>每个人都有不同的指纹，看到这个人，可以得出他的指纹等信息，并且唯一对应，但你只看一个指纹，是不可能看到或读到这个人的长相或身份等信息。</p>
+<p><strong>3、特点</strong></p>
+<ol>
+<li>压缩性：任意长度的数据，算出的MD5值长度都是固定的。</li>
+<li>容易计算：从原数据计算出MD5值很容易。</li>
+<li>抗修改性：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。</li>
+<li>强抗碰撞：已知原数据和其MD5值，想找到一个具有相同MD5值的数据（即伪造数据）是非常困难的。</li>
+</ol>
+<p>举个栗子：我从树下捡了一片叶子，全世界有数不清的树叶，我就想整个世界会不会有一片完全一样的叶子? 以一片有限的叶子对世界上无限的树叶，这个理论上的确是可以找到一片完全的叶子，可是实际情况下很难很难找到。</p>
+<p><strong>4、Python的MD5使用</strong></p>
+<p>由于MD5模块在python3中被移除，在python3中使用<code>hashlib</code>模块进行md5操作</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
+
+<span class="token comment"># 待加密信息</span>
+<span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">'中国你好'</span>
+
+<span class="token comment"># 创建md5对象，</span>
+<span class="token comment"># md5对象，md5不能反解，但是加密是固定的，就是关系是一一对应，所以有缺陷，可以被对撞出来</span>
+hl <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 要对哪个字符串进行加密，就放这里</span>
+<span class="token comment"># 此处必须声明encode</span>
+<span class="token comment"># 若写法为hl.update(str)  报错为： Unicode-objects must be encoded before hashing</span>
+hl<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'MD5加密前为 ：'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
+<span class="token comment"># hl.hexdigest()) #拿到加密字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'MD5加密后为 ：'</span> <span class="token operator">+</span> hl<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+MD5加密前为 ：中国你好
+MD5加密后为 ：560a6b11a85d436acfa4bd7f34462f40
+"""</span>
+
+hash3 <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token string">'abd'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">''' 
+如果没有参数，所以md5遵守一个规则，生成同一个对应关系，如果加了参数，
+就是在原先加密的基础上再加密一层，这样的话参数只有自己知道，防止被撞库，
+因为别人永远拿不到这个参数
+'''</span>
+hash3<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hash3<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 9aea3c0a6c51555c1a4d0a5e9b689ded</span>
+</code></pre>
+<p>MD5不仅仅是上面这个例子这样用来处理字符串，还有更广泛的用途：</p>
+<ul>
+<li>加密网站注册用户的密码。 （但去年的各大网站密码泄漏事件确实让人蛋疼……）</li>
+<li>网站用户上传图片 / 文件后，计算出MD5值作为文件名。（MD5可以保证唯一性）</li>
+<li>key-value数据库中使用MD5值作为key。</li>
+<li>比较两个文件是否相同。（大家在下载一些资源的时候，就会发现网站提供了MD5值，就是用来检测文件是否被篡改）</li>
+<li>……</li>
+</ul>
+<p><strong>处理大文件：</strong></p>
+<p>上面说过可以用MD5来检测两个文件是否相同，但想想，如果是两个很大的文件，担心内存不够用，这时怎么办？</p>
+<p>这就要使用 update 方法了。代码如下：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
+ 
+<span class="token keyword">def</span> <span class="token function">get_file_md5</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    m <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">10240</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> data<span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+ 
+        m<span class="token punctuation">.</span>update<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> m<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>YOUR_FILE<span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    file_md5 <span class="token operator">=</span> get_file_md5<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+ </code></pre>
+<p>以上的加密算法虽然非常厉害，但还是存在缺陷，即：通过撞库可以反解，所以，有必要对加密算法中添加自定义key再来做加密</p>
+<p><strong>5、MD5长度</strong></p>
+<p>md5的长度，默认为128bit，也就是128个0和1的二进制串。这样表达是很不友好的。所以将二进制转成了16进制，每4个bit表示一个16进制，所以128/4 = 32 换成16进制表示后，为32位了。</p>
+<p>为什么网上还有md5是16位的呢？</p>
+<p>其实16位的长度，是从32位md5值来的。是将32位md5去掉前八位，去掉后八位得到的。</p>
+<p><strong>6、sha1 加密</strong></p>
+<p>SHA1的全称是Secure Hash Algorithm(安全哈希算法) 。SHA1基于MD5，加密后的数据长度更长，</p>
+<p>它对长度小于264的输入，产生长度为160bit的散列值。比MD5多32位。</p>
+<p>因此，比MD5更加安全，但SHA1的运算速度就比MD5要慢了。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
+ 
+<span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"中国你好"</span>
+a <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>sha1<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sha1加密前为 ："</span><span class="token punctuation">,</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"sha1加密前后 ："</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+ 
+<span class="token triple-quoted-string string">"""
+sha1加密前为 ： 中国你好
+sha1加密前后 ： 3e6c570876775d0031dbf66247ed1054d4ef695e
+"""</span></code></pre>
+<h3 id="PyCryptodome">PyCryptodome</h3>
+<p>PyCrypto是 Python 中密码学方面最有名的第三方软件包。可惜的是，它的开发工作于2012年就已停止。</p>
+<p>幸运的是，有一个该项目的分支 PyCrytodome 取代了 PyCrypto 。</p>
+<h4 id="1、安装与导入">1、安装与导入</h4>
+<p>安装之前需要先安装<strong>Microsoft Visual c++ 2015</strong>。</p>
+<p>在Linux上安装，可以使用以下 pip 命令：</p>
+<pre class="language-none"><code class="language-none">pip install pycryptodome</code></pre>
+<p>导入：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> Crypto</code></pre>
+<p>在Windows 系统上安装则稍有不同：</p>
+<pre class="language-python" data-language="python"><code class="language-python">pip install pycryptodomex</code></pre>
+<p>导入：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> Cryptodome</code></pre>
+<h4 id="2、DES">2、DES</h4>
+<p><strong>1)简介</strong></p>
+<p>DES算法为密码体制中的对称密码体制，又被称为美国数据加密标准。</p>
+<p>DES是一个分组加密算法，典型的DES以64位为分组对数据加密，加密和解密用的是同一个算法。</p>
+<p>DES算法的入口参数有三个：Key、Data、Mode。其中Key为7个字节共56位，是DES算法的工作密钥；Data为8个字节64位，是要被加密或被解密的数据；Mode为DES的工作方式,有两种:加密或解密。</p>
+<p>密钥长64位，密钥事实上是56位参与DES运算（第8、16、24、32、40、48、56、64位是校验位，使得每个密钥都有奇数个1），分组后的明文组和56位的密钥按位替代或交换的方法形成密文组。</p>
+<p>算法步骤<br>
+1）初始置换<br>
+其功能是把输入的64位数据块按位重新组合,并把输出分为L0、R0两部分,每部分各长3 2位,其置换规则为将输入的第58位换到第一位,第50位换到第2位……依此类推,最后一位是原来的第7位。L0、R0则是换位输出后的两部分，L0是输出的左32位,R0是右32位,例:设置换前的输入值为D1D2D3……D64,则经过初始置换后的结果为:L0=D58D50……D8;R0=D57D49……D7。<br>
+其置换规则见下表：<br>
+58,50,42,34,26,18,10,2,60,52,44,36,28,20,12,4,<br>
+62,54,46,38,30,22,14,6,64,56,48,40,32,24,16,8,<br>
+57,49,41,33,25,17,9,1,59,51,43,35,27,19,11,3,<br>
+61,53,45,37,29,21,13,5,63,55,47,39,31,23,15,7,<br>
+2）逆置换<br>
+经过16次迭代运算后,得到L16、R16,将此作为输入,进行逆置换,逆置换正好是初始置换的逆运算，由此即得到密文输出。<br>
+此算法是对称加密算法体系中的代表,在计算机网络系统中广泛使用.</p>
+<p>加密和解密的过程</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入DES模块</span>
+<span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> DES
+<span class="token keyword">import</span> binascii
+ 
+<span class="token comment"># 这是密钥,此处需要将字符串转为字节</span>
+key <span class="token operator">=</span> <span class="token string">b'abcdefgh'</span>
+ 
+<span class="token comment"># 需要去生成一个DES对象</span>
+<span class="token keyword">def</span> <span class="token function">pad</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token triple-quoted-string string">"""
+       # 加密函数，如果text不是8的倍数【加密文本text必须为8的倍数！】，那就补足为8的倍数
+        :param text:
+        :return:
+     """</span>
+     <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">8</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        text <span class="token operator">+=</span> <span class="token string">' '</span>
+     <span class="token keyword">return</span> text
+ 
+<span class="token comment"># 创建一个DES实例</span>
+des <span class="token operator">=</span> DES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span>DES<span class="token punctuation">.</span>MODE_ECB<span class="token punctuation">)</span>
+text <span class="token operator">=</span><span class="token string">"I'm china!"</span>
+padded_text <span class="token operator">=</span> pad<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>padded_text<span class="token punctuation">)</span>
+<span class="token comment">#加密</span>
+encrypted_text <span class="token operator">=</span> des<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>padded_text<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>encrypted_text<span class="token punctuation">)</span>
+<span class="token comment"># rstrip(' ')返回从字符串末尾删除所有字符串的字符串(默认空白字符)的副本</span>
+ 
+<span class="token comment"># 解密</span>
+plain_text <span class="token operator">=</span> des<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>encrypted_text<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>rstrip<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plain_text<span class="token punctuation">)</span>
+ 
+<span class="token triple-quoted-string string">"""
+I'm china!      
+b'\xc0`I\x15\x8bo\x00\x00\xb0\xe27\xfe)\xc3\xde,'
+I'm china!
+"""</span>
+</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入DES模块</span>
+<span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> DES
+<span class="token keyword">import</span> binascii
+ 
+<span class="token comment"># 这是密钥</span>
+key <span class="token operator">=</span> <span class="token string">b'abcdefgh'</span>
+<span class="token comment"># 需要去生成一个DES对象</span>
+des <span class="token operator">=</span> DES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> DES<span class="token punctuation">.</span>MODE_ECB<span class="token punctuation">)</span>
+<span class="token comment"># 需要加密的数据</span>
+text <span class="token operator">=</span> <span class="token string">'python spider!'</span>
+text <span class="token operator">=</span> text <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token string">'='</span>
+<span class="token comment"># 加密的过程</span>
+encrypto_text <span class="token operator">=</span> des<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>text<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 加密过后二进制转化为ASCII </span>
+encrypto_text <span class="token operator">=</span> binascii<span class="token punctuation">.</span>b2a_hex<span class="token punctuation">(</span>encrypto_text<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>encrypto_text<span class="token punctuation">)</span>
+<span class="token comment"># 解密需要ASCII 先转化为二进制 然后再进行解密</span>
+plaint <span class="token operator">=</span> des<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>binascii<span class="token punctuation">.</span>a2b_hex<span class="token punctuation">(</span>encrypto_text<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plaint<span class="token punctuation">)</span>
+ 
+<span class="token triple-quoted-string string">"""
+b'084725d8f5ffafc61814fae0796bfd2f'
+b'python spider!=='
+"""</span>
+</code></pre>
+<h4 id="3、3DES">3、3DES</h4>
+<p>3DES（或称为Triple DES）是三重数据加密算法（TDEA，Triple Data Encryption Algorithm）块密码的通称。它相当于是对每个数据块应用三次DES加密算法。</p>
+<p>由于计算机运算能力的增强，原版DES密码的密钥长度变得容易被暴力破解。3DES即是设计用来提供一种相对简单的方法，即通过增加DES的密钥长度来避免类似的攻击，而不是设计一种全新的块密码算法。</p>
+<p>3DES（即Triple DES）是DES向AES过渡的加密算法（1999年，NIST将3-DES指定为过渡的加密标准），加密算法，其具体实现如下：设Ek()和Dk()代表DES算法的加密和解密过程，K代表DES算法使用的密钥，M代表明文，C代表密文，这样：</p>
+<p>3DES加密过程为：C=Ek3(Dk2(Ek1(M)))</p>
+<p>3DES解密过程为：M=Dk1(EK2(Dk3©))</p>
+<h4 id="4、AES">4、AES</h4>
+<p><strong>1）简介</strong></p>
+<p>高级加密标准（英语：Advanced Encryption Standard，缩写：AES），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院（NIST）于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准。2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一。</p>
+<p>AES在软件及硬件上都能快速地加解密，相对来说较易于实作，且只需要很少的存储器。作为一个新的加密标准，目前正被部署应用到更广大的范围。<br>
+特点与思想：抵抗所有已知的攻击。 在多个平台上速度快，编码紧凑。 设计简单。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/wBu6hHKlVs2EiOf.png" alt=""></p>
+<p>AES为分组密码，分组密码也就是把明文分成一组一组的，每组长度相等，每次加密一组数据，直到加密完整个明文。在AES标准规范中，分组长度只能是128位，也就是说，每个分组为16个字节（每个字节8位）。密钥的长度可以使用128位、192位或256位。密钥的长度不同，推荐加密轮数也不同。</p>
+<p>一般常用的是128位</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
+<span class="token keyword">from</span> Cryptodome <span class="token keyword">import</span> Random
+ 
+<span class="token keyword">from</span> binascii <span class="token keyword">import</span> a2b_hex
+ 
+<span class="token comment"># 要加密的明文</span>
+data <span class="token operator">=</span> <span class="token string">'南来北往'</span>
+<span class="token comment"># 密钥key必须为 16（AES-128）， 24（AES-192）， 32（AES-256）</span>
+key <span class="token operator">=</span> <span class="token string">b'this is a 16 key'</span>
+<span class="token comment"># 生成长度等于AES 块大小的不可重复的密钥向量</span>
+iv <span class="token operator">=</span> Random<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span>AES<span class="token punctuation">.</span>block_size<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>iv<span class="token punctuation">)</span>
+<span class="token comment"># 使用 key 和iv 初始化AES 对象， 使用MODE_CFB模式</span>
+mycipher <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_CFB<span class="token punctuation">,</span> iv<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mycipher<span class="token punctuation">)</span>
+<span class="token comment"># 加密的明文长度必须为16的倍数， 如果长度不为16的倍数， 则需要补足为16的倍数</span>
+<span class="token comment"># 将iv(密钥向量)加到加密的密钥开头， 一起传输</span>
+ciptext <span class="token operator">=</span> iv <span class="token operator">+</span> mycipher<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>data<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 解密的话需要用key 和iv 生成的AES对象</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ciptext<span class="token punctuation">)</span>
+mydecrypt <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_CFB<span class="token punctuation">,</span> ciptext<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># 使用新生成的AES 对象， 将加密的密钥解密</span>
+decrytext <span class="token operator">=</span> mydecrypt<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>ciptext<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">print</span><span class="token punctuation">(</span>decrytext<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h5 id="ECB模式">ECB模式</h5>
+<p>ECB模式（电子密码本模式：Electronic codebook）</p>
+<p>ECB是最简单的块密码加密模式，加密前根据加密块大小（如AES为128位）分成若干块，之后将每块使用相同的密钥单独加密，解密同理。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/9IgSEAuJj1wvlHp.jpg" alt=""></p>
+<p><strong>优缺点</strong></p>
+<p>ECB模式作为一种基本工作模式，具有操作简单，易于实现的特点。同时由于其分组的独立性，利于实现并行处理，并且能很好地防止误差传播。</p>
+<p>另一方面由于所有分组的加密方式一致，明文中的重复内容会在密文中有所体现，因此难以抵抗统计分析攻击。</p>
+<p>因此，ECB模式一般只适用于小数据量的字符信息的安全性保护，例如密钥保护。</p>
+<h5 id="CBC模式">CBC模式</h5>
+<p>CBC模式（密码分组链接：Cipher-block chaining）</p>
+<p>CBC模式对于每个待加密的密码块在加密前会先与前一个密码块的密文异或然后再用加密器加密。第一个明文块与一个叫初始化向量的数据块异或。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/ORhX5fjd4sLrcvU.png" alt=""></p>
+<h5 id="计算器模式">计算器模式</h5>
+<p>计算器模式（Counter (CTR)）</p>
+<p>计算器模式不常见，在CTR模式中，<br>
+有一个自增的算子，这个算子用密钥加密之后的输出和明文异或的结果得到密文，相当于一次一密。这种加密方式简单快速，安全可靠，而且可以并行加密，但是在计算器不能维持很长的情况下，密钥只能使用一次。CTR的示意图如下所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/ME1WiNg5daJL2kB.png" alt=""></p>
+<h5 id="密码反馈模式">密码反馈模式</h5>
+<p>密码反馈模式（Cipher FeedBack (CFB)）</p>
+<p>与ECB和CBC模式只能够加密块数据不同，CFB能够将块密文（Block Cipher）转换为流密文（Stream Cipher）。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/Lf1nByvaoR9sUcA.png" alt=""></p>
+<p>注意:CFB、OFB和CTR模式中解密也都是用的加密器而非解密器。<br>
+CFB的加密工作分为两部分：</p>
+<p>将一前段加密得到的密文再加密；<br>
+将第1步加密得到的数据与当前段的明文异或。<br>
+由于加密流程和解密流程中被块加密器加密的数据是前一段密文，因此即使明文数据的长度不是加密块大小的整数倍也是不需要填充的，这保证了数据长度在加密前后是相同的。</p>
+<h4 id="5、RSA">5、RSA</h4>
+<p>使用之前需要安装 rsa 模块</p>
+<pre class="language-none"><code class="language-none">pip install rsa</code></pre>
+<h5 id="应用场景">应用场景</h5>
+<p>在公开密钥加密和电子商业中RSA被广泛使用。</p>
+<p>该算法基于一个十分简单的数论事实：将两个大素数相乘十分容易，但那时想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥，即公钥，而两个大素数组合成私钥。公钥是可发布的供任何人使用，私钥则为自己所有，供解密之用</p>
+<h5 id="非对称加密算法">非对称加密算法</h5>
+<p>1、乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+<p>2、甲方获取乙方的公钥，然后用它对信息加密。</p>
+<p>3、乙方得到加密后的信息，用私钥解密。</p>
+<h5 id="RSA算法">RSA算法</h5>
+<p>1977年，三位数学家Rivest、Shamir 和 Adleman 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做RSA算法。从那时直到现在，RSA算法一直是最广为使用的&quot;非对称加密算法&quot;。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。</p>
+<p>这种算法非常可靠，密钥越长，它就越难破解。根据已经披露的文献，目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
+<h5 id="数学基础">数学基础</h5>
+<p><strong>互质关系</strong></p>
+<p>如果两个正整数，除了1以外，没有其他公因子，我们就称这两个数是互质关系（coprime）。比如，15和32没有公因子，所以它们是互质关系。这说明，不是质数也可以构成互质关系。</p>
+<p>关于互质关系，不难得到以下结论：</p>
+<ol>
+<li>
+<p>任意两个质数构成互质关系，比如13和61。</p>
+</li>
+<li>
+<p>一个数是质数，另一个数只要不是前者的倍数，两者就构成互质关系，比如3和10。</p>
+</li>
+<li>
+<p>如果两个数之中，较大的那个数是质数，则两者构成互质关系，比如97和57。</p>
+</li>
+<li>
+<p>1和任意一个自然数是都是互质关系，比如1和99。</p>
+</li>
+<li>
+<p>p是大于1的整数，则p和p-1构成互质关系，比如57和56。</p>
+</li>
+<li>
+<p>p是大于1的奇数，则p和p-2构成互质关系，比如17和15。</p>
+</li>
+</ol>
+<p><strong>欧拉函数</strong></p>
+<p>请思考以下问题：</p>
+<p>任意给定正整数n，请问在小于等于n的正整数之中，有多少个与n构成互质关系？（比如，在1到8之中，有多少个数与8构成互质关系？）</p>
+<p>计算这个值的方法就叫做欧拉函数，以φ(n)表示。在1到8之中，与8形成互质关系的是1、3、5、7，所以 φ(n) = 4。</p>
+<p>φ(n) 的计算方法并不复杂，但是为了得到最后那个公式，需要一步步讨论。</p>
+<h5 id="密钥生成">密钥生成</h5>
+<p>我们通过一个例子，来理解RSA算法。假设爱丽丝要与鲍勃进行加密通信，她该怎么生成公钥和私钥呢？</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/01/25/EqGaUCgbzyJ3xS9.png" alt=""></p>
+<ul>
+<li>第一步，随机选择两个不相等的质数p和q。</li>
+</ul>
+<p>爱丽丝选择了61和53。（实际应用中，这两个质数越大，就越难破解。）</p>
+<ul>
+<li>第二步，计算p和q的乘积n。</li>
+</ul>
+<p>爱丽丝就把61和53相乘。</p>
+<p>n = 61×53 = 3233</p>
+<p>n的长度就是密钥长度。3233写成二进制是110010100001，一共有12位，所以这个密钥就是12位。实际应用中，RSA密钥一般是1024位，重要场合则为2048位。</p>
+<ul>
+<li>第三步，计算n的欧拉函数φ(n)。</li>
+</ul>
+<p>根据公式：</p>
+<p>φ(n) = (p-1)(q-1)</p>
+<p>爱丽丝算出φ(3233)等于60×52，即3120。</p>
+<ul>
+<li>第四步，随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n) 互质。</li>
+</ul>
+<p>爱丽丝就在1到3120之间，随机选择了17。（实际应用中，常常选择65537。）</p>
+<ul>
+<li>第五步，计算e对于φ(n)的模反元素d。</li>
+</ul>
+<p>所谓&quot;模反元素&quot;就是指有一个整数d，可以使得ed被φ(n)除的余数为1。</p>
+<p>ed ≡ 1 (mod φ(n))</p>
+<p>这个式子等价于</p>
+<p>ed - 1 = kφ(n) (k∈Z)</p>
+<p>于是，找到模反元素d，实质上就是对下面这个二元一次方程求解。</p>
+<p>ex + φ(n)y = 1</p>
+<p>已知 e=17, φ(n)=3120，</p>
+<p>17x + 3120y = 1</p>
+<p>这个方程可以用&quot;扩展欧几里得算法&quot;求解，此处省略具体过程。总之，爱丽丝算出一组整数解为 (x,y)=(2753,-15)，即 d=2753。</p>
+<p>至此所有计算完成。</p>
+<ul>
+<li>第六步，将n和e封装成公钥，n和d封装成私钥。</li>
+</ul>
+<p>在爱丽丝的例子中，n=3233，e=17，d=2753，所以公钥就是 (3233,17)，私钥就是（3233, 2753）。</p>
+<ul>
+<li>总结，实际上就是计算n,e,d的过程</li>
+</ul>
+<p>pq的作用用于求n==pq，再用 (p-1)(q-1)求φ(n)，在φ(n)范围内随机选择即为e，d==e对于φ(n)的模反元素</p>
+<h5 id="代码案例">代码案例</h5>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> rsa
+ 
+ 
+<span class="token comment"># rsa加密</span>
+<span class="token keyword">def</span> <span class="token function">rsaEncrypt</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 生成公钥、私钥</span>
+    <span class="token punctuation">(</span>pubkey<span class="token punctuation">,</span> privkey<span class="token punctuation">)</span> <span class="token operator">=</span> rsa<span class="token punctuation">.</span>newkeys<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"pub: "</span><span class="token punctuation">,</span> pubkey<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"priv: "</span><span class="token punctuation">,</span> privkey<span class="token punctuation">)</span>
+    <span class="token comment"># 明文编码格式</span>
+    content <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 公钥加密</span>
+    crypto <span class="token operator">=</span> rsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>content<span class="token punctuation">,</span> pubkey<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>crypto<span class="token punctuation">,</span> privkey<span class="token punctuation">)</span>
+ 
+ 
+<span class="token comment"># rsa解密</span>
+<span class="token keyword">def</span> <span class="token function">rsaDecrypt</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> pk<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 私钥解密</span>
+    content <span class="token operator">=</span> rsa<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> pk<span class="token punctuation">)</span>
+    con <span class="token operator">=</span> content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> con
+ 
+ 
+a<span class="token punctuation">,</span> b <span class="token operator">=</span> rsaEncrypt<span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'加密后密文：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+content <span class="token operator">=</span> rsaDecrypt<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'解密后明文：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>  
+</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> rsa
+<span class="token keyword">import</span> binascii
+ 
+<span class="token keyword">def</span> <span class="token function">rsa_encrypt</span><span class="token punctuation">(</span>rsa_n<span class="token punctuation">,</span> rsa_e<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    key <span class="token operator">=</span> rsa<span class="token punctuation">.</span>PublicKey<span class="token punctuation">(</span>rsa_n<span class="token punctuation">,</span> rsa_e<span class="token punctuation">)</span>
+    message <span class="token operator">=</span> rsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>message<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    message <span class="token operator">=</span> binascii<span class="token punctuation">.</span>b2a_hex<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> message<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+ 
+pubkey_n <span class="token operator">=</span> <span class="token string">'8d7e6949d411ce14d7d233d7160f5b2cc753930caba4d5ad24f923a505253b9c39b09a059732250e56c594d735077cfcb0c3508e9f544f101bdf7e97fe1b0d97f273468264b8b24caaa2a90cd9708a417c51cf8ba35444d37c514a0490441a773ccb121034f29748763c6c4f76eb0303559c57071fd89234d140c8bb965f9725'</span>
+pubkey_e <span class="token operator">=</span> <span class="token string">'10001'</span>
+rsa_n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>pubkey_n<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+rsa_e <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>pubkey_e<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+message <span class="token operator">=</span> <span class="token string">'南北今天很忙'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"公钥n值长度："</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>pubkey_n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+aa <span class="token operator">=</span> rsa_encrypt<span class="token punctuation">(</span>rsa_n<span class="token punctuation">,</span> rsa_e<span class="token punctuation">,</span> message<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>aa<span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>PublicKey <span class="token keyword">import</span> RSA
+
+<span class="token keyword">from</span> Cryptodome<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> PKCS1_OAEP<span class="token punctuation">,</span> PKCS1_v1_5
+
+
+<span class="token keyword">class</span> <span class="token class-name">MyRSA</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">create_rsa_key</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        创建RSA密钥
+        步骤说明：
+        1、从 Crypto.PublicKey 包中导入 RSA，创建一个密码
+        2、生成 1024/2048 位的 RSA 密钥
+        3、调用 RSA 密钥实例的 exportKey 方法，传入密码、使用的 PKCS 标准以及加密方案这三个参数。
+        4、将私钥写入磁盘的文件。
+        5、使用方法链调用 publickey 和 exportKey 方法生成公钥，写入磁盘上的文件。
+        """</span>
+        key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>generate<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+        encrypted_key <span class="token operator">=</span> key<span class="token punctuation">.</span>exportKey<span class="token punctuation">(</span>passphrase<span class="token operator">=</span>password<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pkcs<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span>
+                                      protection<span class="token operator">=</span><span class="token string">"scryptAndAES128-CBC"</span><span class="token punctuation">)</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_private_rsa_key.bin"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>encrypted_key<span class="token punctuation">)</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_rsa_public.pem"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>key<span class="token punctuation">.</span>publickey<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>exportKey<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">encrypt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> plaintext<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 加载公钥</span>
+        recipient_key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>import_key<span class="token punctuation">(</span>
+            <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_rsa_public.pem"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+        cipher_rsa <span class="token operator">=</span> PKCS1_v1_5<span class="token punctuation">.</span>new<span class="token punctuation">(</span>recipient_key<span class="token punctuation">)</span>
+        en_data <span class="token operator">=</span> cipher_rsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>plaintext<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> en_data
+        <span class="token comment"># print(len(en_data), en_data)</span>
+
+    <span class="token keyword">def</span> <span class="token function">decrypt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> en_data<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 读取密钥</span>
+        private_key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>import_key<span class="token punctuation">(</span>
+            <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"my_private_rsa_key.bin"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            passphrase<span class="token operator">=</span>password
+        <span class="token punctuation">)</span>
+        cipher_rsa <span class="token operator">=</span> PKCS1_v1_5<span class="token punctuation">.</span>new<span class="token punctuation">(</span>private_key<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> cipher_rsa<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>en_data<span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> data
+        <span class="token comment"># print(data)</span>
+
+
+mrsa <span class="token operator">=</span> MyRSA<span class="token punctuation">(</span><span class="token punctuation">)</span>
+mrsa<span class="token punctuation">.</span>create_rsa_key<span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">)</span>
+e <span class="token operator">=</span> mrsa<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> mrsa<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="附录：">@附录：</h2>
+<p>非对称加密<br>
+<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ts411H7u9?from=search&amp;seid=2602407138388579895">https://www.bilibili.com/video/BV1Ts411H7u9?from=search&amp;seid=2602407138388579895</a></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/favicon.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">UNOHE</div><div class="post-copyright__author_desc">爱自己，是终身浪漫的开始</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.unohe.com/Python/Coder/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.unohe.com/Python/Coder/')">常见加密方式</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/media/wechat.bmp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/wechat.bmp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/media/alipay.bmp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/media/alipay.bmp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.unohe.com/Python/Coder/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=常见加密方式&amp;url=https://www.unohe.com/Python/Coder/&amp;pic=https://s2.loli.net/2024/03/16/8M3CmrwLasVecS6.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.unohe.com" target="_blank">UNOHE</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Python/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Python<span class="tagsPageCount">8</span></a><a class="post-meta__box__tags" href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>加密算法<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2024/03/16/Ec7vum2Tf5QnI6r.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/Python/some-demo/" title="数据分析Demo"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/07/09/Xdw9Qm4uGa25h8l.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-07-09</div><div class="title">数据分析Demo</div></div></a></div><div><a href="/Python/data-base/" title="数据分析的基础知识以及环境搭建（附Jupyter快捷键）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/16/uxT367Vg8tXZHkb.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-06-15</div><div class="title">数据分析的基础知识以及环境搭建（附Jupyter快捷键）</div></div></a></div><div><a href="/Web/fastapi/" title="拥抱FastAPI"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2022/04/27/9t3pPVYuWi5ywTD.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-04-24</div><div class="title">拥抱FastAPI</div></div></a></div><div><a href="/Python/pythonwebcatch-pyside2/" title="Pyside2封装爬虫程序"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://images.squarespace-cdn.com/content/v1/571d408e59827e9ed759cac7/1522037220693-KK3JCQ6PSZGXSM68U7GU/pyside2.jpg?format=1000w" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-24</div><div class="title">Pyside2封装爬虫程序</div></div></a></div><div><a href="/Python/pythonwebcatch-scrapy/" title="Scrapy框架"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://repository-images.githubusercontent.com/529502/dab2bd00-0ed2-11eb-8588-5e10679ace4d" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-08-21</div><div class="title">Scrapy框架</div></div></a></div><div><a href="/Python/Pyside2/" title="Pyside2封装爬虫"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/16/c2VvONsHwMJ4YZu.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-08-21</div><div class="title">Pyside2封装爬虫</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://emotion.acs.pw/emotion/bilibili_face/害羞.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about"><h1 class="author-info__name">UNOHE</h1><div class="author-info__desc">爱自己，是终身浪漫的开始</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/alexation" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://s2.loli.net/2024/03/15/XxNAlmEVIMacfuC.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL%E7%BC%96%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">URL编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base64%E7%BC%96%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">Base64编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MD5%EF%BC%88%E4%BF%A1%E6%81%AF-%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">MD5（信息-摘要算法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PyCryptodome"><span class="toc-number">5.</span> <span class="toc-text">PyCryptodome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E5%AF%BC%E5%85%A5"><span class="toc-number">5.1.</span> <span class="toc-text">1、安装与导入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81DES"><span class="toc-number">5.2.</span> <span class="toc-text">2、DES</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%813DES"><span class="toc-number">5.3.</span> <span class="toc-text">3、3DES</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81AES"><span class="toc-number">5.4.</span> <span class="toc-text">4、AES</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ECB%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.4.1.</span> <span class="toc-text">ECB模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CBC%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.4.2.</span> <span class="toc-text">CBC模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.4.3.</span> <span class="toc-text">计算器模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%8F%8D%E9%A6%88%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.4.4.</span> <span class="toc-text">密码反馈模式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E3%80%81RSA"><span class="toc-number">5.5.</span> <span class="toc-text">5、RSA</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">5.5.1.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-number">5.5.2.</span> <span class="toc-text">非对称加密算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RSA%E7%AE%97%E6%B3%95"><span class="toc-number">5.5.3.</span> <span class="toc-text">RSA算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">5.5.4.</span> <span class="toc-text">数学基础</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90"><span class="toc-number">5.5.5.</span> <span class="toc-text">密钥生成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%A1%88%E4%BE%8B"><span class="toc-number">5.5.6.</span> <span class="toc-text">代码案例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">@附录：</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Blog/1/" title="Hexo主题Anzhiyu迁移记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/16/Ec7vum2Tf5QnI6r.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo主题Anzhiyu迁移记录"/></a><div class="content"><a class="title" href="/Blog/1/" title="Hexo主题Anzhiyu迁移记录">Hexo主题Anzhiyu迁移记录</a><time datetime="2024-03-13T04:05:05.000Z" title="发表于 2024-03-13 12:05:05">2024-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Competition/nuedc_3/" title="2022大学生电子设计竞赛"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/09/03/LnyeWwiGf1N8I9h.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022大学生电子设计竞赛"/></a><div class="content"><a class="title" href="/Competition/nuedc_3/" title="2022大学生电子设计竞赛">2022大学生电子设计竞赛</a><time datetime="2023-06-17T20:05:30.000Z" title="发表于 2023-06-18 04:05:30">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/EE/PowerOutage/" title="美国得克萨斯州2·14大停电"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/13/XJDWh8bIz52QBwU.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美国得克萨斯州2·14大停电"/></a><div class="content"><a class="title" href="/EE/PowerOutage/" title="美国得克萨斯州2·14大停电">美国得克萨斯州2·14大停电</a><time datetime="2023-05-01T04:04:28.000Z" title="发表于 2023-05-01 12:04:28">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Competition/ICM/" title="2023 ICM Problem Z The Future of the Olympics"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/09/03/6IYtv8uJzpBfaHQ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023 ICM Problem Z The Future of the Olympics"/></a><div class="content"><a class="title" href="/Competition/ICM/" title="2023 ICM Problem Z The Future of the Olympics">2023 ICM Problem Z The Future of the Olympics</a><time datetime="2023-04-03T10:05:26.000Z" title="发表于 2023-04-03 18:05:26">2023-04-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Competition/MCM/" title="2023 MCM Problem C Predicting Wordle Results"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2023/09/03/GRicUqYLjI3xVkp.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023 MCM Problem C Predicting Wordle Results"/></a><div class="content"><a class="title" href="/Competition/MCM/" title="2023 MCM Problem C Predicting Wordle Results">2023 MCM Problem C Predicting Wordle Results</a><time datetime="2023-02-06T10:05:26.000Z" title="发表于 2023-02-06 18:05:26">2023-02-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:alexation@foxmail.com" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820214971&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" href="/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/5wmFNTf1ozjAxip.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/alexation" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.greenpeace.org.cn/" title="Greenpeace"><i class="anzhiyufont anzhiyu-icon-plant-fill"></i></a><a class="deal_link" href="/copyright" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div><div id="workboard"><div id="runtimeTextTip"></div></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" rel="noopener" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" rel="noopener" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" rel="noopener" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" rel="noopener" href="https://docs.anheyu.com/">文档</a><a class="footer-item" title="源码" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://www.cloudflare.com/" style="margin-inline:5px" data-title="本站使用cloudflare为静态资源提供CDN加速" title="本站使用cloudflare为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/bzG4fho9MiOJ1rn.png" alt="本站使用cloudflare为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2021 - 2024 By <a class="footer-bar-link" href="/" title="UNOHE" target="_blank">UNOHE</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link cc" href="/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer><script defer>var hasShownPopup = sessionStorage.getItem('sessionNegotiatePopupShown');
+
+if (!hasShownPopup) {
+  setTimeout(() => {
+    anzhiyuPopupManager && anzhiyuPopupManager.enqueuePopup('协议提醒助手', '查看本站为你的个人隐私做出的努力', '/privacy', 4000);
+    sessionStorage.setItem('sessionNegotiatePopupShown', 'true');
+  }, 1000);
+}
+</script></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archive/" title="archive"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">11</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.unohe.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Yiqing" title="签到全栈系统"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/cxARdlnytjPbXuL.png" alt="签到全栈系统"/><span class="back-menu-item-text">签到全栈系统</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/ncm2mp3" title="NCM-&gt;MP3"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/aVmysP3JS4t5jNF.png" alt="NCM-&gt;MP3"/><span class="back-menu-item-text">NCM-&gt;MP3</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Alexation/Scramble_Classes" title="选课接口封装"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/03/15/kJIMGiSmh6T1Bzv.png" alt="选课接口封装"/><span class="back-menu-item-text">选课接口封装</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/update/"><i class="anzhiyufont anzhiyu-icon-bolt faa-tada" style="font-size: 0.9em;"></i><span> 日志</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 订阅</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=385817663&amp;server=netease&amp;type=playlist"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/games/"><i class="anzhiyufont anzhiyu-icon-rocket faa-tada" style="font-size: 0.9em;"></i><span> 游戏天地</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Ajax/" style="font-size: 0.88rem;">Ajax<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 0.88rem;">CSS<sup>1</sup></a><a href="/tags/FastAPI/" style="font-size: 0.88rem;">FastAPI<sup>1</sup></a><a href="/tags/Flask/" style="font-size: 0.88rem;">Flask<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 0.88rem;">HTML<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 0.88rem;">Hexo<sup>1</sup></a><a href="/tags/ICM-MCM/" style="font-size: 0.88rem;">ICM/MCM<sup>2</sup></a><a href="/tags/JavaScript/" style="font-size: 0.88rem;">JavaScript<sup>2</sup></a><a href="/tags/Javascript/" style="font-size: 0.88rem;">Javascript<sup>1</sup></a><a href="/tags/Jupyter/" style="font-size: 0.88rem;">Jupyter<sup>1</sup></a><a href="/tags/Matplotlib/" style="font-size: 0.88rem;">Matplotlib<sup>1</sup></a><a href="/tags/MySQL/" style="font-size: 0.88rem;">MySQL<sup>2</sup></a><a href="/tags/NUEDC/" style="font-size: 0.88rem;">NUEDC<sup>3</sup></a><a href="/tags/Node-js/" style="font-size: 0.88rem;">Node.js<sup>1</sup></a><a href="/tags/Numpy/" style="font-size: 0.88rem;">Numpy<sup>1</sup></a><a href="/tags/Pyside2/" style="font-size: 0.88rem;">Pyside2<sup>2</sup></a><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>8</sup></a><a href="/tags/SQL/" style="font-size: 0.88rem;">SQL<sup>1</sup></a><a href="/tags/Scrapy/" style="font-size: 0.88rem;">Scrapy<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 0.88rem;">Vue<sup>2</sup></a><a href="/tags/XSS/" style="font-size: 0.88rem;">XSS<sup>1</sup></a><a href="/tags/jQuery/" style="font-size: 0.88rem;">jQuery<sup>1</sup></a><a href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" style="font-size: 0.88rem;">加密算法<sup>1</sup></a><a href="/tags/%E6%B7%B7%E6%B7%86/" style="font-size: 0.88rem;">混淆<sup>1</sup></a><a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.88rem;">物联网<sup>1</sup></a><a href="/tags/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">电力系统<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("08/10/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用UNOHE!`,
+    `不要太劳累了，早睡更健康~`,
+    `
+        
+      ██╗   ██╗    ███╗   ██╗     ██████╗     ██╗  ██╗    ███████╗
+      ██║   ██║    ████╗  ██║    ██╔═══██╗    ██║  ██║    ██╔════╝
+      ██║   ██║    ██╔██╗ ██║    ██║   ██║    ███████║    █████╗  
+      ██║   ██║    ██║╚██╗██║    ██║   ██║    ██╔══██║    ██╔══╝  
+      ╚██████╔╝    ██║ ╚████║    ╚██████╔╝    ██║  ██║    ███████╗
+       ╚═════╝     ╚═╝  ╚═══╝     ╚═════╝     ╚═╝  ╚═╝    ╚══════╝
+                                                                  
+                                                  
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2021 By UNOHE V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by UNOHE %c 你正在访问 UNOHE 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("08/10/2021 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "";
+        img.title = "";
+        img.alt = "";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'ZG7mIijHQU3yBoYGFWXcYcqs-gzGzoHsz',
+      appKey: 'ZEl3Y5Bd19Z8QHnFjI6k8CTi',
+      avatar: 'mp',
+      serverURLs: 'https://zg7miijh.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=mp'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://zg7miijh.lc-cn-n1-shared.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'ZG7mIijHQU3yBoYGFWXcYcqs-gzGzoHsz',
+        "X-LC-Key": 'ZEl3Y5Bd19Z8QHnFjI6k8CTi',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
