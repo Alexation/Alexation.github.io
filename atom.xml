@@ -293,9 +293,9 @@
     <category term="后端" scheme="https://www.unohe.com/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
-    <category term="Python" scheme="https://www.unohe.com/tags/Python/"/>
-    
     <category term="FastAPI" scheme="https://www.unohe.com/tags/FastAPI/"/>
+    
+    <category term="Python" scheme="https://www.unohe.com/tags/Python/"/>
     
   </entry>
   
@@ -321,11 +321,11 @@
     <category term="项目" scheme="https://www.unohe.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="MySQL" scheme="https://www.unohe.com/tags/MySQL/"/>
-    
     <category term="Vue" scheme="https://www.unohe.com/tags/Vue/"/>
     
     <category term="Flask" scheme="https://www.unohe.com/tags/Flask/"/>
+    
+    <category term="MySQL" scheme="https://www.unohe.com/tags/MySQL/"/>
     
   </entry>
   

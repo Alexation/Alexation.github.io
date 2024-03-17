@@ -2004,8 +2004,8 @@ select name,count,date from websites w left outer join access_log a on w.id &#x3
         <category>后端</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>FastAPI</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -2373,9 +2373,9 @@ headers<span class="token operator">:</span> headers<span class="token punctuati
         <category>项目</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Vue</tag>
         <tag>Flask</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
