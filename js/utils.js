@@ -844,6 +844,7 @@ const anzhiyu = {
     if (!window.location.pathname.startsWith("/music/")) {
       return;
     }
+    let meting_api='https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
     const urlParams = new URLSearchParams(window.location.search);
     const userId = "8152976493";
     const userServer = "netease";
