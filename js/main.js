@@ -1473,10 +1473,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 16);
   };
 
-  // 开发者工具键盘监听
-  window.onkeydown = function (e) {
-    123 === e.keyCode && anzhiyu.snackbarShow("开发者模式已打开，请遵循GPL协议", !1);
-  };
+  // 开发者工具键盘监听  
+  // window.onkeydown = function (e) {
+  //   123 === e.keyCode && anzhiyu.snackbarShow("开发者模式已打开，请遵循GPL协议", !1);
+  // };
+
 
   // 欢迎语
   function greetingInit() {
