@@ -4847,7 +4847,7 @@ body[data-type='about'] #web_bg {
   left: 0;
 }
 .author-content-item.like-technology {
-  min-height: 230px;
+  min-height: 360px;
   color: var(--anzhiyu-white);
 }
 .author-content-item.like-music {
