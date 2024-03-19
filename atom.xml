@@ -320,9 +320,9 @@
     <category term="后端" scheme="https://www.unohe.com/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
-    <category term="FastAPI" scheme="https://www.unohe.com/tags/FastAPI/"/>
-    
     <category term="Python" scheme="https://www.unohe.com/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://www.unohe.com/tags/FastAPI/"/>
     
   </entry>
   
